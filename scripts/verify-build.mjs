@@ -15,12 +15,12 @@ for(const size of [192,512]) {
  const bytes=await readFile(new URL(icon.src,root));
  if(bytes.toString('hex',0,8)!=='89504e470d0a1a0a'||bytes.readUInt32BE(16)!==size||bytes.readUInt32BE(20)!==size)throw Error('Invalid PNG dimensions '+size);
 }
-for(const page of ['privacy.html','terms.html','support.html']) {
+for(const page of ['privacy.html','terms.html','support.html','404.html','maintenance.html']) {
  if(!manifest.files.includes(page))throw Error('Policy/support unavailable offline '+page);
  const html=await readFile(new URL(page,root),'utf8');
  if(!html.includes('dir="rtl"')||!html.includes('<main>'))throw Error('Policy/support structure invalid '+page);
 }
-console.log(JSON.stringify({pwaIcons:'192/512 PNG verified',localPolicyPages:3,deviceInstallTest:'not-executed'}));
+console.log(JSON.stringify({pwaIcons:'192/512 PNG verified',localPolicyPages:3,errorMaintenancePages:2,deviceInstallTest:'not-executed'}));
 
 // The engineering entry and quarantined evidence must not enter the public artifact.
 for(const path of ['engineering.html','content/06l2','content/06l3']) {

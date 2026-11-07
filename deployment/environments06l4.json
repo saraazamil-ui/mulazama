@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "officialOrigin": "https://mulazama.sa",
+  "registrarReportedByOwner": "dnet.sa",
+  "domainOwnershipVerified": false,
+  "domainActiveVerified": false,
+  "environments": {
+    "development": {"origin": "http://127.0.0.1:5173", "loopbackOnly": true},
+    "engineering": {"origin": "http://127.0.0.1:4177", "syntheticOnly": true, "deployAllowed": false},
+    "restrictedPreview": {"origin": null, "requiredAccess": "authenticated-owner-and-explicit-trial-allowlist", "protectEveryOriginAndAsset": true, "verified": false},
+    "production": {"origin": "https://mulazama.sa", "deployApproved": false, "httpsVerified": false}
+  },
+  "existingPrivateRepository": "https://github.com/saraazamil-ui/mulazama",
+  "existingRepositoryContainsThisRelease": false,
+  "existingRestricted05APreviewIsCurrentRelease": false,
+  "hostingProviderSelected": null,
+  "mail": {
+    "displayName": "مُلازَمَة — MULAZAMA",
+    "proposedAddresses": ["hello@mulazama.sa", "support@mulazama.sa", "privacy@mulazama.sa"],
+    "providerSelected": null,
+    "sendReceiveVerified": false,
+    "mxVerified": false,
+    "spfVerified": false,
+    "dkimVerified": false,
+    "dmarcVerified": false
+  },
+  "humanTrialCompleted": false,
+  "publicationConsent": false
+}

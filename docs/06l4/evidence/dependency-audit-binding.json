@@ -1,0 +1,28 @@
+{
+  "command": [
+    "pnpm",
+    "audit",
+    "--json",
+    "--fetch-retries=0",
+    "--fetch-timeout=10000"
+  ],
+  "exitCode": 0,
+  "observedResult": "No known advisories returned by registry at execution; not a penetration test",
+  "packageSHA256": "316c3bb42ff6ef54d8d6a2acbd949eeacfe1c7fed57b3f04ddd6bf37f0094d03",
+  "lockSHA256": "ad7b79295a609767455b46eac8f1e6c81b2de0684060b428739a97ce3731e1f5",
+  "auditSHA256": "252c4cd34828ddc9cbdc24eead4728e8d75e08ed17b66b5b086edcdfb4586717",
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0
+    },
+    "dependencies": 4,
+    "devDependencies": 208,
+    "optionalDependencies": 54,
+    "totalDependencies": 212
+  },
+  "dependenciesUpdated": false
+}

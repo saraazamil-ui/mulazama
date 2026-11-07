@@ -10,7 +10,7 @@ else if(command==='select') {
  console.log(JSON.stringify(await selectPreviewArtifact({artifacts,state,releaseId:option('--id'),expectedReleaseId:option('--expected')==='none'?null:option('--expected')})));
 }else if(command==='serve') {
  const cert=option('--cert'),key=option('--key');if(!!cert!==!!key)throw Error('Both --cert and --key required.');
- const instance=await startPreviewServer({artifacts,state,port:Number(option('--port')??4180),tls:cert?{cert,key}:undefined});
+ const instance=await startPreviewServer({artifacts,state,port:Number(option('--port')??4180),tls:cert?{cert,key}:undefined,maintenance:args.includes('--maintenance')});
  console.log(JSON.stringify({origin:instance.origin,scope:'loopback-only',productionAuthorized:false}));
  const stop=async()=>{await instance.close();process.exit(0);};process.on('SIGINT',stop);process.on('SIGTERM',stop);
 }else throw Error('Expected create, select or serve. This tool cannot deploy production.');

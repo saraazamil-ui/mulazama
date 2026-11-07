@@ -6,7 +6,7 @@ import { hash, readArtifact, readSelection } from './artifacts.mjs';
 export const CSP="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'";
 const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json; charset=utf-8','.webmanifest':'application/manifest+json','.svg':'image/svg+xml','.png':'image/png','.woff2':'font/woff2'};
 /** Binds loopback only; TLS keys are caller-owned files, never embedded in artifacts. */
-export async function startPreviewServer({artifacts,state,port=4180,tls}) {
+export async function startPreviewServer({artifacts,state,port=4180,tls,maintenance=false}) {
   let requests=0,failures=0; const cache=new Map();
   async function artifact(selection) {
     const key=selection.releaseId+':'+selection.manifestSHA256;
@@ -24,17 +24,19 @@ export async function startPreviewServer({artifacts,state,port=4180,tls}) {
       if(path.includes('\\')||path.includes('\0')||path.split('/').some(x=>x==='..'||x==='.')||path.startsWith('.')){send(400,'INVALID_PATH');return;}
       const selected=await readSelection(state);if(!selected)throw Error('NO_PREVIEW_RELEASE');
       const current=await artifact(selected);headers['X-Mulazama-Preview-Release']=selected.releaseId;
-      if(path==='__preview_health') {send(200,JSON.stringify({scope:'local-engineering-preview',releaseId:selected.releaseId,sourceDigest:current.manifest.sourceDigest,productionAuthorized:false,requests,failures,personalDataCollected:false}),'application/json');return;}
+      if(path==='__preview_health') {send(200,JSON.stringify({scope:'local-engineering-preview',releaseId:selected.releaseId,sourceDigest:current.manifest.sourceDigest,productionAuthorized:false,maintenance,requests,failures,personalDataCollected:false}),'application/json');return;}
       if(!path)path='index.html';
+      let status=200;
+      if(maintenance&&(path==='index.html'||path.endsWith('.html'))){path='maintenance.html';status=503;headers['Retry-After']='300';}
       let source=current,entry=source.manifest.files.find(x=>x.path===path);
       // Retain the preceding release's hashed assets for clients finishing an update.
       if(!entry && path.startsWith('assets/') && selected.previous){source=await artifact(selected.previous);entry=source.manifest.files.find(x=>x.path===path);}
-      if(!entry){send(404,'NOT_FOUND');return;}
+      if(!entry){source=current;path='404.html';entry=source.manifest.files.find(x=>x.path===path);status=404;if(!entry){send(404,'NOT_FOUND');return;}}
       const body=await readFile(resolve(source.root,path));
       if(body.length!==entry.bytes||hash(body)!==entry.sha256)throw Error('ASSET_CHANGED_AFTER_SELECTION');
-      headers['Cache-Control']=path.startsWith('assets/')?'public, max-age=31536000, immutable':'no-cache';
+      headers['Cache-Control']=status!==200?'no-store':path.startsWith('assets/')?'public, max-age=31536000, immutable':'no-cache';
       headers['ETag']='"'+entry.sha256+'"';
-      const extension=path.slice(path.lastIndexOf('.'));send(200,body,mime[extension]??'application/octet-stream');
+      const extension=path.slice(path.lastIndexOf('.'));send(status,body,mime[extension]??'application/octet-stream');
     }catch{failures++;send(503,'PREVIEW_UNAVAILABLE');}
   };
   const server=tls?createHttpsServer({key:await readFile(tls.key),cert:await readFile(tls.cert)},handler):createServer(handler);

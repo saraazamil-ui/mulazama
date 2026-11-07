@@ -1,0 +1,45 @@
+{
+  "product": "MULAZAMA",
+  "generatedAt": "2026-11-07T13:52:25.931Z",
+  "fixture": "SYNTHETIC-NON-QURAN; no scientific content validation",
+  "node": "v24.22.1",
+  "checks": [
+    {
+      "id": "QCLI01",
+      "status": "passed",
+      "evidence": "Exact-byte synthetic quarantine copy and independently calculated node:crypto SHA-256 match."
+    },
+    {
+      "id": "QCLI02",
+      "status": "passed",
+      "evidence": "Existing quarantine destination rejected; original bytes unchanged."
+    },
+    {
+      "id": "QCLI03",
+      "status": "passed",
+      "evidence": "Malformed UTF-8 candidate rejected."
+    },
+    {
+      "id": "QCLI04",
+      "status": "passed",
+      "evidence": "Absent real publisher bytes report blocked, exit 2, no fabricated hash."
+    },
+    {
+      "id": "QCLI05",
+      "status": "passed",
+      "evidence": "Synthetic exact comparison runs end to end; output remains unavailable for production and omits text."
+    },
+    {
+      "id": "QCLI06",
+      "status": "passed",
+      "evidence": "Pinned hash mismatch fails CLI, exit 1."
+    },
+    {
+      "id": "QCLI07",
+      "status": "passed",
+      "evidence": "Configured-but-missing source produces a reviewable blocked report rather than a content success."
+    }
+  ],
+  "passed": 7,
+  "failed": 0
+}

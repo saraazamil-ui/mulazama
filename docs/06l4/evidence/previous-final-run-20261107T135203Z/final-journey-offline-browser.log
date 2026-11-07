@@ -1,0 +1,48 @@
+[2m[WebServer] [22m(node:39451) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:39453) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:39456) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:39456) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 e2e-journey-offline/journey-offline06l3.spec.ts:141:1 › L3OFFJ01 built isolated newcomer journey completes offline, writes corrected HME once and survives offline reload (1ms)
+(node:39464) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:39464) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 e2e-journey-offline/journey-offline06l3.spec.ts:184:1 › L3OFFJ02 prior self-review correction and encrypted UI backup restore work offline with exact event preservation (1ms)
+
+
+  1) e2e-journey-offline/journey-offline06l3.spec.ts:141:1 › L3OFFJ01 built isolated newcomer journey completes offline, writes corrected HME once and survives offline reload 
+
+    Error: browserType.launch: Chromium distribution 'chrome' is not found at /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+    Run "npx playwright install chrome"
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-journey-offline/journey-offline06l3-L3OFFJ-41625-and-survives-offline-reload/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-journey-offline/journey-offline06l3-L3OFFJ-41625-and-survives-offline-reload/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) e2e-journey-offline/journey-offline06l3.spec.ts:184:1 › L3OFFJ02 prior self-review correction and encrypted UI backup restore work offline with exact event preservation 
+
+    Error: browserType.launch: Chromium distribution 'chrome' is not found at /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+    Run "npx playwright install chrome"
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-journey-offline/journey-offline06l3-L3OFFJ-b5b04-th-exact-event-preservation/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-journey-offline/journey-offline06l3-L3OFFJ-b5b04-th-exact-event-preservation/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    e2e-journey-offline/journey-offline06l3.spec.ts:141:1 › L3OFFJ01 built isolated newcomer journey completes offline, writes corrected HME once and survives offline reload 
+    e2e-journey-offline/journey-offline06l3.spec.ts:184:1 › L3OFFJ02 prior self-review correction and encrypted UI backup restore work offline with exact event preservation 

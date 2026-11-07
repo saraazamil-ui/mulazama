@@ -473,7 +473,7 @@ export default function App({
               <button className="help-button" onClick={() => setHelp(true)}>
                 عن مُلازَمَة وخصوصيتك <ShieldCheck size={17} />
               </button>
-              <small>MULAZAMA · 06-L3</small>
+              <small>MULAZAMA · 06-L4</small>
             </div>
           </aside>
           <div className="workspace">
@@ -512,7 +512,7 @@ export default function App({
               </div>
             </header>
             <div className="prototype-strip" role="region" aria-label="حالة النسخة">
-              {journey?.kind === "engineering" ? "06-L3 · اختبار هندسي معزول — ليس نصًا قرآنيًا" : journey ? "06-L3 · الحفظ والتسميع ذاتيان" : "إصدار هندسي 06-L3 · جلسات القرآن موقوفة حتى اعتماد المحتوى"}
+              {journey?.kind === "engineering" ? "06-L4 · اختبار هندسي معزول — ليس نصًا قرآنيًا" : journey ? "06-L4 · الحفظ والتسميع ذاتيان" : "إصدار هندسي 06-L4 · جلسات القرآن موقوفة حتى اعتماد المحتوى"}
             </div>
             <main
               id="main-content"
@@ -2761,7 +2761,7 @@ function Preferences() {
           <summary>عن النموذج والمساعدة</summary>
           <p className="policy-links"><a href="./privacy.html">الخصوصية</a> · <a href="./support.html">الدعم والمساعدة</a> · <a href="./terms.html">حدود الاستخدام</a></p>
           <p>
-            مُلازَمَة — MULAZAMA، إصدار هندسي 06-L3 للويب. اختبار هاتف حقيقي ومراجعة متخصصة لم ينجزا بعد. المطابقة الحسابية المصححة مثبتة، وتشغيل الجلسات واعتماد المحتوى ما زالا معلقين.
+            مُلازَمَة — MULAZAMA، إصدار هندسي 06-L4 للويب. اختبار هاتف حقيقي ومراجعة متخصصة لم ينجزا بعد. المطابقة الحسابية المصححة مثبتة، وتشغيل الجلسات واعتماد المحتوى ما زالا معلقين.
           </p>
         </details>
       </Card>

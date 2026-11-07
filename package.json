@@ -1,6 +1,6 @@
 {
   "name": "mulazama",
-  "version": "0.6.0-alpha.3",
+  "version": "0.6.0-alpha.4",
   "private": true,
   "type": "module",
   "scripts": {
@@ -24,7 +24,8 @@
     "verify:l3": "python3 scripts/verify-06l3.py",
     "engineering:local": "node scripts/build-engineering06l3.mjs --serve",
     "test:journey": "playwright test --config playwright.journey.config.ts",
-    "test:journey-offline": "playwright test --config playwright.journey-offline.config.ts"
+    "test:journey-offline": "playwright test --config playwright.journey-offline.config.ts",
+    "verify:l4": "python3 scripts/verify-06l4.py"
   },
   "dependencies": {
     "lucide-react": "0.468.0",

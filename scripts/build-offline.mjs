@@ -24,7 +24,12 @@ self.addEventListener('fetch',event=>{
  const base=new URL('./',self.location.href),url=new URL(event.request.url);
  if(!url.pathname.startsWith(base.pathname))return;
  const relative=url.pathname.slice(base.pathname.length);
- if(event.request.mode==='navigate')event.respondWith(caches.open(CACHE).then(cache=>cache.match(new URL(ASSETS.includes(relative)?relative:'index.html',base))).then(hit=>hit||fetch(event.request)));
+ if(event.request.mode==='navigate')event.respondWith((async()=>{
+  const known=relative===''||ASSETS.includes(relative),path=relative===''?'index.html':known?relative:'404.html';
+  const hit=await (await caches.open(CACHE)).match(new URL(path,base));
+  if(!hit)return fetch(event.request);
+  return known?hit:new Response(await hit.arrayBuffer(),{status:404,headers:hit.headers});
+ })());
  else if(ASSETS.includes(relative))event.respondWith(caches.open(CACHE).then(cache=>cache.match(event.request)).then(hit=>hit||fetch(event.request)));
 });
 `;

@@ -1,6 +1,7 @@
 import { ContentGate, contentHash, type ContentPackage, type ContentApproval } from './content-gate';
 import { canonical, DomainError } from '../core/types';
 import type { CanonicalUnit } from '../application/learning';
+import { validateJourneySourceOrder } from './journey-order06l4';
 export interface JourneySpan { surah:number; ayah:number; fromToken:number; toTokenExclusive:number }
 export interface JourneyUnit { unit:CanonicalUnit; title:string; passages:string[]; positions:{surah:number;ayah:number;page:number;juz:number}[]; order:number; costMinutes:number }
 export interface JourneyPolicy { version:string; futureLoadFeasible:boolean }
@@ -22,6 +23,7 @@ export async function createApprovedJourneyMaterial(input:ApprovedJourneyInput,e
   const units=entries.map(({unit,spans,costMinutes},order)=>{
     if(unit.editionId!==pkg.manifest.editionId||!spans.length)throw new DomainError('REFERENCE_MISMATCH','الوحدة لا تطابق طبعة النص.');
     const tokens=spans.flatMap(span=>gate.resolve({editionId:unit.editionId,...span}));
+    validateJourneySourceOrder(tokens,pkg.tokens);
     const keys=tokens.map(t=>`${unit.editionId}:${t.surah}:${t.ayah}:${t.tokenIndex}`);
     if(tokens.length!==unit.words||new Set(keys).size!==keys.length||canonical(keys)!==canonical(unit.coverage))throw new DomainError('CONTENT_INTEGRITY_FAILURE','حدود الوحدة وعدد كلماتها لا يطابقان الخريطة المعتمدة.');
     const passages=spans.map(span=>{const resolved=gate.resolve({editionId:unit.editionId,...span});return pkg.text.slice(resolved[0].sourceStart,resolved.at(-1)!.sourceEnd);});

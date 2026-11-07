@@ -1,0 +1,198 @@
+{
+  "config": {
+    "configFile": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l4/playwright.deployment.config.ts",
+    "rootDir": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l4/e2e-deployment",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results-deployment/deployment-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l4/test-results-deployment",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l4/e2e-deployment",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "rollout06l4.spec.ts",
+      "file": "rollout06l4.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "L4DEP01 HTTPS preview enforces headers and allows only manifest assets without exposing source files",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 46,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T13:53:22.290Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "preview-headers.json",
+                      "contentType": "application/json",
+                      "body": "eyJoZWFkZXJzIjp7ImNvbnRlbnQtc2VjdXJpdHktcG9saWN5IjoiZGVmYXVsdC1zcmMgJ3NlbGYnOyBzY3JpcHQtc3JjICdzZWxmJzsgc3R5bGUtc3JjICdzZWxmJyAndW5zYWZlLWlubGluZSc7IGltZy1zcmMgJ3NlbGYnIGRhdGE6IGJsb2I6OyBmb250LXNyYyAnc2VsZic7IGNvbm5lY3Qtc3JjICdzZWxmJzsgd29ya2VyLXNyYyAnc2VsZic7IG9iamVjdC1zcmMgJ25vbmUnOyBiYXNlLXVyaSAnc2VsZic7IGZvcm0tYWN0aW9uICdzZWxmJzsgZnJhbWUtYW5jZXN0b3JzICdub25lJyIsIngtY29udGVudC10eXBlLW9wdGlvbnMiOiJub3NuaWZmIiwicmVmZXJyZXItcG9saWN5Ijoibm8tcmVmZXJyZXIiLCJwZXJtaXNzaW9ucy1wb2xpY3kiOiJjYW1lcmE9KCksIG1pY3JvcGhvbmU9KCksIGdlb2xvY2F0aW9uPSgpIiwieC1yb2JvdHMtdGFnIjoibm9pbmRleCwgbm9mb2xsb3ciLCJjYWNoZS1jb250cm9sIjoibm8tY2FjaGUiLCJ4LW11bGF6YW1hLXByZXZpZXctcmVsZWFzZSI6ImwzIiwiZXRhZyI6IlwiNGIzZjdiZTU2ZDQ1OTMzYzg2OWYwNTk4MmJiNTFhOTFlYWY5ZDQyNGI4MmEyNGM0ODY5Njc5YTE2NzhlZTgzY1wiIiwiY29udGVudC10eXBlIjoidGV4dC9odG1sOyBjaGFyc2V0PXV0Zi04IiwiZGF0ZSI6IlNhdCwgMDcgTm92IDIwMjYgMTM6NTM6MjIgR01UIiwiY29ubmVjdGlvbiI6ImtlZXAtYWxpdmUiLCJrZWVwLWFsaXZlIjoidGltZW91dD01IiwidHJhbnNmZXItZW5jb2RpbmciOiJjaHVua2VkIn0sImhlYWx0aCI6eyJzY29wZSI6ImxvY2FsLWVuZ2luZWVyaW5nLXByZXZpZXciLCJyZWxlYXNlSWQiOiJsMyIsInNvdXJjZURpZ2VzdCI6Ijk5ZGIxMWZmMDc2NmIwOTlmNmYxMGI4ZTY2YWMyNTA3MTdmNDkyOTI2YWQyZGVhYjMzZjM2OTlmZGZkNTRlNTQiLCJwcm9kdWN0aW9uQXV0aG9yaXplZCI6ZmFsc2UsIm1haW50ZW5hbmNlIjpmYWxzZSwicmVxdWVzdHMiOjUsImZhaWx1cmVzIjowLCJwZXJzb25hbERhdGFDb2xsZWN0ZWQiOmZhbHNlfSwidGxzIjoic2VsZi1zaWduZWQgZXBoZW1lcmFsIGxvb3BiYWNrOyBicm93c2VyIHRlc3QgcGVybWl0cyBpdHMgb3duIHNlbGYtc2lnbmVkIGxvb3BiYWNrIGNlcnRpZmljYXRlIG9ubHk7IG5vIHN5c3RlbSB0cnVzdCBzdG9yZSBjaGFuZ2VzIn0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "356b24d156594e952a7e-b1a16265b9bd00636405",
+          "file": "rollout06l4.spec.ts",
+          "line": 149,
+          "column": 1
+        },
+        {
+          "title": "L4DEP02 L3 to L4 update and rollback preserve exact encrypted IndexedDB rows, settings, offline access and blocked sessions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2814,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T13:53:22.568Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "update-rollback.json",
+                      "contentType": "application/json",
+                      "body": "eyJiZWZvcmUiOnsicm93cyI6Mywic2hhMjU2IjoiNDMzMDFjYTk5N2NkMGY2YTU4ZTYxMmZhZDdmYmE0Mjc5YjA4ZGFjOGRmMzg4ZTVlN2U5NGJjNjg3ZTNlNzI0OCJ9LCJhZnRlciI6eyJyb3dzIjozLCJzaGEyNTYiOiI0MzMwMWNhOTk3Y2QwZjZhNThlNjEyZmFkN2ZiYTQyNzliMDhkYWM4ZGYzODhlNWU3ZTk0YmM2ODdlM2U3MjQ4In0sInNlcXVlbmNlIjpbImwzIiwibDQiLCJsMyJdLCJzb3VyY2VEaWdlc3RzIjp7ImwzIjoiOTlkYjExZmYwNzY2YjA5OWY2ZjEwYjhlNjZhYzI1MDcxN2Y0OTI5MjZhZDJkZWFiMzNmMzY5OWZkZmQ1NGU1NCIsImw0IjoiNjFiZDM3MTRmZjBiZDI0ZjJhMWUzZmM4YzNhM2U3YjYyYjYzYzk2ZDhjMzkzMWQxMjVmNjRjNjY3MjBjZmI4NSJ9LCJiYXNlbGluZVJlY2VpcHRTSEEyNTYiOiIyM2FlMzA0ZTJkNWQ1ODIzMTIzY2U2MjkxYzdjM2QyMGNmZWUwY2ViM2MyOTAzZDNlNGE5YzRlMjMzODNhYmEzIiwic2NvcGUiOiJleGlzdGluZyBsZWdhY3kgcHVibGljIHN0cmVhbXM7IGNvcnJlY3RlZC1zY2hlZHVsZXIgc3RyZWFtcyBhcmUgbm90IGRvd25ncmFkZWQgYnkgdGhpcyB0ZXN0IiwidHJhbnNwb3J0IjoiSFRUUCBsb29wYmFjayBzZWN1cmUgY29udGV4dDsgVExTIGhlYWRlcnMgdGVzdGVkIHNlcGFyYXRlbHkgd2l0aCBlcGhlbWVyYWwgY2VydGlmaWNhdGUiLCJzYW1lT3JpZ2luIjp0cnVlLCJvZmZsaW5lIjp0cnVlLCJldmVudHNSZXdyaXR0ZW4iOmZhbHNlLCJwcm9kdWN0aW9uRGVwbG95bWVudCI6ZmFsc2UsInJlYWxVc2VyRGF0YSI6ZmFsc2V9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "356b24d156594e952a7e-ae4e6d8db792acd2933e",
+          "file": "rollout06l4.spec.ts",
+          "line": 181,
+          "column": 1
+        },
+        {
+          "title": "L4DEP03 honest support, accessible 404 online/offline and maintenance 503 without touching learner storage",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1131,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T13:53:25.389Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "operations-pages.json",
+                      "contentType": "application/json",
+                      "body": "eyJvZmZpY2lhbE9yaWdpbiI6Imh0dHBzOi8vbXVsYXphbWEuc2EiLCJtYWlsYm94ZXNBY3RpdmUiOmZhbHNlLCJvbmxpbmU0MDQiOnRydWUsIm9mZmxpbmU0MDQiOnRydWUsIm1haW50ZW5hbmNlNTAzIjp0cnVlLCJsZWFybmVyU3RvcmFnZUNoYW5nZWQiOmZhbHNlLCJwdWJsaWNEZXBsb3ltZW50IjpmYWxzZSwibGltaXRhdGlvbiI6IkEgc2VydmVyIG1haW50ZW5hbmNlIHJlc3BvbnNlIGRvZXMgbm90IHJldm9rZSBhbiBhbHJlYWR5IGluc3RhbGxlZCBvZmZsaW5lIGFwcCBzaGVsbC4ifQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "356b24d156594e952a7e-094d8054953bd96a329d",
+          "file": "rollout06l4.spec.ts",
+          "line": 279,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-07T13:53:21.909Z",
+    "duration": 4654.691,
+    "expected": 3,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

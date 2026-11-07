@@ -101,3 +101,14 @@ test('L3J06 an open dashboard refreshes its daily numbers and next activity when
  await expect(page.getByText(/أنشطة أُنجزت اليوم: 0/)).toBeVisible();await expect(page.getByRole('button',{name:'ابدأ وردك',exact:true})).toBeVisible();
  const snapshot=await facts(page);expect(snapshot.events.filter(e=>e.type==='AssessmentSubmitted')).toHaveLength(1);
 });
+
+for(const prior of [false,true])test(`L4J${prior?'02':'01'} desktop ${prior?'prior hafiz':'newcomer'} saves, reloads and returns to the next activity in an isolated engineering journey`,async({page},info)=>{
+ await page.setViewportSize({width:1366,height:900});await setup(page,prior);await recall(page);
+ await page.getByRole('button',{name:'سمّعت المقطع كاملًا بلا خطأ معلوم — جهد عادي',exact:true}).click();
+ await expect(page.getByRole('heading',{name:'حُفظ تقييمك الذاتي'})).toBeVisible();
+ const before=await facts(page);expect(before.events.filter(e=>e.type==='AssessmentSubmitted')).toHaveLength(1);
+ await page.reload();await expect(page.getByRole('heading',{name:'حُفظ تقييمك الذاتي'})).toBeVisible();expect((await facts(page)).events).toEqual(before.events);
+ await page.getByRole('button',{name:'تابع إلى النشاط التالي'}).click();await expect(page.getByText(/أنشطة أُنجزت اليوم: 1/)).toBeVisible();
+ expect((await new AxeBuilder({page}).analyze()).violations).toEqual([]);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+ await info.attach('desktop-journey.json',{body:JSON.stringify({viewport:1366,prior,engineering:true,quranSession:false,resultActions:1,reloadPreserved:true}),contentType:'application/json'});
+});
