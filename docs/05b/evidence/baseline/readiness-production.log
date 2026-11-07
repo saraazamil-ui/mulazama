@@ -1,0 +1,14 @@
+{
+  "product": "MULAZAMA",
+  "phase": "05-A",
+  "productionReady": false,
+  "decision": "غير جاهز.",
+  "blockers": [
+    "No approved Quran text edition, mapping, font and content approval trust anchor",
+    "No immutable installed FSRS library and executed reference-library conformance",
+    "IndexedDB browser, migration and atomic restore tests not executed in this environment",
+    "Web E2E, automated browser accessibility and cold offline startup not executed",
+    "iOS/Android packages, keystores, notifications, device lifecycle and performance not built/tested",
+    "Learning screens remain content-gated; synthetic core services are not a launched Quran application"
+  ]
+}

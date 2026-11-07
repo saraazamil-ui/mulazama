@@ -1,0 +1,27 @@
+{
+  "scope": "Review preparation files only; these hashes are not Quran text hashes",
+  "files": [
+    {
+      "path": "content/Quran-Content-Review-Pack/README.md",
+      "sha256": "2ed155c1ef73400206fb1d705677a7a83bd3bc56a0a16f20680ad8b52c27260c",
+      "bytes": 5126
+    },
+    {
+      "path": "content/Quran-Content-Review-Pack/Review-Checklist.csv",
+      "sha256": "4dbb17a35bda80fb7daed298e7305f7d2121c523ed62b9a4428f06bc2043ead0",
+      "bytes": 917
+    },
+    {
+      "path": "content/Quran-Content-Review-Pack/Scientific-Approval.pending.json",
+      "sha256": "13071d1a5bbc82e2e29dce0658351e918564f98e5e6a3fc4e0b855ea572e5f9b",
+      "bytes": 412
+    },
+    {
+      "path": "content/Quran-Content-Review-Pack/source-selection.json",
+      "sha256": "591f66b0fc7806ea2167b22fcd7cbc0ed6d59c48956fa7ddafdb6572d33eccb9",
+      "bytes": 1235
+    }
+  ],
+  "scientificApproval": "not-granted",
+  "quranSourceSha256": null
+}

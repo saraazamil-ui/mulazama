@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "phase": "05-B",
+  "product": "MULAZAMA",
+  "baseline": {
+    "tests": 299,
+    "passed": 299,
+    "independent21": "not-rerun"
+  },
+  "final": {
+    "numTotalTests": 464,
+    "numPassedTests": 464,
+    "numFailedTests": 0,
+    "numPendingTests": 0,
+    "numTodoTests": 0
+  },
+  "testFiles": 22,
+  "additionalDistinctTests": 165,
+  "typecheck": "passed",
+  "build": "passed",
+  "frozenInstall": "blocked-registry-DNS",
+  "npmScriptWrapper": "unavailable-command-not-found; exact build command sequence executed successfully via pinned Node",
+  "browser": {
+    "discovered": 15,
+    "executed": 0,
+    "indexedDbChecksWritten": 21,
+    "indexedDbChecksExecuted": 0,
+    "axePlannedPageAnalyses": 58,
+    "axeExecuted": 0,
+    "reason": "local-server-EPERM"
+  },
+  "fsrs": {
+    "referenceCases": 23,
+    "referenceBranches": 12,
+    "referenceExecuted": 0,
+    "status": "blocked",
+    "researchComparisons": 24,
+    "researchComparisonsPassed": 24
+  },
+  "content": {
+    "actualQuranBytes": "unavailable",
+    "syntheticUnitTests": 25,
+    "contentGateTests": 7,
+    "toolChecks": 7,
+    "status": "blocked-no-human-approval"
+  },
+  "gates": [
+    {
+      "gate": "G01",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G02",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G03",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G04",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G05",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G06",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G07",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G08",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G09",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G10",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    }
+  ],
+  "performance": {
+    "environment": {
+      "node": "v24.22.1",
+      "platform": "darwin",
+      "arch": "arm64"
+    },
+    "synthetic": true,
+    "measurementsMs": {
+      "plan1000Candidates": 0.7856250000000387,
+      "memoryAtomicAppend10000": 860.2261249999999,
+      "memoryLoad10000": 41.92820800000004,
+      "productReplay100Events": 14.168625000000247
+    },
+    "heapUsedBytes": 70333888,
+    "limitations": [
+      "Memory reference adapter, not IndexedDB",
+      "Host Node, not cold app start or mobile device",
+      "No P95, power-loss, UI responsiveness or native memory certification"
+    ]
+  },
+  "native": {
+    "ios": "not-implemented/not-verified",
+    "android": "not-implemented/not-verified"
+  },
+  "decision": "غير جاهز.",
+  "vitestSuiteNodes": 55
+}

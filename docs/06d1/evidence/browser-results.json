@@ -1,0 +1,805 @@
+{
+  "config": {
+    "configFile": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06d1/playwright.config.ts",
+    "rootDir": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06d1/e2e",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/browser-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06d1/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06d1/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 1,
+    "webServer": {
+      "command": "node node_modules/vite/bin/vite.js --host 127.0.0.1 --port 4173 --strictPort",
+      "url": "http://127.0.0.1:4173",
+      "reuseExistingServer": true,
+      "timeout": 30000
+    }
+  },
+  "suites": [
+    {
+      "title": "database.spec.ts",
+      "file": "database.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "BWEB01 IndexedDB: 21 encrypted transaction, migration, corruption, concurrency and restore checks",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 991,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T09:22:35.251Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "indexeddb-check-results",
+                      "contentType": "application/json",
+                      "body": "WwogIHsKICAgICJuYW1lIjogIklEQjAxIGNvbW1pdC9yZW9wZW4vY2hlY2twb2ludCByYXcgcHJlc2VydmF0aW9uIiwKICAgICJwYXNzZWQiOiB0cnVlLAogICAgIm1pbGxpc2Vjb25kcyI6IDQyLjUKICB9LAogIHsKICAgICJuYW1lIjogIklEQjAyIGR1cGxpY2F0ZSBjb21tYW5kIGFuZCBldmVudCBhcmUgaWRlbXBvdGVudDsgY29uZmxpY3RzIGZhaWwgY2xvc2VkIiwKICAgICJwYXNzZWQiOiB0cnVlLAogICAgIm1pbGxpc2Vjb25kcyI6IDMuMTAwMDAwMDAxNDkwMTE2CiAgfSwKICB7CiAgICAibmFtZSI6ICJJREIwMyBjb25jdXJyZW50IHRhYnMgdXNlIHRyYW5zYWN0aW9uIENBUyIsCiAgICAicGFzc2VkIjogdHJ1ZSwKICAgICJtaWxsaXNlY29uZHMiOiAyLjY5OTk5OTk5NTUyOTY1MTYKICB9LAogIHsKICAgICJuYW1lIjogIklEQjA0IGVuY3J5cHRlZCByZWNvcmRzIGFuZCBub25leHRyYWN0YWJsZSBrZXkiLAogICAgInBhc3NlZCI6IHRydWUsCiAgICAibWlsbGlzZWNvbmRzIjogMi44MDAwMDAwMDQ0NzAzNDg0CiAgfSwKICB7CiAgICAibmFtZSI6ICJJREIwNSB0cmFuc2FjdGlvbiB3cml0ZSBmYWlsdXJlIGNhbm5vdCBhY2tub3dsZWRnZSBvciBwYXJ0aWFsbHkgYXBwZW5kIiwKICAgICJwYXNzZWQiOiB0cnVlLAogICAgIm1pbGxpc2Vjb25kcyI6IDMKICB9LAogIHsKICAgICJuYW1lIjogIklEQjA2IGF0b21pYyBmdWxsIHJlcGxhY2VtZW50LCByb2xsYmFjayBvbiBmYWlsdXJlLCBubyByZXN0b3JlIG1lcmdlIiwKICAgICJwYXNzZWQiOiB0cnVlLAogICAgIm1pbGxpc2Vjb25kcyI6IDMuMDk5OTk5OTk0MDM5NTM1NQogIH0sCiAgewogICAgIm5hbWUiOiAiSURCMDcgY2lwaGVydGV4dCBjb3JydXB0aW9uIHJlamVjdGVkIGFuZCBvcmlnaW5hbCByb3dzIHJldGFpbmVkIiwKICAgICJwYXNzZWQiOiB0cnVlLAogICAgIm1pbGxpc2Vjb25kcyI6IDMuNDAwMDAwMDA1OTYwNDY0NQogIH0sCiAgewogICAgIm5hbWUiOiAiSURCMDggc3VwcG9ydGVkIHYxIG1pZ3JhdGlvbiBlbmNyeXB0cyB3aXRob3V0IGNoYW5naW5nIHJhdyBldmVudHMgb3IgcmV2aXNpb24iLAogICAgInBhc3NlZCI6IHRydWUsCiAgICAibWlsbGlzZWNvbmRzIjogMS44OTk5OTk5OTg1MDk4ODM5CiAgfSwKICB7CiAgICAibmFtZSI6ICJJREIwOSBmdXR1cmUgZGF0YWJhc2UgdmVyc2lvbiBpcyBwcmVzZXJ2ZWQgYW5kIHJlamVjdGVkIiwKICAgICJwYXNzZWQiOiB0cnVlLAogICAgIm1pbGxpc2Vjb25kcyI6IDAuMjk5OTk5OTk3MDE5NzY3NzYKICB9LAogIHsKICAgICJuYW1lIjogIklEQjEwIGNsZWFyIGtlZXBzIHJldmlzaW9uIHByb3RlY3Rpb24gYW5kIHJlbW92ZXMgbGVhcm5pbmcgcm93cy9pbmRleGVzIiwKICAgICJwYXNzZWQiOiB0cnVlLAogICAgIm1pbGxpc2Vjb25kcyI6IDEuODk5OTk5OTk4NTA5ODgzOQogIH0sCiAgewogICAgIm5hbWUiOiAiSURCMTEgbWlzc2luZyBlbmNyeXB0aW9uIGtleSBuZXZlciB0cmlnZ2VycyByZXBsYWNlbWVudCBrZXkgb3IgcmVzZXQiLAogICAgInBhc3NlZCI6IHRydWUsCiAgICAibWlsbGlzZWNvbmRzIjogMS43MDAwMDAwMDI5ODAyMzIyCiAgfSwKICB7CiAgICAibmFtZSI6ICJJREIxMiBpbnRlcnJ1cHRlZCB2MSBtaWdyYXRpb24gcmVzdW1lcyBmcm9tIGl0cyBkdXJhYmxlIHBlbmRpbmcgbWFya2VyIiwKICAgICJwYXNzZWQiOiB0cnVlLAogICAgIm1pbGxpc2Vjb25kcyI6IDEuNjAwMDAwMDAxNDkwMTE2MQogIH0sCiAgewogICAgIm5hbWUiOiAiSURCMTMgY29tbWFuZC1pbmRleCBtdXRhdGlvbiBpcyByZWplY3RlZCB3aXRob3V0IHJlc2V0dGluZyBoaXN0b3J5IiwKICAgICJwYXNzZWQiOiB0cnVlLAogICAgIm1pbGxpc2Vjb25kcyI6IDQuNTk5OTk5OTk0MDM5NTM1NQogIH0sCiAgewogICAgIm5hbWUiOiAiSURCMTQgYW4gQUVTLTEyOCByZXBsYWNlbWVudCBrZXkgaXMgcmVqZWN0ZWQgZXZlbiBmb3IgYW4gZW1wdHkgc3RyZWFtIiwKICAgICJwYXNzZWQiOiB0cnVlLAogICAgIm1pbGxpc2Vjb25kcyI6IDEuNzAwMDAwMDAyOTgwMjMyMgogIH0sCiAgewogICAgIm5hbWUiOiAiSURCMTUgbWFsZm9ybWVkIHN0cmVhbSBzZXF1ZW5jZSBpcyByZWplY3RlZCB3aXRob3V0IHJlcGxhY2luZyByZWNvcmRzIiwKICAgICJwYXNzZWQiOiB0cnVlLAogICAgIm1pbGxpc2Vjb25kcyI6IDEuNzk5OTk5OTk3MDE5NzY3OAogIH0sCiAgewogICAgIm5hbWUiOiAiSURCMTYgaW52YWxpZCB0aW1lc3RhbXBzIG5ldmVyIGJlY29tZSBhY2tub3dsZWRnZWQgYnJvd3NlciB3cml0ZXMiLAogICAgInBhc3NlZCI6IHRydWUsCiAgICAibWlsbGlzZWNvbmRzIjogMS4xMDAwMDAwMDE0OTAxMTYxCiAgfSwKICB7CiAgICAibmFtZSI6ICJJREIxNyBkZWxldGluZyBsZWFybmluZyBkYXRhIHJlbW92ZXMgZXZlbnQgYW5kIGNvbW1hbmQgcm93cyBhZnRlciByZW9wZW4iLAogICAgInBhc3NlZCI6IHRydWUsCiAgICAibWlsbGlzZWNvbmRzIjogMi41CiAgfSwKICB7CiAgICAibmFtZSI6ICJJREIxOCBwYXJ0aWFsIGNvbW1hbmQgcmV0cmllcyBjYW5ub3Qgc2lsZW50bHkgZHVwbGljYXRlIG9yIHRydW5jYXRlIGEgYmF0Y2giLAogICAgInBhc3NlZCI6IHRydWUsCiAgICAibWlsbGlzZWNvbmRzIjogMi4xMDAwMDAwMDE0OTAxMTYKICB9LAogIHsKICAgICJuYW1lIjogIklEQjE5IGV4cGxpY2l0IHYyLXRvLXYzIGluZGV4IG1pZ3JhdGlvbiBwcmVzZXJ2ZXMgY2lwaGVydGV4dCBhbmQgcmF3IHJldmlzaW9uIiwKICAgICJwYXNzZWQiOiB0cnVlLAogICAgIm1pbGxpc2Vjb25kcyI6IDguMjAwMDAwMDAyOTgwMjMyCiAgfSwKICB7CiAgICAibmFtZSI6ICJJREIyMCB1bmtub3duIGxlZ2FjeSBVbmljb2RlIGNvbGxhdGlvbiByZXF1aXJlcyByZXZpZXcgYW5kIHByZXNlcnZlcyBjaXBoZXJ0ZXh0IiwKICAgICJwYXNzZWQiOiB0cnVlLAogICAgIm1pbGxpc2Vjb25kcyI6IDIuMDk5OTk5OTk0MDM5NTM1NQogIH0sCiAgewogICAgIm5hbWUiOiAiSURCMjEgaW50ZXJydXB0ZWQgdjIgaW5kZXggbWlncmF0aW9uIHJlc3VtZXMgb25seSBmcm9tIGEgdmFsaWQgZHVyYWJsZSBtYXJrZXIiLAogICAgInBhc3NlZCI6IHRydWUsCiAgICAibWlsbGlzZWNvbmRzIjogMS44MDAwMDAwMDQ0NzAzNDg0CiAgfQpd"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4add86b697651c504d0f-74e92a25664297d8c2ed",
+          "file": "database.spec.ts",
+          "line": 2,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "production.spec.ts",
+      "file": "production.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "BWEB02 identity, real settings persistence and content gate",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 883,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T09:22:37.388Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ed69554c53210704c98c-b418c589417d95fe8b62",
+          "file": "production.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "BWEB03 encrypted backup inspection rejects wrong password and cancellation preserves data",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1011,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T09:22:38.282Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ed69554c53210704c98c-8fc908f774bd5f51aa99",
+          "file": "production.spec.ts",
+          "line": 33,
+          "column": 1
+        },
+        {
+          "title": "BWEB04 responsive RTL and automated accessibility 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5936,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T09:22:39.304Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ed69554c53210704c98c-b84cef9a3e078122a99c",
+          "file": "production.spec.ts",
+          "line": 68,
+          "column": 3
+        },
+        {
+          "title": "BWEB05 responsive RTL and automated accessibility 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7477,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T09:22:45.248Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ed69554c53210704c98c-395a683c4b802ae4d38e",
+          "file": "production.spec.ts",
+          "line": 68,
+          "column": 3
+        },
+        {
+          "title": "BWEB06 responsive RTL and automated accessibility 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7390,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T09:22:52.737Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ed69554c53210704c98c-f0e8ba149586c034188e",
+          "file": "production.spec.ts",
+          "line": 68,
+          "column": 3
+        }
+      ]
+    },
+    {
+      "title": "progress06d1.spec.ts",
+      "file": "progress06d1.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "D1WEB responsive RTL and accessible progress 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1390,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T09:23:00.156Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "030cfefc5690c0b7a59b-a6fa45c4adef056f529b",
+          "file": "progress06d1.spec.ts",
+          "line": 6,
+          "column": 3
+        },
+        {
+          "title": "D1WEB responsive RTL and accessible progress 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1525,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T09:23:01.555Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "030cfefc5690c0b7a59b-a92d88274ed3eef090f9",
+          "file": "progress06d1.spec.ts",
+          "line": 6,
+          "column": 3
+        },
+        {
+          "title": "D1WEB responsive RTL and accessible progress 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1750,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T09:23:03.091Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "030cfefc5690c0b7a59b-08cc0c935aaf812879cc",
+          "file": "progress06d1.spec.ts",
+          "line": 6,
+          "column": 3
+        },
+        {
+          "title": "D1WEB real saved mistake and correction update progress without acquiring mastery",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1196,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T09:23:04.852Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "030cfefc5690c0b7a59b-c859b987e3aee4bfb7da",
+          "file": "progress06d1.spec.ts",
+          "line": 40,
+          "column": 1
+        },
+        {
+          "title": "D1WEB keyboard navigation reload and direct route never unlock learning",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 860,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T09:23:06.058Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "030cfefc5690c0b7a59b-cae713f704c83cca3e78",
+          "file": "progress06d1.spec.ts",
+          "line": 86,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "verification05b.spec.ts",
+      "file": "verification05b.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "BWEB07 new profile, plan and nonadjacent declarations survive reopening without filling gaps",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1486,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T09:23:06.948Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7f7493b6f9f49bbaffbd-fa849a7d273e9bda9644",
+          "file": "verification05b.spec.ts",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "BWEB08 usual and today-only budgets persist as separate values",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1239,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T09:23:08.442Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7f7493b6f9f49bbaffbd-dba7cf60f7abe9c91034",
+          "file": "verification05b.spec.ts",
+          "line": 78,
+          "column": 1
+        },
+        {
+          "title": "BWEB09 direct learning routes keep training, recall and reader controls out of the DOM",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1003,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T09:23:09.693Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7f7493b6f9f49bbaffbd-de5754576dcbb23dbc42",
+          "file": "verification05b.spec.ts",
+          "line": 117,
+          "column": 1
+        },
+        {
+          "title": "BWEB10 direct service commands cannot bypass the Quran gate or create learning events",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 524,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T09:23:10.709Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "service-gate-rejections",
+                      "contentType": "application/json",
+                      "body": "ewogICJyZWplY3Rpb25zIjogWwogICAgewogICAgICAidHlwZSI6ICJzZXNzaW9uLnN0YXJ0IiwKICAgICAgImNvZGUiOiAiUkVMRUFTRV9HQVRFU19CTE9DS0VEIgogICAgfSwKICAgIHsKICAgICAgInR5cGUiOiAic2Vzc2lvbi5yZXBlYXQiLAogICAgICAiY29kZSI6ICJSRUxFQVNFX0dBVEVTX0JMT0NLRUQiCiAgICB9LAogICAgewogICAgICAidHlwZSI6ICJzZXNzaW9uLnN0YXJ0UmVjYWxsIiwKICAgICAgImNvZGUiOiAiUkVMRUFTRV9HQVRFU19CTE9DS0VEIgogICAgfSwKICAgIHsKICAgICAgInR5cGUiOiAic2Vzc2lvbi5wYXVzZSIsCiAgICAgICJjb2RlIjogIlJFTEVBU0VfR0FURVNfQkxPQ0tFRCIKICAgIH0sCiAgICB7CiAgICAgICJ0eXBlIjogInNlc3Npb24ucmVzdW1lIiwKICAgICAgImNvZGUiOiAiUkVMRUFTRV9HQVRFU19CTE9DS0VEIgogICAgfSwKICAgIHsKICAgICAgInR5cGUiOiAic2Vzc2lvbi5lbmQiLAogICAgICAiY29kZSI6ICJSRUxFQVNFX0dBVEVTX0JMT0NLRUQiCiAgICB9LAogICAgewogICAgICAidHlwZSI6ICJzZXNzaW9uLnJlc3RhcnRSZWNhbGwiLAogICAgICAiY29kZSI6ICJSRUxFQVNFX0dBVEVTX0JMT0NLRUQiCiAgICB9LAogICAgewogICAgICAidHlwZSI6ICJzZXNzaW9uLmZpbmlzaGVkQmVmb3JlU3RvcCIsCiAgICAgICJjb2RlIjogIlJFTEVBU0VfR0FURVNfQkxPQ0tFRCIKICAgIH0sCiAgICB7CiAgICAgICJ0eXBlIjogImF0dGVtcHQuaGludCIsCiAgICAgICJjb2RlIjogIlJFTEVBU0VfR0FURVNfQkxPQ0tFRCIKICAgIH0sCiAgICB7CiAgICAgICJ0eXBlIjogImF0dGVtcHQucmV2ZWFsIiwKICAgICAgImNvZGUiOiAiUkVMRUFTRV9HQVRFU19CTE9DS0VEIgogICAgfSwKICAgIHsKICAgICAgInR5cGUiOiAiYXR0ZW1wdC5maW5pc2giLAogICAgICAiY29kZSI6ICJSRUxFQVNFX0dBVEVTX0JMT0NLRUQiCiAgICB9LAogICAgewogICAgICAidHlwZSI6ICJhdHRlbXB0LmFzc2VzcyIsCiAgICAgICJjb2RlIjogIlJFTEVBU0VfR0FURVNfQkxPQ0tFRCIKICAgIH0KICBdLAogICJiZWZvcmVSZXZpc2lvbiI6IDEsCiAgImFmdGVyUmV2aXNpb24iOiAxLAogICJiZWZvcmVFdmVudHMiOiAxLAogICJhZnRlckV2ZW50cyI6IDEsCiAgInJhd0V2ZW50c1VuY2hhbmdlZCI6IHRydWUsCiAgInNlc3Npb24iOiBudWxsLAogICJhdHRlbXB0cyI6IDAKfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7f7493b6f9f49bbaffbd-6de0ca3bbd003d3e754a",
+          "file": "verification05b.spec.ts",
+          "line": 135,
+          "column": 1
+        },
+        {
+          "title": "BWEB11 forecast abstains and thirty untested parts do not acquire mastery",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 639,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T09:23:11.244Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7f7493b6f9f49bbaffbd-49ee1bee94f6a8300254",
+          "file": "verification05b.spec.ts",
+          "line": 220,
+          "column": 1
+        },
+        {
+          "title": "BWEB12 keyboard skip link, modal focus containment and Escape restore focus",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 575,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T09:23:11.893Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7f7493b6f9f49bbaffbd-c27a0b1644be65932f4f",
+          "file": "verification05b.spec.ts",
+          "line": 244,
+          "column": 1
+        },
+        {
+          "title": "BWEB13 invalid backup preserves preferences; confirmed full restore can be repeated",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1898,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T09:23:12.481Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7f7493b6f9f49bbaffbd-a0e516b03d6df98aa588",
+          "file": "verification05b.spec.ts",
+          "line": 276,
+          "column": 1
+        },
+        {
+          "title": "BWEB14 a reported mistake remains a local unverified draft after reopening",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1260,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T09:23:14.391Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7f7493b6f9f49bbaffbd-40c27d44ba76f201978a",
+          "file": "verification05b.spec.ts",
+          "line": 343,
+          "column": 1
+        },
+        {
+          "title": "BWEB15 enlarged text, reduced motion and dark preference persist at 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1472,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T09:23:15.664Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7f7493b6f9f49bbaffbd-b9aecf3b81371849f6b0",
+          "file": "verification05b.spec.ts",
+          "line": 373,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-07T09:22:34.298Z",
+    "duration": 43119.524,
+    "expected": 20,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

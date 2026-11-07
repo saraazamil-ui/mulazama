@@ -1,0 +1,78 @@
+{
+  "counts": {
+    "numTotalTests": 299,
+    "numPassedTests": 299,
+    "numFailedTests": 0,
+    "numPendingTests": 0,
+    "numTodoTests": 0,
+    "numTotalTestSuites": 34,
+    "numPassedTestSuites": 34,
+    "numFailedTestSuites": 0
+  },
+  "testFiles": 12,
+  "perFile": [
+    {
+      "file": "src/components.test.tsx",
+      "tests": 30
+    },
+    {
+      "file": "src/application/learning.test.ts",
+      "tests": 16
+    },
+    {
+      "file": "src/application/performance.test.mjs",
+      "tests": 1
+    },
+    {
+      "file": "src/application/service.test.ts",
+      "tests": 11
+    },
+    {
+      "file": "src/application/validation.test.ts",
+      "tests": 75
+    },
+    {
+      "file": "src/content/content-gate.test.ts",
+      "tests": 7
+    },
+    {
+      "file": "src/core/fsrs.test.ts",
+      "tests": 20
+    },
+    {
+      "file": "src/core/hme.test.ts",
+      "tests": 65
+    },
+    {
+      "file": "src/domain/domain.test.ts",
+      "tests": 33
+    },
+    {
+      "file": "src/persistence/backup.test.ts",
+      "tests": 13
+    },
+    {
+      "file": "src/persistence/event-store.test.ts",
+      "tests": 18
+    },
+    {
+      "file": "src/platform/platform.test.ts",
+      "tests": 10
+    }
+  ],
+  "sameCaseNamesAs05A": false,
+  "oldCounts": {
+    "numTotalTests": 299,
+    "numPassedTests": 299,
+    "numFailedTests": 0,
+    "numPendingTests": 0,
+    "numTodoTests": 0,
+    "numTotalTestSuites": 34,
+    "numPassedTestSuites": 34,
+    "numFailedTestSuites": 0
+  },
+  "rawNote": "Vitest numTotalTestSuites=34 includes describe groupings; actual files=12. Do not count 34 as files.",
+  "caseNameComparison": "sets per file; invocation order can vary",
+  "sameCaseNamesAs05AAfterRuntimeDateFixtureNormalization": true,
+  "caseNameDifferenceDetails": "One ES13 parameterized Date fixture interpolates current local Date into fullName; only its runtime timestamp differs. Test names and source were not edited."
+}

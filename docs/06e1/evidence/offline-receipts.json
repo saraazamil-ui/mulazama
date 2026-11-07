@@ -1,0 +1,27 @@
+[
+  {
+    "name": "E1-offline-memory-receipt",
+    "data": {
+      "networkDisabled": true,
+      "rawEvents": 7,
+      "rawUnchanged": true,
+      "deterministicMemoryAndCorrectedCore": true,
+      "executable": false,
+      "migrated": false,
+      "harness": "source module compiled into test only; actual built app shell and IndexedDB reopened offline"
+    }
+  },
+  {
+    "name": "offline-history-receipt.json",
+    "data": {
+      "syntheticDataOnly": true,
+      "networkDisabled": true,
+      "initialEvents": 7,
+      "correctedEvents": 8,
+      "finalEvents": 9,
+      "priorEventsUnchanged": true,
+      "repeatedCorrectionCountedOnce": true,
+      "blockedSession": true
+    }
+  }
+]

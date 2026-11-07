@@ -1,0 +1,49 @@
+{
+  "product": "MULAZAMA",
+  "phase": "05-B",
+  "generatedAt": "2026-11-05T13:01:30.157415+00:00",
+  "gate": "G04",
+  "status": "Blocked",
+  "databaseSchemaVersion": 3,
+  "encryptedRowFormat": "aes-gcm-v1",
+  "headEncryptedFormat": 2,
+  "commandIndexFormat": "utf16-v1",
+  "unitVerification": {
+    "command": "node node_modules/vitest/vitest.mjs run src/persistence/event-store.test.ts src/persistence/event-store05b.test.ts",
+    "environment": "Node v24.22.1 / Vitest 3.2.4 / JSDOM / MemoryEventStore reference and pure validators",
+    "passed": 33,
+    "failed": 0,
+    "skipped": 0,
+    "log": "persistence-regression-after.txt",
+    "provesActualIndexedDb": false
+  },
+  "initialRegression": {
+    "passed": 1,
+    "failed": 9,
+    "log": "persistence-regression-before.txt"
+  },
+  "actualIndexedDb": {
+    "checksDefined": 21,
+    "checksRun": 0,
+    "status": "Not Verified",
+    "runner": "src/persistence/browser-tests05b.ts#runPersistence05BChecks",
+    "blocker": "Permitted browser runtime unavailable; Playwright local server denied EPERM at 127.0.0.1:4173",
+    "evidence": "baseline/browser-e2e.log"
+  },
+  "syntheticStress": {
+    "eventCount": 20000,
+    "executed": false,
+    "representsMeasuredRealUsage": false,
+    "runner": "src/persistence/browser-tests05b.ts#measureSyntheticIndexedDb05B"
+  },
+  "physicalPowerLossTested": false,
+  "nativePlatformsTested": false,
+  "approval": null,
+  "sourceSha256": {
+    "src/persistence/event-store.ts": "aed36f864bce33ef68d19e479c68ec00fa30e68614aae5907e0264e24c37aea9",
+    "src/persistence/event-store05b.test.ts": "1976309429558c2f32e0f370c3f2777625ad846bff948d24dccd91d55917b6b8",
+    "src/persistence/browser-tests.ts": "e650517ca0c8d2c88b4b1f5c4d325942f35cb5029a3c2e15bc1440b96c0aff0d",
+    "src/persistence/browser-tests05b.ts": "86d13c872852b1bd8a2d7daf2641e76e8af9ea598b181ea16e773658ed457fe3",
+    "docs/05b/Persistence-Recovery-Report.md": "0ffd7cb8d9a50202e05156648f719675918f39802049ad7ba732a69b9d44f666"
+  }
+}

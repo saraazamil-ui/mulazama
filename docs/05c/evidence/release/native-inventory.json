@@ -1,0 +1,41 @@
+{
+  "checkedAt": "2026-11-05T13:43:20Z",
+  "commands": [
+    {
+      "command": "xcode-select -p",
+      "exitCode": 0,
+      "output": "/Library/Developer/CommandLineTools\n"
+    },
+    {
+      "command": "xcodebuild -version",
+      "exitCode": 1,
+      "output": "xcode-select: error: tool 'xcodebuild' requires Xcode, but active developer directory '/Library/Developer/CommandLineTools' is a command line tools instance\n"
+    },
+    {
+      "command": "adb version",
+      "exitCode": 127,
+      "output": "/bin/sh: adb: command not found\n"
+    },
+    {
+      "command": "sdkmanager --version",
+      "exitCode": 127,
+      "output": "/bin/sh: sdkmanager: command not found\n"
+    },
+    {
+      "command": "java -version",
+      "exitCode": 1,
+      "output": "The operation couldn\u2019t be completed. Unable to locate a Java Runtime.\nPlease visit http://www.java.com for information on installing Java.\n\n"
+    },
+    {
+      "command": "command -v gradle",
+      "exitCode": 1,
+      "output": ""
+    }
+  ],
+  "paths": {
+    "/Applications/Xcode.app": false,
+    "/Applications/Android Studio.app": false,
+    "/Users/saalzamil/Library/Android/sdk": false
+  },
+  "projectFiles": []
+}

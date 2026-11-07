@@ -1,0 +1,27 @@
+{
+  "acquiredVia": "HTTPS fetch in available node runtime; shell DNS separately failed",
+  "registryUrl": "https://registry.npmjs.org/ts-fsrs/5.4.2",
+  "attestationUrl": "https://registry.npmjs.org/-/npm/v1/attestations/ts-fsrs@5.4.2",
+  "files": [
+    {
+      "path": "references/ts-fsrs-5.4.2-download/attestations.json",
+      "bytes": 15053,
+      "sha256": "88686b2944a51aa7a0ad4d3d27aff570c163b63d73ce2d883d5b7247ac6f5419"
+    },
+    {
+      "path": "references/ts-fsrs-5.4.2-download/commit.json",
+      "bytes": 5485,
+      "sha256": "f9885a9cf751a192ad63c47eb24a01f80ba385f07fa3d7ec4512c5551f1e5b3a"
+    },
+    {
+      "path": "references/ts-fsrs-5.4.2-download/registry.json",
+      "bytes": 3091,
+      "sha256": "2ad12064580af88e76a6473956176547cff5521d76c9bcef958dac69ae58284b"
+    },
+    {
+      "path": "references/ts-fsrs-5.4.2-download/ts-fsrs-5.4.2.tgz",
+      "bytes": 150324,
+      "sha256": "f91a53b58c7269db5528ad420208217384be610a4146a137b85dcaa07e3301cb"
+    }
+  ]
+}

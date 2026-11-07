@@ -1,0 +1,3 @@
+src/conformance/fsrs-reference-probe.ts(9,70): error TS2322: Type 'FsrsState' is not assignable to type '{ model: "FSRS-6"; algorithmVersion: "hme-fsrs6-ts542-round8-0.1.0"; stability: number; difficulty: number; lastReviewAt: string; }'.
+  Types of property 'algorithmVersion' are incompatible.
+    Type 'string' is not assignable to type '"hme-fsrs6-ts542-round8-0.1.0"'.

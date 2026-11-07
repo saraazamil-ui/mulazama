@@ -1,0 +1,33 @@
+
+ RUN  v3.2.4 /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-05b
+
+ ✓ src/persistence/backup.test.ts > C12 authenticated portable backup > B01 encrypts raw history and round-trips its identities, timestamps and versions 58ms
+ ✓ src/persistence/backup05b.test.ts > 05-B C12 schema preservation and fail-closed imports > BK05B01 rejects Date payloads rather than silently exporting their value as {} 1ms
+ ✓ src/persistence/backup05b.test.ts > 05-B C12 schema preservation and fail-closed imports > BK05B01 rejects Map payloads rather than silently exporting their value as {} 0ms
+ ✓ src/persistence/backup05b.test.ts > 05-B C12 schema preservation and fail-closed imports > BK05B02 rejects unsupported JSON values before producing a backup 0ms
+ ✓ src/persistence/backup05b.test.ts > 05-B C12 schema preservation and fail-closed imports > BK05B03 rejects cycles with a domain error rather than a stack overflow 0ms
+ ✓ src/persistence/backup05b.test.ts > 05-B C12 schema preservation and fail-closed imports > BK05B04 rejects unauthenticated additional file metadata 0ms
+ ✓ src/persistence/backup05b.test.ts > 05-B C12 schema preservation and fail-closed imports > BK05B05 accepts exact supported envelopes and rejects unknown snapshot fields or versions 0ms
+ ✓ src/persistence/backup05b.test.ts > 05-B C12 schema preservation and fail-closed imports > BK05B06 rejects malformed restore options before any replacement 0ms
+ ✓ src/persistence/backup05b.test.ts > 05-B C12 schema preservation and fail-closed imports > BK05B07 rejects ill-formed UTF-16 recovery secrets rather than aliasing their bytes 0ms
+ ✓ src/persistence/backup05b.test.ts > 05-B C12 schema preservation and fail-closed imports > BK05B08 counts recovery-secret Unicode code points 0ms
+ ✓ src/persistence/backup.test.ts > C12 authenticated portable backup > B02 never mutates live history for a wrong recovery secret 58ms
+ ✓ src/persistence/backup.test.ts > C12 authenticated portable backup > B03 detects ciphertext tampering before the replacement boundary 57ms
+ ✓ src/persistence/backup05b.test.ts > 05-B C12 schema preservation and fail-closed imports > BK05B09 rejects authenticated malformed UTF-8 before a replacement 114ms
+ ✓ src/persistence/backup.test.ts > C12 authenticated portable backup > B04 authenticates header metadata as well as encrypted event bytes 57ms
+ ✓ src/persistence/backup.test.ts > C12 authenticated portable backup > B05 rejects a truncated file and unsupported protection versions 0ms
+ ✓ src/persistence/backup.test.ts > C12 authenticated portable backup > B06 duplicate identities and unavailable model/content versions cannot be imported 1ms
+ ✓ src/persistence/backup.test.ts > C12 authenticated portable backup > B07 restoration requires explicit full replacement confirmation 0ms
+ ✓ src/persistence/backup05b.test.ts > 05-B C12 schema preservation and fail-closed imports > BK05B10 rejects unknown authenticated payloads and repeated HME commands before replacement 294ms
+ ✓ src/persistence/backup.test.ts > C12 authenticated portable backup > B08 replaces instead of merging and a repeated restore does not duplicate events 119ms
+ ✓ src/persistence/backup.test.ts > C12 authenticated portable backup > B09 failed event replay does not start a replacement 58ms
+ ✓ src/persistence/backup.test.ts > C12 authenticated portable backup > B10 failed atomic write retains the entire previous dataset 58ms
+ ✓ src/persistence/backup.test.ts > C12 authenticated portable backup > B11 a concurrent write after inspection is protected by the current revision 57ms
+ ✓ src/persistence/backup.test.ts > C12 authenticated portable backup > B12 enforces the documented recovery secret constraint 0ms
+ ✓ src/persistence/backup.test.ts > C12 authenticated portable backup > B13 fresh salt and nonce prevent deterministic ciphertext for identical snapshots 100ms
+
+ Test Files  2 passed (2)
+      Tests  24 passed (24)
+   Start at  16:00:36
+   Duration  1.03s (transform 99ms, setup 121ms, collect 155ms, tests 1.29s, environment 0ms, prepare 73ms)
+

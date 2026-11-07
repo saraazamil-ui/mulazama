@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "mulazama-human-content-review/1",
+  "product": "MULAZAMA",
+  "status": "pending",
+  "contentVersion": null,
+  "editionId": null,
+  "manifestSha256": null,
+  "sourceByteSha256": null,
+  "reviewer": { "name": null, "qualifications": null, "organization": null, "independenceStatement": null },
+  "reviewStartedAt": null,
+  "reviewCompletedAt": null,
+  "dimensions": {
+    "text": null,
+    "riwayaAndTariq": null,
+    "script": null,
+    "diacriticsAndPauseMarks": null,
+    "numberingAndBasmala": null,
+    "surahAndAyahBoundaries": null,
+    "tokenization": null,
+    "waqfAndIbtidaUnitBoundaries": null,
+    "editionPagesJuzHizbQuarters": null,
+    "independentReferenceAndDifferences": null,
+    "licensesAndAttribution": null,
+    "fontRightsAndRendering": null,
+    "audioAndAlignmentIfIncluded": null
+  },
+  "unresolvedDifferences": null,
+  "decision": null,
+  "signature": null,
+  "activationEffect": "none-template-only"
+}

@@ -1,0 +1,1 @@
+Historical 04-B prototype browser scenarios. These require the original 04-B prototype entry, LocalStorage fixtures and engineering lab controls. They are archived as source evidence, excluded from 05-A production testDir=e2e, and do not describe current production acceptance. Re-run original package tests from the retained itqan-04b baseline.

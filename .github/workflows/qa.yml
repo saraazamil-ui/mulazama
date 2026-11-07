@@ -1,0 +1,29 @@
+name: MULAZAMA engineering QA
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  web-core:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.25.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm check
+      - run: pnpm test --reporter=json --outputFile=test-results/unit-results.json
+      - run: pnpm security:check
+      - run: pnpm build
+      - run: pnpm test:e2e
+      - run: pnpm test:offline
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: MULAZAMA-web-evidence
+          path: |
+            test-results/
+            playwright-report/

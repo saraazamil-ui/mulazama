@@ -1,0 +1,36 @@
+[2m[WebServer] [22m(node:20873) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 20 tests using 1 worker
+
+(node:20875) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:20875) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 e2e/database.spec.ts:2:1 › BWEB01 IndexedDB: 21 encrypted transaction, migration, corruption, concurrency and restore checks (991ms)
+  ✓   2 e2e/production.spec.ts:5:1 › BWEB02 identity, real settings persistence and content gate (883ms)
+  ✓   3 e2e/production.spec.ts:33:1 › BWEB03 encrypted backup inspection rejects wrong password and cancellation preserves data (1.0s)
+  ✓   4 e2e/production.spec.ts:68:3 › BWEB04 responsive RTL and automated accessibility 320px (5.9s)
+  ✓   5 e2e/production.spec.ts:68:3 › BWEB05 responsive RTL and automated accessibility 390px (7.5s)
+  ✓   6 e2e/production.spec.ts:68:3 › BWEB06 responsive RTL and automated accessibility 1440px (7.4s)
+  ✓   7 e2e/progress06d1.spec.ts:6:3 › D1WEB responsive RTL and accessible progress 320px (1.4s)
+  ✓   8 e2e/progress06d1.spec.ts:6:3 › D1WEB responsive RTL and accessible progress 390px (1.5s)
+  ✓   9 e2e/progress06d1.spec.ts:6:3 › D1WEB responsive RTL and accessible progress 1440px (1.8s)
+  ✓  10 e2e/progress06d1.spec.ts:40:1 › D1WEB real saved mistake and correction update progress without acquiring mastery (1.2s)
+  ✓  11 e2e/progress06d1.spec.ts:86:1 › D1WEB keyboard navigation reload and direct route never unlock learning (860ms)
+  ✓  12 e2e/verification05b.spec.ts:6:1 › BWEB07 new profile, plan and nonadjacent declarations survive reopening without filling gaps (1.5s)
+  ✓  13 e2e/verification05b.spec.ts:78:1 › BWEB08 usual and today-only budgets persist as separate values (1.2s)
+  ✓  14 e2e/verification05b.spec.ts:117:1 › BWEB09 direct learning routes keep training, recall and reader controls out of the DOM (1.0s)
+  ✓  15 e2e/verification05b.spec.ts:135:1 › BWEB10 direct service commands cannot bypass the Quran gate or create learning events (524ms)
+  ✓  16 e2e/verification05b.spec.ts:220:1 › BWEB11 forecast abstains and thirty untested parts do not acquire mastery (639ms)
+  ✓  17 e2e/verification05b.spec.ts:244:1 › BWEB12 keyboard skip link, modal focus containment and Escape restore focus (575ms)
+  ✓  18 e2e/verification05b.spec.ts:276:1 › BWEB13 invalid backup preserves preferences; confirmed full restore can be repeated (1.9s)
+  ✓  19 e2e/verification05b.spec.ts:343:1 › BWEB14 a reported mistake remains a local unverified draft after reopening (1.3s)
+  ✓  20 e2e/verification05b.spec.ts:373:1 › BWEB15 enlarged text, reduced motion and dark preference persist at 320px (1.5s)
+
+  20 passed (43.1s)
+
+To open last HTML report run:
+[36m[39m
+[36m  npx playwright show-report[39m
+[36m[39m

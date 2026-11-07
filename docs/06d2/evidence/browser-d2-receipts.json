@@ -1,0 +1,41 @@
+[
+  {
+    "test": "D2WEB01 main reads persisted HME history and reopening preserves exact raw facts without enabling ratios",
+    "name": "history-reload-receipt",
+    "receipt": {
+      "eventCount": 7,
+      "revision": 2,
+      "unchangedAfterReopen": true,
+      "completedSessions": 1
+    }
+  },
+  {
+    "test": "D2WEB02 a valid historical correction recomputes the original day and an identical append retry cannot double count",
+    "name": "corrected-original-day-receipt",
+    "receipt": {
+      "originalDate": "2026-11-06T09:41:32.564Z",
+      "finalEventCount": 8,
+      "correctionCount": 1,
+      "completedSessions": 0,
+      "unchangedRetry": true
+    }
+  },
+  {
+    "test": "D2WEB03 stored history never authorizes blocked routes or internal learning commands",
+    "name": "history-does-not-authorize-learning",
+    "receipt": {
+      "rejectedCode": "RELEASE_GATES_BLOCKED",
+      "learningEventsUnchanged": true,
+      "reviewDue": null
+    }
+  },
+  {
+    "test": "D2WEB04 semantic corruption is rejected without deleting history or creating a fallback profile",
+    "name": "corruption-preservation-receipt",
+    "receipt": {
+      "eventCount": 7,
+      "unchangedAfterTwoFailedOpens": true,
+      "profileInitializations": 1
+    }
+  }
+]

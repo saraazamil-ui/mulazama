@@ -1,0 +1,21 @@
+[2m[WebServer] [22m(node:22310) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 5 tests using 1 worker
+
+(node:22312) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:22312) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 e2e/phase06d2.spec.ts:52:1 › D2WEB01 main reads persisted HME history and reopening preserves exact raw facts without enabling ratios (1.7s)
+  ✓  2 e2e/phase06d2.spec.ts:79:1 › D2WEB02 a valid historical correction recomputes the original day and an identical append retry cannot double count (1.3s)
+  ✓  3 e2e/phase06d2.spec.ts:156:1 › D2WEB03 stored history never authorizes blocked routes or internal learning commands (1.0s)
+  ✓  4 e2e/phase06d2.spec.ts:207:1 › D2WEB04 semantic corruption is rejected without deleting history or creating a fallback profile (989ms)
+  ✓  5 e2e/phase06d2.spec.ts:249:1 › D2WEB05 populated progress at 320px supports RTL, keyboard and automated accessibility (1.3s)
+
+  5 passed (9.1s)
+
+To open last HTML report run:
+[36m[39m
+[36m  npx playwright show-report[39m
+[36m[39m

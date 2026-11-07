@@ -1,0 +1,8 @@
+Listing tests:
+  database.spec.ts:2:1 › IndexedDB: real encrypted transactions, migration, corruption, concurrency and atomic restore
+  production.spec.ts:5:1 › 05A identity, real settings persistence and content gate
+  production.spec.ts:27:1 › 05A encrypted backup inspection and explicit replace
+  production.spec.ts:62:3 › 05A responsive RTL and automated accessibility 320px
+  production.spec.ts:62:3 › 05A responsive RTL and automated accessibility 390px
+  production.spec.ts:62:3 › 05A responsive RTL and automated accessibility 1440px
+Total: 6 tests in 2 files

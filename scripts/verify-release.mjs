@@ -1,0 +1,17 @@
+import {readFile,mkdir,writeFile} from 'node:fs/promises';
+import {createRequire} from 'node:module';
+import {resolve,dirname} from 'node:path';
+const require=createRequire(import.meta.url),{build}=await import(createRequire(require.resolve('vite')).resolve('esbuild'));
+const compiled=await build({stdin:{contents:"export * from './src/release/gates';export { BUILD_SOURCE_DIGEST } from './src/release/build-context.generated';export { LEARNING_VERSIONS,canonical } from './src/core/types';",resolveDir:process.cwd(),loader:'ts'},bundle:true,platform:'node',format:'esm',write:false,logLevel:'silent'});
+const {evaluateRelease,sha256,TRUSTED_RELEASE_AUTHORITIES,LEARNING_VERSIONS,canonical,BUILD_SOURCE_DIGEST}=await import(`data:text/javascript;base64,${Buffer.from(compiled.outputFiles[0].text).toString('base64')}`);
+const input=JSON.parse(await readFile('src/release/release-input.json','utf8'));
+const args=process.argv.slice(2),arg=name=>{const i=args.indexOf(name);return i<0?null:args[i+1];};
+const platform=arg('--platform')??'web';
+const phase=arg('--phase')??'05-B';
+if(!/^05-[A-Z]$/.test(phase))throw new Error('Invalid phase identifier');
+const context={product:'MULAZAMA',environment:'production',purpose:'production',platform,sourceDigest:BUILD_SOURCE_DIGEST,versionsDigest:await sha256(canonical(LEARNING_VERSIONS)),contentManifestHash:input.contentManifestHash,unitCatalogHash:await sha256(canonical(input.unitCatalog))};
+const gates=await evaluateRelease(context,input.bundle,TRUSTED_RELEASE_AUTHORITIES);
+const report={schemaVersion:1,product:'MULAZAMA',phase,checkedAt:new Date().toISOString(),context,gates,productionReady:gates.every(x=>x.status==='passed'),decision:gates.every(x=>x.status==='passed')?'requires-separate-public-release-review':'غير جاهز.',trustAnchorCount:TRUSTED_RELEASE_AUTHORITIES.length};
+const output=resolve(arg('--output')??'docs/05b/evidence/release-gates.json');
+await mkdir(dirname(output),{recursive:true});await writeFile(output,JSON.stringify(report,null,2)+'\n');
+console.log(JSON.stringify(report,null,2));process.exitCode=report.productionReady?0:2;

@@ -1,0 +1,17 @@
+{
+  "nativeProjectFiles": [],
+  "bundledFontFiles": [],
+  "bundledAudioFiles": [],
+  "knownSDKLocations": {
+    "/Applications/Xcode.app": false,
+    "/Applications/Android Studio.app": false,
+    "/Users/saalzamil/Library/Android/sdk": false,
+    "/opt/homebrew/share/android-commandlinetools": false
+  },
+  "environmentSDKHintsPresent": {
+    "ANDROID_HOME": false,
+    "ANDROID_SDK_ROOT": false,
+    "JAVA_HOME": false,
+    "DEVELOPER_DIR": false
+  }
+}

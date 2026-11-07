@@ -1,0 +1,13 @@
+{
+  "phase": "06-D2",
+  "measured": true,
+  "blankOnReopen": false,
+  "actions": [
+    "replace known errors",
+    "enter correction reason",
+    "submit correction"
+  ],
+  "count": 3,
+  "corrections": 1,
+  "limitations": "Component + real service/store, synthetic units; filling a field is one semantic action."
+}

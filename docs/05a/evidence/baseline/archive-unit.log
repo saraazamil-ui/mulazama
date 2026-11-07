@@ -1,0 +1,51 @@
+
+ RUN  v3.2.4 /private/tmp/mulazama-baseline/archive/itqan-04b
+
+ ✓ src/domain/domain.test.ts > declarations preserve scope and missingness > R04 preserves separated selections without filling earlier or intervening ranges 16ms
+ ✓ src/domain/domain.test.ts > declarations preserve scope and missingness > deduplicates overlap only on same explicit axis; never merges pages across layouts 1ms
+ ✓ src/domain/domain.test.ts > declarations preserve scope and missingness > accepts all declaration kinds but rejects reversed bounds, missing edition and invalid structural inputs 0ms
+ ✓ src/domain/domain.test.ts > declarations preserve scope and missingness > cross-kind union never invents Quran coverage 0ms
+ ✓ src/domain/domain.test.ts > safe interaction state > today-only budget preserves habitual time, days, attempts and corrections 0ms
+ ✓ src/domain/domain.test.ts > safe interaction state > today override survives storage and reset clears it 1ms
+ ✓ src/domain/domain.test.ts > safe interaction state > rejects malformed today budgets without modifying saved state 0ms
+ ✓ src/domain/domain.test.ts > safe interaction state > day boundary follows Riyadh instead of the host timezone 28ms
+ ✓ src/domain/domain.test.ts > safe interaction state > R03 rejects invalid config and retains previous state; zero today is accepted 1ms
+ ✓ src/domain/domain.test.ts > safe interaction state > R08/R09 repetition is idempotent and never creates a recall or mastery 0ms
+ ✓ src/domain/domain.test.ts > safe interaction state > R10 starts review with hidden reference and unknown errors, never default zero 0ms
+ ✓ src/domain/domain.test.ts > safe interaction state > R11 hints + easy remain raw conflicting report, with no effective rating or review event 1ms
+ ✓ src/domain/domain.test.ts > safe interaction state > R12 incomplete mistake survives dialog cancellation and blocks zero-error assumption 0ms
+ ✓ src/domain/domain.test.ts > safe interaction state > R22 interrupted recall creates new attempt and preserves original incomplete record 0ms
+ ✓ src/domain/domain.test.ts > safe interaction state > S10 prior completion keeps time uncertainty even after explicit assessment 0ms
+ ✓ src/domain/domain.test.ts > safe interaction state > R25 correcting preserves original snapshot and does not create another attempt 0ms
+ ✓ src/domain/domain.test.ts > safe interaction state > ending without assessment preserves incomplete, not memory failure 0ms
+ ✓ src/domain/domain.test.ts > safe interaction state > C03 retains outside review as a report without inventing review events 0ms
+ ✓ src/domain/domain.test.ts > safe interaction state > reset removes learning and command receipts, retains preferences/config with new identity 0ms
+ ✓ src/domain/domain.test.ts > prototype persistence safety > R21/R22 roundtrip preserves confirmed counter and paused state 0ms
+ ✓ src/domain/domain.test.ts > prototype persistence safety > reloading active recall preserves its marker but requires S10 before more recitation 0ms
+ ✓ src/domain/domain.test.ts > prototype persistence safety > R23 corrupt or foreign import cannot modify current storage 0ms
+ ✓ src/domain/domain.test.ts > prototype persistence safety > accepts explicit prototype backup envelope and rejects foreign wrapper versions 0ms
+ ✓ src/domain/domain.test.ts > prototype persistence safety > rejects broken references rather than creating dangling session or correction 0ms
+ ✓ src/domain/domain.test.ts > prototype persistence safety > write failure returns failure and leaves committed version intact 0ms
+ ✓ src/domain/domain.test.ts > prototype persistence safety > invalid stored value is retained for recovery, never overwritten on load 0ms
+ ✓ src/domain/domain.test.ts > contract boundary fixtures > C04 uses matching day budget, preserves zero-day deferred source obligations, and ignores old override 0ms
+ ✓ src/domain/domain.test.ts > contract boundary fixtures > has exact C01–C14 names and no real content, audio, model, or forecast 0ms
+ ✓ src/domain/domain.test.ts > contract boundary fixtures > C04 fixture plans retain original due date independently of allocation 1ms
+ ✓ src/domain/domain.test.ts > contract boundary fixtures > a saved task interaction advances prototype workflow without creating mastery or closing due dates 0ms
+ ✓ src/domain/domain.test.ts > contract boundary fixtures > AC-S02 maintenance and complete Quran personas never receive new tasks 0ms
+ ✓ src/domain/domain.test.ts > contract boundary fixtures > AC02 beginner without declared memory starts new-training demo and has no invented repair or diagnostic 0ms
+ ✓ src/domain/domain.test.ts > contract boundary fixtures > forecast preview never mutates configuration 0ms
+ ✓ src/components.test.tsx > accessible interactive components > Field gives an editable input a programmatic label usable by keyboard 94ms
+ ✓ src/components.test.tsx > accessible interactive components > Field labels a select so its current choice is observable 18ms
+ ✓ src/components.test.tsx > accessible interactive components > disabled action cannot trigger mutations and is skipped in keyboard order 21ms
+ ✓ src/components.test.tsx > accessible interactive components > ordinary Button inside a form does not accidentally submit or reload the form 20ms
+ ✓ src/components.test.tsx > accessible interactive components > Notice exposes errors as alerts while informational content does not interrupt 11ms
+ ✓ src/components.test.tsx > accessible interactive components > Heading provides one focusable h1 and a usable named back action 18ms
+ ✓ src/components.test.tsx > accessible interactive components > Empty state offers a meaningful recovery action without implying success 10ms
+ ✓ src/components.test.tsx > App persistence guard integration > unreadable stored state cannot be overwritten by settings even after dismissing the error 136ms
+
+ Test Files  2 passed (2)
+      Tests  41 passed (41)
+   Start at  13:31:31
+   Duration  1.17s (transform 173ms, setup 125ms, collect 387ms, tests 385ms, environment 524ms, prepare 87ms)
+
+JSON report written to /tmp/mulazama-baseline/archive-unit-results.json

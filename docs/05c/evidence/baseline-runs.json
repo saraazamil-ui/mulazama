@@ -1,0 +1,66 @@
+[
+  {
+    "name": "environment",
+    "command": "node --version; uname -a; python3 --version",
+    "exitCode": 0,
+    "startedAt": 1793885935.160108,
+    "durationSeconds": 0.027676820755004883,
+    "log": "environment.log"
+  },
+  {
+    "name": "dns",
+    "command": "curl -I --connect-timeout 5 --max-time 10 https://registry.npmjs.org/ts-fsrs/5.4.2",
+    "exitCode": 6,
+    "startedAt": 1793885935.1879349,
+    "durationSeconds": 0.02639007568359375,
+    "log": "dns.log"
+  },
+  {
+    "name": "install",
+    "command": "node /tmp/mulazama-baseline/corepack/dist/corepack.js pnpm install --frozen-lockfile --store-dir /tmp/mulazama-05c-pnpm-store",
+    "exitCode": 1,
+    "startedAt": 1793885935.214467,
+    "durationSeconds": 0.026983976364135742,
+    "log": "install.log"
+  },
+  {
+    "name": "check",
+    "command": "node node_modules/typescript/bin/tsc -b",
+    "exitCode": 0,
+    "startedAt": 1793885935.241597,
+    "durationSeconds": 2.0654399394989014,
+    "log": "check.log"
+  },
+  {
+    "name": "tests",
+    "command": "node node_modules/vitest/vitest.mjs run --reporter=json --outputFile=docs/05c/evidence/baseline-tests.json",
+    "exitCode": 0,
+    "startedAt": 1793885937.30735,
+    "durationSeconds": 5.078842878341675,
+    "log": "tests.log"
+  },
+  {
+    "name": "security",
+    "command": "node scripts/security-check.mjs",
+    "exitCode": 0,
+    "startedAt": 1793885942.386674,
+    "durationSeconds": 0.05736494064331055,
+    "log": "security.log"
+  },
+  {
+    "name": "fsrs",
+    "command": "node scripts/fsrs-conformance.mjs --output docs/05c/evidence/fsrs-conformance.json",
+    "exitCode": 2,
+    "startedAt": 1793885942.444308,
+    "durationSeconds": 0.07767009735107422,
+    "log": "fsrs.log"
+  },
+  {
+    "name": "readiness",
+    "command": "node scripts/readiness.mjs",
+    "exitCode": 2,
+    "startedAt": 1793885942.522542,
+    "durationSeconds": 0.07910418510437012,
+    "log": "readiness.log"
+  }
+]

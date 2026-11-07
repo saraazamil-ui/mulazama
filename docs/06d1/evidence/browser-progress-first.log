@@ -1,0 +1,498 @@
+[2m[WebServer] [22m(node:19722) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 5 tests using 1 worker
+
+(node:19732) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:19732) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 e2e/progress06d1.spec.ts:6:3 › D1WEB responsive RTL and accessible progress 320px (2.1s)
+(node:19764) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:19764) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 e2e/progress06d1.spec.ts:6:3 › D1WEB responsive RTL and accessible progress 390px (1.5s)
+(node:19786) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:19786) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  3 e2e/progress06d1.spec.ts:6:3 › D1WEB responsive RTL and accessible progress 1440px (1.3s)
+(node:19808) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:19808) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  4 e2e/progress06d1.spec.ts:40:1 › D1WEB real saved mistake and correction update progress without acquiring mastery (30.1s)
+(node:19917) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:19917) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  5 e2e/progress06d1.spec.ts:82:1 › D1WEB keyboard navigation reload and direct route never unlock learning (7.2s)
+
+
+  1) e2e/progress06d1.spec.ts:6:3 › D1WEB responsive RTL and accessible progress 320px ─────────────
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  -  1[39m
+    [31m+ Received  + 91[39m
+
+    [32m- Array [][39m
+    [31m+ Array [[39m
+    [31m+   Object {[39m
+    [31m+     "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",[39m
+    [31m+     "help": "Elements must meet minimum color contrast ratio thresholds",[39m
+    [31m+     "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=playwright",[39m
+    [31m+     "id": "color-contrast",[39m
+    [31m+     "impact": "serious",[39m
+    [31m+     "nodes": Array [[39m
+    [31m+       Object {[39m
+    [31m+         "all": Array [],[39m
+    [31m+         "any": Array [[39m
+    [31m+           Object {[39m
+    [31m+             "data": Object {[39m
+    [31m+               "bgColor": "#f6f5ef",[39m
+    [31m+               "contrastRatio": 3.69,[39m
+    [31m+               "expectedContrastRatio": "4.5:1",[39m
+    [31m+               "fgColor": "#728371",[39m
+    [31m+               "fontSize": "6.9pt (9.24px)",[39m
+    [31m+               "fontWeight": "normal",[39m
+    [31m+               "messageKey": null,[39m
+    [31m+             },[39m
+    [31m+             "id": "color-contrast",[39m
+    [31m+             "impact": "serious",[39m
+    [31m+             "message": "Element has insufficient color contrast of 3.69 (foreground color: #728371, background color: #f6f5ef, font size: 6.9pt (9.24px), font weight: normal). Expected contrast ratio of 4.5:1",[39m
+    [31m+             "relatedNodes": Array [[39m
+    [31m+               Object {[39m
+    [31m+                 "html": "<html lang=\"ar\" dir=\"rtl\" data-theme=\"light\" data-large=\"false\" data-motion=\"normal\">",[39m
+    [31m+                 "target": Array [[39m
+    [31m+                   "html",[39m
+    [31m+                 ],[39m
+    [31m+               },[39m
+    [31m+             ],[39m
+    [31m+           },[39m
+    [31m+         ],[39m
+    [31m+         "failureSummary": "Fix any of the following:[39m
+    [31m+   Element has insufficient color contrast of 3.69 (foreground color: #728371, background color: #f6f5ef, font size: 6.9pt (9.24px), font weight: normal). Expected contrast ratio of 4.5:1",[39m
+    [31m+         "html": "<div class=\"eyebrow\">مُلازَمَة / S05</div>",[39m
+    [31m+         "impact": "serious",[39m
+    [31m+         "none": Array [],[39m
+    [31m+         "target": Array [[39m
+    [31m+           ".eyebrow",[39m
+    [31m+         ],[39m
+    [31m+       },[39m
+    [31m+       Object {[39m
+    [31m+         "all": Array [],[39m
+    [31m+         "any": Array [[39m
+    [31m+           Object {[39m
+    [31m+             "data": Object {[39m
+    [31m+               "bgColor": "#edf0e7",[39m
+    [31m+               "contrastRatio": 4.42,[39m
+    [31m+               "expectedContrastRatio": "4.5:1",[39m
+    [31m+               "fgColor": "#64716b",[39m
+    [31m+               "fontSize": "8.7pt (11.62px)",[39m
+    [31m+               "fontWeight": "normal",[39m
+    [31m+               "messageKey": null,[39m
+    [31m+             },[39m
+    [31m+             "id": "color-contrast",[39m
+    [31m+             "impact": "serious",[39m
+    [31m+             "message": "Element has insufficient color contrast of 4.42 (foreground color: #64716b, background color: #edf0e7, font size: 8.7pt (11.62px), font weight: normal). Expected contrast ratio of 4.5:1",[39m
+    [31m+             "relatedNodes": Array [[39m
+    [31m+               Object {[39m
+    [31m+                 "html": "<section class=\"card soft-card\">",[39m
+    [31m+                 "target": Array [[39m
+    [31m+                   ".soft-card",[39m
+    [31m+                 ],[39m
+    [31m+               },[39m
+    [31m+             ],[39m
+    [31m+           },[39m
+    [31m+         ],[39m
+    [31m+         "failureSummary": "Fix any of the following:[39m
+    [31m+   Element has insufficient color contrast of 4.42 (foreground color: #64716b, background color: #edf0e7, font size: 8.7pt (11.62px), font weight: normal). Expected contrast ratio of 4.5:1",[39m
+    [31m+         "html": "<p>يمكنك مراجعة خطة العودة والتوقعات دون تغيير سجل ما أنجزته.</p>",[39m
+    [31m+         "impact": "serious",[39m
+    [31m+         "none": Array [],[39m
+    [31m+         "target": Array [[39m
+    [31m+           ".soft-card > p",[39m
+    [31m+         ],[39m
+    [31m+       },[39m
+    [31m+     ],[39m
+    [31m+     "tags": Array [[39m
+    [31m+       "cat.color",[39m
+    [31m+       "wcag2aa",[39m
+    [31m+       "wcag143",[39m
+    [31m+       "TTv5",[39m
+    [31m+       "TT13.c",[39m
+    [31m+       "EN-301-549",[39m
+    [31m+       "EN-9.1.4.3",[39m
+    [31m+       "ACT",[39m
+    [31m+     ],[39m
+    [31m+   },[39m
+    [31m+ ][39m
+
+      18 |       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
+      19 |       const result = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']).analyze();
+    > 20 |       expect(result.violations).toEqual([]);
+         |                                 ^
+      21 |       await page.screenshot({ path: info.outputPath(route + '-' + width + '.png'), fullPage: true });
+      22 |     }
+      23 |   });
+        at /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06d1/e2e/progress06d1.spec.ts:20:33
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/progress06d1-D1WEB-respons-5c259-d-accessible-progress-320px/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/progress06d1-D1WEB-respons-5c259-d-accessible-progress-320px/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/progress06d1-D1WEB-respons-5c259-d-accessible-progress-320px/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/progress06d1-D1WEB-respons-5c259-d-accessible-progress-320px/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) e2e/progress06d1.spec.ts:6:3 › D1WEB responsive RTL and accessible progress 390px ─────────────
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  -  1[39m
+    [31m+ Received  + 91[39m
+
+    [32m- Array [][39m
+    [31m+ Array [[39m
+    [31m+   Object {[39m
+    [31m+     "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",[39m
+    [31m+     "help": "Elements must meet minimum color contrast ratio thresholds",[39m
+    [31m+     "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=playwright",[39m
+    [31m+     "id": "color-contrast",[39m
+    [31m+     "impact": "serious",[39m
+    [31m+     "nodes": Array [[39m
+    [31m+       Object {[39m
+    [31m+         "all": Array [],[39m
+    [31m+         "any": Array [[39m
+    [31m+           Object {[39m
+    [31m+             "data": Object {[39m
+    [31m+               "bgColor": "#f6f5ef",[39m
+    [31m+               "contrastRatio": 3.69,[39m
+    [31m+               "expectedContrastRatio": "4.5:1",[39m
+    [31m+               "fgColor": "#728371",[39m
+    [31m+               "fontSize": "6.9pt (9.24px)",[39m
+    [31m+               "fontWeight": "normal",[39m
+    [31m+               "messageKey": null,[39m
+    [31m+             },[39m
+    [31m+             "id": "color-contrast",[39m
+    [31m+             "impact": "serious",[39m
+    [31m+             "message": "Element has insufficient color contrast of 3.69 (foreground color: #728371, background color: #f6f5ef, font size: 6.9pt (9.24px), font weight: normal). Expected contrast ratio of 4.5:1",[39m
+    [31m+             "relatedNodes": Array [[39m
+    [31m+               Object {[39m
+    [31m+                 "html": "<html lang=\"ar\" dir=\"rtl\" data-theme=\"light\" data-large=\"false\" data-motion=\"normal\">",[39m
+    [31m+                 "target": Array [[39m
+    [31m+                   "html",[39m
+    [31m+                 ],[39m
+    [31m+               },[39m
+    [31m+             ],[39m
+    [31m+           },[39m
+    [31m+         ],[39m
+    [31m+         "failureSummary": "Fix any of the following:[39m
+    [31m+   Element has insufficient color contrast of 3.69 (foreground color: #728371, background color: #f6f5ef, font size: 6.9pt (9.24px), font weight: normal). Expected contrast ratio of 4.5:1",[39m
+    [31m+         "html": "<div class=\"eyebrow\">مُلازَمَة / S05</div>",[39m
+    [31m+         "impact": "serious",[39m
+    [31m+         "none": Array [],[39m
+    [31m+         "target": Array [[39m
+    [31m+           ".eyebrow",[39m
+    [31m+         ],[39m
+    [31m+       },[39m
+    [31m+       Object {[39m
+    [31m+         "all": Array [],[39m
+    [31m+         "any": Array [[39m
+    [31m+           Object {[39m
+    [31m+             "data": Object {[39m
+    [31m+               "bgColor": "#edf0e7",[39m
+    [31m+               "contrastRatio": 4.42,[39m
+    [31m+               "expectedContrastRatio": "4.5:1",[39m
+    [31m+               "fgColor": "#64716b",[39m
+    [31m+               "fontSize": "8.7pt (11.62px)",[39m
+    [31m+               "fontWeight": "normal",[39m
+    [31m+               "messageKey": null,[39m
+    [31m+             },[39m
+    [31m+             "id": "color-contrast",[39m
+    [31m+             "impact": "serious",[39m
+    [31m+             "message": "Element has insufficient color contrast of 4.42 (foreground color: #64716b, background color: #edf0e7, font size: 8.7pt (11.62px), font weight: normal). Expected contrast ratio of 4.5:1",[39m
+    [31m+             "relatedNodes": Array [[39m
+    [31m+               Object {[39m
+    [31m+                 "html": "<section class=\"card soft-card\">",[39m
+    [31m+                 "target": Array [[39m
+    [31m+                   ".soft-card",[39m
+    [31m+                 ],[39m
+    [31m+               },[39m
+    [31m+             ],[39m
+    [31m+           },[39m
+    [31m+         ],[39m
+    [31m+         "failureSummary": "Fix any of the following:[39m
+    [31m+   Element has insufficient color contrast of 4.42 (foreground color: #64716b, background color: #edf0e7, font size: 8.7pt (11.62px), font weight: normal). Expected contrast ratio of 4.5:1",[39m
+    [31m+         "html": "<p>يمكنك مراجعة خطة العودة والتوقعات دون تغيير سجل ما أنجزته.</p>",[39m
+    [31m+         "impact": "serious",[39m
+    [31m+         "none": Array [],[39m
+    [31m+         "target": Array [[39m
+    [31m+           ".soft-card > p",[39m
+    [31m+         ],[39m
+    [31m+       },[39m
+    [31m+     ],[39m
+    [31m+     "tags": Array [[39m
+    [31m+       "cat.color",[39m
+    [31m+       "wcag2aa",[39m
+    [31m+       "wcag143",[39m
+    [31m+       "TTv5",[39m
+    [31m+       "TT13.c",[39m
+    [31m+       "EN-301-549",[39m
+    [31m+       "EN-9.1.4.3",[39m
+    [31m+       "ACT",[39m
+    [31m+     ],[39m
+    [31m+   },[39m
+    [31m+ ][39m
+
+      18 |       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
+      19 |       const result = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']).analyze();
+    > 20 |       expect(result.violations).toEqual([]);
+         |                                 ^
+      21 |       await page.screenshot({ path: info.outputPath(route + '-' + width + '.png'), fullPage: true });
+      22 |     }
+      23 |   });
+        at /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06d1/e2e/progress06d1.spec.ts:20:33
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/progress06d1-D1WEB-respons-48d6b-d-accessible-progress-390px/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/progress06d1-D1WEB-respons-48d6b-d-accessible-progress-390px/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/progress06d1-D1WEB-respons-48d6b-d-accessible-progress-390px/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/progress06d1-D1WEB-respons-48d6b-d-accessible-progress-390px/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) e2e/progress06d1.spec.ts:6:3 › D1WEB responsive RTL and accessible progress 1440px ────────────
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  -  1[39m
+    [31m+ Received  + 56[39m
+
+    [32m- Array [][39m
+    [31m+ Array [[39m
+    [31m+   Object {[39m
+    [31m+     "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",[39m
+    [31m+     "help": "Elements must meet minimum color contrast ratio thresholds",[39m
+    [31m+     "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=playwright",[39m
+    [31m+     "id": "color-contrast",[39m
+    [31m+     "impact": "serious",[39m
+    [31m+     "nodes": Array [[39m
+    [31m+       Object {[39m
+    [31m+         "all": Array [],[39m
+    [31m+         "any": Array [[39m
+    [31m+           Object {[39m
+    [31m+             "data": Object {[39m
+    [31m+               "bgColor": "#f6f5ef",[39m
+    [31m+               "contrastRatio": 3.69,[39m
+    [31m+               "expectedContrastRatio": "4.5:1",[39m
+    [31m+               "fgColor": "#728371",[39m
+    [31m+               "fontSize": "7.4pt (9.9px)",[39m
+    [31m+               "fontWeight": "normal",[39m
+    [31m+               "messageKey": null,[39m
+    [31m+             },[39m
+    [31m+             "id": "color-contrast",[39m
+    [31m+             "impact": "serious",[39m
+    [31m+             "message": "Element has insufficient color contrast of 3.69 (foreground color: #728371, background color: #f6f5ef, font size: 7.4pt (9.9px), font weight: normal). Expected contrast ratio of 4.5:1",[39m
+    [31m+             "relatedNodes": Array [[39m
+    [31m+               Object {[39m
+    [31m+                 "html": "<html lang=\"ar\" dir=\"rtl\" data-theme=\"light\" data-large=\"false\" data-motion=\"normal\">",[39m
+    [31m+                 "target": Array [[39m
+    [31m+                   "html",[39m
+    [31m+                 ],[39m
+    [31m+               },[39m
+    [31m+             ],[39m
+    [31m+           },[39m
+    [31m+         ],[39m
+    [31m+         "failureSummary": "Fix any of the following:[39m
+    [31m+   Element has insufficient color contrast of 3.69 (foreground color: #728371, background color: #f6f5ef, font size: 7.4pt (9.9px), font weight: normal). Expected contrast ratio of 4.5:1",[39m
+    [31m+         "html": "<div class=\"eyebrow\">مُلازَمَة / S05</div>",[39m
+    [31m+         "impact": "serious",[39m
+    [31m+         "none": Array [],[39m
+    [31m+         "target": Array [[39m
+    [31m+           ".eyebrow",[39m
+    [31m+         ],[39m
+    [31m+       },[39m
+    [31m+     ],[39m
+    [31m+     "tags": Array [[39m
+    [31m+       "cat.color",[39m
+    [31m+       "wcag2aa",[39m
+    [31m+       "wcag143",[39m
+    [31m+       "TTv5",[39m
+    [31m+       "TT13.c",[39m
+    [31m+       "EN-301-549",[39m
+    [31m+       "EN-9.1.4.3",[39m
+    [31m+       "ACT",[39m
+    [31m+     ],[39m
+    [31m+   },[39m
+    [31m+ ][39m
+
+      18 |       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
+      19 |       const result = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']).analyze();
+    > 20 |       expect(result.violations).toEqual([]);
+         |                                 ^
+      21 |       await page.screenshot({ path: info.outputPath(route + '-' + width + '.png'), fullPage: true });
+      22 |     }
+      23 |   });
+        at /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06d1/e2e/progress06d1.spec.ts:20:33
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/progress06d1-D1WEB-respons-c19ac--accessible-progress-1440px/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/progress06d1-D1WEB-respons-c19ac--accessible-progress-1440px/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/progress06d1-D1WEB-respons-c19ac--accessible-progress-1440px/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/progress06d1-D1WEB-respons-c19ac--accessible-progress-1440px/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) e2e/progress06d1.spec.ts:40:1 › D1WEB real saved mistake and correction update progress without acquiring mastery 
+
+    [31mTest timeout of 30000ms exceeded.[39m
+
+    Error: locator.selectOption: Test timeout of 30000ms exceeded.
+    Call log:
+    [2m  - waiting for getByLabel('درجة التأكد', { exact: true })[22m
+
+
+      27 |   await page.goto('/#S12');
+      28 |   await page.getByLabel('الموضع إن كنت تعرفه', { exact: false }).fill('مرجع اختبار هندسي بلا نص قرآني');
+    > 29 |   await page.getByLabel('درجة التأكد', { exact: true }).selectOption('observed');
+         |                                                         ^
+      30 |   await page.getByRole('button', { name: 'احفظ البلاغ', exact: true }).click();
+      31 |   await expect(page.locator('.mistake-item')).toHaveCount(1);
+      32 |   await page.goto('/#S14');
+        at /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06d1/e2e/progress06d1.spec.ts:29:57
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/progress06d1-D1WEB-real-sa-bf432-s-without-acquiring-mastery/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/progress06d1-D1WEB-real-sa-bf432-s-without-acquiring-mastery/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/progress06d1-D1WEB-real-sa-bf432-s-without-acquiring-mastery/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/progress06d1-D1WEB-real-sa-bf432-s-without-acquiring-mastery/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) e2e/progress06d1.spec.ts:82:1 › D1WEB keyboard navigation reload and direct route never unlock learning 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveText[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator: getByRole('region', { name: 'ملخص التقدم' })
+    Timeout: 5000ms
+    [32m- Expected  - 48[39m
+    [31m+ Received  +  1[39m
+
+    [32m- من سجل الأحداث المحفوظ · ٧ نوفمبر ٢٠٢٦ · توقيت الرياض[39m
+    [32m- إنجاز ورد اليوم[39m
+    [32m- غير متاح بعد[39m
+    [32m-[39m
+    [32m- لا توجد خطة يومية معتمدة يمكن مطابقة إنجازاتها مع السجل. عدد جلسات التسميع المسجلة لا يحدد نسبة إنجاز الورد.[39m
+    [32m-[39m
+    [32m- تقدم الحفظ[39m
+    [32m- غير متاح بعد[39m
+    [32m-[39m
+    [32m- لم يُحدد مقدار هدف الحفظ بوحدة معتمدة، ولم يعتمد معيار الإنجاز بعد. النطاقات المعلنة لا تُعد حفظًا متحققًا.[39m
+    [32m-[39m
+    [32m- المراجعة اليوم[39m
+    [32m- المستحق[39m
+    [32m- غير متاح[39m
+    [32m- المنجز[39m
+    [32m- غير متاح[39m
+    [32m- المتبقي[39m
+    [32m- غير متاح[39m
+    [32m- المتأخر[39m
+    [32m- غير متاح[39m
+    [32m-[39m
+    [32m- جدول المراجعة ينتظر الاعتماد؛ لذلك لا نعرض استحقاقات أو تأخرًا غير موثوقين. لا يكفي سجل التسميع وحده لتحديد المراجعات المنجزة.[39m
+    [32m-[39m
+    [32m- ثبات الحفظ[39m
+    [32m-[39m
+    [32m- ثبات الحفظ: يحتاج إلى تسميعات إضافية لتقديره، وإلى اعتماد معايير القياس. إنجاز النشاط وجودة التسميع لا يثبتان الثبات.[39m
+    [32m-[39m
+    [32m- إنجاز النشاط، وجودة التسميع، وثبات الحفظ مقاييس مختلفة.[39m
+    [32m-[39m
+    [32m- نشاطك المسجل[39m
+    [32m-[39m
+    [32m- يُحسب لكل جلسة تسميع مكتمل واحد عند إتمامه وتسجيل نتيجة تفيد اكتمال جميع كلمات النطاق المطلوب؛ ولا يشترط إغلاق الجلسة. التصحيح يعيد حساب اليوم الأصلي؛ فتح الجلسة أو تكرار التدريب لا يرفع العدد.[39m
+    [32m-[39m
+    [32m- لا توجد نتائج تسميع مسجلة لعرض إنجاز الأيام السابقة.[39m
+    [32m-[39m
+    [32m- نتائج التسميع عبر الوقت[39m
+    [32m-[39m
+    [32m- بلاغات أداء ذاتية، وتظهر أحدث نتيجة بعد التصحيح. لا تمنح حكمًا بإتقان الحفظ.[39m
+    [32m-[39m
+    [32m- لا توجد نتائج تسميع في الفترة المحددة.[39m
+    [32m-[39m
+    [32m- مواضع أبلغت عن حاجتها إلى عناية[39m
+    [32m-[39m
+    [32m- بلاغاتك كما حُفظت وصُححت؛ ليست تشخيصًا للثبات أو إثباتًا لعلاج الموضع.[39m
+    [32m-[39m
+    [32m- لم تُسجل بلاغات مواضع بعد.[39m
+    [32m-[39m
+    [32m- مصدر المؤشرات وحدودها[39m
+    [31m+ من سجل الأحداث المحفوظ · ٧ نوفمبر ٢٠٢٦ · توقيت الرياضإنجاز ورد اليومغير متاح بعدلا توجد خطة يومية معتمدة يمكن مطابقة إنجازاتها مع السجل. عدد جلسات التسميع المسجلة لا يحدد نسبة إنجاز الورد.تقدم الحفظغير متاح بعدلم يُحدد مقدار هدف الحفظ بوحدة معتمدة، ولم يعتمد معيار الإنجاز بعد. النطاقات المعلنة لا تُعد حفظًا متحققًا.المراجعة اليومالمستحقغير متاحالمنجزغير متاحالمتبقيغير متاحالمتأخرغير متاحجدول المراجعة ينتظر الاعتماد؛ لذلك لا نعرض استحقاقات أو تأخرًا غير موثوقين. لا يكفي سجل التسميع وحده لتحديد المراجعات المنجزة.ثبات الحفظثبات الحفظ: يحتاج إلى تسميعات إضافية لتقديره، وإلى اعتماد معايير القياس. إنجاز النشاط وجودة التسميع لا يثبتان الثبات.إنجاز النشاط، وجودة التسميع، وثبات الحفظ مقاييس مختلفة.نشاطك المسجليُحسب لكل جلسة تسميع مكتمل واحد عند إتمامه وتسجيل نتيجة تفيد اكتمال جميع كلمات النطاق المطلوب؛ ولا يشترط إغلاق الجلسة. التصحيح يعيد حساب اليوم الأصلي؛ فتح الجلسة أو تكرار التدريب لا يرفع العدد.لا توجد نتائج تسميع مسجلة لعرض إنجاز الأيام السابقة.نتائج التسميع عبر الوقتبلاغات أداء ذاتية، وتظهر أحدث نتيجة بعد التصحيح. لا تمنح حكمًا بإتقان الحفظ.لا توجد نتائج تسميع في الفترة المحددة.مواضع أبلغت عن حاجتها إلى عنايةبلاغاتك كما حُفظت وصُححت؛ ليست تشخيصًا للثبات أو إثباتًا لعلاج الموضع.لم تُسجل بلاغات مواضع بعد.مصدر المؤشرات وحدودها[7mتُعاد المؤشرات من سجل الأحداث بعد التحقق منه، ولا تُحفظ النسب منفصلة. أحدث تصحيح يحل محل نتيجة المحاولة السابقة دون إضافة جلسة جديدة.عدد الأحداث المقروءة: ١ · نسخة السجل: ١. لا يمكن تحويل النطاقات المعلنة إلى مقدار محفوظ معتمد أو ربط جلسة بمهمة يومية دون مراجع معتمدة.[27m[39m
+
+    Call log:
+    [2m  - Expect "toHaveText" with timeout 5000ms[22m
+    [2m  - waiting for getByRole('region', { name: 'ملخص التقدم' })[22m
+    [2m    9 × locator resolved to <section aria-label="ملخص التقدم">…</section>[22m
+    [2m      - unexpected value "من سجل الأحداث المحفوظ · ٧ نوفمبر ٢٠٢٦ · توقيت الرياضإنجاز ورد اليومغير متاح بعدلا توجد خطة يومية معتمدة يمكن مطابقة إنجازاتها مع السجل. عدد جلسات التسميع المسجلة لا يحدد نسبة إنجاز الورد.تقدم الحفظغير متاح بعدلم يُحدد مقدار هدف الحفظ بوحدة معتمدة، ولم يعتمد معيار الإنجاز بعد. النطاقات المعلنة لا تُعد حفظًا متحققًا.المراجعة اليومالمستحقغير متاحالمنجزغير متاحالمتبقيغير متاحالمتأخرغير متاحجدول المراجعة ينتظر الاعتماد؛ لذلك لا نعرض استحقاقات أو تأخرًا غير موثوقين. لا يكفي سجل التسميع وحده لتحديد المراجعات المنجزة.ثبات الحفظثبات الحفظ: يحتاج إلى تسميعات إضافية لتقديره، وإلى اعتماد معايير القياس. إنجاز النشاط وجودة التسميع لا يثبتان الثبات.إنجاز النشاط، وجودة التسميع، وثبات الحفظ مقاييس مختلفة.نشاطك المسجليُحسب لكل جلسة تسميع مكتمل واحد عند إتمامه وتسجيل نتيجة تفيد اكتمال جميع كلمات النطاق المطلوب؛ ولا يشترط إغلاق الجلسة. التصحيح يعيد حساب اليوم الأصلي؛ فتح الجلسة أو تكرار التدريب لا يرفع العدد.لا توجد نتائج تسميع مسجلة لعرض إنجاز الأيام السابقة.نتائج التسميع عبر الوقتبلاغات أداء ذاتية، وتظهر أحدث نتيجة بعد التصحيح. لا تمنح حكمًا بإتقان الحفظ.لا توجد نتائج تسميع في الفترة المحددة.مواضع أبلغت عن حاجتها إلى عنايةبلاغاتك كما حُفظت وصُححت؛ ليست تشخيصًا للثبات أو إثباتًا لعلاج الموضع.لم تُسجل بلاغات مواضع بعد.مصدر المؤشرات وحدودهاتُعاد المؤشرات من سجل الأحداث بعد التحقق منه، ولا تُحفظ النسب منفصلة. أحدث تصحيح يحل محل نتيجة المحاولة السابقة دون إضافة جلسة جديدة.عدد الأحداث المقروءة: ١ · نسخة السجل: ١. لا يمكن تحويل النطاقات المعلنة إلى مقدار محفوظ معتمد أو ربط جلسة بمهمة يومية دون مراجع معتمدة."[22m
+
+
+      55 |   const content = await summary.innerText();
+      56 |   await page.reload();
+    > 57 |   await expect(summary).toHaveText(content);
+         |                         ^
+      58 |   await page.goto('/#S08');
+      59 |   await expect(page.getByRole('heading', { name: 'النص المعتمد ينتظر الإضافة' })).toBeVisible();
+      60 |   await expect(page.getByRole('button', { name: /أنهيت التسميع|اعرض تلميحًا/ })).toHaveCount(0);
+        at /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06d1/e2e/progress06d1.spec.ts:57:25
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/progress06d1-D1WEB-keyboar-e7431-route-never-unlock-learning/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/progress06d1-D1WEB-keyboar-e7431-route-never-unlock-learning/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/progress06d1-D1WEB-keyboar-e7431-route-never-unlock-learning/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/progress06d1-D1WEB-keyboar-e7431-route-never-unlock-learning/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5 failed
+    e2e/progress06d1.spec.ts:6:3 › D1WEB responsive RTL and accessible progress 320px ──────────────
+    e2e/progress06d1.spec.ts:6:3 › D1WEB responsive RTL and accessible progress 390px ──────────────
+    e2e/progress06d1.spec.ts:6:3 › D1WEB responsive RTL and accessible progress 1440px ─────────────
+    e2e/progress06d1.spec.ts:40:1 › D1WEB real saved mistake and correction update progress without acquiring mastery 
+    e2e/progress06d1.spec.ts:82:1 › D1WEB keyboard navigation reload and direct route never unlock learning 
+
+To open last HTML report run:
+[36m[39m
+[36m  npx playwright show-report[39m
+[36m[39m

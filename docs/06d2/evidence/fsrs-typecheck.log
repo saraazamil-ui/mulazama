@@ -1,0 +1,1 @@
+src/LearningEngineScreen06d2.test.tsx(4,42): error TS2307: Cannot find module 'node:fs' or its corresponding type declarations.

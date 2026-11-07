@@ -1,0 +1,38 @@
+{
+  "phase": "05B-baseline-of-original-05A",
+  "dateUTC": "2026-11-05",
+  "sourceSha256": "9fac93cd0cf6e1ed260a04289361aad0c747288944d5189a762dc0c48cf0c41d",
+  "typecheck": "passed",
+  "vitest": {
+    "numTotalTests": 299,
+    "numPassedTests": 299,
+    "numFailedTests": 0,
+    "numPendingTests": 0,
+    "numTodoTests": 0,
+    "numTotalTestSuites": 34,
+    "numPassedTestSuites": 34,
+    "numFailedTestSuites": 0
+  },
+  "vitestFiles": 12,
+  "build": "passed",
+  "distBitwiseMatchesArchive": true,
+  "boundedStaticSecurity": {
+    "files": 27,
+    "findings": 0
+  },
+  "frozenInstall": "blocked-pnpm-bootstrap-DNS",
+  "onlineDependencyAudit": "blocked-pnpm-bootstrap-DNS",
+  "e2e": {
+    "status": "blocked-server-EPERM",
+    "actualCasesExecuted": 0,
+    "casesDiscovered": 6
+  },
+  "offline": {
+    "status": "blocked-server-EPERM",
+    "actualCasesExecuted": 0
+  },
+  "peer21": "historical-results-only-no-runner; source-hashes-match; not-rerun",
+  "native": "no-projects-or-build-toolchains",
+  "productionDecision": "غير جاهز.",
+  "licensePackagesInspected": 171
+}

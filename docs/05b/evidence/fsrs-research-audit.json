@@ -1,0 +1,241 @@
+{
+  "schemaVersion": 1,
+  "kind": "fsrs-research-arithmetic-audit",
+  "checkedAt": "2026-11-05T12:57:59.109Z",
+  "model": "FSRS-6",
+  "algorithmVersion": "hme-fsrs6-research-binary64-0.1.0",
+  "source": {
+    "path": "src/core/fixtures/fsrs6-research-reference.json",
+    "sha256": "ab2b28ef73f44a9391f91eea0aeea96ffd1bd03886d54eca80f93a6039c652fd",
+    "origin": "HME §19 prior independently executed Python binary64 research calculator, not ts-fsrs"
+  },
+  "status": "passed",
+  "libraryConformance": "not-established",
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "darwin",
+    "arch": "arm64"
+  },
+  "summary": {
+    "passed": 24,
+    "failed": 0
+  },
+  "comparisons": [
+    {
+      "id": "HME-INIT-1",
+      "metric": "stability",
+      "expected": 0.212,
+      "actual": 0.212,
+      "delta": 0,
+      "absoluteTolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "id": "HME-INIT-1",
+      "metric": "difficulty",
+      "expected": 6.4133,
+      "actual": 6.4133,
+      "delta": 0,
+      "absoluteTolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "id": "HME-SAME-1",
+      "metric": "stability",
+      "expected": 1.5968179979869213,
+      "actual": 1.5968179979869215,
+      "delta": 2.220446049250313e-16,
+      "absoluteTolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "id": "HME-SAME-1",
+      "metric": "difficulty",
+      "expected": 8.341762369296838,
+      "actual": 8.341762369296838,
+      "delta": 0,
+      "absoluteTolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "id": "HME-INIT-2",
+      "metric": "stability",
+      "expected": 1.2931,
+      "actual": 1.2931,
+      "delta": 0,
+      "absoluteTolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "id": "HME-INIT-2",
+      "metric": "difficulty",
+      "expected": 5.112170705601055,
+      "actual": 5.112170705601055,
+      "delta": 0,
+      "absoluteTolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "id": "HME-SAME-2",
+      "metric": "stability",
+      "expected": 5,
+      "actual": 5,
+      "delta": 0,
+      "absoluteTolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "id": "HME-SAME-2",
+      "metric": "difficulty",
+      "expected": 6.665995369296838,
+      "actual": 6.665995369296838,
+      "delta": 0,
+      "absoluteTolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "id": "HME-INIT-3",
+      "metric": "stability",
+      "expected": 2.3065,
+      "actual": 2.3065,
+      "delta": 0,
+      "absoluteTolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "id": "HME-INIT-3",
+      "metric": "difficulty",
+      "expected": 2.118103970459015,
+      "actual": 2.118103970459015,
+      "delta": 0,
+      "absoluteTolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "id": "HME-SAME-3",
+      "metric": "stability",
+      "expected": 5,
+      "actual": 5,
+      "delta": 0,
+      "absoluteTolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "id": "HME-SAME-3",
+      "metric": "difficulty",
+      "expected": 4.9902283692968386,
+      "actual": 4.9902283692968386,
+      "delta": 0,
+      "absoluteTolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "id": "HME-INIT-4",
+      "metric": "stability",
+      "expected": 8.2956,
+      "actual": 8.2956,
+      "delta": 0,
+      "absoluteTolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "id": "HME-INIT-4",
+      "metric": "difficulty",
+      "expected": 1,
+      "actual": 1,
+      "delta": 0,
+      "absoluteTolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "id": "HME-SAME-4",
+      "metric": "stability",
+      "expected": 8.129609559916114,
+      "actual": 8.129609559916112,
+      "delta": -1.7763568394002505e-15,
+      "absoluteTolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "id": "HME-SAME-4",
+      "metric": "difficulty",
+      "expected": 3.3144613692968385,
+      "actual": 3.3144613692968385,
+      "delta": 0,
+      "absoluteTolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "id": "HME-DAY5",
+      "metric": "stability",
+      "expected": 17.36151270957656,
+      "actual": 17.36151270957656,
+      "delta": 0,
+      "absoluteTolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "id": "HME-DAY5",
+      "metric": "difficulty",
+      "expected": 4.9902283692968386,
+      "actual": 4.9902283692968386,
+      "delta": 0,
+      "absoluteTolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "id": "HME-DAY5",
+      "metric": "retrievabilityBefore",
+      "expected": 0.9,
+      "actual": 0.9,
+      "delta": 0,
+      "absoluteTolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "id": "HME-DAY12",
+      "metric": "stability",
+      "expected": 1.6775146433759942,
+      "actual": 1.6775146433759942,
+      "delta": 0,
+      "absoluteTolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "id": "HME-DAY12",
+      "metric": "difficulty",
+      "expected": 8.338550500731797,
+      "actual": 8.338550500731797,
+      "delta": 0,
+      "absoluteTolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "id": "HME-DAY12",
+      "metric": "retrievabilityBefore",
+      "expected": 0.9499349396731368,
+      "actual": 0.9499349396731368,
+      "delta": 0,
+      "absoluteTolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "id": "HME-DAY42",
+      "metric": "predictionOnly",
+      "expected": 0.6375084334942913,
+      "actual": 0.6375084334942913,
+      "delta": 0,
+      "absoluteTolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "id": "HME-RETENTION",
+      "metric": "I95/I90",
+      "expected": 0.40255869198999183,
+      "actual": 0.40255869198999183,
+      "delta": 0,
+      "absoluteTolerance": 1e-12,
+      "passed": true
+    }
+  ]
+}

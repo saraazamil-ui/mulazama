@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "name": "ts-fsrs",
+  "version": "5.4.2",
+  "sourceCommit": "bb71e35a2f5af5a5ac6cce9ef7c41ad24855721d",
+  "sourceBinding": {
+    "method": "npm-slsa-statement-content",
+    "commit": "bb71e35a2f5af5a5ac6cce9ef7c41ad24855721d",
+    "cryptographicProvenanceVerified": false,
+    "reviewRequired": "Sigstore signatures, certificate identity, transparency log and independent source review"
+  },
+  "attestationsPath": "attestations.json",
+  "license": "MIT",
+  "registryUrl": "https://registry.npmjs.org/ts-fsrs/5.4.2",
+  "artifactSha512": "sha512-z4qop4pzTcyTzuJ566d9EaX/4bZZzhYfeaPImfVr+xcYT65c5oBgFDijUhCE/D+C78eaolHIhKRZ04/RwF+v2g==",
+  "tarballPath": "ts-fsrs-5.4.2.tgz",
+  "registryMetadataPath": "registry.json",
+  "files": [
+    {
+      "path": "LICENSE",
+      "sha256": "8b83a73dd2894ff553d6de6113064b3ad9dfad3f839837b61f3b183881131d01"
+    },
+    {
+      "path": "dist/index.cjs",
+      "sha256": "abf2062dd8218357662d4dbe7cb39bc7c0e9b0be8760a5d74bb515c75321f533"
+    },
+    {
+      "path": "dist/index.umd.js",
+      "sha256": "59b7444121d0aae5bb969097ed95df38eff4a4f878e459703c63720f6b6a176b"
+    },
+    {
+      "path": "package.json",
+      "sha256": "69a263f71ac532649957480fbd125b4eb4a9ed80716ccf1d567abfa0c605c651"
+    },
+    {
+      "path": "dist/index.cjs.map",
+      "sha256": "49790959efab6a2f67373eabdf8fca47729a4fc445967c143b3b5fc56f222929"
+    },
+    {
+      "path": "dist/index.mjs.map",
+      "sha256": "c8451f03163a442b4ae7efff5306583a63c4a917548465d9e88ae3cc120f6119"
+    },
+    {
+      "path": "dist/index.umd.js.map",
+      "sha256": "db3592eaaf751576e6db3b9767ab3d548ee28c574203924df02c89200b4dbd41"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "365b2c5b016ba4014b5c4fb85f9f6d5622a5e5f38545aa90c7b7bdbcb487679e"
+    },
+    {
+      "path": "README_CN.md",
+      "sha256": "6dbc46366941483e81ff75c1bc7b5813a9ed77f30010ada9609567432d716ce8"
+    },
+    {
+      "path": "README_JA.md",
+      "sha256": "5196efe26fd93b5165106fb5061aece5332a7a2b858b8628bfb9bc161247d759"
+    },
+    {
+      "path": "README.md",
+      "sha256": "791eef8f15303dbb791ff99546d5f90d83a325cde8b2d5be162b2f4598e988fd"
+    },
+    {
+      "path": "dist/index.mjs",
+      "sha256": "ad4a4b3b7e259fcbf02764454c8f9db4ea3bf5aae2f473198129ecb7728f1a19"
+    },
+    {
+      "path": "dist/index.d.ts",
+      "sha256": "86619bd94f12a259832e2d3e1e7cacdc392174410d674e5999729e13889a4f41"
+    }
+  ]
+}

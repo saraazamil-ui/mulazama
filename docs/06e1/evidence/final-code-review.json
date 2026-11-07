@@ -1,0 +1,92 @@
+{
+  "kind": "independent-code-review-06e1",
+  "reviewedAt": "2026-11-07T10:05:22.754555+00:00",
+  "scope": "Corrected adapter boundary, HistoryApplication new read methods, factual personal memory and migration/report distinctions. No broad test suite executed by this review.",
+  "files": [
+    {
+      "path": "src/core/fsrs-reference.ts",
+      "sha256": "14c623c0c9cc2fceb5a74924087ba0d7d5880d04102130dcf1ffbd9ea70c753e"
+    },
+    {
+      "path": "src/core/fsrs-reference.test.ts",
+      "sha256": "7f799b8a2a984874bb82d73ec0308e2266fe4112b526a93eeece7de38fb395f7"
+    },
+    {
+      "path": "src/application/history-application.ts",
+      "sha256": "94c6d2f9948db10474f2ac8affe11bffa1bc46ab36c01bbd9cc20f80edd1b9ac"
+    },
+    {
+      "path": "src/memory/personal-memory.ts",
+      "sha256": "4fd81fe33959e27eba0da082a069db3c34f64da306b5a342e48ac1afd2d7dfd1"
+    },
+    {
+      "path": "src/memory/personal-memory.test.ts",
+      "sha256": "6808d40375077fb8775b741aa2e16711535f88b7366dcd594d8454a05c9f517c"
+    },
+    {
+      "path": "docs/06e1/Change-and-Migration-Plan.md",
+      "sha256": "7a4402a41689476a8320bd51badeedf8abd44bb47e027e3e03ff9b879c1dcb27"
+    },
+    {
+      "path": "docs/06e1/Data-Safety-and-Migration.md",
+      "sha256": "c94178cb7de9b76ad7b595cef4f3e782a76dcb841da20fd841e549f1fe5f75d4"
+    }
+  ],
+  "findings": [
+    {
+      "id": "E1-AUDIT-01",
+      "status": "fixed-and-narrow-probe-verified",
+      "area": "ReferenceFsrsAdapter constructor weight validation",
+      "observedBeforeFix": {
+        "input": "weights: new Array(21)",
+        "constructorAccepted": true,
+        "curve_1_5_isNaN": true
+      },
+      "rootCause": "Array.prototype.some skips sparse holes; checking length alone does not establish 21 finite pinned values.",
+      "fix": "Require Array.isArray and length21, capture indexed values exactly once with Array.from({length:21},(_,index)=>weights[index]), then validate finite values and pin equality on that same frozen capture.",
+      "postFixProbe": [
+        {
+          "input": "all21holes",
+          "rejected": true,
+          "code": "INVALID_INPUT"
+        },
+        {
+          "input": "onehole",
+          "rejected": true,
+          "code": "INVALID_INPUT"
+        },
+        {
+          "input": "nonarray length21 object",
+          "rejected": true,
+          "code": "INVALID_INPUT"
+        },
+        {
+          "input": "changinggetter on index0",
+          "reads": 1,
+          "capturedValue": 0.212,
+          "curveFinite": true
+        },
+        {
+          "input": "valid indexed weights with custom empty Symbol.iterator",
+          "accepted": true,
+          "capturedLength": 21,
+          "curveIsNaN": false,
+          "interpretation": "The final bounded indexed capture ignores caller iteration and uses the actual pinned indexed values."
+        }
+      ],
+      "regressionTest": "E1A08 in src/core/fsrs-reference.test.ts; final run status belongs to the final suite evidence, not this read-only review."
+    }
+  ],
+  "otherReviewConclusions": [
+    "HistoryApplication readPersonalMemory/readAdaptiveSchedule serialize reads and dynamically import pure projections; neither grants session capability or writes learning records.",
+    "Personal memory exposure source mapping matches legacy HintUsed, RecallAttemptCompleted, RecallAttemptRestarted and SessionEnded behavior in inspected code.",
+    "Personal memory separates recorded policy eligibility from scientific validity and exposes unavailable acquisition/future schedule/predictive sufficiency without FSRS prediction fields.",
+    "Legacy VERSIONS and interpreter remain the source of historical replay; corrected numerical shadow is explicit and not represented as a runtime election.",
+    "No additional concrete data-loss, timing or hidden-activation defect found in the inspected scope."
+  ],
+  "limits": [
+    "Source inspection and narrow Node/esbuild probes only; not a penetration test or exhaustive proof.",
+    "Does not claim that the legacy binary64 runtime became conformant.",
+    "No source files edited during final review."
+  ]
+}

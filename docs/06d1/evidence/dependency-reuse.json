@@ -1,0 +1,8 @@
+{
+  "kind": "copied-existing-exact-lock-install",
+  "source": "/tmp/mulazama-05c-clean/mulazama-05b",
+  "lockSha256": "ad7b79295a609767455b46eac8f1e6c81b2de0684060b428739a97ce3731e1f5",
+  "packageMatches": true,
+  "freshInstall": false,
+  "reason": "pnpm node command triggered install; registry DNS unavailable; interrupted with SIGINT; no lock changes"
+}

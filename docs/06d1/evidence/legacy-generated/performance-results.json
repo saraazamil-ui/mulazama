@@ -1,0 +1,20 @@
+{
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "darwin",
+    "arch": "arm64"
+  },
+  "synthetic": true,
+  "measurementsMs": {
+    "plan1000Candidates": 1.8858330000000478,
+    "memoryAtomicAppend10000": 939.9806250000001,
+    "memoryLoad10000": 68.51920900000005,
+    "productReplay100Events": 11.722667000000001
+  },
+  "heapUsedBytes": 125706896,
+  "limitations": [
+    "Memory reference adapter, not IndexedDB",
+    "Host Node, not cold app start or mobile device",
+    "No P95, power-loss, UI responsiveness or native memory certification"
+  ]
+}

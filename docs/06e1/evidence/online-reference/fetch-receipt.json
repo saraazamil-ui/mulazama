@@ -1,0 +1,47 @@
+{
+  "checkedAt": "2026-11-07T09:58:04.624141+00:00",
+  "receipts": [
+    {
+      "file": "registry.json",
+      "url": "https://registry.npmjs.org/ts-fsrs/5.4.2",
+      "httpStatus": 200,
+      "bytes": 3091,
+      "sha256": "2ad12064580af88e76a6473956176547cff5521d76c9bcef958dac69ae58284b"
+    },
+    {
+      "file": "registry-keys.json",
+      "url": "https://registry.npmjs.org/-/npm/v1/keys",
+      "httpStatus": 200,
+      "bytes": 580,
+      "sha256": "faf23d8753d5bb79df250f10391ac89b63ecf7743e48487a544a99c847f9c8df"
+    },
+    {
+      "file": "ts-fsrs-5.4.2.tgz",
+      "url": "https://registry.npmjs.org/ts-fsrs/-/ts-fsrs-5.4.2.tgz",
+      "httpStatus": 200,
+      "bytes": 150324,
+      "sha256": "f91a53b58c7269db5528ad420208217384be610a4146a137b85dcaa07e3301cb"
+    },
+    {
+      "file": "algorithm.ts",
+      "url": "https://raw.githubusercontent.com/open-spaced-repetition/ts-fsrs/bb71e35a2f5af5a5ac6cce9ef7c41ad24855721d/packages/fsrs/src/algorithm.ts",
+      "httpStatus": 200,
+      "bytes": 13396,
+      "sha256": "16c0848d023ea4de332d1f6720b7ccd94f35052dad092b47377b397a458514d0"
+    },
+    {
+      "file": "commit.json",
+      "url": "https://api.github.com/repos/open-spaced-repetition/ts-fsrs/commits/bb71e35a2f5af5a5ac6cce9ef7c41ad24855721d",
+      "httpStatus": 200,
+      "bytes": 5485,
+      "sha256": "f9885a9cf751a192ad63c47eb24a01f80ba385f07fa3d7ec4512c5551f1e5b3a"
+    },
+    {
+      "file": "release.json",
+      "url": "https://api.github.com/repos/open-spaced-repetition/ts-fsrs/releases/tags/v5.4.2",
+      "httpStatus": 200,
+      "bytes": 2280,
+      "sha256": "ea7aca9e48bbea6b6cdae0604451c09869bb830c538413827deaa26ffa0302eb"
+    }
+  ]
+}

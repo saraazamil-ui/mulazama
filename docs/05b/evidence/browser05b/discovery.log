@@ -1,0 +1,17 @@
+Listing tests:
+  database.spec.ts:2:1 › BWEB01 IndexedDB: 21 encrypted transaction, migration, corruption, concurrency and restore checks
+  production.spec.ts:5:1 › BWEB02 identity, real settings persistence and content gate
+  production.spec.ts:32:1 › BWEB03 encrypted backup inspection rejects wrong password and cancellation preserves data
+  production.spec.ts:67:3 › BWEB04 responsive RTL and automated accessibility 320px
+  production.spec.ts:67:3 › BWEB05 responsive RTL and automated accessibility 390px
+  production.spec.ts:67:3 › BWEB06 responsive RTL and automated accessibility 1440px
+  verification05b.spec.ts:6:1 › BWEB07 new profile, plan and nonadjacent declarations survive reopening without filling gaps
+  verification05b.spec.ts:73:1 › BWEB08 usual and today-only budgets persist as separate values
+  verification05b.spec.ts:112:1 › BWEB09 direct learning routes keep training, recall and reader controls out of the DOM
+  verification05b.spec.ts:130:1 › BWEB10 direct service commands cannot bypass the Quran gate or create learning events
+  verification05b.spec.ts:211:1 › BWEB11 forecast abstains and thirty untested parts do not acquire mastery
+  verification05b.spec.ts:234:1 › BWEB12 keyboard skip link, modal focus containment and Escape restore focus
+  verification05b.spec.ts:266:1 › BWEB13 invalid backup preserves preferences; confirmed full restore can be repeated
+  verification05b.spec.ts:333:1 › BWEB14 a reported mistake remains a local unverified draft after reopening
+  verification05b.spec.ts:361:1 › BWEB15 enlarged text, reduced motion and dark preference persist at 320px
+Total: 15 tests in 3 files

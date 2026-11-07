@@ -1,0 +1,1095 @@
+{
+  "config": {
+    "configFile": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06e1/playwright.config.ts",
+    "rootDir": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06e1/e2e",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/browser-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06e1/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06e1/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 1,
+    "webServer": {
+      "command": "node node_modules/vite/bin/vite.js --host 127.0.0.1 --port 4173 --strictPort",
+      "url": "http://127.0.0.1:4173",
+      "reuseExistingServer": true,
+      "timeout": 30000
+    }
+  },
+  "suites": [
+    {
+      "title": "database.spec.ts",
+      "file": "database.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "BWEB01 IndexedDB: 21 encrypted transaction, migration, corruption, concurrency and restore checks",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 950,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T10:03:26.519Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "indexeddb-check-results",
+                      "contentType": "application/json",
+                      "body": "WwogIHsKICAgICJuYW1lIjogIklEQjAxIGNvbW1pdC9yZW9wZW4vY2hlY2twb2ludCByYXcgcHJlc2VydmF0aW9uIiwKICAgICJwYXNzZWQiOiB0cnVlLAogICAgIm1pbGxpc2Vjb25kcyI6IDQzCiAgfSwKICB7CiAgICAibmFtZSI6ICJJREIwMiBkdXBsaWNhdGUgY29tbWFuZCBhbmQgZXZlbnQgYXJlIGlkZW1wb3RlbnQ7IGNvbmZsaWN0cyBmYWlsIGNsb3NlZCIsCiAgICAicGFzc2VkIjogdHJ1ZSwKICAgICJtaWxsaXNlY29uZHMiOiAyLjg5OTk5OTk5ODUwOTg4NAogIH0sCiAgewogICAgIm5hbWUiOiAiSURCMDMgY29uY3VycmVudCB0YWJzIHVzZSB0cmFuc2FjdGlvbiBDQVMiLAogICAgInBhc3NlZCI6IHRydWUsCiAgICAibWlsbGlzZWNvbmRzIjogMi4zMDAwMDAwMDQ0NzAzNDg0CiAgfSwKICB7CiAgICAibmFtZSI6ICJJREIwNCBlbmNyeXB0ZWQgcmVjb3JkcyBhbmQgbm9uZXh0cmFjdGFibGUga2V5IiwKICAgICJwYXNzZWQiOiB0cnVlLAogICAgIm1pbGxpc2Vjb25kcyI6IDIuODk5OTk5OTk4NTA5ODg0CiAgfSwKICB7CiAgICAibmFtZSI6ICJJREIwNSB0cmFuc2FjdGlvbiB3cml0ZSBmYWlsdXJlIGNhbm5vdCBhY2tub3dsZWRnZSBvciBwYXJ0aWFsbHkgYXBwZW5kIiwKICAgICJwYXNzZWQiOiB0cnVlLAogICAgIm1pbGxpc2Vjb25kcyI6IDMKICB9LAogIHsKICAgICJuYW1lIjogIklEQjA2IGF0b21pYyBmdWxsIHJlcGxhY2VtZW50LCByb2xsYmFjayBvbiBmYWlsdXJlLCBubyByZXN0b3JlIG1lcmdlIiwKICAgICJwYXNzZWQiOiB0cnVlLAogICAgIm1pbGxpc2Vjb25kcyI6IDIuNjAwMDAwMDAxNDkwMTE2CiAgfSwKICB7CiAgICAibmFtZSI6ICJJREIwNyBjaXBoZXJ0ZXh0IGNvcnJ1cHRpb24gcmVqZWN0ZWQgYW5kIG9yaWdpbmFsIHJvd3MgcmV0YWluZWQiLAogICAgInBhc3NlZCI6IHRydWUsCiAgICAibWlsbGlzZWNvbmRzIjogMi4wOTk5OTk5OTQwMzk1MzU1CiAgfSwKICB7CiAgICAibmFtZSI6ICJJREIwOCBzdXBwb3J0ZWQgdjEgbWlncmF0aW9uIGVuY3J5cHRzIHdpdGhvdXQgY2hhbmdpbmcgcmF3IGV2ZW50cyBvciByZXZpc2lvbiIsCiAgICAicGFzc2VkIjogdHJ1ZSwKICAgICJtaWxsaXNlY29uZHMiOiAxLjgwMDAwMDAwNDQ3MDM0ODQKICB9LAogIHsKICAgICJuYW1lIjogIklEQjA5IGZ1dHVyZSBkYXRhYmFzZSB2ZXJzaW9uIGlzIHByZXNlcnZlZCBhbmQgcmVqZWN0ZWQiLAogICAgInBhc3NlZCI6IHRydWUsCiAgICAibWlsbGlzZWNvbmRzIjogMC4yOTk5OTk5OTcwMTk3Njc3NgogIH0sCiAgewogICAgIm5hbWUiOiAiSURCMTAgY2xlYXIga2VlcHMgcmV2aXNpb24gcHJvdGVjdGlvbiBhbmQgcmVtb3ZlcyBsZWFybmluZyByb3dzL2luZGV4ZXMiLAogICAgInBhc3NlZCI6IHRydWUsCiAgICAibWlsbGlzZWNvbmRzIjogMS44MDAwMDAwMDQ0NzAzNDg0CiAgfSwKICB7CiAgICAibmFtZSI6ICJJREIxMSBtaXNzaW5nIGVuY3J5cHRpb24ga2V5IG5ldmVyIHRyaWdnZXJzIHJlcGxhY2VtZW50IGtleSBvciByZXNldCIsCiAgICAicGFzc2VkIjogdHJ1ZSwKICAgICJtaWxsaXNlY29uZHMiOiAxLjY5OTk5OTk5NTUyOTY1MTYKICB9LAogIHsKICAgICJuYW1lIjogIklEQjEyIGludGVycnVwdGVkIHYxIG1pZ3JhdGlvbiByZXN1bWVzIGZyb20gaXRzIGR1cmFibGUgcGVuZGluZyBtYXJrZXIiLAogICAgInBhc3NlZCI6IHRydWUsCiAgICAibWlsbGlzZWNvbmRzIjogMS44OTk5OTk5OTg1MDk4ODM5CiAgfSwKICB7CiAgICAibmFtZSI6ICJJREIxMyBjb21tYW5kLWluZGV4IG11dGF0aW9uIGlzIHJlamVjdGVkIHdpdGhvdXQgcmVzZXR0aW5nIGhpc3RvcnkiLAogICAgInBhc3NlZCI6IHRydWUsCiAgICAibWlsbGlzZWNvbmRzIjogMi43OTk5OTk5OTcwMTk3Njc4CiAgfSwKICB7CiAgICAibmFtZSI6ICJJREIxNCBhbiBBRVMtMTI4IHJlcGxhY2VtZW50IGtleSBpcyByZWplY3RlZCBldmVuIGZvciBhbiBlbXB0eSBzdHJlYW0iLAogICAgInBhc3NlZCI6IHRydWUsCiAgICAibWlsbGlzZWNvbmRzIjogMS4xMDAwMDAwMDE0OTAxMTYxCiAgfSwKICB7CiAgICAibmFtZSI6ICJJREIxNSBtYWxmb3JtZWQgc3RyZWFtIHNlcXVlbmNlIGlzIHJlamVjdGVkIHdpdGhvdXQgcmVwbGFjaW5nIHJlY29yZHMiLAogICAgInBhc3NlZCI6IHRydWUsCiAgICAibWlsbGlzZWNvbmRzIjogMi4yMDAwMDAwMDI5ODAyMzIyCiAgfSwKICB7CiAgICAibmFtZSI6ICJJREIxNiBpbnZhbGlkIHRpbWVzdGFtcHMgbmV2ZXIgYmVjb21lIGFja25vd2xlZGdlZCBicm93c2VyIHdyaXRlcyIsCiAgICAicGFzc2VkIjogdHJ1ZSwKICAgICJtaWxsaXNlY29uZHMiOiAxLjI5OTk5OTk5NzAxOTc2NzgKICB9LAogIHsKICAgICJuYW1lIjogIklEQjE3IGRlbGV0aW5nIGxlYXJuaW5nIGRhdGEgcmVtb3ZlcyBldmVudCBhbmQgY29tbWFuZCByb3dzIGFmdGVyIHJlb3BlbiIsCiAgICAicGFzc2VkIjogdHJ1ZSwKICAgICJtaWxsaXNlY29uZHMiOiAyLjYwMDAwMDAwMTQ5MDExNgogIH0sCiAgewogICAgIm5hbWUiOiAiSURCMTggcGFydGlhbCBjb21tYW5kIHJldHJpZXMgY2Fubm90IHNpbGVudGx5IGR1cGxpY2F0ZSBvciB0cnVuY2F0ZSBhIGJhdGNoIiwKICAgICJwYXNzZWQiOiB0cnVlLAogICAgIm1pbGxpc2Vjb25kcyI6IDIuMTk5OTk5OTk1NTI5NjUxNgogIH0sCiAgewogICAgIm5hbWUiOiAiSURCMTkgZXhwbGljaXQgdjItdG8tdjMgaW5kZXggbWlncmF0aW9uIHByZXNlcnZlcyBjaXBoZXJ0ZXh0IGFuZCByYXcgcmV2aXNpb24iLAogICAgInBhc3NlZCI6IHRydWUsCiAgICAibWlsbGlzZWNvbmRzIjogNi44MDAwMDAwMDQ0NzAzNDgKICB9LAogIHsKICAgICJuYW1lIjogIklEQjIwIHVua25vd24gbGVnYWN5IFVuaWNvZGUgY29sbGF0aW9uIHJlcXVpcmVzIHJldmlldyBhbmQgcHJlc2VydmVzIGNpcGhlcnRleHQiLAogICAgInBhc3NlZCI6IHRydWUsCiAgICAibWlsbGlzZWNvbmRzIjogMi42MDAwMDAwMDE0OTAxMTYKICB9LAogIHsKICAgICJuYW1lIjogIklEQjIxIGludGVycnVwdGVkIHYyIGluZGV4IG1pZ3JhdGlvbiByZXN1bWVzIG9ubHkgZnJvbSBhIHZhbGlkIGR1cmFibGUgbWFya2VyIiwKICAgICJwYXNzZWQiOiB0cnVlLAogICAgIm1pbGxpc2Vjb25kcyI6IDEuNjk5OTk5OTk1NTI5NjUxNgogIH0KXQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4add86b697651c504d0f-74e92a25664297d8c2ed",
+          "file": "database.spec.ts",
+          "line": 2,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "phase06d2.spec.ts",
+      "file": "phase06d2.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "D2WEB01 main reads persisted HME history and reopening preserves exact raw facts without enabling ratios",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1080,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T10:03:28.877Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "history-reload-receipt",
+                      "contentType": "application/json",
+                      "body": "eyJldmVudENvdW50Ijo3LCJyZXZpc2lvbiI6MiwidW5jaGFuZ2VkQWZ0ZXJSZW9wZW4iOnRydWUsImNvbXBsZXRlZFNlc3Npb25zIjoxfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "78ad4ab510c4afc0dcb5-cc968515644dd023472b",
+          "file": "phase06d2.spec.ts",
+          "line": 52,
+          "column": 1
+        },
+        {
+          "title": "D2WEB02 a valid historical correction recomputes the original day and an identical append retry cannot double count",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1176,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T10:03:29.968Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "corrected-original-day-receipt",
+                      "contentType": "application/json",
+                      "body": "eyJvcmlnaW5hbERhdGUiOiIyMDI2LTExLTA2VDEwOjAzOjMwLjQ3M1oiLCJmaW5hbEV2ZW50Q291bnQiOjgsImNvcnJlY3Rpb25Db3VudCI6MSwiY29tcGxldGVkU2Vzc2lvbnMiOjAsInVuY2hhbmdlZFJldHJ5Ijp0cnVlfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "78ad4ab510c4afc0dcb5-3a53c1efff96c3c44594",
+          "file": "phase06d2.spec.ts",
+          "line": 79,
+          "column": 1
+        },
+        {
+          "title": "D2WEB03 stored history never authorizes blocked routes or internal learning commands",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1002,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T10:03:31.152Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "history-does-not-authorize-learning",
+                      "contentType": "application/json",
+                      "body": "eyJyZWplY3RlZENvZGUiOiJSRUxFQVNFX0dBVEVTX0JMT0NLRUQiLCJsZWFybmluZ0V2ZW50c1VuY2hhbmdlZCI6dHJ1ZSwicmV2aWV3RHVlIjpudWxsfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "78ad4ab510c4afc0dcb5-9325f8f9fdb461103550",
+          "file": "phase06d2.spec.ts",
+          "line": 156,
+          "column": 1
+        },
+        {
+          "title": "D2WEB04 semantic corruption is rejected without deleting history or creating a fallback profile",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1142,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T10:03:32.164Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "corruption-preservation-receipt",
+                      "contentType": "application/json",
+                      "body": "eyJldmVudENvdW50Ijo3LCJ1bmNoYW5nZWRBZnRlclR3b0ZhaWxlZE9wZW5zIjp0cnVlLCJwcm9maWxlSW5pdGlhbGl6YXRpb25zIjoxfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "78ad4ab510c4afc0dcb5-129dd29e5e37745fb865",
+          "file": "phase06d2.spec.ts",
+          "line": 207,
+          "column": 1
+        },
+        {
+          "title": "D2WEB05 populated progress at 320px supports RTL, keyboard and automated accessibility",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1474,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T10:03:33.319Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "78ad4ab510c4afc0dcb5-7fef59f4fdfa07b66035",
+          "file": "phase06d2.spec.ts",
+          "line": 249,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "phase06e1.spec.ts",
+      "file": "phase06e1.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "E1WEB01 personal memory and corrected scheduling rebuild are deterministic on real encrypted IndexedDB without rewriting legacy history",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1023,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T10:03:34.819Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "E1-browser-rebuild.json",
+                      "contentType": "application/json",
+                      "body": "eyJ1bmNoYW5nZWRSYXdFdmVudHMiOjcsImRldGVybWluaXN0aWMiOnRydWUsImhpc3RvcmljYWxWZXJzaW9uUHJlc2VydmVkIjp0cnVlLCJjb3JyZWN0ZWRWZXJzaW9uU2VwYXJhdGUiOnRydWUsImV4ZWN1dGFibGUiOmZhbHNlfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b67a127f570ce7aab911-2c80e5ac65a60207a94e",
+          "file": "phase06e1.spec.ts",
+          "line": 52,
+          "column": 1
+        },
+        {
+          "title": "E1WEB02 corrected assessment and duplicate transport rebuild memory once at original review time",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1386,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T10:03:35.854Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "E1-browser-correction.json",
+                      "contentType": "application/json",
+                      "body": "eyJldmVudHMiOjgsImNvcnJlY3RlZFJldmlld3MiOjEsInJhdGluZyI6MywiYXQiOiIyMDI2LTExLTA2VDEwOjAzOjM2Ljg1NFoiLCJkdXBsaWNhdGVDb3VudGVkIjpmYWxzZSwicmF3VW5jaGFuZ2VkIjp0cnVlfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b67a127f570ce7aab911-61b33b198e568d38246b",
+          "file": "phase06e1.spec.ts",
+          "line": 83,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "production.spec.ts",
+      "file": "production.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "BWEB02 identity, real settings persistence and content gate",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 964,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T10:03:37.257Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ed69554c53210704c98c-b418c589417d95fe8b62",
+          "file": "production.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "BWEB03 encrypted backup inspection rejects wrong password and cancellation preserves data",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1107,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T10:03:38.236Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ed69554c53210704c98c-8fc908f774bd5f51aa99",
+          "file": "production.spec.ts",
+          "line": 33,
+          "column": 1
+        },
+        {
+          "title": "BWEB04 responsive RTL and automated accessibility 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7216,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T10:03:39.352Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ed69554c53210704c98c-b84cef9a3e078122a99c",
+          "file": "production.spec.ts",
+          "line": 68,
+          "column": 3
+        },
+        {
+          "title": "BWEB05 responsive RTL and automated accessibility 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6683,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T10:03:46.580Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ed69554c53210704c98c-395a683c4b802ae4d38e",
+          "file": "production.spec.ts",
+          "line": 68,
+          "column": 3
+        },
+        {
+          "title": "BWEB06 responsive RTL and automated accessibility 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6512,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T10:03:53.271Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ed69554c53210704c98c-f0e8ba149586c034188e",
+          "file": "production.spec.ts",
+          "line": 68,
+          "column": 3
+        }
+      ]
+    },
+    {
+      "title": "progress06d1.spec.ts",
+      "file": "progress06d1.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "D1WEB responsive RTL and accessible progress 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1372,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T10:03:59.808Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "030cfefc5690c0b7a59b-a6fa45c4adef056f529b",
+          "file": "progress06d1.spec.ts",
+          "line": 6,
+          "column": 3
+        },
+        {
+          "title": "D1WEB responsive RTL and accessible progress 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1393,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T10:04:01.189Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "030cfefc5690c0b7a59b-a92d88274ed3eef090f9",
+          "file": "progress06d1.spec.ts",
+          "line": 6,
+          "column": 3
+        },
+        {
+          "title": "D1WEB responsive RTL and accessible progress 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1468,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T10:04:02.590Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "030cfefc5690c0b7a59b-08cc0c935aaf812879cc",
+          "file": "progress06d1.spec.ts",
+          "line": 6,
+          "column": 3
+        },
+        {
+          "title": "D1WEB real saved mistake and correction update progress without acquiring mastery",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1211,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T10:04:04.070Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "030cfefc5690c0b7a59b-c859b987e3aee4bfb7da",
+          "file": "progress06d1.spec.ts",
+          "line": 40,
+          "column": 1
+        },
+        {
+          "title": "D1WEB keyboard navigation reload and direct route never unlock learning",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 824,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T10:04:05.288Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "030cfefc5690c0b7a59b-cae713f704c83cca3e78",
+          "file": "progress06d1.spec.ts",
+          "line": 86,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "verification05b.spec.ts",
+      "file": "verification05b.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "BWEB07 new profile, plan and nonadjacent declarations survive reopening without filling gaps",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1436,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T10:04:06.134Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7f7493b6f9f49bbaffbd-fa849a7d273e9bda9644",
+          "file": "verification05b.spec.ts",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "BWEB08 usual and today-only budgets persist as separate values",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1027,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T10:04:07.585Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7f7493b6f9f49bbaffbd-dba7cf60f7abe9c91034",
+          "file": "verification05b.spec.ts",
+          "line": 78,
+          "column": 1
+        },
+        {
+          "title": "BWEB09 direct learning routes keep training, recall and reader controls out of the DOM",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 826,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T10:04:08.624Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7f7493b6f9f49bbaffbd-de5754576dcbb23dbc42",
+          "file": "verification05b.spec.ts",
+          "line": 117,
+          "column": 1
+        },
+        {
+          "title": "BWEB10 direct service commands cannot bypass the Quran gate or create learning events",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 573,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T10:04:09.459Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "service-gate-rejections",
+                      "contentType": "application/json",
+                      "body": "ewogICJyZWplY3Rpb25zIjogWwogICAgewogICAgICAidHlwZSI6ICJzZXNzaW9uLnN0YXJ0IiwKICAgICAgImNvZGUiOiAiUkVMRUFTRV9HQVRFU19CTE9DS0VEIgogICAgfSwKICAgIHsKICAgICAgInR5cGUiOiAic2Vzc2lvbi5yZXBlYXQiLAogICAgICAiY29kZSI6ICJSRUxFQVNFX0dBVEVTX0JMT0NLRUQiCiAgICB9LAogICAgewogICAgICAidHlwZSI6ICJzZXNzaW9uLnN0YXJ0UmVjYWxsIiwKICAgICAgImNvZGUiOiAiUkVMRUFTRV9HQVRFU19CTE9DS0VEIgogICAgfSwKICAgIHsKICAgICAgInR5cGUiOiAic2Vzc2lvbi5wYXVzZSIsCiAgICAgICJjb2RlIjogIlJFTEVBU0VfR0FURVNfQkxPQ0tFRCIKICAgIH0sCiAgICB7CiAgICAgICJ0eXBlIjogInNlc3Npb24ucmVzdW1lIiwKICAgICAgImNvZGUiOiAiUkVMRUFTRV9HQVRFU19CTE9DS0VEIgogICAgfSwKICAgIHsKICAgICAgInR5cGUiOiAic2Vzc2lvbi5lbmQiLAogICAgICAiY29kZSI6ICJSRUxFQVNFX0dBVEVTX0JMT0NLRUQiCiAgICB9LAogICAgewogICAgICAidHlwZSI6ICJzZXNzaW9uLnJlc3RhcnRSZWNhbGwiLAogICAgICAiY29kZSI6ICJSRUxFQVNFX0dBVEVTX0JMT0NLRUQiCiAgICB9LAogICAgewogICAgICAidHlwZSI6ICJzZXNzaW9uLmZpbmlzaGVkQmVmb3JlU3RvcCIsCiAgICAgICJjb2RlIjogIlJFTEVBU0VfR0FURVNfQkxPQ0tFRCIKICAgIH0sCiAgICB7CiAgICAgICJ0eXBlIjogImF0dGVtcHQuaGludCIsCiAgICAgICJjb2RlIjogIlJFTEVBU0VfR0FURVNfQkxPQ0tFRCIKICAgIH0sCiAgICB7CiAgICAgICJ0eXBlIjogImF0dGVtcHQucmV2ZWFsIiwKICAgICAgImNvZGUiOiAiUkVMRUFTRV9HQVRFU19CTE9DS0VEIgogICAgfSwKICAgIHsKICAgICAgInR5cGUiOiAiYXR0ZW1wdC5maW5pc2giLAogICAgICAiY29kZSI6ICJSRUxFQVNFX0dBVEVTX0JMT0NLRUQiCiAgICB9LAogICAgewogICAgICAidHlwZSI6ICJhdHRlbXB0LmFzc2VzcyIsCiAgICAgICJjb2RlIjogIlJFTEVBU0VfR0FURVNfQkxPQ0tFRCIKICAgIH0KICBdLAogICJiZWZvcmVSZXZpc2lvbiI6IDEsCiAgImFmdGVyUmV2aXNpb24iOiAxLAogICJiZWZvcmVFdmVudHMiOiAxLAogICJhZnRlckV2ZW50cyI6IDEsCiAgInJhd0V2ZW50c1VuY2hhbmdlZCI6IHRydWUsCiAgInNlc3Npb24iOiBudWxsLAogICJhdHRlbXB0cyI6IDAKfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7f7493b6f9f49bbaffbd-6de0ca3bbd003d3e754a",
+          "file": "verification05b.spec.ts",
+          "line": 135,
+          "column": 1
+        },
+        {
+          "title": "BWEB11 forecast abstains and thirty untested parts do not acquire mastery",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 591,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T10:04:10.042Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7f7493b6f9f49bbaffbd-49ee1bee94f6a8300254",
+          "file": "verification05b.spec.ts",
+          "line": 220,
+          "column": 1
+        },
+        {
+          "title": "BWEB12 keyboard skip link, modal focus containment and Escape restore focus",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 580,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T10:04:10.644Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7f7493b6f9f49bbaffbd-c27a0b1644be65932f4f",
+          "file": "verification05b.spec.ts",
+          "line": 244,
+          "column": 1
+        },
+        {
+          "title": "BWEB13 invalid backup preserves preferences; confirmed full restore can be repeated",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1819,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T10:04:11.234Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7f7493b6f9f49bbaffbd-a0e516b03d6df98aa588",
+          "file": "verification05b.spec.ts",
+          "line": 276,
+          "column": 1
+        },
+        {
+          "title": "BWEB14 a reported mistake remains a local unverified draft after reopening",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 808,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T10:04:13.059Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7f7493b6f9f49bbaffbd-40c27d44ba76f201978a",
+          "file": "verification05b.spec.ts",
+          "line": 343,
+          "column": 1
+        },
+        {
+          "title": "BWEB15 enlarged text, reduced motion and dark preference persist at 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1439,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T10:04:13.878Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7f7493b6f9f49bbaffbd-b9aecf3b81371849f6b0",
+          "file": "verification05b.spec.ts",
+          "line": 373,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-07T10:03:25.517Z",
+    "duration": 50102.297,
+    "expected": 27,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

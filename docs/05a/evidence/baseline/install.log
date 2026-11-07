@@ -1,0 +1,25 @@
+/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules/corepack/dist/lib/corepack.cjs:13170
+    throw new Error(
+          ^
+
+Error: Error when performing the request to https://registry.npmjs.org/pnpm/-/pnpm-11.25.0.tgz; for troubleshooting help, see https://github.com/nodejs/corepack#troubleshooting
+    at fetch (/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules/corepack/dist/lib/corepack.cjs:13170:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async fetchUrlStream (/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules/corepack/dist/lib/corepack.cjs:13200:20)
+    at async download (/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules/corepack/dist/lib/corepack.cjs:13352:18)
+    at async installVersion (/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules/corepack/dist/lib/corepack.cjs:13466:55)
+    at async Engine.ensurePackageManager (/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules/corepack/dist/lib/corepack.cjs:13994:32)
+    at async Engine.executePackageManagerRequest (/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules/corepack/dist/lib/corepack.cjs:14111:25)
+    at async Object.runMain (/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules/corepack/dist/lib/corepack.cjs:14838:7) {
+  [cause]: [TypeError: fetch failed] {
+    [cause]: Error: getaddrinfo ENOTFOUND registry.npmjs.org
+        at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:123:26) {
+      errno: -3008,
+      code: 'ENOTFOUND',
+      syscall: 'getaddrinfo',
+      hostname: 'registry.npmjs.org'
+    }
+  }
+}
+
+Node.js v24.22.1

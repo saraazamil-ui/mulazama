@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "editionId": null,
+  "numbering": null,
+  "basmalaPolicy": null,
+  "expectedAyahsPerSurah": null,
+  "provenance": { "publisher": null, "url": null, "version": null, "documentSha256": null },
+  "testOnly": false,
+  "templateStatus": "incomplete-not-an-audit-profile"
+}
