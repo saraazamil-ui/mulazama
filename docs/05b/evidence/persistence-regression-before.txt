@@ -1,0 +1,167 @@
+
+ RUN  v3.2.4 /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-05b
+
+ ❯ src/persistence/event-store05b.test.ts (10 tests | 9 failed) 16ms
+   × 05B persistent-envelope regressions (reference store, not browser IndexedDB) > P05B01 rejects impossible UTC instants atomically: 2026-02-30T10:00:00.000Z 12ms
+     → promise resolved "{ revision: 1, events: [ { …(13) } ] }" instead of rejecting
+   × 05B persistent-envelope regressions (reference store, not browser IndexedDB) > P05B01 rejects impossible UTC instants atomically: 2026-11-05T24:00:00.000Z 1ms
+     → promise resolved "{ revision: 1, events: [ { …(13) } ] }" instead of rejecting
+   × 05B persistent-envelope regressions (reference store, not browser IndexedDB) > P05B01 rejects impossible UTC instants atomically: 2025-02-29T10:00:00Z 0ms
+     → promise resolved "{ revision: 1, events: [ { …(13) } ] }" instead of rejecting
+   × 05B persistent-envelope regressions (reference store, not browser IndexedDB) > P05B02 rejects accessor data without invoking it or persisting a changed value 0ms
+     → promise resolved "{ revision: 1, events: [ { …(13) } ] }" instead of rejecting
+   × 05B persistent-envelope regressions (reference store, not browser IndexedDB) > P05B03 rejects values that cannot round-trip as safe plain JSON 1ms
+     → expected [Function] to throw an error
+   × 05B persistent-envelope regressions (reference store, not browser IndexedDB) > P05B03 rejects values that cannot round-trip as safe plain JSON 0ms
+     → expected [Function] to throw an error
+   × 05B persistent-envelope regressions (reference store, not browser IndexedDB) > P05B03 rejects values that cannot round-trip as safe plain JSON 0ms
+     → expected [Function] to throw an error
+   × 05B persistent-envelope regressions (reference store, not browser IndexedDB) > P05B03 rejects values that cannot round-trip as safe plain JSON 0ms
+     → expected [Function] to throw an error
+   × 05B persistent-envelope regressions (reference store, not browser IndexedDB) > P05B03 rejects values that cannot round-trip as safe plain JSON 0ms
+     → expected [Function] to throw an error
+   ✓ 05B persistent-envelope regressions (reference store, not browser IndexedDB) > P05B04 accepts leap-day timestamps and all supported fractional precisions unchanged 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 9 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/persistence/event-store05b.test.ts > 05B persistent-envelope regressions (reference store, not browser IndexedDB) > P05B01 rejects impossible UTC instants atomically: 2026-02-30T10:00:00.000Z
+ FAIL  src/persistence/event-store05b.test.ts > 05B persistent-envelope regressions (reference store, not browser IndexedDB) > P05B01 rejects impossible UTC instants atomically: 2026-11-05T24:00:00.000Z
+ FAIL  src/persistence/event-store05b.test.ts > 05B persistent-envelope regressions (reference store, not browser IndexedDB) > P05B01 rejects impossible UTC instants atomically: 2025-02-29T10:00:00Z
+AssertionError: promise resolved "{ revision: 1, events: [ { …(13) } ] }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "events": [
++     {
++       "commandId": "e1",
++       "coverage": [],
++       "data": {
++         "confirmed": true,
++       },
++       "eventId": "e1",
++       "occurredAt": "2026-02-30T10:00:00.000Z",
++       "operationId": "e1",
++       "receivedAt": "2026-11-05T10:00:00.000Z",
++       "source": "product",
++       "type": "SessionStarted",
++       "unitId": null,
++       "userId": "synthetic-05b",
++       "versions": {
++         "algorithm": "hme-0.1-engineering-05a.1",
++         "content": "unavailable",
++         "desiredRetention": 0.9,
++         "effectiveReviewTime": "recall-start-v1",
++         "fsrsImplementation": "hme-fsrs6-research-binary64-0.1.0",
++         "libraryConformance": "blocked",
++         "model": "FSRS-6",
++         "modelTimePolicy": "floor-elapsed-seconds-divided-by-86400-0.1.0",
++         "pedagogicalTimePolicy": "recall-start-minus-last-relevant-exposure-v1",
++         "policy": "P0-0.1.0",
++         "rubric": "manual-recall-0.1.0",
++         "schema": 1,
++         "weightsVersion": "HME-0.1-section12-21weights",
++       },
++       "zoneId": "Asia/Riyadh",
++     },
++   ],
++   "revision": 1,
+  }
+
+ ❯ src/persistence/event-store05b.test.ts:15:65
+     13|     'P05B01 rejects impossible UTC instants atomically: %s', async occ…
+     14|       const store = new MemoryEventStore();
+     15|       await expect(store.append([{ ...event(), occurredAt }], 0)).reje…
+       |                                                                 ^
+     16|       expect(await store.load()).toEqual({ revision: 0, events: [] });
+     17|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/9]⎯
+
+ FAIL  src/persistence/event-store05b.test.ts > 05B persistent-envelope regressions (reference store, not browser IndexedDB) > P05B02 rejects accessor data without invoking it or persisting a changed value
+AssertionError: promise resolved "{ revision: 1, events: [ { …(13) } ] }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "events": [
++     {
++       "commandId": "e1",
++       "coverage": [],
++       "data": {
++         "confirmed": 2,
++       },
++       "eventId": "e1",
++       "occurredAt": "2026-11-05T10:00:00.000Z",
++       "operationId": "e1",
++       "receivedAt": "2026-11-05T10:00:00.000Z",
++       "source": "product",
++       "type": "SessionStarted",
++       "unitId": null,
++       "userId": "synthetic-05b",
++       "versions": {
++         "algorithm": "hme-0.1-engineering-05a.1",
++         "content": "unavailable",
++         "desiredRetention": 0.9,
++         "effectiveReviewTime": "recall-start-v1",
++         "fsrsImplementation": "hme-fsrs6-research-binary64-0.1.0",
++         "libraryConformance": "blocked",
++         "model": "FSRS-6",
++         "modelTimePolicy": "floor-elapsed-seconds-divided-by-86400-0.1.0",
++         "pedagogicalTimePolicy": "recall-start-minus-last-relevant-exposure-v1",
++         "policy": "P0-0.1.0",
++         "rubric": "manual-recall-0.1.0",
++         "schema": 1,
++         "weightsVersion": "HME-0.1-section12-21weights",
++       },
++       "zoneId": "Asia/Riyadh",
++     },
++   ],
++   "revision": 1,
+  }
+
+ ❯ src/persistence/event-store05b.test.ts:21:57
+     19|     let reads = 0; const data = { get confirmed() { reads++; return re…
+     20|     const store = new MemoryEventStore();
+     21|     await expect(store.append([{ ...event(), data }], 0)).rejects.toMa…
+       |                                                         ^
+     22|     expect(reads).toBe(0); expect((await store.load()).events).toHaveL…
+     23|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/9]⎯
+
+ FAIL  src/persistence/event-store05b.test.ts > 05B persistent-envelope regressions (reference store, not browser IndexedDB) > P05B03 rejects values that cannot round-trip as safe plain JSON
+ FAIL  src/persistence/event-store05b.test.ts > 05B persistent-envelope regressions (reference store, not browser IndexedDB) > P05B03 rejects values that cannot round-trip as safe plain JSON
+ FAIL  src/persistence/event-store05b.test.ts > 05B persistent-envelope regressions (reference store, not browser IndexedDB) > P05B03 rejects values that cannot round-trip as safe plain JSON
+ FAIL  src/persistence/event-store05b.test.ts > 05B persistent-envelope regressions (reference store, not browser IndexedDB) > P05B03 rejects values that cannot round-trip as safe plain JSON
+ FAIL  src/persistence/event-store05b.test.ts > 05B persistent-envelope regressions (reference store, not browser IndexedDB) > P05B03 rejects values that cannot round-trip as safe plain JSON
+AssertionError: expected [Function] to throw an error
+
+- Expected: 
+null
+
++ Received: 
+undefined
+
+ ❯ src/persistence/event-store05b.test.ts:31:63
+     29|     () => JSON.parse('{"__proto__":{"admin":true}}') as Record<string,…
+     30|   ])('P05B03 rejects values that cannot round-trip as safe plain JSON'…
+     31|     expect(() => validateEvent({ ...event(), data: data() })).toThrowE…
+       |                                                               ^
+     32|   });
+     33|   it('P05B04 accepts leap-day timestamps and all supported fractional …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/9]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  9 failed | 1 passed (10)
+   Start at  15:50:29
+   Duration  449ms (transform 40ms, setup 27ms, collect 41ms, tests 16ms, environment 227ms, prepare 30ms)
+

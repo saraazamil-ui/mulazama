@@ -1,0 +1,90 @@
+{
+  "checkedAt": "2026-11-07T12:38:16.954755+00:00",
+  "issue": "UIS05 could type before the App navigation animation frame focused h1; focus was then taken from the spent-minutes field before its digit arrived.",
+  "evidence": {
+    "failedInput": "ui-regression-diagnostic-repeat-1.log: spent empty, cost 100, INVALID_INPUT numeric validation, no plan committed",
+    "focusOrder": "ui-regression-focus-trace-1.log: spent input, h1, unit-cost input",
+    "priorFullSuite": "Root retained attempt2 failure 885/886; not rerun by this investigation"
+  },
+  "fixOwner": "root",
+  "productFix": "App navigation frame preserves a newly focused element and cancels the pending frame on cleanup.",
+  "testChange": "One new UIS06 executes the real pending callback after user input focus and before typing; checks preserved input focus/value, default accessible heading focus, and cancellation on unmount. UIS05 original restored without extra waits or timeout changes.",
+  "sourceSHA256": {
+    "src/LearningEngineScreen.test.tsx": "e6b0c988455405805613d24b597d72bdf1720148ef7538d931060aa8619f338f",
+    "src/App.tsx": "00deb3d0a576b1a5c9690ea941191881cbce19e6ee3a82e1331634c633100d69"
+  },
+  "runs": [
+    {
+      "report": "ui-regression-baseline.json",
+      "executed": 5,
+      "passed": 4,
+      "failed": 1,
+      "skipped": 0,
+      "success": false
+    },
+    {
+      "report": "ui-regression-diagnostic.json",
+      "executed": 5,
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0,
+      "success": true
+    },
+    {
+      "report": "ui-regression-diagnostic-repeat-1.json",
+      "executed": 5,
+      "passed": 4,
+      "failed": 1,
+      "skipped": 0,
+      "success": false
+    },
+    {
+      "report": "ui-regression-focus-trace-1.json",
+      "executed": 5,
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0,
+      "success": true
+    },
+    {
+      "report": "ui-regression-focus-trace-2.json",
+      "executed": 5,
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0,
+      "success": true
+    },
+    {
+      "report": "ui-regression-focus-trace-3.json",
+      "executed": 5,
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0,
+      "success": true
+    },
+    {
+      "report": "ui-regression-fixed.json",
+      "executed": 14,
+      "passed": 14,
+      "failed": 0,
+      "skipped": 0,
+      "success": true
+    }
+  ],
+  "finalTargeted": {
+    "executed": 14,
+    "passed": 14,
+    "failed": 0,
+    "skipped": 0,
+    "files": [
+      "src/LearningEngineScreen.test.tsx",
+      "src/LearningEngineScreen06d2.test.tsx"
+    ]
+  },
+  "countingNote": "Diagnostic runs repeat the same five existing cases. UIS06 adds one unique regression case. The 14 final targeted cases belong to the full suite, not an additional total.",
+  "limits": [
+    "No full suite executed by this investigation",
+    "No browser or human usability result implied",
+    "Numeric validation and plan results were not relaxed"
+  ]
+}

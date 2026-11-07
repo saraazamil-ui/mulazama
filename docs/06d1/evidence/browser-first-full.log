@@ -1,0 +1,707 @@
+[WebServer] (node:20170) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 20 tests using 1 worker
+
+(node:20176) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:20176) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 e2e/database.spec.ts:2:1 › BWEB01 IndexedDB: 21 encrypted transaction, migration, corruption, concurrency and restore checks (1.0s)
+  ✓   2 e2e/production.spec.ts:5:1 › BWEB02 identity, real settings persistence and content gate (1.1s)
+  ✘   3 e2e/production.spec.ts:32:1 › BWEB03 encrypted backup inspection rejects wrong password and cancellation preserves data (30.3s)
+(node:20273) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:20273) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   4 e2e/production.spec.ts:67:3 › BWEB04 responsive RTL and automated accessibility 320px (1.6s)
+(node:20296) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:20296) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   5 e2e/production.spec.ts:67:3 › BWEB05 responsive RTL and automated accessibility 390px (1.3s)
+(node:20312) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:20312) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   6 e2e/production.spec.ts:67:3 › BWEB06 responsive RTL and automated accessibility 1440px (1.6s)
+(node:20328) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:20328) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   7 e2e/progress06d1.spec.ts:6:3 › D1WEB responsive RTL and accessible progress 320px (2.2s)
+  ✓   8 e2e/progress06d1.spec.ts:6:3 › D1WEB responsive RTL and accessible progress 390px (1.7s)
+  ✓   9 e2e/progress06d1.spec.ts:6:3 › D1WEB responsive RTL and accessible progress 1440px (1.8s)
+  ✓  10 e2e/progress06d1.spec.ts:40:1 › D1WEB real saved mistake and correction update progress without acquiring mastery (1.8s)
+  ✓  11 e2e/progress06d1.spec.ts:86:1 › D1WEB keyboard navigation reload and direct route never unlock learning (1.2s)
+  ✘  12 e2e/verification05b.spec.ts:6:1 › BWEB07 new profile, plan and nonadjacent declarations survive reopening without filling gaps (7.6s)
+(node:20392) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:20392) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  13 e2e/verification05b.spec.ts:75:1 › BWEB08 usual and today-only budgets persist as separate values (1.7s)
+  ✓  14 e2e/verification05b.spec.ts:114:1 › BWEB09 direct learning routes keep training, recall and reader controls out of the DOM (1.6s)
+  ✓  15 e2e/verification05b.spec.ts:132:1 › BWEB10 direct service commands cannot bypass the Quran gate or create learning events (685ms)
+  ✓  16 e2e/verification05b.spec.ts:217:1 › BWEB11 forecast abstains and thirty untested parts do not acquire mastery (932ms)
+  ✘  17 e2e/verification05b.spec.ts:241:1 › BWEB12 keyboard skip link, modal focus containment and Escape restore focus (6.4s)
+(node:20437) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:20437) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  18 e2e/verification05b.spec.ts:273:1 › BWEB13 invalid backup preserves preferences; confirmed full restore can be repeated (6.1s)
+(node:20496) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:20496) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  19 e2e/verification05b.spec.ts:340:1 › BWEB14 a reported mistake remains a local unverified draft after reopening (2.6s)
+  ✘  20 e2e/verification05b.spec.ts:370:1 › BWEB15 enlarged text, reduced motion and dark preference persist at 320px (859ms)
+
+
+  1) e2e/production.spec.ts:32:1 › BWEB03 encrypted backup inspection rejects wrong password and cancellation preserves data 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.fill: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByLabel('كلمة مرور النسخة', { exact: true })
+
+
+      31 |   await page.goto("/#S18");
+      32 |   const password = page.getByLabel("كلمة مرور النسخة", { exact: true });
+    > 33 |   await password.fill("Mulazama-test-password-2026");
+         |                  ^
+      34 |   const downloadPromise = page.waitForEvent("download");
+      35 |   await page.getByRole("button", { name: "صدّر النسخة المشفرة" }).click();
+      36 |   const download = await downloadPromise;
+        at /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06d1/e2e/production.spec.ts:33:18
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/production-BWEB03-encrypte-a09be-cancellation-preserves-data/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/production-BWEB03-encrypte-a09be-cancellation-preserves-data/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/production-BWEB03-encrypte-a09be-cancellation-preserves-data/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/production-BWEB03-encrypte-a09be-cancellation-preserves-data/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) e2e/production.spec.ts:67:3 › BWEB04 responsive RTL and automated accessibility 320px ─────────
+
+    Error: S01
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  -   1
+    + Received  + 126
+
+    - Array []
+    + Array [
+    +   Object {
+    +     "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+    +     "help": "Elements must meet minimum color contrast ratio thresholds",
+    +     "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=playwright",
+    +     "id": "color-contrast",
+    +     "impact": "serious",
+    +     "nodes": Array [
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#e9eddf",
+    +               "contrastRatio": 4.36,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#5f725a",
+    +               "fontSize": "7.4pt (9.8px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 4.36 (foreground color: #5f725a, background color: #e9eddf, font size: 7.4pt (9.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<section class=\"welcome\">",
+    +                 "target": Array [
+    +                   ".welcome",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 4.36 (foreground color: #5f725a, background color: #e9eddf, font size: 7.4pt (9.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<span>العربية · RTL</span>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".welcome-facts > span:nth-child(1)",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#e9eddf",
+    +               "contrastRatio": 4.36,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#5f725a",
+    +               "fontSize": "7.4pt (9.8px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 4.36 (foreground color: #5f725a, background color: #e9eddf, font size: 7.4pt (9.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<section class=\"welcome\">",
+    +                 "target": Array [
+    +                   ".welcome",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 4.36 (foreground color: #5f725a, background color: #e9eddf, font size: 7.4pt (9.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<span>حفص عن عاصم · مستهدف</span>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".welcome-facts > span:nth-child(2)",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#e9eddf",
+    +               "contrastRatio": 4.36,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#5f725a",
+    +               "fontSize": "7.4pt (9.8px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 4.36 (foreground color: #5f725a, background color: #e9eddf, font size: 7.4pt (9.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<section class=\"welcome\">",
+    +                 "target": Array [
+    +                   ".welcome",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 4.36 (foreground color: #5f725a, background color: #e9eddf, font size: 7.4pt (9.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<span>دون حساب</span>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".welcome-facts > span:nth-child(3)",
+    +         ],
+    +       },
+    +     ],
+    +     "tags": Array [
+    +       "cat.color",
+    +       "wcag2aa",
+    +       "wcag143",
+    +       "TTv5",
+    +       "TT13.c",
+    +       "EN-301-549",
+    +       "EN-9.1.4.3",
+    +       "ACT",
+    +     ],
+    +   },
+    + ]
+
+      76 |         .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
+      77 |         .analyze();
+    > 78 |       expect(result.violations, id).toEqual([]);
+         |                                     ^
+      79 |     }
+      80 |   });
+      81 | }
+        at /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06d1/e2e/production.spec.ts:78:37
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/production-BWEB04-responsi-d3b99-tomated-accessibility-320px/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/production-BWEB04-responsi-d3b99-tomated-accessibility-320px/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/production-BWEB04-responsi-d3b99-tomated-accessibility-320px/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/production-BWEB04-responsi-d3b99-tomated-accessibility-320px/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) e2e/production.spec.ts:67:3 › BWEB05 responsive RTL and automated accessibility 390px ─────────
+
+    Error: S01
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  -   1
+    + Received  + 126
+
+    - Array []
+    + Array [
+    +   Object {
+    +     "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+    +     "help": "Elements must meet minimum color contrast ratio thresholds",
+    +     "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=playwright",
+    +     "id": "color-contrast",
+    +     "impact": "serious",
+    +     "nodes": Array [
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#e9eddf",
+    +               "contrastRatio": 4.36,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#5f725a",
+    +               "fontSize": "7.4pt (9.8px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 4.36 (foreground color: #5f725a, background color: #e9eddf, font size: 7.4pt (9.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<section class=\"welcome\">",
+    +                 "target": Array [
+    +                   ".welcome",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 4.36 (foreground color: #5f725a, background color: #e9eddf, font size: 7.4pt (9.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<span>العربية · RTL</span>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".welcome-facts > span:nth-child(1)",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#e9eddf",
+    +               "contrastRatio": 4.36,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#5f725a",
+    +               "fontSize": "7.4pt (9.8px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 4.36 (foreground color: #5f725a, background color: #e9eddf, font size: 7.4pt (9.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<section class=\"welcome\">",
+    +                 "target": Array [
+    +                   ".welcome",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 4.36 (foreground color: #5f725a, background color: #e9eddf, font size: 7.4pt (9.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<span>حفص عن عاصم · مستهدف</span>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".welcome-facts > span:nth-child(2)",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#e9eddf",
+    +               "contrastRatio": 4.36,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#5f725a",
+    +               "fontSize": "7.4pt (9.8px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 4.36 (foreground color: #5f725a, background color: #e9eddf, font size: 7.4pt (9.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<section class=\"welcome\">",
+    +                 "target": Array [
+    +                   ".welcome",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 4.36 (foreground color: #5f725a, background color: #e9eddf, font size: 7.4pt (9.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<span>دون حساب</span>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".welcome-facts > span:nth-child(3)",
+    +         ],
+    +       },
+    +     ],
+    +     "tags": Array [
+    +       "cat.color",
+    +       "wcag2aa",
+    +       "wcag143",
+    +       "TTv5",
+    +       "TT13.c",
+    +       "EN-301-549",
+    +       "EN-9.1.4.3",
+    +       "ACT",
+    +     ],
+    +   },
+    + ]
+
+      76 |         .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
+      77 |         .analyze();
+    > 78 |       expect(result.violations, id).toEqual([]);
+         |                                     ^
+      79 |     }
+      80 |   });
+      81 | }
+        at /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06d1/e2e/production.spec.ts:78:37
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/production-BWEB05-responsi-df6c0-tomated-accessibility-390px/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/production-BWEB05-responsi-df6c0-tomated-accessibility-390px/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/production-BWEB05-responsi-df6c0-tomated-accessibility-390px/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/production-BWEB05-responsi-df6c0-tomated-accessibility-390px/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) e2e/production.spec.ts:67:3 › BWEB06 responsive RTL and automated accessibility 1440px ────────
+
+    Error: S01
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  -  1
+    + Received  + 91
+
+    - Array []
+    + Array [
+    +   Object {
+    +     "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+    +     "help": "Elements must meet minimum color contrast ratio thresholds",
+    +     "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=playwright",
+    +     "id": "color-contrast",
+    +     "impact": "serious",
+    +     "nodes": Array [
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#e9eddf",
+    +               "contrastRatio": 4.36,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#5f725a",
+    +               "fontSize": "7.9pt (10.5px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 4.36 (foreground color: #5f725a, background color: #e9eddf, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<section class=\"welcome\">",
+    +                 "target": Array [
+    +                   ".welcome",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 4.36 (foreground color: #5f725a, background color: #e9eddf, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<span>حفص عن عاصم · مستهدف</span>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".welcome-facts > span:nth-child(2)",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#e9eddf",
+    +               "contrastRatio": 4.36,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#5f725a",
+    +               "fontSize": "7.9pt (10.5px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 4.36 (foreground color: #5f725a, background color: #e9eddf, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<section class=\"welcome\">",
+    +                 "target": Array [
+    +                   ".welcome",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 4.36 (foreground color: #5f725a, background color: #e9eddf, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<span>دون حساب</span>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".welcome-facts > span:nth-child(3)",
+    +         ],
+    +       },
+    +     ],
+    +     "tags": Array [
+    +       "cat.color",
+    +       "wcag2aa",
+    +       "wcag143",
+    +       "TTv5",
+    +       "TT13.c",
+    +       "EN-301-549",
+    +       "EN-9.1.4.3",
+    +       "ACT",
+    +     ],
+    +   },
+    + ]
+
+      76 |         .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
+      77 |         .analyze();
+    > 78 |       expect(result.violations, id).toEqual([]);
+         |                                     ^
+      79 |     }
+      80 |   });
+      81 | }
+        at /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06d1/e2e/production.spec.ts:78:37
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/production-BWEB06-responsi-b5d1b-omated-accessibility-1440px/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/production-BWEB06-responsi-b5d1b-omated-accessibility-1440px/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/production-BWEB06-responsi-b5d1b-omated-accessibility-1440px/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/production-BWEB06-responsi-b5d1b-omated-accessibility-1440px/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) e2e/verification05b.spec.ts:6:1 › BWEB07 new profile, plan and nonadjacent declarations survive reopening without filling gaps 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('button', { name: 'الجزء 1، محفوظ معلن غير مختبر', exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByRole('button', { name: 'الجزء 1، محفوظ معلن غير مختبر', exact: true })
+
+
+      27 |   const parts = page.locator('.juz-grid button');
+      28 |   await expect(parts).toHaveCount(30);
+    > 29 |   await expect(page.getByRole('button', { name: 'الجزء 1، محفوظ معلن غير مختبر', exact: true })).toBeVisible();
+         |                                                                                                  ^
+      30 |   await expect(page.getByRole('button', { name: 'الجزء 2، لم يُختبر بعد', exact: true })).toBeVisible();
+      31 |   await expect(page.getByRole('button', { name: 'الجزء 3، محفوظ معلن غير مختبر', exact: true })).toBeVisible();
+      32 |   await expect(page.getByRole('region', { name: 'ملخص التقدم' })).toBeVisible();
+        at /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06d1/e2e/verification05b.spec.ts:29:98
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/verification05b-BWEB07-new-8163e-pening-without-filling-gaps/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/verification05b-BWEB07-new-8163e-pening-without-filling-gaps/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/verification05b-BWEB07-new-8163e-pening-without-filling-gaps/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/verification05b-BWEB07-new-8163e-pening-without-filling-gaps/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) e2e/verification05b.spec.ts:241:1 › BWEB12 keyboard skip link, modal focus containment and Escape restore focus 
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  getByRole('dialog', { name: 'هل تريد حذف بيانات التعلم؟' }).getByRole('button', { name: 'إلغاء', exact: true })
+    Expected: focused
+    Received: inactive
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeFocused" with timeout 5000ms
+      - waiting for getByRole('dialog', { name: 'هل تريد حذف بيانات التعلم؟' }).getByRole('button', { name: 'إلغاء', exact: true })
+        8 × locator resolved to <button type="button" class="button secondary ">إلغاء</button>
+          - unexpected value "inactive"
+
+
+      135 |   const dialog = page.getByRole('dialog', { name: 'هل تريد حذف بيانات التعلم؟' });
+      136 |   await expect(dialog).toBeVisible();
+    > 137 |   await expect(dialog.getByRole('button', { name: 'إلغاء', exact: true })).toBeFocused();
+          |                                                                            ^
+      138 |   for (let i = 0; i < 6; i++) {
+      139 |     await page.keyboard.press('Tab');
+      140 |     expect(await dialog.evaluate(element => element.contains(document.activeElement))).toBe(true);
+        at /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06d1/e2e/verification05b.spec.ts:137:76
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/verification05b-BWEB12-key-b71c4-nt-and-Escape-restore-focus/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/verification05b-BWEB12-key-b71c4-nt-and-Escape-restore-focus/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/verification05b-BWEB12-key-b71c4-nt-and-Escape-restore-focus/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/verification05b-BWEB12-key-b71c4-nt-and-Escape-restore-focus/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  7) e2e/verification05b.spec.ts:273:1 › BWEB13 invalid backup preserves preferences; confirmed full restore can be repeated 
+
+    Error: locator.check: Clicking the checkbox did not change its state
+    Call log:
+      - waiting for getByRole('checkbox', { name: 'تكبير النص' })
+        - locator resolved to <input type="checkbox"/>
+      - attempting click action
+        - waiting for element to be visible, enabled and stable
+        - element is visible, enabled and stable
+        - scrolling into view if needed
+        - done scrolling
+        - performing click action
+        - click action done
+        - waiting for scheduled navigations to finish
+        - navigations have finished
+
+
+      148 |   const password = 'Mulazama-05B-synthetic-backup-password';
+      149 |   await page.goto('/#S17');
+    > 150 |   await page.getByRole('checkbox', { name: 'تكبير النص' }).check();
+          |                                                            ^
+      151 |   await expect(page.getByRole('checkbox', { name: 'تكبير النص' })).toBeChecked();
+      152 |   await page.goto('/#S18');
+      153 |   await page.getByLabel('كلمة مرور النسخة', { exact: true }).fill(password);
+        at /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06d1/e2e/verification05b.spec.ts:150:60
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/verification05b-BWEB13-inv-4a2fe-ull-restore-can-be-repeated/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/verification05b-BWEB13-inv-4a2fe-ull-restore-can-be-repeated/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/verification05b-BWEB13-inv-4a2fe-ull-restore-can-be-repeated/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/verification05b-BWEB13-inv-4a2fe-ull-restore-can-be-repeated/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8) e2e/verification05b.spec.ts:370:1 › BWEB15 enlarged text, reduced motion and dark preference persist at 320px 
+
+    Error: locator.check: Clicking the checkbox did not change its state
+    Call log:
+      - waiting for getByRole('checkbox', { name: 'تكبير النص', exact: true })
+        - locator resolved to <input type="checkbox"/>
+      - attempting click action
+        - waiting for element to be visible, enabled and stable
+        - element is visible, enabled and stable
+        - scrolling into view if needed
+        - done scrolling
+        - performing click action
+        - click action done
+        - waiting for scheduled navigations to finish
+        - navigations have finished
+
+
+      198 |   await page.goto('/#S17');
+      199 |   for (const name of ['تكبير النص', 'تقليل الحركة', 'الوضع الداكن']) {
+    > 200 |     await page.getByRole('checkbox', { name, exact: true }).check();
+          |                                                             ^
+      201 |   }
+      202 |   await page.reload();
+      203 |   for (const name of ['تكبير النص', 'تقليل الحركة', 'الوضع الداكن']) {
+        at /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06d1/e2e/verification05b.spec.ts:200:61
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/verification05b-BWEB15-enl-6e314-preference-persist-at-320px/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/verification05b-BWEB15-enl-6e314-preference-persist-at-320px/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/verification05b-BWEB15-enl-6e314-preference-persist-at-320px/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/verification05b-BWEB15-enl-6e314-preference-persist-at-320px/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8 failed
+    e2e/production.spec.ts:32:1 › BWEB03 encrypted backup inspection rejects wrong password and cancellation preserves data 
+    e2e/production.spec.ts:67:3 › BWEB04 responsive RTL and automated accessibility 320px ──────────
+    e2e/production.spec.ts:67:3 › BWEB05 responsive RTL and automated accessibility 390px ──────────
+    e2e/production.spec.ts:67:3 › BWEB06 responsive RTL and automated accessibility 1440px ─────────
+    e2e/verification05b.spec.ts:6:1 › BWEB07 new profile, plan and nonadjacent declarations survive reopening without filling gaps 
+    e2e/verification05b.spec.ts:241:1 › BWEB12 keyboard skip link, modal focus containment and Escape restore focus 
+    e2e/verification05b.spec.ts:273:1 › BWEB13 invalid backup preserves preferences; confirmed full restore can be repeated 
+    e2e/verification05b.spec.ts:370:1 › BWEB15 enlarged text, reduced motion and dark preference persist at 320px 
+  12 passed (1.6m)
+
+To open last HTML report run:
+
+  npx playwright show-report
+

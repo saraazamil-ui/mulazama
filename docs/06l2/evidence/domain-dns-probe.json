@@ -1,0 +1,24 @@
+{
+  "queriedAt": "2026-11-07T11:50:18.440718+00:00",
+  "ownershipProven": false,
+  "queries": [
+    {
+      "type": "A",
+      "exitCode": 10,
+      "stdout": "",
+      "stderr": "/AppleInternal/Library/BuildRoots/4~CV2DugBH9CYUdHSUah9pNqw427QX0cseF9X74W4/Library/Caches/com.apple.xbs/TemporaryDirectory.KGWzHV/Sources/bind9/bind9/lib/isc/unix/socket.c:5580: bind: Operation not permitted\ndig: isc_socket_bind: unexpected error\n"
+    },
+    {
+      "type": "NS",
+      "exitCode": 10,
+      "stdout": "",
+      "stderr": "/AppleInternal/Library/BuildRoots/4~CV2DugBH9CYUdHSUah9pNqw427QX0cseF9X74W4/Library/Caches/com.apple.xbs/TemporaryDirectory.KGWzHV/Sources/bind9/bind9/lib/isc/unix/socket.c:5580: bind: Operation not permitted\ndig: isc_socket_bind: unexpected error\n"
+    },
+    {
+      "type": "MX",
+      "exitCode": 10,
+      "stdout": "",
+      "stderr": "/AppleInternal/Library/BuildRoots/4~CV2DugBH9CYUdHSUah9pNqw427QX0cseF9X74W4/Library/Caches/com.apple.xbs/TemporaryDirectory.KGWzHV/Sources/bind9/bind9/lib/isc/unix/socket.c:5580: bind: Operation not permitted\ndig: isc_socket_bind: unexpected error\n"
+    }
+  ]
+}

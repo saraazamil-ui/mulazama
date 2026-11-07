@@ -1,0 +1,18 @@
+✓ Lockfile passes supply-chain policies (verified 3h ago)
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Progress: resolved 76, reused 62, downloaded 11, added 0
+[WARN] 1 deprecated subdependencies found: whatwg-encoding@3.1.1
+Packages: +19 -28
++++++++++++++++++++----------------------------
+Progress: resolved 212, reused 144, downloaded 17, added 18
+Progress: resolved 212, reused 144, downloaded 18, added 19, done
+.../esbuild@0.28.2/node_modules/esbuild postinstall$ node install.js
+.../esbuild@0.28.2/node_modules/esbuild postinstall: Done
+
+devDependencies:
+- vite 7.1.12
++ vite 7.3.7
+- vitest 3.2.4
++ vitest 4.1.12 (5.1.0 is available)
+
+Done in 3.4s using pnpm v11.25.0

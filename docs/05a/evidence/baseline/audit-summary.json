@@ -1,0 +1,208 @@
+{
+  "verifiedAt": "2026-11-05T10:30:35.169614+00:00",
+  "timezone": "Asia/Riyadh",
+  "archiveSha256": "21c88d106216b3977b00a115fe3f39129fd40a4b770a3d4e123ec0e12d257785",
+  "sourceComparison": [
+    {
+      "file": "itqan-04b/e2e/interactions.spec.ts",
+      "matchesArchive": true
+    },
+    {
+      "file": "itqan-04b/e2e/layout.spec.ts",
+      "matchesArchive": true
+    },
+    {
+      "file": "itqan-04b/package.json",
+      "matchesArchive": false
+    },
+    {
+      "file": "itqan-04b/playwright.config.ts",
+      "matchesArchive": true
+    },
+    {
+      "file": "itqan-04b/pnpm-lock.yaml",
+      "matchesArchive": true
+    },
+    {
+      "file": "itqan-04b/src/App.tsx",
+      "matchesArchive": false
+    },
+    {
+      "file": "itqan-04b/src/catalog.ts",
+      "matchesArchive": true
+    },
+    {
+      "file": "itqan-04b/src/components.test.tsx",
+      "matchesArchive": true
+    },
+    {
+      "file": "itqan-04b/src/components.tsx",
+      "matchesArchive": true
+    },
+    {
+      "file": "itqan-04b/src/domain/contracts.ts",
+      "matchesArchive": true
+    },
+    {
+      "file": "itqan-04b/src/domain/domain.test.ts",
+      "matchesArchive": true
+    },
+    {
+      "file": "itqan-04b/src/domain/mock.ts",
+      "matchesArchive": true
+    },
+    {
+      "file": "itqan-04b/src/domain/ranges.ts",
+      "matchesArchive": true
+    },
+    {
+      "file": "itqan-04b/src/domain/state.ts",
+      "matchesArchive": true
+    },
+    {
+      "file": "itqan-04b/src/domain/storage.ts",
+      "matchesArchive": true
+    },
+    {
+      "file": "itqan-04b/src/local-fonts.css",
+      "matchesArchive": true
+    },
+    {
+      "file": "itqan-04b/src/main.tsx",
+      "matchesArchive": true
+    },
+    {
+      "file": "itqan-04b/src/styles.css",
+      "matchesArchive": true
+    },
+    {
+      "file": "itqan-04b/src/test-setup.ts",
+      "matchesArchive": true
+    },
+    {
+      "file": "itqan-04b/tsconfig.json",
+      "matchesArchive": true
+    },
+    {
+      "file": "itqan-04b/vite.config.ts",
+      "matchesArchive": true
+    }
+  ],
+  "runtime": {
+    "node": "v24.22.1",
+    "platform": "macOS arm64",
+    "nodeExecutable": "/tmp/mulazama-baseline/bin/node",
+    "note": "Copied installed Node to /tmp and applied ad-hoc code signing to permit native Rollup loading; no application or dependency code modified."
+  },
+  "checks": {
+    "frozenInstall": {
+      "status": "Blocked",
+      "reason": "registry.npmjs.org DNS ENOTFOUND"
+    },
+    "typecheck": {
+      "status": "Passed"
+    },
+    "build": {
+      "status": "Passed",
+      "report": "archive-build.log"
+    },
+    "unit": {
+      "status": "Passed",
+      "passed": 41,
+      "total": 41,
+      "source": "exact delivery ZIP rerun",
+      "report": "archive-unit-results.json"
+    },
+    "browser": {
+      "status": "Blocked",
+      "executed": 0,
+      "reason": "Playwright webServer listen EPERM 127.0.0.1:4173",
+      "report": "archive-browser.log"
+    },
+    "axe": {
+      "status": "Not Run",
+      "executed": 0,
+      "reason": "Browser webServer blocked"
+    },
+    "dependencyAudit": {
+      "status": "Not Run",
+      "reason": "Registry DNS unavailable; cannot claim vulnerability clearance"
+    }
+  },
+  "authoritativeSource": "/tmp/mulazama-baseline/archive/itqan-04b",
+  "sourceArchiveNote": "Workspace package.json and App.tsx differ from ZIP due separate concurrent standalone preview work; exact archive was isolated and rerun successfully for build and 41 tests.",
+  "testedArchiveSourceHashes": [
+    {
+      "file": "e2e/interactions.spec.ts",
+      "sha256": "a98835825cbac644ba698b769995998f2a82b4997d65f9dd5c69ff13513ba751"
+    },
+    {
+      "file": "e2e/layout.spec.ts",
+      "sha256": "c125283d5f74a4bc1f52d6e31a6a2a39024db3e014c92390fed219f2a4aa545f"
+    },
+    {
+      "file": "package.json",
+      "sha256": "01c8e588fc4bbfb75b210067ea8c3727db95356f0260bc58e46ddd810882e697"
+    },
+    {
+      "file": "pnpm-lock.yaml",
+      "sha256": "eb7035e0211fc6c93537b12d451014ca035d69cf3d38b584cac2d34d696e80bb"
+    },
+    {
+      "file": "src/App.tsx",
+      "sha256": "e58c76a352d5e9ef467d35f9627ea892052f3604e9ba6ba330bc5f3c9ee6d8d3"
+    },
+    {
+      "file": "src/catalog.ts",
+      "sha256": "f346e9d104ee109dbda5922ab1578b4a2000b9aae147218bc993dcc8dfddff76"
+    },
+    {
+      "file": "src/components.test.tsx",
+      "sha256": "1cd15b7dd90b848c7405070ed48211b616dc45776740ffb90b989d81c8a55253"
+    },
+    {
+      "file": "src/components.tsx",
+      "sha256": "3aa741340bad7d04351e8413041ae5cb776f5e5f69a2bca1a43bb13c8f8e6960"
+    },
+    {
+      "file": "src/domain/contracts.ts",
+      "sha256": "28e6b2f85dd78c63a71feba1465908430025d32a57144fcd87903e037f1915e4"
+    },
+    {
+      "file": "src/domain/domain.test.ts",
+      "sha256": "381d84be85d3b562ffdd98c2f1b005a4aaf67c69e659b1e19176ffba6cfda411"
+    },
+    {
+      "file": "src/domain/mock.ts",
+      "sha256": "53aa8819cba613cd024036882019a733e75b8cc597fba1ac4ec09c2743a8d839"
+    },
+    {
+      "file": "src/domain/ranges.ts",
+      "sha256": "ceff5bc21d70b95c129eaac30d335326fe3782898547dc925421342fa0623915"
+    },
+    {
+      "file": "src/domain/state.ts",
+      "sha256": "530cc83f8cbef486009888413fe53eb9970ee1f7a04473e6afbfa420629f2065"
+    },
+    {
+      "file": "src/domain/storage.ts",
+      "sha256": "391fc628dd5e6f4b5c17fd6a76af501e363301026e7eca7fa4f1219115d4e829"
+    },
+    {
+      "file": "src/main.tsx",
+      "sha256": "d7ac0a33935137c50aad29410bba15d9d72a984716c2a30dbace8cdce4b9f5dd"
+    },
+    {
+      "file": "src/test-setup.ts",
+      "sha256": "9b328c4843431fa76d8de00008fc159e95f99a840211085ff3b8f25e53d14409"
+    },
+    {
+      "file": "tsconfig.json",
+      "sha256": "aebaa398bd3bb6e01731bb16a7238d91ddaee3ed07fa6d83160e4e5a89b169fb"
+    },
+    {
+      "file": "vite.config.ts",
+      "sha256": "0d036c0f983efef0624bee00948354e2216a4680a6a9be7253c3e4f3cacd05e0"
+    }
+  ]
+}

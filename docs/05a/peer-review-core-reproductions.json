@@ -1,0 +1,42 @@
+[
+  {
+    "case": "cluster counted once",
+    "pass": true
+  },
+  {
+    "case": "technical hint exposure preserved; arbitrary continuity ignored",
+    "pass": true
+  },
+  {
+    "case": "non-first scheduler eligible without independent delayed proof",
+    "pass": true
+  },
+  {
+    "case": "structural conflict reported",
+    "pass": true
+  },
+  {
+    "case": "protected debt blocks new even with override",
+    "pass": true
+  },
+  {
+    "case": "3-day cap available from verified early success",
+    "pass": true
+  },
+  {
+    "case": "20-minute initial delayed probe available",
+    "pass": true
+  },
+  {
+    "case": "invalid calendar date rejected",
+    "pass": true
+  },
+  {
+    "case": "probe type mismatch rejected",
+    "pass": true
+  },
+  {
+    "case": "nonfinite interval rejected",
+    "pass": true
+  }
+]

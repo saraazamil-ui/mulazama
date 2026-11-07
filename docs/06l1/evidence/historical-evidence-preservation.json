@@ -1,0 +1,8 @@
+{
+  "restoredOriginalFiles": [
+    "06d2/evidence/fsrs-integration-observations.json",
+    "05b/evidence/performance-results.json",
+    "06e1/evidence/reference-verification.json"
+  ],
+  "note": "Fresh outputs retained under historical-path-outputs; prior reports remain historical."
+}

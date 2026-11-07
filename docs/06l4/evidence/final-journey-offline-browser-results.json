@@ -1,0 +1,163 @@
+{
+  "config": {
+    "configFile": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l4/playwright.journey-offline.config.ts",
+    "rootDir": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l4/e2e-journey-offline",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results-journey-offline/journey-offline-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l4/test-results-journey-offline",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l4/e2e-journey-offline",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 1,
+    "webServer": {
+      "command": "node scripts/build-engineering06l3.mjs --serve --port 4178",
+      "url": "http://127.0.0.1:4178/engineering.html",
+      "reuseExistingServer": false,
+      "timeout": 30000
+    }
+  },
+  "suites": [
+    {
+      "title": "journey-offline06l3.spec.ts",
+      "file": "journey-offline06l3.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "L3OFFJ01 built isolated newcomer journey completes offline, writes corrected HME once and survives offline reload",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1563,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T13:53:55.612Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "newcomer-offline.json",
+                      "contentType": "application/json",
+                      "body": "eyJlbmdpbmVlcmluZyI6dHJ1ZSwicXVyYW5TZXNzaW9uIjpmYWxzZSwib2ZmbGluZUR1cmluZ1Nlc3Npb24iOnRydWUsIm9mZmxpbmVSZWxvYWQiOnRydWUsImFzc2Vzc21lbnRFdmVudHMiOjEsInJlc3VsdEFjdGlvbnMiOjEsImVuY3J5cHRlZFJvd3MiOjExLCJldmVudHNQcmVzZXJ2ZWQiOnRydWUsImlzb2xhdGVkRGF0YWJhc2UiOiJtdWxhemFtYS1lbmdpbmVlcmluZy0wNmwzLWU2OWNhMzJmLTcyNDgtNDIxNi1iM2M1LTNiYzUwYjk3MTBhOSJ9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "01fc61c4ec4847b333ed-d44ed58808c3dc5d9aca",
+          "file": "journey-offline06l3.spec.ts",
+          "line": 141,
+          "column": 1
+        },
+        {
+          "title": "L3OFFJ02 prior self-review correction and encrypted UI backup restore work offline with exact event preservation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2478,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T13:53:57.259Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "prior-offline-backup.json",
+                      "contentType": "application/json",
+                      "body": "eyJlbmdpbmVlcmluZyI6dHJ1ZSwicXVyYW5TZXNzaW9uIjpmYWxzZSwib2ZmbGluZUR1cmluZ1Nlc3Npb24iOnRydWUsImNvcnJlY3Rpb25zIjoxLCJlbmNyeXB0ZWREb3dubG9hZCI6dHJ1ZSwid3JvbmdQYXNzd29yZFByZXNlcnZlZCI6dHJ1ZSwicmVzdG9yZUFmdGVyUmVhbE11dGF0aW9uIjp0cnVlLCJldmVudHNQcmVzZXJ2ZWQiOnRydWUsIm9mZmxpbmVSZWxvYWQiOnRydWUsInNvdXJjZUV2ZW50SWRzIjpbIjMyZGM4NzgyLTgwNjgtNDc4MS1iMjNhLTg0NmE0NGI3MjE5ZiIsIjYyNWIzMmZjLWY2MWQtNDlhYi1hOGM3LWRkMWNjZWYzZTNlOSIsIjgyMDQzNTMxLTRiMTQtNDAxYy05YWMwLWRiZDZkOGIzOTg1ZCIsIjBkMjcwMzQ5LTIzMTEtNDEyZi05M2NjLTdkYmQyNGIwMTk0NCIsImYyYmZjMjE3LWE2MjktNDQzOC04NmNmLTkzNzNkNjQ1YmQ3MiIsIjQ4NTM5NmU3LWVhZDUtNDM3NC05ZTNiLTFmYWZkOWM5ZjNhMiIsImJhYzgyNGIyLTZkNzItNGJhNy1hNTVlLWQ0N2NhZDJjOTRiMCIsImE5NDQ3NmNlLTYyZjctNGIzYS1iODRlLTMwNmI2MjNjNWI5MSIsImMyMzQ3NDBlLTI4OTYtNDdmNy05ODIxLWM4ZmU4MTc4MjE5YyIsImNmMGMwN2JlLTRkZDYtNDA4OS04YjJkLTJhOGM3YjUxNDVkNSIsIjk5ODBjNTg4LTJkMTQtNGQ0Mi1hZGRmLTUyYTI0YWZlMDJjNCIsIjQ1ODNhOTdmLTk4ODAtNDkxNS05YmQzLWUyMDQyMjc3YjlkMSIsIjFhNjMzZTNhLTY4Y2YtNGVlNi1iYjg1LTNlMmYzNjMwOTFhNiIsIjgyNjgxMzFiLWMwOTAtNDg1MS05MmI0LWVmNmNiNWQ0ZDU2MiIsIjE4MmYzOTkyLTFiMzYtNGJiZC1hZjY4LTQxYTYxNDFkNGI2MyJdLCJpc29sYXRlZERhdGFiYXNlIjoibXVsYXphbWEtZW5naW5lZXJpbmctMDZsMy1lOTcyM2M5ZS1hNDhkLTQ4NmUtODAyYS02NGE5MmJkYTgyNzEifQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "01fc61c4ec4847b333ed-9d93bb69f8f061bb9aa9",
+          "file": "journey-offline06l3.spec.ts",
+          "line": 184,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-07T13:53:53.420Z",
+    "duration": 6350.519,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

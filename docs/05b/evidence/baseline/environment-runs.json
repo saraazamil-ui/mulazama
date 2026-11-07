@@ -1,0 +1,162 @@
+{
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "machine": "arm64",
+  "commands": [
+    {
+      "id": "node-version",
+      "argv": [
+        "/tmp/mulazama-baseline/bin/node",
+        "--version"
+      ],
+      "cwd": "/tmp/mulazama-05b-baseline/mulazama-05a",
+      "startedAt": "2026-11-05T12:47:58.036384+00:00",
+      "exitCode": 0,
+      "durationSeconds": 0.089,
+      "log": "node-version.log"
+    },
+    {
+      "id": "corepack-version",
+      "argv": [
+        "/tmp/mulazama-baseline/bin/node",
+        "/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules/corepack/dist/corepack.js",
+        "--version"
+      ],
+      "cwd": "/tmp/mulazama-05b-baseline/mulazama-05a",
+      "startedAt": "2026-11-05T12:47:58.125481+00:00",
+      "exitCode": 0,
+      "durationSeconds": 0.127,
+      "log": "corepack-version.log"
+    },
+    {
+      "id": "tool-versions",
+      "argv": [
+        "/tmp/mulazama-baseline/bin/node",
+        "--input-type=module",
+        "-e",
+        "import fs from 'node:fs'; for(const name of ['typescript','vite','vitest','@playwright/test','@axe-core/playwright','react','react-dom','jsdom']) {const p=JSON.parse(fs.readFileSync('node_modules/'+name+'/package.json')); console.log(name+' '+p.version)}"
+      ],
+      "cwd": "/tmp/mulazama-05b-baseline/mulazama-05a",
+      "startedAt": "2026-11-05T12:47:58.252656+00:00",
+      "exitCode": 0,
+      "durationSeconds": 0.03,
+      "log": "tool-versions.log"
+    },
+    {
+      "id": "frozen-install",
+      "argv": [
+        "/tmp/mulazama-baseline/bin/node",
+        "/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules/corepack/dist/corepack.js",
+        "pnpm",
+        "install",
+        "--frozen-lockfile",
+        "--store-dir",
+        "/tmp/mulazama-05b-baseline/pnpm-store"
+      ],
+      "cwd": "/tmp/mulazama-05b-baseline/mulazama-05a",
+      "startedAt": "2026-11-05T12:47:58.282197+00:00",
+      "exitCode": 1,
+      "durationSeconds": 0.071,
+      "log": "frozen-install.log"
+    },
+    {
+      "id": "registry-connectivity",
+      "argv": [
+        "curl",
+        "--head",
+        "--connect-timeout",
+        "5",
+        "--max-time",
+        "10",
+        "https://registry.npmjs.org/pnpm"
+      ],
+      "cwd": "/tmp/mulazama-05b-baseline/mulazama-05a",
+      "startedAt": "2026-11-05T12:47:58.352737+00:00",
+      "exitCode": 6,
+      "durationSeconds": 0.022,
+      "log": "registry-connectivity.log"
+    },
+    {
+      "id": "xcodebuild",
+      "argv": [
+        "xcodebuild",
+        "-version"
+      ],
+      "cwd": "/tmp/mulazama-05b-baseline/mulazama-05a",
+      "startedAt": "2026-11-05T12:47:58.374995+00:00",
+      "exitCode": 1,
+      "durationSeconds": 0.003,
+      "log": "xcodebuild.log"
+    },
+    {
+      "id": "xcode-select",
+      "argv": [
+        "xcode-select",
+        "-p"
+      ],
+      "cwd": "/tmp/mulazama-05b-baseline/mulazama-05a",
+      "startedAt": "2026-11-05T12:47:58.377836+00:00",
+      "exitCode": 0,
+      "durationSeconds": 0.003,
+      "log": "xcode-select.log"
+    },
+    {
+      "id": "android-adb",
+      "argv": [
+        "adb",
+        "version"
+      ],
+      "cwd": "/tmp/mulazama-05b-baseline/mulazama-05a",
+      "startedAt": "2026-11-05T12:47:58.381326+00:00",
+      "exitCode": 127,
+      "durationSeconds": 0.002,
+      "log": "android-adb.log"
+    },
+    {
+      "id": "android-sdkmanager",
+      "argv": [
+        "sdkmanager",
+        "--version"
+      ],
+      "cwd": "/tmp/mulazama-05b-baseline/mulazama-05a",
+      "startedAt": "2026-11-05T12:47:58.382851+00:00",
+      "exitCode": 127,
+      "durationSeconds": 0.001,
+      "log": "android-sdkmanager.log"
+    },
+    {
+      "id": "java",
+      "argv": [
+        "java",
+        "-version"
+      ],
+      "cwd": "/tmp/mulazama-05b-baseline/mulazama-05a",
+      "startedAt": "2026-11-05T12:47:58.383873+00:00",
+      "exitCode": 1,
+      "durationSeconds": 0.014,
+      "log": "java.log"
+    },
+    {
+      "id": "os",
+      "argv": [
+        "sw_vers"
+      ],
+      "cwd": "/tmp/mulazama-05b-baseline/mulazama-05a",
+      "startedAt": "2026-11-05T12:47:58.397890+00:00",
+      "exitCode": 0,
+      "durationSeconds": 0.007,
+      "log": "os.log"
+    },
+    {
+      "id": "python",
+      "argv": [
+        "python3",
+        "--version"
+      ],
+      "cwd": "/tmp/mulazama-05b-baseline/mulazama-05a",
+      "startedAt": "2026-11-05T12:47:58.405264+00:00",
+      "exitCode": 0,
+      "durationSeconds": 0.01,
+      "log": "python.log"
+    }
+  ]
+}

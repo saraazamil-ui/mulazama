@@ -1,0 +1,11 @@
+
+ RUN  v3.2.4 /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-05b
+
+ ✓ src/persistence/event-store05b.test.ts (15 tests) 32ms
+ ✓ src/persistence/event-store.test.ts (18 tests) 36ms
+
+ Test Files  2 passed (2)
+      Tests  33 passed (33)
+   Start at  16:00:16
+   Duration  580ms (transform 82ms, setup 128ms, collect 146ms, tests 68ms, environment 492ms, prepare 78ms)
+

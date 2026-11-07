@@ -1,0 +1,6 @@
+{
+  "sameSnapshotSameReport": true,
+  "eventDigest": "6e025addc4c50744bc0e225bf5e038eea3b2cb85c328e795aad004cee7c42c73",
+  "newMigration": false,
+  "sourceSnapshot": "fsrs-integration-transition-source.json"
+}

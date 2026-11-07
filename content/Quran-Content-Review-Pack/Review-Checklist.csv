@@ -1,0 +1,12 @@
+ID,Check,Status,Evidence required
+Q01,Publisher raw bytes and original notice,Blocked,Successful official download and immutable receipt
+Q02,Raw SHA256 and UTF8,Not Tested,Raw original bytes
+Q03,114 surahs and complete ayah sequence,Not Tested,Source-pinned numbering profile and complete file
+Q04,Riwaya tariq printed edition,Blocked,Publisher evidence and qualified reviewer
+Q05,Basmala waqf diacritics,Not Tested,Full source comparison and specialist
+Q06,Word ranges and surah ayah identity,Not Tested,Versioned exact source offsets
+Q07,Page juz hizb map,Blocked,Compatible same-edition metadata and rights
+Q08,Independent comparison,Blocked,Independent compatible primary source
+Q09,Font embedding and rendering,Blocked,Specific font bytes license and browser review
+Q10,Human approval and signature,Blocked,Actual review of exact hashed edition
+Q11,Production activation,Blocked,G01 G10 and release attestations

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "kind": "official-source-retrieval-observations",
+  "observedDate": "2026-11-05",
+  "requestedPackage": "ts-fsrs@5.4.2",
+  "model": "FSRS-6",
+  "tag": "v5.4.2",
+  "commitObservedOnOfficialRelease": "bb71e35a2f5af5a5ac6cce9ef7c41ad24855721d",
+  "installedVersion": null,
+  "artifactIntegrity": null,
+  "upstreamGoldenVectors": null,
+  "observations": [
+    {
+      "url": "https://github.com/open-spaced-repetition/ts-fsrs/releases/tag/v5.4.2",
+      "channel": "web",
+      "result": "Official immutable release page available; tag and full linked commit observed. This is not an artifact byte retrieval."
+    },
+    {
+      "url": "https://github.com/open-spaced-repetition/ts-fsrs/commit/bb71e35a2f5af5a5ac6cce9ef7c41ad24855721d",
+      "channel": "web",
+      "result": "Official commit page available; full commit URL observed."
+    },
+    {
+      "url": "https://registry.npmjs.org/ts-fsrs/5.4.2",
+      "channel": "shell-curl",
+      "command": "curl --connect-timeout 5 --max-time 10 --fail --silent --show-error https://registry.npmjs.org/ts-fsrs/5.4.2",
+      "exitCode": 6,
+      "result": "curl: (6) Could not resolve host: registry.npmjs.org"
+    },
+    {
+      "url": "https://registry.npmjs.org/ts-fsrs/5.4.2",
+      "channel": "web",
+      "result": "URL is not accessible via this tool."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/open-spaced-repetition/ts-fsrs/v5.4.2/package.json",
+      "channel": "web",
+      "result": "DisabledError; no raw file bytes received."
+    },
+    {
+      "url": "https://github.com/open-spaced-repetition/ts-fsrs/blob/bb71e35a2f5af5a5ac6cce9ef7c41ad24855721d/packages/fsrs/src/algorithm.ts",
+      "channel": "web",
+      "result": "DisabledError; no immutable algorithm bytes received."
+    },
+    {
+      "url": "https://github.com/open-spaced-repetition/ts-fsrs/blob/bb71e35a2f5af5a5ac6cce9ef7c41ad24855721d/packages/fsrs/package.json",
+      "channel": "web",
+      "result": "DisabledError; no immutable package metadata bytes received."
+    },
+    {
+      "url": "https://github.com/open-spaced-repetition/ts-fsrs/blob/bb71e35a2f5af5a5ac6cce9ef7c41ad24855721d/LICENSE",
+      "channel": "web",
+      "result": "DisabledError; license file at requested commit is unverified."
+    },
+    {
+      "url": "https://github.com/open-spaced-repetition/ts-fsrs/blob/main/LICENSE",
+      "channel": "web",
+      "result": "MIT license observed on current official branch. No vendored source or pinned license parity claimed."
+    },
+    {
+      "url": "https://open-spaced-repetition.github.io/ts-fsrs/updates/",
+      "channel": "web",
+      "result": "Official current docs distinguish package v6 from FSRS6 and FSRS7, and describe removal of legacy next_state/next_interval interfaces. These docs do not substitute for executing the pinned package."
+    }
+  ],
+  "decision": "Keep G02 blocked. No installed library, independently sourced immutable golden outputs, or source artifact integrity has been fabricated."
+}

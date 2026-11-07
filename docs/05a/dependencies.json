@@ -1,0 +1,36 @@
+{
+  "package": "mulazama",
+  "version": "0.5.0-alpha.1",
+  "node_tested": "24.22.1",
+  "packageManager_requested": "pnpm@11.25.0",
+  "lock_sha256": "eb7035e0211fc6c93537b12d451014ca035d69cf3d38b584cac2d34d696e80bb",
+  "dependencies": {
+    "lucide-react": "0.468.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.10.2",
+    "@playwright/test": "1.56.1",
+    "@testing-library/jest-dom": "6.9.1",
+    "@testing-library/react": "16.3.0",
+    "@testing-library/user-event": "14.6.1",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "@vitejs/plugin-react": "5.0.4",
+    "jsdom": "26.1.0",
+    "prettier": "3.6.2",
+    "typescript": "5.9.3",
+    "vite": "7.1.12",
+    "vitest": "3.2.4"
+  },
+  "installation": "blocked-registry-DNS; existing pinned dependencies used",
+  "fsrs": {
+    "requested": "ts-fsrs@5.4.2",
+    "installed": null,
+    "model": "FSRS-6",
+    "implementation": "research-binary64-only",
+    "conformance": "blocked"
+  },
+  "nativeDependencies": []
+}

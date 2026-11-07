@@ -1,0 +1,31 @@
+
+Running 2 tests using 1 worker
+
+(node:30506) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:30506) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 e2e-deployment/rollout06l2.spec.ts:121:1 › L2DEP01 HTTPS preview enforces headers and allows only manifest assets without exposing source files (54ms)
+  ✘  2 e2e-deployment/rollout06l2.spec.ts:153:1 › L2DEP02 L1 to L2 update and rollback preserve exact encrypted IndexedDB rows, settings, offline access and blocked sessions (1.0m)
+
+
+  1) e2e-deployment/rollout06l2.spec.ts:153:1 › L2DEP02 L1 to L2 update and rollback preserve exact encrypted IndexedDB rows, settings, offline access and blocked sessions 
+
+    [31mTest timeout of 60000ms exceeded.[39m
+
+    Error: page.evaluate: Test ended.
+
+      74 |   await page.goto(server.origin+'/#S17');await page.getByRole('checkbox',{name:'تكبير النص'}).click();
+      75 |   await expect(page.getByRole('checkbox',{name:'تكبير النص'})).toBeChecked();
+    > 76 |   await page.evaluate(async()=>{await navigator.serviceWorker.ready;});await page.reload();
+         |              ^
+      77 |   await expect.poll(()=>page.evaluate(()=>!!navigator.serviceWorker.controller)).toBe(true);
+      78 |   const before=await encryptedSnapshot(page);expect(before.rows).toBeGreaterThan(1);
+      79 |   page=await activate(context,page,'l2','l1');expect(await encryptedSnapshot(page)).toEqual(before);
+        at /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l2/e2e-deployment/rollout06l2.spec.ts:76:14
+
+    Error Context: test-results-deployment/rollout06l2-L2DEP02-L1-to--7497f-access-and-blocked-sessions/error-context.md
+
+  1 failed
+    e2e-deployment/rollout06l2.spec.ts:153:1 › L2DEP02 L1 to L2 update and rollback preserve exact encrypted IndexedDB rows, settings, offline access and blocked sessions 
+  1 passed (1.0m)

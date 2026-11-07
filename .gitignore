@@ -1,0 +1,16 @@
+node_modules/
+dist/
+test-results/
+playwright-report/
+*.tsbuildinfo
+.DS_Store
+test-results-offline/
+
+# Focused local verification outputs
+test-results-*/
+.preview-artifacts/
+.preview-state.json*
+test-results-deployment/
+
+# Synthetic engineering artifact, never production
+dist-engineering/

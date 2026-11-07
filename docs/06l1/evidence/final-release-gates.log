@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "product": "MULAZAMA",
+  "phase": "05-C",
+  "checkedAt": "2026-11-07T11:33:42.867Z",
+  "context": {
+    "product": "MULAZAMA",
+    "environment": "production",
+    "purpose": "production",
+    "platform": "web",
+    "sourceDigest": "5b9e4d113927d4b2bd8408b77712571589633b702e00dd48361c80f605359020",
+    "versionsDigest": "f7fd3ae98987bfd917ae25e7b8e6186264abb5034020abc65503f1316391cb02",
+    "contentManifestHash": null,
+    "unitCatalogHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "gates": [
+    {
+      "gate": "G01",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G02",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G03",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G04",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G05",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G06",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G07",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G08",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G09",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G10",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    }
+  ],
+  "productionReady": false,
+  "decision": "غير جاهز.",
+  "trustAnchorCount": 0
+}

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>مراجعة محتوى محجور — مُلازَمَة</title>
+    <link rel="stylesheet" href="review.css" />
+  </head>
+  <body>
+    <header>
+      <h1>مراجعة مرشح النص — غير معتمد للتشغيل</h1>
+      <p>
+        هذه معاينة تدقيق منفصلة وليست جلسة حفظ أو تسميع. المصدر المساند
+        <a href="https://tanzil.net/">Tanzil Project</a>، عثماني 1.1؛ لم يُستبدل
+        به اعتماد حزمة المجمع. الخط الحالي خط النظام ولم يُعتمد للعرض القرآني.
+      </p>
+    </header>
+    <main>
+      <p id="status" role="status">جارٍ التحقق من بصمة النص قبل عرضه…</p>
+      <label for="surah">رقم السورة للمراجعة</label
+      ><select id="surah" disabled></select>
+      <ol id="ayahs" aria-label="الآيات المنقولة من الملف الأصلي"></ol>
+      <details>
+        <summary>حقوق المصدر وحدود هذه المعاينة</summary>
+        <p>
+          يبقى النص كما ورد من الناشر دون تطبيع أو حذف تشكيل أو إدخال كلمات. لا
+          تثبت مطابقة البايتات صحة الرسم أو الوقف أو الترخيص لخط آخر. المقابلة
+          المستقلة واعتماد مختص ما زالا مطلوبين.
+        </p>
+        <a href="https://tanzil.net/docs/Text_License">شروط استخدام الناشر</a>
+        <pre id="copyright" dir="ltr"></pre>
+      </details>
+    </main>
+    <footer>
+      حجر مراجعة 06-L2 · لا جلسات، ولا تخزين بيانات مستخدم، ولا تفويض إصدار.
+    </footer>
+    <script type="module" src="review.js"></script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+{
+  "product": "MULAZAMA",
+  "executedAt": "2026-11-05",
+  "attempts": [
+    {
+      "method": "local curl in the restricted execution environment",
+      "command": "curl --fail --location --max-time 20 --output /tmp/mulazama-quran-data.xml https://tanzil.net/res/text/metadata/quran-data.xml",
+      "exitCode": 6,
+      "stderr": "curl: (6) Could not resolve host: tanzil.net",
+      "artifactObtained": false
+    },
+    {
+      "method": "web retrieval of the official metadata download link",
+      "url": "https://tanzil.net/res/text/metadata/quran-data.xml",
+      "result": "Unsupported content-type: text/xml",
+      "rawLocalBytesObtained": false
+    },
+    {
+      "method": "official source web documentation search and retrieval",
+      "url": "https://qurancomplex.gov.sa/quran-dev/",
+      "result": "Direct opens timed out; primary-source search response subsequently returned package descriptions, versions and publisher hash claims.",
+      "rawLocalBytesObtained": false
+    },
+    {
+      "method": "official font documentation web retrieval",
+      "url": "https://fonts.qurancomplex.gov.sa/hafs-reading/",
+      "result": "503 Service Unavailable; search result describes downloadable Hafs font but supplies no verified embedding license in the inspected material.",
+      "rawLocalBytesObtained": false
+    }
+  ],
+  "scientificApproval": "not-granted",
+  "productionContentActivation": "unavailable"
+}

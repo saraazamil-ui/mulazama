@@ -1,0 +1,7 @@
+{
+  "kind": "bounded-static-security-check",
+  "scannedFiles": 53,
+  "findings": [],
+  "dependencyAudit": "not-run-by-this-command",
+  "penetrationTest": "not-performed"
+}

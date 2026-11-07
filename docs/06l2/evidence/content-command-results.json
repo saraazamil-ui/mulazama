@@ -1,0 +1,122 @@
+[
+  {
+    "name": "content-tools",
+    "argv": [
+      "node",
+      "scripts/verify-content-tools.mjs"
+    ],
+    "startedAt": "2026-11-07T11:51:34.322575+00:00",
+    "exitCode": 0,
+    "expectedExitCode": 0,
+    "matchesExpected": true,
+    "note": "Initial call used legacy default output; original historical evidence restored byte-for-byte; rerun below writes L2 evidence."
+  },
+  {
+    "name": "content-byte-audit",
+    "argv": [
+      "node",
+      "scripts/audit-quran-content.mjs",
+      "--request",
+      "content/06l2/audit-request.json",
+      "--output",
+      "docs/06l2/evidence/content-byte-audit.json"
+    ],
+    "startedAt": "2026-11-07T11:51:35.762398+00:00",
+    "exitCode": 2,
+    "expectedExitCode": 2,
+    "matchesExpected": true
+  },
+  {
+    "name": "content-supplemental-audit",
+    "argv": [
+      "node",
+      "scripts/content-06l2-audit.mjs"
+    ],
+    "startedAt": "2026-11-07T11:51:35.968653+00:00",
+    "exitCode": 2,
+    "expectedExitCode": 2,
+    "matchesExpected": true
+  },
+  {
+    "name": "content-tests",
+    "argv": [
+      "node",
+      "node_modules/vitest/vitest.mjs",
+      "run",
+      "src/content/acquisition06l2.test.mjs",
+      "--reporter=json",
+      "--outputFile",
+      "docs/06l2/evidence/content-tests.json"
+    ],
+    "startedAt": "2026-11-07T11:51:36.227804+00:00",
+    "exitCode": 0,
+    "expectedExitCode": 0,
+    "matchesExpected": true
+  },
+  {
+    "name": "content-tools-scoped-output",
+    "argv": [
+      "node",
+      "scripts/verify-content-tools.mjs",
+      "docs/06l2/evidence/content-tool-checks.json"
+    ],
+    "startedAt": "2026-11-07T11:52:59.136193+00:00",
+    "exitCode": 0,
+    "expectedExitCode": 0,
+    "matchesExpected": true
+  },
+  {
+    "name": "content-tests-final",
+    "argv": [
+      "node",
+      "node_modules/vitest/vitest.mjs",
+      "run",
+      "src/content/acquisition06l2.test.mjs",
+      "--reporter=json",
+      "--outputFile",
+      "docs/06l2/evidence/content-tests.json"
+    ],
+    "startedAt": "2026-11-07T11:53:50.894462+00:00",
+    "exitCode": 0,
+    "expectedExitCode": 0,
+    "matchesExpected": true
+  },
+  {
+    "name": "content-browser-final",
+    "argv": [
+      "node",
+      "scripts/content-06l2-browser.mjs"
+    ],
+    "startedAt": "2026-11-07T11:53:51.817899+00:00",
+    "exitCode": 0,
+    "expectedExitCode": 0,
+    "matchesExpected": true
+  },
+  {
+    "name": "content-supplemental-audit-final",
+    "argv": [
+      "node",
+      "scripts/content-06l2-audit.mjs"
+    ],
+    "startedAt": "2026-11-07T11:54:44.739060+00:00",
+    "exitCode": 2,
+    "expectedExitCode": 2,
+    "matchesExpected": true
+  },
+  {
+    "name": "content-tests-read-only",
+    "argv": [
+      "node",
+      "node_modules/vitest/vitest.mjs",
+      "run",
+      "src/content/acquisition06l2.test.mjs",
+      "--reporter=json",
+      "--outputFile",
+      "docs/06l2/evidence/content-tests.json"
+    ],
+    "startedAt": "2026-11-07T11:54:44.999584+00:00",
+    "exitCode": 0,
+    "expectedExitCode": 0,
+    "matchesExpected": true
+  }
+]

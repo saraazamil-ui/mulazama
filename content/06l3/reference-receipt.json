@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "publisher": "Quran Foundation",
+  "endpoint": "https://api.quran.com/api/v4/quran/verses/qpc_hafs",
+  "selectedField": "text_qpc_hafs",
+  "responseSHA256": "d6464a967d5dc85c9b85444791911bcb2714d87a2137a0241299d0719ddbe36e",
+  "byteLength": 1680614,
+  "verseCount": 6236,
+  "apiVersion": "v4",
+  "datasetVersion": null,
+  "fetchedAt": "2026-11-07T12:16:36.988538+00:00",
+  "rawDistributionAllowed": false,
+  "rawIncludedInDelivery": false,
+  "localScratchPath": "/private/tmp/mulazama-06l3-qf-qpc-hafs.raw",
+  "rawStorageScope": "Temporary local comparison; not app bundle or dataset redistribution; no ongoing API integration",
+  "datasetLineageIndependence": "Not independently certified; distinct provider and field alone do not prove lineage",
+  "rightsURL": "https://api-docs.quran.com/legal/developer-terms/",
+  "termsVersionDate": "2026-10-11",
+  "liveComparisonNotApproval": true
+}

@@ -1,0 +1,14 @@
+{
+  "recordedAt": "2026-11-07T13:57:10.081839+00:00",
+  "method": "Native Safari UI via cua_repl; new local preview tab; AX tree and screenshot observed",
+  "origin": "http://127.0.0.1:4184/",
+  "pageTitle": "أهلًا بك في مُلازَمَة | مُلازَمَة",
+  "visibleRelease": "06-L4",
+  "visibleSessionBlock": "جلسات القرآن موقوفة حتى اعتماد المحتوى",
+  "result": "welcome page visibly rendered",
+  "countedInAutomatedSuites": false,
+  "fullSafariJourneyExecuted": false,
+  "userDataEntered": false,
+  "publicPublication": false,
+  "screenshotsWithBrowserBookmarksDistributed": false
+}

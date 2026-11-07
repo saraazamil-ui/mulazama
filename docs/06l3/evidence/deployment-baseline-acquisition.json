@@ -1,0 +1,99 @@
+{
+  "checkedAt": "2026-11-07T12:28:55.506024+00:00",
+  "sourceDeliveryFile": "MULAZAMA-Phase-06L2-Engineering-Delivery.zip",
+  "sourceDeliverySHA256": "eae1213dae28f6eaa3ede0207602c6e046c6c19b8817364a16692b3e3208a1cf",
+  "sourceDigest": "264c0fa5974510e4b07297370e9955ac620525b02f4f8cfdc63d0aa122ed7347",
+  "fixtureDirectory": "references/06l2-preview-baseline",
+  "fixtureReceiptSHA256": "dcbb735c06568a7d556f39066c2a322c57fe254838ec55963209c5521a1b29d4",
+  "buildZipSHA256": "12103deaa4f4cebb2bf965a912d10f2042683457574fca6dfe3cdfbd03b8aa67",
+  "files": [
+    {
+      "path": "dist/assets/adaptive-scheduling-w6bOq4m1.js",
+      "sha256": "2c16cbbfaf2260a413d937725ab5a4735667725d01092cf5dcd4f51011463bed",
+      "bytes": 7869
+    },
+    {
+      "path": "dist/assets/index-AtTyBVEF.css",
+      "sha256": "b5f0fb345dc2a34cf47d07090d7344d728471431f4172a64169806cc68e442d7",
+      "bytes": 28339
+    },
+    {
+      "path": "dist/assets/index-BMHy5AIA.js",
+      "sha256": "09279a1f53a26f83d533c279ff44048124e5aafd2cb7d1ba66e8a8722dfeb8e1",
+      "bytes": 431262
+    },
+    {
+      "path": "dist/assets/personal-memory-DRSImXDx.js",
+      "sha256": "5d2afe999d8d9ed127d86f658c8e5e327fa7b69310bdf237620795ac5fb1231f",
+      "bytes": 5957
+    },
+    {
+      "path": "dist/icon-192.png",
+      "sha256": "bc569b22ff095dced3b412a6f236c2beaf6e6c28446f7d2117dbb70f48118557",
+      "bytes": 654
+    },
+    {
+      "path": "dist/icon-512.png",
+      "sha256": "98ac3f3c44aa69aa27b80d094533e2eb9c349de86f2f5776721810697871ff5b",
+      "bytes": 2590
+    },
+    {
+      "path": "dist/icon.svg",
+      "sha256": "f2378d6739d0872ad4676b3bc656a51eadd007a15d127139cde338a6dd93a4e9",
+      "bytes": 275
+    },
+    {
+      "path": "dist/index.html",
+      "sha256": "fe630adbb30beccd5a804a2d940f22e2b06fd8ef28690ff5c2c8250d84e1ff89",
+      "bytes": 837
+    },
+    {
+      "path": "dist/manifest.webmanifest",
+      "sha256": "7cfdbb1371fcf267d6b9a1c34b6aa168a449bb825b684c4427b167006594798d",
+      "bytes": 515
+    },
+    {
+      "path": "dist/offline-assets.json",
+      "sha256": "e1360a490e3b3692f2727239893c97745a6e65d22173bb9fc5590324479bd6bb",
+      "bytes": 404
+    },
+    {
+      "path": "dist/policies.css",
+      "sha256": "34ca8fb6acd8d870c7fcd1f5dd3dae70094d9364ad3a763a5290394ce58e2eb7",
+      "bytes": 543
+    },
+    {
+      "path": "dist/privacy.html",
+      "sha256": "d963ac26ac61f0cfd209b9d6d8cd77c123f3f48aed31d56cc01f27b3354cc0e9",
+      "bytes": 3709
+    },
+    {
+      "path": "dist/support.html",
+      "sha256": "c77b597f85ad965e066da754c51c87640d5f161a36d1e8a14b650b1dfc125565",
+      "bytes": 2792
+    },
+    {
+      "path": "dist/sw.js",
+      "sha256": "5ea64fe66db0cf2da4ec57d55e50782771264300cb2590067b58612930ee75f1",
+      "bytes": 1423
+    },
+    {
+      "path": "dist/terms.html",
+      "sha256": "71f161c2e4f0d2c9ec8c770468567bbee9cb6569f17cabae03617ca720872388",
+      "bytes": 2218
+    }
+  ],
+  "fileCount": 15,
+  "allFileBytesEqualOriginalArchive": true,
+  "l1FixtureUnchanged": {
+    "build.zip": "d24dc3269a1bfe007cedfe78b27a98e827831d62524d69840437a8efad71f792",
+    "receipt.json": "a5bd67bce18d2c88b22de292f0a0e74f80a06e7b728e4b01ae57f8d0d4cc4ba1"
+  },
+  "extractedScope": "Only original dist files packaged in portable ZIP; original sources and protected reference archive unchanged",
+  "browserExecution": "Not run for this change; delegated to final release runner",
+  "limits": [
+    "Legacy public-stream rollback only; this build keeps Quran sessions blocked",
+    "Does not claim that an L2 reader can read newly elected corrected-scheduler streams; separate backward-reader tests reject those explicitly",
+    "Loopback preview is not a production deployment"
+  ]
+}

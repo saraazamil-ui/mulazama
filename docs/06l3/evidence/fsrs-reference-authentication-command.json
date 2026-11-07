@@ -1,0 +1,10 @@
+{
+  "command": [
+    "node",
+    "scripts/verify-fsrs-reference-06e1.mjs"
+  ],
+  "startedAt": "2026-11-07T12:18:36.462458+00:00",
+  "exitCode": 0,
+  "historicalEvidenceRestored": true,
+  "networkFetchPerformed": false
+}

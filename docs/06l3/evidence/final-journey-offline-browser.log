@@ -1,0 +1,15 @@
+[2m[WebServer] [22m(node:36746) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:36747) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:36754) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:36754) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 e2e-journey-offline/journey-offline06l3.spec.ts:141:1 › L3OFFJ01 built isolated newcomer journey completes offline, writes corrected HME once and survives offline reload (1.8s)
+  ✓  2 e2e-journey-offline/journey-offline06l3.spec.ts:184:1 › L3OFFJ02 prior self-review correction and encrypted UI backup restore work offline with exact event preservation (4.5s)
+
+  2 passed (9.0s)

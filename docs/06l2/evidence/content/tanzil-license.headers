@@ -1,0 +1,14 @@
+HTTP/2 200 
+server: nginx/1.20.1
+date: Sat, 07 Nov 2026 11:45:22 GMT
+content-type: text/html; charset=utf-8
+vary: Accept-Encoding
+x-powered-by: PHP/8.1.0
+vary: Cookie
+set-cookie: DokuWiki=6fc80e027185729c59e1c714decdb6f8; path=/docs/; secure; HttpOnly
+expires: Thu, 19 Nov 1981 08:52:00 GMT
+cache-control: no-store, no-cache, must-revalidate
+pragma: no-cache
+set-cookie: DW0b99b027724d9fff9b6347d01f4e2033=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0; path=/docs/; secure; HttpOnly
+x-ua-compatible: IE=edge,chrome=1
+

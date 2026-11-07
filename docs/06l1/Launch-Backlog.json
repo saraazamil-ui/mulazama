@@ -1,0 +1,732 @@
+{
+  "schemaVersion": 1,
+  "product": "MULAZAMA",
+  "phase": "06-L1",
+  "updatedAt": "2026-11-07",
+  "sourcePackage": "MULAZAMA-Phase-06E1-Engineering-Delivery.zip",
+  "sourceSHA256": "d34e42e108a32442eed8468ca48e83c2b0b1d07312fb21c75e7f19dfb5598cf7",
+  "authority": "هذا الملف هو سجل أعمال الإطلاق الوحيد؛ Launch-Roadmap.md عرض مشتق منه، ولا تنشأ مراحل ترقيم إضافية.",
+  "readiness": {
+    "closedLearningTrial": "not-ready",
+    "publicLaunch": "not-ready",
+    "localEngineeringPreview": "allowed-with-blocked-quran-sessions",
+    "reason": "قيمة الورد الكاملة واعتماد المحتوى والكتالوج وانتخاب الجدولة والتواقيع والتشغيل والتجربة البشرية غير مكتملة."
+  },
+  "ownerFacts": {
+    "operator": "مالكة المشروع",
+    "country": "السعودية",
+    "support": "وسيلة خاصة بالمشغلة لم تسمها ولم تعتمد للعرض",
+    "externalAccountsCreated": false,
+    "hostingVerified": false,
+    "domainOwnershipVerified": false,
+    "source": "إجابة مالكة المشروع أثناء تنفيذ 06-L1؛ ليست فحص حساب أو ملكية خارجي",
+    "remoteRepositoryVerified": false
+  },
+  "statusSemantics": {
+    "in-progress-safe": "تطوير محلي آمن جارٍ، لا دليل قبول نهائي بعد",
+    "in-progress-preparation": "ملفات تحضير فقط؛ يتطلب تنفيذًا في بيئة مخولة",
+    "in-progress-protocol-only": "إعداد البروتوكول لا بدء مشاركين",
+    "blocked": "لا تغلق إلا بالدليل المحدد والقرار المخول",
+    "complete-local": "اجتاز النطاق المحلي المحدد؛ لا يفتح بوابة إطلاق",
+    "deferred-outside-first-launch": "ليس شرطًا لإطلاق القيمة الأساسية",
+    "prepared-awaiting-authorized-environment": "ملفات التحضير مكتملة محليًا؛ لم ينفذ نشر أو تمرين تراجع خدمة في بيئة مخولة",
+    "protocol-prepared-blocked-gates": "البروتوكول والمقاييس معدة مسبقًا؛ لم تبدأ التجربة وتنتظر البوابات والبيئة"
+  },
+  "firstLaunchScope": {
+    "included": [
+      "تطبيق ويب عربي RTL محلي أولاً إن اعتمدت المالكة هذا الحد",
+      "مبتدئ وصاحب محفوظات ومزج الحفظ والمراجعة",
+      "ورد كامل بحدث نتيجة وتصحيح وذاكرة واقعية ونسخ قابلة للاستعادة",
+      "تجربة بشرية مغلقة قبل أي إعلان عام"
+    ],
+    "excluded": [
+      "بناء من الصفر",
+      "تغيير النص القرآني أو الأوزان لمجرد تجاوز اختبار",
+      "حسابات أو خدمات مدفوعة أو نشر دون تفويض",
+      "تنبؤ إتقان أو ثبات غير معتمد",
+      "تطبيقات أصلية أو مزامنة جديدة كشرط مستحدث"
+    ]
+  },
+  "milestones": [
+    {
+      "id": "local-preparation",
+      "name": "إكمال النطاق المحلي الآمن",
+      "items": [
+        "L07",
+        "L08"
+      ],
+      "exit": "اختبارات L1 الفعلية ناجحة للمجال المنفذ والتقرير صريح بالمحجوب؛ لا جلسات"
+    },
+    {
+      "id": "trial-candidate",
+      "name": "مرشح تجربة مخولة",
+      "items": [
+        "L01",
+        "L02",
+        "L03",
+        "L04",
+        "L05",
+        "L06",
+        "L09",
+        "L10",
+        "L11",
+        "L12",
+        "L13",
+        "L14",
+        "L15"
+      ],
+      "exit": "كل اعتماد وسياق وبيئة وقياس واستعادة متحقق ثم قرار جاهز للتجربة"
+    },
+    {
+      "id": "human-trial",
+      "name": "تنفيذ التجربة المحددة",
+      "items": [
+        "L16"
+      ],
+      "exit": "القياسات المسبقة مكتملة أو نقصها مفسر وحرجها محلول"
+    },
+    {
+      "id": "public-decision",
+      "name": "قرار الإطلاق الأول",
+      "items": [
+        "L17"
+      ],
+      "exit": "استيفاء معايير القبول والموافقة الصريحة؛ لا موعد يفرض تجاوز بوابة"
+    }
+  ],
+  "items": [
+    {
+      "id": "L01",
+      "priority": "P0",
+      "title": "اعتماد النص والطبعة والحقوق والكتالوج وعرض القرآن",
+      "status": "blocked-external-review",
+      "blockerScope": "all-quran-sessions",
+      "ownerRole": "متخصص مصحف + مسؤول حقوق + مسؤولة الإصدار",
+      "dependencies": [],
+      "gates": [
+        "G01",
+        "G10"
+      ],
+      "acceptanceEvidenceRequired": [
+        "مصدر رسمي ثابت وحق استخدام موثق وmanifest ببصمة غير null",
+        "مقارنة مستقلة للنص وخريطة وحدات/آيات ومراجعة العرض على أجهزة الهدف",
+        "اعتماد مختص وتوقيع صالح مرتبط بكتالوج وسياق إصدار التجربة"
+      ],
+      "currentEvidence": [
+        "src/release/release-input.json",
+        "docs/05c/Quran-Content-Verification.md",
+        "docs/06e1/Release-Gates.md"
+      ],
+      "ownerDecision": "تعيين أصحاب صلاحية اعتماد المحتوى ومصدره؛ لا تنشأ جهة ثقة تجريبية لتجاوز الحجب"
+    },
+    {
+      "id": "L02",
+      "priority": "P0",
+      "title": "حسم معيار الحفظ والتسميع ومعنى الأدلة للورد",
+      "status": "blocked-external-review",
+      "blockerScope": "scientific-measurement-and-recommendations",
+      "ownerRole": "متخصص قرآن + قياس + مسؤول HME",
+      "dependencies": [
+        "L01"
+      ],
+      "gates": [
+        "G03",
+        "G10"
+      ],
+      "acceptanceEvidenceRequired": [
+        "معيار اكتساب واضح وأصغر وحدة معتمدة مع منع عد التداخل وتاريخ الهدف",
+        "مراجعة سلم التسميع والتلميحات والتوقف والملاحظات المجهولة والتكاليف",
+        "قواعد تفصل الإكمال عن جودة التسميع وعن الثبات، وتبقي التنبؤ غير الكافي محجوبًا"
+      ],
+      "currentEvidence": [
+        "src/core/hme.ts",
+        "src/progress/projection.ts",
+        "src/memory/personal-memory.ts"
+      ],
+      "ownerDecision": "اعتماد معيار قائم أو تعديل صريح مراجع؛ لا يبتكر المطور معيارًا لتفعيل نسبة"
+    },
+    {
+      "id": "L03",
+      "priority": "P0",
+      "title": "اعتماد عقد الحساب المصحح وانتخابه صراحة للكتابة الجديدة",
+      "status": "blocked-release-decision",
+      "blockerScope": "executable-scheduling",
+      "ownerRole": "خبير FSRS + مراجع مستقل + مسؤولة الإصدار",
+      "dependencies": [],
+      "gates": [
+        "G02"
+      ],
+      "acceptanceEvidenceRequired": [
+        "مراجعة مرجع ts-fsrs5.4.2 والالتزام الثابت وتحديد متطلبات provenance المتبقية",
+        "40 حالة مرجعية ثابتة ناجحة واختبارات أثر HME/التقييمات المصححة",
+        "قرار موقع لنسخة الحساب والأوزان والإعدادات وآلية تفسير الإصدارات بلا تغيير هوية التاريخ"
+      ],
+      "currentEvidence": [
+        "docs/06e1/Reference-Validation.md",
+        "docs/06e1/evidence/reference-case-matrix.json",
+        "src/application/adaptive-scheduling.ts"
+      ],
+      "ownerDecision": "هل تكفي أدلة المنشأ الحالية أم يلزم تحقق Sigstore إضافي؟ يقرره مراجع G02، لا عداد الاختبارات"
+    },
+    {
+      "id": "L04",
+      "priority": "P0",
+      "title": "تنفيذ انتقال قابل للاستعادة بعد تحليل أثره واعتماده",
+      "status": "blocked-sensitive-change-approval",
+      "blockerScope": "schedule-and-data-transition",
+      "ownerRole": "مهندس بيانات + خوارزميات + مسؤولة المشروع",
+      "dependencies": [
+        "L03"
+      ],
+      "gates": [
+        "G02",
+        "G04",
+        "G05"
+      ],
+      "acceptanceEvidenceRequired": [
+        "تقرير أثر لكل وحدة من إعادة البناء القائمة قبل أي تبديل وخطة للخطط القديمة",
+        "نسخة مشفرة كاملة وبصمة الوقائع وCAS ومفسر قديم محفوظ وإسقاط جديد منفصل",
+        "اختبارات فشل منتصف الانتقال واستئناف وتزامن واستعادة وتراجع دون فقد حدث",
+        "موافقة صريحة على الترحيل الحساس إن ثبت احتياجه؛ إن لم يلزم يوثق الفصل وتوافق النسخ"
+      ],
+      "currentEvidence": [
+        "docs/06e1/Change-and-Migration-Plan.md",
+        "docs/06e1/Data-Safety-and-Migration.md",
+        "src/application/adaptive-scheduling.ts"
+      ],
+      "ownerDecision": "لا ترحيل بيانات فعلية في L1؛ لا استبدال صامت لـbinary64"
+    },
+    {
+      "id": "L05",
+      "priority": "P0",
+      "title": "ربط نشاط اليوم والوحدة ونتيجة التسميع بعقد واحد",
+      "status": "blocked-approved-contracts",
+      "blockerScope": "daily-plan-and-progress",
+      "ownerRole": "مسؤول HME + مهندس أحداث + قياس",
+      "dependencies": [
+        "L01",
+        "L02",
+        "L03"
+      ],
+      "gates": [
+        "G03",
+        "G06"
+      ],
+      "acceptanceEvidenceRequired": [
+        "taskId ثابت ونوع ووحدة وخطة مؤرخة ومنطقة زمنية صريحة",
+        "حدث إكمال صالح فقط؛ الإلغاء/التأجيل ليسا إنجازًا؛ التصحيح لا ينشئ محاولة",
+        "تغيير الهدف/الخطة لا يمحو التاريخ؛ أحداث مكررة متطابقة لا تضاعف الإنجاز",
+        "قواعد أولوية عودة محدودة السعة تحفظ كل المتأخرات وتوضح سبب الاختيار"
+      ],
+      "currentEvidence": [
+        "src/progress/projection.ts",
+        "src/application/learning.ts",
+        "docs/06d2/Blockers.md"
+      ],
+      "ownerDecision": null
+    },
+    {
+      "id": "L06",
+      "priority": "P0",
+      "title": "إكمال رحلة الورد ورفيق التعاهد الفعلية للمبتدئ والسابق",
+      "status": "blocked-critical-dependencies",
+      "blockerScope": "end-to-end-value",
+      "ownerRole": "React + HME + QA",
+      "dependencies": [
+        "L01",
+        "L02",
+        "L04",
+        "L05"
+      ],
+      "gates": [
+        "G03",
+        "G06",
+        "G07"
+      ],
+      "acceptanceEvidenceRequired": [
+        "رحلة staging موجبة تبدأ من المدخل الحقيقي بصلاحيات معتمدة وتنتهي بحدث نتيجة محفوظ",
+        "حفظ جديد ومراجعة محفوظ سابق وعودة بعد انقطاع بلا إسقاط تاريخ",
+        "استئناف وتصحيح وتحديث تلقائي للمؤشرات مع كشف خطأ الحفظ",
+        "قياس التفاعلات الفعلي من فتح الموقع للبدء ومن نهاية التسميع للحفظ؛ لا proxy صناعي للرحلة الحقيقية"
+      ],
+      "currentEvidence": [
+        "src/main.tsx",
+        "src/LearningEngineScreen.tsx",
+        "docs/06e1/Release-Gates.md"
+      ],
+      "ownerDecision": null
+    },
+    {
+      "id": "L07",
+      "priority": "P1",
+      "title": "تقليل الإعداد الأولي إلى ثلاث خطوات رئيسية",
+      "status": "complete-local",
+      "blockerScope": "local-ux",
+      "ownerRole": "React + QA",
+      "dependencies": [],
+      "gates": [],
+      "acceptanceEvidenceRequired": [
+        "حالة الحافظ ثم المحفوظات/الهدف ثم الوقت؛ انتهاء مباشر بالرئيسية",
+        "عدم إعادة إدخال القيم المحفوظة وعدم رفع التصريح إلى حفظ موثق",
+        "إخفاق الحفظ ظاهر مع إمكانية إعادة المحاولة؛ المسارات الثلاثة قابلة للاختبار",
+        "مقارنة فعلية للتفاعلات قبل/بعد مع RTL و320 بكسل ولوحة مفاتيح"
+      ],
+      "currentEvidence": [
+        "src/Onboarding.tsx",
+        "src/Onboarding.css",
+        "src/application/service.ts",
+        "src/Onboarding.test.tsx",
+        "src/OnboardingJourney06l1.test.tsx",
+        "src/application/onboarding06l1.test.ts",
+        "docs/06l1/Onboarding-and-UX.md",
+        "docs/06l1/evidence/onboarding-tests.json",
+        "docs/06l1/evidence/backward-readback.json",
+        "docs/06l1/evidence/final-browser-results.json",
+        "docs/06l1/evidence/verification-commands.json",
+        "docs/06l1/evidence/final-offline-browser-results.json"
+      ],
+      "ownerDecision": null,
+      "completedScope": [
+        "ثلاث خطوات تنتهي بالرئيسية بعد حفظ مؤكد، بلا تأكيد إضافي أو جلسة مفعلة",
+        "تخزين config والتصريحات الجديدة في append ذري واحد مع CAS وإعادة إرسال ثابتة",
+        "حفظ التصريحات والسجل السابق؛ تصنيف التصريح غير مختبر",
+        "إصلاح الحقل المخفي عند تغيير مسار مبتدئ إلى مراجعة السابق بعد إدخال سورة غير صالحة؛ L1U07 ناجح",
+        "قياس سيناريو الإعداد: جديد 3 إلى4 تفاعلات وسابق7 إلى6؛ بدء الورد الفعلي غير قابل للقياس وهو محجوب"
+      ],
+      "verification": {
+        "targetedTests": {
+          "executed": 19,
+          "passed": 19,
+          "failed": 0,
+          "skipped": 0
+        },
+        "browserFinal": {
+          "passed": 31,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "evidence": "docs/06l1/evidence/final-browser-results.json",
+          "scope": "ضمن المجموعة الشاملة؛ L1WEB01/02 الإعداد وL1WEB03 الذاكرة وL1WEB04 الخطوات والسياسات"
+        },
+        "backwardReadback": "E1 actual reader accepts new L1 setup; raw original events unchanged; no migration or service rollback",
+        "offlineFinal": {
+          "passed": 4,
+          "failed": 0,
+          "skipped": 0,
+          "evidence": "docs/06l1/evidence/final-offline-browser-results.json",
+          "scope": "ضمن المجموعة الشاملة دون اتصال"
+        }
+      }
+    },
+    {
+      "id": "L08",
+      "priority": "P1",
+      "title": "عرض رفيق وصفي من أساس الذاكرة القائم وأبرز إجراء مسموح",
+      "status": "complete-local",
+      "blockerScope": "factual-ui-only",
+      "ownerRole": "React + مهندس إسقاط أحداث + QA",
+      "dependencies": [],
+      "gates": [],
+      "acceptanceEvidenceRequired": [
+        "إعادة استعمال personal-memory دون مخزن أو نموذج تنبؤ جديد",
+        "مصادر الأحداث والتصحيحات محفوظة؛ تمييز غياب البيانات والبلاغ المفرد والمتكرر بلا إتقان مفترض",
+        "عدم تحويل فاصل زمني أو FSRS إلى ضعف قرآني مثبت أو توصية تنفيذية",
+        "الصفحة الرئيسية بسيطة؛ الإجراء الأبرز مسموح؛ تعذر القراءة ظاهر ولا يصنع صفرًا",
+        "تصحيح عبارة الإعدادات لتفصل المطابقة الحسابية المنجزة عن اعتماد الإصدار المتبقي"
+      ],
+      "currentEvidence": [
+        "src/memory/personal-memory.ts",
+        "src/companion/projection.ts",
+        "src/CompanionPanel.tsx",
+        "src/App.tsx",
+        "docs/06l1/Companion-Rules-and-Evidence.md",
+        "docs/06l1/evidence/companion-tests.json",
+        "docs/06l1/evidence/final-browser-results.json",
+        "docs/06l1/evidence/verification-commands.json",
+        "docs/06l1/evidence/final-offline-browser-results.json"
+      ],
+      "ownerDecision": null,
+      "completedScope": [
+        "عرض مختصر بالرئيسية وتفاصيل بتقدمي من ذاكرة E1 دون مخزن مشتق أو إدخال إضافي",
+        "عرض أحدث النتائج والتصحيحات والبلاغات النصية والفواصل المسجلة مع مصادرها وحدودها",
+        "البلاغ السابق لتصحيح موجب لا يعد موضعًا مؤكدًا؛ التصحيح إلى صفر يحفظ التعارض دون احتسابه تكرارًا",
+        "حالات تحميل/تعذر/خطأ وإعادة قراءة دون أرقام بديلة أو استحقاقات أو نسب ثبات",
+        "إبراز إجراء إعداد مسموح وتحديث القراءة بعد الحالة/التنقل والعودة للتطبيق دون منح صلاحية تعلم"
+      ],
+      "verification": {
+        "targetedTests": {
+          "executed": 28,
+          "passed": 28,
+          "failed": 0,
+          "skipped": 0
+        },
+        "browserFinal": {
+          "passed": 31,
+          "failed": 0,
+          "skipped": 0,
+          "flaky": 0,
+          "evidence": "docs/06l1/evidence/final-browser-results.json",
+          "scope": "ضمن المجموعة الشاملة؛ L1WEB01/02 الإعداد وL1WEB03 الذاكرة وL1WEB04 الخطوات والسياسات"
+        },
+        "offlineFinal": {
+          "passed": 4,
+          "failed": 0,
+          "skipped": 0,
+          "evidence": "docs/06l1/evidence/final-offline-browser-results.json",
+          "scope": "ضمن المجموعة الشاملة دون اتصال"
+        }
+      }
+    },
+    {
+      "id": "L09",
+      "priority": "P0",
+      "title": "اعتماد سلامة البيانات والتحديث والاستعادة للنسخة المرشحة",
+      "status": "blocked-final-release-evidence",
+      "blockerScope": "data-safety",
+      "ownerRole": "مهندس IndexedDB + أمن + QA",
+      "dependencies": [
+        "L04",
+        "L05"
+      ],
+      "gates": [
+        "G04",
+        "G05"
+      ],
+      "acceptanceEvidenceRequired": [
+        "إعادة تشغيل اختبارات التكرار/الفساد/التصحيح/الاستعادة/الترحيل المستهدف على IndexedDB فعلي",
+        "قبل/بعد: الوقائع الخام ونتائج إعادة الحساب ثابتة مع تفسير أي تغير",
+        "اختبار multi-tab/quota/failure/rollback على بيئة الهدف مع حفظ الأدلة",
+        "لا تعديل غير قابل للاستعادة؛ لا حذف أحداث المستخدم"
+      ],
+      "currentEvidence": [
+        "docs/06e1/Data-Safety-and-Migration.md",
+        "docs/06e1/evidence/final-browser-results.json",
+        "src/application/history-application.ts",
+        "docs/06l1/Data-and-Review-Safety.md",
+        "docs/06l1/evidence/backward-readback.json",
+        "docs/06l1/evidence/final-offline-browser-results.json",
+        "docs/06l1/evidence/verification-commands.json"
+      ],
+      "ownerDecision": null
+    },
+    {
+      "id": "L10",
+      "priority": "P0",
+      "title": "إكمال مراجعة الهاتف والإتاحة البشرية والمنصة المستهدفة",
+      "status": "blocked-target-device-and-human-review",
+      "blockerScope": "trial-accessibility",
+      "ownerRole": "مختص إتاحة + QA",
+      "dependencies": [
+        "L06"
+      ],
+      "gates": [
+        "G06",
+        "G07",
+        "G08"
+      ],
+      "acceptanceEvidenceRequired": [
+        "RTL و320 بكسل ولوحة مفاتيح وaxe على المرشح النهائي",
+        "قارئ شاشة بشري وتكبير/تباين/إخفاء نص التسميع مع نتائج فعلية",
+        "بدء بارد offline واستئناف وتحديث على متصفحات وأجهزة الجمهور المستهدف",
+        "حصر الإصدار الأول على web/PWA إن اعتمد؛ لا ادعاء اعتماد تطبيقات iOS/Android الأصلية"
+      ],
+      "currentEvidence": [
+        "docs/06e1/Test-Report.md",
+        "docs/06l1/Onboarding-and-UX.md"
+      ],
+      "ownerDecision": null
+    },
+    {
+      "id": "L11",
+      "priority": "P0",
+      "title": "إغلاق مراجعة الأمن والخصوصية وحماية السجلات",
+      "status": "blocked-independent-review",
+      "blockerScope": "security-and-privacy",
+      "ownerRole": "مراجع أمن + مسؤولة المشروع",
+      "dependencies": [
+        "L12",
+        "L13",
+        "L14"
+      ],
+      "gates": [
+        "G05",
+        "G09"
+      ],
+      "acceptanceEvidenceRequired": [
+        "فحص تبعيات ومفاتيح وصلاحيات وCSP/XSS والنسخ والاستعادة في بيئة الهدف",
+        "اعتماد السياسة على المعالجة الفعلية: الجهاز/الاستضافة/سجلات الأعطال/المشاركة الاختيارية",
+        "هوية مشغلة وبلد وتواصل وحقوق واحتفاظ/حذف ودعم موثقة",
+        "مراقبة أعطال تقلل البيانات ولا تجمع نص التسميع/السجل افتراضيًا؛ اختبار فشل آمن"
+      ],
+      "currentEvidence": [
+        "docs/05c/Security-Report.md",
+        "src/persistence/backup.ts",
+        "docs/06l1/Hosting-Privacy-and-Support.md",
+        "public/privacy.html",
+        "public/terms.html",
+        "public/support.html"
+      ],
+      "ownerDecision": "المشغلة مالكة المشروع في السعودية؛ يلزم تعيين وسيلة دعم عامة قابلة للاستخدام ومراجعة سياسة التشغيل"
+    },
+    {
+      "id": "L12",
+      "priority": "P0",
+      "title": "تثبيت مسؤولية التشغيل وحدود الإصدار المحلي والمستودع المرجعي",
+      "status": "partially-confirmed-owner-input",
+      "blockerScope": "operating-ownership",
+      "ownerRole": "مالكة المشروع",
+      "dependencies": [],
+      "gates": [],
+      "acceptanceEvidenceRequired": [
+        "تأكيد مالكة المشروع مشغلة من السعودية موثق",
+        "تحديد اسم/صفة الجهة المعروضة ووسيلة الدعم الخاصة التي ستعتمد للإتاحة",
+        "قرار صريح بأن أول إصدار محلي أولاً دون حساب/مزامنة أو اعتماد نطاق حسابات إضافي",
+        "مستودع واحد مملوك للمشروع وفرع تطوير ومراجعة وصلاحيات؛ لا إنشاء حساب بلا تفويض"
+      ],
+      "currentEvidence": [
+        "docs/06l1/Hosting-Privacy-and-Support.md",
+        "docs/06l1/Release-and-Rollback.md",
+        "docs/06l1/evidence/source-control.json"
+      ],
+      "ownerDecision": "ورد من المالكة: هي المشغلة من السعودية، لها وسيلة دعم خاصة لم تسمها، ولم تنشئ أي حساب حاليًا. لا مستودع أو استضافة معتمدان مؤكدان ولا إثبات ملكية نطاق",
+      "completedScope": [
+        "المشغلة من السعودية مؤكدة؛ الدعم غير مسمى ولا حساب خارجي",
+        "مستودع محلي مرجعي واحد أنشئ مع main وbaseline/06e1 للأصل E1 المتحقق وdevelop لتغييرات L1؛ لا remote أو حساب خارجي أو حماية فرع بعيدة"
+      ]
+    },
+    {
+      "id": "L13",
+      "priority": "P0",
+      "title": "تجهيز معاينة مغلقة واستضافة ونطاق موثقين",
+      "status": "blocked-account-and-domain-verification",
+      "blockerScope": "external-trial-environment",
+      "ownerRole": "مالكة المشروع + مسؤول تشغيل",
+      "dependencies": [
+        "L12"
+      ],
+      "gates": [
+        "G07",
+        "G09"
+      ],
+      "acceptanceEvidenceRequired": [
+        "إثبات ملكية mulazama.com أو نطاق معاينة مخول وتحديد مزود وحساب موجود أو تفويض مستقل",
+        "فصل التطوير/المعاينة/الإنتاج ومفاتيح خارج الشفرة وTLS ورؤوس خدمة وميزانية معلومة",
+        "معاينة مقيدة الوصول بلا فهرسة وبسجلات أعطال محدودة وتدقيق الوصول",
+        "لا نشر عام أو شراء أو إنشاء حساب ضمن التسليم الحالي"
+      ],
+      "currentEvidence": [
+        "vite.config.ts",
+        "public/manifest.webmanifest",
+        "docs/06l1/Hosting-Privacy-and-Support.md",
+        "deployment/headers.example"
+      ],
+      "ownerDecision": "لا حسابات حالية بحسب المالكة؛ لا تفويض بإنشائها أو شراء خدمات"
+    },
+    {
+      "id": "L14",
+      "priority": "P0",
+      "title": "توثيق واختبار إصدار وتراجع ونسخ احتياطي مستمر",
+      "status": "prepared-awaiting-authorized-environment",
+      "blockerScope": "release-operations",
+      "ownerRole": "مسؤول إصدار + تخزين + QA",
+      "dependencies": [
+        "L12",
+        "L13"
+      ],
+      "gates": [
+        "G04",
+        "G05",
+        "G07",
+        "G09"
+      ],
+      "acceptanceEvidenceRequired": [
+        "CI واختبارات مطلوبة قبل الدمج وإصدار واضح وCHANGELOG ومعاينة قبل إنتاج",
+        "artifact immutable وبصمات وخطة تعود لملفات الإصدار السابق دون إفساد مخزن أحدث",
+        "تمرين استعادة وتراجع فعلي في staging مع إشارات نجاح/فشل ومشغل مسؤول",
+        "إثبات أن مراجع التقرير/البوابات مرتبطة بنفس النسخة التي ستنشر"
+      ],
+      "currentEvidence": [
+        ".github/workflows/qa.yml",
+        "docs/06l1/evidence/source-receipt.json",
+        "docs/06l1/Release-and-Rollback.md",
+        "docs/06l1/evidence/backward-readback.json",
+        "docs/06l1/evidence/source-control.json",
+        "docs/06l1/evidence/final-offline-browser-results.json",
+        "docs/06l1/evidence/verification-commands.json"
+      ],
+      "ownerDecision": null,
+      "completedScope": [
+        "إجراء مراجعة وإصدار ومعاينة ونسخ وتراجع موثق، ومستودع محلي وفروع من أصل E1؛ لا remote أو حساب خارجي",
+        "فحص توافق قارئ E1 الفعلي مع إعداد L1 نجح؛ لا يعادل تمرين تراجع استضافة",
+        "أصلح fallback للتنقل إلى HTML ثابت في service worker؛ أثبتت أربعة اختبارات offline النطاق الحالي دون تغيير قاعدة البيانات"
+      ]
+    },
+    {
+      "id": "L15",
+      "priority": "P0",
+      "title": "اعتماد بروتوكول التجربة وإغلاق بوابات المرشح",
+      "status": "protocol-prepared-blocked-gates",
+      "blockerScope": "closed-trial-permission",
+      "ownerRole": "مختص قرآن/قياس + مسؤولة التجربة + اعتماد الإصدار",
+      "dependencies": [
+        "L01",
+        "L02",
+        "L03",
+        "L04",
+        "L05",
+        "L06",
+        "L09",
+        "L10",
+        "L11",
+        "L13",
+        "L14"
+      ],
+      "gates": [
+        "G01",
+        "G02",
+        "G03",
+        "G04",
+        "G05",
+        "G06",
+        "G07",
+        "G08",
+        "G09",
+        "G10"
+      ],
+      "acceptanceEvidenceRequired": [
+        "أدلة وتواقيع صحيحة لسياق staging/controlled-pilot والكتالوج والنسخة الفعلية",
+        "10–20 مشاركًا بموافقة واضحة وحق الانسحاب وتوزيع مبتدئ/سابق ومزيج دون تجنيد فعلي الآن",
+        "مقاييس نجاح مستهدفة محددة قبل جمع النتائج وموافقة تقليل البيانات",
+        "قرار مكتوب جاهز للتجربة بعد تحقق الشروط؛ لا يتحول نجاح QA إلى إذن"
+      ],
+      "currentEvidence": [
+        "src/release/gates.ts",
+        "docs/06e1/Release-Gates.md",
+        "docs/06l1/Closed-Trial-Plan.md"
+      ],
+      "ownerDecision": null,
+      "completedScope": [
+        "خطة10–20 مشاركًا وموافقة وتقليل بيانات ومهام ومقاييس مسبقة للنجاح والعودة7/14 وقواعد إيقاف",
+        "لم يدع مشاركون ولم تجمع نتائج بشرية ولم يعتمد بدء التجربة"
+      ]
+    },
+    {
+      "id": "L16",
+      "priority": "P1",
+      "title": "تنفيذ التجربة وحل مشاكل القيمة الأساسية",
+      "status": "not-started-human-trial",
+      "blockerScope": "public-launch-evidence",
+      "ownerRole": "مسؤولة التجربة + UX + QA",
+      "dependencies": [
+        "L15"
+      ],
+      "gates": [],
+      "acceptanceEvidenceRequired": [
+        "اختبار فعلي لإعداد الملف والخطة وأول ورد والتسميع والمراجعة",
+        "قياس التفاعلات والأخطاء وفائدة الاقتراح وأسباب التوقف والعودة في اليوم 7 و14",
+        "حفظ أدلة بموافقة المشاركين وعرض المقام والبيانات المفقودة دون تعميم إحصائي",
+        "حل جميع المشكلات الحرجة والتحقق من الإصلاح ثم مراجعة القبول"
+      ],
+      "currentEvidence": [],
+      "ownerDecision": null
+    },
+    {
+      "id": "L17",
+      "priority": "P1",
+      "title": "قرار الإطلاق العام الصريح بعد استيفاء الاثني عشر معيارًا",
+      "status": "not-ready",
+      "blockerScope": "public-release",
+      "ownerRole": "مالكة المشروع + أصحاب الاعتماد",
+      "dependencies": [
+        "L15",
+        "L16"
+      ],
+      "gates": [
+        "G01",
+        "G02",
+        "G03",
+        "G04",
+        "G05",
+        "G06",
+        "G07",
+        "G08",
+        "G09",
+        "G10"
+      ],
+      "acceptanceEvidenceRequired": [
+        "رحلتا المبتدئ والسابق والورد تعمل فعليًا مع محتوى وجدولة معتمدين",
+        "ذاكرة من أحداث موثقة ولا فقد سجلات عند تحديث/استعادة ولا أعطال حرجة",
+        "هاتف/حاسوب/إتاحة وخصوصية/دعم مكتملة وتجربة بشرية فعلية عولج حرجها",
+        "تمرين استعادة الخدمة والتراجع ناجح واعتماد منفصل لسياق production وموافقة نشر صريحة",
+        "استخدام الوعد التسويقي فقط بعد إثبات الوظائف المضمنة فيه"
+      ],
+      "currentEvidence": [],
+      "ownerDecision": "لم تطلب المالكة نشرًا عامًا؛ النشر يحتاج موافقة صريحة لاحقة"
+    },
+    {
+      "id": "L18",
+      "priority": "P2",
+      "title": "تأجيل التحسينات التي لا تغلق قيمة الإطلاق الأساسية",
+      "status": "deferred-outside-first-launch",
+      "blockerScope": "nonblocking",
+      "ownerRole": "إدارة المنتج",
+      "dependencies": [],
+      "gates": [],
+      "acceptanceEvidenceRequired": [
+        "توضع خارج النطاق: مزامنة سحابية متعددة الأجهزة وتطبيقات أصلية ورسوم كثيرة وتخصيص أوزان وتنبؤ إتقان",
+        "لا إعلان ثبات متقدم أو إتقان قرآني دون تعريف تشغيلي ودليل مستقل",
+        "لا يمنع التأجيل عرض وصف دقيق لبيانات غير كافية في النسخة الأولى"
+      ],
+      "currentEvidence": [],
+      "ownerDecision": null
+    }
+  ],
+  "localVerification": {
+    "programmatic": {
+      "executed": 727,
+      "passed": 727,
+      "failed": 0,
+      "skipped": 0,
+      "evidence": "docs/06l1/evidence/final-tests.json"
+    },
+    "targetedCountsIncludedInTotal": true,
+    "browserFinal": {
+      "executed": 31,
+      "passed": 31,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0,
+      "evidence": "docs/06l1/evidence/final-browser-results.json"
+    },
+    "offlineFinal": {
+      "executed": 4,
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0,
+      "evidence": "docs/06l1/evidence/final-offline-browser-results.json"
+    },
+    "readbackEvidence": "docs/06l1/evidence/backward-readback.json",
+    "scope": "نجح النطاق البرمجي والمتصفح المحلي وoffline والمطابقة المرجعية؛ لا اعتماد علمي أو فتح بوابة تجربة أو إطلاق. الحالات المستهدفة والمرجعية داخل الإجمالي البرمجي ولا تضاف إليه.",
+    "fsrsReference": {
+      "executed": 40,
+      "passed": 40,
+      "failed": 0,
+      "blocked": 0,
+      "evidence": "docs/06l1/evidence/fsrs/fsrs-investigation.json",
+      "scope": "نواة الحساب المصحح والفاصل الخام؛ لا انتخاب إنتاجي أو اعتماد علمي"
+    },
+    "commandsEvidence": "docs/06l1/evidence/verification-commands.json"
+  },
+  "sourceControl": {
+    "localRepositoryVerified": true,
+    "evidence": "docs/06l1/evidence/source-control.json",
+    "baselineCommit": "b8bd45e5abcbfd6f55883cb73579ecbe7beb9b2d",
+    "main": "verified E1 baseline",
+    "baseline/06e1": "retained E1 reference",
+    "develop": "L1 working branch; see source-control receipt for final commit",
+    "remote": null,
+    "externalAccountsCreated": false,
+    "remoteProtectionConfigured": false
+  }
+}

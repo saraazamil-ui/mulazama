@@ -1,0 +1,223 @@
+{
+  "product": "MULAZAMA",
+  "phase": "05-B",
+  "dateUTC": "2026-11-05",
+  "playwrightVersion": "1.56.1",
+  "discoveredE2ECases": 15,
+  "e2eTestFiles": 3,
+  "actualE2ECasesExecuted": 0,
+  "actualE2ECasesPassed": 0,
+  "actualE2ECasesFailed": 0,
+  "suiteStartupFailed": true,
+  "reason": "listen EPERM 127.0.0.1:4173 before first test",
+  "offlineCasesWritten": 1,
+  "actualOfflineCasesExecuted": 0,
+  "offlineReason": "listen EPERM 127.0.0.1:4174 before first test",
+  "indexedDbChecksWritten": 21,
+  "indexedDbChecksExecuted": 0,
+  "axePageScansWritten": 58,
+  "axePageScansExecuted": 0,
+  "manualScreenReaderSessions": 0,
+  "journeys": [
+    {
+      "requestedJourney": 1,
+      "journey": "بدء مستخدم جديد",
+      "screens": "S01",
+      "contracts": "C02",
+      "testIds": "BWEB07",
+      "implementationCoverage": "Written; not executed",
+      "actualBrowserResult": "NOT EXECUTED — server listen EPERM before test cases",
+      "limitation": "إعداد مستخدم جديد فقط؛ لا جلسة قرآن"
+    },
+    {
+      "requestedJourney": 2,
+      "journey": "إعداد خطة",
+      "screens": "S02",
+      "contracts": "C02",
+      "testIds": "BWEB07",
+      "implementationCoverage": "Written; not executed",
+      "actualBrowserResult": "NOT EXECUTED — server listen EPERM before test cases",
+      "limitation": "حفظ إعداد الوقت والمسار؛ لا مولد خطة قرآنية"
+    },
+    {
+      "requestedJourney": 3,
+      "journey": "إدخال محفوظ سابق",
+      "screens": "S03",
+      "contracts": "C02",
+      "testIds": "BWEB07",
+      "implementationCoverage": "Written; not executed",
+      "actualBrowserResult": "NOT EXECUTED — server listen EPERM before test cases",
+      "limitation": "تصريح غير مختبر محفوظ محليًا"
+    },
+    {
+      "requestedJourney": 4,
+      "journey": "اختيار نطاقات متفرقة",
+      "screens": "S03/S14",
+      "contracts": "C02/C09",
+      "testIds": "BWEB07",
+      "implementationCoverage": "Written; not executed",
+      "actualBrowserResult": "NOT EXECUTED — server listen EPERM before test cases",
+      "limitation": "جزآن1و3؛ تكرار1 لا يملأ فجوة2"
+    },
+    {
+      "requestedJourney": 5,
+      "journey": "التشخيص",
+      "screens": "S04",
+      "contracts": "C03",
+      "testIds": "BWEB09/BWEB10",
+      "implementationCoverage": "Blocked; denial test written",
+      "actualBrowserResult": "NOT EXECUTED — server listen EPERM before test cases",
+      "limitation": "المسار الإيجابي يحتاج محتوى معتمدًا"
+    },
+    {
+      "requestedJourney": 6,
+      "journey": "عرض ورد اليوم",
+      "screens": "S05/S06",
+      "contracts": "C04",
+      "testIds": "BWEB08/BWEB13",
+      "implementationCoverage": "Partial; not executed",
+      "actualBrowserResult": "NOT EXECUTED — server listen EPERM before test cases",
+      "limitation": "عرض خالٍ/امتناع وتعديل الميزانية؛ لا مهام قرآن فعلية"
+    },
+    {
+      "requestedJourney": 7,
+      "journey": "بدء جلسة",
+      "screens": "S07",
+      "contracts": "C05",
+      "testIds": "BWEB09/BWEB10",
+      "implementationCoverage": "Blocked; denial test written",
+      "actualBrowserResult": "NOT EXECUTED — server listen EPERM before test cases",
+      "limitation": "لا بدء جلسة عبر الواجهة أو استدعاء الخدمة مباشرة"
+    },
+    {
+      "requestedJourney": 8,
+      "journey": "تسجيل تكرار",
+      "screens": "S07",
+      "contracts": "C06",
+      "testIds": "BWEB09/BWEB10",
+      "implementationCoverage": "Blocked; denial test written",
+      "actualBrowserResult": "NOT EXECUTED — server listen EPERM before test cases",
+      "limitation": "اختبار رفض أمر؛ لا تكرار قرآني إنتاجي"
+    },
+    {
+      "requestedJourney": 9,
+      "journey": "تسجيل تلميح",
+      "screens": "S08",
+      "contracts": "C07",
+      "testIds": "BWEB09/BWEB10",
+      "implementationCoverage": "Blocked; denial test written",
+      "actualBrowserResult": "NOT EXECUTED — server listen EPERM before test cases",
+      "limitation": "اختبار رفض أمر؛ حفظ تلميحات HME يراجع في الوحدات"
+    },
+    {
+      "requestedJourney": 10,
+      "journey": "تسجيل خطأ",
+      "screens": "S12",
+      "contracts": "C08",
+      "testIds": "BWEB14",
+      "implementationCoverage": "Partial; not executed",
+      "actualBrowserResult": "NOT EXECUTED — server listen EPERM before test cases",
+      "limitation": "بلاغ عام صناعي مشتبه؛ ليس تصحيحًا مستقلًا أو خطأ آية مثبتًا"
+    },
+    {
+      "requestedJourney": 11,
+      "journey": "إنهاء محاولة",
+      "screens": "S08",
+      "contracts": "C07",
+      "testIds": "BWEB09/BWEB10",
+      "implementationCoverage": "Blocked; denial test written",
+      "actualBrowserResult": "NOT EXECUTED — server listen EPERM before test cases",
+      "limitation": "لا قبول نجاح تسميع محجوب"
+    },
+    {
+      "requestedJourney": 12,
+      "journey": "التقييم",
+      "screens": "S09",
+      "contracts": "C07",
+      "testIds": "BWEB09/BWEB10",
+      "implementationCoverage": "Blocked; denial test written",
+      "actualBrowserResult": "NOT EXECUTED — server listen EPERM before test cases",
+      "limitation": "لا تقييم ذاتي يفتح بوابة الإنتاج"
+    },
+    {
+      "requestedJourney": 13,
+      "journey": "إغلاق الجلسة واستئنافها",
+      "screens": "S10",
+      "contracts": "C05",
+      "testIds": "BWEB09/BWEB10; IDB01",
+      "implementationCoverage": "Blocked; positive Quran journey absent",
+      "actualBrowserResult": "NOT EXECUTED — server listen EPERM before test cases",
+      "limitation": "إعادة فتح سجل صناعي IDB01 لا تعادل رحلة تسميع كاملة"
+    },
+    {
+      "requestedJourney": 14,
+      "journey": "عرض المراجعات المتأخرة",
+      "screens": "S05/S11",
+      "contracts": "C04",
+      "testIds": "BWEB09",
+      "implementationCoverage": "Blocked; positive browser coverage absent",
+      "actualBrowserResult": "NOT EXECUTED — server listen EPERM before test cases",
+      "limitation": "لا محتوى أو استحقاقات قرآنية معتمدة؛ لا إيجاد متأخرات وهمية"
+    },
+    {
+      "requestedJourney": 15,
+      "journey": "تعديل الوقت المتاح",
+      "screens": "S06",
+      "contracts": "C02/C04",
+      "testIds": "BWEB08",
+      "implementationCoverage": "Written; not executed",
+      "actualBrowserResult": "NOT EXECUTED — server listen EPERM before test cases",
+      "limitation": "فصل وقت اليوم30 عن المعتاد60 بعد reload"
+    },
+    {
+      "requestedJourney": 16,
+      "journey": "استعراض الأجزاء الثلاثين",
+      "screens": "S14",
+      "contracts": "C09",
+      "testIds": "BWEB07/BWEB11",
+      "implementationCoverage": "Written; not executed",
+      "actualBrowserResult": "NOT EXECUTED — server listen EPERM before test cases",
+      "limitation": "كل جزء30button؛ الفجوات غير مختبرة"
+    },
+    {
+      "requestedJourney": 17,
+      "journey": "عرض حالة الثبات",
+      "screens": "S14/S15",
+      "contracts": "C09",
+      "testIds": "BWEB07/BWEB09/BWEB11",
+      "implementationCoverage": "Partial; not executed",
+      "actualBrowserResult": "NOT EXECUTED — server listen EPERM before test cases",
+      "limitation": "غير مقاس وبيان محجوب؛ لا اعتماد ثبات فعلي"
+    },
+    {
+      "requestedJourney": 18,
+      "journey": "التوقع غير المتاح",
+      "screens": "S19",
+      "contracts": "C10",
+      "testIds": "BWEB11",
+      "implementationCoverage": "Written; not executed",
+      "actualBrowserResult": "NOT EXECUTED — server listen EPERM before test cases",
+      "limitation": "نص الامتناع ولا تاريخ ختام"
+    },
+    {
+      "requestedJourney": 19,
+      "journey": "إدارة البيانات",
+      "screens": "S18",
+      "contracts": "C12",
+      "testIds": "BWEB12/BWEB13; IDB17",
+      "implementationCoverage": "Partial; not executed",
+      "actualBrowserResult": "NOT EXECUTED — server listen EPERM before test cases",
+      "limitation": "فحص ملف/إلغاء نافذة/تأكيد استبدال؛ حذف فعلي في IDB17 الصناعي"
+    },
+    {
+      "requestedJourney": 20,
+      "journey": "النسخ والاستعادة",
+      "screens": "S18",
+      "contracts": "C12",
+      "testIds": "BWEB03/BWEB13; IDB06",
+      "implementationCoverage": "Written; not executed",
+      "actualBrowserResult": "NOT EXECUTED — server listen EPERM before test cases",
+      "limitation": "كلمة خاطئة/ملف باطل/إلغاء/استبدال متكرر؛ raw dedup في IDB06"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-11-07T12:29:30.729636+00:00",
+  "verification": "Ran the exact pinned-baseline loader embedded in rollout06l3.spec.ts into a disposable directory",
+  "exitCode": 0,
+  "verifiedFiles": 15,
+  "sourceDigest": "264c0fa5974510e4b07297370e9955ac620525b02f4f8cfdc63d0aa122ed7347",
+  "receiptSHA256": "dcbb735c06568a7d556f39066c2a322c57fe254838ec55963209c5521a1b29d4",
+  "fileSetExact": true,
+  "allFileBytesMatchReceipt": true,
+  "browserExecuted": false,
+  "temporaryCopyRemovedOnExit": true
+}

@@ -1,0 +1,104 @@
+[
+  {
+    "id": "typecheck",
+    "argv": [
+      "/tmp/mulazama-baseline/bin/node",
+      "node_modules/typescript/bin/tsc",
+      "-b"
+    ],
+    "cwd": "/tmp/mulazama-05b-baseline/mulazama-05a",
+    "startedAt": "2026-11-05T12:48:16.549397+00:00",
+    "exitCode": 0,
+    "durationSeconds": 1.592,
+    "log": "typecheck.log"
+  },
+  {
+    "id": "unit-integration-contracts",
+    "argv": [
+      "/tmp/mulazama-baseline/bin/node",
+      "node_modules/vitest/vitest.mjs",
+      "run",
+      "--reporter=json",
+      "--outputFile=/Users/saalzamil/Documents/ChatGPT/\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u0639\u0645\u0631/mulazama-05b/docs/05b/evidence/baseline/unit-results.json"
+    ],
+    "cwd": "/tmp/mulazama-05b-baseline/mulazama-05a",
+    "startedAt": "2026-11-05T12:48:18.142244+00:00",
+    "exitCode": 0,
+    "durationSeconds": 3.013,
+    "log": "unit-integration-contracts.log"
+  },
+  {
+    "id": "security-static",
+    "argv": [
+      "/tmp/mulazama-baseline/bin/node",
+      "scripts/security-check.mjs"
+    ],
+    "cwd": "/tmp/mulazama-05b-baseline/mulazama-05a",
+    "startedAt": "2026-11-05T12:48:21.155019+00:00",
+    "exitCode": 0,
+    "durationSeconds": 0.03,
+    "log": "security-static.log"
+  },
+  {
+    "id": "build-typecheck",
+    "argv": [
+      "/tmp/mulazama-baseline/bin/node",
+      "node_modules/typescript/bin/tsc",
+      "-b"
+    ],
+    "cwd": "/tmp/mulazama-05b-baseline/mulazama-05a",
+    "startedAt": "2026-11-05T12:48:21.185060+00:00",
+    "exitCode": 0,
+    "durationSeconds": 1.31,
+    "log": "build-typecheck.log"
+  },
+  {
+    "id": "build-vite",
+    "argv": [
+      "/tmp/mulazama-baseline/bin/node",
+      "node_modules/vite/bin/vite.js",
+      "build"
+    ],
+    "cwd": "/tmp/mulazama-05b-baseline/mulazama-05a",
+    "startedAt": "2026-11-05T12:48:22.495704+00:00",
+    "exitCode": 0,
+    "durationSeconds": 1.1,
+    "log": "build-vite.log"
+  },
+  {
+    "id": "build-offline",
+    "argv": [
+      "/tmp/mulazama-baseline/bin/node",
+      "scripts/build-offline.mjs"
+    ],
+    "cwd": "/tmp/mulazama-05b-baseline/mulazama-05a",
+    "startedAt": "2026-11-05T12:48:23.595476+00:00",
+    "exitCode": 0,
+    "durationSeconds": 0.031,
+    "log": "build-offline.log"
+  },
+  {
+    "id": "verify-build",
+    "argv": [
+      "/tmp/mulazama-baseline/bin/node",
+      "scripts/verify-build.mjs"
+    ],
+    "cwd": "/tmp/mulazama-05b-baseline/mulazama-05a",
+    "startedAt": "2026-11-05T12:48:23.626951+00:00",
+    "exitCode": 0,
+    "durationSeconds": 0.027,
+    "log": "verify-build.log"
+  },
+  {
+    "id": "readiness-production",
+    "argv": [
+      "/tmp/mulazama-baseline/bin/node",
+      "scripts/readiness.mjs"
+    ],
+    "cwd": "/tmp/mulazama-05b-baseline/mulazama-05a",
+    "startedAt": "2026-11-05T12:48:23.653785+00:00",
+    "exitCode": 1,
+    "durationSeconds": 0.025,
+    "log": "readiness-production.log"
+  }
+]

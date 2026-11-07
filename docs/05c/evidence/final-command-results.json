@@ -1,0 +1,82 @@
+[
+  {
+    "name": "typecheck",
+    "command": "node node_modules/typescript/bin/tsc -b",
+    "exitCode": 0,
+    "startedAt": 1793887151.528548,
+    "durationSeconds": 1.7445569038391113,
+    "log": "final-typecheck.log"
+  },
+  {
+    "name": "tests",
+    "command": "node node_modules/vitest/vitest.mjs run --reporter=json --outputFile=docs/05c/evidence/final-tests.json",
+    "exitCode": 0,
+    "startedAt": 1793887153.273619,
+    "durationSeconds": 4.3798582553863525,
+    "log": "final-tests.log"
+  },
+  {
+    "name": "source-context",
+    "command": "node scripts/generate-release-context.mjs",
+    "exitCode": 0,
+    "startedAt": 1793887157.653714,
+    "durationSeconds": 0.0463259220123291,
+    "log": "final-source-context.log"
+  },
+  {
+    "name": "build",
+    "command": "node node_modules/vite/bin/vite.js build",
+    "exitCode": 0,
+    "startedAt": 1793887157.7002082,
+    "durationSeconds": 1.1203677654266357,
+    "log": "final-build.log"
+  },
+  {
+    "name": "offline-assets",
+    "command": "node scripts/build-offline.mjs",
+    "exitCode": 0,
+    "startedAt": 1793887158.820747,
+    "durationSeconds": 0.03310799598693848,
+    "log": "final-offline-assets.log"
+  },
+  {
+    "name": "verify-build",
+    "command": "node scripts/verify-build.mjs",
+    "exitCode": 0,
+    "startedAt": 1793887158.8540878,
+    "durationSeconds": 0.03457307815551758,
+    "log": "final-verify-build.log"
+  },
+  {
+    "name": "security",
+    "command": "node scripts/security-check.mjs",
+    "exitCode": 0,
+    "startedAt": 1793887158.888847,
+    "durationSeconds": 0.033403873443603516,
+    "log": "final-security.log"
+  },
+  {
+    "name": "fsrs-current",
+    "command": "node scripts/fsrs-conformance.mjs --reference references/ts-fsrs-5.4.2-verified/package --receipt references/ts-fsrs-5.4.2-verified/receipt.json --output docs/05c/evidence/final-fsrs-current.json",
+    "exitCode": 1,
+    "startedAt": 1793887158.922432,
+    "durationSeconds": 0.06077122688293457,
+    "log": "final-fsrs-current.log"
+  },
+  {
+    "name": "fsrs-rounded",
+    "command": "node scripts/fsrs-conformance.mjs --reference references/ts-fsrs-5.4.2-verified/package --receipt references/ts-fsrs-5.4.2-verified/receipt.json --rounded-candidate --output docs/05c/evidence/final-fsrs-rounded.json",
+    "exitCode": 0,
+    "startedAt": 1793887158.9833758,
+    "durationSeconds": 0.05613112449645996,
+    "log": "final-fsrs-rounded.log"
+  },
+  {
+    "name": "release-gates",
+    "command": "node scripts/verify-release.mjs --phase 05-C --output docs/05c/evidence/release-gates-final.json",
+    "exitCode": 2,
+    "startedAt": 1793887159.039708,
+    "durationSeconds": 0.04715108871459961,
+    "log": "final-release-gates.log"
+  }
+]

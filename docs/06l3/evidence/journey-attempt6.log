@@ -1,0 +1,56 @@
+[2m[WebServer] [22m(node:35115) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 5 tests using 1 worker
+
+(node:35117) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:35117) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 e2e-journey/journeys06l3.spec.ts:65:1 › L3J01 newcomer full isolated journey creates real durable HME events, schedules corrected review and survives reload (2.1s)
+  ✓  2 e2e-journey/journeys06l3.spec.ts:119:1 › L3J02 prior hafiz starts from declaration, records effort, corrects observation without duplicating review and retains goal history (2.3s)
+  ✓  3 e2e-journey/journeys06l3.spec.ts:178:1 › L3J03 reload during recall requires restart, disclosure persists, cancelled activity never counts as completed (2.1s)
+  ✓  4 e2e-journey/journeys06l3.spec.ts:221:1 › L3J04 phone keyboard and automated accessibility include daily activity, hidden recall answer and self-assessment (3.2s)
+  ✘  5 e2e-journey/journeys06l3.spec.ts:245:1 › L3J05 a returning prior hafiz receives an overdue review, records failure and keeps original history (7.5s)
+
+
+  1) e2e-journey/journeys06l3.spec.ts:245:1 › L3J05 a returning prior hafiz receives an overdue review, records failure and keeps original history 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: getByRole('heading', { name: 'مواضع تعثرت فيها بحسب نتائجك' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 5000ms[22m
+    [2m  - waiting for getByRole('heading', { name: 'مواضع تعثرت فيها بحسب نتائجك' })[22m
+
+
+      83 |  await expect(page.getByRole('heading',{name:'حُفظ تقييمك الذاتي'})).toBeVisible();
+      84 |  await page.getByRole('button',{name:'تابع إلى النشاط التالي'}).click();
+    > 85 |  await expect(page.getByRole('heading',{name:'مواضع تعثرت فيها بحسب نتائجك'})).toBeVisible();
+         |                                                                                ^
+      86 |  await expect(page.getByText(/أنشطة أُنجزت اليوم: 1/)).toBeVisible();
+      87 |  const after=await facts(page);for(const original of before.events)expect(after.events.find(e=>e.eventId===original.eventId)).toEqual(original);
+      88 |  expect(after.events.filter(e=>e.type==='AssessmentSubmitted')).toHaveLength(2);
+        at /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l3/e2e-journey/journeys06l3.spec.ts:85:80
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results-journey/journeys06l3-L3J05-a-retur-f9b82--and-keeps-original-history/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-journey/journeys06l3-L3J05-a-retur-f9b82--and-keeps-original-history/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-journey/journeys06l3-L3J05-a-retur-f9b82--and-keeps-original-history/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-journey/journeys06l3-L3J05-a-retur-f9b82--and-keeps-original-history/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    e2e-journey/journeys06l3.spec.ts:245:1 › L3J05 a returning prior hafiz receives an overdue review, records failure and keeps original history 
+  4 passed (19.8s)

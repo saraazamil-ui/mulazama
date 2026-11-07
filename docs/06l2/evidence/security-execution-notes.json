@@ -1,0 +1,14 @@
+{
+  "initialBrowserAttempts": [
+    {
+      "executed": false,
+      "reason": "Automatic approval review rejected a test that replaced the development-named DB without explicit cleanup, despite disposable test context intent."
+    },
+    {
+      "executed": false,
+      "reason": "Automatic approval review required UUID isolation or guaranteed original snapshot restoration; no browser command was executed."
+    }
+  ],
+  "adoptedSaferApproach": "Cross-tab services use a unique UUID database; stored-text scenario uses ordinary UI insertion/deletion only, no database replacement. Both use explicitly new temporary BrowserContexts closed in finally.",
+  "realLearnerDataUsed": false
+}

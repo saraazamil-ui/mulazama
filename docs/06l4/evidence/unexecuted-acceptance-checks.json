@@ -1,0 +1,42 @@
+[
+  {
+    "id": "REAL-QURAN-NEW",
+    "status": "not-executed-blocked",
+    "reason": "No approved content package/catalog/font/product-method attestation; synthetic journey is not a substitute."
+  },
+  {
+    "id": "REAL-QURAN-PRIOR",
+    "status": "not-executed-blocked",
+    "reason": "Same product gates; self-report per session is permitted, product approval is absent."
+  },
+  {
+    "id": "LIVE-DOMAIN-HTTPS",
+    "status": "not-executed-blocked",
+    "reason": "Public DNS NXDOMAIN and registration status/ownership not proven by registrar account; TLS cannot be tested on the target."
+  },
+  {
+    "id": "MAIL-SEND-RECEIVE",
+    "status": "not-executed-blocked",
+    "reason": "No selected/active email account, verified MX/SPF/DKIM/DMARC or consent to send messages."
+  },
+  {
+    "id": "HOSTED-L4-PREVIEW",
+    "status": "not-executed-blocked",
+    "reason": "Existing hosted preview is 05-A; selected hosting/account configuration and deployment approval are missing."
+  },
+  {
+    "id": "HUMAN-TRIAL-14-DAYS",
+    "status": "not-executed-blocked",
+    "reason": "Product gates remain blocked; no participants enrolled or outcomes collected."
+  },
+  {
+    "id": "HUMAN-SCREEN-READER",
+    "status": "not-executed",
+    "reason": "Automated AX/axe and keyboard checks are not a human screen-reader evaluation."
+  },
+  {
+    "id": "REAL-DATA-MIGRATION",
+    "status": "not-executed-not-authorized",
+    "reason": "No migration required for this code change; old and new stream interpreters remain separate."
+  }
+]

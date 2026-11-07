@@ -1,0 +1,32 @@
+{
+  "base": "06-D1 verified ZIP",
+  "diagnosisCompletedBeforeImplementation": true,
+  "indicatorBlockers": {
+    "memorization": [
+      "no quantitative target",
+      "unapproved acquisition rubric",
+      "unapproved content coverage mapping"
+    ],
+    "daily": [
+      "no immutable session-to-task binding",
+      "no cancellation/defer completion contract"
+    ],
+    "review": [
+      "selected FSRS nonconformant",
+      "no historical session kind binding"
+    ],
+    "stability": [
+      "unapproved rubric and insufficient independent verified delayed evidence"
+    ]
+  },
+  "globalSessionBlocker": "G01-G10 remain blocked",
+  "safeChanges": [
+    "read-only validated aggregate history in main without LearningApplication instance",
+    "preserve all scopes through backup and product writes",
+    "hydrate saved assessment before correction",
+    "explicit full-scope choice without inferred error/effort/gap",
+    "independent upstream FSRS integration tests"
+  ],
+  "noNewAcquisitionOrTaskCriterion": true,
+  "noGateOrCoreChange": true
+}

@@ -1,0 +1,13 @@
+HTTP/2 200 
+server: nginx/1.20.1
+date: Sat, 07 Nov 2026 11:45:22 GMT
+content-type: application/octet-stream; charset=utf-8
+x-powered-by: PHP/8.1.0
+pragma: public
+expires: 0
+cache-control: must-revalidate, post-check=0, pre-check=0
+cache-control: private
+content-disposition: attachment; filename=quran-uthmani.txt
+content-transfer-encoding: binary
+vary: Accept-Encoding
+

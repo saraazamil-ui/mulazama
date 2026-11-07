@@ -1,0 +1,17 @@
+{
+  "command": [
+    "node",
+    "node_modules/@playwright/test/cli.js",
+    "test",
+    "--config",
+    "playwright.config.ts",
+    "e2e/isolation06l3.spec.ts"
+  ],
+  "startedAt": "2026-11-07T12:29:00.455991+00:00",
+  "durationSeconds": 2.954,
+  "exitCode": 0,
+  "environment": {
+    "PW_CHANNEL": "chrome"
+  },
+  "scope": "Fresh browser context, loopback 4173 development build; production artifact tested separately"
+}

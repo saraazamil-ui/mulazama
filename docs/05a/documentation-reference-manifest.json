@@ -1,0 +1,72 @@
+{
+  "capturedAt": "2026-11-05T11:03:00.450681+00:00",
+  "timezone": "Asia/Riyadh",
+  "purpose": "Actual local references read for contracts, requirements and 05-B handoff. Historical results remain scoped to their own runs.",
+  "files": [
+    {
+      "file": "references/HME-Space.md",
+      "sha256": "910ca6a936f5935c5c381b089bfb42a2b1cac5ebd6bedc8bf337c87f4cd78dc5",
+      "bytes": 144098
+    },
+    {
+      "file": "references/PRD-Space.md",
+      "sha256": "656ad505523bc2a356d7bfb1ccaca178c012860fe1cbba15363e7db1cdbc5c09",
+      "bytes": 310992
+    },
+    {
+      "file": "docs/07-readiness-gate.md",
+      "sha256": "3c4ede2dab52c3600b0cec2757e00f4f0ad29f986ba93c1612e0eec404791944",
+      "bytes": 8538
+    },
+    {
+      "file": "docs/06-open-decisions.md",
+      "sha256": "b9af111385922f1b5b8dd3562d9bd6b1cdcca9fdf2d63f997e2c42a85eec07d1",
+      "bytes": 8286
+    },
+    {
+      "file": "docs/05a/baseline-audit.md",
+      "sha256": "342427b1a7127f00d4bc9729014cca6deae73e9ff8fcb625cc048e76fe4368cc",
+      "bytes": 10042
+    },
+    {
+      "file": "docs/05a/architecture.md",
+      "sha256": "aacd442645389ead6c883b1da8b3b3ed7d40b646f872e5a72e0a6699cecaf2ce",
+      "bytes": 17295
+    },
+    {
+      "file": "docs/05a/hme-calculation-audit.md",
+      "sha256": "f1a37c567f9bc5104364473b6a2cdbc8ea63866b9765d8c4cd249da57b6a4419",
+      "bytes": 10258
+    },
+    {
+      "file": "docs/05a/persistence.md",
+      "sha256": "05998bd4f3399ee76b604f82b8b0fd304a9fef4d69255c98cb47ee2eeece4f3e",
+      "bytes": 4136
+    },
+    {
+      "file": "docs/05a/content-privacy-platform.md",
+      "sha256": "40a2eee44c071283dd3cec06d17592e63745aee433fd9e06b96f56fd25ec0a57",
+      "bytes": 6419
+    },
+    {
+      "file": "docs/05a/peer-review.md",
+      "sha256": "908bf29525707e1a7d140fbc5d7222ebc3fdd5bc0743e3b7b09360dbf81abfbe",
+      "bytes": 2985
+    },
+    {
+      "file": "docs/05a/unit-results.json",
+      "sha256": "90d5c08507cd0302ccefeb56a5fb03d5c80cffe1316699999537cd304b64d9c1",
+      "bytes": 104773
+    },
+    {
+      "file": "docs/05a/performance-results.json",
+      "sha256": "cbfbac0d753471e22a1f4aa7910d45a95a72d4bd2b5b330fd5bc727fae3f1489",
+      "bytes": 552
+    },
+    {
+      "file": "docs/05a/security-check-results.json",
+      "sha256": "fe4f43cfd8d5f19022ee5053a5c8c3d0d64d9bab5ec9780e20129cfe96f2abcd",
+      "bytes": 173
+    }
+  ]
+}

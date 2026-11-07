@@ -1,0 +1,104 @@
+{
+  "purpose": "Unmodified L2 core and persistence files for a portable isolated historical-backup-reader regression; no learner data or migration",
+  "sourceDeliveryFile": "MULAZAMA-Phase-06L2-Engineering-Delivery.zip",
+  "sourceDeliverySHA256": "eae1213dae28f6eaa3ede0207602c6e046c6c19b8817364a16692b3e3208a1cf",
+  "sourceArchiveRoot": "mulazama-06l2/",
+  "sourceZipSHA256": "b47501dfd461f9445c2e9d2ad84ae1fa09f1af6048d4bd3ee6b650f1165801ef",
+  "files": [
+    {
+      "path": "src/core/fixtures/fsrs6-research-reference.json",
+      "bytes": 7814,
+      "sha256": "ab2b28ef73f44a9391f91eea0aeea96ffd1bd03886d54eca80f93a6039c652fd"
+    },
+    {
+      "path": "src/core/fsrs-reference.test.ts",
+      "bytes": 5377,
+      "sha256": "7f799b8a2a984874bb82d73ec0308e2266fe4112b526a93eeece7de38fb395f7"
+    },
+    {
+      "path": "src/core/fsrs-reference.ts",
+      "bytes": 6069,
+      "sha256": "14c623c0c9cc2fceb5a74924087ba0d7d5880d04102130dcf1ffbd9ea70c753e"
+    },
+    {
+      "path": "src/core/fsrs-rounded.ts",
+      "bytes": 2799,
+      "sha256": "bdc4b54a522d9207cd16ce8d2d88eec5fd3d591020b8d148cdbb7d825ad28087"
+    },
+    {
+      "path": "src/core/fsrs.test.ts",
+      "bytes": 5459,
+      "sha256": "7d6a8b9c97d05e2d5a36c5236482791c65ba607366036283bc8f8383fb23290a"
+    },
+    {
+      "path": "src/core/fsrs.ts",
+      "bytes": 6355,
+      "sha256": "c0352adbd23e59d5adaa5fb6ea9b378c7301acdecf70959c39dd7295bc5f5a07"
+    },
+    {
+      "path": "src/core/hme-types.ts",
+      "bytes": 4772,
+      "sha256": "6135e6070ca2fbf1fba51416f4159ac48f3ae39242ebfaf4ab7f4d08e7e1482d"
+    },
+    {
+      "path": "src/core/hme.test.ts",
+      "bytes": 22083,
+      "sha256": "f109249f9a2a1ff8bc729a085163696d64052a26d319bae25b7a2c1108dc4473"
+    },
+    {
+      "path": "src/core/hme.ts",
+      "bytes": 30590,
+      "sha256": "e9c41ba7125cd9ac4b658c82f89911f0d992b292c61f3e8ea0357021f1458f72"
+    },
+    {
+      "path": "src/core/types.ts",
+      "bytes": 2392,
+      "sha256": "6a8de58550c73f2d2dcad0701d7f0164bd0b9874ab8938e17ed6e6b35419af3f"
+    },
+    {
+      "path": "src/persistence/README.md",
+      "bytes": 5072,
+      "sha256": "71bc7ccc16a646d017344280e2071296455bedd9eca906812ca21d15ecc702ab"
+    },
+    {
+      "path": "src/persistence/backup.test.ts",
+      "bytes": 7293,
+      "sha256": "24cc7c4e075b865d9a26c68d4b005e7324775785178a99544c2b3b6c8c920bd2"
+    },
+    {
+      "path": "src/persistence/backup.ts",
+      "bytes": 11521,
+      "sha256": "7e209b17d83f3e9335ac2e7e6d0c57b5747ba583752770ff31e84bd6c0cd8a3f"
+    },
+    {
+      "path": "src/persistence/backup05b.test.ts",
+      "bytes": 7643,
+      "sha256": "1b02d5940b6aa8dfd034d86ff1e75eaf236b3f4a9dd755e27632fdf0501e7f82"
+    },
+    {
+      "path": "src/persistence/browser-tests.ts",
+      "bytes": 11309,
+      "sha256": "e650517ca0c8d2c88b4b1f5c4d325942f35cb5029a3c2e15bc1440b96c0aff0d"
+    },
+    {
+      "path": "src/persistence/browser-tests05b.ts",
+      "bytes": 12893,
+      "sha256": "86d13c872852b1bd8a2d7daf2641e76e8af9ea598b181ea16e773658ed457fe3"
+    },
+    {
+      "path": "src/persistence/event-store.test.ts",
+      "bytes": 5134,
+      "sha256": "43e3eb8488d05aa8ee297a1bc8401a91f05332d8c37269b9635aabca721b8d0e"
+    },
+    {
+      "path": "src/persistence/event-store.ts",
+      "bytes": 26555,
+      "sha256": "aed36f864bce33ef68d19e479c68ec00fa30e68614aae5907e0264e24c37aea9"
+    },
+    {
+      "path": "src/persistence/event-store05b.test.ts",
+      "bytes": 4185,
+      "sha256": "1976309429558c2f32e0f370c3f2777625ad846bff948d24dccd91d55917b6b8"
+    }
+  ]
+}

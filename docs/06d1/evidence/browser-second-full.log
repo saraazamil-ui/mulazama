@@ -1,0 +1,228 @@
+[2m[WebServer] [22m(node:20582) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 20 tests using 1 worker
+
+(node:20585) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:20585) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 e2e/database.spec.ts:2:1 › BWEB01 IndexedDB: 21 encrypted transaction, migration, corruption, concurrency and restore checks (774ms)
+  ✓   2 e2e/production.spec.ts:5:1 › BWEB02 identity, real settings persistence and content gate (735ms)
+  ✓   3 e2e/production.spec.ts:33:1 › BWEB03 encrypted backup inspection rejects wrong password and cancellation preserves data (974ms)
+  ✘   4 e2e/production.spec.ts:68:3 › BWEB04 responsive RTL and automated accessibility 320px (1.9s)
+(node:20629) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:20629) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   5 e2e/production.spec.ts:68:3 › BWEB05 responsive RTL and automated accessibility 390px (1.9s)
+(node:20649) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:20649) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   6 e2e/production.spec.ts:68:3 › BWEB06 responsive RTL and automated accessibility 1440px (5.9s)
+  ✓   7 e2e/progress06d1.spec.ts:6:3 › D1WEB responsive RTL and accessible progress 320px (1.4s)
+  ✓   8 e2e/progress06d1.spec.ts:6:3 › D1WEB responsive RTL and accessible progress 390px (1.4s)
+  ✓   9 e2e/progress06d1.spec.ts:6:3 › D1WEB responsive RTL and accessible progress 1440px (1.6s)
+  ✓  10 e2e/progress06d1.spec.ts:40:1 › D1WEB real saved mistake and correction update progress without acquiring mastery (1.3s)
+  ✓  11 e2e/progress06d1.spec.ts:86:1 › D1WEB keyboard navigation reload and direct route never unlock learning (784ms)
+  ✓  12 e2e/verification05b.spec.ts:6:1 › BWEB07 new profile, plan and nonadjacent declarations survive reopening without filling gaps (1.5s)
+  ✓  13 e2e/verification05b.spec.ts:78:1 › BWEB08 usual and today-only budgets persist as separate values (972ms)
+  ✓  14 e2e/verification05b.spec.ts:117:1 › BWEB09 direct learning routes keep training, recall and reader controls out of the DOM (1.8s)
+  ✓  15 e2e/verification05b.spec.ts:135:1 › BWEB10 direct service commands cannot bypass the Quran gate or create learning events (561ms)
+  ✓  16 e2e/verification05b.spec.ts:220:1 › BWEB11 forecast abstains and thirty untested parts do not acquire mastery (621ms)
+  ✓  17 e2e/verification05b.spec.ts:244:1 › BWEB12 keyboard skip link, modal focus containment and Escape restore focus (641ms)
+  ✓  18 e2e/verification05b.spec.ts:276:1 › BWEB13 invalid backup preserves preferences; confirmed full restore can be repeated (2.6s)
+  ✓  19 e2e/verification05b.spec.ts:343:1 › BWEB14 a reported mistake remains a local unverified draft after reopening (1.0s)
+  ✓  20 e2e/verification05b.spec.ts:373:1 › BWEB15 enlarged text, reduced motion and dark preference persist at 320px (1.6s)
+
+
+  1) e2e/production.spec.ts:68:3 › BWEB04 responsive RTL and automated accessibility 320px ─────────
+
+    Error: S04
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  -  1[39m
+    [31m+ Received  + 56[39m
+
+    [32m- Array [][39m
+    [31m+ Array [[39m
+    [31m+   Object {[39m
+    [31m+     "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",[39m
+    [31m+     "help": "Elements must meet minimum color contrast ratio thresholds",[39m
+    [31m+     "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=playwright",[39m
+    [31m+     "id": "color-contrast",[39m
+    [31m+     "impact": "serious",[39m
+    [31m+     "nodes": Array [[39m
+    [31m+       Object {[39m
+    [31m+         "all": Array [],[39m
+    [31m+         "any": Array [[39m
+    [31m+           Object {[39m
+    [31m+             "data": Object {[39m
+    [31m+               "bgColor": "#fffefa",[39m
+    [31m+               "contrastRatio": 4.1,[39m
+    [31m+               "expectedContrastRatio": "4.5:1",[39m
+    [31m+               "fgColor": "#72816b",[39m
+    [31m+               "fontSize": "12.2pt (16.24px)",[39m
+    [31m+               "fontWeight": "bold",[39m
+    [31m+               "messageKey": null,[39m
+    [31m+             },[39m
+    [31m+             "id": "color-contrast",[39m
+    [31m+             "impact": "serious",[39m
+    [31m+             "message": "Element has insufficient color contrast of 4.1 (foreground color: #72816b, background color: #fffefa, font size: 12.2pt (16.24px), font weight: bold). Expected contrast ratio of 4.5:1",[39m
+    [31m+             "relatedNodes": Array [[39m
+    [31m+               Object {[39m
+    [31m+                 "html": "<section class=\"card \">",[39m
+    [31m+                 "target": Array [[39m
+    [31m+                   "section",[39m
+    [31m+                 ],[39m
+    [31m+               },[39m
+    [31m+             ],[39m
+    [31m+           },[39m
+    [31m+         ],[39m
+    [31m+         "failureSummary": "Fix any of the following:[39m
+    [31m+   Element has insufficient color contrast of 4.1 (foreground color: #72816b, background color: #fffefa, font size: 12.2pt (16.24px), font weight: bold). Expected contrast ratio of 4.5:1",[39m
+    [31m+         "html": "<h2>النص المعتمد ينتظر الإضافة</h2>",[39m
+    [31m+         "impact": "serious",[39m
+    [31m+         "none": Array [],[39m
+    [31m+         "target": Array [[39m
+    [31m+           "h2",[39m
+    [31m+         ],[39m
+    [31m+       },[39m
+    [31m+     ],[39m
+    [31m+     "tags": Array [[39m
+    [31m+       "cat.color",[39m
+    [31m+       "wcag2aa",[39m
+    [31m+       "wcag143",[39m
+    [31m+       "TTv5",[39m
+    [31m+       "TT13.c",[39m
+    [31m+       "EN-301-549",[39m
+    [31m+       "EN-9.1.4.3",[39m
+    [31m+       "ACT",[39m
+    [31m+     ],[39m
+    [31m+   },[39m
+    [31m+ ][39m
+
+      77 |         .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
+      78 |         .analyze();
+    > 79 |       expect(result.violations, id).toEqual([]);
+         |                                     ^
+      80 |     }
+      81 |   });
+      82 | }
+        at /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06d1/e2e/production.spec.ts:79:37
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/production-BWEB04-responsi-d3b99-tomated-accessibility-320px/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/production-BWEB04-responsi-d3b99-tomated-accessibility-320px/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/production-BWEB04-responsi-d3b99-tomated-accessibility-320px/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/production-BWEB04-responsi-d3b99-tomated-accessibility-320px/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) e2e/production.spec.ts:68:3 › BWEB05 responsive RTL and automated accessibility 390px ─────────
+
+    Error: S04
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  -  1[39m
+    [31m+ Received  + 56[39m
+
+    [32m- Array [][39m
+    [31m+ Array [[39m
+    [31m+   Object {[39m
+    [31m+     "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",[39m
+    [31m+     "help": "Elements must meet minimum color contrast ratio thresholds",[39m
+    [31m+     "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=playwright",[39m
+    [31m+     "id": "color-contrast",[39m
+    [31m+     "impact": "serious",[39m
+    [31m+     "nodes": Array [[39m
+    [31m+       Object {[39m
+    [31m+         "all": Array [],[39m
+    [31m+         "any": Array [[39m
+    [31m+           Object {[39m
+    [31m+             "data": Object {[39m
+    [31m+               "bgColor": "#fffefa",[39m
+    [31m+               "contrastRatio": 4.1,[39m
+    [31m+               "expectedContrastRatio": "4.5:1",[39m
+    [31m+               "fgColor": "#72816b",[39m
+    [31m+               "fontSize": "12.2pt (16.24px)",[39m
+    [31m+               "fontWeight": "bold",[39m
+    [31m+               "messageKey": null,[39m
+    [31m+             },[39m
+    [31m+             "id": "color-contrast",[39m
+    [31m+             "impact": "serious",[39m
+    [31m+             "message": "Element has insufficient color contrast of 4.1 (foreground color: #72816b, background color: #fffefa, font size: 12.2pt (16.24px), font weight: bold). Expected contrast ratio of 4.5:1",[39m
+    [31m+             "relatedNodes": Array [[39m
+    [31m+               Object {[39m
+    [31m+                 "html": "<section class=\"card \">",[39m
+    [31m+                 "target": Array [[39m
+    [31m+                   "section",[39m
+    [31m+                 ],[39m
+    [31m+               },[39m
+    [31m+             ],[39m
+    [31m+           },[39m
+    [31m+         ],[39m
+    [31m+         "failureSummary": "Fix any of the following:[39m
+    [31m+   Element has insufficient color contrast of 4.1 (foreground color: #72816b, background color: #fffefa, font size: 12.2pt (16.24px), font weight: bold). Expected contrast ratio of 4.5:1",[39m
+    [31m+         "html": "<h2>النص المعتمد ينتظر الإضافة</h2>",[39m
+    [31m+         "impact": "serious",[39m
+    [31m+         "none": Array [],[39m
+    [31m+         "target": Array [[39m
+    [31m+           "h2",[39m
+    [31m+         ],[39m
+    [31m+       },[39m
+    [31m+     ],[39m
+    [31m+     "tags": Array [[39m
+    [31m+       "cat.color",[39m
+    [31m+       "wcag2aa",[39m
+    [31m+       "wcag143",[39m
+    [31m+       "TTv5",[39m
+    [31m+       "TT13.c",[39m
+    [31m+       "EN-301-549",[39m
+    [31m+       "EN-9.1.4.3",[39m
+    [31m+       "ACT",[39m
+    [31m+     ],[39m
+    [31m+   },[39m
+    [31m+ ][39m
+
+      77 |         .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
+      78 |         .analyze();
+    > 79 |       expect(result.violations, id).toEqual([]);
+         |                                     ^
+      80 |     }
+      81 |   });
+      82 | }
+        at /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06d1/e2e/production.spec.ts:79:37
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/production-BWEB05-responsi-df6c0-tomated-accessibility-390px/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/production-BWEB05-responsi-df6c0-tomated-accessibility-390px/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/production-BWEB05-responsi-df6c0-tomated-accessibility-390px/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/production-BWEB05-responsi-df6c0-tomated-accessibility-390px/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    e2e/production.spec.ts:68:3 › BWEB04 responsive RTL and automated accessibility 320px ──────────
+    e2e/production.spec.ts:68:3 › BWEB05 responsive RTL and automated accessibility 390px ──────────
+  18 passed (34.8s)
+
+To open last HTML report run:
+[36m[39m
+[36m  npx playwright show-report[39m
+[36m[39m

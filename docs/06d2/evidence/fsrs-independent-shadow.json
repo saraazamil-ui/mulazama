@@ -1,0 +1,5964 @@
+{
+  "phase": "06-D2",
+  "checkedAt": "2026-11-07T09:42:12.979Z",
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "darwin",
+    "arch": "arm64"
+  },
+  "referenceIdentity": {
+    "name": "ts-fsrs",
+    "version": "5.4.2",
+    "model": "FSRS-6",
+    "sourceCommit": "bb71e35a2f5af5a5ac6cce9ef7c41ad24855721d",
+    "artifactSha512": "sha512-z4qop4pzTcyTzuJ566d9EaX/4bZZzhYfeaPImfVr+xcYT65c5oBgFDijUhCE/D+C78eaolHIhKRZ04/RwF+v2g==",
+    "filesVerified": 13,
+    "executed": true,
+    "weights": [
+      0.212,
+      1.2931,
+      2.3065,
+      8.2956,
+      6.4133,
+      0.8334,
+      3.0194,
+      0.001,
+      1.8722,
+      0.1666,
+      0.796,
+      1.4835,
+      0.0614,
+      0.2629,
+      1.6483,
+      0.6014,
+      1.8729,
+      0.5425,
+      0.0912,
+      0.0658,
+      0.1542
+    ],
+    "enableShortTerm": true,
+    "enableFuzz": false
+  },
+  "referenceSourceBinding": {
+    "method": "npm-slsa-statement-content",
+    "commit": "bb71e35a2f5af5a5ac6cce9ef7c41ad24855721d",
+    "cryptographicProvenanceVerified": false,
+    "reviewRequired": "Sigstore signatures, certificate identity, transparency log and independent source review"
+  },
+  "configuration": {
+    "effectiveLibraryParameters": {
+      "request_retention": 0.9,
+      "maximum_interval": 36500,
+      "w": [
+        0.212,
+        1.2931,
+        2.3065,
+        8.2956,
+        6.4133,
+        0.8334,
+        3.0194,
+        0.001,
+        1.8722,
+        0.1666,
+        0.796,
+        1.4835,
+        0.0614,
+        0.2629,
+        1.6483,
+        0.6014,
+        1.8729,
+        0.5425,
+        0.0912,
+        0.0658,
+        0.1542
+      ],
+      "enable_fuzz": false,
+      "enable_short_term": true,
+      "learning_steps": [],
+      "relearning_steps": []
+    },
+    "projectWeightsMatchPinnedLibraryDefaults": true,
+    "timePolicy": "floor-elapsed-seconds-divided-by-86400-0.1.0",
+    "intervalComparisonScope": "low-level next_state + next_interval + forgetting_curve; NOT complete BasicScheduler or HME policy approval"
+  },
+  "selected": {
+    "schemaVersion": 1,
+    "kind": "fsrs-library-conformance",
+    "status": "nonconformant",
+    "candidate": {
+      "algorithmVersion": "hme-fsrs6-research-binary64-0.1.0",
+      "precision": "IEEE754-binary64-without-intermediate-rounding",
+      "timePolicy": "floor-elapsed-seconds-divided-by-86400-0.1.0"
+    },
+    "reference": {
+      "name": "ts-fsrs",
+      "version": "5.4.2",
+      "model": "FSRS-6",
+      "sourceCommit": "bb71e35a2f5af5a5ac6cce9ef7c41ad24855721d",
+      "artifactSha512": "sha512-z4qop4pzTcyTzuJ566d9EaX/4bZZzhYfeaPImfVr+xcYT65c5oBgFDijUhCE/D+C78eaolHIhKRZ04/RwF+v2g==",
+      "filesVerified": 13,
+      "executed": true,
+      "weights": [
+        0.212,
+        1.2931,
+        2.3065,
+        8.2956,
+        6.4133,
+        0.8334,
+        3.0194,
+        0.001,
+        1.8722,
+        0.1666,
+        0.796,
+        1.4835,
+        0.0614,
+        0.2629,
+        1.6483,
+        0.6014,
+        1.8729,
+        0.5425,
+        0.0912,
+        0.0658,
+        0.1542
+      ],
+      "enableShortTerm": true,
+      "enableFuzz": false
+    },
+    "tolerance": {
+      "absolute": 1e-12,
+      "relative": 1e-12
+    },
+    "coverage": {
+      "requiredBranches": 12,
+      "executedBranches": 12
+    },
+    "summary": {
+      "passed": 2,
+      "failed": 30,
+      "blocked": 0
+    },
+    "cases": [
+      {
+        "id": "FSRS-G-INIT-1",
+        "branch": "initialization",
+        "status": "conformant",
+        "expected": [
+          {
+            "stability": 0.212,
+            "difficulty": 6.4133,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2026-01-02T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 0.212,
+            "difficulty": 6.4133,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2026-01-02T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": []
+      },
+      {
+        "id": "FSRS-G-INIT-2",
+        "branch": "initialization",
+        "status": "nonconformant",
+        "expected": [
+          {
+            "stability": 1.2931,
+            "difficulty": 5.11217071,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2026-01-02T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 1.2931,
+            "difficulty": 5.112170705601055,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2026-01-02T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": -4.398945208095029e-9,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": [
+          "0:difficulty:NUMERIC_MISMATCH"
+        ]
+      },
+      {
+        "id": "FSRS-G-INIT-3",
+        "branch": "initialization",
+        "status": "nonconformant",
+        "expected": [
+          {
+            "stability": 2.3065,
+            "difficulty": 2.11810397,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2026-01-03T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 2.3065,
+            "difficulty": 2.118103970459015,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2026-01-03T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 4.590150481931232e-10,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": [
+          "0:difficulty:NUMERIC_MISMATCH"
+        ]
+      },
+      {
+        "id": "FSRS-G-INIT-4",
+        "branch": "initialization",
+        "status": "conformant",
+        "expected": [
+          {
+            "stability": 8.2956,
+            "difficulty": 1,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 8,
+            "rawDueAt": "2026-01-09T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 8.2956,
+            "difficulty": 1,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 8,
+            "rawDueAt": "2026-01-09T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": []
+      },
+      {
+        "id": "FSRS-G-SAME-1",
+        "branch": "same-day",
+        "status": "nonconformant",
+        "expected": [
+          {
+            "stability": 1.596818,
+            "difficulty": 8.34176237,
+            "retrievabilityBefore": 1,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2026-01-03T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 1.5968179979869215,
+            "difficulty": 8.341762369296838,
+            "retrievabilityBefore": 1,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2026-01-03T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": -2.0130785927108263e-9,
+            "difficulty": -7.031619730923921e-10,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": [
+          "0:stability:NUMERIC_MISMATCH",
+          "0:difficulty:NUMERIC_MISMATCH"
+        ]
+      },
+      {
+        "id": "FSRS-G-SAME-2",
+        "branch": "same-day",
+        "status": "nonconformant",
+        "expected": [
+          {
+            "stability": 5,
+            "difficulty": 6.66599536,
+            "retrievabilityBefore": 1,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 5,
+            "rawDueAt": "2026-01-06T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 5,
+            "difficulty": 6.665995369296838,
+            "retrievabilityBefore": 1,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 5,
+            "rawDueAt": "2026-01-06T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 9.296837966132898e-9,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": [
+          "0:difficulty:NUMERIC_MISMATCH"
+        ]
+      },
+      {
+        "id": "FSRS-G-SAME-3",
+        "branch": "same-day",
+        "status": "nonconformant",
+        "expected": [
+          {
+            "stability": 5,
+            "difficulty": 4.99022837,
+            "retrievabilityBefore": 1,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 5,
+            "rawDueAt": "2026-01-06T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 5,
+            "difficulty": 4.9902283692968386,
+            "retrievabilityBefore": 1,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 5,
+            "rawDueAt": "2026-01-06T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": -7.031610849139724e-10,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": [
+          "0:difficulty:NUMERIC_MISMATCH"
+        ]
+      },
+      {
+        "id": "FSRS-G-SAME-4",
+        "branch": "same-day",
+        "status": "nonconformant",
+        "expected": [
+          {
+            "stability": 8.12960956,
+            "difficulty": 3.31446137,
+            "retrievabilityBefore": 1,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 8,
+            "rawDueAt": "2026-01-09T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 8.129609559916112,
+            "difficulty": 3.3144613692968385,
+            "retrievabilityBefore": 1,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 8,
+            "rawDueAt": "2026-01-09T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": -8.388845174067683e-11,
+            "difficulty": -7.031615290031823e-10,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": [
+          "0:stability:NUMERIC_MISMATCH",
+          "0:difficulty:NUMERIC_MISMATCH"
+        ]
+      },
+      {
+        "id": "FSRS-G-SUCCESS-2",
+        "branch": "successful-review",
+        "status": "nonconformant",
+        "expected": [
+          {
+            "stability": 12.43421374,
+            "difficulty": 6.66599536,
+            "retrievabilityBefore": 0.9,
+            "elapsedDays": 5,
+            "roundedIntervalDays": 12,
+            "rawDueAt": "2026-01-18T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 12.434213743539342,
+            "difficulty": 6.665995369296838,
+            "retrievabilityBefore": 0.9,
+            "elapsedDays": 5,
+            "roundedIntervalDays": 12,
+            "rawDueAt": "2026-01-18T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 3.539341264513496e-9,
+            "difficulty": 9.296837966132898e-9,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": [
+          "0:stability:NUMERIC_MISMATCH",
+          "0:difficulty:NUMERIC_MISMATCH"
+        ]
+      },
+      {
+        "id": "FSRS-G-SUCCESS-3",
+        "branch": "successful-review",
+        "status": "nonconformant",
+        "expected": [
+          {
+            "stability": 17.36151271,
+            "difficulty": 4.99022837,
+            "retrievabilityBefore": 0.9,
+            "elapsedDays": 5,
+            "roundedIntervalDays": 17,
+            "rawDueAt": "2026-01-23T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 17.36151270957656,
+            "difficulty": 4.9902283692968386,
+            "retrievabilityBefore": 0.9,
+            "elapsedDays": 5,
+            "roundedIntervalDays": 17,
+            "rawDueAt": "2026-01-23T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": -4.234408379488741e-10,
+            "difficulty": -7.031610849139724e-10,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": [
+          "0:stability:NUMERIC_MISMATCH",
+          "0:difficulty:NUMERIC_MISMATCH"
+        ]
+      },
+      {
+        "id": "FSRS-G-SUCCESS-4",
+        "branch": "successful-review",
+        "status": "nonconformant",
+        "expected": [
+          {
+            "stability": 28.15187715,
+            "difficulty": 3.31446137,
+            "retrievabilityBefore": 0.9,
+            "elapsedDays": 5,
+            "roundedIntervalDays": 28,
+            "rawDueAt": "2026-02-03T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 28.151877153765938,
+            "difficulty": 3.3144613692968385,
+            "retrievabilityBefore": 0.9,
+            "elapsedDays": 5,
+            "roundedIntervalDays": 28,
+            "rawDueAt": "2026-02-03T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 3.765936895661071e-9,
+            "difficulty": -7.031615290031823e-10,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": [
+          "0:stability:NUMERIC_MISMATCH",
+          "0:difficulty:NUMERIC_MISMATCH"
+        ]
+      },
+      {
+        "id": "FSRS-G-LAPSE",
+        "branch": "lapse",
+        "status": "nonconformant",
+        "expected": [
+          {
+            "stability": 0.95350218,
+            "difficulty": 8.34176237,
+            "retrievabilityBefore": 0.9,
+            "elapsedDays": 5,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2026-01-07T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 0.953502178130594,
+            "difficulty": 8.341762369296838,
+            "retrievabilityBefore": 0.9,
+            "elapsedDays": 5,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2026-01-07T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": -1.8694059633617144e-9,
+            "difficulty": -7.031619730923921e-10,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": [
+          "0:stability:NUMERIC_MISMATCH",
+          "0:difficulty:NUMERIC_MISMATCH"
+        ]
+      },
+      {
+        "id": "FSRS-G-EARLY",
+        "branch": "early-review",
+        "status": "nonconformant",
+        "expected": [
+          {
+            "stability": 8.26920361,
+            "difficulty": 4.99022837,
+            "retrievabilityBefore": 0.97276956,
+            "elapsedDays": 1,
+            "roundedIntervalDays": 8,
+            "rawDueAt": "2026-01-10T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 8.269203668758058,
+            "difficulty": 4.9902283692968386,
+            "retrievabilityBefore": 0.9727695594804078,
+            "elapsedDays": 1,
+            "roundedIntervalDays": 8,
+            "rawDueAt": "2026-01-10T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 5.875805797472822e-8,
+            "difficulty": -7.031610849139724e-10,
+            "retrievabilityBefore": -5.195922581080481e-10,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": [
+          "0:stability:NUMERIC_MISMATCH",
+          "0:difficulty:NUMERIC_MISMATCH",
+          "0:retrievabilityBefore:NUMERIC_MISMATCH"
+        ]
+      },
+      {
+        "id": "FSRS-G-OVERDUE",
+        "branch": "overdue-review",
+        "status": "nonconformant",
+        "expected": [
+          {
+            "stability": 49.01318252,
+            "difficulty": 4.99022837,
+            "retrievabilityBefore": 0.67523665,
+            "elapsedDays": 60,
+            "roundedIntervalDays": 49,
+            "rawDueAt": "2026-04-20T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 49.0131822915906,
+            "difficulty": 4.9902283692968386,
+            "retrievabilityBefore": 0.6752366514649221,
+            "elapsedDays": 60,
+            "roundedIntervalDays": 49,
+            "rawDueAt": "2026-04-20T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": -2.2840939806201277e-7,
+            "difficulty": -7.031610849139724e-10,
+            "retrievabilityBefore": 1.4649220725360124e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": [
+          "0:stability:NUMERIC_MISMATCH",
+          "0:difficulty:NUMERIC_MISMATCH",
+          "0:retrievabilityBefore:NUMERIC_MISMATCH"
+        ]
+      },
+      {
+        "id": "FSRS-G-LONG",
+        "branch": "long-interval",
+        "status": "nonconformant",
+        "expected": [
+          {
+            "stability": 650.22859258,
+            "difficulty": 7.98722837,
+            "retrievabilityBefore": 0.40367961,
+            "elapsedDays": 36500,
+            "roundedIntervalDays": 650,
+            "rawDueAt": "2127-09-19T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 650.2285919036937,
+            "difficulty": 7.987228369296838,
+            "retrievabilityBefore": 0.4036796105835889,
+            "elapsedDays": 36500,
+            "roundedIntervalDays": 650,
+            "rawDueAt": "2127-09-19T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": -6.763063993275864e-7,
+            "difficulty": -7.031619730923921e-10,
+            "retrievabilityBefore": 5.835888994276672e-10,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": [
+          "0:stability:NUMERIC_MISMATCH",
+          "0:difficulty:NUMERIC_MISMATCH",
+          "0:retrievabilityBefore:NUMERIC_MISMATCH"
+        ]
+      },
+      {
+        "id": "FSRS-G-BOUND-LOW",
+        "branch": "state-boundaries",
+        "status": "nonconformant",
+        "expected": [
+          {
+            "stability": 0.001,
+            "difficulty": 7.02698957,
+            "retrievabilityBefore": 0.34566944,
+            "elapsedDays": 1,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2026-01-03T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 0.001,
+            "difficulty": 7.0269895692968385,
+            "retrievabilityBefore": 0.34566944290397644,
+            "elapsedDays": 1,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2026-01-03T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": -7.031610849139724e-10,
+            "retrievabilityBefore": 2.9039764481986197e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": [
+          "0:difficulty:NUMERIC_MISMATCH",
+          "0:retrievabilityBefore:NUMERIC_MISMATCH"
+        ]
+      },
+      {
+        "id": "FSRS-G-BOUND-HIGH",
+        "branch": "state-boundaries",
+        "status": "nonconformant",
+        "expected": [
+          {
+            "stability": 36500,
+            "difficulty": 9.98522837,
+            "retrievabilityBefore": 0.9,
+            "elapsedDays": 36500,
+            "roundedIntervalDays": 36500,
+            "rawDueAt": "2225-11-14T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 36500,
+            "difficulty": 9.985228369296838,
+            "retrievabilityBefore": 0.9,
+            "elapsedDays": 36500,
+            "roundedIntervalDays": 36500,
+            "rawDueAt": "2225-11-14T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": -7.031619730923921e-10,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": [
+          "0:difficulty:NUMERIC_MISMATCH"
+        ]
+      },
+      {
+        "id": "FSRS-G-DECIMAL",
+        "branch": "decimal-inputs",
+        "status": "nonconformant",
+        "expected": [
+          {
+            "stability": 8.82025912,
+            "difficulty": 6.584039,
+            "retrievabilityBefore": 0.95126224,
+            "elapsedDays": 2,
+            "roundedIntervalDays": 9,
+            "rawDueAt": "2026-01-12T18:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 8.820259127410985,
+            "difficulty": 6.584039004983044,
+            "retrievabilityBefore": 0.9512622399037056,
+            "elapsedDays": 2,
+            "roundedIntervalDays": 9,
+            "rawDueAt": "2026-01-12T18:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 7.4109856029735965e-9,
+            "difficulty": 4.98304419949136e-9,
+            "retrievabilityBefore": -9.629441688474571e-11,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": [
+          "0:stability:NUMERIC_MISMATCH",
+          "0:difficulty:NUMERIC_MISMATCH",
+          "0:retrievabilityBefore:NUMERIC_MISMATCH"
+        ]
+      },
+      {
+        "id": "FSRS-G-FLOOR-BEFORE",
+        "branch": "decimal-inputs",
+        "status": "nonconformant",
+        "expected": [
+          {
+            "stability": 5,
+            "difficulty": 4.99022837,
+            "retrievabilityBefore": 1,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 5,
+            "rawDueAt": "2026-01-06T23:59:59.913Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 5,
+            "difficulty": 4.9902283692968386,
+            "retrievabilityBefore": 1,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 5,
+            "rawDueAt": "2026-01-06T23:59:59.913Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": -7.031610849139724e-10,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": [
+          "0:difficulty:NUMERIC_MISMATCH"
+        ]
+      },
+      {
+        "id": "FSRS-G-FLOOR-AT",
+        "branch": "decimal-inputs",
+        "status": "nonconformant",
+        "expected": [
+          {
+            "stability": 8.26920361,
+            "difficulty": 4.99022837,
+            "retrievabilityBefore": 0.97276956,
+            "elapsedDays": 1,
+            "roundedIntervalDays": 8,
+            "rawDueAt": "2026-01-10T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 8.269203668758058,
+            "difficulty": 4.9902283692968386,
+            "retrievabilityBefore": 0.9727695594804078,
+            "elapsedDays": 1,
+            "roundedIntervalDays": 8,
+            "rawDueAt": "2026-01-10T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 5.875805797472822e-8,
+            "difficulty": -7.031610849139724e-10,
+            "retrievabilityBefore": -5.195922581080481e-10,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": [
+          "0:stability:NUMERIC_MISMATCH",
+          "0:difficulty:NUMERIC_MISMATCH",
+          "0:retrievabilityBefore:NUMERIC_MISMATCH"
+        ]
+      },
+      {
+        "id": "FSRS-G-REPEAT",
+        "branch": "repeatability",
+        "status": "nonconformant",
+        "expected": [
+          {
+            "stability": 17.36151271,
+            "difficulty": 4.99022837,
+            "retrievabilityBefore": 0.9,
+            "elapsedDays": 5,
+            "roundedIntervalDays": 17,
+            "rawDueAt": "2026-01-23T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 17.36151270957656,
+            "difficulty": 4.9902283692968386,
+            "retrievabilityBefore": 0.9,
+            "elapsedDays": 5,
+            "roundedIntervalDays": 17,
+            "rawDueAt": "2026-01-23T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": -4.234408379488741e-10,
+            "difficulty": -7.031610849139724e-10,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": [
+          "0:stability:NUMERIC_MISMATCH",
+          "0:difficulty:NUMERIC_MISMATCH"
+        ]
+      },
+      {
+        "id": "FSRS-G-REPLAY",
+        "branch": "historical-replay",
+        "status": "nonconformant",
+        "expected": [
+          {
+            "stability": 17.36151271,
+            "difficulty": 4.99022837,
+            "retrievabilityBefore": 0.9,
+            "elapsedDays": 5,
+            "roundedIntervalDays": 17,
+            "rawDueAt": "2026-01-23T00:00:00.000Z"
+          },
+          {
+            "stability": 1.67751464,
+            "difficulty": 8.33855051,
+            "retrievabilityBefore": 0.94993494,
+            "elapsedDays": 7,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2026-01-15T00:00:00.000Z"
+          },
+          {
+            "stability": 10.58621131,
+            "difficulty": 8.32544033,
+            "retrievabilityBefore": 0.63750843,
+            "elapsedDays": 30,
+            "roundedIntervalDays": 11,
+            "rawDueAt": "2026-02-23T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 17.36151270957656,
+            "difficulty": 4.9902283692968386,
+            "retrievabilityBefore": 0.9,
+            "elapsedDays": 5,
+            "roundedIntervalDays": 17,
+            "rawDueAt": "2026-01-23T00:00:00.000Z"
+          },
+          {
+            "stability": 1.6775146433759942,
+            "difficulty": 8.338550500731797,
+            "retrievabilityBefore": 0.9499349396731368,
+            "elapsedDays": 7,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2026-01-15T00:00:00.000Z"
+          },
+          {
+            "stability": 10.58621125593817,
+            "difficulty": 8.325440319527903,
+            "retrievabilityBefore": 0.6375084334942913,
+            "elapsedDays": 30,
+            "roundedIntervalDays": 11,
+            "rawDueAt": "2026-02-23T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": -4.234408379488741e-10,
+            "difficulty": -7.031610849139724e-10,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 3.3759941509003966e-9,
+            "difficulty": -9.268202205703346e-9,
+            "retrievabilityBefore": -3.268632031705465e-10,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": -5.406182879141852e-8,
+            "difficulty": -1.0472096079183757e-8,
+            "retrievabilityBefore": 3.494291300754071e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": [
+          "0:stability:NUMERIC_MISMATCH",
+          "0:difficulty:NUMERIC_MISMATCH",
+          "1:stability:NUMERIC_MISMATCH",
+          "1:difficulty:NUMERIC_MISMATCH",
+          "1:retrievabilityBefore:NUMERIC_MISMATCH",
+          "2:stability:NUMERIC_MISMATCH",
+          "2:difficulty:NUMERIC_MISMATCH",
+          "2:retrievabilityBefore:NUMERIC_MISMATCH"
+        ]
+      },
+      {
+        "id": "FSRS-G-RETENTION",
+        "branch": "retention-target",
+        "status": "nonconformant",
+        "expected": [
+          {
+            "stability": 17.36151271,
+            "difficulty": 4.99022837,
+            "retrievabilityBefore": 0.9,
+            "elapsedDays": 5,
+            "roundedIntervalDays": 7,
+            "rawDueAt": "2026-01-13T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 17.36151270957656,
+            "difficulty": 4.9902283692968386,
+            "retrievabilityBefore": 0.9,
+            "elapsedDays": 5,
+            "roundedIntervalDays": 7,
+            "rawDueAt": "2026-01-13T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": -4.234408379488741e-10,
+            "difficulty": -7.031610849139724e-10,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": [
+          "0:stability:NUMERIC_MISMATCH",
+          "0:difficulty:NUMERIC_MISMATCH"
+        ]
+      },
+      {
+        "id": "D2-FSRS-OFFSET-EQUIVALENT",
+        "branch": "same-day",
+        "status": "nonconformant",
+        "expected": [
+          {
+            "stability": 2.3065,
+            "difficulty": 2.11810397,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-11-08T21:00:00.000Z"
+          },
+          {
+            "stability": 2.3065,
+            "difficulty": 2.11121424,
+            "retrievabilityBefore": 1,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-11-08T21:00:00.000Z"
+          },
+          {
+            "stability": 0.77508398,
+            "difficulty": 7.39223814,
+            "retrievabilityBefore": 1,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-11-07T21:00:01.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 2.3065,
+            "difficulty": 2.118103970459015,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-11-08T21:00:00.000Z"
+          },
+          {
+            "stability": 2.3065,
+            "difficulty": 2.1112142357853942,
+            "retrievabilityBefore": 1,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-11-08T21:00:00.000Z"
+          },
+          {
+            "stability": 0.7750839828558984,
+            "difficulty": 7.392238132342694,
+            "retrievabilityBefore": 1,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-11-07T21:00:01.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 4.590150481931232e-10,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": -4.214605553443107e-9,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 2.855898406650681e-9,
+            "difficulty": -7.657305900465872e-9,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": [
+          "0:difficulty:NUMERIC_MISMATCH",
+          "1:difficulty:NUMERIC_MISMATCH",
+          "2:stability:NUMERIC_MISMATCH",
+          "2:difficulty:NUMERIC_MISMATCH"
+        ]
+      },
+      {
+        "id": "D2-FSRS-FLOOR-BEFORE",
+        "branch": "decimal-inputs",
+        "status": "nonconformant",
+        "expected": [
+          {
+            "stability": 5,
+            "difficulty": 4.99022837,
+            "retrievabilityBefore": 1,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 5,
+            "rawDueAt": "2030-11-12T20:59:59.999Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 5,
+            "difficulty": 4.9902283692968386,
+            "retrievabilityBefore": 1,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 5,
+            "rawDueAt": "2030-11-12T20:59:59.999Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": -7.031610849139724e-10,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": [
+          "0:difficulty:NUMERIC_MISMATCH"
+        ]
+      },
+      {
+        "id": "D2-FSRS-FLOOR-AT",
+        "branch": "decimal-inputs",
+        "status": "nonconformant",
+        "expected": [
+          {
+            "stability": 8.26920361,
+            "difficulty": 4.99022837,
+            "retrievabilityBefore": 0.97276956,
+            "elapsedDays": 1,
+            "roundedIntervalDays": 8,
+            "rawDueAt": "2030-11-15T21:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 8.269203668758058,
+            "difficulty": 4.9902283692968386,
+            "retrievabilityBefore": 0.9727695594804078,
+            "elapsedDays": 1,
+            "roundedIntervalDays": 8,
+            "rawDueAt": "2030-11-15T21:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 5.875805797472822e-8,
+            "difficulty": -7.031610849139724e-10,
+            "retrievabilityBefore": -5.195922581080481e-10,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": [
+          "0:stability:NUMERIC_MISMATCH",
+          "0:difficulty:NUMERIC_MISMATCH",
+          "0:retrievabilityBefore:NUMERIC_MISMATCH"
+        ]
+      },
+      {
+        "id": "D2-FSRS-ORIGINAL-SEQUENCE",
+        "branch": "historical-replay",
+        "status": "nonconformant",
+        "expected": [
+          {
+            "stability": 2.3065,
+            "difficulty": 2.11810397,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-11-08T21:00:00.000Z"
+          },
+          {
+            "stability": 13.82690327,
+            "difficulty": 2.11121424,
+            "retrievabilityBefore": 0.88094796,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 14,
+            "rawDueAt": "2030-11-23T21:00:00.000Z"
+          },
+          {
+            "stability": 49.9744847,
+            "difficulty": 2.1043314,
+            "retrievabilityBefore": 0.91493118,
+            "elapsedDays": 11,
+            "roundedIntervalDays": 50,
+            "rawDueAt": "2031-01-09T21:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 2.3065,
+            "difficulty": 2.118103970459015,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-11-08T21:00:00.000Z"
+          },
+          {
+            "stability": 13.82690369435458,
+            "difficulty": 2.1112142357853942,
+            "retrievabilityBefore": 0.8809479557659419,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 14,
+            "rawDueAt": "2030-11-23T21:00:00.000Z"
+          },
+          {
+            "stability": 49.97448567068603,
+            "difficulty": 2.1043313908464474,
+            "retrievabilityBefore": 0.9149311808976166,
+            "elapsedDays": 11,
+            "roundedIntervalDays": 50,
+            "rawDueAt": "2031-01-09T21:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 4.590150481931232e-10,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 4.2435457991985004e-7,
+            "difficulty": -4.214605553443107e-9,
+            "retrievabilityBefore": -4.234058104124472e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 9.706860311098353e-7,
+            "difficulty": -9.153552582574775e-9,
+            "retrievabilityBefore": 8.976166476770686e-10,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": [
+          "0:difficulty:NUMERIC_MISMATCH",
+          "1:stability:NUMERIC_MISMATCH",
+          "1:difficulty:NUMERIC_MISMATCH",
+          "1:retrievabilityBefore:NUMERIC_MISMATCH",
+          "2:stability:NUMERIC_MISMATCH",
+          "2:difficulty:NUMERIC_MISMATCH",
+          "2:retrievabilityBefore:NUMERIC_MISMATCH"
+        ]
+      },
+      {
+        "id": "D2-FSRS-CORRECT-FIRST",
+        "branch": "historical-replay",
+        "status": "nonconformant",
+        "expected": [
+          {
+            "stability": 0.212,
+            "difficulty": 6.4133,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-11-07T21:00:00.000Z"
+          },
+          {
+            "stability": 2.76096548,
+            "difficulty": 6.40211507,
+            "retrievabilityBefore": 0.65950321,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-11-12T21:00:00.000Z"
+          },
+          {
+            "stability": 15.93449804,
+            "difficulty": 6.39094132,
+            "retrievabilityBefore": 0.78251448,
+            "elapsedDays": 11,
+            "roundedIntervalDays": 16,
+            "rawDueAt": "2030-12-06T21:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 0.212,
+            "difficulty": 6.4133,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-11-07T21:00:00.000Z"
+          },
+          {
+            "stability": 2.760965463890842,
+            "difficulty": 6.402115069296838,
+            "retrievabilityBefore": 0.6595032117265338,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-11-12T21:00:00.000Z"
+          },
+          {
+            "stability": 15.934498038051698,
+            "difficulty": 6.3909413235243795,
+            "retrievabilityBefore": 0.7825144788056324,
+            "elapsedDays": 11,
+            "roundedIntervalDays": 16,
+            "rawDueAt": "2030-12-06T21:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": -1.610915800753787e-8,
+            "difficulty": -7.031619730923921e-10,
+            "retrievabilityBefore": 1.7265338048133572e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": -1.948301076026837e-9,
+            "difficulty": 3.5243798990336472e-9,
+            "retrievabilityBefore": -1.1943676048176144e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": [
+          "1:stability:NUMERIC_MISMATCH",
+          "1:difficulty:NUMERIC_MISMATCH",
+          "1:retrievabilityBefore:NUMERIC_MISMATCH",
+          "2:stability:NUMERIC_MISMATCH",
+          "2:difficulty:NUMERIC_MISMATCH",
+          "2:retrievabilityBefore:NUMERIC_MISMATCH"
+        ]
+      },
+      {
+        "id": "D2-FSRS-RETRACT-MIDDLE",
+        "branch": "historical-replay",
+        "status": "nonconformant",
+        "expected": [
+          {
+            "stability": 2.3065,
+            "difficulty": 2.11810397,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-11-08T21:00:00.000Z"
+          },
+          {
+            "stability": 28.7756461,
+            "difficulty": 2.11121424,
+            "retrievabilityBefore": 0.74158516,
+            "elapsedDays": 14,
+            "roundedIntervalDays": 29,
+            "rawDueAt": "2030-12-19T21:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 2.3065,
+            "difficulty": 2.118103970459015,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-11-08T21:00:00.000Z"
+          },
+          {
+            "stability": 28.775646047397004,
+            "difficulty": 2.1112142357853942,
+            "retrievabilityBefore": 0.7415851604546642,
+            "elapsedDays": 14,
+            "roundedIntervalDays": 29,
+            "rawDueAt": "2030-12-19T21:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 4.590150481931232e-10,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": -5.2602995737061065e-8,
+            "difficulty": -4.214605553443107e-9,
+            "retrievabilityBefore": 4.546641951819197e-10,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": [
+          "0:difficulty:NUMERIC_MISMATCH",
+          "1:stability:NUMERIC_MISMATCH",
+          "1:difficulty:NUMERIC_MISMATCH",
+          "1:retrievabilityBefore:NUMERIC_MISMATCH"
+        ]
+      },
+      {
+        "id": "D2-FSRS-LEAP-DAY",
+        "branch": "historical-replay",
+        "status": "nonconformant",
+        "expected": [
+          {
+            "stability": 2.3065,
+            "difficulty": 2.11810397,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2028-03-01T21:00:00.000Z"
+          },
+          {
+            "stability": 0.57129918,
+            "difficulty": 7.39450274,
+            "retrievabilityBefore": 0.9468475,
+            "elapsedDays": 1,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2028-03-01T21:00:00.000Z"
+          },
+          {
+            "stability": 3.88608805,
+            "difficulty": 6.50909534,
+            "retrievabilityBefore": 0.85721183,
+            "elapsedDays": 1,
+            "roundedIntervalDays": 4,
+            "rawDueAt": "2028-03-05T21:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 2.3065,
+            "difficulty": 2.118103970459015,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2028-03-01T21:00:00.000Z"
+          },
+          {
+            "stability": 0.571299179345028,
+            "difficulty": 7.394502741279718,
+            "retrievabilityBefore": 0.9468474993825461,
+            "elapsedDays": 1,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2028-03-01T21:00:00.000Z"
+          },
+          {
+            "stability": 3.886088082877746,
+            "difficulty": 6.5090953428844935,
+            "retrievabilityBefore": 0.8572118285676134,
+            "elapsedDays": 1,
+            "roundedIntervalDays": 4,
+            "rawDueAt": "2028-03-05T21:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 4.590150481931232e-10,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": -6.5497196555242e-10,
+            "difficulty": 1.2797176651702102e-9,
+            "retrievabilityBefore": -6.174538658143547e-10,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 3.287774585913894e-8,
+            "difficulty": 2.8844935329175314e-9,
+            "retrievabilityBefore": -1.4323866537324648e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": [
+          "0:difficulty:NUMERIC_MISMATCH",
+          "1:stability:NUMERIC_MISMATCH",
+          "1:difficulty:NUMERIC_MISMATCH",
+          "1:retrievabilityBefore:NUMERIC_MISMATCH",
+          "2:stability:NUMERIC_MISMATCH",
+          "2:difficulty:NUMERIC_MISMATCH",
+          "2:retrievabilityBefore:NUMERIC_MISMATCH"
+        ]
+      },
+      {
+        "id": "D2-FSRS-RETENTION-99",
+        "branch": "retention-target",
+        "status": "nonconformant",
+        "expected": [
+          {
+            "stability": 136.23765287,
+            "difficulty": 3.31446137,
+            "retrievabilityBefore": 0.5162914,
+            "elapsedDays": 366,
+            "roundedIntervalDays": 9,
+            "rawDueAt": "2031-11-16T21:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 136.23765235036316,
+            "difficulty": 3.3144613692968385,
+            "retrievabilityBefore": 0.516291401591326,
+            "elapsedDays": 366,
+            "roundedIntervalDays": 9,
+            "rawDueAt": "2031-11-16T21:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": -5.196368420001818e-7,
+            "difficulty": -7.031615290031823e-10,
+            "retrievabilityBefore": 1.5913260709154997e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": [
+          "0:stability:NUMERIC_MISMATCH",
+          "0:difficulty:NUMERIC_MISMATCH",
+          "0:retrievabilityBefore:NUMERIC_MISMATCH"
+        ]
+      },
+      {
+        "id": "D2-FSRS-LONG-REPLAY",
+        "branch": "repeatability",
+        "status": "nonconformant",
+        "expected": [
+          {
+            "stability": 2.3065,
+            "difficulty": 2.11810397,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-01-03T00:00:00.000Z"
+          },
+          {
+            "stability": 9.23487052,
+            "difficulty": 4.75285849,
+            "retrievabilityBefore": 0.88094796,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 9,
+            "rawDueAt": "2030-01-13T00:00:00.000Z"
+          },
+          {
+            "stability": 17.98504855,
+            "difficulty": 4.743334,
+            "retrievabilityBefore": 0.95826386,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 18,
+            "rawDueAt": "2030-01-25T00:00:00.000Z"
+          },
+          {
+            "stability": 33.68885903,
+            "difficulty": 2.97202955,
+            "retrievabilityBefore": 0.97691612,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 34,
+            "rawDueAt": "2030-02-13T00:00:00.000Z"
+          },
+          {
+            "stability": 2.1831216,
+            "difficulty": 7.67518227,
+            "retrievabilityBefore": 0.98717676,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-01-15T00:00:00.000Z"
+          },
+          {
+            "stability": 6.45601748,
+            "difficulty": 7.66273546,
+            "retrievabilityBefore": 0.87672216,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 6,
+            "rawDueAt": "2030-01-22T00:00:00.000Z"
+          },
+          {
+            "stability": 9.28341276,
+            "difficulty": 8.43364325,
+            "retrievabilityBefore": 0.94375923,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 9,
+            "rawDueAt": "2030-01-28T00:00:00.000Z"
+          },
+          {
+            "stability": 12.87734431,
+            "difficulty": 8.42043798,
+            "retrievabilityBefore": 0.95845063,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 13,
+            "rawDueAt": "2030-02-04T00:00:00.000Z"
+          },
+          {
+            "stability": 19.52782154,
+            "difficulty": 7.87785033,
+            "retrievabilityBefore": 0.96877834,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 20,
+            "rawDueAt": "2030-02-14T00:00:00.000Z"
+          },
+          {
+            "stability": 1.64244007,
+            "difficulty": 9.2876922,
+            "retrievabilityBefore": 0.97859956,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-01-30T00:00:00.000Z"
+          },
+          {
+            "stability": 3.72286557,
+            "difficulty": 9.27363288,
+            "retrievabilityBefore": 0.85363492,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 4,
+            "rawDueAt": "2030-02-04T00:00:00.000Z"
+          },
+          {
+            "stability": 5.15112691,
+            "difficulty": 9.50303203,
+            "retrievabilityBefore": 0.91413494,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 5,
+            "rawDueAt": "2030-02-08T00:00:00.000Z"
+          },
+          {
+            "stability": 7.25041408,
+            "difficulty": 9.48875737,
+            "retrievabilityBefore": 0.93272096,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 7,
+            "rawDueAt": "2030-02-13T00:00:00.000Z"
+          },
+          {
+            "stability": 11.23684463,
+            "difficulty": 9.30315228,
+            "retrievabilityBefore": 0.94885081,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 11,
+            "rawDueAt": "2030-02-20T00:00:00.000Z"
+          },
+          {
+            "stability": 1.2773669,
+            "difficulty": 9.75617926,
+            "retrievabilityBefore": 0.96478575,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-02-13T00:00:00.000Z"
+          },
+          {
+            "stability": 2.69873033,
+            "difficulty": 9.74165145,
+            "retrievabilityBefore": 0.83175609,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-02-18T00:00:00.000Z"
+          },
+          {
+            "stability": 3.70366139,
+            "difficulty": 9.81372456,
+            "retrievabilityBefore": 0.8925659,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 4,
+            "rawDueAt": "2030-02-22T00:00:00.000Z"
+          },
+          {
+            "stability": 5.33486216,
+            "difficulty": 9.7991392,
+            "retrievabilityBefore": 0.91381279,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 5,
+            "rawDueAt": "2030-02-26T00:00:00.000Z"
+          },
+          {
+            "stability": 8.49254983,
+            "difficulty": 9.71724925,
+            "retrievabilityBefore": 0.93453436,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 8,
+            "rawDueAt": "2030-03-04T00:00:00.000Z"
+          },
+          {
+            "stability": 1.1209848,
+            "difficulty": 9.89229012,
+            "retrievabilityBefore": 0.95518154,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-02-28T00:00:00.000Z"
+          },
+          {
+            "stability": 2.34189304,
+            "difficulty": 9.8776262,
+            "retrievabilityBefore": 0.81993643,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-03-04T00:00:00.000Z"
+          },
+          {
+            "stability": 3.21956676,
+            "difficulty": 9.90399094,
+            "retrievabilityBefore": 0.88210423,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-03-08T00:00:00.000Z"
+          },
+          {
+            "stability": 4.70655692,
+            "difficulty": 9.88931532,
+            "retrievabilityBefore": 0.90477883,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 5,
+            "rawDueAt": "2030-03-13T00:00:00.000Z"
+          },
+          {
+            "stability": 7.61274356,
+            "difficulty": 9.83755803,
+            "retrievabilityBefore": 0.92787891,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 8,
+            "rawDueAt": "2030-03-19T00:00:00.000Z"
+          },
+          {
+            "stability": 1.06434052,
+            "difficulty": 9.9318348,
+            "retrievabilityBefore": 0.9508765,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-03-15T00:00:00.000Z"
+          },
+          {
+            "stability": 2.22396799,
+            "difficulty": 9.91713133,
+            "retrievabilityBefore": 0.81516996,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-03-19T00:00:00.000Z"
+          },
+          {
+            "stability": 3.06356384,
+            "difficulty": 9.93021629,
+            "retrievabilityBefore": 0.87815601,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-03-23T00:00:00.000Z"
+          },
+          {
+            "stability": 4.50698314,
+            "difficulty": 9.91551444,
+            "retrievabilityBefore": 0.90143395,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 5,
+            "rawDueAt": "2030-03-28T00:00:00.000Z"
+          },
+          {
+            "stability": 7.33829079,
+            "difficulty": 9.87251167,
+            "retrievabilityBefore": 0.92546605,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 7,
+            "rawDueAt": "2030-04-02T00:00:00.000Z"
+          },
+          {
+            "stability": 1.04585399,
+            "difficulty": 9.94332383,
+            "retrievabilityBefore": 0.94935745,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-03-30T00:00:00.000Z"
+          },
+          {
+            "stability": 2.18703726,
+            "difficulty": 9.92860888,
+            "retrievabilityBefore": 0.81355061,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-04-03T00:00:00.000Z"
+          },
+          {
+            "stability": 3.01536102,
+            "difficulty": 9.93783562,
+            "retrievabilityBefore": 0.87686117,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-04-07T00:00:00.000Z"
+          },
+          {
+            "stability": 4.4458538,
+            "difficulty": 9.92312615,
+            "retrievabilityBefore": 0.90035049,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 4,
+            "rawDueAt": "2030-04-11T00:00:00.000Z"
+          },
+          {
+            "stability": 7.25515124,
+            "difficulty": 9.88266686,
+            "retrievabilityBefore": 0.92469365,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 7,
+            "rawDueAt": "2030-04-17T00:00:00.000Z"
+          },
+          {
+            "stability": 1.04017132,
+            "difficulty": 9.94666176,
+            "retrievabilityBefore": 0.94887839,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-04-14T00:00:00.000Z"
+          },
+          {
+            "stability": 2.17589324,
+            "difficulty": 9.93194347,
+            "retrievabilityBefore": 0.81304621,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-04-18T00:00:00.000Z"
+          },
+          {
+            "stability": 3.00091065,
+            "difficulty": 9.94004927,
+            "retrievabilityBefore": 0.87646468,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-04-22T00:00:00.000Z"
+          },
+          {
+            "stability": 4.42761156,
+            "difficulty": 9.92533759,
+            "retrievabilityBefore": 0.90002085,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 4,
+            "rawDueAt": "2030-04-26T00:00:00.000Z"
+          },
+          {
+            "stability": 7.23048268,
+            "difficulty": 9.88561726,
+            "retrievabilityBefore": 0.92445997,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 7,
+            "rawDueAt": "2030-05-02T00:00:00.000Z"
+          },
+          {
+            "stability": 1.03847775,
+            "difficulty": 9.94763154,
+            "retrievabilityBefore": 0.94873448,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-04-29T00:00:00.000Z"
+          },
+          {
+            "stability": 2.17259879,
+            "difficulty": 9.93291228,
+            "retrievabilityBefore": 0.81289528,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-05-03T00:00:00.000Z"
+          },
+          {
+            "stability": 2.99665141,
+            "difficulty": 9.94069241,
+            "retrievabilityBefore": 0.87634695,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-05-07T00:00:00.000Z"
+          },
+          {
+            "stability": 4.42224626,
+            "difficulty": 9.92598009,
+            "retrievabilityBefore": 0.89992325,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 4,
+            "rawDueAt": "2030-05-11T00:00:00.000Z"
+          },
+          {
+            "stability": 7.2232466,
+            "difficulty": 9.88647445,
+            "retrievabilityBefore": 0.92439096,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 7,
+            "rawDueAt": "2030-05-17T00:00:00.000Z"
+          },
+          {
+            "stability": 1.03798034,
+            "difficulty": 9.94791329,
+            "retrievabilityBefore": 0.94869211,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-05-14T00:00:00.000Z"
+          },
+          {
+            "stability": 2.17163447,
+            "difficulty": 9.93319375,
+            "retrievabilityBefore": 0.8128509,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-05-18T00:00:00.000Z"
+          },
+          {
+            "stability": 2.99540631,
+            "difficulty": 9.94087926,
+            "retrievabilityBefore": 0.87631244,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-05-22T00:00:00.000Z"
+          },
+          {
+            "stability": 4.42067916,
+            "difficulty": 9.92616675,
+            "retrievabilityBefore": 0.89989469,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 4,
+            "rawDueAt": "2030-05-26T00:00:00.000Z"
+          },
+          {
+            "stability": 7.22113555,
+            "difficulty": 9.88672348,
+            "retrievabilityBefore": 0.92437078,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 7,
+            "rawDueAt": "2030-06-01T00:00:00.000Z"
+          },
+          {
+            "stability": 1.03783518,
+            "difficulty": 9.94799515,
+            "retrievabilityBefore": 0.94867973,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-05-29T00:00:00.000Z"
+          },
+          {
+            "stability": 2.17135347,
+            "difficulty": 9.93327552,
+            "retrievabilityBefore": 0.81283794,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-06-02T00:00:00.000Z"
+          },
+          {
+            "stability": 2.99504368,
+            "difficulty": 9.94093355,
+            "retrievabilityBefore": 0.87630238,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-06-06T00:00:00.000Z"
+          },
+          {
+            "stability": 4.42022305,
+            "difficulty": 9.92622099,
+            "retrievabilityBefore": 0.89988636,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 4,
+            "rawDueAt": "2030-06-10T00:00:00.000Z"
+          },
+          {
+            "stability": 7.22052151,
+            "difficulty": 9.88679585,
+            "retrievabilityBefore": 0.9243649,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 7,
+            "rawDueAt": "2030-06-16T00:00:00.000Z"
+          },
+          {
+            "stability": 1.03779295,
+            "difficulty": 9.94801894,
+            "retrievabilityBefore": 0.94867613,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-06-13T00:00:00.000Z"
+          },
+          {
+            "stability": 2.17127174,
+            "difficulty": 9.93329929,
+            "retrievabilityBefore": 0.81283417,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-06-17T00:00:00.000Z"
+          },
+          {
+            "stability": 2.99493825,
+            "difficulty": 9.94094933,
+            "retrievabilityBefore": 0.87629945,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-06-21T00:00:00.000Z"
+          },
+          {
+            "stability": 4.42009042,
+            "difficulty": 9.92623675,
+            "retrievabilityBefore": 0.89988394,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 4,
+            "rawDueAt": "2030-06-25T00:00:00.000Z"
+          },
+          {
+            "stability": 7.22034299,
+            "difficulty": 9.88681688,
+            "retrievabilityBefore": 0.92436319,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 7,
+            "rawDueAt": "2030-07-01T00:00:00.000Z"
+          },
+          {
+            "stability": 1.03778066,
+            "difficulty": 9.94802585,
+            "retrievabilityBefore": 0.94867509,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-06-28T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 2.3065,
+            "difficulty": 2.118103970459015,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-01-03T00:00:00.000Z"
+          },
+          {
+            "stability": 9.234870781784846,
+            "difficulty": 4.752858488532556,
+            "retrievabilityBefore": 0.8809479557659419,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 9,
+            "rawDueAt": "2030-01-13T00:00:00.000Z"
+          },
+          {
+            "stability": 17.985048268484334,
+            "difficulty": 4.743333999340862,
+            "retrievabilityBefore": 0.9582638635135757,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 18,
+            "rawDueAt": "2030-01-25T00:00:00.000Z"
+          },
+          {
+            "stability": 33.688861800379456,
+            "difficulty": 2.9720295518530473,
+            "retrievabilityBefore": 0.9769161152643112,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 34,
+            "rawDueAt": "2030-02-13T00:00:00.000Z"
+          },
+          {
+            "stability": 2.1831216911206655,
+            "difficulty": 7.675182273189982,
+            "retrievabilityBefore": 0.9871767561068087,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-01-15T00:00:00.000Z"
+          },
+          {
+            "stability": 6.456017546977288,
+            "difficulty": 7.66273546021363,
+            "retrievabilityBefore": 0.8767221645728596,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 6,
+            "rawDueAt": "2030-01-22T00:00:00.000Z"
+          },
+          {
+            "stability": 9.283412879994838,
+            "difficulty": 8.43364325125909,
+            "retrievabilityBefore": 0.9437592295229529,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 9,
+            "rawDueAt": "2030-01-28T00:00:00.000Z"
+          },
+          {
+            "stability": 12.877344555998922,
+            "difficulty": 8.420437977304669,
+            "retrievabilityBefore": 0.9584506289485715,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 13,
+            "rawDueAt": "2030-02-04T00:00:00.000Z"
+          },
+          {
+            "stability": 19.52782212646142,
+            "difficulty": 7.877850326206985,
+            "retrievabilityBefore": 0.9687783389582144,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 20,
+            "rawDueAt": "2030-02-14T00:00:00.000Z"
+          },
+          {
+            "stability": 1.64244008844094,
+            "difficulty": 9.287692202138855,
+            "retrievabilityBefore": 0.9785995612169818,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-01-30T00:00:00.000Z"
+          },
+          {
+            "stability": 3.7228656424297006,
+            "difficulty": 9.273632879233553,
+            "retrievabilityBefore": 0.8536349173311228,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 4,
+            "rawDueAt": "2030-02-04T00:00:00.000Z"
+          },
+          {
+            "stability": 5.151127047257435,
+            "difficulty": 9.503032025824242,
+            "retrievabilityBefore": 0.9141349373418104,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 5,
+            "rawDueAt": "2030-02-08T00:00:00.000Z"
+          },
+          {
+            "stability": 7.250414376980823,
+            "difficulty": 9.488757363095255,
+            "retrievabilityBefore": 0.9327209567164504,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 7,
+            "rawDueAt": "2030-02-13T00:00:00.000Z"
+          },
+          {
+            "stability": 11.236844692701945,
+            "difficulty": 9.303152267045405,
+            "retrievabilityBefore": 0.9488508148823515,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 11,
+            "rawDueAt": "2030-02-20T00:00:00.000Z"
+          },
+          {
+            "stability": 1.2773668995449026,
+            "difficulty": 9.756179258039246,
+            "retrievabilityBefore": 0.9647857528611326,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-02-13T00:00:00.000Z"
+          },
+          {
+            "stability": 2.6987303432697085,
+            "difficulty": 9.741651448078045,
+            "retrievabilityBefore": 0.831756088887194,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-02-18T00:00:00.000Z"
+          },
+          {
+            "stability": 3.703661450011798,
+            "difficulty": 9.813724561488524,
+            "retrievabilityBefore": 0.8925658960944376,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 4,
+            "rawDueAt": "2030-02-22T00:00:00.000Z"
+          },
+          {
+            "stability": 5.334862301592671,
+            "difficulty": 9.799139206223872,
+            "retrievabilityBefore": 0.9138127870640143,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 5,
+            "rawDueAt": "2030-02-26T00:00:00.000Z"
+          },
+          {
+            "stability": 8.492549773747069,
+            "difficulty": 9.717249258353718,
+            "retrievabilityBefore": 0.9345343650967619,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 8,
+            "rawDueAt": "2030-03-04T00:00:00.000Z"
+          },
+          {
+            "stability": 1.1209847988590456,
+            "difficulty": 9.892290123222748,
+            "retrievabilityBefore": 0.9551815393579497,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-02-28T00:00:00.000Z"
+          },
+          {
+            "stability": 2.341893046025335,
+            "difficulty": 9.877626202396364,
+            "retrievabilityBefore": 0.819936427799195,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-03-04T00:00:00.000Z"
+          },
+          {
+            "stability": 3.2195667523638636,
+            "difficulty": 9.903990939828576,
+            "retrievabilityBefore": 0.8821042312628782,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-03-08T00:00:00.000Z"
+          },
+          {
+            "stability": 4.706556987993935,
+            "difficulty": 9.889315318185584,
+            "retrievabilityBefore": 0.9047788252632456,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 5,
+            "rawDueAt": "2030-03-13T00:00:00.000Z"
+          },
+          {
+            "stability": 7.612743751181313,
+            "difficulty": 9.837558024726215,
+            "retrievabilityBefore": 0.927878908025181,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 8,
+            "rawDueAt": "2030-03-19T00:00:00.000Z"
+          },
+          {
+            "stability": 1.0643405323851929,
+            "difficulty": 9.931834796629776,
+            "retrievabilityBefore": 0.9508765014230792,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-03-15T00:00:00.000Z"
+          },
+          {
+            "stability": 2.2239680283667433,
+            "difficulty": 9.917131331129983,
+            "retrievabilityBefore": 0.8151699582440785,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-03-19T00:00:00.000Z"
+          },
+          {
+            "stability": 3.0635638697334167,
+            "difficulty": 9.93021628522095,
+            "retrievabilityBefore": 0.8781560124725385,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-03-23T00:00:00.000Z"
+          },
+          {
+            "stability": 4.506983164270351,
+            "difficulty": 9.915514438232567,
+            "retrievabilityBefore": 0.9014339513147931,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 5,
+            "rawDueAt": "2030-03-28T00:00:00.000Z"
+          },
+          {
+            "stability": 7.338290893671304,
+            "difficulty": 9.872511669813907,
+            "retrievabilityBefore": 0.925466048370114,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 7,
+            "rawDueAt": "2030-04-02T00:00:00.000Z"
+          },
+          {
+            "stability": 1.0458539994135816,
+            "difficulty": 9.943323822085313,
+            "retrievabilityBefore": 0.9493574465581414,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-03-30T00:00:00.000Z"
+          },
+          {
+            "stability": 2.1870372609412074,
+            "difficulty": 9.928608867560065,
+            "retrievabilityBefore": 0.8135506142262794,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-04-03T00:00:00.000Z"
+          },
+          {
+            "stability": 3.0153610546511795,
+            "difficulty": 9.937835608756437,
+            "retrievabilityBefore": 0.8768611665193209,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-04-07T00:00:00.000Z"
+          },
+          {
+            "stability": 4.4458538147861155,
+            "difficulty": 9.923126142444518,
+            "retrievabilityBefore": 0.9003504933270792,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 4,
+            "rawDueAt": "2030-04-11T00:00:00.000Z"
+          },
+          {
+            "stability": 7.255151306084326,
+            "difficulty": 9.882666850868077,
+            "retrievabilityBefore": 0.9246936493688563,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 7,
+            "rawDueAt": "2030-04-17T00:00:00.000Z"
+          },
+          {
+            "stability": 1.040171333797153,
+            "difficulty": 9.946661761042588,
+            "retrievabilityBefore": 0.9488783853833586,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-04-14T00:00:00.000Z"
+          },
+          {
+            "stability": 2.1758932322333266,
+            "difficulty": 9.931943468578384,
+            "retrievabilityBefore": 0.8130462153919328,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-04-18T00:00:00.000Z"
+          },
+          {
+            "stability": 3.000910652589855,
+            "difficulty": 9.940049272304805,
+            "retrievabilityBefore": 0.8764646777105197,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-04-22T00:00:00.000Z"
+          },
+          {
+            "stability": 4.427611564374338,
+            "difficulty": 9.925337592329337,
+            "retrievabilityBefore": 0.9000208498346173,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 4,
+            "rawDueAt": "2030-04-26T00:00:00.000Z"
+          },
+          {
+            "stability": 7.230482654357399,
+            "difficulty": 9.885617264250836,
+            "retrievabilityBefore": 0.9244599705583986,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 7,
+            "rawDueAt": "2030-05-02T00:00:00.000Z"
+          },
+          {
+            "stability": 1.0384777547749144,
+            "difficulty": 9.94763154185869,
+            "retrievabilityBefore": 0.9487344759009714,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-04-29T00:00:00.000Z"
+          },
+          {
+            "stability": 2.1725987961791016,
+            "difficulty": 9.932912279613669,
+            "retrievabilityBefore": 0.8128952797648042,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-05-03T00:00:00.000Z"
+          },
+          {
+            "stability": 2.996651449950014,
+            "difficulty": 9.94069241421662,
+            "retrievabilityBefore": 0.8763469460872407,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-05-07T00:00:00.000Z"
+          },
+          {
+            "stability": 4.422246228719779,
+            "difficulty": 9.925980091099241,
+            "retrievabilityBefore": 0.8999232555013331,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 4,
+            "rawDueAt": "2030-05-11T00:00:00.000Z"
+          },
+          {
+            "stability": 7.223246563076472,
+            "difficulty": 9.8864744561692,
+            "retrievabilityBefore": 0.9243909596120219,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 7,
+            "rawDueAt": "2030-05-17T00:00:00.000Z"
+          },
+          {
+            "stability": 1.0379803396331246,
+            "difficulty": 9.947913295013352,
+            "retrievabilityBefore": 0.9486921074124304,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-05-14T00:00:00.000Z"
+          },
+          {
+            "stability": 2.171634494158384,
+            "difficulty": 9.933193751015176,
+            "retrievabilityBefore": 0.8128508953433079,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-05-18T00:00:00.000Z"
+          },
+          {
+            "stability": 2.995406341775524,
+            "difficulty": 9.940879268049509,
+            "retrievabilityBefore": 0.8763124401644188,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-05-22T00:00:00.000Z"
+          },
+          {
+            "stability": 4.420679227570983,
+            "difficulty": 9.926166758078297,
+            "retrievabilityBefore": 0.899894687960487,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 4,
+            "rawDueAt": "2030-05-26T00:00:00.000Z"
+          },
+          {
+            "stability": 7.2211356342819855,
+            "difficulty": 9.886723498553977,
+            "retrievabilityBefore": 0.9243707799403966,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 7,
+            "rawDueAt": "2030-06-01T00:00:00.000Z"
+          },
+          {
+            "stability": 1.0378351801494277,
+            "difficulty": 9.947995153551739,
+            "retrievabilityBefore": 0.9486797342555242,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-05-29T00:00:00.000Z"
+          },
+          {
+            "stability": 2.1713534752742882,
+            "difficulty": 9.933275527695026,
+            "retrievabilityBefore": 0.812837938144226,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-06-02T00:00:00.000Z"
+          },
+          {
+            "stability": 2.9950436796896103,
+            "difficulty": 9.940933555220386,
+            "retrievabilityBefore": 0.8763023805247668,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-06-06T00:00:00.000Z"
+          },
+          {
+            "stability": 4.420222985275832,
+            "difficulty": 9.926220990962003,
+            "retrievabilityBefore": 0.8998863639164751,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 4,
+            "rawDueAt": "2030-06-10T00:00:00.000Z"
+          },
+          {
+            "stability": 7.22052131785454,
+            "difficulty": 9.886795853540162,
+            "retrievabilityBefore": 0.9243649024321373,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 7,
+            "rawDueAt": "2030-06-16T00:00:00.000Z"
+          },
+          {
+            "stability": 1.0377929320215777,
+            "difficulty": 9.948018936143685,
+            "retrievabilityBefore": 0.9486761323229356,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-06-13T00:00:00.000Z"
+          },
+          {
+            "stability": 2.171271730885214,
+            "difficulty": 9.93329928650438,
+            "retrievabilityBefore": 0.8128341666091264,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-06-17T00:00:00.000Z"
+          },
+          {
+            "stability": 2.994938208455531,
+            "difficulty": 9.940949327425194,
+            "retrievabilityBefore": 0.8762994539923552,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-06-21T00:00:00.000Z"
+          },
+          {
+            "stability": 4.420090319255464,
+            "difficulty": 9.926236747394606,
+            "retrievabilityBefore": 0.8998839428054185,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 4,
+            "rawDueAt": "2030-06-25T00:00:00.000Z"
+          },
+          {
+            "stability": 7.220342721181061,
+            "difficulty": 9.886816875038292,
+            "retrievabilityBefore": 0.9243631931965545,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 7,
+            "rawDueAt": "2030-07-01T00:00:00.000Z"
+          },
+          {
+            "stability": 1.0377806491323278,
+            "difficulty": 9.948025845767173,
+            "retrievabilityBefore": 0.9486750850580505,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-06-28T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 4.590150481931232e-10,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 2.6178484624495013e-7,
+            "difficulty": -1.4674439441364484e-9,
+            "retrievabilityBefore": -4.234058104124472e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": -2.8151566411338536e-7,
+            "difficulty": -6.59137633363116e-10,
+            "retrievabilityBefore": 3.5135757636695075e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0.00000277037945295433,
+            "difficulty": 1.8530474932276775e-9,
+            "retrievabilityBefore": -4.735688841073227e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 9.112066523542239e-8,
+            "difficulty": 3.1899825003733895e-9,
+            "retrievabilityBefore": -3.893191324877421e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 6.697728771598577e-8,
+            "difficulty": 2.1363000257679232e-10,
+            "retrievabilityBefore": 4.572859535478813e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 1.1999483895408503e-7,
+            "difficulty": 1.2590906095510945e-9,
+            "retrievabilityBefore": -4.770470685144801e-10,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 2.459989225656045e-7,
+            "difficulty": -2.695331957625058e-9,
+            "retrievabilityBefore": -1.0514284998208723e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 5.864614180950412e-7,
+            "difficulty": -3.793014791142468e-9,
+            "retrievabilityBefore": -1.041785546718188e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 1.844094010827746e-8,
+            "difficulty": 2.1388544269029808e-9,
+            "retrievabilityBefore": 1.2169817376062042e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 7.24297004595087e-8,
+            "difficulty": -7.664464618528655e-10,
+            "retrievabilityBefore": -2.6688771193050798e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 1.3725743475134777e-7,
+            "difficulty": -4.175758405722263e-9,
+            "retrievabilityBefore": -2.6581895573585257e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 2.969808230446347e-7,
+            "difficulty": -6.904745220026598e-9,
+            "retrievabilityBefore": -3.2835496543981435e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 6.270194496948989e-8,
+            "difficulty": -1.2954595618452913e-8,
+            "retrievabilityBefore": 4.882351412049957e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": -4.550975152284309e-10,
+            "difficulty": -1.960753337471033e-9,
+            "retrievabilityBefore": 2.8611325531002763e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 1.3269708443175432e-8,
+            "difficulty": -1.921955927741692e-9,
+            "retrievabilityBefore": -1.112805958491947e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 6.001179775338983e-8,
+            "difficulty": 1.4885230825711915e-9,
+            "retrievabilityBefore": -3.9055624290185165e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 1.415926709213977e-7,
+            "difficulty": 6.223871196198161e-9,
+            "retrievabilityBefore": -2.9359857878219486e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": -5.625293120203878e-8,
+            "difficulty": 8.353717717568543e-9,
+            "retrievabilityBefore": 5.0967619014130605e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": -1.1409544420359907e-9,
+            "difficulty": 3.222748290454547e-9,
+            "retrievabilityBefore": -6.420503018134127e-10,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 6.025334897685752e-9,
+            "difficulty": 2.396363996126638e-9,
+            "retrievabilityBefore": -2.2008050937216694e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": -7.636136611921529e-9,
+            "difficulty": -1.7142376407264237e-10,
+            "retrievabilityBefore": 1.2628781353996033e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 6.799393492684658e-8,
+            "difficulty": -1.8144152846844008e-9,
+            "retrievabilityBefore": -4.736754433132262e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 1.911813125587969e-7,
+            "difficulty": -5.273784964288097e-9,
+            "retrievabilityBefore": -1.974818975014614e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 1.238519287127815e-8,
+            "difficulty": -3.3702249879752344e-9,
+            "retrievabilityBefore": 1.4230792100278222e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 3.8366743559947736e-8,
+            "difficulty": 1.129983218106645e-9,
+            "retrievabilityBefore": -1.7559215192974875e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 2.9733416617716557e-8,
+            "difficulty": -4.779050044589894e-9,
+            "retrievabilityBefore": 2.472538507269917e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 2.4270351062227746e-8,
+            "difficulty": -1.767434198995943e-9,
+            "retrievabilityBefore": 1.3147930522094953e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 1.0367130354183018e-7,
+            "difficulty": -1.8609291885240964e-10,
+            "retrievabilityBefore": -1.6298860039398733e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 9.413581691930517e-9,
+            "difficulty": -7.914687571997092e-9,
+            "retrievabilityBefore": -3.4418586869477963e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 9.41207556337531e-10,
+            "difficulty": -1.2439935304087157e-8,
+            "retrievabilityBefore": 4.226279437524738e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 3.465117970335996e-8,
+            "difficulty": -1.1243562525464768e-8,
+            "retrievabilityBefore": -3.480679078293747e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 1.4786115443143899e-8,
+            "difficulty": -7.55548157371777e-9,
+            "retrievabilityBefore": 3.327079167725344e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 6.608432556731714e-8,
+            "difficulty": -9.131923661698238e-9,
+            "retrievabilityBefore": -6.311436928641001e-10,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 1.3797152975669746e-8,
+            "difficulty": 1.042588237964992e-9,
+            "retrievabilityBefore": -4.616641402499511e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": -7.766673526532486e-9,
+            "difficulty": -1.421616602215181e-9,
+            "retrievabilityBefore": 5.39193278914496e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 2.58985499712594e-9,
+            "difficulty": 2.304805235553431e-9,
+            "retrievabilityBefore": -2.2894802720330176e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 4.374338224977237e-9,
+            "difficulty": 2.3293367235055484e-9,
+            "retrievabilityBefore": -1.653827075287495e-10,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": -2.5642600931519155e-8,
+            "difficulty": 4.2508361275395146e-9,
+            "retrievabilityBefore": 5.58398549621586e-10,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 4.7749144638231655e-9,
+            "difficulty": 1.858690978906452e-9,
+            "retrievabilityBefore": -4.099028672044369e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 6.179101674774756e-9,
+            "difficulty": -3.8633096721696347e-10,
+            "retrievabilityBefore": -2.351957517632286e-10,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 3.995001396361886e-8,
+            "difficulty": 4.216619942098987e-9,
+            "retrievabilityBefore": -3.912759227731044e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": -3.128022108001005e-8,
+            "difficulty": 1.0992415866439842e-9,
+            "retrievabilityBefore": 5.5013331667908005e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": -3.692352823492229e-8,
+            "difficulty": 6.169200261751939e-9,
+            "retrievabilityBefore": -3.8797809409629735e-10,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": -3.6687541893343223e-10,
+            "difficulty": 5.013351511706787e-9,
+            "retrievabilityBefore": -2.587569603029749e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 2.415838418201588e-8,
+            "difficulty": 1.0151772755762067e-9,
+            "retrievabilityBefore": -4.656692143001351e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 3.177552398980765e-8,
+            "difficulty": 8.049507727037053e-9,
+            "retrievabilityBefore": 1.6441881189876995e-10,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 6.757098347520696e-8,
+            "difficulty": 8.078297142333213e-9,
+            "retrievabilityBefore": -2.0395130029271513e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 8.428198583487756e-8,
+            "difficulty": 1.855397613326204e-8,
+            "retrievabilityBefore": -5.960332227772369e-11,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 1.4942758141955892e-10,
+            "difficulty": 3.55173845889567e-9,
+            "retrievabilityBefore": 4.255524155283297e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 5.2742881173628575e-9,
+            "difficulty": 7.695025061593697e-9,
+            "retrievabilityBefore": -1.855773978931552e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": -3.1038993597576336e-10,
+            "difficulty": 5.2203859013388865e-9,
+            "retrievabilityBefore": 5.24766785581221e-10,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": -6.472416735903153e-8,
+            "difficulty": 9.620038099455996e-10,
+            "retrievabilityBefore": 3.9164751441944645e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": -1.9214546043144765e-7,
+            "difficulty": 3.5401619413732988e-9,
+            "retrievabilityBefore": 2.4321372693592025e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": -1.7978422306441644e-8,
+            "difficulty": -3.856316155292916e-9,
+            "retrievabilityBefore": 2.3229356216347696e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": -9.114785815000914e-9,
+            "difficulty": -3.495621569982177e-9,
+            "retrievabilityBefore": -3.390873581921028e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": -4.1544469198129264e-8,
+            "difficulty": -2.574806146071751e-9,
+            "retrievabilityBefore": 3.992355224191613e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": -1.007445362688486e-7,
+            "difficulty": -2.6053932344893838e-9,
+            "retrievabilityBefore": 2.805418453100117e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": -2.688189386645945e-7,
+            "difficulty": -4.961707489314904e-9,
+            "retrievabilityBefore": 3.196554465567658e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": -1.0867672095571379e-8,
+            "difficulty": -4.232827421901675e-9,
+            "retrievabilityBefore": -4.941949516279465e-9,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": [
+          "0:difficulty:NUMERIC_MISMATCH",
+          "1:stability:NUMERIC_MISMATCH",
+          "1:difficulty:NUMERIC_MISMATCH",
+          "1:retrievabilityBefore:NUMERIC_MISMATCH",
+          "2:stability:NUMERIC_MISMATCH",
+          "2:difficulty:NUMERIC_MISMATCH",
+          "2:retrievabilityBefore:NUMERIC_MISMATCH",
+          "3:stability:NUMERIC_MISMATCH",
+          "3:difficulty:NUMERIC_MISMATCH",
+          "3:retrievabilityBefore:NUMERIC_MISMATCH",
+          "4:stability:NUMERIC_MISMATCH",
+          "4:difficulty:NUMERIC_MISMATCH",
+          "4:retrievabilityBefore:NUMERIC_MISMATCH",
+          "5:stability:NUMERIC_MISMATCH",
+          "5:difficulty:NUMERIC_MISMATCH",
+          "5:retrievabilityBefore:NUMERIC_MISMATCH",
+          "6:stability:NUMERIC_MISMATCH",
+          "6:difficulty:NUMERIC_MISMATCH",
+          "6:retrievabilityBefore:NUMERIC_MISMATCH",
+          "7:stability:NUMERIC_MISMATCH",
+          "7:difficulty:NUMERIC_MISMATCH",
+          "7:retrievabilityBefore:NUMERIC_MISMATCH",
+          "8:stability:NUMERIC_MISMATCH",
+          "8:difficulty:NUMERIC_MISMATCH",
+          "8:retrievabilityBefore:NUMERIC_MISMATCH",
+          "9:stability:NUMERIC_MISMATCH",
+          "9:difficulty:NUMERIC_MISMATCH",
+          "9:retrievabilityBefore:NUMERIC_MISMATCH",
+          "10:stability:NUMERIC_MISMATCH",
+          "10:difficulty:NUMERIC_MISMATCH",
+          "10:retrievabilityBefore:NUMERIC_MISMATCH",
+          "11:stability:NUMERIC_MISMATCH",
+          "11:difficulty:NUMERIC_MISMATCH",
+          "11:retrievabilityBefore:NUMERIC_MISMATCH",
+          "12:stability:NUMERIC_MISMATCH",
+          "12:difficulty:NUMERIC_MISMATCH",
+          "12:retrievabilityBefore:NUMERIC_MISMATCH",
+          "13:stability:NUMERIC_MISMATCH",
+          "13:difficulty:NUMERIC_MISMATCH",
+          "13:retrievabilityBefore:NUMERIC_MISMATCH",
+          "14:stability:NUMERIC_MISMATCH",
+          "14:difficulty:NUMERIC_MISMATCH",
+          "14:retrievabilityBefore:NUMERIC_MISMATCH",
+          "15:stability:NUMERIC_MISMATCH",
+          "15:difficulty:NUMERIC_MISMATCH",
+          "15:retrievabilityBefore:NUMERIC_MISMATCH",
+          "16:stability:NUMERIC_MISMATCH",
+          "16:difficulty:NUMERIC_MISMATCH",
+          "16:retrievabilityBefore:NUMERIC_MISMATCH",
+          "17:stability:NUMERIC_MISMATCH",
+          "17:difficulty:NUMERIC_MISMATCH",
+          "17:retrievabilityBefore:NUMERIC_MISMATCH",
+          "18:stability:NUMERIC_MISMATCH",
+          "18:difficulty:NUMERIC_MISMATCH",
+          "18:retrievabilityBefore:NUMERIC_MISMATCH",
+          "19:stability:NUMERIC_MISMATCH",
+          "19:difficulty:NUMERIC_MISMATCH",
+          "19:retrievabilityBefore:NUMERIC_MISMATCH",
+          "20:stability:NUMERIC_MISMATCH",
+          "20:difficulty:NUMERIC_MISMATCH",
+          "20:retrievabilityBefore:NUMERIC_MISMATCH",
+          "21:stability:NUMERIC_MISMATCH",
+          "21:difficulty:NUMERIC_MISMATCH",
+          "21:retrievabilityBefore:NUMERIC_MISMATCH",
+          "22:stability:NUMERIC_MISMATCH",
+          "22:difficulty:NUMERIC_MISMATCH",
+          "22:retrievabilityBefore:NUMERIC_MISMATCH",
+          "23:stability:NUMERIC_MISMATCH",
+          "23:difficulty:NUMERIC_MISMATCH",
+          "23:retrievabilityBefore:NUMERIC_MISMATCH",
+          "24:stability:NUMERIC_MISMATCH",
+          "24:difficulty:NUMERIC_MISMATCH",
+          "24:retrievabilityBefore:NUMERIC_MISMATCH",
+          "25:stability:NUMERIC_MISMATCH",
+          "25:difficulty:NUMERIC_MISMATCH",
+          "25:retrievabilityBefore:NUMERIC_MISMATCH",
+          "26:stability:NUMERIC_MISMATCH",
+          "26:difficulty:NUMERIC_MISMATCH",
+          "26:retrievabilityBefore:NUMERIC_MISMATCH",
+          "27:stability:NUMERIC_MISMATCH",
+          "27:difficulty:NUMERIC_MISMATCH",
+          "27:retrievabilityBefore:NUMERIC_MISMATCH",
+          "28:stability:NUMERIC_MISMATCH",
+          "28:difficulty:NUMERIC_MISMATCH",
+          "28:retrievabilityBefore:NUMERIC_MISMATCH",
+          "29:stability:NUMERIC_MISMATCH",
+          "29:difficulty:NUMERIC_MISMATCH",
+          "29:retrievabilityBefore:NUMERIC_MISMATCH",
+          "30:stability:NUMERIC_MISMATCH",
+          "30:difficulty:NUMERIC_MISMATCH",
+          "30:retrievabilityBefore:NUMERIC_MISMATCH",
+          "31:stability:NUMERIC_MISMATCH",
+          "31:difficulty:NUMERIC_MISMATCH",
+          "31:retrievabilityBefore:NUMERIC_MISMATCH",
+          "32:stability:NUMERIC_MISMATCH",
+          "32:difficulty:NUMERIC_MISMATCH",
+          "32:retrievabilityBefore:NUMERIC_MISMATCH",
+          "33:stability:NUMERIC_MISMATCH",
+          "33:difficulty:NUMERIC_MISMATCH",
+          "33:retrievabilityBefore:NUMERIC_MISMATCH",
+          "34:stability:NUMERIC_MISMATCH",
+          "34:difficulty:NUMERIC_MISMATCH",
+          "34:retrievabilityBefore:NUMERIC_MISMATCH",
+          "35:stability:NUMERIC_MISMATCH",
+          "35:difficulty:NUMERIC_MISMATCH",
+          "35:retrievabilityBefore:NUMERIC_MISMATCH",
+          "36:stability:NUMERIC_MISMATCH",
+          "36:difficulty:NUMERIC_MISMATCH",
+          "36:retrievabilityBefore:NUMERIC_MISMATCH",
+          "37:stability:NUMERIC_MISMATCH",
+          "37:difficulty:NUMERIC_MISMATCH",
+          "37:retrievabilityBefore:NUMERIC_MISMATCH",
+          "38:stability:NUMERIC_MISMATCH",
+          "38:difficulty:NUMERIC_MISMATCH",
+          "38:retrievabilityBefore:NUMERIC_MISMATCH",
+          "39:stability:NUMERIC_MISMATCH",
+          "39:difficulty:NUMERIC_MISMATCH",
+          "39:retrievabilityBefore:NUMERIC_MISMATCH",
+          "40:stability:NUMERIC_MISMATCH",
+          "40:difficulty:NUMERIC_MISMATCH",
+          "40:retrievabilityBefore:NUMERIC_MISMATCH",
+          "41:stability:NUMERIC_MISMATCH",
+          "41:difficulty:NUMERIC_MISMATCH",
+          "41:retrievabilityBefore:NUMERIC_MISMATCH",
+          "42:stability:NUMERIC_MISMATCH",
+          "42:difficulty:NUMERIC_MISMATCH",
+          "42:retrievabilityBefore:NUMERIC_MISMATCH",
+          "43:stability:NUMERIC_MISMATCH",
+          "43:difficulty:NUMERIC_MISMATCH",
+          "43:retrievabilityBefore:NUMERIC_MISMATCH",
+          "44:stability:NUMERIC_MISMATCH",
+          "44:difficulty:NUMERIC_MISMATCH",
+          "44:retrievabilityBefore:NUMERIC_MISMATCH",
+          "45:stability:NUMERIC_MISMATCH",
+          "45:difficulty:NUMERIC_MISMATCH",
+          "45:retrievabilityBefore:NUMERIC_MISMATCH",
+          "46:stability:NUMERIC_MISMATCH",
+          "46:difficulty:NUMERIC_MISMATCH",
+          "46:retrievabilityBefore:NUMERIC_MISMATCH",
+          "47:stability:NUMERIC_MISMATCH",
+          "47:difficulty:NUMERIC_MISMATCH",
+          "47:retrievabilityBefore:NUMERIC_MISMATCH",
+          "48:stability:NUMERIC_MISMATCH",
+          "48:difficulty:NUMERIC_MISMATCH",
+          "48:retrievabilityBefore:NUMERIC_MISMATCH",
+          "49:stability:NUMERIC_MISMATCH",
+          "49:difficulty:NUMERIC_MISMATCH",
+          "49:retrievabilityBefore:NUMERIC_MISMATCH",
+          "50:stability:NUMERIC_MISMATCH",
+          "50:difficulty:NUMERIC_MISMATCH",
+          "50:retrievabilityBefore:NUMERIC_MISMATCH",
+          "51:stability:NUMERIC_MISMATCH",
+          "51:difficulty:NUMERIC_MISMATCH",
+          "51:retrievabilityBefore:NUMERIC_MISMATCH",
+          "52:stability:NUMERIC_MISMATCH",
+          "52:difficulty:NUMERIC_MISMATCH",
+          "52:retrievabilityBefore:NUMERIC_MISMATCH",
+          "53:stability:NUMERIC_MISMATCH",
+          "53:difficulty:NUMERIC_MISMATCH",
+          "53:retrievabilityBefore:NUMERIC_MISMATCH",
+          "54:stability:NUMERIC_MISMATCH",
+          "54:difficulty:NUMERIC_MISMATCH",
+          "54:retrievabilityBefore:NUMERIC_MISMATCH",
+          "55:stability:NUMERIC_MISMATCH",
+          "55:difficulty:NUMERIC_MISMATCH",
+          "55:retrievabilityBefore:NUMERIC_MISMATCH",
+          "56:stability:NUMERIC_MISMATCH",
+          "56:difficulty:NUMERIC_MISMATCH",
+          "56:retrievabilityBefore:NUMERIC_MISMATCH",
+          "57:stability:NUMERIC_MISMATCH",
+          "57:difficulty:NUMERIC_MISMATCH",
+          "57:retrievabilityBefore:NUMERIC_MISMATCH",
+          "58:stability:NUMERIC_MISMATCH",
+          "58:difficulty:NUMERIC_MISMATCH",
+          "58:retrievabilityBefore:NUMERIC_MISMATCH",
+          "59:stability:NUMERIC_MISMATCH",
+          "59:difficulty:NUMERIC_MISMATCH",
+          "59:retrievabilityBefore:NUMERIC_MISMATCH"
+        ]
+      }
+    ],
+    "blockers": [],
+    "scope": "Memory-state core plus raw whole-day interval; excludes HME policies, BasicScheduler learning-step/monotonic policies, and scientific validity"
+  },
+  "candidate": {
+    "schemaVersion": 1,
+    "kind": "fsrs-library-conformance",
+    "status": "conformant",
+    "candidate": {
+      "algorithmVersion": "hme-fsrs6-ts542-round8-0.1.0",
+      "precision": "stage-rounded-8-decimal",
+      "timePolicy": "floor-elapsed-seconds-divided-by-86400-0.1.0",
+      "runtimeSelected": false
+    },
+    "reference": {
+      "name": "ts-fsrs",
+      "version": "5.4.2",
+      "model": "FSRS-6",
+      "sourceCommit": "bb71e35a2f5af5a5ac6cce9ef7c41ad24855721d",
+      "artifactSha512": "sha512-z4qop4pzTcyTzuJ566d9EaX/4bZZzhYfeaPImfVr+xcYT65c5oBgFDijUhCE/D+C78eaolHIhKRZ04/RwF+v2g==",
+      "filesVerified": 13,
+      "executed": true,
+      "weights": [
+        0.212,
+        1.2931,
+        2.3065,
+        8.2956,
+        6.4133,
+        0.8334,
+        3.0194,
+        0.001,
+        1.8722,
+        0.1666,
+        0.796,
+        1.4835,
+        0.0614,
+        0.2629,
+        1.6483,
+        0.6014,
+        1.8729,
+        0.5425,
+        0.0912,
+        0.0658,
+        0.1542
+      ],
+      "enableShortTerm": true,
+      "enableFuzz": false
+    },
+    "tolerance": {
+      "absolute": 1e-12,
+      "relative": 1e-12
+    },
+    "coverage": {
+      "requiredBranches": 12,
+      "executedBranches": 12
+    },
+    "summary": {
+      "passed": 32,
+      "failed": 0,
+      "blocked": 0
+    },
+    "cases": [
+      {
+        "id": "FSRS-G-INIT-1",
+        "branch": "initialization",
+        "status": "conformant",
+        "expected": [
+          {
+            "stability": 0.212,
+            "difficulty": 6.4133,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2026-01-02T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 0.212,
+            "difficulty": 6.4133,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2026-01-02T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": []
+      },
+      {
+        "id": "FSRS-G-INIT-2",
+        "branch": "initialization",
+        "status": "conformant",
+        "expected": [
+          {
+            "stability": 1.2931,
+            "difficulty": 5.11217071,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2026-01-02T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 1.2931,
+            "difficulty": 5.11217071,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2026-01-02T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": []
+      },
+      {
+        "id": "FSRS-G-INIT-3",
+        "branch": "initialization",
+        "status": "conformant",
+        "expected": [
+          {
+            "stability": 2.3065,
+            "difficulty": 2.11810397,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2026-01-03T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 2.3065,
+            "difficulty": 2.11810397,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2026-01-03T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": []
+      },
+      {
+        "id": "FSRS-G-INIT-4",
+        "branch": "initialization",
+        "status": "conformant",
+        "expected": [
+          {
+            "stability": 8.2956,
+            "difficulty": 1,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 8,
+            "rawDueAt": "2026-01-09T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 8.2956,
+            "difficulty": 1,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 8,
+            "rawDueAt": "2026-01-09T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": []
+      },
+      {
+        "id": "FSRS-G-SAME-1",
+        "branch": "same-day",
+        "status": "conformant",
+        "expected": [
+          {
+            "stability": 1.596818,
+            "difficulty": 8.34176237,
+            "retrievabilityBefore": 1,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2026-01-03T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 1.596818,
+            "difficulty": 8.34176237,
+            "retrievabilityBefore": 1,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2026-01-03T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": []
+      },
+      {
+        "id": "FSRS-G-SAME-2",
+        "branch": "same-day",
+        "status": "conformant",
+        "expected": [
+          {
+            "stability": 5,
+            "difficulty": 6.66599536,
+            "retrievabilityBefore": 1,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 5,
+            "rawDueAt": "2026-01-06T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 5,
+            "difficulty": 6.66599536,
+            "retrievabilityBefore": 1,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 5,
+            "rawDueAt": "2026-01-06T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": []
+      },
+      {
+        "id": "FSRS-G-SAME-3",
+        "branch": "same-day",
+        "status": "conformant",
+        "expected": [
+          {
+            "stability": 5,
+            "difficulty": 4.99022837,
+            "retrievabilityBefore": 1,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 5,
+            "rawDueAt": "2026-01-06T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 5,
+            "difficulty": 4.99022837,
+            "retrievabilityBefore": 1,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 5,
+            "rawDueAt": "2026-01-06T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": []
+      },
+      {
+        "id": "FSRS-G-SAME-4",
+        "branch": "same-day",
+        "status": "conformant",
+        "expected": [
+          {
+            "stability": 8.12960956,
+            "difficulty": 3.31446137,
+            "retrievabilityBefore": 1,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 8,
+            "rawDueAt": "2026-01-09T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 8.12960956,
+            "difficulty": 3.31446137,
+            "retrievabilityBefore": 1,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 8,
+            "rawDueAt": "2026-01-09T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": []
+      },
+      {
+        "id": "FSRS-G-SUCCESS-2",
+        "branch": "successful-review",
+        "status": "conformant",
+        "expected": [
+          {
+            "stability": 12.43421374,
+            "difficulty": 6.66599536,
+            "retrievabilityBefore": 0.9,
+            "elapsedDays": 5,
+            "roundedIntervalDays": 12,
+            "rawDueAt": "2026-01-18T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 12.43421374,
+            "difficulty": 6.66599536,
+            "retrievabilityBefore": 0.9,
+            "elapsedDays": 5,
+            "roundedIntervalDays": 12,
+            "rawDueAt": "2026-01-18T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": []
+      },
+      {
+        "id": "FSRS-G-SUCCESS-3",
+        "branch": "successful-review",
+        "status": "conformant",
+        "expected": [
+          {
+            "stability": 17.36151271,
+            "difficulty": 4.99022837,
+            "retrievabilityBefore": 0.9,
+            "elapsedDays": 5,
+            "roundedIntervalDays": 17,
+            "rawDueAt": "2026-01-23T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 17.36151271,
+            "difficulty": 4.99022837,
+            "retrievabilityBefore": 0.9,
+            "elapsedDays": 5,
+            "roundedIntervalDays": 17,
+            "rawDueAt": "2026-01-23T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": []
+      },
+      {
+        "id": "FSRS-G-SUCCESS-4",
+        "branch": "successful-review",
+        "status": "conformant",
+        "expected": [
+          {
+            "stability": 28.15187715,
+            "difficulty": 3.31446137,
+            "retrievabilityBefore": 0.9,
+            "elapsedDays": 5,
+            "roundedIntervalDays": 28,
+            "rawDueAt": "2026-02-03T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 28.15187715,
+            "difficulty": 3.31446137,
+            "retrievabilityBefore": 0.9,
+            "elapsedDays": 5,
+            "roundedIntervalDays": 28,
+            "rawDueAt": "2026-02-03T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": []
+      },
+      {
+        "id": "FSRS-G-LAPSE",
+        "branch": "lapse",
+        "status": "conformant",
+        "expected": [
+          {
+            "stability": 0.95350218,
+            "difficulty": 8.34176237,
+            "retrievabilityBefore": 0.9,
+            "elapsedDays": 5,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2026-01-07T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 0.95350218,
+            "difficulty": 8.34176237,
+            "retrievabilityBefore": 0.9,
+            "elapsedDays": 5,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2026-01-07T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": []
+      },
+      {
+        "id": "FSRS-G-EARLY",
+        "branch": "early-review",
+        "status": "conformant",
+        "expected": [
+          {
+            "stability": 8.26920361,
+            "difficulty": 4.99022837,
+            "retrievabilityBefore": 0.97276956,
+            "elapsedDays": 1,
+            "roundedIntervalDays": 8,
+            "rawDueAt": "2026-01-10T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 8.26920361,
+            "difficulty": 4.99022837,
+            "retrievabilityBefore": 0.97276956,
+            "elapsedDays": 1,
+            "roundedIntervalDays": 8,
+            "rawDueAt": "2026-01-10T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": []
+      },
+      {
+        "id": "FSRS-G-OVERDUE",
+        "branch": "overdue-review",
+        "status": "conformant",
+        "expected": [
+          {
+            "stability": 49.01318252,
+            "difficulty": 4.99022837,
+            "retrievabilityBefore": 0.67523665,
+            "elapsedDays": 60,
+            "roundedIntervalDays": 49,
+            "rawDueAt": "2026-04-20T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 49.01318252,
+            "difficulty": 4.99022837,
+            "retrievabilityBefore": 0.67523665,
+            "elapsedDays": 60,
+            "roundedIntervalDays": 49,
+            "rawDueAt": "2026-04-20T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": []
+      },
+      {
+        "id": "FSRS-G-LONG",
+        "branch": "long-interval",
+        "status": "conformant",
+        "expected": [
+          {
+            "stability": 650.22859258,
+            "difficulty": 7.98722837,
+            "retrievabilityBefore": 0.40367961,
+            "elapsedDays": 36500,
+            "roundedIntervalDays": 650,
+            "rawDueAt": "2127-09-19T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 650.22859258,
+            "difficulty": 7.98722837,
+            "retrievabilityBefore": 0.40367961,
+            "elapsedDays": 36500,
+            "roundedIntervalDays": 650,
+            "rawDueAt": "2127-09-19T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": []
+      },
+      {
+        "id": "FSRS-G-BOUND-LOW",
+        "branch": "state-boundaries",
+        "status": "conformant",
+        "expected": [
+          {
+            "stability": 0.001,
+            "difficulty": 7.02698957,
+            "retrievabilityBefore": 0.34566944,
+            "elapsedDays": 1,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2026-01-03T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 0.001,
+            "difficulty": 7.02698957,
+            "retrievabilityBefore": 0.34566944,
+            "elapsedDays": 1,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2026-01-03T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": []
+      },
+      {
+        "id": "FSRS-G-BOUND-HIGH",
+        "branch": "state-boundaries",
+        "status": "conformant",
+        "expected": [
+          {
+            "stability": 36500,
+            "difficulty": 9.98522837,
+            "retrievabilityBefore": 0.9,
+            "elapsedDays": 36500,
+            "roundedIntervalDays": 36500,
+            "rawDueAt": "2225-11-14T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 36500,
+            "difficulty": 9.98522837,
+            "retrievabilityBefore": 0.9,
+            "elapsedDays": 36500,
+            "roundedIntervalDays": 36500,
+            "rawDueAt": "2225-11-14T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": []
+      },
+      {
+        "id": "FSRS-G-DECIMAL",
+        "branch": "decimal-inputs",
+        "status": "conformant",
+        "expected": [
+          {
+            "stability": 8.82025912,
+            "difficulty": 6.584039,
+            "retrievabilityBefore": 0.95126224,
+            "elapsedDays": 2,
+            "roundedIntervalDays": 9,
+            "rawDueAt": "2026-01-12T18:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 8.82025912,
+            "difficulty": 6.584039,
+            "retrievabilityBefore": 0.95126224,
+            "elapsedDays": 2,
+            "roundedIntervalDays": 9,
+            "rawDueAt": "2026-01-12T18:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": []
+      },
+      {
+        "id": "FSRS-G-FLOOR-BEFORE",
+        "branch": "decimal-inputs",
+        "status": "conformant",
+        "expected": [
+          {
+            "stability": 5,
+            "difficulty": 4.99022837,
+            "retrievabilityBefore": 1,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 5,
+            "rawDueAt": "2026-01-06T23:59:59.913Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 5,
+            "difficulty": 4.99022837,
+            "retrievabilityBefore": 1,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 5,
+            "rawDueAt": "2026-01-06T23:59:59.913Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": []
+      },
+      {
+        "id": "FSRS-G-FLOOR-AT",
+        "branch": "decimal-inputs",
+        "status": "conformant",
+        "expected": [
+          {
+            "stability": 8.26920361,
+            "difficulty": 4.99022837,
+            "retrievabilityBefore": 0.97276956,
+            "elapsedDays": 1,
+            "roundedIntervalDays": 8,
+            "rawDueAt": "2026-01-10T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 8.26920361,
+            "difficulty": 4.99022837,
+            "retrievabilityBefore": 0.97276956,
+            "elapsedDays": 1,
+            "roundedIntervalDays": 8,
+            "rawDueAt": "2026-01-10T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": []
+      },
+      {
+        "id": "FSRS-G-REPEAT",
+        "branch": "repeatability",
+        "status": "conformant",
+        "expected": [
+          {
+            "stability": 17.36151271,
+            "difficulty": 4.99022837,
+            "retrievabilityBefore": 0.9,
+            "elapsedDays": 5,
+            "roundedIntervalDays": 17,
+            "rawDueAt": "2026-01-23T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 17.36151271,
+            "difficulty": 4.99022837,
+            "retrievabilityBefore": 0.9,
+            "elapsedDays": 5,
+            "roundedIntervalDays": 17,
+            "rawDueAt": "2026-01-23T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": []
+      },
+      {
+        "id": "FSRS-G-REPLAY",
+        "branch": "historical-replay",
+        "status": "conformant",
+        "expected": [
+          {
+            "stability": 17.36151271,
+            "difficulty": 4.99022837,
+            "retrievabilityBefore": 0.9,
+            "elapsedDays": 5,
+            "roundedIntervalDays": 17,
+            "rawDueAt": "2026-01-23T00:00:00.000Z"
+          },
+          {
+            "stability": 1.67751464,
+            "difficulty": 8.33855051,
+            "retrievabilityBefore": 0.94993494,
+            "elapsedDays": 7,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2026-01-15T00:00:00.000Z"
+          },
+          {
+            "stability": 10.58621131,
+            "difficulty": 8.32544033,
+            "retrievabilityBefore": 0.63750843,
+            "elapsedDays": 30,
+            "roundedIntervalDays": 11,
+            "rawDueAt": "2026-02-23T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 17.36151271,
+            "difficulty": 4.99022837,
+            "retrievabilityBefore": 0.9,
+            "elapsedDays": 5,
+            "roundedIntervalDays": 17,
+            "rawDueAt": "2026-01-23T00:00:00.000Z"
+          },
+          {
+            "stability": 1.67751464,
+            "difficulty": 8.33855051,
+            "retrievabilityBefore": 0.94993494,
+            "elapsedDays": 7,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2026-01-15T00:00:00.000Z"
+          },
+          {
+            "stability": 10.58621131,
+            "difficulty": 8.32544033,
+            "retrievabilityBefore": 0.63750843,
+            "elapsedDays": 30,
+            "roundedIntervalDays": 11,
+            "rawDueAt": "2026-02-23T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": []
+      },
+      {
+        "id": "FSRS-G-RETENTION",
+        "branch": "retention-target",
+        "status": "conformant",
+        "expected": [
+          {
+            "stability": 17.36151271,
+            "difficulty": 4.99022837,
+            "retrievabilityBefore": 0.9,
+            "elapsedDays": 5,
+            "roundedIntervalDays": 7,
+            "rawDueAt": "2026-01-13T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 17.36151271,
+            "difficulty": 4.99022837,
+            "retrievabilityBefore": 0.9,
+            "elapsedDays": 5,
+            "roundedIntervalDays": 7,
+            "rawDueAt": "2026-01-13T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": []
+      },
+      {
+        "id": "D2-FSRS-OFFSET-EQUIVALENT",
+        "branch": "same-day",
+        "status": "conformant",
+        "expected": [
+          {
+            "stability": 2.3065,
+            "difficulty": 2.11810397,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-11-08T21:00:00.000Z"
+          },
+          {
+            "stability": 2.3065,
+            "difficulty": 2.11121424,
+            "retrievabilityBefore": 1,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-11-08T21:00:00.000Z"
+          },
+          {
+            "stability": 0.77508398,
+            "difficulty": 7.39223814,
+            "retrievabilityBefore": 1,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-11-07T21:00:01.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 2.3065,
+            "difficulty": 2.11810397,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-11-08T21:00:00.000Z"
+          },
+          {
+            "stability": 2.3065,
+            "difficulty": 2.11121424,
+            "retrievabilityBefore": 1,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-11-08T21:00:00.000Z"
+          },
+          {
+            "stability": 0.77508398,
+            "difficulty": 7.39223814,
+            "retrievabilityBefore": 1,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-11-07T21:00:01.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": []
+      },
+      {
+        "id": "D2-FSRS-FLOOR-BEFORE",
+        "branch": "decimal-inputs",
+        "status": "conformant",
+        "expected": [
+          {
+            "stability": 5,
+            "difficulty": 4.99022837,
+            "retrievabilityBefore": 1,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 5,
+            "rawDueAt": "2030-11-12T20:59:59.999Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 5,
+            "difficulty": 4.99022837,
+            "retrievabilityBefore": 1,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 5,
+            "rawDueAt": "2030-11-12T20:59:59.999Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": []
+      },
+      {
+        "id": "D2-FSRS-FLOOR-AT",
+        "branch": "decimal-inputs",
+        "status": "conformant",
+        "expected": [
+          {
+            "stability": 8.26920361,
+            "difficulty": 4.99022837,
+            "retrievabilityBefore": 0.97276956,
+            "elapsedDays": 1,
+            "roundedIntervalDays": 8,
+            "rawDueAt": "2030-11-15T21:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 8.26920361,
+            "difficulty": 4.99022837,
+            "retrievabilityBefore": 0.97276956,
+            "elapsedDays": 1,
+            "roundedIntervalDays": 8,
+            "rawDueAt": "2030-11-15T21:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": []
+      },
+      {
+        "id": "D2-FSRS-ORIGINAL-SEQUENCE",
+        "branch": "historical-replay",
+        "status": "conformant",
+        "expected": [
+          {
+            "stability": 2.3065,
+            "difficulty": 2.11810397,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-11-08T21:00:00.000Z"
+          },
+          {
+            "stability": 13.82690327,
+            "difficulty": 2.11121424,
+            "retrievabilityBefore": 0.88094796,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 14,
+            "rawDueAt": "2030-11-23T21:00:00.000Z"
+          },
+          {
+            "stability": 49.9744847,
+            "difficulty": 2.1043314,
+            "retrievabilityBefore": 0.91493118,
+            "elapsedDays": 11,
+            "roundedIntervalDays": 50,
+            "rawDueAt": "2031-01-09T21:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 2.3065,
+            "difficulty": 2.11810397,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-11-08T21:00:00.000Z"
+          },
+          {
+            "stability": 13.82690327,
+            "difficulty": 2.11121424,
+            "retrievabilityBefore": 0.88094796,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 14,
+            "rawDueAt": "2030-11-23T21:00:00.000Z"
+          },
+          {
+            "stability": 49.9744847,
+            "difficulty": 2.1043314,
+            "retrievabilityBefore": 0.91493118,
+            "elapsedDays": 11,
+            "roundedIntervalDays": 50,
+            "rawDueAt": "2031-01-09T21:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": []
+      },
+      {
+        "id": "D2-FSRS-CORRECT-FIRST",
+        "branch": "historical-replay",
+        "status": "conformant",
+        "expected": [
+          {
+            "stability": 0.212,
+            "difficulty": 6.4133,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-11-07T21:00:00.000Z"
+          },
+          {
+            "stability": 2.76096548,
+            "difficulty": 6.40211507,
+            "retrievabilityBefore": 0.65950321,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-11-12T21:00:00.000Z"
+          },
+          {
+            "stability": 15.93449804,
+            "difficulty": 6.39094132,
+            "retrievabilityBefore": 0.78251448,
+            "elapsedDays": 11,
+            "roundedIntervalDays": 16,
+            "rawDueAt": "2030-12-06T21:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 0.212,
+            "difficulty": 6.4133,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-11-07T21:00:00.000Z"
+          },
+          {
+            "stability": 2.76096548,
+            "difficulty": 6.40211507,
+            "retrievabilityBefore": 0.65950321,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-11-12T21:00:00.000Z"
+          },
+          {
+            "stability": 15.93449804,
+            "difficulty": 6.39094132,
+            "retrievabilityBefore": 0.78251448,
+            "elapsedDays": 11,
+            "roundedIntervalDays": 16,
+            "rawDueAt": "2030-12-06T21:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": []
+      },
+      {
+        "id": "D2-FSRS-RETRACT-MIDDLE",
+        "branch": "historical-replay",
+        "status": "conformant",
+        "expected": [
+          {
+            "stability": 2.3065,
+            "difficulty": 2.11810397,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-11-08T21:00:00.000Z"
+          },
+          {
+            "stability": 28.7756461,
+            "difficulty": 2.11121424,
+            "retrievabilityBefore": 0.74158516,
+            "elapsedDays": 14,
+            "roundedIntervalDays": 29,
+            "rawDueAt": "2030-12-19T21:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 2.3065,
+            "difficulty": 2.11810397,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-11-08T21:00:00.000Z"
+          },
+          {
+            "stability": 28.7756461,
+            "difficulty": 2.11121424,
+            "retrievabilityBefore": 0.74158516,
+            "elapsedDays": 14,
+            "roundedIntervalDays": 29,
+            "rawDueAt": "2030-12-19T21:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": []
+      },
+      {
+        "id": "D2-FSRS-LEAP-DAY",
+        "branch": "historical-replay",
+        "status": "conformant",
+        "expected": [
+          {
+            "stability": 2.3065,
+            "difficulty": 2.11810397,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2028-03-01T21:00:00.000Z"
+          },
+          {
+            "stability": 0.57129918,
+            "difficulty": 7.39450274,
+            "retrievabilityBefore": 0.9468475,
+            "elapsedDays": 1,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2028-03-01T21:00:00.000Z"
+          },
+          {
+            "stability": 3.88608805,
+            "difficulty": 6.50909534,
+            "retrievabilityBefore": 0.85721183,
+            "elapsedDays": 1,
+            "roundedIntervalDays": 4,
+            "rawDueAt": "2028-03-05T21:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 2.3065,
+            "difficulty": 2.11810397,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2028-03-01T21:00:00.000Z"
+          },
+          {
+            "stability": 0.57129918,
+            "difficulty": 7.39450274,
+            "retrievabilityBefore": 0.9468475,
+            "elapsedDays": 1,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2028-03-01T21:00:00.000Z"
+          },
+          {
+            "stability": 3.88608805,
+            "difficulty": 6.50909534,
+            "retrievabilityBefore": 0.85721183,
+            "elapsedDays": 1,
+            "roundedIntervalDays": 4,
+            "rawDueAt": "2028-03-05T21:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": []
+      },
+      {
+        "id": "D2-FSRS-RETENTION-99",
+        "branch": "retention-target",
+        "status": "conformant",
+        "expected": [
+          {
+            "stability": 136.23765287,
+            "difficulty": 3.31446137,
+            "retrievabilityBefore": 0.5162914,
+            "elapsedDays": 366,
+            "roundedIntervalDays": 9,
+            "rawDueAt": "2031-11-16T21:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 136.23765287,
+            "difficulty": 3.31446137,
+            "retrievabilityBefore": 0.5162914,
+            "elapsedDays": 366,
+            "roundedIntervalDays": 9,
+            "rawDueAt": "2031-11-16T21:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": []
+      },
+      {
+        "id": "D2-FSRS-LONG-REPLAY",
+        "branch": "repeatability",
+        "status": "conformant",
+        "expected": [
+          {
+            "stability": 2.3065,
+            "difficulty": 2.11810397,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-01-03T00:00:00.000Z"
+          },
+          {
+            "stability": 9.23487052,
+            "difficulty": 4.75285849,
+            "retrievabilityBefore": 0.88094796,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 9,
+            "rawDueAt": "2030-01-13T00:00:00.000Z"
+          },
+          {
+            "stability": 17.98504855,
+            "difficulty": 4.743334,
+            "retrievabilityBefore": 0.95826386,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 18,
+            "rawDueAt": "2030-01-25T00:00:00.000Z"
+          },
+          {
+            "stability": 33.68885903,
+            "difficulty": 2.97202955,
+            "retrievabilityBefore": 0.97691612,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 34,
+            "rawDueAt": "2030-02-13T00:00:00.000Z"
+          },
+          {
+            "stability": 2.1831216,
+            "difficulty": 7.67518227,
+            "retrievabilityBefore": 0.98717676,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-01-15T00:00:00.000Z"
+          },
+          {
+            "stability": 6.45601748,
+            "difficulty": 7.66273546,
+            "retrievabilityBefore": 0.87672216,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 6,
+            "rawDueAt": "2030-01-22T00:00:00.000Z"
+          },
+          {
+            "stability": 9.28341276,
+            "difficulty": 8.43364325,
+            "retrievabilityBefore": 0.94375923,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 9,
+            "rawDueAt": "2030-01-28T00:00:00.000Z"
+          },
+          {
+            "stability": 12.87734431,
+            "difficulty": 8.42043798,
+            "retrievabilityBefore": 0.95845063,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 13,
+            "rawDueAt": "2030-02-04T00:00:00.000Z"
+          },
+          {
+            "stability": 19.52782154,
+            "difficulty": 7.87785033,
+            "retrievabilityBefore": 0.96877834,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 20,
+            "rawDueAt": "2030-02-14T00:00:00.000Z"
+          },
+          {
+            "stability": 1.64244007,
+            "difficulty": 9.2876922,
+            "retrievabilityBefore": 0.97859956,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-01-30T00:00:00.000Z"
+          },
+          {
+            "stability": 3.72286557,
+            "difficulty": 9.27363288,
+            "retrievabilityBefore": 0.85363492,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 4,
+            "rawDueAt": "2030-02-04T00:00:00.000Z"
+          },
+          {
+            "stability": 5.15112691,
+            "difficulty": 9.50303203,
+            "retrievabilityBefore": 0.91413494,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 5,
+            "rawDueAt": "2030-02-08T00:00:00.000Z"
+          },
+          {
+            "stability": 7.25041408,
+            "difficulty": 9.48875737,
+            "retrievabilityBefore": 0.93272096,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 7,
+            "rawDueAt": "2030-02-13T00:00:00.000Z"
+          },
+          {
+            "stability": 11.23684463,
+            "difficulty": 9.30315228,
+            "retrievabilityBefore": 0.94885081,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 11,
+            "rawDueAt": "2030-02-20T00:00:00.000Z"
+          },
+          {
+            "stability": 1.2773669,
+            "difficulty": 9.75617926,
+            "retrievabilityBefore": 0.96478575,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-02-13T00:00:00.000Z"
+          },
+          {
+            "stability": 2.69873033,
+            "difficulty": 9.74165145,
+            "retrievabilityBefore": 0.83175609,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-02-18T00:00:00.000Z"
+          },
+          {
+            "stability": 3.70366139,
+            "difficulty": 9.81372456,
+            "retrievabilityBefore": 0.8925659,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 4,
+            "rawDueAt": "2030-02-22T00:00:00.000Z"
+          },
+          {
+            "stability": 5.33486216,
+            "difficulty": 9.7991392,
+            "retrievabilityBefore": 0.91381279,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 5,
+            "rawDueAt": "2030-02-26T00:00:00.000Z"
+          },
+          {
+            "stability": 8.49254983,
+            "difficulty": 9.71724925,
+            "retrievabilityBefore": 0.93453436,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 8,
+            "rawDueAt": "2030-03-04T00:00:00.000Z"
+          },
+          {
+            "stability": 1.1209848,
+            "difficulty": 9.89229012,
+            "retrievabilityBefore": 0.95518154,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-02-28T00:00:00.000Z"
+          },
+          {
+            "stability": 2.34189304,
+            "difficulty": 9.8776262,
+            "retrievabilityBefore": 0.81993643,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-03-04T00:00:00.000Z"
+          },
+          {
+            "stability": 3.21956676,
+            "difficulty": 9.90399094,
+            "retrievabilityBefore": 0.88210423,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-03-08T00:00:00.000Z"
+          },
+          {
+            "stability": 4.70655692,
+            "difficulty": 9.88931532,
+            "retrievabilityBefore": 0.90477883,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 5,
+            "rawDueAt": "2030-03-13T00:00:00.000Z"
+          },
+          {
+            "stability": 7.61274356,
+            "difficulty": 9.83755803,
+            "retrievabilityBefore": 0.92787891,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 8,
+            "rawDueAt": "2030-03-19T00:00:00.000Z"
+          },
+          {
+            "stability": 1.06434052,
+            "difficulty": 9.9318348,
+            "retrievabilityBefore": 0.9508765,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-03-15T00:00:00.000Z"
+          },
+          {
+            "stability": 2.22396799,
+            "difficulty": 9.91713133,
+            "retrievabilityBefore": 0.81516996,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-03-19T00:00:00.000Z"
+          },
+          {
+            "stability": 3.06356384,
+            "difficulty": 9.93021629,
+            "retrievabilityBefore": 0.87815601,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-03-23T00:00:00.000Z"
+          },
+          {
+            "stability": 4.50698314,
+            "difficulty": 9.91551444,
+            "retrievabilityBefore": 0.90143395,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 5,
+            "rawDueAt": "2030-03-28T00:00:00.000Z"
+          },
+          {
+            "stability": 7.33829079,
+            "difficulty": 9.87251167,
+            "retrievabilityBefore": 0.92546605,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 7,
+            "rawDueAt": "2030-04-02T00:00:00.000Z"
+          },
+          {
+            "stability": 1.04585399,
+            "difficulty": 9.94332383,
+            "retrievabilityBefore": 0.94935745,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-03-30T00:00:00.000Z"
+          },
+          {
+            "stability": 2.18703726,
+            "difficulty": 9.92860888,
+            "retrievabilityBefore": 0.81355061,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-04-03T00:00:00.000Z"
+          },
+          {
+            "stability": 3.01536102,
+            "difficulty": 9.93783562,
+            "retrievabilityBefore": 0.87686117,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-04-07T00:00:00.000Z"
+          },
+          {
+            "stability": 4.4458538,
+            "difficulty": 9.92312615,
+            "retrievabilityBefore": 0.90035049,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 4,
+            "rawDueAt": "2030-04-11T00:00:00.000Z"
+          },
+          {
+            "stability": 7.25515124,
+            "difficulty": 9.88266686,
+            "retrievabilityBefore": 0.92469365,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 7,
+            "rawDueAt": "2030-04-17T00:00:00.000Z"
+          },
+          {
+            "stability": 1.04017132,
+            "difficulty": 9.94666176,
+            "retrievabilityBefore": 0.94887839,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-04-14T00:00:00.000Z"
+          },
+          {
+            "stability": 2.17589324,
+            "difficulty": 9.93194347,
+            "retrievabilityBefore": 0.81304621,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-04-18T00:00:00.000Z"
+          },
+          {
+            "stability": 3.00091065,
+            "difficulty": 9.94004927,
+            "retrievabilityBefore": 0.87646468,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-04-22T00:00:00.000Z"
+          },
+          {
+            "stability": 4.42761156,
+            "difficulty": 9.92533759,
+            "retrievabilityBefore": 0.90002085,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 4,
+            "rawDueAt": "2030-04-26T00:00:00.000Z"
+          },
+          {
+            "stability": 7.23048268,
+            "difficulty": 9.88561726,
+            "retrievabilityBefore": 0.92445997,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 7,
+            "rawDueAt": "2030-05-02T00:00:00.000Z"
+          },
+          {
+            "stability": 1.03847775,
+            "difficulty": 9.94763154,
+            "retrievabilityBefore": 0.94873448,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-04-29T00:00:00.000Z"
+          },
+          {
+            "stability": 2.17259879,
+            "difficulty": 9.93291228,
+            "retrievabilityBefore": 0.81289528,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-05-03T00:00:00.000Z"
+          },
+          {
+            "stability": 2.99665141,
+            "difficulty": 9.94069241,
+            "retrievabilityBefore": 0.87634695,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-05-07T00:00:00.000Z"
+          },
+          {
+            "stability": 4.42224626,
+            "difficulty": 9.92598009,
+            "retrievabilityBefore": 0.89992325,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 4,
+            "rawDueAt": "2030-05-11T00:00:00.000Z"
+          },
+          {
+            "stability": 7.2232466,
+            "difficulty": 9.88647445,
+            "retrievabilityBefore": 0.92439096,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 7,
+            "rawDueAt": "2030-05-17T00:00:00.000Z"
+          },
+          {
+            "stability": 1.03798034,
+            "difficulty": 9.94791329,
+            "retrievabilityBefore": 0.94869211,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-05-14T00:00:00.000Z"
+          },
+          {
+            "stability": 2.17163447,
+            "difficulty": 9.93319375,
+            "retrievabilityBefore": 0.8128509,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-05-18T00:00:00.000Z"
+          },
+          {
+            "stability": 2.99540631,
+            "difficulty": 9.94087926,
+            "retrievabilityBefore": 0.87631244,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-05-22T00:00:00.000Z"
+          },
+          {
+            "stability": 4.42067916,
+            "difficulty": 9.92616675,
+            "retrievabilityBefore": 0.89989469,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 4,
+            "rawDueAt": "2030-05-26T00:00:00.000Z"
+          },
+          {
+            "stability": 7.22113555,
+            "difficulty": 9.88672348,
+            "retrievabilityBefore": 0.92437078,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 7,
+            "rawDueAt": "2030-06-01T00:00:00.000Z"
+          },
+          {
+            "stability": 1.03783518,
+            "difficulty": 9.94799515,
+            "retrievabilityBefore": 0.94867973,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-05-29T00:00:00.000Z"
+          },
+          {
+            "stability": 2.17135347,
+            "difficulty": 9.93327552,
+            "retrievabilityBefore": 0.81283794,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-06-02T00:00:00.000Z"
+          },
+          {
+            "stability": 2.99504368,
+            "difficulty": 9.94093355,
+            "retrievabilityBefore": 0.87630238,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-06-06T00:00:00.000Z"
+          },
+          {
+            "stability": 4.42022305,
+            "difficulty": 9.92622099,
+            "retrievabilityBefore": 0.89988636,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 4,
+            "rawDueAt": "2030-06-10T00:00:00.000Z"
+          },
+          {
+            "stability": 7.22052151,
+            "difficulty": 9.88679585,
+            "retrievabilityBefore": 0.9243649,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 7,
+            "rawDueAt": "2030-06-16T00:00:00.000Z"
+          },
+          {
+            "stability": 1.03779295,
+            "difficulty": 9.94801894,
+            "retrievabilityBefore": 0.94867613,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-06-13T00:00:00.000Z"
+          },
+          {
+            "stability": 2.17127174,
+            "difficulty": 9.93329929,
+            "retrievabilityBefore": 0.81283417,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-06-17T00:00:00.000Z"
+          },
+          {
+            "stability": 2.99493825,
+            "difficulty": 9.94094933,
+            "retrievabilityBefore": 0.87629945,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-06-21T00:00:00.000Z"
+          },
+          {
+            "stability": 4.42009042,
+            "difficulty": 9.92623675,
+            "retrievabilityBefore": 0.89988394,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 4,
+            "rawDueAt": "2030-06-25T00:00:00.000Z"
+          },
+          {
+            "stability": 7.22034299,
+            "difficulty": 9.88681688,
+            "retrievabilityBefore": 0.92436319,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 7,
+            "rawDueAt": "2030-07-01T00:00:00.000Z"
+          },
+          {
+            "stability": 1.03778066,
+            "difficulty": 9.94802585,
+            "retrievabilityBefore": 0.94867509,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-06-28T00:00:00.000Z"
+          }
+        ],
+        "actual": [
+          {
+            "stability": 2.3065,
+            "difficulty": 2.11810397,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-01-03T00:00:00.000Z"
+          },
+          {
+            "stability": 9.23487052,
+            "difficulty": 4.75285849,
+            "retrievabilityBefore": 0.88094796,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 9,
+            "rawDueAt": "2030-01-13T00:00:00.000Z"
+          },
+          {
+            "stability": 17.98504855,
+            "difficulty": 4.743334,
+            "retrievabilityBefore": 0.95826386,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 18,
+            "rawDueAt": "2030-01-25T00:00:00.000Z"
+          },
+          {
+            "stability": 33.68885903,
+            "difficulty": 2.97202955,
+            "retrievabilityBefore": 0.97691612,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 34,
+            "rawDueAt": "2030-02-13T00:00:00.000Z"
+          },
+          {
+            "stability": 2.1831216,
+            "difficulty": 7.67518227,
+            "retrievabilityBefore": 0.98717676,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-01-15T00:00:00.000Z"
+          },
+          {
+            "stability": 6.45601748,
+            "difficulty": 7.66273546,
+            "retrievabilityBefore": 0.87672216,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 6,
+            "rawDueAt": "2030-01-22T00:00:00.000Z"
+          },
+          {
+            "stability": 9.28341276,
+            "difficulty": 8.43364325,
+            "retrievabilityBefore": 0.94375923,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 9,
+            "rawDueAt": "2030-01-28T00:00:00.000Z"
+          },
+          {
+            "stability": 12.87734431,
+            "difficulty": 8.42043798,
+            "retrievabilityBefore": 0.95845063,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 13,
+            "rawDueAt": "2030-02-04T00:00:00.000Z"
+          },
+          {
+            "stability": 19.52782154,
+            "difficulty": 7.87785033,
+            "retrievabilityBefore": 0.96877834,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 20,
+            "rawDueAt": "2030-02-14T00:00:00.000Z"
+          },
+          {
+            "stability": 1.64244007,
+            "difficulty": 9.2876922,
+            "retrievabilityBefore": 0.97859956,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-01-30T00:00:00.000Z"
+          },
+          {
+            "stability": 3.72286557,
+            "difficulty": 9.27363288,
+            "retrievabilityBefore": 0.85363492,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 4,
+            "rawDueAt": "2030-02-04T00:00:00.000Z"
+          },
+          {
+            "stability": 5.15112691,
+            "difficulty": 9.50303203,
+            "retrievabilityBefore": 0.91413494,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 5,
+            "rawDueAt": "2030-02-08T00:00:00.000Z"
+          },
+          {
+            "stability": 7.25041408,
+            "difficulty": 9.48875737,
+            "retrievabilityBefore": 0.93272096,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 7,
+            "rawDueAt": "2030-02-13T00:00:00.000Z"
+          },
+          {
+            "stability": 11.23684463,
+            "difficulty": 9.30315228,
+            "retrievabilityBefore": 0.94885081,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 11,
+            "rawDueAt": "2030-02-20T00:00:00.000Z"
+          },
+          {
+            "stability": 1.2773669,
+            "difficulty": 9.75617926,
+            "retrievabilityBefore": 0.96478575,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-02-13T00:00:00.000Z"
+          },
+          {
+            "stability": 2.69873033,
+            "difficulty": 9.74165145,
+            "retrievabilityBefore": 0.83175609,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-02-18T00:00:00.000Z"
+          },
+          {
+            "stability": 3.70366139,
+            "difficulty": 9.81372456,
+            "retrievabilityBefore": 0.8925659,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 4,
+            "rawDueAt": "2030-02-22T00:00:00.000Z"
+          },
+          {
+            "stability": 5.33486216,
+            "difficulty": 9.7991392,
+            "retrievabilityBefore": 0.91381279,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 5,
+            "rawDueAt": "2030-02-26T00:00:00.000Z"
+          },
+          {
+            "stability": 8.49254983,
+            "difficulty": 9.71724925,
+            "retrievabilityBefore": 0.93453436,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 8,
+            "rawDueAt": "2030-03-04T00:00:00.000Z"
+          },
+          {
+            "stability": 1.1209848,
+            "difficulty": 9.89229012,
+            "retrievabilityBefore": 0.95518154,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-02-28T00:00:00.000Z"
+          },
+          {
+            "stability": 2.34189304,
+            "difficulty": 9.8776262,
+            "retrievabilityBefore": 0.81993643,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-03-04T00:00:00.000Z"
+          },
+          {
+            "stability": 3.21956676,
+            "difficulty": 9.90399094,
+            "retrievabilityBefore": 0.88210423,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-03-08T00:00:00.000Z"
+          },
+          {
+            "stability": 4.70655692,
+            "difficulty": 9.88931532,
+            "retrievabilityBefore": 0.90477883,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 5,
+            "rawDueAt": "2030-03-13T00:00:00.000Z"
+          },
+          {
+            "stability": 7.61274356,
+            "difficulty": 9.83755803,
+            "retrievabilityBefore": 0.92787891,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 8,
+            "rawDueAt": "2030-03-19T00:00:00.000Z"
+          },
+          {
+            "stability": 1.06434052,
+            "difficulty": 9.9318348,
+            "retrievabilityBefore": 0.9508765,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-03-15T00:00:00.000Z"
+          },
+          {
+            "stability": 2.22396799,
+            "difficulty": 9.91713133,
+            "retrievabilityBefore": 0.81516996,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-03-19T00:00:00.000Z"
+          },
+          {
+            "stability": 3.06356384,
+            "difficulty": 9.93021629,
+            "retrievabilityBefore": 0.87815601,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-03-23T00:00:00.000Z"
+          },
+          {
+            "stability": 4.50698314,
+            "difficulty": 9.91551444,
+            "retrievabilityBefore": 0.90143395,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 5,
+            "rawDueAt": "2030-03-28T00:00:00.000Z"
+          },
+          {
+            "stability": 7.33829079,
+            "difficulty": 9.87251167,
+            "retrievabilityBefore": 0.92546605,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 7,
+            "rawDueAt": "2030-04-02T00:00:00.000Z"
+          },
+          {
+            "stability": 1.04585399,
+            "difficulty": 9.94332383,
+            "retrievabilityBefore": 0.94935745,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-03-30T00:00:00.000Z"
+          },
+          {
+            "stability": 2.18703726,
+            "difficulty": 9.92860888,
+            "retrievabilityBefore": 0.81355061,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-04-03T00:00:00.000Z"
+          },
+          {
+            "stability": 3.01536102,
+            "difficulty": 9.93783562,
+            "retrievabilityBefore": 0.87686117,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-04-07T00:00:00.000Z"
+          },
+          {
+            "stability": 4.4458538,
+            "difficulty": 9.92312615,
+            "retrievabilityBefore": 0.90035049,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 4,
+            "rawDueAt": "2030-04-11T00:00:00.000Z"
+          },
+          {
+            "stability": 7.25515124,
+            "difficulty": 9.88266686,
+            "retrievabilityBefore": 0.92469365,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 7,
+            "rawDueAt": "2030-04-17T00:00:00.000Z"
+          },
+          {
+            "stability": 1.04017132,
+            "difficulty": 9.94666176,
+            "retrievabilityBefore": 0.94887839,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-04-14T00:00:00.000Z"
+          },
+          {
+            "stability": 2.17589324,
+            "difficulty": 9.93194347,
+            "retrievabilityBefore": 0.81304621,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-04-18T00:00:00.000Z"
+          },
+          {
+            "stability": 3.00091065,
+            "difficulty": 9.94004927,
+            "retrievabilityBefore": 0.87646468,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-04-22T00:00:00.000Z"
+          },
+          {
+            "stability": 4.42761156,
+            "difficulty": 9.92533759,
+            "retrievabilityBefore": 0.90002085,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 4,
+            "rawDueAt": "2030-04-26T00:00:00.000Z"
+          },
+          {
+            "stability": 7.23048268,
+            "difficulty": 9.88561726,
+            "retrievabilityBefore": 0.92445997,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 7,
+            "rawDueAt": "2030-05-02T00:00:00.000Z"
+          },
+          {
+            "stability": 1.03847775,
+            "difficulty": 9.94763154,
+            "retrievabilityBefore": 0.94873448,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-04-29T00:00:00.000Z"
+          },
+          {
+            "stability": 2.17259879,
+            "difficulty": 9.93291228,
+            "retrievabilityBefore": 0.81289528,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-05-03T00:00:00.000Z"
+          },
+          {
+            "stability": 2.99665141,
+            "difficulty": 9.94069241,
+            "retrievabilityBefore": 0.87634695,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-05-07T00:00:00.000Z"
+          },
+          {
+            "stability": 4.42224626,
+            "difficulty": 9.92598009,
+            "retrievabilityBefore": 0.89992325,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 4,
+            "rawDueAt": "2030-05-11T00:00:00.000Z"
+          },
+          {
+            "stability": 7.2232466,
+            "difficulty": 9.88647445,
+            "retrievabilityBefore": 0.92439096,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 7,
+            "rawDueAt": "2030-05-17T00:00:00.000Z"
+          },
+          {
+            "stability": 1.03798034,
+            "difficulty": 9.94791329,
+            "retrievabilityBefore": 0.94869211,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-05-14T00:00:00.000Z"
+          },
+          {
+            "stability": 2.17163447,
+            "difficulty": 9.93319375,
+            "retrievabilityBefore": 0.8128509,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-05-18T00:00:00.000Z"
+          },
+          {
+            "stability": 2.99540631,
+            "difficulty": 9.94087926,
+            "retrievabilityBefore": 0.87631244,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-05-22T00:00:00.000Z"
+          },
+          {
+            "stability": 4.42067916,
+            "difficulty": 9.92616675,
+            "retrievabilityBefore": 0.89989469,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 4,
+            "rawDueAt": "2030-05-26T00:00:00.000Z"
+          },
+          {
+            "stability": 7.22113555,
+            "difficulty": 9.88672348,
+            "retrievabilityBefore": 0.92437078,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 7,
+            "rawDueAt": "2030-06-01T00:00:00.000Z"
+          },
+          {
+            "stability": 1.03783518,
+            "difficulty": 9.94799515,
+            "retrievabilityBefore": 0.94867973,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-05-29T00:00:00.000Z"
+          },
+          {
+            "stability": 2.17135347,
+            "difficulty": 9.93327552,
+            "retrievabilityBefore": 0.81283794,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-06-02T00:00:00.000Z"
+          },
+          {
+            "stability": 2.99504368,
+            "difficulty": 9.94093355,
+            "retrievabilityBefore": 0.87630238,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-06-06T00:00:00.000Z"
+          },
+          {
+            "stability": 4.42022305,
+            "difficulty": 9.92622099,
+            "retrievabilityBefore": 0.89988636,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 4,
+            "rawDueAt": "2030-06-10T00:00:00.000Z"
+          },
+          {
+            "stability": 7.22052151,
+            "difficulty": 9.88679585,
+            "retrievabilityBefore": 0.9243649,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 7,
+            "rawDueAt": "2030-06-16T00:00:00.000Z"
+          },
+          {
+            "stability": 1.03779295,
+            "difficulty": 9.94801894,
+            "retrievabilityBefore": 0.94867613,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-06-13T00:00:00.000Z"
+          },
+          {
+            "stability": 2.17127174,
+            "difficulty": 9.93329929,
+            "retrievabilityBefore": 0.81283417,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 2,
+            "rawDueAt": "2030-06-17T00:00:00.000Z"
+          },
+          {
+            "stability": 2.99493825,
+            "difficulty": 9.94094933,
+            "retrievabilityBefore": 0.87629945,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 3,
+            "rawDueAt": "2030-06-21T00:00:00.000Z"
+          },
+          {
+            "stability": 4.42009042,
+            "difficulty": 9.92623675,
+            "retrievabilityBefore": 0.89988394,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 4,
+            "rawDueAt": "2030-06-25T00:00:00.000Z"
+          },
+          {
+            "stability": 7.22034299,
+            "difficulty": 9.88681688,
+            "retrievabilityBefore": 0.92436319,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 7,
+            "rawDueAt": "2030-07-01T00:00:00.000Z"
+          },
+          {
+            "stability": 1.03778066,
+            "difficulty": 9.94802585,
+            "retrievabilityBefore": 0.94867509,
+            "elapsedDays": 3,
+            "roundedIntervalDays": 1,
+            "rawDueAt": "2030-06-28T00:00:00.000Z"
+          }
+        ],
+        "delta": [
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": null,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          },
+          {
+            "stability": 0,
+            "difficulty": 0,
+            "retrievabilityBefore": 0,
+            "elapsedDays": 0,
+            "roundedIntervalDays": 0
+          }
+        ],
+        "issues": []
+      }
+    ],
+    "blockers": [],
+    "scope": "Memory-state core plus raw whole-day interval; excludes HME policies, BasicScheduler learning-step/monotonic policies, and scientific validity"
+  },
+  "productionDecision": "BLOCKED; numerical candidate success never selects an algorithm or migrates stored evidence",
+  "limitations": [
+    "Pinned local upstream bytes independently executed; no new online provenance authentication",
+    "No cryptographic Sigstore verification",
+    "No scientific approval, user schedule activation or database migration"
+  ]
+}

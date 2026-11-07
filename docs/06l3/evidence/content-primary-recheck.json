@@ -1,0 +1,992 @@
+{
+  "checkedAt": "2026-11-07T12:18:43.451Z",
+  "purpose": "supplemental source mechanical audit only",
+  "acquisition": {
+    "sha256": "6933e133dd56db778c801bf738848454e43648105a151e8d84d86a7cae39ec5f",
+    "byteLength": 1396087,
+    "recordCount": 6236,
+    "inputUnchanged": true,
+    "scientificApproval": false,
+    "productionActivation": false
+  },
+  "primary": {
+    "auditVersion": "mulazama-content-audit/1",
+    "structuralStatus": "passed",
+    "scientificApproval": "not_granted",
+    "releaseEligibility": "requires-independent-content-release",
+    "testOnly": false,
+    "sourceHash": "6933e133dd56db778c801bf738848454e43648105a151e8d84d86a7cae39ec5f",
+    "byteLength": 1396087,
+    "profile": {
+      "schemaVersion": 1,
+      "editionId": "candidate-tanzil-uthmani-1.1-marks-sajdah-tatweel",
+      "numbering": "Tanzil metadata1.0 indexed surah/ayah identifiers; printed edition equivalence not approved",
+      "basmalaPolicy": "Preserve publisher indexed records exactly; no insertion, removal or splitting. Scientific basmala convention awaits review.",
+      "expectedAyahsPerSurah": [
+        7,
+        286,
+        200,
+        176,
+        120,
+        165,
+        206,
+        75,
+        129,
+        109,
+        123,
+        111,
+        43,
+        52,
+        99,
+        128,
+        111,
+        110,
+        98,
+        135,
+        112,
+        78,
+        118,
+        64,
+        77,
+        227,
+        93,
+        88,
+        69,
+        60,
+        34,
+        30,
+        73,
+        54,
+        45,
+        83,
+        182,
+        88,
+        75,
+        85,
+        54,
+        53,
+        89,
+        59,
+        37,
+        35,
+        38,
+        29,
+        18,
+        45,
+        60,
+        49,
+        62,
+        55,
+        78,
+        96,
+        29,
+        22,
+        24,
+        13,
+        14,
+        11,
+        11,
+        18,
+        12,
+        12,
+        30,
+        52,
+        52,
+        44,
+        28,
+        28,
+        20,
+        56,
+        40,
+        31,
+        50,
+        40,
+        46,
+        42,
+        29,
+        19,
+        36,
+        25,
+        22,
+        17,
+        19,
+        26,
+        30,
+        20,
+        15,
+        21,
+        11,
+        8,
+        8,
+        19,
+        5,
+        8,
+        8,
+        11,
+        11,
+        8,
+        3,
+        9,
+        5,
+        4,
+        7,
+        3,
+        6,
+        3,
+        5,
+        4,
+        5,
+        6
+      ],
+      "provenance": {
+        "publisher": "Tanzil Project",
+        "url": "https://tanzil.net/res/text/metadata/quran-data.xml",
+        "version": "1.0",
+        "documentSha256": "8867c1d88191472adec9db694b3cd9f135b1a2ef580574d32cf888dcb22c5c7a"
+      },
+      "testOnly": false
+    },
+    "provenance": {
+      "publisher": "Tanzil Project",
+      "url": "https://tanzil.net/pub/download/index.php?quranType=uthmani&outType=txt-2&marks=true&sajdah=true&tatweel=true&agree=true",
+      "version": "1.1",
+      "lineageId": "tanzil-uthmani-1.1"
+    },
+    "counts": {
+      "surahs": 114,
+      "ayahs": 6236
+    },
+    "checks": {
+      "utf8": "passed",
+      "hash": "passed",
+      "numbering": "passed",
+      "order": "passed"
+    },
+    "issues": []
+  },
+  "metadataAgreement": {
+    "separatePublisherArtifact": true,
+    "independentPublisher": false,
+    "surahs": 114,
+    "ayas": 6236
+  },
+  "perAyahSourceSlicesExact": true,
+  "inventory": {
+    "codepoints": [
+      {
+        "codepoint": "U+0020",
+        "count": 76024,
+        "category": "space"
+      },
+      {
+        "codepoint": "U+0621",
+        "count": 2782,
+        "category": "other"
+      },
+      {
+        "codepoint": "U+0623",
+        "count": 8900,
+        "category": "other"
+      },
+      {
+        "codepoint": "U+0624",
+        "count": 706,
+        "category": "other"
+      },
+      {
+        "codepoint": "U+0625",
+        "count": 5088,
+        "category": "other"
+      },
+      {
+        "codepoint": "U+0626",
+        "count": 921,
+        "category": "other"
+      },
+      {
+        "codepoint": "U+0627",
+        "count": 25184,
+        "category": "other"
+      },
+      {
+        "codepoint": "U+0628",
+        "count": 11603,
+        "category": "other"
+      },
+      {
+        "codepoint": "U+0629",
+        "count": 2344,
+        "category": "other"
+      },
+      {
+        "codepoint": "U+062A",
+        "count": 10520,
+        "category": "other"
+      },
+      {
+        "codepoint": "U+062B",
+        "count": 1414,
+        "category": "other"
+      },
+      {
+        "codepoint": "U+062C",
+        "count": 3317,
+        "category": "other"
+      },
+      {
+        "codepoint": "U+062D",
+        "count": 4364,
+        "category": "other"
+      },
+      {
+        "codepoint": "U+062E",
+        "count": 2497,
+        "category": "other"
+      },
+      {
+        "codepoint": "U+062F",
+        "count": 5991,
+        "category": "other"
+      },
+      {
+        "codepoint": "U+0630",
+        "count": 4932,
+        "category": "other"
+      },
+      {
+        "codepoint": "U+0631",
+        "count": 12627,
+        "category": "other"
+      },
+      {
+        "codepoint": "U+0632",
+        "count": 1599,
+        "category": "other"
+      },
+      {
+        "codepoint": "U+0633",
+        "count": 6122,
+        "category": "other"
+      },
+      {
+        "codepoint": "U+0634",
+        "count": 2124,
+        "category": "other"
+      },
+      {
+        "codepoint": "U+0635",
+        "count": 2074,
+        "category": "other"
+      },
+      {
+        "codepoint": "U+0636",
+        "count": 1686,
+        "category": "other"
+      },
+      {
+        "codepoint": "U+0637",
+        "count": 1273,
+        "category": "other"
+      },
+      {
+        "codepoint": "U+0638",
+        "count": 853,
+        "category": "other"
+      },
+      {
+        "codepoint": "U+0639",
+        "count": 9405,
+        "category": "other"
+      },
+      {
+        "codepoint": "U+063A",
+        "count": 1221,
+        "category": "other"
+      },
+      {
+        "codepoint": "U+0640",
+        "count": 6848,
+        "category": "tatweel"
+      },
+      {
+        "codepoint": "U+0641",
+        "count": 8747,
+        "category": "other"
+      },
+      {
+        "codepoint": "U+0642",
+        "count": 7034,
+        "category": "other"
+      },
+      {
+        "codepoint": "U+0643",
+        "count": 10497,
+        "category": "other"
+      },
+      {
+        "codepoint": "U+0644",
+        "count": 38550,
+        "category": "other"
+      },
+      {
+        "codepoint": "U+0645",
+        "count": 27071,
+        "category": "other"
+      },
+      {
+        "codepoint": "U+0646",
+        "count": 27380,
+        "category": "other"
+      },
+      {
+        "codepoint": "U+0647",
+        "count": 14962,
+        "category": "other"
+      },
+      {
+        "codepoint": "U+0648",
+        "count": 24970,
+        "category": "other"
+      },
+      {
+        "codepoint": "U+0649",
+        "count": 6603,
+        "category": "other"
+      },
+      {
+        "codepoint": "U+064A",
+        "count": 18334,
+        "category": "other"
+      },
+      {
+        "codepoint": "U+064B",
+        "count": 3741,
+        "category": "combining-mark"
+      },
+      {
+        "codepoint": "U+064C",
+        "count": 2519,
+        "category": "combining-mark"
+      },
+      {
+        "codepoint": "U+064D",
+        "count": 2633,
+        "category": "combining-mark"
+      },
+      {
+        "codepoint": "U+064E",
+        "count": 123396,
+        "category": "combining-mark"
+      },
+      {
+        "codepoint": "U+064F",
+        "count": 37320,
+        "category": "combining-mark"
+      },
+      {
+        "codepoint": "U+0650",
+        "count": 46642,
+        "category": "combining-mark"
+      },
+      {
+        "codepoint": "U+0651",
+        "count": 23016,
+        "category": "combining-mark"
+      },
+      {
+        "codepoint": "U+0652",
+        "count": 37372,
+        "category": "combining-mark"
+      },
+      {
+        "codepoint": "U+0653",
+        "count": 5376,
+        "category": "combining-mark"
+      },
+      {
+        "codepoint": "U+0654",
+        "count": 773,
+        "category": "combining-mark"
+      },
+      {
+        "codepoint": "U+0670",
+        "count": 9838,
+        "category": "combining-mark"
+      },
+      {
+        "codepoint": "U+0671",
+        "count": 13819,
+        "category": "other"
+      },
+      {
+        "codepoint": "U+06D6",
+        "count": 1682,
+        "category": "combining-mark"
+      },
+      {
+        "codepoint": "U+06D7",
+        "count": 603,
+        "category": "combining-mark"
+      },
+      {
+        "codepoint": "U+06D8",
+        "count": 22,
+        "category": "combining-mark"
+      },
+      {
+        "codepoint": "U+06D9",
+        "count": 68,
+        "category": "combining-mark"
+      },
+      {
+        "codepoint": "U+06DA",
+        "count": 1972,
+        "category": "combining-mark"
+      },
+      {
+        "codepoint": "U+06DB",
+        "count": 12,
+        "category": "combining-mark"
+      },
+      {
+        "codepoint": "U+06DC",
+        "count": 7,
+        "category": "combining-mark"
+      },
+      {
+        "codepoint": "U+06DF",
+        "count": 3988,
+        "category": "combining-mark"
+      },
+      {
+        "codepoint": "U+06E0",
+        "count": 66,
+        "category": "combining-mark"
+      },
+      {
+        "codepoint": "U+06E2",
+        "count": 510,
+        "category": "combining-mark"
+      },
+      {
+        "codepoint": "U+06E3",
+        "count": 1,
+        "category": "combining-mark"
+      },
+      {
+        "codepoint": "U+06E5",
+        "count": 1257,
+        "category": "quranic-mark-range"
+      },
+      {
+        "codepoint": "U+06E6",
+        "count": 957,
+        "category": "quranic-mark-range"
+      },
+      {
+        "codepoint": "U+06E7",
+        "count": 38,
+        "category": "combining-mark"
+      },
+      {
+        "codepoint": "U+06E8",
+        "count": 1,
+        "category": "combining-mark"
+      },
+      {
+        "codepoint": "U+06E9",
+        "count": 15,
+        "category": "quranic-mark-range"
+      },
+      {
+        "codepoint": "U+06EA",
+        "count": 1,
+        "category": "combining-mark"
+      },
+      {
+        "codepoint": "U+06EB",
+        "count": 1,
+        "category": "combining-mark"
+      },
+      {
+        "codepoint": "U+06EC",
+        "count": 1,
+        "category": "combining-mark"
+      },
+      {
+        "codepoint": "U+06ED",
+        "count": 99,
+        "category": "combining-mark"
+      }
+    ],
+    "invisibleOrBidiCodepoints": [],
+    "repeatedTextGroups": [
+      [
+        "2:1",
+        "3:1",
+        "29:1",
+        "30:1",
+        "31:1",
+        "32:1"
+      ],
+      [
+        "2:5",
+        "31:5"
+      ],
+      [
+        "2:47",
+        "2:122"
+      ],
+      [
+        "2:134",
+        "2:141"
+      ],
+      [
+        "3:89",
+        "24:5"
+      ],
+      [
+        "5:10",
+        "5:86"
+      ],
+      [
+        "6:4",
+        "36:46"
+      ],
+      [
+        "6:10",
+        "21:41"
+      ],
+      [
+        "6:15",
+        "39:13"
+      ],
+      [
+        "7:78",
+        "7:91"
+      ],
+      [
+        "7:107",
+        "26:32"
+      ],
+      [
+        "7:108",
+        "26:33"
+      ],
+      [
+        "7:121",
+        "26:47"
+      ],
+      [
+        "7:122",
+        "26:48"
+      ],
+      [
+        "7:183",
+        "68:45"
+      ],
+      [
+        "9:33",
+        "61:9"
+      ],
+      [
+        "9:73",
+        "66:9"
+      ],
+      [
+        "10:48",
+        "21:38",
+        "27:71",
+        "34:29",
+        "36:48",
+        "67:25"
+      ],
+      [
+        "11:96",
+        "40:23"
+      ],
+      [
+        "14:20",
+        "35:17"
+      ],
+      [
+        "15:29",
+        "38:72"
+      ],
+      [
+        "15:30",
+        "38:73"
+      ],
+      [
+        "15:34",
+        "38:77"
+      ],
+      [
+        "15:36",
+        "38:79"
+      ],
+      [
+        "15:37",
+        "38:80"
+      ],
+      [
+        "15:38",
+        "38:81"
+      ],
+      [
+        "15:40",
+        "38:83"
+      ],
+      [
+        "15:45",
+        "51:15"
+      ],
+      [
+        "15:57",
+        "51:31"
+      ],
+      [
+        "15:58",
+        "51:32"
+      ],
+      [
+        "16:42",
+        "29:59"
+      ],
+      [
+        "18:89",
+        "18:92"
+      ],
+      [
+        "20:24",
+        "79:17"
+      ],
+      [
+        "23:5",
+        "70:29"
+      ],
+      [
+        "23:6",
+        "70:30"
+      ],
+      [
+        "23:7",
+        "70:31"
+      ],
+      [
+        "23:8",
+        "70:32"
+      ],
+      [
+        "23:26",
+        "23:39"
+      ],
+      [
+        "26:1",
+        "28:1"
+      ],
+      [
+        "26:2",
+        "28:2"
+      ],
+      [
+        "26:8",
+        "26:67",
+        "26:103",
+        "26:121",
+        "26:174",
+        "26:190"
+      ],
+      [
+        "26:9",
+        "26:68",
+        "26:104",
+        "26:122",
+        "26:140",
+        "26:159",
+        "26:175",
+        "26:191"
+      ],
+      [
+        "26:66",
+        "37:82"
+      ],
+      [
+        "26:107",
+        "26:125",
+        "26:143",
+        "26:162",
+        "26:178"
+      ],
+      [
+        "26:108",
+        "26:110",
+        "26:126",
+        "26:131",
+        "26:144",
+        "26:150",
+        "26:163",
+        "26:179"
+      ],
+      [
+        "26:109",
+        "26:127",
+        "26:145",
+        "26:164",
+        "26:180"
+      ],
+      [
+        "26:147",
+        "44:52"
+      ],
+      [
+        "26:153",
+        "26:185"
+      ],
+      [
+        "26:171",
+        "37:135"
+      ],
+      [
+        "26:172",
+        "37:136"
+      ],
+      [
+        "26:173",
+        "27:58"
+      ],
+      [
+        "26:204",
+        "37:176"
+      ],
+      [
+        "27:3",
+        "31:4"
+      ],
+      [
+        "28:62",
+        "28:74"
+      ],
+      [
+        "37:17",
+        "56:48"
+      ],
+      [
+        "37:27",
+        "52:25"
+      ],
+      [
+        "37:40",
+        "37:74",
+        "37:128",
+        "37:160"
+      ],
+      [
+        "37:43",
+        "56:12"
+      ],
+      [
+        "37:78",
+        "37:108",
+        "37:129"
+      ],
+      [
+        "37:80",
+        "37:121",
+        "37:131",
+        "77:44"
+      ],
+      [
+        "37:81",
+        "37:111",
+        "37:132"
+      ],
+      [
+        "37:154",
+        "68:36"
+      ],
+      [
+        "38:87",
+        "81:27"
+      ],
+      [
+        "40:1",
+        "41:1",
+        "42:1",
+        "43:1",
+        "44:1",
+        "45:1",
+        "46:1"
+      ],
+      [
+        "43:2",
+        "44:2"
+      ],
+      [
+        "43:83",
+        "70:42"
+      ],
+      [
+        "45:2",
+        "46:2"
+      ],
+      [
+        "52:19",
+        "77:43"
+      ],
+      [
+        "52:40",
+        "68:46"
+      ],
+      [
+        "52:41",
+        "68:47"
+      ],
+      [
+        "54:16",
+        "54:21",
+        "54:30"
+      ],
+      [
+        "54:17",
+        "54:22",
+        "54:32",
+        "54:40"
+      ],
+      [
+        "55:13",
+        "55:16",
+        "55:18",
+        "55:21",
+        "55:23",
+        "55:25",
+        "55:28",
+        "55:30",
+        "55:32",
+        "55:34",
+        "55:36",
+        "55:38",
+        "55:40",
+        "55:42",
+        "55:45",
+        "55:47",
+        "55:49",
+        "55:51",
+        "55:53",
+        "55:55",
+        "55:57",
+        "55:59",
+        "55:61",
+        "55:63",
+        "55:65",
+        "55:67",
+        "55:69",
+        "55:71",
+        "55:73",
+        "55:75",
+        "55:77"
+      ],
+      [
+        "56:13",
+        "56:39"
+      ],
+      [
+        "56:67",
+        "68:27"
+      ],
+      [
+        "56:74",
+        "56:96",
+        "69:52"
+      ],
+      [
+        "56:80",
+        "69:43"
+      ],
+      [
+        "59:1",
+        "61:1"
+      ],
+      [
+        "68:15",
+        "83:13"
+      ],
+      [
+        "69:21",
+        "101:7"
+      ],
+      [
+        "69:22",
+        "88:10"
+      ],
+      [
+        "69:34",
+        "107:3"
+      ],
+      [
+        "69:40",
+        "81:19"
+      ],
+      [
+        "73:19",
+        "76:29"
+      ],
+      [
+        "74:55",
+        "80:12"
+      ],
+      [
+        "77:15",
+        "77:19",
+        "77:24",
+        "77:28",
+        "77:34",
+        "77:37",
+        "77:40",
+        "77:45",
+        "77:47",
+        "77:49",
+        "83:10"
+      ],
+      [
+        "82:13",
+        "83:22"
+      ],
+      [
+        "83:9",
+        "83:20"
+      ],
+      [
+        "83:23",
+        "83:35"
+      ],
+      [
+        "84:2",
+        "84:5"
+      ],
+      [
+        "109:3",
+        "109:5"
+      ]
+    ],
+    "note": "Repeated verse text is reported for review, not treated as duplicate identifiers. Mark inventory does not certify correct tashkeel or waqf semantics."
+  },
+  "independenceGuard": {
+    "status": "blocked",
+    "comparison": "exact-codepoint-per-ayah",
+    "comparedAyahs": 0,
+    "differences": [],
+    "blockers": [
+      "REFERENCE_IS_NOT_INDEPENDENT"
+    ],
+    "scientificApproval": "not_granted"
+  },
+  "independentComparison": {
+    "status": "blocked",
+    "reason": "No independently acquired compatible official edition. A second download or metadata from Tanzil is not independent."
+  },
+  "officialKfgqpcSourceAcquired": false,
+  "humanScientificApproval": "pending",
+  "fontApproval": "pending",
+  "productionActivation": false
+}

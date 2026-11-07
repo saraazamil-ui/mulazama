@@ -1,0 +1,11 @@
+{
+  "sourceCommit": "df34d70084bdd328ad77d31cf91fea983d0e474f",
+  "officialMain": "ff279eaad321ebd60cf004a44cbdc69d2a178430",
+  "sourceFilesPreserved": 1300,
+  "officialIdentityFilesPreserved": 7,
+  "officialReadmePreservedAs": "README-official-pre-import.md",
+  "conflictsResolved": [
+    "README.md"
+  ],
+  "unresolvedConflicts": 0
+}

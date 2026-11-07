@@ -1,0 +1,94 @@
+{
+  "checkedAt": "2026-11-07T12:16:47.700603+00:00",
+  "scope": "All dependencies reported by pnpm audit; no ignore or audit-fix flags",
+  "registry": "https://registry.npmjs.org/",
+  "lockSHA256": "ad7b79295a609767455b46eac8f1e6c81b2de0684060b428739a97ce3731e1f5",
+  "dependencies": {
+    "lucide-react": "0.468.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.10.2",
+    "@playwright/test": "1.56.1",
+    "@testing-library/jest-dom": "6.9.1",
+    "@testing-library/react": "16.3.0",
+    "@testing-library/user-event": "14.6.1",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "@vitejs/plugin-react": "5.0.4",
+    "jsdom": "26.1.0",
+    "prettier": "3.6.2",
+    "typescript": "5.9.3",
+    "vite": "7.3.7",
+    "vitest": "4.1.12"
+  },
+  "advisories": 0,
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0
+    },
+    "dependencies": 4,
+    "devDependencies": 208,
+    "optionalDependencies": 54,
+    "totalDependencies": 212
+  },
+  "productionDeployment": false,
+  "limitations": [
+    "Known advisory snapshot only, not a penetration test or a release signature",
+    "Local secret scanner is bounded to its documented source patterns",
+    "Production artifact isolation is separately evidenced by final build checks; development-entry and synthetic journey tests do not establish a Quran pilot or public release"
+  ],
+  "unitEvidence": {
+    "releaseIsolation": {
+      "executed": 18,
+      "passed": 18,
+      "failed": 0,
+      "skipped": 0
+    },
+    "journeyRegression": {
+      "executed": 23,
+      "passed": 23,
+      "failed": 0,
+      "skipped": 0
+    },
+    "countsIncludedInFinalRegressionSuite": true
+  },
+  "reviewedOfflineEvidence": {
+    "path": "journey-offline-summary.json",
+    "executed": 2,
+    "passed": 2,
+    "failed": 0,
+    "skipped": 0,
+    "scope": "Loopback engineering build with synthetic non-Quran material; not a Quran pilot or public deployment"
+  },
+  "browserEvidence": {
+    "engineeringIsolation": {
+      "executed": 4,
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "result": "security-journey-browser-results.json"
+    },
+    "developmentEntryDenied": {
+      "executed": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "result": "security-development-browser-results.json"
+    },
+    "countsIncludedInFinalBrowserSuites": true
+  },
+  "latestPeerReview": {
+    "restoredRecallInterruption": "Reproduced in MemoryEventStore, fixed per-attempt source, regression passed",
+    "newAttemptAfterInterruptedSession": "Reproduced in MemoryEventStore, fixed, regression passed",
+    "latestFailureVisibility": "Regression passed without changing HME state or FSRS",
+    "sameDayDueReviewAndBudget": "Regression passed: no review before due, two legitimate sessions cost four estimated minutes, coverage remains unique",
+    "freshnessOnFocusAndMidnight": "Code reviewed; final browser rerun owned by full stage runner",
+    "finalTargetedControllerTests": 23
+  }
+}

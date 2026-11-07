@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-11-07T10:06:50.138881+00:00",
+  "markersAbsent": [
+    "synthetic-history-profile",
+    "synthetic-history-unit",
+    "__e1QA",
+    "__historyQA",
+    "synthetic-offline-correction"
+  ],
+  "files": [
+    "dist/sw.js",
+    "dist/assets/personal-memory-FbHeuiO5.js",
+    "dist/assets/adaptive-scheduling-BAdcPGRX.js",
+    "dist/assets/index-BSeieCYc.js"
+  ],
+  "status": "passed"
+}

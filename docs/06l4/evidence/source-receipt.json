@@ -1,0 +1,18 @@
+{
+  "createdAt": "2026-11-07T13:33:38.717756+00:00",
+  "source": "MULAZAMA-Phase-06L3-Engineering-Delivery.zip",
+  "sourceSHA256": "af991868d26e8028c63d6c9071779eac91a73df4ea7870fae084e5d7efd4aa8d",
+  "bundle": "MULAZAMA-Phase-06L3-Source-History.bundle",
+  "bundleSHA256": "1510d7da080718b28aa2c7c0031b8f5fe71ba9ca983232e1f0fde7e128f5b101",
+  "sourceCommit": "1fb68372cd4015e1d9abdc310e31c811faf35a76",
+  "manifestFilesVerified": 1166,
+  "archiveFiles": 1168,
+  "allArchiveFilesMatchGit": true,
+  "gitFsck": "passed",
+  "recoveryCopies": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l4-recovery",
+  "workingCopy": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l4",
+  "branch": "release/06-l4",
+  "dependencySetup": "Copied existing node_modules after exact package and lock equality; clean registry install not claimed",
+  "officialDomain": "https://mulazama.sa",
+  "domainPurchase": "Owner-reported; registrar ownership and binding not yet independently verified"
+}

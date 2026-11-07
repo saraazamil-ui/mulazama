@@ -1,0 +1,13 @@
+[2m[WebServer] [22m(node:22788) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:22790) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:22790) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 e2e-offline/history06d2.spec.ts:60:1 › 06-D2 encrypted aggregate history and correction survive genuine offline reload without opening a blocked session (1.7s)
+  ✓  2 e2e-offline/shell.spec.ts:2:1 › versioned app shell and existing IndexedDB state reopen with all network disabled (923ms)
+
+  2 passed (4.7s)

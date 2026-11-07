@@ -1,0 +1,7 @@
+{
+  "kind": "bounded-static-security-check",
+  "scannedFiles": 27,
+  "findings": [],
+  "dependencyAudit": "blocked-registry-network",
+  "penetrationTest": "not-performed"
+}

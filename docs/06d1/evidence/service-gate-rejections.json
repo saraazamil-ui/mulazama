@@ -1,0 +1,59 @@
+{
+  "rejections": [
+    {
+      "type": "session.start",
+      "code": "RELEASE_GATES_BLOCKED"
+    },
+    {
+      "type": "session.repeat",
+      "code": "RELEASE_GATES_BLOCKED"
+    },
+    {
+      "type": "session.startRecall",
+      "code": "RELEASE_GATES_BLOCKED"
+    },
+    {
+      "type": "session.pause",
+      "code": "RELEASE_GATES_BLOCKED"
+    },
+    {
+      "type": "session.resume",
+      "code": "RELEASE_GATES_BLOCKED"
+    },
+    {
+      "type": "session.end",
+      "code": "RELEASE_GATES_BLOCKED"
+    },
+    {
+      "type": "session.restartRecall",
+      "code": "RELEASE_GATES_BLOCKED"
+    },
+    {
+      "type": "session.finishedBeforeStop",
+      "code": "RELEASE_GATES_BLOCKED"
+    },
+    {
+      "type": "attempt.hint",
+      "code": "RELEASE_GATES_BLOCKED"
+    },
+    {
+      "type": "attempt.reveal",
+      "code": "RELEASE_GATES_BLOCKED"
+    },
+    {
+      "type": "attempt.finish",
+      "code": "RELEASE_GATES_BLOCKED"
+    },
+    {
+      "type": "attempt.assess",
+      "code": "RELEASE_GATES_BLOCKED"
+    }
+  ],
+  "beforeRevision": 1,
+  "afterRevision": 1,
+  "beforeEvents": 1,
+  "afterEvents": 1,
+  "rawEventsUnchanged": true,
+  "session": null,
+  "attempts": 0
+}

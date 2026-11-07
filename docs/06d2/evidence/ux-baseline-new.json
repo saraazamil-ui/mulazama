@@ -1,0 +1,15 @@
+{
+  "phase": "06-D1",
+  "measured": true,
+  "actions": [
+    "enter attempted word count",
+    "enter known errors",
+    "select completion",
+    "select effort",
+    "confirm exposure gap",
+    "submit"
+  ],
+  "count": 6,
+  "events": 1,
+  "limitations": "Component + real service/store, synthetic units. One field fill/choice/submit is one semantic action; not a human time or keystroke study."
+}

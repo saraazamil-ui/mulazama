@@ -1,0 +1,31 @@
+[
+  {
+    "name": "typecheck",
+    "command": [
+      "node",
+      "node_modules/typescript/bin/tsc",
+      "-b"
+    ],
+    "startedAt": "2026-11-07T12:34:22.243648+00:00",
+    "durationSeconds": 2.472,
+    "exitCode": 0,
+    "result": "Passed",
+    "log": "final-typecheck.log"
+  },
+  {
+    "name": "unit",
+    "command": [
+      "node",
+      "node_modules/vitest/vitest.mjs",
+      "run",
+      "--maxWorkers=4",
+      "--reporter=json",
+      "--outputFile=docs/06l3/evidence/final-tests.json"
+    ],
+    "startedAt": "2026-11-07T12:34:24.716242+00:00",
+    "durationSeconds": 11.421,
+    "exitCode": 1,
+    "result": "Failed",
+    "log": "final-unit.log"
+  }
+]

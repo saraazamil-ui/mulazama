@@ -1,0 +1,38 @@
+{
+  "checkedAt": "2026-11-05",
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "playwright": "1.56.1"
+  },
+  "browser": {
+    "status": "Blocked",
+    "e2eDiscovered": 15,
+    "e2eExecuted": 0,
+    "indexedDbWritten": 21,
+    "indexedDbExecuted": 0,
+    "axePlanned": 58,
+    "axeExecuted": 0,
+    "scenarioStatus": "Not Tested",
+    "reasons": [
+      "LOCALHOST_LISTEN_EPERM",
+      "CHROMIUM_DOWNLOAD_DNS_ENOTFOUND",
+      "INSTALLED_CHROME_SIGABRT_BEFORE_CONTEXT"
+    ]
+  },
+  "nodeStorage": {
+    "passed": 57,
+    "failed": 0,
+    "pending": 0,
+    "todo": 0,
+    "scope": "Node WebCrypto, MemoryEventStore, pure validators/migrations; not IndexedDB"
+  },
+  "components": {
+    "passed": 30,
+    "failed": 0,
+    "scope": "JSDOM; not axe or screen-reader testing"
+  },
+  "voiceOver": "Not Tested",
+  "talkBack": "Not Tested"
+}

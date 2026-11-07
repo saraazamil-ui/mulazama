@@ -1,0 +1,15 @@
+[
+  {
+    "name": "offline-history-receipt.json",
+    "data": {
+      "syntheticDataOnly": true,
+      "networkDisabled": true,
+      "initialEvents": 7,
+      "correctedEvents": 8,
+      "finalEvents": 9,
+      "priorEventsUnchanged": true,
+      "repeatedCorrectionCountedOnce": true,
+      "blockedSession": true
+    }
+  }
+]

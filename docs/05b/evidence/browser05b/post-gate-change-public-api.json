@@ -1,0 +1,77 @@
+{
+  "kind": "static syntax/import/public API inspection only",
+  "checkedAt": "2026-11-05T13:10:55.510Z",
+  "parseDiagnostics": [],
+  "imports": [
+    {
+      "path": "e2e/database.spec.ts",
+      "specifier": "@playwright/test",
+      "resolved": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/itqan-04b/node_modules/.pnpm/@playwright+test@1.56.1/node_modules/@playwright/test/index.js"
+    },
+    {
+      "path": "e2e/production.spec.ts",
+      "specifier": "@playwright/test",
+      "resolved": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/itqan-04b/node_modules/.pnpm/@playwright+test@1.56.1/node_modules/@playwright/test/index.js"
+    },
+    {
+      "path": "e2e/production.spec.ts",
+      "specifier": "@axe-core/playwright",
+      "resolved": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/itqan-04b/node_modules/.pnpm/@axe-core+playwright@4.10.2_playwright-core@1.56.1/node_modules/@axe-core/playwright/dist/index.js"
+    },
+    {
+      "path": "e2e/verification05b.spec.ts",
+      "specifier": "@playwright/test",
+      "resolved": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/itqan-04b/node_modules/.pnpm/@playwright+test@1.56.1/node_modules/@playwright/test/index.js"
+    },
+    {
+      "path": "e2e/verification05b.spec.ts",
+      "specifier": "@axe-core/playwright",
+      "resolved": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/itqan-04b/node_modules/.pnpm/@axe-core+playwright@4.10.2_playwright-core@1.56.1/node_modules/@axe-core/playwright/dist/index.js"
+    }
+  ],
+  "api": [
+    {
+      "path": "src/application/service.ts",
+      "name": "ApplicationService",
+      "exported": true,
+      "methods": [
+        {
+          "name": "open",
+          "exists": true
+        },
+        {
+          "name": "dispatch",
+          "exists": true
+        },
+        {
+          "name": "close",
+          "exists": true
+        },
+        {
+          "name": "state",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "path": "src/persistence/event-store.ts",
+      "name": "IndexedDbEventStore",
+      "exported": true,
+      "methods": [
+        {
+          "name": "open",
+          "exists": true
+        },
+        {
+          "name": "load",
+          "exists": true
+        },
+        {
+          "name": "close",
+          "exists": true
+        }
+      ]
+    }
+  ],
+  "browserRuntimeExecuted": false
+}

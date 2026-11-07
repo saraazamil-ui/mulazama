@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "status": "Blocked",
+  "reason": "Source bytes not obtained and no human scientific review occurred",
+  "sourceSelection": "source-selection.json",
+  "editionId": null,
+  "manifestSha256": null,
+  "reviewer": null,
+  "qualifications": null,
+  "reviewScope": null,
+  "differencesReviewed": null,
+  "decision": null,
+  "date": null,
+  "signature": null,
+  "activationPermission": false
+}

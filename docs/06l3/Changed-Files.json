@@ -1,0 +1,1456 @@
+{
+  "baseline": "MULAZAMA-Phase-06L2-Engineering-Delivery.zip",
+  "baselineSHA256": "eae1213dae28f6eaa3ede0207602c6e046c6c19b8817364a16692b3e3208a1cf",
+  "scope": "Packaged files; dependencies, Git metadata and transient runner folders excluded. Removed dist chunks are replaced generated build outputs.",
+  "files": [
+    {
+      "path": ".github/workflows/qa.yml",
+      "status": "modified",
+      "beforeSHA256": "727f777fb02895a30a8967840a673769b5648549e8ba4cc336360f7a40a85e2a",
+      "afterSHA256": "4216c1c883bdbe99c079a8037438ca1f9e64aa6e7bc468f568a89e4d6c2b718d"
+    },
+    {
+      "path": ".gitignore",
+      "status": "modified",
+      "beforeSHA256": "74e75da80e472d8287927eba8e4feed3ac820fbd09c4537077d5a064a8c17e6f",
+      "afterSHA256": "fbd766d649c685ce789c23c14542d5c808f12174b58fd4d18e61c37ce33c0794"
+    },
+    {
+      "path": "README.md",
+      "status": "modified",
+      "beforeSHA256": "72875a8572c78a54db09ad3d4314d537522a0f56c0a6c06ed3d34fa68824b233",
+      "afterSHA256": "abbd9d7b6705d89c27f850ffa95fea86f4e030f5ff7c9142c31d439952413c98"
+    },
+    {
+      "path": "content/06l3/Approval-Request.pending.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "49c39ead165fc42e6233a5807f42b198cc6b556022daee9fa6e624a49d9b1341"
+    },
+    {
+      "path": "content/06l3/README.md",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "5112f28ecbb35b3691b6e7dc092ad793d5243d002fb7705d78d1cc312fb1131b"
+    },
+    {
+      "path": "content/06l3/reference-receipt.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "50f60b831b13c9a30d645718bce98c7635bbfb48cccd7b2dc92ea9ec193b441d"
+    },
+    {
+      "path": "delivery-manifest-06l3.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": null,
+      "note": "Self-referential inventory; final archive SHA256 covers it. Changed-Files is also covered by delivery manifest."
+    },
+    {
+      "path": "delivery-manifest.json",
+      "status": "modified",
+      "beforeSHA256": "62366bf015d014ebd903118cfb22c1f91c95a361437096962de465fdc0f99a70",
+      "afterSHA256": null,
+      "note": "Self-referential inventory; final archive SHA256 covers it. Changed-Files is also covered by delivery manifest."
+    },
+    {
+      "path": "dist/assets/adaptive-scheduling-DY940igr.js",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "f94cd1a2a90f59e981b321e23c2501fa8d9d800cb9adc2e5be4b9c110ce6bac0"
+    },
+    {
+      "path": "dist/assets/adaptive-scheduling-w6bOq4m1.js",
+      "status": "removed",
+      "beforeSHA256": "2c16cbbfaf2260a413d937725ab5a4735667725d01092cf5dcd4f51011463bed",
+      "afterSHA256": null
+    },
+    {
+      "path": "dist/assets/index-AtTyBVEF.css",
+      "status": "removed",
+      "beforeSHA256": "b5f0fb345dc2a34cf47d07090d7344d728471431f4172a64169806cc68e442d7",
+      "afterSHA256": null
+    },
+    {
+      "path": "dist/assets/index-BMHy5AIA.js",
+      "status": "removed",
+      "beforeSHA256": "09279a1f53a26f83d533c279ff44048124e5aafd2cb7d1ba66e8a8722dfeb8e1",
+      "afterSHA256": null
+    },
+    {
+      "path": "dist/assets/index-CA2MWxI6.js",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "8efb226b3785b3c4a5e6657f4b3eb00dc912243c6c99f1532b7e3515e95735cb"
+    },
+    {
+      "path": "dist/assets/index-CeozoC8Z.css",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "98e9785cd83a26e2fb7c527152c633ee73aee3f76bf534bed15ea838ef8f9efb"
+    },
+    {
+      "path": "dist/assets/personal-memory-DRSImXDx.js",
+      "status": "removed",
+      "beforeSHA256": "5d2afe999d8d9ed127d86f658c8e5e327fa7b69310bdf237620795ac5fb1231f",
+      "afterSHA256": null
+    },
+    {
+      "path": "dist/assets/personal-memory-DlaBb9d3.js",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "79402321523abfd9e85ec4f68b3d98eb6d65c499ce8202394dd405a16c4d7ea2"
+    },
+    {
+      "path": "dist/index.html",
+      "status": "modified",
+      "beforeSHA256": "fe630adbb30beccd5a804a2d940f22e2b06fd8ef28690ff5c2c8250d84e1ff89",
+      "afterSHA256": "4b3f7be56d45933c869f05982bb51a91eaf9d424b82a24c4869679a1678ee83c"
+    },
+    {
+      "path": "dist/offline-assets.json",
+      "status": "modified",
+      "beforeSHA256": "e1360a490e3b3692f2727239893c97745a6e65d22173bb9fc5590324479bd6bb",
+      "afterSHA256": "7a0ae3be8822701a24b3357fb887f3c05414ce1c9c602259897a10e46c1124df"
+    },
+    {
+      "path": "dist/sw.js",
+      "status": "modified",
+      "beforeSHA256": "5ea64fe66db0cf2da4ec57d55e50782771264300cb2590067b58612930ee75f1",
+      "afterSHA256": "b641ded010d0b8fd44c47458664418398904d946e555be376b5a2e9725304560"
+    },
+    {
+      "path": "docs/06l3/Changed-Files.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": null,
+      "note": "Self-referential inventory; final archive SHA256 covers it. Changed-Files is also covered by delivery manifest."
+    },
+    {
+      "path": "docs/06l3/Closed-Trial-Plan.md",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "ff14091a27129c6bca144d5e9e6e3d8a79342b76adc1153efeef1622150f4afb"
+    },
+    {
+      "path": "docs/06l3/Closure-Ledger.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "9f71327606083e14129a9decbdee738ebb667538bfa7b148558722b063158144"
+    },
+    {
+      "path": "docs/06l3/Content-Approval-Report.md",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "b3f1d26d2ea6f8175c13226b5236deabf7b0028b653985d1eb9be9a07ba2d9cc"
+    },
+    {
+      "path": "docs/06l3/Data-Security-Report.md",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "c3d2b35fb350c53800c5b63e520d55f81435dc039a3d25beb5247e1fae0a7b20"
+    },
+    {
+      "path": "docs/06l3/Deploy-and-Rollback.md",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "21a30076685ed2f09976c75a1ca3f5e014cfe206be06c81825d743ea63ba0f6c"
+    },
+    {
+      "path": "docs/06l3/FSRS-Integration-Report.md",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "c75688ba6ec081b4acb2f1fe21db0ca921a8e2bf7e26c344d0a4e8ee469b1563"
+    },
+    {
+      "path": "docs/06l3/Final-Report.md",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "da6a2163cde32a3bd7bd35d96bb4d9e49eefdf5374c225f12380bd18af9c523e"
+    },
+    {
+      "path": "docs/06l3/Gate-Closure-Report.md",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "b1c1460ed7f5883b16c4e131854904c46c19e9709ea0958e52e5a26f721b065c"
+    },
+    {
+      "path": "docs/06l3/Hosting-Readiness.md",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "7a4f56f5d0bef8850047c616ec4db6b83fe218a872397b8f72576b774df821b3"
+    },
+    {
+      "path": "docs/06l3/New-Hafiz-Journey.md",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "0d48daa38b1ffb7c714d4a6fd4bc6c420e85ee25a6120ab2a468e40472db9892"
+    },
+    {
+      "path": "docs/06l3/Owner-Actions.md",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "6fd164d0b70e07040d1727e6974e274079fd05665843b3497ae5ba62451f3d40"
+    },
+    {
+      "path": "docs/06l3/Prior-Hafiz-Journey.md",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "d0647f589cb8d47a99ebe802049567925ea2b4c34c23aade64f0671d043c766d"
+    },
+    {
+      "path": "docs/06l3/Test-Report.md",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "de0dc28d4b81fafcd444b472cf25feceab37984ff2c2b448fc0a45d350e5ad6f"
+    },
+    {
+      "path": "docs/06l3/evidence/Reference-Case-Matrix.md",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "ded68e00d4894f01349e0296c97c63c1e711a10ad4c028d6d363d9532ec13150"
+    },
+    {
+      "path": "docs/06l3/evidence/content-byte-audit.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "15feaa5f380cb9a5978e5ff5e8cdc5bdcdfba7423a8adcad938506cf201596da"
+    },
+    {
+      "path": "docs/06l3/evidence/content-command-results.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "57f6eb1a843141ccdfbf36033722355515a49bad74d4074839689bbbb7aa8b78"
+    },
+    {
+      "path": "docs/06l3/evidence/content-comparison.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "311a45ef09ce8406816a39c528d23395b96569fb46a9d223e35ede97599eb4d6"
+    },
+    {
+      "path": "docs/06l3/evidence/content-comparison.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "6187e7824d3181a15b0455f3ed02cc2f3a57e0789e4bca9592f93dd9073c5390"
+    },
+    {
+      "path": "docs/06l3/evidence/content-delivery-inventory.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "30b77d85633300aeb19f28d3eac257a75c92375aa82ac1078adc2fd458a30e49"
+    },
+    {
+      "path": "docs/06l3/evidence/content-input-mutation-before.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "c3f84a14d9897626d90534f570a5c87a0d693d3bc6e384c4b1042cf06a916616"
+    },
+    {
+      "path": "docs/06l3/evidence/content-primary-recheck.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "0a05d192cc68e01da53ababbfc0f3b2f30f95c38f6fb9e3f8ec040497f13cf47"
+    },
+    {
+      "path": "docs/06l3/evidence/content-primary-recheck.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "727bb94d310c42a4254fb789cd7e6004ac6532750cd0e4e2c7fc44390ec96081"
+    },
+    {
+      "path": "docs/06l3/evidence/content-source-review.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "9e2596dc909caf641caa0973e97017cb795f860dfc4c4e116ee3994d0afce4b9"
+    },
+    {
+      "path": "docs/06l3/evidence/content-tests.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "ab78fe739cfb44a6215881c7c0456d0df600866ed28d128df393635808d841f5"
+    },
+    {
+      "path": "docs/06l3/evidence/content-tests.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "c60c8a5fe6a3c8040e355228cab2f18dc496c0320672f171ae4b12e50fa6d35c"
+    },
+    {
+      "path": "docs/06l3/evidence/content-tool-checks.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "67a326a3de9550aff1fe9c7a9533817f5842e9d1e54d8a63a8fc85fb1333c7f6"
+    },
+    {
+      "path": "docs/06l3/evidence/content/acquisition-attempts.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "d0b0de012c2e112e5c67f1f8fd9672e176adf9256bbf2a0b73116c017171e531"
+    },
+    {
+      "path": "docs/06l3/evidence/content/official-archive.headers",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/06l3/evidence/content/official-archive.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "f9e7fae1fd5dc01bc35d2ef502ef6d144ef755161216554f4d8376611a530e5e"
+    },
+    {
+      "path": "docs/06l3/evidence/content/official-fonts.headers",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/06l3/evidence/content/official-fonts.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "c380c5f0a1cba0cc64f4744ad49dd38ad7adf4784f62d4dec35b07d5e898e510"
+    },
+    {
+      "path": "docs/06l3/evidence/content/official-page.headers",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/06l3/evidence/content/official-page.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "e426b58f37fb7c531575cb55ad144f22073193a1ea72189d48fd3197a1d2a16f"
+    },
+    {
+      "path": "docs/06l3/evidence/content/qf-api-documentation.headers",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "7ec11f1c84348255bc34e01efb0f6f2784dff38c60b529730b5f3ee3be10b288"
+    },
+    {
+      "path": "docs/06l3/evidence/content/qf-api-documentation.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "6a9f6d900e701a280077d7576985f58fff727b315722fb1b293bf4b0baf59c09"
+    },
+    {
+      "path": "docs/06l3/evidence/content/qf-api-documentation.raw",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "90f87986c8b6741a232643adf7075f99b0b5477eca01586a740be09d5a1b4470"
+    },
+    {
+      "path": "docs/06l3/evidence/content/qf-qpc-hafs.headers",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "4661046cd931d7502253430c472208dc21d4738b26d85d165462ea499e45b51c"
+    },
+    {
+      "path": "docs/06l3/evidence/content/qf-qpc-hafs.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "f9d1171c09575efae70f8ecd0a8a4b94b9d4c1e11badceece58ff6dc4906a139"
+    },
+    {
+      "path": "docs/06l3/evidence/dependency-audit-final-binding.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "bb41d62202f7974d6efccee9befa08f77ff6a6de5ba2005e72b6db930172f1d4"
+    },
+    {
+      "path": "docs/06l3/evidence/deployment-baseline-acquisition.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "4a8ce7cbf9fc143a5e478e24841976c6f6fa3d2c15e38d86e9edf28cce22ab02"
+    },
+    {
+      "path": "docs/06l3/evidence/deployment-baseline-test-discovery.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "1ffc9165e647453ff822fe782125b599f6c419ee0fe195daefbe88f5362714b2"
+    },
+    {
+      "path": "docs/06l3/evidence/deployment-baseline-verification.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "26c88e3273c23bb020b3c1814d967c4d730e7c40e24be2d4e9f07ed44f327ebd"
+    },
+    {
+      "path": "docs/06l3/evidence/final-browser-results.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "b5ae19295f9584f26b91f211508b5607267c7dfc073397499bf4ee9ceb68c208"
+    },
+    {
+      "path": "docs/06l3/evidence/final-browser.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "0e7d31d8f778756ed166ed3c31ec2d3c687c601980ee16eff41b5c6600218148"
+    },
+    {
+      "path": "docs/06l3/evidence/final-build.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "ce2545576b4c1c73d610269fea75386392149c873644a87bc5cc62c1f32a79f9"
+    },
+    {
+      "path": "docs/06l3/evidence/final-content-browser.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "0e2fdd59afd79950c5935eeadbe636dff58228722f90a8ce8ef05d13c73c2993"
+    },
+    {
+      "path": "docs/06l3/evidence/final-content-byte-audit.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "7f2e2822091d5f98000e2c9cc9923b0db05bc3b663804813f8c9927f66ff6b08"
+    },
+    {
+      "path": "docs/06l3/evidence/final-content-supplemental-audit.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "b809056ea0c5bf7d785cfc50a88503eb9ee0f144d4abda6707900e597778b727"
+    },
+    {
+      "path": "docs/06l3/evidence/final-content-tools.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "cf2c93f33841f7573333614a8aebc78661afa472d8b66289c88c164c13b7a0e4"
+    },
+    {
+      "path": "docs/06l3/evidence/final-deployment-browser-results.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "c981aedc877d07789f8f268abe80f89d9c7ac61bbea1fea6d06c2177bf33e2d1"
+    },
+    {
+      "path": "docs/06l3/evidence/final-deployment-browser.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "7560f0bae940b4927ef255d160c87421232ec1361b804919f23d3c2e5913bb9a"
+    },
+    {
+      "path": "docs/06l3/evidence/final-fsrs-conformance.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "939904370b1017feb50cc104b2b93241843203fa670c927a034454f68552146a"
+    },
+    {
+      "path": "docs/06l3/evidence/final-journey-browser-results.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "ae385cba4a5c76a847bad0b4e7ffdcb84fb095eb892d9f7782b5bb823ebde430"
+    },
+    {
+      "path": "docs/06l3/evidence/final-journey-browser.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "7c7955651d296725b726fa0692c249871ea03ed0d41874d867c214da0dce5c77"
+    },
+    {
+      "path": "docs/06l3/evidence/final-journey-offline-browser-results.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "3611f88da221136a24db1808068ba53e01c96e0d6370a488bd29277c5afc1f57"
+    },
+    {
+      "path": "docs/06l3/evidence/final-journey-offline-browser.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "20db18b1313cc1e05b48de2f2f4d4093fd00a782f801928e003dd28f53708ba8"
+    },
+    {
+      "path": "docs/06l3/evidence/final-legacy-reader-compatibility.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "e068502f6aa5f5b291c45d7c233deb3382ad5e842c68a6028ffc5ff9f8b5ec83"
+    },
+    {
+      "path": "docs/06l3/evidence/final-offline-assets.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "441958dcfb9b57b9f7f304b1073186c94b404a2c9a7f23ff4e8a2233bdbf5b5c"
+    },
+    {
+      "path": "docs/06l3/evidence/final-offline-browser-results.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "f554bd9b5d853636b7f6a71d4b4aca70986a238f25a66a744e979ec56e6e8c68"
+    },
+    {
+      "path": "docs/06l3/evidence/final-offline-browser.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "f978b0f693024966fc0944849b041db3671ee640512fbd1be504d3d13b6ffb1d"
+    },
+    {
+      "path": "docs/06l3/evidence/final-reference-authentication.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "81fdf1963706908d1a4b26de50f49c1af241d45e6dc5d80a19914eb793d9d00f"
+    },
+    {
+      "path": "docs/06l3/evidence/final-release-gates.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "4d782b8e5a185ee4a22f176e2ba05cf3c804d4aeeac7a0d54c5f88ef7ea490c9"
+    },
+    {
+      "path": "docs/06l3/evidence/final-runner-attempt2.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "0612c9d722a63f0f6a43dac9ca70d762ad7dff6e6fb90c5f3f8397f04f1f9c76"
+    },
+    {
+      "path": "docs/06l3/evidence/final-runner-attempt3.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "b743c988953ac06e593cf85f68239b68ec7abd8b0dc328a11e14f2b8ff75c1ca"
+    },
+    {
+      "path": "docs/06l3/evidence/final-runner.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "0612c9d722a63f0f6a43dac9ca70d762ad7dff6e6fb90c5f3f8397f04f1f9c76"
+    },
+    {
+      "path": "docs/06l3/evidence/final-security-static.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "38d029acaf31e2fecae5ee4a2937caa6d3c3b457da57ac7c0cdcc97cb4accbee"
+    },
+    {
+      "path": "docs/06l3/evidence/final-source-context.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "b32db3e2e55597b4df11bc58dc069e98e7df0bb5e196940c5f4a6a4177938c3c"
+    },
+    {
+      "path": "docs/06l3/evidence/final-tests.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "540c973d0245f3a4b79355d9eeb23e977fcbe9a8ec59794f30e1011bf53e49aa"
+    },
+    {
+      "path": "docs/06l3/evidence/final-typecheck.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/06l3/evidence/final-unit.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "8eedef7480b7314a9d625b2f06965c21a8cbc57c528c0dab7ff676f9f9f3a2f0"
+    },
+    {
+      "path": "docs/06l3/evidence/final-verify-build.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "0e3c5a955296cb9ff62e42883c46f76d88c02ff4b8d90a4bb1586149c7dd172a"
+    },
+    {
+      "path": "docs/06l3/evidence/fsrs-backward-portable-types.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/06l3/evidence/fsrs-backward-portable-verification.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "14314a5c2ee0a791e7e497dc1517e2745c4bc4f153273399ab8f908bf425d664"
+    },
+    {
+      "path": "docs/06l3/evidence/fsrs-backward-reader-full-archive.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "bce6687f220571d40ef906ab7822d5a22b26e9bb9fac25a273f89601a7e15fc5"
+    },
+    {
+      "path": "docs/06l3/evidence/fsrs-backward-reader-full-archive.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "f20dde5eb1e19eabc0343576b6eb3a209ddf8d271a3a9ed47f80d92b68ed346d"
+    },
+    {
+      "path": "docs/06l3/evidence/fsrs-backward-reader.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "51ccf217eafde591a41b04f43662eac0ecd7421d28f68bcc8f1ff37a63f7fe78"
+    },
+    {
+      "path": "docs/06l3/evidence/fsrs-backward-reader.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "8fe212a645e93ae5effbe86bb0cf37c4316e8b93ba31273a5c6a9771544b3fb9"
+    },
+    {
+      "path": "docs/06l3/evidence/fsrs-conformance.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "939904370b1017feb50cc104b2b93241843203fa670c927a034454f68552146a"
+    },
+    {
+      "path": "docs/06l3/evidence/fsrs-kernels-reference-preservation.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "06fb11b75e6d43d59e6e60ab29d8ba1fa657d74ad72d00e1d4dea4f2059fc4b4"
+    },
+    {
+      "path": "docs/06l3/evidence/fsrs-reference-authentication-command.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "7a4e069de6ffd53fe6533dfc0607507d251ee630bc3db815f2e0d82e1b6d38f2"
+    },
+    {
+      "path": "docs/06l3/evidence/fsrs-reference-authentication.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "5ff81b3fd943ecb1e9dd62933a3b25a399c912747bd3d934bef5314b1891487a"
+    },
+    {
+      "path": "docs/06l3/evidence/fsrs-reference-authentication.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "81fdf1963706908d1a4b26de50f49c1af241d45e6dc5d80a19914eb793d9d00f"
+    },
+    {
+      "path": "docs/06l3/evidence/fsrs-version-initial-fixture.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "3dac2b60d2e44618edc5a526d781be235fd97e243b0021e8f60d3d2be20546f9"
+    },
+    {
+      "path": "docs/06l3/evidence/fsrs-version-initial-fixture.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "2e6772665128f6202921e788e2c37124d4f349250b479f6bd7c3b6f619f4995f"
+    },
+    {
+      "path": "docs/06l3/evidence/fsrs-version-tests.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "ff65ad9f2569e9ed92ed410fe75ff497930dfffc1122d72efa4781cb21255504"
+    },
+    {
+      "path": "docs/06l3/evidence/fsrs-version-tests.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "2e6772665128f6202921e788e2c37124d4f349250b479f6bd7c3b6f619f4995f"
+    },
+    {
+      "path": "docs/06l3/evidence/fsrs-version-types.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/06l3/evidence/fsrs/fsrs-investigation.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "46834b64b00185a572dbe044462967d9bc526cd96249a0a1b19720a068a44def"
+    },
+    {
+      "path": "docs/06l3/evidence/fsrs/reference-case-matrix.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "cfcc8105723a5c0da2af0c63fa4d27520661a53d441015249545a06954341749"
+    },
+    {
+      "path": "docs/06l3/evidence/historical-evidence-preservation.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "bd39592d5fbb0a8e5cec0f389e4f78b667073b3f72e3a78bf39e7c0d432c526e"
+    },
+    {
+      "path": "docs/06l3/evidence/historical-path-outputs/05b/evidence/performance-results.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "e307ef8ccc98b07130a303e24ac5693d1d78ecc61e84a012a3ec2c064ffb146a"
+    },
+    {
+      "path": "docs/06l3/evidence/historical-path-outputs/06d2/evidence/fsrs-integration-observations.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "18ea5e375c87b7aeda1d89db8643ed904df71bb3623ddcbb3e7dca55951292b2"
+    },
+    {
+      "path": "docs/06l3/evidence/historical-path-outputs/06e1/evidence/reference-verification.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "8e16e953bb58208ae1beec542a49c54dc5403ce414198d5be770182c0e41eea0"
+    },
+    {
+      "path": "docs/06l3/evidence/historical-path-outputs/06l2/evidence/content-display/results.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "54f88f25331d9ff4951e6b6c7e58b5a2e62148f0fc85254612cb37acacf0568a"
+    },
+    {
+      "path": "docs/06l3/evidence/historical-path-outputs/06l2/evidence/content-supplemental-audit.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "cee95c6789e35a603cd392498ac716cbc37718dc253f17a2fc726113d9e767e1"
+    },
+    {
+      "path": "docs/06l3/evidence/journey-attempt2-results.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "141bb5a0e96a85ebff58ab752e3c25249c709141201fc77a6b3517406e97b9b9"
+    },
+    {
+      "path": "docs/06l3/evidence/journey-attempt2.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "fe2164f5e12aeba31c4f286e599f002d85a1700a8f68cf5e00d6e9755293dc64"
+    },
+    {
+      "path": "docs/06l3/evidence/journey-attempt3-results.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "8ee46a8a429b93c2f371e70582af363fa4af06266ae8a7fbd131f6ba0c0f339f"
+    },
+    {
+      "path": "docs/06l3/evidence/journey-attempt3.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "0c37e257d8f8a4086908bae3c453068e5b314750e8d898c805c2015ef22d8085"
+    },
+    {
+      "path": "docs/06l3/evidence/journey-attempt4.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "38412937a06eb564f4469b1ffbf84e331eceb24a867527a3db83d72014bcd944"
+    },
+    {
+      "path": "docs/06l3/evidence/journey-attempt5.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "5991ec9ecfab578bff2759002e6ed820ee75ff7bc0fbbd10a83eff1e76ad46b5"
+    },
+    {
+      "path": "docs/06l3/evidence/journey-attempt6.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "a7774e412b894406dc656f754bf5ab9130f1ee49e3b52d16db4844d7ef0db362"
+    },
+    {
+      "path": "docs/06l3/evidence/journey-attempt7.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "268bf0e8cd098b54486455555a113517296f6f5f4c12ad1ecce6fa4e04e895c5"
+    },
+    {
+      "path": "docs/06l3/evidence/journey-initial-failure/journeys06l3-L3J02-prior-h-1dff8-ew-and-retains-goal-history/error-context.md",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "36cae80f8c27b908fdc25944b92145a972ff98d4b65449f971745b6403262ba6"
+    },
+    {
+      "path": "docs/06l3/evidence/journey-initial.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "fdaf95abb7028e967911956f04dbdfb139091ecfbde4084ae647c262a87fef90"
+    },
+    {
+      "path": "docs/06l3/evidence/journey-offline-browser-results.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "899a8ea819c1ac41033a7dedc61b2a755e417ef5b62a119e9d1e4b541cd755ea"
+    },
+    {
+      "path": "docs/06l3/evidence/journey-offline-browser.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "70fb66537cd1fb393d94dbdc7c619deed197dcb0d6d274c5ea0e66a1e1af5e14"
+    },
+    {
+      "path": "docs/06l3/evidence/journey-offline-build-assets.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "0781d8430a59601e3775bcede49b3d71def03101594163480ff57a8c2337fe6d"
+    },
+    {
+      "path": "docs/06l3/evidence/journey-offline-summary.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "6839a561ee1f1bf3a51c5ac50b6c85191a58987c4240cbbb3d187e086506e789"
+    },
+    {
+      "path": "docs/06l3/evidence/material-command-results.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "836a14c8b3595252d70c00858422947a6716ed51729e783686bab818bb7c5cf5"
+    },
+    {
+      "path": "docs/06l3/evidence/material-tests.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "130bfd010c24c670ea8feacc5efa3f730819a47b2a482e4aeddf84ea94a7aedd"
+    },
+    {
+      "path": "docs/06l3/evidence/material-tests.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "058c3f69e45bf5113eb86c2d0ee438ffd75d45cdd4a33554b0c7b6c078b1d9bd"
+    },
+    {
+      "path": "docs/06l3/evidence/material-typecheck.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "docs/06l3/evidence/phone-home.png",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "5fd4c960dd8e0cf0ea570415274317072c4a584275aee07cfd8519fafd65cf1c"
+    },
+    {
+      "path": "docs/06l3/evidence/previous-final-run-20261107T123456Z/final-runner-attempt2.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/06l3/evidence/previous-final-run-20261107T123456Z/final-runner.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "0612c9d722a63f0f6a43dac9ca70d762ad7dff6e6fb90c5f3f8397f04f1f9c76"
+    },
+    {
+      "path": "docs/06l3/evidence/previous-final-run-20261107T123456Z/final-tests.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "29ddfd1bdf984ca0143582cee3834c57349e3b6e00930aca0f26168380123fd3"
+    },
+    {
+      "path": "docs/06l3/evidence/previous-final-run-20261107T123456Z/final-typecheck.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/06l3/evidence/previous-final-run-20261107T123456Z/final-unit.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "8eedef7480b7314a9d625b2f06965c21a8cbc57c528c0dab7ff676f9f9f3a2f0"
+    },
+    {
+      "path": "docs/06l3/evidence/previous-final-run-20261107T123456Z/verification-commands.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "dea7caae409147a674ec0cfc280be27d824436633e45de808bf3a294c25654a5"
+    },
+    {
+      "path": "docs/06l3/evidence/previous-final-run-20261107T123809Z/final-runner-attempt2.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "0612c9d722a63f0f6a43dac9ca70d762ad7dff6e6fb90c5f3f8397f04f1f9c76"
+    },
+    {
+      "path": "docs/06l3/evidence/previous-final-run-20261107T123809Z/final-runner-attempt3.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/06l3/evidence/previous-final-run-20261107T123809Z/final-runner.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "0612c9d722a63f0f6a43dac9ca70d762ad7dff6e6fb90c5f3f8397f04f1f9c76"
+    },
+    {
+      "path": "docs/06l3/evidence/previous-final-run-20261107T123809Z/final-tests.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "d7d73cc3702f3faaff8b27eb64676b275927ef49665ce1924e52646c6bf2d089"
+    },
+    {
+      "path": "docs/06l3/evidence/previous-final-run-20261107T123809Z/final-typecheck.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/06l3/evidence/previous-final-run-20261107T123809Z/final-unit.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "8eedef7480b7314a9d625b2f06965c21a8cbc57c528c0dab7ff676f9f9f3a2f0"
+    },
+    {
+      "path": "docs/06l3/evidence/previous-final-run-20261107T123809Z/verification-commands.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "c12ab00dfc646b42754a216ee295400732bab1c7c0c96586bb13c343652feb9b"
+    },
+    {
+      "path": "docs/06l3/evidence/protected-files-check.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "dc740c5c3717175a3f9c0639c936510e2242ff21ff2dee61f2e252bfabfdd12f"
+    },
+    {
+      "path": "docs/06l3/evidence/reference-raw-retention.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "3c0a5149e7f165c673a925aeb59bed32d1a71c054d4a9ca9ee30828935762793"
+    },
+    {
+      "path": "docs/06l3/evidence/release-gates.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "4d782b8e5a185ee4a22f176e2ba05cf3c804d4aeeac7a0d54c5f88ef7ea490c9"
+    },
+    {
+      "path": "docs/06l3/evidence/root-types-initial.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/06l3/evidence/security-dependencies-audit.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "252c4cd34828ddc9cbdc24eead4728e8d75e08ed17b66b5b086edcdfb4586717"
+    },
+    {
+      "path": "docs/06l3/evidence/security-dependencies-audit.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/06l3/evidence/security-dependencies-command.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "7025dac3e70fc7fdac1a8153523b26bbb1aeb0ac2c6fe13f9f101b052d727aad"
+    },
+    {
+      "path": "docs/06l3/evidence/security-development-browser-command.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "dfc5e4d8d7e728baeeaa6d30482bf92df2bab58c5fe7f43c13964e481f1e5fbd"
+    },
+    {
+      "path": "docs/06l3/evidence/security-development-browser-results.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "17b0ebd054240ed1928efee983d996574a9800ebd37d01771105de07b4f17bfb"
+    },
+    {
+      "path": "docs/06l3/evidence/security-development-browser.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "395643a39175a48a86bb904a2dfe996d9c4635943e6d782544c653ade8329c48"
+    },
+    {
+      "path": "docs/06l3/evidence/security-isolation-command.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "f7e925c4d16bbd707134c6f827d63ba2b493d5df8860312c1ea5ea63b3c432cd"
+    },
+    {
+      "path": "docs/06l3/evidence/security-isolation-tests.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "8310fbbb087ec01263caec1f629aa999e1140eebe77b40d80b4f7a7c4aad7d3a"
+    },
+    {
+      "path": "docs/06l3/evidence/security-isolation-tests.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "4c4be99d4c9e5ef9de8cc15a3b66c41d326e4411fb794a6956b7fdd45d4d3353"
+    },
+    {
+      "path": "docs/06l3/evidence/security-journey-browser-command.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "6acd930e86c2b1f5ec2ccef810b2b8fa05c7089bf89ef369b070c93919dea385"
+    },
+    {
+      "path": "docs/06l3/evidence/security-journey-browser-results.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "73c41ec93c370fe116fc1dab35bf95231bbbef15dc97a77a0bef42eb88afb7ee"
+    },
+    {
+      "path": "docs/06l3/evidence/security-journey-browser.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "6653f484d4746d0b07308e8cd5624f3f4d633cc9aaaeeaf42dfe048f43d477a8"
+    },
+    {
+      "path": "docs/06l3/evidence/security-journey-command.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "947882499ad3f4f5bbf2c7df66c73f6db5c3c5e4e85e4c1eacf4f31c20439d67"
+    },
+    {
+      "path": "docs/06l3/evidence/security-journey-followup-fixture-initial.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "b9dc0052a54206fd6f955e7d5982b5cb796e439c90b6a6f4b59e78308381ed7a"
+    },
+    {
+      "path": "docs/06l3/evidence/security-journey-pause-days-initial.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "ee5a6d08fc235b97188fb92a8508d1c8a9d97baa692af6f9b575c95e32bcaeac"
+    },
+    {
+      "path": "docs/06l3/evidence/security-journey-pause-days-initial.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "cb9763b9e64410a7f7e06d5d08ea9dd697cb79b46457baf898f0240552883bcc"
+    },
+    {
+      "path": "docs/06l3/evidence/security-journey-restored-recall-initial.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "3992f217049867cce55c07b9956f66a88a72d04c7e0ea4d8d0ed67a296bae1db"
+    },
+    {
+      "path": "docs/06l3/evidence/security-journey-restored-recall-initial.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "8ea7cd303cd93b2ccde489574e775c4c15efe3607fdbc35edf0ea517d19c142f"
+    },
+    {
+      "path": "docs/06l3/evidence/security-journey-tests.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "8bdbfb7179af5735acb963f6ad4dd0d2cab5edc1606dab940c2a7138f92f62a2"
+    },
+    {
+      "path": "docs/06l3/evidence/security-journey-tests.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "cb9763b9e64410a7f7e06d5d08ea9dd697cb79b46457baf898f0240552883bcc"
+    },
+    {
+      "path": "docs/06l3/evidence/security-journey-version-initial.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "39ddd7be824991a1ab249e5de23fc9b7e6425c6d3b66738d3ff40d074a6f89da"
+    },
+    {
+      "path": "docs/06l3/evidence/security-static-initial.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "8e6bd1bfb38361261098708d89b95cab3b2a954c7e96c74568682ce5d8dc536a"
+    },
+    {
+      "path": "docs/06l3/evidence/security-summary.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "3d89933848122353ea9e9bb5a1704a94a5d843c4ca4b36cc92e278dfdf218e56"
+    },
+    {
+      "path": "docs/06l3/evidence/source-receipt.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "b0f981f89865ee57e84c1d0971e7902bc7ee25170a151b47a554ecc89356b14d"
+    },
+    {
+      "path": "docs/06l3/evidence/test-summary.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "24078d765335a23ea5037af294e4e93f6796add8a9764183c9b51b9c886906f2"
+    },
+    {
+      "path": "docs/06l3/evidence/ui-regression-analysis.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "25636ab8ede4fec68ed6df067201024d95a6ea1dd9a2bb64607b5fc4de663e4a"
+    },
+    {
+      "path": "docs/06l3/evidence/ui-regression-baseline.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "13f06fd6499a676d938a2f07471f8f2c2adcdb72ee4799313a0bfd76422de2dc"
+    },
+    {
+      "path": "docs/06l3/evidence/ui-regression-baseline.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "f283b1877a1c3cea72f0b42900b0c3fa14dea44456ad5b9335f17675eb01b66f"
+    },
+    {
+      "path": "docs/06l3/evidence/ui-regression-diagnostic-repeat-1.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "f9da0c779e15733ad33eeb29c4ad978ece5dcb953b73703a0c9c449bd401069a"
+    },
+    {
+      "path": "docs/06l3/evidence/ui-regression-diagnostic-repeat-1.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "368a07180e3218a924b069689290406eadb0273929baba03aa088c8d0f806624"
+    },
+    {
+      "path": "docs/06l3/evidence/ui-regression-diagnostic.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "58f2123d52d35c524c1017d26cf3223e4602d86e4ac704a8732f5ea0a3ef01e9"
+    },
+    {
+      "path": "docs/06l3/evidence/ui-regression-diagnostic.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "12af5f0483cb7ff0a11f1d6b98b46c7c349cadce6c83a9c5c8d414352c11d6d5"
+    },
+    {
+      "path": "docs/06l3/evidence/ui-regression-fixed.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "d2330c282215509b35fb3eab7d3610b691138ec70f2e8c97365f48c44372be3f"
+    },
+    {
+      "path": "docs/06l3/evidence/ui-regression-fixed.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "688dd35584483e875573c0b38c0d93aea514ae97f31beededd12e8d24c0afb36"
+    },
+    {
+      "path": "docs/06l3/evidence/ui-regression-focus-trace-1.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "39fc79327ba4d5f2435914a61d049cb15d3672476c1658b5ff992fea16764ba4"
+    },
+    {
+      "path": "docs/06l3/evidence/ui-regression-focus-trace-1.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "3508e9dcc95a2d4a7cfce4128f922620e3d1912e1970169b06e5aa4eff36d8cb"
+    },
+    {
+      "path": "docs/06l3/evidence/ui-regression-focus-trace-2.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "0a8e7b2e3aca326c5025944e4df0f53f34825aea786dcc431c494d8fc4206d66"
+    },
+    {
+      "path": "docs/06l3/evidence/ui-regression-focus-trace-2.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "b8832b9359d74e7516915193dcc6ee2f2eb60eb0829de3467228aa485287c489"
+    },
+    {
+      "path": "docs/06l3/evidence/ui-regression-focus-trace-3.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "fa132f8e0a188d22e9d9e1452788ce491b64b1ba1dabcdef5af0cb44f6b47fd1"
+    },
+    {
+      "path": "docs/06l3/evidence/ui-regression-focus-trace-3.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "593a900838491a26bcb5731e2d07a7a4146d16bdec1d6c3e60b8e2e35e7dd1d0"
+    },
+    {
+      "path": "docs/06l3/evidence/ui-regression-original-test.tsx.txt",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "ca55b1de1f2d0cc874e4f65be094ebe16af5865223a691b1a3a4b654237200a9"
+    },
+    {
+      "path": "docs/06l3/evidence/verification-commands.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "49b1758e66acc2ae690397215a5a30566e9ca8958f009ebe165b5bd348a46f8c"
+    },
+    {
+      "path": "e2e-deployment/rollout06l2.spec.ts",
+      "status": "removed",
+      "beforeSHA256": "a46c60b7462e9aca92aa8eaaa7396088a01291c056f6e0f97d17af35c9d318cb",
+      "afterSHA256": null
+    },
+    {
+      "path": "e2e-deployment/rollout06l3.spec.ts",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "73fa90b70b169f842d2d9a6ec0c2bdb6372e2430faf3938c8e01d5e5c7465f7b"
+    },
+    {
+      "path": "e2e-journey-offline/journey-offline06l3.spec.ts",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "9c582ee2cc2df8f3ee0d23f97d134eabf26ad8df4ceab06a68c4f6fec61b94ca"
+    },
+    {
+      "path": "e2e-journey/journeys06l3.spec.ts",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "dae6c0c0aae56a613db352ddccffd6fdd248b2116abbed6262eacb12a484049a"
+    },
+    {
+      "path": "e2e-journey/security06l3.spec.ts",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "92532e54eea3cc071dddefb93e2045590829ac1610d7d9ff3665a2b18d79a103"
+    },
+    {
+      "path": "e2e/isolation06l3.spec.ts",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "0d5f43dea3e40250218c07f6a4c50909774448511958702621a1adad6ea5cebc"
+    },
+    {
+      "path": "engineering.html",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "8a58ce17d749d4de23b4d286f5c60380adcc4db9c713fc78fa94935f4af19502"
+    },
+    {
+      "path": "index.html",
+      "status": "modified",
+      "beforeSHA256": "17c4ca51453ff4d2e580811dcb1da032c1d075da258878d65dafc4eaaa32ab0c",
+      "afterSHA256": "8150a7d8bca9dbce08acb03a5b12a4d9029a541479d064b4bad59368bb71d8db"
+    },
+    {
+      "path": "package.json",
+      "status": "modified",
+      "beforeSHA256": "b03a087512aba983e2e932e7a6ab6e426ce47915cca162ed16f9fa36077540c8",
+      "afterSHA256": "0b7d87aa934e84cb2d56e6cbf34a8e7784a49cb180b37e34785edbb0c08fe61c"
+    },
+    {
+      "path": "playwright.journey-offline.config.ts",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "ffdd891fcefa6b79b042e4cc816ac69972f5ea0f54a70e64b69a470648813e12"
+    },
+    {
+      "path": "playwright.journey.config.ts",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "19874e30797f3904ba0c012bbe3c1a288974fe43d4139c4eceb39ade6b59f96d"
+    },
+    {
+      "path": "references/06l2-backup-reader/receipt.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "73af3c02dd575b7a7bbcdb8d1fe3da0f35c5f61c0595dfb3622cf060752e197a"
+    },
+    {
+      "path": "references/06l2-backup-reader/source.zip",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "b47501dfd461f9445c2e9d2ad84ae1fa09f1af6048d4bd3ee6b650f1165801ef"
+    },
+    {
+      "path": "references/06l2-preview-baseline/build.zip",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "12103deaa4f4cebb2bf965a912d10f2042683457574fca6dfe3cdfbd03b8aa67"
+    },
+    {
+      "path": "references/06l2-preview-baseline/receipt.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "dcbb735c06568a7d556f39066c2a322c57fe254838ec55963209c5521a1b29d4"
+    },
+    {
+      "path": "scripts/build-engineering06l3.mjs",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "e9efb97c18ab3de3871f29c43b309f605b547c70c48734a22d3b49a607b6290a"
+    },
+    {
+      "path": "scripts/content-compare06l3.mjs",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "399519d6d6002ba1d2dcf17fe72035b6058367151f5ba9c3c17bccaaa6f6c169"
+    },
+    {
+      "path": "scripts/fsrs-backward06l3.mjs",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "fb64b90124b028aabb2251d84df2a900c96be593f44af339713a3476825defc4"
+    },
+    {
+      "path": "scripts/release-source-hash.mjs",
+      "status": "modified",
+      "beforeSHA256": "06eef6f2aa960073f2378906277d1403c87fce1316d30ea7d7f4a25e1ddb37a3",
+      "afterSHA256": "cb77ef57000527a45244d95de0ab9663aaf601f326369c21f3448d9fc0f013ea"
+    },
+    {
+      "path": "scripts/verify-06l3.py",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "3bb9bc19c69b0e66a9d3463def25ca640d33f525e69fafe624e7fbe6ff29cfd1"
+    },
+    {
+      "path": "scripts/verify-build.mjs",
+      "status": "modified",
+      "beforeSHA256": "3a597c326d128d50347ff0478c45c1ff87897e2ed2b1e5e1ea7515296382f4d8",
+      "afterSHA256": "74c34de27358145d16a5b1f6399845fb9ec104f484f633de87197805202bfe1e"
+    },
+    {
+      "path": "src/App.tsx",
+      "status": "modified",
+      "beforeSHA256": "48911ac321d34890c5fbd8980c395615720a2c1d07c91f3696cc25d1ca2c496d",
+      "afterSHA256": "00deb3d0a576b1a5c9690ea941191881cbce19e6ee3a82e1331634c633100d69"
+    },
+    {
+      "path": "src/JourneyScreen06l3.css",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "f294e2568d121354aefdc8b5d3767c57bfc4c0f6b1a0b255de3d785e573a31e8"
+    },
+    {
+      "path": "src/JourneyScreen06l3.tsx",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "ebd9ad300466c2e6c34c0d91d5e1e343a07ff28c9d1a69ac2a7ee0f0b46d9dda"
+    },
+    {
+      "path": "src/LearningEngineScreen.test.tsx",
+      "status": "modified",
+      "beforeSHA256": "ca55b1de1f2d0cc874e4f65be094ebe16af5865223a691b1a3a4b654237200a9",
+      "afterSHA256": "e6b0c988455405805613d24b597d72bdf1720148ef7538d931060aa8619f338f"
+    },
+    {
+      "path": "src/application/adaptive-scheduling.ts",
+      "status": "modified",
+      "beforeSHA256": "c66a563a133c6f931f98f349d57d430b4a76f15f2fdd2fb3aa563e95341a4e7f",
+      "afterSHA256": "7ac20664d5791a50b65b31fb31dd2618c2439ef2b69c90e768a38c9d571ecb6a"
+    },
+    {
+      "path": "src/application/composite-application.ts",
+      "status": "modified",
+      "beforeSHA256": "76b5ada92bd5eafb0776fb8535dcbeca18ad1000c0bfd67e34d02270596f1d96",
+      "afterSHA256": "c2a1f98f144ff397f9c462b4a38c94096eea3402cb4c0c41b8b5b58d6ee66d3d"
+    },
+    {
+      "path": "src/application/fsrs-transition06l2.ts",
+      "status": "modified",
+      "beforeSHA256": "d394daf0cddb25441017e926d0d7dae36e726353a5f0afac9afa79170adf669a",
+      "afterSHA256": "0c87af376b57705bf9e222b73b943cf07b23cdd3a5579c4f31c740ef2db7763c"
+    },
+    {
+      "path": "src/application/fsrs-version06l3.test.mjs",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "a23c28d4f12faa0a9884c9ade38e295a980b2adee1713a0bffad12e5ed01edbd"
+    },
+    {
+      "path": "src/application/history-application.ts",
+      "status": "modified",
+      "beforeSHA256": "94c6d2f9948db10474f2ac8affe11bffa1bc46ab36c01bbd9cc20f80edd1b9ac",
+      "afterSHA256": "793dea52f73e21e8c555f46e2bbff35fe36a154591e8a0e006d2b78e2dca21e9"
+    },
+    {
+      "path": "src/application/journey-security06l3.test.mjs",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "6400f71a59b86a655d7151e61b1a9e0fa7e3dd0f09a3fbf63b49e508fc86bdf5"
+    },
+    {
+      "path": "src/application/journey06l3.ts",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "ece66d07c28b0c33f6f8680be8b14d2634a59357979bd6f01295d7ca7885ca1f"
+    },
+    {
+      "path": "src/application/learning.ts",
+      "status": "modified",
+      "beforeSHA256": "8a714191d782fc235c7be62f4acd3796d3ba817395323f7d5269383980eceeef",
+      "afterSHA256": "40ed2bd10a373f146461313186c26b558d87035abfcb19f6ef5c71ce2a573b9f"
+    },
+    {
+      "path": "src/application/runtime-application06l3.ts",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "c693961720acfd8ce11b0d831ea28c0d939823cea8b9a37db5c1351105ce0bb3"
+    },
+    {
+      "path": "src/content/comparison06l3.test.mjs",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "bb018368fd1c6852a61e27c40189ec9d601cc9f9b6f74ec4290f150421a2ca66"
+    },
+    {
+      "path": "src/content/journey-material06l3.test.mjs",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "d5ff1ff95f037efc349522e3134ffce8a8d38f311cbb1107609b4cd46f804ef4"
+    },
+    {
+      "path": "src/content/journey-material06l3.ts",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "a419021d111d4a2f07d7e511ce94b6187a9da4c868054abd824c4f1958da8f9e"
+    },
+    {
+      "path": "src/core/types.ts",
+      "status": "modified",
+      "beforeSHA256": "6a8de58550c73f2d2dcad0701d7f0164bd0b9874ab8938e17ed6e6b35419af3f",
+      "afterSHA256": "f5d7badecc5097ed003e312724d9e7dbcddb5b9839297c8383c0b43f84022791"
+    },
+    {
+      "path": "src/main.tsx",
+      "status": "modified",
+      "beforeSHA256": "c5b03560534fba0dc6c4098a25cf6a3e6613f7e754b97c386445cc9079ad13b9",
+      "afterSHA256": "9986a07dbcd3b9510b41fcb0c1d208f535ae2fac42207ce6973c28a925ddad25"
+    },
+    {
+      "path": "src/persistence/backup.ts",
+      "status": "modified",
+      "beforeSHA256": "7e209b17d83f3e9335ac2e7e6d0c57b5747ba583752770ff31e84bd6c0cd8a3f",
+      "afterSHA256": "04888fb13ba7a5544ce52045683ca5e3538c603c0f9d731d629760b570b6b1fd"
+    },
+    {
+      "path": "src/release/access.ts",
+      "status": "modified",
+      "beforeSHA256": "f493edfcac4d4cb0b2a5f43fdabce106a3fb85fe7abd5e21f38f3200544d65c3",
+      "afterSHA256": "2f677df3c609f19974df51f823bd014f7a97304e31976e8241073797e4791938"
+    },
+    {
+      "path": "src/release/build-context.generated.ts",
+      "status": "modified",
+      "beforeSHA256": "a42fcd1454b5319769c31f0e0f36802cc5caccf1f46ab357511a102996bf6a47",
+      "afterSHA256": "d504e54641d96a4cf68b38a8c98e84bd45b1a88812108209734d9e47ac992ffb"
+    },
+    {
+      "path": "src/release/isolation06l3.test.mjs",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "c46db9b61c0ad38b988fa3fe1c8b7e70159fdafd0e94d01c5e7a92c8c909fc32"
+    },
+    {
+      "path": "src/release/journey-input06l3.ts",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "8535d42bbc50fbf52cf3135ab943b5410082ecc31c7c1108e3cfab3980a6e58f"
+    },
+    {
+      "path": "src/release/runtime.ts",
+      "status": "modified",
+      "beforeSHA256": "3c449ce10099722923408824413ef88f9a334f850a64a5711f9d7b3efde2c377",
+      "afterSHA256": "847357b60b0ef2c0d3a35b56fdec80ffc5c4f81e9cca8a305752804a0f86868d"
+    },
+    {
+      "path": "src/release/source-hash.test.mjs",
+      "status": "modified",
+      "beforeSHA256": "e62b10d2de48e4190313d25ede3e3b22bada72406f584e0c4a868468fbc40d08",
+      "afterSHA256": "db9fbfb0b3b6cbffb350d9d3d9d7bbaa28676dd8458720f2be63804fd8bebb02"
+    },
+    {
+      "path": "src/testing/engineering06l3.tsx",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "df139e045e6fc8c6f1deed982a1b896771db7cbeb46e83cc450b2008b7bf60d1"
+    },
+    {
+      "path": "vite.engineering.config.ts",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "b70d477d01f90b8b6e3360cb64b131f4df0dbb52f32e11eb02514413174ef281"
+    }
+  ]
+}

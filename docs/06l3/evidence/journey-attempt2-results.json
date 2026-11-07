@@ -1,0 +1,256 @@
+{
+  "config": {
+    "configFile": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l3/playwright.journey.config.ts",
+    "rootDir": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l3/e2e-journey",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results-journey/journey-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l3/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l3/e2e-journey",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 1,
+    "webServer": {
+      "command": "node node_modules/vite/bin/vite.js --config vite.engineering.config.ts --mode test --host 127.0.0.1 --port 4177 --strictPort",
+      "url": "http://127.0.0.1:4177/engineering.html",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "journeys06l3.spec.ts",
+      "file": "journeys06l3.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "L3J01 newcomer full isolated journey creates real durable HME events, schedules corrected review and survives reload",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2131,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T12:22:31.635Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "newcomer-evidence.json",
+                      "contentType": "application/json",
+                      "body": "eyJlbmdpbmVlcmluZyI6dHJ1ZSwicXVyYW5TZXNzaW9uIjpmYWxzZSwicmVzdWx0QWN0aW9ucyI6MSwiYXNzZXNzbWVudEV2ZW50cyI6MSwib3JpZ2luYWxFdmVudHMiOlsiYzI2NzExZjctZTY0Ny00ODRmLWI3YzgtYjA5MGNjNGM1NGU5IiwiZTBmNjFmOTUtNDY0NC00ZWMyLWExNDYtYjY3YWE5NzBkZTY5IiwiOWY1OTY5YmUtN2UzYi00N2VhLWIwYjQtYzVkNjk1MDNhNWIzIiwiNmI1NmNkMWEtNjZhZi00M2ZlLTg0MjQtZDVjYjkzZWM5MGE5IiwiZTdhMjI5MDItMzhmMS00ODEyLTgxOWUtNzM2ZjgzY2IyNzI1IiwiYTdkMDk0OTgtZjVlOS00NTNmLWFmNzQtYTc4NjczMTZiZTE1IiwiNzQzNTgxZGEtODM3Ny00MTNiLWJjODItYmRhOTYzODhjZmEwIiwiOTdjZjA3YmQtOGM3ZC00YjUwLThkOTgtYzc3NmUyM2VjODcwIiwiNDM5NWI4MjItM2EwYS00ODIzLTg2Y2QtM2M0OTFiODFiYmM2IiwiYmY3Yjg4NjctNmE2Yi00ODUzLWI1NjEtYjY4NWY4NGZkOTljIiwiMTZlM2Q4NTUtZmRmZS00MzQ3LTlhMDAtYzE4YmI1YWQyMGYyIl0sInZlcnNpb24iOiJyZWZlcmVuY2UtMDZlMSJ9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1d4c4364c7f65f8a72d4-10f13e256cd1805825e8",
+          "file": "journeys06l3.spec.ts",
+          "line": 64,
+          "column": 1
+        },
+        {
+          "title": "L3J02 prior hafiz starts from declaration, records failure, corrects observation without duplicating review and retains goal history",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 45139,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l3/e2e-journey/journeys06l3.spec.ts",
+                        "column": 65,
+                        "line": 46
+                      },
+                      "message": "Error: locator.click: Test timeout of 45000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /احفظ|حفظ الخطة/ }).first()\u001b[22m\n\n\n  44 |  await page.getByRole('button',{name:'تابع إلى النشاط التالي'}).click();\n  45 |  await page.goto('/engineering.html#S02');await page.getByLabel('الوقت اليومي', {exact:false}).first().fill('20');\n> 46 |  await page.getByRole('button',{name:/احفظ|حفظ الخطة/}).first().click();\n     |                                                                 ^\n  47 |  const after=await facts(page);for(const original of snapshot.events)expect(after.events.find(e=>e.eventId===original.eventId)).toEqual(original);\n  48 |  await info.attach('prior-evidence.json',{body:JSON.stringify({engineering:true,quranSession:false,declarationNotVerified:true,assessmentEvents:1,corrections:1,historyPreserved:true}),contentType:'application/json'});\n  49 | });\n    at /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l3/e2e-journey/journeys06l3.spec.ts:46:65"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T12:22:34.666Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l3/test-results/journeys06l3-L3J02-prior-h-1dff8-ew-and-retains-goal-history/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l3/test-results/journeys06l3-L3J02-prior-h-1dff8-ew-and-retains-goal-history/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l3/test-results/journeys06l3-L3J02-prior-h-1dff8-ew-and-retains-goal-history/trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "1d4c4364c7f65f8a72d4-cff42f438a4b5d4cc51b",
+          "file": "journeys06l3.spec.ts",
+          "line": 118,
+          "column": 1
+        },
+        {
+          "title": "L3J03 reload during recall requires restart, disclosure persists, cancelled activity never counts as completed",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2235,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T12:23:20.674Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1d4c4364c7f65f8a72d4-0062fe4c29587754cc72",
+          "file": "journeys06l3.spec.ts",
+          "line": 168,
+          "column": 1
+        },
+        {
+          "title": "L3J04 phone keyboard and automated accessibility include daily activity, hidden recall answer and self-assessment",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1939,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T12:23:23.346Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1d4c4364c7f65f8a72d4-c87e35add0a997daa3ba",
+          "file": "journeys06l3.spec.ts",
+          "line": 211,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-07T12:22:30.663Z",
+    "duration": 54758.132999999994,
+    "expected": 3,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

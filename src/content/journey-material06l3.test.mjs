@@ -1,0 +1,43 @@
+// @vitest-environment node
+import { beforeAll, beforeEach, afterEach, describe, it, expect, vi } from 'vitest';
+import { readFile } from 'node:fs/promises';
+import { canonical } from '../core/types';
+import { ContentGate, contentHash, TRUSTED_CONTENT_AUTHORITIES } from './content-gate';
+import { createApprovedJourneyMaterial, createEngineeringJourneyMaterial, requireJourneyMaterial } from './journey-material06l3';
+const unit=()=>({id:'test-material-unit',editionId:'test-material-edition',probeProfileVersionId:'chunk-P0-1',words:1,coverage:['test-material-edition:1:1:0']});
+const policy=()=>({version:'synthetic-material-policy',futureLoadFeasible:true});
+let pkg,sourceAyah;
+/** Complete mechanical fixture only: no Quran, real font, signing key, or installed trust anchor. */
+async function candidate(){
+ const tokens=[],parts=[],ayahs=new Map();let offset=0;
+ for(let i=0;i<240;i++){
+  const text=`SYNTHETIC_NON_QURAN_${i}`,surah=Math.floor(i*114/240)+1,ayah=(ayahs.get(surah)??0)+1;ayahs.set(surah,ayah);
+  tokens.push({surah,ayah,tokenIndex:0,sourceStart:offset,sourceEnd:offset+text.length,page:Math.floor(i/120)+1,juz:Math.floor(i/8)+1,hizb:Math.floor(i/4)+1,rub:i+1});parts.push(text);offset+=text.length+1;
+ }
+ const text=parts.join(' '),fontBytes=new Uint8Array([83,89,78,84,72]);
+ return {text,tokens,fontBytes,manifest:{schemaVersion:1,product:'MULAZAMA',editionId:'test-material-edition',contentVersion:'synthetic-only-1',riwaya:'Hafs an Asim',tariq:null,script:'SYNTHETIC-NON-QURAN',diacritics:'synthetic-only',verseNumbering:'synthetic-240',tokenizationVersion:'synthetic-1',layoutId:'synthetic-2-pages',layoutVersion:'1',source:{name:'SYNTHETIC AUTOMATED FIXTURE',version:'1',url:'https://example.invalid/synthetic-only',licenseId:'synthetic-test',licenseNotice:'Not Quran content',attribution:'Automated mechanical fixture'},font:{name:'SYNTHETIC-BYTES',version:'1',licenseNotice:'Not a Quran font'},totals:{surahs:114,ayahs:240,tokens:240,pages:2,juz:30,hizb:60,rub:240},hashes:{algorithm:'SHA-256',text:await contentHash(text),mapping:await contentHash(canonical(tokens)),font:await contentHash(fontBytes)}}};
+}
+function input(){return {pkg:structuredClone(pkg),approval:{authorityId:'untrusted-synthetic-only',reviewer:'Synthetic test claim, not approved',reviewedAt:'2026-11-07T00:00:00.000Z',manifestHash:'0'.repeat(64),reviewed:['text','riwaya','script','diacritics','numbering','segmentation','layout','license','font','boundaries'],signature:''},entries:[{unit:unit(),spans:[{surah:1,ayah:1,fromToken:0,toTokenExclusive:1}],costMinutes:2}],policy:policy()};}
+beforeAll(async()=>{pkg=await candidate();const original=await readFile(new URL('../../content/06l2/tanzil-uthmani-1.1.txt',import.meta.url),'utf8');sourceAyah=original.split('\n').find(line=>line.startsWith('1|1|')).slice(4);});
+beforeEach(()=>vi.stubEnv('MODE','test'));
+afterEach(()=>vi.unstubAllEnvs());
+describe('Journey material branding and fail-closed content release',()=>{
+ it('L3MAT01 a plain approved-looking object has no material authority',()=>{expect(()=>requireJourneyMaterial({kind:'approved',units:[unit()],policy:policy(),approved:true})).toThrow(expect.objectContaining({code:'CONTENT_UNAVAILABLE'}));});
+ it('L3MAT02 copied and serialized engineering material lose their brand',()=>{const m=createEngineeringJourneyMaterial([unit()]);expect(()=>requireJourneyMaterial(m)).not.toThrow();for(const fake of [{...m},structuredClone(m),JSON.parse(JSON.stringify(m))])expect(()=>requireJourneyMaterial(fake)).toThrow();});
+ it('L3MAT03 kind and capability object are immutable',()=>{const m=createEngineeringJourneyMaterial([unit()]);expect(m.kind).toBe('engineering');expect(Object.isFrozen(m)).toBe(true);expect(()=>{m.kind='approved';}).toThrow();expect(m.kind).toBe('engineering');});
+ it('L3MAT04 caller-owned unit and coverage are captured before use',()=>{const u=unit(),before=structuredClone(u),m=createEngineeringJourneyMaterial([u]);u.words=99;u.coverage.push('test-injected:1');u.id='test-changed';expect(m.units[0].unit).toEqual(before);});
+ it('L3MAT05 getters return detached passage, metadata and policy copies',()=>{const m=createEngineeringJourneyMaterial([unit()]),before=structuredClone(m.units);const returned=m.units;returned[0].passages[0]='INJECTED';returned[0].unit.coverage.length=0;returned[0].positions[0].surah=114;returned.push(returned[0]);m.policy.futureLoadFeasible=false;expect(m.units).toEqual(before);expect(m.policy.futureLoadFeasible).toBe(true);});
+ it('L3MAT06 caller-supplied real source text cannot enter synthetic titles or passages',()=>{const u={...unit(),text:sourceAyah,passages:[sourceAyah],title:sourceAyah};const m=createEngineeringJourneyMaterial([u]);expect(m.units[0].passages).toEqual(['مادة تدريب صناعية للاختبار فقط وليست نصًا قرآنيًا.']);expect(m.units[0].title).not.toContain(sourceAyah);expect(m.units[0].passages.join('')).not.toContain(sourceAyah);});
+ it('L3MAT07 a real edition label is rejected in the engineering factory',()=>expect(()=>createEngineeringJourneyMaterial([{...unit(),editionId:'hafs-real-edition'}])).toThrow(expect.objectContaining({code:'RELEASE_GATES_BLOCKED'})));
+ it('L3MAT08 real canonical coverage cannot be relabeled as synthetic',()=>expect(()=>createEngineeringJourneyMaterial([{...unit(),coverage:['1:1:0']}])).toThrow(expect.objectContaining({code:'RELEASE_GATES_BLOCKED'})));
+ it.each(['development','staging','production'])('L3MAT09 engineering materials cannot be minted in %s',mode=>{vi.stubEnv('MODE',mode);expect(()=>createEngineeringJourneyMaterial([unit()])).toThrow(expect.objectContaining({code:'RELEASE_GATES_BLOCKED'}));});
+ it('L3MAT10 an empty catalog is unavailable and duplicate identities fail integrity',()=>{expect(()=>createEngineeringJourneyMaterial([])).toThrow(expect.objectContaining({code:'CONTENT_UNAVAILABLE'}));expect(()=>createEngineeringJourneyMaterial([unit(),unit()])).toThrow(expect.objectContaining({code:'CONTENT_INTEGRITY_FAILURE'}));});
+ it('L3MAT11 structurally valid bytes still fail the approved factory without a trusted reviewer',async()=>{expect(TRUSTED_CONTENT_AUTHORITIES).toEqual([]);expect(await new ContentGate().verifyCandidate(pkg)).toMatchObject({tokenCount:240});const x=input();await expect(createApprovedJourneyMaterial(x,await contentHash(canonical(pkg.manifest)))).rejects.toMatchObject({code:'CONTENT_UNAVAILABLE'});expect(TRUSTED_CONTENT_AUTHORITIES).toEqual([]);});
+ it('L3MAT12 an approved boolean and arbitrary signature cannot replace content authority',async()=>{const x=input();x.approval={approved:true,signature:'not-a-signature'};await expect(createApprovedJourneyMaterial(x,'0'.repeat(64))).rejects.toMatchObject({code:'CONTENT_UNAVAILABLE'});});
+ it('L3MAT13 approved input is snapshotted before asynchronous checks',async()=>{const x=input(),pending=createApprovedJourneyMaterial(x,'0'.repeat(64));x.pkg.text='MUTATED';x.pkg.tokens[0].sourceStart=999999;x.pkg.fontBytes.fill(0);x.entries[0].costMinutes=Infinity;await expect(pending).rejects.toMatchObject({code:'CONTENT_UNAVAILABLE'});});
+ it('L3MAT14 missing source rights fail closed before a release claim is usable',async()=>{const x=input();x.pkg.manifest.source.licenseNotice='';await expect(createApprovedJourneyMaterial(x,'0'.repeat(64))).rejects.toMatchObject({code:'CONTENT_UNAVAILABLE'});});
+ it.each(['text','mapping','font'])('L3MAT15 changed %s bytes or hash are rejected by the factory',async field=>{const x=input();if(field==='text')x.pkg.text+='CORRUPT';else if(field==='mapping')x.pkg.tokens[0].sourceEnd--;else x.pkg.fontBytes[0]=0;await expect(createApprovedJourneyMaterial(x,'0'.repeat(64))).rejects.toMatchObject({code:'CONTENT_INTEGRITY_FAILURE'});});
+ it('L3MAT16 duplicate token coordinates remain invalid even with a matching new map hash',async()=>{const x=input();x.pkg.tokens[1]={...x.pkg.tokens[0]};x.pkg.manifest.hashes.mapping=await contentHash(canonical(x.pkg.tokens));await expect(createApprovedJourneyMaterial(x,'0'.repeat(64))).rejects.toMatchObject({code:'CONTENT_INTEGRITY_FAILURE'});});
+ it('L3MAT17 out-of-bounds source span remains invalid with its matching map hash',async()=>{const x=input();x.pkg.tokens[0].sourceEnd=x.pkg.text.length+1;x.pkg.manifest.hashes.mapping=await contentHash(canonical(x.pkg.tokens));await expect(createApprovedJourneyMaterial(x,'0'.repeat(64))).rejects.toMatchObject({code:'CONTENT_INTEGRITY_FAILURE'});});
+ it('L3MAT18 incomplete declared coverage is refused without manufacturing a signature',async()=>{const x=input();x.pkg.manifest.totals.ayahs++;await expect(createApprovedJourneyMaterial(x,'0'.repeat(64))).rejects.toMatchObject({code:'CONTENT_INTEGRITY_FAILURE'});});
+});

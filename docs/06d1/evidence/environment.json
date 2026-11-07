@@ -1,0 +1,10 @@
+{
+  "node": "v24.22.1",
+  "installedChrome": "151.0.7922.174",
+  "platform": "macOS arm64",
+  "locale": "ar-SA",
+  "timezone": "Asia/Riyadh",
+  "browserChannel": "chrome",
+  "dependencySource": "copied existing tree with exact matching package.json and pnpm-lock.yaml",
+  "freshInstall": false
+}

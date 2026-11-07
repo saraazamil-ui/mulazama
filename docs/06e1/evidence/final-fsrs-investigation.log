@@ -1,0 +1,37 @@
+{
+  "baseline32": {
+    "passed": 2,
+    "failed": 30,
+    "blocked": 0
+  },
+  "edge8Before": {
+    "passed": 0,
+    "failed": 8,
+    "blocked": 0
+  },
+  "legacyAll": {
+    "passed": 2,
+    "failed": 38,
+    "blocked": 0
+  },
+  "existingCandidateAll": {
+    "passed": 40,
+    "failed": 0,
+    "blocked": 0
+  },
+  "repairedAll": {
+    "passed": 40,
+    "failed": 0,
+    "blocked": 0
+  },
+  "upstreamNoRoundingVsLegacyAll": {
+    "passed": 39,
+    "failed": 1,
+    "blocked": 0
+  },
+  "upstreamNoRoundingAndLegacyIntervalVsLegacyAll": {
+    "passed": 40,
+    "failed": 0,
+    "blocked": 0
+  }
+}
