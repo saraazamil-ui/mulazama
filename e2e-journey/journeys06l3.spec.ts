@@ -18,6 +18,16 @@ async function facts(page:Page){return page.evaluate(async()=>{
  if(!name.startsWith('mulazama-engineering-06l3-'))throw Error('NOT_QA_DATABASE');
  const store=await IndexedDbEventStore.open(name);try{return await store.load();}finally{store.close();}
 });}
+async function settledAssessmentFacts(page:Page){
+ // The result heading precedes the screen effect's async prepare(). Wait for its durable plan before taking a reload baseline.
+ await expect.poll(async()=>{
+  const snapshot=await facts(page);
+  const assessment=snapshot.events.findLastIndex(e=>e.type==='AssessmentSubmitted');
+  const plan=snapshot.events.findLastIndex(e=>e.type==='PlanRecomputed'&&e.data.scope==='hme');
+  return {planFollowsAssessment:assessment>=0&&plan>assessment,command:snapshot.events[plan]?.data.command};
+ }).toMatchObject({planFollowsAssessment:true,command:{type:'PlanRecomputed',spentMinutes:2}});
+ return facts(page);
+}
 async function recall(page:Page){await page.getByRole('button',{name:'ابدأ وردك',exact:true}).click();await expect(page.getByLabel('مادة الاختبار الصناعي',{exact:true})).toBeVisible();await page.getByRole('button',{name:'ابدأ التسميع الذاتي',exact:true}).click();await expect(page.getByLabel('مادة الاختبار الصناعي',{exact:true})).toHaveCount(0);}
 test('L3J01 newcomer full isolated journey creates real durable HME events, schedules corrected review and survives reload',async({page},info)=>{
  await setup(page);await page.getByRole('button',{name:'ابدأ وردك',exact:true}).click();
@@ -26,7 +36,7 @@ test('L3J01 newcomer full isolated journey creates real durable HME events, sche
  await expect(page.getByLabel('مادة الاختبار الصناعي',{exact:true})).toHaveCount(0);
  await page.getByRole('button',{name:'سمّعت المقطع كاملًا بلا خطأ معلوم — جهد عادي',exact:true}).click();
  await expect(page.getByRole('heading',{name:'حُفظ تقييمك الذاتي'})).toBeVisible();
- const before=await facts(page);expect(before.events.filter(e=>e.type==='AssessmentSubmitted')).toHaveLength(1);
+ const before=await settledAssessmentFacts(page);expect(before.events.filter(e=>e.type==='AssessmentSubmitted')).toHaveLength(1);
  expect(before.events.filter(e=>e.data.scope==='hme').every(e=>e.versions.applicationEvidence==='hme-application-evidence-06l3.reference-1')).toBe(true);
  await page.reload();await expect(page.getByRole('heading',{name:'حُفظ تقييمك الذاتي'})).toBeVisible();
  expect((await facts(page)).events).toEqual(before.events);
@@ -106,7 +116,7 @@ for(const prior of [false,true])test(`L4J${prior?'02':'01'} desktop ${prior?'pri
  await page.setViewportSize({width:1366,height:900});await setup(page,prior);await recall(page);
  await page.getByRole('button',{name:'سمّعت المقطع كاملًا بلا خطأ معلوم — جهد عادي',exact:true}).click();
  await expect(page.getByRole('heading',{name:'حُفظ تقييمك الذاتي'})).toBeVisible();
- const before=await facts(page);expect(before.events.filter(e=>e.type==='AssessmentSubmitted')).toHaveLength(1);
+ const before=await settledAssessmentFacts(page);expect(before.events.filter(e=>e.type==='AssessmentSubmitted')).toHaveLength(1);
  await page.reload();await expect(page.getByRole('heading',{name:'حُفظ تقييمك الذاتي'})).toBeVisible();expect((await facts(page)).events).toEqual(before.events);
  await page.getByRole('button',{name:'تابع إلى النشاط التالي'}).click();await expect(page.getByText(/أنشطة أُنجزت اليوم: 1/)).toBeVisible();
  expect((await new AxeBuilder({page}).analyze()).violations).toEqual([]);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);

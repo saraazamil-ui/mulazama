@@ -9,7 +9,7 @@
   "unresolvedConflicts": 0,
   "exactImportCommit": "76e4332d030a506d2e0ebedbf563f901410b2138",
   "sourceFilesPreservedAtExactImport": 1300,
-  "sourceFilesPreservedAtReviewHead": 1296,
+  "sourceFilesPreservedAtReviewHead": 1295,
   "postImportExceptions": [
     {
       "path": ".github/workflows/qa.yml",
@@ -26,7 +26,11 @@
     {
       "path": "src/content/acquisition06l2.test.mjs",
       "reason": "Explicit 30-second timeout only for a large integration workload; input data and assertions unchanged after shared CI exceeded Vitest default 5 seconds."
+    },
+    {
+      "path": "e2e-journey/journeys06l3.spec.ts",
+      "reason": "Wait for persisted derived plan after assessment before snapshot; retain strict full event equality after reload. Read-only test synchronization, no application logic changed."
     }
   ],
-  "reviewSourceDigest": "071a0f2b5d052f78827de6e81c7523e40bac06c5621e33670ac33f856717164b"
+  "reviewSourceDigest": "8b8c9729058f56522f44dfe22b5b469c64dd6305f5202875d131a03ebdeb1625"
 }
