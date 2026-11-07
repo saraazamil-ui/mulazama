@@ -4,6 +4,8 @@ import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { resolve, extname } from "node:path";
 import { chromium, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
+import { chromiumLaunchOptions } from "./playwright-browser.mjs";
+const launchOptions = chromiumLaunchOptions();
 const root = resolve("content/06l2"),
   out = resolve("docs/06l2/evidence/content-display");
 await mkdir(out, { recursive: true });
@@ -57,9 +59,7 @@ const report = {
   officialFontApproved: false,
 };
 try {
-  browser = await chromium.launch({
-    channel: process.env.PW_CHANNEL || undefined,
-  });
+  browser = await chromium.launch(launchOptions);
   report.browserVersion = browser.version();
   const context = await browser.newContext({
       locale: "ar-SA",

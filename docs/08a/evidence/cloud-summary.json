@@ -1,0 +1,465 @@
+{
+  "phase": "08-A",
+  "startedAt": "2026-11-07T16:46:19.040256+00:00",
+  "sourceCommit": "bc4e4ed7b1967da215c851a3a90cce410ed82b01",
+  "snapshotDirectory": "/tmp/mulazama-08a-mxmtgs_j",
+  "evidenceDirectory": "/tmp/mulazama-08a-evidence/20261107T164619Z-bc4e4ed7b196-ao3qahrl",
+  "cacheRoot": "/tmp/mulazama-08a-cache",
+  "browserSelection": {
+    "MULAZAMA_CHROMIUM_EXECUTABLE_PATH": "/usr/bin/chromium",
+    "PW_CHANNEL": null,
+    "PLAYWRIGHT_BROWSERS_PATH": null
+  },
+  "productionApproval": false,
+  "scientificApproval": false,
+  "note": "Only freshly written outputs are retained as this run's evidence; snapshot is preserved.",
+  "versions": {
+    "node": "v24.22.1",
+    "pnpm": "11.25.0",
+    "python": "Python 3.12.14"
+  },
+  "runtimeConstraints": {
+    "engines": {
+      "node": ">=24.0.0"
+    },
+    "packageManager": "pnpm@11.25.0"
+  },
+  "source": {
+    "sourceDigest": "a1e3f91c5e7e2b42f3149ba8fdaa2c4293438ed94e391237decf3426b84617e0",
+    "files": 212,
+    "excluded": [
+      "src/release/build-context.generated.ts",
+      "src/release/release-input.json"
+    ]
+  },
+  "browserHelperTests": {
+    "tests": 10,
+    "pass": 10,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "browser": {
+    "version": "156.0.8078.79",
+    "selection": {
+      "executablePath": "/usr/bin/chromium"
+    },
+    "defaultExecutablePath": null
+  },
+  "verificationCommands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "node",
+        "node_modules/typescript/bin/tsc",
+        "-b"
+      ],
+      "startedAt": "2026-11-07T16:46:30.973522+00:00",
+      "durationSeconds": 5.223,
+      "exitCode": 0,
+      "result": "Passed",
+      "log": "final-typecheck.log"
+    },
+    {
+      "name": "unit",
+      "command": [
+        "node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "--maxWorkers=4",
+        "--reporter=json",
+        "--outputFile=docs/06l4/evidence/final-tests.json"
+      ],
+      "startedAt": "2026-11-07T16:46:36.197190+00:00",
+      "durationSeconds": 24.51,
+      "exitCode": 0,
+      "result": "Passed",
+      "log": "final-unit.log"
+    },
+    {
+      "name": "source-context",
+      "command": [
+        "node",
+        "scripts/generate-release-context.mjs"
+      ],
+      "startedAt": "2026-11-07T16:47:00.707251+00:00",
+      "durationSeconds": 0.287,
+      "exitCode": 0,
+      "result": "Passed",
+      "log": "final-source-context.log"
+    },
+    {
+      "name": "build",
+      "command": [
+        "node",
+        "node_modules/vite/bin/vite.js",
+        "build"
+      ],
+      "startedAt": "2026-11-07T16:47:00.994954+00:00",
+      "durationSeconds": 2.771,
+      "exitCode": 0,
+      "result": "Passed",
+      "log": "final-build.log"
+    },
+    {
+      "name": "offline-assets",
+      "command": [
+        "node",
+        "scripts/build-offline.mjs"
+      ],
+      "startedAt": "2026-11-07T16:47:03.766693+00:00",
+      "durationSeconds": 0.05,
+      "exitCode": 0,
+      "result": "Passed",
+      "log": "final-offline-assets.log"
+    },
+    {
+      "name": "verify-build",
+      "command": [
+        "node",
+        "scripts/verify-build.mjs"
+      ],
+      "startedAt": "2026-11-07T16:47:03.816753+00:00",
+      "durationSeconds": 0.046,
+      "exitCode": 0,
+      "result": "Passed",
+      "log": "final-verify-build.log"
+    },
+    {
+      "name": "security-static",
+      "command": [
+        "node",
+        "scripts/security-check.mjs"
+      ],
+      "startedAt": "2026-11-07T16:47:03.863411+00:00",
+      "durationSeconds": 0.058,
+      "exitCode": 0,
+      "result": "Passed",
+      "log": "final-security-static.log"
+    },
+    {
+      "name": "reference-authentication",
+      "command": [
+        "node",
+        "scripts/verify-fsrs-reference-06e1.mjs"
+      ],
+      "startedAt": "2026-11-07T16:47:03.921839+00:00",
+      "durationSeconds": 0.068,
+      "exitCode": 0,
+      "result": "Passed",
+      "log": "final-reference-authentication.log"
+    },
+    {
+      "name": "fsrs-conformance",
+      "command": [
+        "node",
+        "scripts/fsrs-06e1-investigation.mjs",
+        "--probe-module",
+        "src/conformance/fsrs-reference-probe.ts",
+        "--output-dir",
+        "docs/06l4/evidence/fsrs"
+      ],
+      "startedAt": "2026-11-07T16:47:03.990827+00:00",
+      "durationSeconds": 4.029,
+      "exitCode": 0,
+      "result": "Passed",
+      "log": "final-fsrs-conformance.log"
+    },
+    {
+      "name": "content-tools",
+      "command": [
+        "node",
+        "scripts/verify-content-tools.mjs",
+        "docs/06l4/evidence/content-tool-checks.json"
+      ],
+      "startedAt": "2026-11-07T16:47:08.020365+00:00",
+      "durationSeconds": 2.639,
+      "exitCode": 0,
+      "result": "Passed",
+      "log": "final-content-tools.log"
+    },
+    {
+      "name": "content-byte-audit",
+      "command": [
+        "node",
+        "scripts/audit-quran-content.mjs",
+        "--request",
+        "content/06l2/audit-request.json",
+        "--output",
+        "docs/06l4/evidence/content-byte-audit.json"
+      ],
+      "startedAt": "2026-11-07T16:47:10.659852+00:00",
+      "durationSeconds": 0.413,
+      "exitCode": 2,
+      "result": "Blocked",
+      "log": "final-content-byte-audit.log"
+    },
+    {
+      "name": "legacy-reader-compatibility",
+      "command": [
+        "node",
+        "scripts/fsrs-backward06l3.mjs",
+        "--output",
+        "docs/06l4/evidence/fsrs-backward-reader.json"
+      ],
+      "startedAt": "2026-11-07T16:47:11.073680+00:00",
+      "durationSeconds": 0.901,
+      "exitCode": 0,
+      "result": "Passed",
+      "log": "final-legacy-reader-compatibility.log"
+    },
+    {
+      "name": "content-supplemental-audit",
+      "command": [
+        "node",
+        "scripts/content-06l2-audit.mjs"
+      ],
+      "startedAt": "2026-11-07T16:47:11.975031+00:00",
+      "durationSeconds": 0.498,
+      "exitCode": 2,
+      "result": "Blocked",
+      "log": "final-content-supplemental-audit.log"
+    },
+    {
+      "name": "release-gates",
+      "command": [
+        "node",
+        "scripts/verify-release.mjs",
+        "--phase",
+        "05-C",
+        "--output",
+        "docs/06l4/evidence/release-gates.json"
+      ],
+      "startedAt": "2026-11-07T16:47:12.472999+00:00",
+      "durationSeconds": 0.076,
+      "exitCode": 2,
+      "result": "Blocked",
+      "log": "final-release-gates.log"
+    },
+    {
+      "name": "browser",
+      "command": [
+        "node",
+        "node_modules/@playwright/test/cli.js",
+        "test"
+      ],
+      "startedAt": "2026-11-07T16:47:12.549817+00:00",
+      "durationSeconds": 111.1,
+      "exitCode": 0,
+      "result": "Passed",
+      "log": "final-browser.log"
+    },
+    {
+      "name": "offline-browser",
+      "command": [
+        "node",
+        "node_modules/@playwright/test/cli.js",
+        "test",
+        "--config",
+        "playwright.offline.config.ts"
+      ],
+      "startedAt": "2026-11-07T16:49:03.656669+00:00",
+      "durationSeconds": 9.593,
+      "exitCode": 0,
+      "result": "Passed",
+      "log": "final-offline-browser.log"
+    },
+    {
+      "name": "deployment-browser",
+      "command": [
+        "node",
+        "node_modules/@playwright/test/cli.js",
+        "test",
+        "--config",
+        "playwright.deployment.config.ts"
+      ],
+      "startedAt": "2026-11-07T16:49:13.251952+00:00",
+      "durationSeconds": 14.914,
+      "exitCode": 0,
+      "result": "Passed",
+      "log": "final-deployment-browser.log"
+    },
+    {
+      "name": "content-browser",
+      "command": [
+        "node",
+        "scripts/content-06l2-browser.mjs"
+      ],
+      "startedAt": "2026-11-07T16:49:28.167591+00:00",
+      "durationSeconds": 10.489,
+      "exitCode": 0,
+      "result": "Passed",
+      "log": "final-content-browser.log"
+    },
+    {
+      "name": "journey-browser",
+      "command": [
+        "node",
+        "node_modules/@playwright/test/cli.js",
+        "test",
+        "--config",
+        "playwright.journey.config.ts"
+      ],
+      "startedAt": "2026-11-07T16:49:38.656813+00:00",
+      "durationSeconds": 46.0,
+      "exitCode": 0,
+      "result": "Passed",
+      "log": "final-journey-browser.log"
+    },
+    {
+      "name": "journey-offline-browser",
+      "command": [
+        "node",
+        "node_modules/@playwright/test/cli.js",
+        "test",
+        "--config",
+        "playwright.journey-offline.config.ts"
+      ],
+      "startedAt": "2026-11-07T16:50:24.664193+00:00",
+      "durationSeconds": 13.894,
+      "exitCode": 0,
+      "result": "Passed",
+      "log": "final-journey-offline-browser.log"
+    }
+  ],
+  "unit": {
+    "numTotalTests": 897,
+    "numPassedTests": 897,
+    "numFailedTests": 0,
+    "numPendingTests": 0,
+    "numTodoTests": 0,
+    "success": true
+  },
+  "browserSuites": {
+    "browser": {
+      "startTime": "2026-11-07T16:47:13.453Z",
+      "duration": 110086.762,
+      "expected": 35,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "offline-browser": {
+      "startTime": "2026-11-07T16:49:04.812Z",
+      "duration": 8403.259999999998,
+      "expected": 4,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "deployment-browser": {
+      "startTime": "2026-11-07T16:49:14.783Z",
+      "duration": 13335.101999999999,
+      "expected": 3,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "journey-browser": {
+      "startTime": "2026-11-07T16:49:39.743Z",
+      "duration": 44890.966,
+      "expected": 12,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "journey-offline-browser": {
+      "startTime": "2026-11-07T16:50:25.637Z",
+      "duration": 12900.202,
+      "expected": 2,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "contentDisplay": {
+    "executed": 5,
+    "passed": 5,
+    "failed": 0,
+    "skipped": 0
+  },
+  "fsrs": {
+    "passed": 40,
+    "failed": 0,
+    "blocked": 0
+  },
+  "productionReady": false,
+  "gates": [
+    {
+      "gate": "G01",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G02",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G03",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G04",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G05",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G06",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G07",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G08",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G09",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G10",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    }
+  ],
+  "checkoutPreserved": true,
+  "finishedAt": "2026-11-07T16:50:39.079936+00:00",
+  "errors": [],
+  "engineeringChecksPassed": true,
+  "exitCode": 0
+}

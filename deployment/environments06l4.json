@@ -11,7 +11,7 @@
     "production": {"origin": "https://mulazama.sa", "deployApproved": false, "httpsVerified": false}
   },
   "existingPrivateRepository": "https://github.com/saraazamil-ui/mulazama",
-  "existingRepositoryContainsThisRelease": false,
+  "existingRepositoryContainsThisRelease": true,
   "existingRestricted05APreviewIsCurrentRelease": false,
   "hostingProviderSelected": null,
   "mail": {

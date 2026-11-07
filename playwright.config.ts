@@ -1,4 +1,5 @@
 import { defineConfig } from "@playwright/test";
+import { chromiumLaunchOptions } from "./scripts/playwright-browser.mjs";
 
 export default defineConfig({
   testDir: "./e2e",
@@ -18,7 +19,7 @@ export default defineConfig({
     viewport: { width: 390, height: 844 },
     screenshot: "only-on-failure",
     trace: "retain-on-failure",
-    channel: process.env.PW_CHANNEL || undefined,
+    launchOptions: chromiumLaunchOptions(),
   },
   webServer: {
     command:
