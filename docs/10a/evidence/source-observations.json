@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "phase": "10-A",
+  "researchDateRiyadh": "2026-11-07",
+  "baseCommit": "4bd359de434c6395f416388679adebe13128c8a0",
+  "scope": "Metadata only; no publisher archives, Quran text or font files redistributed.",
+  "sourceMethod": "Public web search returned indexed descriptions for the official URLs; direct opens failed. Indexed descriptions may be stale.",
+  "officialPackagesDownloaded": 0,
+  "resources": [
+    {
+      "evidenceClass": "official-publisher-indexed-description-only",
+      "originalDownloaded": false,
+      "acquiredAt": null,
+      "finalDownloadUrl": null,
+      "localBytes": null,
+      "localSha256": null,
+      "officialChecksumComparison": "not-executed",
+      "archiveIntegrity": "not-executed",
+      "packageInspection": "not-executed",
+      "approved": false,
+      "id": "QPC-DM-HAFS",
+      "publisherPage": "https://dm.qurancomplex.gov.sa/",
+      "resourceLabel": "النسخة الرقمية (برواية حفص)",
+      "advertisedVersion": null,
+      "advertisedFormats": [
+        "AI/Illustrator"
+      ],
+      "advertisedSize": null,
+      "advertisedChecksums": {
+        "sha256": "280C5D71CA16AAEEB3A343BE1B92C76FA6DF71D0671E202C026FDE12402D9EEF"
+      },
+      "printedEdition": null,
+      "tariq": null,
+      "verseCountingSystem": null,
+      "pageCount": null,
+      "rightsPage": "https://dm.qurancomplex.gov.sa/rights/"
+    },
+    {
+      "evidenceClass": "official-publisher-indexed-description-only",
+      "originalDownloaded": false,
+      "acquiredAt": null,
+      "finalDownloadUrl": null,
+      "localBytes": null,
+      "localSha256": null,
+      "officialChecksumComparison": "not-executed",
+      "archiveIntegrity": "not-executed",
+      "packageInspection": "not-executed",
+      "approved": false,
+      "id": "QPC-DEV-HAFS-UNICODE",
+      "publisherPage": "https://qurancomplex.gov.sa/quran-dev/",
+      "resourceLabel": "الخط الحاسوبي يونيكود (رواية حفص)",
+      "advertisedVersion": "15.0",
+      "advertisedModifiedDate": "2026-09-30",
+      "advertisedSize": "9.68MB",
+      "advertisedFormats": [
+        "font",
+        "Word",
+        "PDF",
+        "Excel",
+        "CSV",
+        "HTML5",
+        "SQL",
+        "XML",
+        "JSON",
+        "TXT"
+      ],
+      "advertisedFields": [
+        "id",
+        "jozz",
+        "sura_no",
+        "sura_name_en",
+        "sura_name_ar",
+        "page",
+        "line_start",
+        "line_end",
+        "aya_no",
+        "aya_text_unicode",
+        "aya_text_emlaey"
+      ],
+      "advertisedChecksums": {
+        "sha256": "227E6B1564D980F2BD09C2C35EBFB0330AC268C79A7C247CD1AB665BC635F245"
+      },
+      "bindingToDmPages": "unverified",
+      "printedEdition": null,
+      "verseCountingSystem": null
+    },
+    {
+      "evidenceClass": "official-publisher-indexed-description-only",
+      "originalDownloaded": false,
+      "acquiredAt": null,
+      "finalDownloadUrl": null,
+      "localBytes": null,
+      "localSha256": null,
+      "officialChecksumComparison": "not-executed",
+      "archiveIntegrity": "not-executed",
+      "packageInspection": "not-executed",
+      "approved": false,
+      "id": "QPC-DEV-HAFS-SMART",
+      "publisherPage": "https://qurancomplex.gov.sa/quran-dev/",
+      "resourceLabel": "خط الرسم العثماني (رواية حفص) للأجهزة الذكية",
+      "advertisedVersion": "6.0",
+      "advertisedModifiedDate": "2022-06-30",
+      "advertisedSize": "21.6MB",
+      "advertisedChecksums": {
+        "md5": "53d82b553e5fe919ca1a732e35bf4eb0",
+        "sha1": "1dbeae3847880b1c21a956dcfdc0a2d9d490e729"
+      },
+      "publisherDescribesVerseLevelNotFullPageFidelity": true
+    },
+    {
+      "evidenceClass": "official-publisher-indexed-description-only",
+      "originalDownloaded": false,
+      "acquiredAt": null,
+      "finalDownloadUrl": null,
+      "localBytes": null,
+      "localSha256": null,
+      "officialChecksumComparison": "not-executed",
+      "archiveIntegrity": "not-executed",
+      "packageInspection": "not-executed",
+      "approved": false,
+      "id": "QPC-FONT-HAFS-3",
+      "publisherPage": "https://fonts.qurancomplex.gov.sa/hafs-reading/",
+      "resourceLabel": "الخط الحاسوبي يونيكود لرواية حفص",
+      "advertisedVersion": "3.0",
+      "advertisedSize": "827KB",
+      "advertisedFormats": [
+        "ZIP",
+        "TTF",
+        "Word"
+      ],
+      "advertisedChecksums": null,
+      "advertisedOlderVersions": [
+        {
+          "version": "2.2",
+          "size": "940KB"
+        },
+        {
+          "version": "0.13",
+          "size": "630KB"
+        }
+      ],
+      "bindingToDeveloperBundle": "unverified"
+    },
+    {
+      "evidenceClass": "official-publisher-indexed-description-only",
+      "originalDownloaded": false,
+      "acquiredAt": null,
+      "finalDownloadUrl": null,
+      "localBytes": null,
+      "localSha256": null,
+      "officialChecksumComparison": "not-executed",
+      "archiveIntegrity": "not-executed",
+      "packageInspection": "not-executed",
+      "approved": false,
+      "id": "QPC-EMBED-HAFS",
+      "publisherPage": "https://qurancomplex.gov.sa/embed-isdarat/",
+      "resourceLabel": "إصدارات مصحف حفص / المصحف الممتاز",
+      "advertisedIframeUrl": "https://qurancomplex.gov.sa/isdarat-hafs/#flipbook-df_11311/1/",
+      "iframeExecuted": false,
+      "apiContract": "not-established",
+      "stablePageDeepLinkContract": "not-established"
+    }
+  ],
+  "productionReady": false,
+  "gates": "G01-G10 blocked",
+  "notes": [
+    "Advertised checksums are not local checksum matches.",
+    "Release numbers are resource-specific; no compatibility is inferred.",
+    "No unofficial mirror used.",
+    "The user clarified 09-A was ephemeral and explicitly authorized proceeding without it."
+  ]
+}

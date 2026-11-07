@@ -1,0 +1,15 @@
+{
+  "status": "verified-for-independent-core-comparison",
+  "officialArchiveMatches": true,
+  "registrySignatures": [
+    {
+      "keyId": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+      "expires": null,
+      "algorithm": "ECDSA-P256-SHA256",
+      "verified": true
+    }
+  ],
+  "sourceMapMatches": true,
+  "pinnedFilesVerified": 13,
+  "sigstoreVerified": false
+}

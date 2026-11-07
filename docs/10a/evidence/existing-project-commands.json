@@ -1,0 +1,147 @@
+[
+  {
+    "name": "archive",
+    "command": [
+      "git",
+      "archive",
+      "--format=tar",
+      "--output=/tmp/mulazama-08a-zqucq5r1/source.tar",
+      "4bd359de434c6395f416388679adebe13128c8a0"
+    ],
+    "cwd": "/workspace/mulazama",
+    "startedAt": "2026-11-07T19:33:12.799031+00:00",
+    "finishedAt": "2026-11-07T19:33:13.078591+00:00",
+    "durationSeconds": 0.28,
+    "exitCode": 0,
+    "log": "archive.log"
+  },
+  {
+    "name": "node-version",
+    "command": [
+      "node",
+      "--version"
+    ],
+    "cwd": "/tmp/mulazama-08a-zqucq5r1",
+    "startedAt": "2026-11-07T19:33:13.334508+00:00",
+    "finishedAt": "2026-11-07T19:33:13.343299+00:00",
+    "durationSeconds": 0.009,
+    "exitCode": 0,
+    "log": "node-version.log"
+  },
+  {
+    "name": "pnpm-version",
+    "command": [
+      "pnpm",
+      "--version"
+    ],
+    "cwd": "/tmp/mulazama-08a-zqucq5r1",
+    "startedAt": "2026-11-07T19:33:13.343646+00:00",
+    "finishedAt": "2026-11-07T19:33:14.204860+00:00",
+    "durationSeconds": 0.861,
+    "exitCode": 0,
+    "log": "pnpm-version.log"
+  },
+  {
+    "name": "python-version",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "--version"
+    ],
+    "cwd": "/tmp/mulazama-08a-zqucq5r1",
+    "startedAt": "2026-11-07T19:33:14.205266+00:00",
+    "finishedAt": "2026-11-07T19:33:14.215452+00:00",
+    "durationSeconds": 0.01,
+    "exitCode": 0,
+    "log": "python-version.log"
+  },
+  {
+    "name": "source-digest",
+    "command": [
+      "node",
+      "--input-type=module",
+      "-e",
+      "import {computeReleaseSourceDigest} from './scripts/release-source-hash.mjs';console.log(JSON.stringify(await computeReleaseSourceDigest(process.cwd())));"
+    ],
+    "cwd": "/tmp/mulazama-08a-zqucq5r1",
+    "startedAt": "2026-11-07T19:33:14.216954+00:00",
+    "finishedAt": "2026-11-07T19:33:14.400606+00:00",
+    "durationSeconds": 0.184,
+    "exitCode": 0,
+    "log": "source-digest.log"
+  },
+  {
+    "name": "install",
+    "command": [
+      "pnpm",
+      "install",
+      "--frozen-lockfile",
+      "--store-dir",
+      "/tmp/mulazama-10a-verification-cache/pnpm-store",
+      "--cache-dir",
+      "/tmp/mulazama-10a-verification-cache/pnpm-cache"
+    ],
+    "cwd": "/tmp/mulazama-08a-zqucq5r1",
+    "startedAt": "2026-11-07T19:33:14.401136+00:00",
+    "finishedAt": "2026-11-07T19:33:25.197968+00:00",
+    "durationSeconds": 10.797,
+    "exitCode": 0,
+    "log": "install.log"
+  },
+  {
+    "name": "startup-tests",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "scripts/tests/cloud-start08a.test.py"
+    ],
+    "cwd": "/tmp/mulazama-08a-zqucq5r1",
+    "startedAt": "2026-11-07T19:33:25.198632+00:00",
+    "finishedAt": "2026-11-07T19:33:26.337574+00:00",
+    "durationSeconds": 1.139,
+    "exitCode": 0,
+    "log": "startup-tests.log"
+  },
+  {
+    "name": "browser-helper-tests",
+    "command": [
+      "node",
+      "--test",
+      "--test-reporter=tap",
+      "scripts/tests/playwright-browser.test.mjs"
+    ],
+    "cwd": "/tmp/mulazama-08a-zqucq5r1",
+    "startedAt": "2026-11-07T19:33:26.337985+00:00",
+    "finishedAt": "2026-11-07T19:33:26.555929+00:00",
+    "durationSeconds": 0.218,
+    "exitCode": 0,
+    "log": "browser-helper-tests.log"
+  },
+  {
+    "name": "browser-version",
+    "command": [
+      "node",
+      "--input-type=module",
+      "-e",
+      "import {chromium} from '@playwright/test';import {chromiumLaunchOptions} from './scripts/playwright-browser.mjs';const options=chromiumLaunchOptions();const browser=await chromium.launch(options);try{console.log(JSON.stringify({version:browser.version(),selection:options,defaultExecutablePath:options.channel||options.executablePath?null:chromium.executablePath()}));}finally{await browser.close();}"
+    ],
+    "cwd": "/tmp/mulazama-08a-zqucq5r1",
+    "startedAt": "2026-11-07T19:33:26.557192+00:00",
+    "finishedAt": "2026-11-07T19:33:28.159153+00:00",
+    "durationSeconds": 1.602,
+    "exitCode": 0,
+    "log": "browser-version.log"
+  },
+  {
+    "name": "verify-06l4",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "scripts/verify-06l4.py",
+      "--browser"
+    ],
+    "cwd": "/tmp/mulazama-08a-zqucq5r1",
+    "startedAt": "2026-11-07T19:33:28.165411+00:00",
+    "finishedAt": "2026-11-07T19:38:56.271844+00:00",
+    "durationSeconds": 328.106,
+    "exitCode": 0,
+    "log": "verify-06l4.log"
+  }
+]

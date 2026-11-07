@@ -1,0 +1,12 @@
+
+Running 3 tests using 1 worker
+
+(node:6843) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:6843) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 e2e-deployment/rollout06l4.spec.ts:149:1 › L4DEP01 HTTPS preview enforces headers and allows only manifest assets without exposing source files (121ms)
+  ✓  2 e2e-deployment/rollout06l4.spec.ts:181:1 › L4DEP02 L3 to L4 update and rollback preserve exact encrypted IndexedDB rows, settings, offline access and blocked sessions (7.1s)
+  ✓  3 e2e-deployment/rollout06l4.spec.ts:279:1 › L4DEP03 honest support, accessible 404 online/offline and maintenance 503 without touching learner storage (4.5s)
+
+  3 passed (14.1s)

@@ -1,0 +1,6 @@
+6933e133dd56db778c801bf738848454e43648105a151e8d84d86a7cae39ec5f  content/06l2/tanzil-uthmani-1.1.txt
+8867c1d88191472adec9db694b3cd9f135b1a2ef580574d32cf888dcb22c5c7a  content/06l2/quran-data.xml
+3edaac627f23693b080d2b5fa2959027b2296f51b4d0a69e468621910676ba27  content/06l2/tanzil-license.html
+c1afc53d91fcc14b30d19b6a91280a9b51f6760de235b1949f7feedccdab6c6f  content/06l2/source-slice-index.json
+29f337770f6089feecc67148d47191d165683597ca228308199f18eb49e579ce  content/06l2/numbering-profile.json
+{"surahs": 114, "ayahs": 6236, "sourceSlicesMatched": 6236, "xmlSections": {"suras": 114, "juzs": 30, "hizbs": 240, "manzils": 7, "rukus": 556, "pages": 604, "sajdas": 15}}
