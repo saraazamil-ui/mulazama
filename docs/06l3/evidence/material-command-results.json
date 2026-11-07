@@ -1,0 +1,25 @@
+[
+  {
+    "name": "material-tests",
+    "argv": [
+      "node",
+      "node_modules/vitest/vitest.mjs",
+      "run",
+      "src/content/journey-material06l3.test.mjs",
+      "--reporter=json",
+      "--outputFile=docs/06l3/evidence/material-tests.json"
+    ],
+    "startedAt": "2026-11-07T12:31:24.249874+00:00",
+    "exitCode": 0
+  },
+  {
+    "name": "material-typecheck",
+    "argv": [
+      "node",
+      "node_modules/typescript/bin/tsc",
+      "-b"
+    ],
+    "startedAt": "2026-11-07T12:31:24.637211+00:00",
+    "exitCode": 0
+  }
+]

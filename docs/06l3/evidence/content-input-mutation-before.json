@@ -1,0 +1,1 @@
+{"reproduced":true,"scope":"Caller mutated scratch Uint8Array after call, before async loader completed","error":"ContentIntegrityError: Replacement characters or transport controls are present.","fix":"Clone bytes before asynchronous work"}

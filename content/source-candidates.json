@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "product": "MULAZAMA",
+  "verifiedAt": "2026-11-05",
+  "scope": "Publisher web claims only; no downloaded Quran text/font bytes and no approval.",
+  "candidates": [
+    {
+      "id": "tanzil-uthmani-1.1",
+      "publisher": "Tanzil Project",
+      "url": "https://tanzil.net/download/",
+      "publishedVersion": "1.1",
+      "publishedReleaseDate": "2021-02-12",
+      "riwaya": "Hafs an Asim",
+      "tariq": null,
+      "scriptClaim": "Unicode Uthmani encoding based on Medina Mushaf",
+      "numberingSystem": null,
+      "printedEdition": null,
+      "publisherSha256": null,
+      "downloadedSha256": null,
+      "downloadedArtifact": null,
+      "licenseUrl": "https://tanzil.net/docs/Text_License",
+      "metadataVersionCandidate": "1.0",
+      "metadataLicense": null,
+      "fontEmbeddingRights": null,
+      "independentComparison": "not-performed",
+      "humanScientificReview": "pending"
+    },
+    {
+      "id": "kfgqpc-unicode-hafs-15.0",
+      "publisher": "King Fahd Glorious Quran Printing Complex",
+      "url": "https://qurancomplex.gov.sa/quran-dev/",
+      "publishedVersion": "15.0",
+      "publishedLastModified": "2026-09-30",
+      "riwaya": "Hafs an Asim",
+      "tariq": null,
+      "scriptClaim": "Unicode Uthmanic Hafs; kfgqpc_hafs_v3 text field",
+      "numberingSystem": null,
+      "printedEdition": null,
+      "publisherSha256AsPublished": "227E6B1564D980F2BD09C2C35EBFB0330AC268C79A7C247CD1AB665BC635F245",
+      "publisherHashScope": "Publisher lists this for the downloadable Unicode Hafs package; its local bytes are absent.",
+      "downloadedSha256": null,
+      "downloadedArtifact": null,
+      "packageLicense": null,
+      "fontEmbeddingRights": null,
+      "sameEditionAsTanzil": null,
+      "independentComparison": "not-performed",
+      "humanScientificReview": "pending"
+    }
+  ],
+  "nonEquivalentArtifacts": [
+    {
+      "id": "kfgqpc-smart-device-hafs-6.0",
+      "url": "https://qurancomplex.gov.sa/quran-dev/",
+      "publisherCaveat": "Intended for verse-level display, not an exact complete printed-Mushaf page layout.",
+      "activation": "unavailable"
+    },
+    {
+      "id": "kfgqpc-illustrator-printing-vectors",
+      "url": "https://dm.qurancomplex.gov.sa/rights/",
+      "rightsScope": "Published usage rights describe the Illustrator vector edition; they are not assumed to license unrelated TTF/WOFF font embedding or recordings.",
+      "activation": "unavailable"
+    }
+  ]
+}

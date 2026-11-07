@@ -1,0 +1,15 @@
+{
+  "auditCommand": "security-dependencies-command.json",
+  "auditedPackageSHA256": "b03a087512aba983e2e932e7a6ab6e426ce47915cca162ed16f9fa36077540c8",
+  "finalPackageSHA256": "0b7d87aa934e84cb2d56e6cbf34a8e7784a49cb180b37e34785edbb0c08fe61c",
+  "dependencyFieldsUnchanged": [
+    "dependencies",
+    "devDependencies",
+    "packageManager",
+    "engines"
+  ],
+  "lockSHA256": "ad7b79295a609767455b46eac8f1e6c81b2de0684060b428739a97ce3731e1f5",
+  "freshRegistryAuditRepeated": false,
+  "reason": "Only release metadata/scripts changed; dependencies and exact lock are the audited bytes.",
+  "knownAdvisories": 0
+}

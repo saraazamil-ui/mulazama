@@ -1,0 +1,209 @@
+[
+  {
+    "name": "indexeddb-check-results",
+    "data": [
+      {
+        "name": "IDB01 commit/reopen/checkpoint raw preservation",
+        "passed": true,
+        "milliseconds": 10.899999998509884
+      },
+      {
+        "name": "IDB02 duplicate command and event are idempotent; conflicts fail closed",
+        "passed": true,
+        "milliseconds": 2.600000001490116
+      },
+      {
+        "name": "IDB03 concurrent tabs use transaction CAS",
+        "passed": true,
+        "milliseconds": 2.2999999970197678
+      },
+      {
+        "name": "IDB04 encrypted records and nonextractable key",
+        "passed": true,
+        "milliseconds": 2
+      },
+      {
+        "name": "IDB05 transaction write failure cannot acknowledge or partially append",
+        "passed": true,
+        "milliseconds": 2.600000001490116
+      },
+      {
+        "name": "IDB06 atomic full replacement, rollback on failure, no restore merge",
+        "passed": true,
+        "milliseconds": 2.399999998509884
+      },
+      {
+        "name": "IDB07 ciphertext corruption rejected and original rows retained",
+        "passed": true,
+        "milliseconds": 1.9000000059604645
+      },
+      {
+        "name": "IDB08 supported v1 migration encrypts without changing raw events or revision",
+        "passed": true,
+        "milliseconds": 2.0999999940395355
+      },
+      {
+        "name": "IDB09 future database version is preserved and rejected",
+        "passed": true,
+        "milliseconds": 0.4000000059604645
+      },
+      {
+        "name": "IDB10 clear keeps revision protection and removes learning rows/indexes",
+        "passed": true,
+        "milliseconds": 1.5999999940395355
+      },
+      {
+        "name": "IDB11 missing encryption key never triggers replacement key or reset",
+        "passed": true,
+        "milliseconds": 1.4000000059604645
+      },
+      {
+        "name": "IDB12 interrupted v1 migration resumes from its durable pending marker",
+        "passed": true,
+        "milliseconds": 1.5
+      },
+      {
+        "name": "IDB13 command-index mutation is rejected without resetting history",
+        "passed": true,
+        "milliseconds": 2.7999999970197678
+      },
+      {
+        "name": "IDB14 an AES-128 replacement key is rejected even for an empty stream",
+        "passed": true,
+        "milliseconds": 1
+      },
+      {
+        "name": "IDB15 malformed stream sequence is rejected without replacing records",
+        "passed": true,
+        "milliseconds": 1.6000000014901161
+      },
+      {
+        "name": "IDB16 invalid timestamps never become acknowledged browser writes",
+        "passed": true,
+        "milliseconds": 0.8000000044703484
+      },
+      {
+        "name": "IDB17 deleting learning data removes event and command rows after reopen",
+        "passed": true,
+        "milliseconds": 2.7999999970197678
+      },
+      {
+        "name": "IDB18 partial command retries cannot silently duplicate or truncate a batch",
+        "passed": true,
+        "milliseconds": 2.2000000029802322
+      },
+      {
+        "name": "IDB19 explicit v2-to-v3 index migration preserves ciphertext and raw revision",
+        "passed": true,
+        "milliseconds": 7.799999997019768
+      },
+      {
+        "name": "IDB20 unknown legacy Unicode collation requires review and preserves ciphertext",
+        "passed": true,
+        "milliseconds": 3
+      },
+      {
+        "name": "IDB21 interrupted v2 index migration resumes only from a valid durable marker",
+        "passed": true,
+        "milliseconds": 1.7000000029802322
+      }
+    ]
+  },
+  {
+    "name": "history-reload-receipt",
+    "data": {
+      "eventCount": 7,
+      "revision": 2,
+      "unchangedAfterReopen": true,
+      "completedSessions": 1
+    }
+  },
+  {
+    "name": "corrected-original-day-receipt",
+    "data": {
+      "originalDate": "2026-11-06T09:42:44.658Z",
+      "finalEventCount": 8,
+      "correctionCount": 1,
+      "completedSessions": 0,
+      "unchangedRetry": true
+    }
+  },
+  {
+    "name": "history-does-not-authorize-learning",
+    "data": {
+      "rejectedCode": "RELEASE_GATES_BLOCKED",
+      "learningEventsUnchanged": true,
+      "reviewDue": null
+    }
+  },
+  {
+    "name": "corruption-preservation-receipt",
+    "data": {
+      "eventCount": 7,
+      "unchangedAfterTwoFailedOpens": true,
+      "profileInitializations": 1
+    }
+  },
+  {
+    "name": "service-gate-rejections",
+    "data": {
+      "rejections": [
+        {
+          "type": "session.start",
+          "code": "RELEASE_GATES_BLOCKED"
+        },
+        {
+          "type": "session.repeat",
+          "code": "RELEASE_GATES_BLOCKED"
+        },
+        {
+          "type": "session.startRecall",
+          "code": "RELEASE_GATES_BLOCKED"
+        },
+        {
+          "type": "session.pause",
+          "code": "RELEASE_GATES_BLOCKED"
+        },
+        {
+          "type": "session.resume",
+          "code": "RELEASE_GATES_BLOCKED"
+        },
+        {
+          "type": "session.end",
+          "code": "RELEASE_GATES_BLOCKED"
+        },
+        {
+          "type": "session.restartRecall",
+          "code": "RELEASE_GATES_BLOCKED"
+        },
+        {
+          "type": "session.finishedBeforeStop",
+          "code": "RELEASE_GATES_BLOCKED"
+        },
+        {
+          "type": "attempt.hint",
+          "code": "RELEASE_GATES_BLOCKED"
+        },
+        {
+          "type": "attempt.reveal",
+          "code": "RELEASE_GATES_BLOCKED"
+        },
+        {
+          "type": "attempt.finish",
+          "code": "RELEASE_GATES_BLOCKED"
+        },
+        {
+          "type": "attempt.assess",
+          "code": "RELEASE_GATES_BLOCKED"
+        }
+      ],
+      "beforeRevision": 1,
+      "afterRevision": 1,
+      "beforeEvents": 1,
+      "afterEvents": 1,
+      "rawEventsUnchanged": true,
+      "session": null,
+      "attempts": 0
+    }
+  }
+]

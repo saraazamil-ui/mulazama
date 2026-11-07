@@ -1,0 +1,22 @@
+{
+  "facts": {
+    "kind": "synthetic-indexeddb-copy-restore-rollback-rehearsal",
+    "realLearnerDataUsed": false,
+    "sourceEventsUnchanged": true,
+    "copiedEventsEqual": true,
+    "sourceDigestPreserved": true,
+    "correctedProjectionStableAfterReopen": true,
+    "rollbackEventsEqual": true,
+    "legacyAlgorithmPreserved": true,
+    "productionHistoryRestoreStillBlocked": true,
+    "releaseGatesStillBlocked": true,
+    "engineMigrationPerformed": false,
+    "sourceEventCount": 10,
+    "sourceEventDigest": "5185ea4b3ad6f86032fde9d89ee275993e4d58f9108eaa6bf9be667e0e1809a7",
+    "cleanupDatabaseNames": [
+      "mulazama-06l2-fsrs-rehearsal-source-e62b0176-2c01-48f8-9082-32d09b50031a",
+      "mulazama-06l2-fsrs-rehearsal-target-76dbe765-a886-4e21-b9c4-b6a3e693352a"
+    ]
+  },
+  "remainingQaDatabases": []
+}

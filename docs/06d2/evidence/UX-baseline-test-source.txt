@@ -1,0 +1,56 @@
+import { afterEach, describe, it, expect } from "vitest";
+import { render, screen, cleanup, waitFor } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import { mkdirSync, writeFileSync } from "node:fs";
+import { LearningEngineScreen } from "./LearningEngineScreen";
+import { CompositeApplication } from "./application/composite-application";
+import { MemoryEventStore } from "./persistence/event-store";
+import { createSyntheticLearningAccess } from "./testing/learning-access";
+
+const unit = { id: "test-d2-ux", editionId: "test-d2-ux-edition", probeProfileVersionId: "chunk-P0-1", words: 10, coverage: ["test:d2:ux"] };
+const complete = { attemptedWords: 10, errors: 2, completion: "complete" as const, effort: "normal" as const, gapVerified: true };
+afterEach(cleanup);
+async function setup(assessed = false) {
+  const store = new MemoryEventStore(), app = await CompositeApplication.open(store, { access: await createSyntheticLearningAccess([unit]) });
+  await app.adapter.register(unit, { commandId: "register" });
+  await app.adapter.send({ type: "start", unitId: unit.id, sessionId: "s" }, { commandId: "start" });
+  await app.adapter.send({ type: "recall", sessionId: "s", attemptId: "a" }, { commandId: "recall" });
+  await app.adapter.send({ type: "complete", sessionId: "s", termination: "completed" }, { commandId: "end-recall" });
+  if (assessed) await app.adapter.send({ type: "assess", attemptId: "a", observation: complete }, { commandId: "assess" });
+  return { store, app };
+}
+function evidence(name: string, value: unknown) {
+  mkdirSync("docs/06d2/evidence", { recursive: true });
+  writeFileSync("docs/06d2/evidence/" + name + ".json", JSON.stringify(value, null, 2) + "\n");
+}
+describe("06-D1 observed UX baseline for 06-D2 (synthetic service scenario)", () => {
+  it("records six form actions for new full-scope assessment", async () => {
+    const { app, store } = await setup(), user = userEvent.setup(), actions: string[] = [];
+    render(<LearningEngineScreen adapter={app.adapter} id="S09" />);
+    await user.type(screen.getByLabelText("الكلمات التي حاولت تسميعها"), "10"); actions.push("enter attempted word count");
+    await user.type(screen.getByLabelText("الأخطاء المعلومة"), "2"); actions.push("enter known errors");
+    await user.selectOptions(screen.getByLabelText("اكتمال النطاق"), "complete"); actions.push("select completion");
+    await user.selectOptions(screen.getByLabelText("الجهد"), "normal"); actions.push("select effort");
+    await user.click(screen.getByRole("checkbox", { name: "أؤكد خلو الفاصل من التعرض ذي الصلة" })); actions.push("confirm exposure gap");
+    await user.click(screen.getByRole("button", { name: "حفظ الدليل اليدوي" })); actions.push("submit");
+    await waitFor(() => expect(app.adapter.state.attempts.a.assessment).toMatchObject(complete));
+    expect(actions).toHaveLength(6);
+    evidence("ux-baseline-new", { phase: "06-D1", measured: true, actions, count: actions.length, events: (await store.load()).events.filter(e => e.type === "AssessmentSubmitted").length, limitations: "Component + real service/store, synthetic units. One field fill/choice/submit is one semantic action; not a human time or keystroke study." });
+  });
+  it("reproduces empty correction form and measures seven required actions to preserve known data", async () => {
+    const { app, store } = await setup(true), user = userEvent.setup(), actions: string[] = [];
+    render(<LearningEngineScreen adapter={app.adapter} id="S09" />);
+    const blankOnReopen = screen.getByLabelText<HTMLInputElement>("الكلمات التي حاولت تسميعها").value === "" && screen.getByLabelText<HTMLSelectElement>("اكتمال النطاق").value === "unknown";
+    expect(blankOnReopen).toBe(true);
+    await user.type(screen.getByLabelText("الكلمات التي حاولت تسميعها"), "10"); actions.push("re-enter saved attempted words");
+    await user.type(screen.getByLabelText("الأخطاء المعلومة"), "1"); actions.push("correct known errors");
+    await user.selectOptions(screen.getByLabelText("اكتمال النطاق"), "complete"); actions.push("re-enter saved completion");
+    await user.selectOptions(screen.getByLabelText("الجهد"), "normal"); actions.push("re-enter saved effort");
+    await user.click(screen.getByRole("checkbox", { name: "أؤكد خلو الفاصل من التعرض ذي الصلة" })); actions.push("re-enter saved gap confirmation");
+    await user.type(screen.getByLabelText("سبب تصحيح التقييم"), "تصحيح عدد الأخطاء"); actions.push("enter correction reason");
+    await user.click(screen.getByRole("button", { name: "حفظ تصحيح مؤرخ للمحاولة الأصلية" })); actions.push("submit correction");
+    await waitFor(() => expect(app.adapter.state.attempts.a.assessment).toMatchObject({ ...complete, errors: 1 }));
+    expect(actions).toHaveLength(7);
+    evidence("ux-baseline-correction", { phase: "06-D1", measured: true, blankOnReopen, actions, count: actions.length, corrections: (await store.load()).events.filter(e => e.type === "AssessmentCorrected").length, limitations: "Component + real service/store, synthetic units; filling a field is one semantic action." });
+  });
+});

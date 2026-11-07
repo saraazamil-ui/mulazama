@@ -1,0 +1,123 @@
+{
+  "checkedAt": "2026-11-07T12:21:35.811450+00:00",
+  "source": "verified L2 ZIP",
+  "files": [
+    {
+      "path": "src/core/fsrs.ts",
+      "sha256": "c0352adbd23e59d5adaa5fb6ea9b378c7301acdecf70959c39dd7295bc5f5a07",
+      "unchanged": true
+    },
+    {
+      "path": "src/core/fsrs-rounded.ts",
+      "sha256": "bdc4b54a522d9207cd16ce8d2d88eec5fd3d591020b8d148cdbb7d825ad28087",
+      "unchanged": true
+    },
+    {
+      "path": "src/core/fsrs-reference.ts",
+      "sha256": "14c623c0c9cc2fceb5a74924087ba0d7d5880d04102130dcf1ffbd9ea70c753e",
+      "unchanged": true
+    },
+    {
+      "path": "src/core/hme.ts",
+      "sha256": "e9c41ba7125cd9ac4b658c82f89911f0d992b292c61f3e8ea0357021f1458f72",
+      "unchanged": true
+    },
+    {
+      "path": "src/core/hme-types.ts",
+      "sha256": "6135e6070ca2fbf1fba51416f4159ac48f3ae39242ebfaf4ab7f4d08e7e1482d",
+      "unchanged": true
+    },
+    {
+      "path": "src/core/fixtures/fsrs6-research-reference.json",
+      "sha256": "ab2b28ef73f44a9391f91eea0aeea96ffd1bd03886d54eca80f93a6039c652fd",
+      "unchanged": true
+    },
+    {
+      "path": "references/ts-fsrs-5.4.2-verified/attestations.json",
+      "sha256": "88686b2944a51aa7a0ad4d3d27aff570c163b63d73ce2d883d5b7247ac6f5419",
+      "unchanged": true
+    },
+    {
+      "path": "references/ts-fsrs-5.4.2-verified/package/CHANGELOG.md",
+      "sha256": "365b2c5b016ba4014b5c4fb85f9f6d5622a5e5f38545aa90c7b7bdbcb487679e",
+      "unchanged": true
+    },
+    {
+      "path": "references/ts-fsrs-5.4.2-verified/package/LICENSE",
+      "sha256": "8b83a73dd2894ff553d6de6113064b3ad9dfad3f839837b61f3b183881131d01",
+      "unchanged": true
+    },
+    {
+      "path": "references/ts-fsrs-5.4.2-verified/package/README.md",
+      "sha256": "791eef8f15303dbb791ff99546d5f90d83a325cde8b2d5be162b2f4598e988fd",
+      "unchanged": true
+    },
+    {
+      "path": "references/ts-fsrs-5.4.2-verified/package/README_CN.md",
+      "sha256": "6dbc46366941483e81ff75c1bc7b5813a9ed77f30010ada9609567432d716ce8",
+      "unchanged": true
+    },
+    {
+      "path": "references/ts-fsrs-5.4.2-verified/package/README_JA.md",
+      "sha256": "5196efe26fd93b5165106fb5061aece5332a7a2b858b8628bfb9bc161247d759",
+      "unchanged": true
+    },
+    {
+      "path": "references/ts-fsrs-5.4.2-verified/package/dist/index.cjs",
+      "sha256": "abf2062dd8218357662d4dbe7cb39bc7c0e9b0be8760a5d74bb515c75321f533",
+      "unchanged": true
+    },
+    {
+      "path": "references/ts-fsrs-5.4.2-verified/package/dist/index.cjs.map",
+      "sha256": "49790959efab6a2f67373eabdf8fca47729a4fc445967c143b3b5fc56f222929",
+      "unchanged": true
+    },
+    {
+      "path": "references/ts-fsrs-5.4.2-verified/package/dist/index.d.ts",
+      "sha256": "86619bd94f12a259832e2d3e1e7cacdc392174410d674e5999729e13889a4f41",
+      "unchanged": true
+    },
+    {
+      "path": "references/ts-fsrs-5.4.2-verified/package/dist/index.mjs",
+      "sha256": "ad4a4b3b7e259fcbf02764454c8f9db4ea3bf5aae2f473198129ecb7728f1a19",
+      "unchanged": true
+    },
+    {
+      "path": "references/ts-fsrs-5.4.2-verified/package/dist/index.mjs.map",
+      "sha256": "c8451f03163a442b4ae7efff5306583a63c4a917548465d9e88ae3cc120f6119",
+      "unchanged": true
+    },
+    {
+      "path": "references/ts-fsrs-5.4.2-verified/package/dist/index.umd.js",
+      "sha256": "59b7444121d0aae5bb969097ed95df38eff4a4f878e459703c63720f6b6a176b",
+      "unchanged": true
+    },
+    {
+      "path": "references/ts-fsrs-5.4.2-verified/package/dist/index.umd.js.map",
+      "sha256": "db3592eaaf751576e6db3b9767ab3d548ee28c574203924df02c89200b4dbd41",
+      "unchanged": true
+    },
+    {
+      "path": "references/ts-fsrs-5.4.2-verified/package/package.json",
+      "sha256": "69a263f71ac532649957480fbd125b4eb4a9ed80716ccf1d567abfa0c605c651",
+      "unchanged": true
+    },
+    {
+      "path": "references/ts-fsrs-5.4.2-verified/receipt.json",
+      "sha256": "459c77cf77dfff499ff422300c89e668591ab5572f1f7d8331045ec4fa1428e6",
+      "unchanged": true
+    },
+    {
+      "path": "references/ts-fsrs-5.4.2-verified/registry.json",
+      "sha256": "2ad12064580af88e76a6473956176547cff5521d76c9bcef958dac69ae58284b",
+      "unchanged": true
+    },
+    {
+      "path": "references/ts-fsrs-5.4.2-verified/ts-fsrs-5.4.2.tgz",
+      "sha256": "f91a53b58c7269db5528ad420208217384be610a4146a137b85dcaa07e3301cb",
+      "unchanged": true
+    }
+  ],
+  "count": 23,
+  "allUnchanged": true
+}

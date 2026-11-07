@@ -1,0 +1,23 @@
+[2m[WebServer] [22m(node:39983) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 12 tests using 1 worker
+
+(node:39985) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:39985) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 e2e-journey/journeys06l3.spec.ts:65:1 › L3J01 newcomer full isolated journey creates real durable HME events, schedules corrected review and survives reload (1.7s)
+  ✓   2 e2e-journey/journeys06l3.spec.ts:119:1 › L3J02 prior hafiz starts from declaration, records effort, corrects observation without duplicating review and retains goal history (1.7s)
+  ✓   3 e2e-journey/journeys06l3.spec.ts:178:1 › L3J03 reload during recall requires restart, disclosure persists, cancelled activity never counts as completed (1.8s)
+  ✓   4 e2e-journey/journeys06l3.spec.ts:221:1 › L3J04 phone keyboard and automated accessibility include daily activity, hidden recall answer and self-assessment (3.0s)
+  ✓   5 e2e-journey/journeys06l3.spec.ts:251:1 › L3J05 a returning prior hafiz receives an overdue review, records failure and keeps original history (2.4s)
+  ✓   6 e2e-journey/journeys06l3.spec.ts:328:1 › L3J06 an open dashboard refreshes its daily numbers and next activity when the user returns after midnight (1.5s)
+  ✓   7 e2e-journey/journeys06l3.spec.ts:354:36 › L4J01 desktop newcomer saves, reloads and returns to the next activity in an isolated engineering journey (1.9s)
+  ✓   8 e2e-journey/journeys06l3.spec.ts:354:36 › L4J02 desktop prior hafiz saves, reloads and returns to the next activity in an isolated engineering journey (2.0s)
+  ✓   9 e2e-journey/security06l3.spec.ts:53:1 › L3SECJ01 URL and stored database-name injection cannot select a real production store in the engineering entry (303ms)
+  ✓  10 e2e-journey/security06l3.spec.ts:95:1 › L3SECJ02 recall text is absent from DOM until an acknowledged reveal, and self-report cannot wash out recorded help (1.2s)
+  ✓  11 e2e-journey/security06l3.spec.ts:164:1 › L3SECJ03 pausing an unfinished recall exposes restart immediately and retains the interrupted attempt without a score (1.3s)
+  ✓  12 e2e-journey/security06l3.spec.ts:202:1 › L3SECJ04 a rejected result write shows an error without success, then retry commits one assessment (1.5s)
+
+  12 passed (21.5s)

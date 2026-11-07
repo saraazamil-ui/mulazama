@@ -1,0 +1,46 @@
+{
+  "product": "MULAZAMA",
+  "reportVersion": 1,
+  "purpose": "pre-release mechanical audit; never scientific approval",
+  "generatedAt": "2026-11-05T12:55:32.438Z",
+  "primary": {
+    "auditVersion": "mulazama-content-audit/1",
+    "structuralStatus": "blocked",
+    "scientificApproval": "not_granted",
+    "releaseEligibility": "requires-independent-content-release",
+    "testOnly": null,
+    "sourceHash": null,
+    "byteLength": null,
+    "profile": null,
+    "provenance": {
+      "publisher": "Tanzil Project",
+      "url": "https://tanzil.net/download/",
+      "version": "1.1",
+      "lineageId": "tanzil-uthmani-1.1-candidate-not-downloaded"
+    },
+    "counts": null,
+    "checks": {
+      "utf8": "blocked",
+      "hash": "blocked",
+      "numbering": "blocked",
+      "order": "blocked"
+    },
+    "issues": [
+      {
+        "code": "SOURCE_BYTES_MISSING",
+        "detail": "Publisher bytes have not been obtained; no content integrity success can be asserted."
+      }
+    ],
+    "recordCount": 0,
+    "sourceTextOmittedFromReport": true
+  },
+  "reference": null,
+  "comparison": {
+    "status": "blocked",
+    "blockers": [
+      "INDEPENDENT_REFERENCE_BYTES_MISSING"
+    ]
+  },
+  "productionActivation": "unavailable",
+  "humanScientificApproval": "pending"
+}

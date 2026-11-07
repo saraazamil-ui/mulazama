@@ -1,0 +1,45 @@
+{
+  "recordedAt": "2026-11-07T12:15:40.379038+00:00",
+  "attempts": [
+    {
+      "name": "official-page",
+      "url": "https://qurancomplex.gov.sa/quran-dev/",
+      "exitCode": 35,
+      "status": "000",
+      "bytes": null,
+      "sha256": null
+    },
+    {
+      "name": "official-fonts",
+      "url": "https://fonts.qurancomplex.gov.sa/hafs-reading/",
+      "exitCode": 35,
+      "status": "000",
+      "bytes": null,
+      "sha256": null
+    },
+    {
+      "name": "official-archive",
+      "url": "https://download.qurancomplex.gov.sa/resources_dev/UthmanicHafs_v2-0.zip",
+      "exitCode": 35,
+      "status": "000",
+      "bytes": null,
+      "sha256": null
+    },
+    {
+      "name": "qf-qpc-hafs",
+      "url": "https://api.quran.com/api/v4/quran/verses/qpc_hafs",
+      "exitCode": 0,
+      "status": "200",
+      "bytes": 1680614,
+      "sha256": "d6464a967d5dc85c9b85444791911bcb2714d87a2137a0241299d0719ddbe36e"
+    },
+    {
+      "name": "qf-api-documentation",
+      "url": "https://api-docs.quran.com/docs/content_apis_versioned/4.0.0/quran-verses-by-script/",
+      "exitCode": 0,
+      "status": "200",
+      "bytes": 150405,
+      "sha256": "90f87986c8b6741a232643adf7075f99b0b5477eca01586a740be09d5a1b4470"
+    }
+  ]
+}

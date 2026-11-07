@@ -1,0 +1,15 @@
+{
+  "status": "All independently reproduced peer-review findings closed in reviewed source snapshot",
+  "checksExecuted": 21,
+  "passed": 21,
+  "failed": 0,
+  "skipped": 0,
+  "runtime": "Node.js v24.22.1; TypeScript 5.9.3 transpilation; synthetic units",
+  "files": {
+    "src/application/learning.ts": "86712985e93d0fa6f633fca9e6d8fca31301ab676b2f88f100469685b109990a",
+    "src/application/service.ts": "c3ea7593811d0c1cd1ede59a94be995dc3c76fae5308268f6ad253a4fd8b97e1",
+    "src/core/hme.ts": "e9c41ba7125cd9ac4b658c82f89911f0d992b292c61f3e8ea0357021f1458f72",
+    "src/core/hme-types.ts": "6135e6070ca2fbf1fba51416f4159ac48f3ae39242ebfaf4ab7f4d08e7e1482d",
+    "src/core/fsrs.ts": "c0352adbd23e59d5adaa5fb6ea9b378c7301acdecf70959c39dd7295bc5f5a07"
+  }
+}

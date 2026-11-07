@@ -1,0 +1,9 @@
+{
+  "source": "/Users/saalzamil/Documents/ChatGPT/\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u0639\u0645\u0631/MULAZAMA-Phase-06D1-Engineering-Delivery.zip",
+  "sha256": "3fa6cfe6a240b62b5e7c2d85e9999a95a8214fdbf02564992570adb3971d762c",
+  "crcVerified": true,
+  "manifestHashesVerified": true,
+  "workingCopy": "/Users/saalzamil/Documents/ChatGPT/\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u0639\u0645\u0631/mulazama-06d2",
+  "baseline": "06-D1",
+  "dependencies": "copied matching pre-existing installation; no fresh install claimed"
+}

@@ -1,0 +1,46 @@
+✓ Lockfile passes supply-chain policies (verified 3h ago)
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +171
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 171, reused 0, downloaded 8, added 0
+Progress: resolved 171, reused 0, downloaded 27, added 0
+[WARN] Tarball download average speed 46 KiB/s (size 68 KiB) is below 50 KiB/s: https://registry.npmjs.org/decimal.js/-/decimal.js-10.6.0.tgz (GET)
+[WARN] Tarball download average speed 23 KiB/s (size 26 KiB) is below 50 KiB/s: https://registry.npmjs.org/nwsapi/-/nwsapi-2.2.28.tgz (GET)
+Packages are cloned from the content-addressable store to the virtual store.
+  Content-addressable store is at: /tmp/mulazama-05c-clean-store/v11
+  Virtual store is at:             node_modules/.pnpm
+Progress: resolved 171, reused 0, downloaded 85, added 16
+[WARN] Tarball download average speed 16 KiB/s (size 23 KiB) is below 50 KiB/s: https://registry.npmjs.org/picomatch/-/picomatch-4.0.7.tgz (GET)
+[WARN] Tarball download average speed 27 KiB/s (size 84 KiB) is below 50 KiB/s: https://registry.npmjs.org/parse5/-/parse5-7.3.0.tgz (GET)
+[WARN] Tarball download average speed 15 KiB/s (size 30 KiB) is below 50 KiB/s: https://registry.npmjs.org/esbuild/-/esbuild-0.25.12.tgz (GET)
+Progress: resolved 171, reused 0, downloaded 145, added 102
+[WARN] Tarball download average speed 19 KiB/s (size 51 KiB) is below 50 KiB/s: https://registry.npmjs.org/postcss/-/postcss-8.5.32.tgz (GET)
+Progress: resolved 171, reused 0, downloaded 168, added 168
+Progress: resolved 171, reused 0, downloaded 169, added 169
+Progress: resolved 171, reused 0, downloaded 170, added 170
+Progress: resolved 171, reused 0, downloaded 171, added 171, done
+.../esbuild@0.25.12/node_modules/esbuild postinstall$ node install.js
+.../esbuild@0.25.12/node_modules/esbuild postinstall: Done
+
+dependencies:
++ lucide-react 0.468.0
++ react 19.2.0
++ react-dom 19.2.0
+
+devDependencies:
++ @axe-core/playwright 4.10.2
++ @playwright/test 1.56.1
++ @testing-library/jest-dom 6.9.1
++ @testing-library/react 16.3.0
++ @testing-library/user-event 14.6.1
++ @types/react 19.2.2
++ @types/react-dom 19.2.2
++ @vitejs/plugin-react 5.0.4
++ jsdom 26.1.0
++ prettier 3.6.2
++ typescript 5.9.3
++ vite 7.1.12
++ vitest 3.2.4
+
+Done in 8.4s using pnpm v11.25.0

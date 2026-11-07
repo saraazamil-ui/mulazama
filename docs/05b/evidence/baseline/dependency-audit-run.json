@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "/tmp/mulazama-baseline/bin/node",
+    "/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules/corepack/dist/corepack.js",
+    "pnpm",
+    "audit",
+    "--prod",
+    "--json"
+  ],
+  "startedAt": "2026-11-05T12:50:54.234316+00:00",
+  "exitCode": 1,
+  "durationSeconds": 0.064,
+  "status": "blocked-before-advisory-scan",
+  "reason": "pnpm bootstrap registry DNS ENOTFOUND"
+}

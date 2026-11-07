@@ -1,0 +1,36 @@
+{
+  "sourceCommit": "df34d70084bdd328ad77d31cf91fea983d0e474f",
+  "officialMain": "ff279eaad321ebd60cf004a44cbdc69d2a178430",
+  "officialIdentityFilesPreserved": 7,
+  "officialReadmePreservedAs": "README-official-pre-import.md",
+  "conflictsResolved": [
+    "README.md"
+  ],
+  "unresolvedConflicts": 0,
+  "exactImportCommit": "76e4332d030a506d2e0ebedbf563f901410b2138",
+  "sourceFilesPreservedAtExactImport": 1300,
+  "sourceFilesPreservedAtReviewHead": 1295,
+  "postImportExceptions": [
+    {
+      "path": ".github/workflows/qa.yml",
+      "reason": "Pin Ubuntu 24.04 because ubuntu-latest is 26.04, unsupported by locked Playwright 1.56.1; no test conditions or application code changed."
+    },
+    {
+      "path": "src/release/build-context.generated.ts",
+      "reason": "Regenerate the source fingerprint because .github is included in the build policy digest; not a product approval."
+    },
+    {
+      "path": "src/application/performance.test.mjs",
+      "reason": "Explicit 30-second timeout only for a large integration workload; input data and assertions unchanged after shared CI exceeded Vitest default 5 seconds."
+    },
+    {
+      "path": "src/content/acquisition06l2.test.mjs",
+      "reason": "Explicit 30-second timeout only for a large integration workload; input data and assertions unchanged after shared CI exceeded Vitest default 5 seconds."
+    },
+    {
+      "path": "e2e-journey/journeys06l3.spec.ts",
+      "reason": "Wait for persisted derived plan after assessment before snapshot; retain strict full event equality after reload. Read-only test synchronization, no application logic changed."
+    }
+  ],
+  "reviewSourceDigest": "8b8c9729058f56522f44dfe22b5b469c64dd6305f5202875d131a03ebdeb1625"
+}

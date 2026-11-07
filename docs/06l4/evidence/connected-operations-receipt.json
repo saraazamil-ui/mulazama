@@ -1,0 +1,35 @@
+{
+  "observedAt": "2026-11-07T13:49:53.622Z",
+  "source": "Connected GitHub and Sites read-only tools in this session",
+  "mutations": false,
+  "repository": {
+    "fullName": "saraazamil-ui/mulazama",
+    "visibility": "private",
+    "defaultBranch": "main",
+    "permissions": {
+      "admin": true,
+      "maintain": true,
+      "pull": true,
+      "push": true,
+      "triage": true
+    },
+    "sizeKiB": 25,
+    "readmeSHA": "4caa6afd9c1e95b62c83eaf1d0155d1dfed1556a",
+    "currentContents": "brand assets and operations text; application release has not been imported",
+    "historicalOfficialDomainInMain": "mulazama.com",
+    "correctionRequired": "mulazama.sa",
+    "applicationSourceImportVerified": false
+  },
+  "existingPreview": {
+    "projectId": "appgprj_6aec6725aa3c8191a6c052991fc99823",
+    "url": "https://mulazama-preview-05a.sara-a-zamil.chatgpt.site",
+    "latestVersion": 1,
+    "phase": "05-A",
+    "role": "owner",
+    "accessMode": "custom",
+    "ownerOnly": true,
+    "externalVisitorCount": 0,
+    "is06L4": false
+  },
+  "privacy": "Account emails, user IDs and temporary media URLs intentionally omitted."
+}

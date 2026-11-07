@@ -1,0 +1,4 @@
+Listing tests:
+  rollout06l3.spec.ts:148:1 › L3DEP01 HTTPS preview enforces headers and allows only manifest assets without exposing source files
+  rollout06l3.spec.ts:180:1 › L3DEP02 L2 to L3 update and rollback preserve exact encrypted IndexedDB rows, settings, offline access and blocked sessions
+Total: 2 tests in 1 file

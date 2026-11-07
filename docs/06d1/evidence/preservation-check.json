@@ -1,0 +1,10 @@
+{
+  "originalZipSHA256": "c257e6f97cb9cb6ffa66cbb1a7ee1b2bee10b2052b1754bce762c8ae36848d2f",
+  "protectedFilesCompared": 29,
+  "protectedDifferences": [],
+  "allowedGeneratedFile": "src/release/build-context.generated.ts",
+  "packageJsonUnchanged": true,
+  "lockfileUnchanged": true,
+  "mainEntrypointUnchanged": true,
+  "databaseAndBackupCodeUnchanged": true
+}

@@ -1,0 +1,47 @@
+[
+  {
+    "path": "src/core/fsrs.ts",
+    "sha256": "c0352adbd23e59d5adaa5fb6ea9b378c7301acdecf70959c39dd7295bc5f5a07",
+    "matches06D1": true
+  },
+  {
+    "path": "src/core/fsrs-rounded.ts",
+    "sha256": "bdc4b54a522d9207cd16ce8d2d88eec5fd3d591020b8d148cdbb7d825ad28087",
+    "matches06D1": true
+  },
+  {
+    "path": "src/core/hme.ts",
+    "sha256": "e9c41ba7125cd9ac4b658c82f89911f0d992b292c61f3e8ea0357021f1458f72",
+    "matches06D1": true
+  },
+  {
+    "path": "src/core/hme-types.ts",
+    "sha256": "6135e6070ca2fbf1fba51416f4159ac48f3ae39242ebfaf4ab7f4d08e7e1482d",
+    "matches06D1": true
+  },
+  {
+    "path": "src/core/types.ts",
+    "sha256": "6a8de58550c73f2d2dcad0701d7f0164bd0b9874ab8938e17ed6e6b35419af3f",
+    "matches06D1": true
+  },
+  {
+    "path": "src/application/learning.ts",
+    "sha256": "c87ad2b691eba0dfc7770a0779817cd96cecbe1626c296ff48c32d7e7ef07c4c",
+    "matches06D1": true
+  },
+  {
+    "path": "src/application/learning-validation.ts",
+    "sha256": "0b112213bc68ab8b74e0c9bb57d1aab8da71d707f972df5dddd98f5fae28fbea",
+    "matches06D1": true
+  },
+  {
+    "path": "src/release/access.ts",
+    "sha256": "f493edfcac4d4cb0b2a5f43fdabce106a3fb85fe7abd5e21f38f3200544d65c3",
+    "matches06D1": true
+  },
+  {
+    "path": "src/release/gates.ts",
+    "sha256": "3f3e0a3f7e53ecf141d703d37696af8c1e0330a785faa36acf28614145ecf851",
+    "matches06D1": true
+  }
+]

@@ -1,0 +1,287 @@
+{
+  "generatedAt": "2026-11-07T12:04:06.566718+00:00",
+  "scope": "Content subtask files only; inventory itself excluded. Original Quran bytes preserved; no production activation.",
+  "counts": {
+    "ownedFilesExcludingInventory": 55,
+    "contentFiles": 13,
+    "evidenceFilesExcludingInventory": 38
+  },
+  "files": [
+    {
+      "path": "content/06l2/Human-Review-Log.pending.json",
+      "bytes": 41094,
+      "sha256": "1b17459a913fd8c78f6b1493489988449b2bc522bfc8f37982b1b5c640632cce"
+    },
+    {
+      "path": "content/06l2/README.md",
+      "bytes": 6998,
+      "sha256": "73fcbca17519b0487db3d71262e66b38fe47d32829fd62abf0d82b454e3e1423"
+    },
+    {
+      "path": "content/06l2/Scientific-Approval.pending.json",
+      "bytes": 847,
+      "sha256": "56af8e25042c003fb36b264527c1995ef3ccfe34d0c767e4c3e8bea39070dd49"
+    },
+    {
+      "path": "content/06l2/audit-request.json",
+      "bytes": 509,
+      "sha256": "bc003ec31ff7dbbae9899b3376813ee6c803d0e1bde98f9123922247098145b2"
+    },
+    {
+      "path": "content/06l2/download-receipt.json",
+      "bytes": 1122,
+      "sha256": "61d1af6d19199da916543ba6154ffe32edc17edbba5e57c714d0c02259d3eb30"
+    },
+    {
+      "path": "content/06l2/numbering-profile.json",
+      "bytes": 1550,
+      "sha256": "29f337770f6089feecc67148d47191d165683597ca228308199f18eb49e579ce"
+    },
+    {
+      "path": "content/06l2/quran-data.xml",
+      "bytes": 77234,
+      "sha256": "8867c1d88191472adec9db694b3cd9f135b1a2ef580574d32cf888dcb22c5c7a"
+    },
+    {
+      "path": "content/06l2/review.css",
+      "bytes": 1261,
+      "sha256": "174be1a23102130e200e1b4a3ab6c5b74d5a6073fc55207df6de046fa37aac30"
+    },
+    {
+      "path": "content/06l2/review.html",
+      "bytes": 2031,
+      "sha256": "61438508114c9ac46438354ed75a3e59338c02d107172fe61743f038d1d143cf"
+    },
+    {
+      "path": "content/06l2/review.js",
+      "bytes": 2514,
+      "sha256": "eda9bf7a94d993b33681dea1c5e45c4f944ed1ae2918b063628d85c6a379bb79"
+    },
+    {
+      "path": "content/06l2/source-slice-index.json",
+      "bytes": 776217,
+      "sha256": "c1afc53d91fcc14b30d19b6a91280a9b51f6760de235b1949f7feedccdab6c6f"
+    },
+    {
+      "path": "content/06l2/tanzil-license.html",
+      "bytes": 7903,
+      "sha256": "3edaac627f23693b080d2b5fa2959027b2296f51b4d0a69e468621910676ba27"
+    },
+    {
+      "path": "content/06l2/tanzil-uthmani-1.1.txt",
+      "bytes": 1396087,
+      "sha256": "6933e133dd56db778c801bf738848454e43648105a151e8d84d86a7cae39ec5f"
+    },
+    {
+      "path": "docs/06l2/Content-Approval-Report.md",
+      "bytes": 12415,
+      "sha256": "935ef5398967089356ce03bab4980c482c66baeb8dc45b62ab6c87437f4963f9"
+    },
+    {
+      "path": "docs/06l2/evidence/content/fonts-page-fetch.log",
+      "bytes": 619,
+      "sha256": "d3cac69e8feacf8f1b2f1887d491810cd0de7f5766c7f345c9bcd1c81e1e0e22"
+    },
+    {
+      "path": "docs/06l2/evidence/content/fonts-page.headers",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/06l2/evidence/content/kfgqpc-archive-fetch.log",
+      "bytes": 565,
+      "sha256": "b19e7891ccc0757dc7442d7969f05ce13d1174ad72d18933de726ee0bbb055c5"
+    },
+    {
+      "path": "docs/06l2/evidence/content/kfgqpc-archive.headers",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/06l2/evidence/content/publisher-page-fetch.log",
+      "bytes": 367,
+      "sha256": "8e02eb6222236df377f072f88a35af3295e53252a3ca9bb25856513d8511e23f"
+    },
+    {
+      "path": "docs/06l2/evidence/content/publisher-page.headers",
+      "bytes": 491,
+      "sha256": "aa0bd53f16724eff6df167b2b5e009c3f7ff45c0b4ccc4a7eb1292cef9f49a48"
+    },
+    {
+      "path": "docs/06l2/evidence/content/publisher-page.html",
+      "bytes": 184058,
+      "sha256": "ff795738c2a2fdd8d3329f55195119da436cdb5b0319a7a2f3e721160f6188bb"
+    },
+    {
+      "path": "docs/06l2/evidence/content/tanzil-license-fetch.log",
+      "bytes": 442,
+      "sha256": "ee02a03e86b1b7960f8dcf6fbc246f395cbb88bd47734c9db7e4ff984a7f447a"
+    },
+    {
+      "path": "docs/06l2/evidence/content/tanzil-license.headers",
+      "bytes": 544,
+      "sha256": "26e3abbfc4905b921e982e1d3df70301fb649c0c31453b367e271ab86cb061e9"
+    },
+    {
+      "path": "docs/06l2/evidence/content/tanzil-metadata-fetch.log",
+      "bytes": 379,
+      "sha256": "2b2a9ca4f73c2c8127d273b3be3bf9f681a726d3e8b003b98cab089b9caf736f"
+    },
+    {
+      "path": "docs/06l2/evidence/content/tanzil-metadata.headers",
+      "bytes": 213,
+      "sha256": "f9e27e124a1c83f8b3c6d65570379baa23c10df95d7d4574900557ca79b9e8f8"
+    },
+    {
+      "path": "docs/06l2/evidence/content/tanzil-page-fetch.log",
+      "bytes": 355,
+      "sha256": "e8c89d386606ad1ad810cd848d42661996c4c88169c3dba63a3688ed76f604e1"
+    },
+    {
+      "path": "docs/06l2/evidence/content/tanzil-page.headers",
+      "bytes": 185,
+      "sha256": "4063597ec383055e24634c21472bac5cb8f7af6106f18e054dd5b1f3696f3e59"
+    },
+    {
+      "path": "docs/06l2/evidence/content/tanzil-page.html",
+      "bytes": 7115,
+      "sha256": "20c5ef2033d752d45602fd3d0932df394991e4ce9b8b3c9bd00e5c581b7b307a"
+    },
+    {
+      "path": "docs/06l2/evidence/content/tanzil-text-fetch.log",
+      "bytes": 608,
+      "sha256": "4714130ee339b43126a1161cf8b1d27d59a04de57d434d1fe1f057465bc7785e"
+    },
+    {
+      "path": "docs/06l2/evidence/content/tanzil-text.headers",
+      "bytes": 384,
+      "sha256": "19b4d8df8d15acb48a975b1d07b8992989a5bdb30e08df66ab96c28caee40806"
+    },
+    {
+      "path": "docs/06l2/evidence/content-browser-initial.log",
+      "bytes": 499,
+      "sha256": "9f1d23a9bacb5f91866dff636d1fe2e5d0d78af0b0fe6181435de2c835608a46"
+    },
+    {
+      "path": "docs/06l2/evidence/content-browser-keyboard.log",
+      "bytes": 789,
+      "sha256": "108b0fc1d428d1ab3f6ffb55e153d37ab95792ed3c8389f6ada5556a42541a3a"
+    },
+    {
+      "path": "docs/06l2/evidence/content-browser.log",
+      "bytes": 1046,
+      "sha256": "a60e86d330d64fd4666ea4d683839320b8e3e4ff0e29275441f2c46ad736b827"
+    },
+    {
+      "path": "docs/06l2/evidence/content-byte-audit.json",
+      "bytes": 3344,
+      "sha256": "d968f7e49f102ef6cb2780fecee762471dec678c7182c36d63e9de5eafb22e3c"
+    },
+    {
+      "path": "docs/06l2/evidence/content-byte-audit.log",
+      "bytes": 206,
+      "sha256": "4f66a9bae444be7e21739da82bc5edf314777746e1fde2c5b23631a8eb3aa4a3"
+    },
+    {
+      "path": "docs/06l2/evidence/content-command-results.json",
+      "bytes": 3019,
+      "sha256": "170b14ed9631420e51dc8b05121255171263c693d12023b715860f210b11632c"
+    },
+    {
+      "path": "docs/06l2/evidence/content-display/initial-harness-failure.json",
+      "bytes": 595,
+      "sha256": "cd1701cb73bacb3bbd0e755a3aba4a2fdd940375ab78ac9b1a8e85383ae2f838"
+    },
+    {
+      "path": "docs/06l2/evidence/content-display/keyboard-harness-failure.json",
+      "bytes": 957,
+      "sha256": "22941bc88f8ac65505510de2a5416b66918b9beff5d7b2440d03bcff1edffa48"
+    },
+    {
+      "path": "docs/06l2/evidence/content-display/results.json",
+      "bytes": 1291,
+      "sha256": "9fad8138821bcebb48846fba50b917dbdd2ff723184b29fb516c5fd9fb2c3dd8"
+    },
+    {
+      "path": "docs/06l2/evidence/content-display/review-1440-surah-1.png",
+      "bytes": 71990,
+      "sha256": "eb0309d2b6a242b5bd0b4aca7b1245717b9b0c55ac407bde247e0a9579c1d560"
+    },
+    {
+      "path": "docs/06l2/evidence/content-display/review-1440-surah-114.png",
+      "bytes": 75814,
+      "sha256": "59c7795d5415de45ba32a5692788083bcb945b407835973fd1769e9b03d19af6"
+    },
+    {
+      "path": "docs/06l2/evidence/content-display/review-1440-surah-57.png",
+      "bytes": 115447,
+      "sha256": "0ae6f6b43423d390242aa69c83e67ca5ddf7c0e0415bff370135fee534c21a46"
+    },
+    {
+      "path": "docs/06l2/evidence/content-display/review-320-surah-1.png",
+      "bytes": 56134,
+      "sha256": "0df7e6641f93eb0711ed6a87138d7f9b865d779083a2499853614fa606051865"
+    },
+    {
+      "path": "docs/06l2/evidence/content-display/review-320-surah-114.png",
+      "bytes": 56248,
+      "sha256": "645f554d0a22ee484bfcfdba89d4066ea22403130e35b59b5c07e0a0c7490463"
+    },
+    {
+      "path": "docs/06l2/evidence/content-display/review-320-surah-57.png",
+      "bytes": 59440,
+      "sha256": "a37d96545839fb28b09fcb857b4b2a6271e3cd71698b2a36e52544e5a775d2ea"
+    },
+    {
+      "path": "docs/06l2/evidence/content-source-verification.json",
+      "bytes": 3076,
+      "sha256": "04bd11e341ff98c0c819427c62b9a507065d4ec543aea5dd0699f7433cd0c4a3"
+    },
+    {
+      "path": "docs/06l2/evidence/content-supplemental-audit.json",
+      "bytes": 17352,
+      "sha256": "a87d8de483d882e4e4f2573b36d8ba5f893f833b2ccfa991552dac5238150fc1"
+    },
+    {
+      "path": "docs/06l2/evidence/content-supplemental-audit.log",
+      "bytes": 175,
+      "sha256": "b809056ea0c5bf7d785cfc50a88503eb9ee0f144d4abda6707900e597778b727"
+    },
+    {
+      "path": "docs/06l2/evidence/content-tests.json",
+      "bytes": 5186,
+      "sha256": "c90b334a5a76b24e0d375d805e0703bd3954315853e5c9d06a4cef9304ff87d6"
+    },
+    {
+      "path": "docs/06l2/evidence/content-tests.log",
+      "bytes": 132,
+      "sha256": "fd899682d56a057b34e22e4446659a69632c17c96bba97a710d0f218f8ec0501"
+    },
+    {
+      "path": "docs/06l2/evidence/content-tool-checks.json",
+      "bytes": 1289,
+      "sha256": "fe521a28d56158c6548f636204a22b5afc0573e164245399b932ec9883b8781f"
+    },
+    {
+      "path": "docs/06l2/evidence/content-tools.log",
+      "bytes": 150,
+      "sha256": "f623fa24800ee85bb01dcc2cd0b9bff6026a2b8846dace66d74a767c258c2b37"
+    },
+    {
+      "path": "scripts/content-06l2-audit.mjs",
+      "bytes": 7952,
+      "sha256": "eca6e583c56c394b8ac5865bc06c361e833ac2a79d0bcfa75c8d41f5f206f004"
+    },
+    {
+      "path": "scripts/content-06l2-browser.mjs",
+      "bytes": 6459,
+      "sha256": "a19bd068ccec15b1e4834e3b3a0ef2cc607c171f1def262c4e0b7471d37fd83c"
+    },
+    {
+      "path": "src/content/acquisition06l2.test.mjs",
+      "bytes": 4809,
+      "sha256": "af0a51c9cac06720e12146fd9af601c010e665577bcca946b09d805fb5c237a9"
+    }
+  ],
+  "note": "Refreshed once after final L2 full runner completed. Content scope only; journey reports are listed in the main release file inventory."
+}

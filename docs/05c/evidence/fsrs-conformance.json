@@ -1,0 +1,511 @@
+{
+  "schemaVersion": 1,
+  "kind": "fsrs-library-conformance",
+  "status": "blocked",
+  "candidate": {
+    "algorithmVersion": "hme-fsrs6-research-binary64-0.1.0",
+    "precision": "IEEE754-binary64-without-intermediate-rounding",
+    "timePolicy": "floor-elapsed-seconds-divided-by-86400-0.1.0",
+    "sourceFiles": [
+      {
+        "path": "src/core/fsrs.ts",
+        "sha256": "c0352adbd23e59d5adaa5fb6ea9b378c7301acdecf70959c39dd7295bc5f5a07"
+      },
+      {
+        "path": "src/core/hme.ts",
+        "sha256": "e9c41ba7125cd9ac4b658c82f89911f0d992b292c61f3e8ea0357021f1458f72"
+      },
+      {
+        "path": "src/core/hme-types.ts",
+        "sha256": "6135e6070ca2fbf1fba51416f4159ac48f3ae39242ebfaf4ab7f4d08e7e1482d"
+      },
+      {
+        "path": "src/conformance/fsrs-suite.ts",
+        "sha256": "be3bc91f98cfbf7011a694096248726ef8baa0e99f91ffed36e3df82eea2df76"
+      },
+      {
+        "path": "src/conformance/fsrs-conformance.ts",
+        "sha256": "c0144efab6df75fb23d9d8531b8418b4e35837e3119e8b2a6ec66e3343706d0b"
+      },
+      {
+        "path": "scripts/fsrs-reference-loader.mjs",
+        "sha256": "4b0f58485cfc9e0dfc2a2ea9e6f73899d9f2b7c7a7fe17b40bd2ad2a335f55aa"
+      },
+      {
+        "path": "scripts/fsrs-reference-prepare.mjs",
+        "sha256": "c50a657bcc7b5488e85915f9efa020e3cd818266efefe92c8e9f08a5f647748a"
+      },
+      {
+        "path": "scripts/fsrs-conformance.mjs",
+        "sha256": "02ff7737e7dd14c08529243a6098e236fddda9ccc023c04e16b0b4e8d542571a"
+      }
+    ],
+    "weightsSha256": "a00444e09ca114a3ce9704158c2abb90200f9aa76e4892ef87fe7d4c79b85f56"
+  },
+  "reference": {
+    "name": "ts-fsrs",
+    "version": "5.4.2",
+    "model": "FSRS-6",
+    "sourceCommit": "bb71e35a2f5af5a5ac6cce9ef7c41ad24855721d",
+    "sourceUrl": "https://github.com/open-spaced-repetition/ts-fsrs/releases/tag/v5.4.2",
+    "artifactSha512": null,
+    "executed": false
+  },
+  "tolerance": {
+    "absolute": 1e-12,
+    "relative": 1e-12
+  },
+  "coverage": {
+    "requiredBranches": 12,
+    "executedBranches": 0
+  },
+  "summary": {
+    "passed": 0,
+    "failed": 0,
+    "blocked": 23
+  },
+  "cases": [
+    {
+      "id": "FSRS-G-INIT-1",
+      "branch": "initialization",
+      "status": "blocked",
+      "expected": null,
+      "actual": [
+        {
+          "stability": 0.212,
+          "difficulty": 6.4133,
+          "retrievabilityBefore": null,
+          "elapsedDays": 0,
+          "roundedIntervalDays": 1,
+          "rawDueAt": "2026-01-02T00:00:00.000Z"
+        }
+      ],
+      "delta": null,
+      "issues": []
+    },
+    {
+      "id": "FSRS-G-INIT-2",
+      "branch": "initialization",
+      "status": "blocked",
+      "expected": null,
+      "actual": [
+        {
+          "stability": 1.2931,
+          "difficulty": 5.112170705601055,
+          "retrievabilityBefore": null,
+          "elapsedDays": 0,
+          "roundedIntervalDays": 1,
+          "rawDueAt": "2026-01-02T00:00:00.000Z"
+        }
+      ],
+      "delta": null,
+      "issues": []
+    },
+    {
+      "id": "FSRS-G-INIT-3",
+      "branch": "initialization",
+      "status": "blocked",
+      "expected": null,
+      "actual": [
+        {
+          "stability": 2.3065,
+          "difficulty": 2.118103970459015,
+          "retrievabilityBefore": null,
+          "elapsedDays": 0,
+          "roundedIntervalDays": 2,
+          "rawDueAt": "2026-01-03T00:00:00.000Z"
+        }
+      ],
+      "delta": null,
+      "issues": []
+    },
+    {
+      "id": "FSRS-G-INIT-4",
+      "branch": "initialization",
+      "status": "blocked",
+      "expected": null,
+      "actual": [
+        {
+          "stability": 8.2956,
+          "difficulty": 1,
+          "retrievabilityBefore": null,
+          "elapsedDays": 0,
+          "roundedIntervalDays": 8,
+          "rawDueAt": "2026-01-09T00:00:00.000Z"
+        }
+      ],
+      "delta": null,
+      "issues": []
+    },
+    {
+      "id": "FSRS-G-SAME-1",
+      "branch": "same-day",
+      "status": "blocked",
+      "expected": null,
+      "actual": [
+        {
+          "stability": 1.5968179979869215,
+          "difficulty": 8.341762369296838,
+          "retrievabilityBefore": 1,
+          "elapsedDays": 0,
+          "roundedIntervalDays": 2,
+          "rawDueAt": "2026-01-03T00:00:00.000Z"
+        }
+      ],
+      "delta": null,
+      "issues": []
+    },
+    {
+      "id": "FSRS-G-SAME-2",
+      "branch": "same-day",
+      "status": "blocked",
+      "expected": null,
+      "actual": [
+        {
+          "stability": 5,
+          "difficulty": 6.665995369296838,
+          "retrievabilityBefore": 1,
+          "elapsedDays": 0,
+          "roundedIntervalDays": 5,
+          "rawDueAt": "2026-01-06T00:00:00.000Z"
+        }
+      ],
+      "delta": null,
+      "issues": []
+    },
+    {
+      "id": "FSRS-G-SAME-3",
+      "branch": "same-day",
+      "status": "blocked",
+      "expected": null,
+      "actual": [
+        {
+          "stability": 5,
+          "difficulty": 4.9902283692968386,
+          "retrievabilityBefore": 1,
+          "elapsedDays": 0,
+          "roundedIntervalDays": 5,
+          "rawDueAt": "2026-01-06T00:00:00.000Z"
+        }
+      ],
+      "delta": null,
+      "issues": []
+    },
+    {
+      "id": "FSRS-G-SAME-4",
+      "branch": "same-day",
+      "status": "blocked",
+      "expected": null,
+      "actual": [
+        {
+          "stability": 8.129609559916112,
+          "difficulty": 3.3144613692968385,
+          "retrievabilityBefore": 1,
+          "elapsedDays": 0,
+          "roundedIntervalDays": 8,
+          "rawDueAt": "2026-01-09T00:00:00.000Z"
+        }
+      ],
+      "delta": null,
+      "issues": []
+    },
+    {
+      "id": "FSRS-G-SUCCESS-2",
+      "branch": "successful-review",
+      "status": "blocked",
+      "expected": null,
+      "actual": [
+        {
+          "stability": 12.434213743539342,
+          "difficulty": 6.665995369296838,
+          "retrievabilityBefore": 0.9,
+          "elapsedDays": 5,
+          "roundedIntervalDays": 12,
+          "rawDueAt": "2026-01-18T00:00:00.000Z"
+        }
+      ],
+      "delta": null,
+      "issues": []
+    },
+    {
+      "id": "FSRS-G-SUCCESS-3",
+      "branch": "successful-review",
+      "status": "blocked",
+      "expected": null,
+      "actual": [
+        {
+          "stability": 17.36151270957656,
+          "difficulty": 4.9902283692968386,
+          "retrievabilityBefore": 0.9,
+          "elapsedDays": 5,
+          "roundedIntervalDays": 17,
+          "rawDueAt": "2026-01-23T00:00:00.000Z"
+        }
+      ],
+      "delta": null,
+      "issues": []
+    },
+    {
+      "id": "FSRS-G-SUCCESS-4",
+      "branch": "successful-review",
+      "status": "blocked",
+      "expected": null,
+      "actual": [
+        {
+          "stability": 28.151877153765938,
+          "difficulty": 3.3144613692968385,
+          "retrievabilityBefore": 0.9,
+          "elapsedDays": 5,
+          "roundedIntervalDays": 28,
+          "rawDueAt": "2026-02-03T00:00:00.000Z"
+        }
+      ],
+      "delta": null,
+      "issues": []
+    },
+    {
+      "id": "FSRS-G-LAPSE",
+      "branch": "lapse",
+      "status": "blocked",
+      "expected": null,
+      "actual": [
+        {
+          "stability": 0.953502178130594,
+          "difficulty": 8.341762369296838,
+          "retrievabilityBefore": 0.9,
+          "elapsedDays": 5,
+          "roundedIntervalDays": 1,
+          "rawDueAt": "2026-01-07T00:00:00.000Z"
+        }
+      ],
+      "delta": null,
+      "issues": []
+    },
+    {
+      "id": "FSRS-G-EARLY",
+      "branch": "early-review",
+      "status": "blocked",
+      "expected": null,
+      "actual": [
+        {
+          "stability": 8.269203668758058,
+          "difficulty": 4.9902283692968386,
+          "retrievabilityBefore": 0.9727695594804078,
+          "elapsedDays": 1,
+          "roundedIntervalDays": 8,
+          "rawDueAt": "2026-01-10T00:00:00.000Z"
+        }
+      ],
+      "delta": null,
+      "issues": []
+    },
+    {
+      "id": "FSRS-G-OVERDUE",
+      "branch": "overdue-review",
+      "status": "blocked",
+      "expected": null,
+      "actual": [
+        {
+          "stability": 49.0131822915906,
+          "difficulty": 4.9902283692968386,
+          "retrievabilityBefore": 0.6752366514649221,
+          "elapsedDays": 60,
+          "roundedIntervalDays": 49,
+          "rawDueAt": "2026-04-20T00:00:00.000Z"
+        }
+      ],
+      "delta": null,
+      "issues": []
+    },
+    {
+      "id": "FSRS-G-LONG",
+      "branch": "long-interval",
+      "status": "blocked",
+      "expected": null,
+      "actual": [
+        {
+          "stability": 650.2285919036937,
+          "difficulty": 7.987228369296838,
+          "retrievabilityBefore": 0.4036796105835889,
+          "elapsedDays": 36500,
+          "roundedIntervalDays": 650,
+          "rawDueAt": "2127-09-19T00:00:00.000Z"
+        }
+      ],
+      "delta": null,
+      "issues": []
+    },
+    {
+      "id": "FSRS-G-BOUND-LOW",
+      "branch": "state-boundaries",
+      "status": "blocked",
+      "expected": null,
+      "actual": [
+        {
+          "stability": 0.001,
+          "difficulty": 7.0269895692968385,
+          "retrievabilityBefore": 0.34566944290397644,
+          "elapsedDays": 1,
+          "roundedIntervalDays": 1,
+          "rawDueAt": "2026-01-03T00:00:00.000Z"
+        }
+      ],
+      "delta": null,
+      "issues": []
+    },
+    {
+      "id": "FSRS-G-BOUND-HIGH",
+      "branch": "state-boundaries",
+      "status": "blocked",
+      "expected": null,
+      "actual": [
+        {
+          "stability": 36500,
+          "difficulty": 9.985228369296838,
+          "retrievabilityBefore": 0.9,
+          "elapsedDays": 36500,
+          "roundedIntervalDays": 36500,
+          "rawDueAt": "2225-11-14T00:00:00.000Z"
+        }
+      ],
+      "delta": null,
+      "issues": []
+    },
+    {
+      "id": "FSRS-G-DECIMAL",
+      "branch": "decimal-inputs",
+      "status": "blocked",
+      "expected": null,
+      "actual": [
+        {
+          "stability": 8.820259127410985,
+          "difficulty": 6.584039004983044,
+          "retrievabilityBefore": 0.9512622399037056,
+          "elapsedDays": 2,
+          "roundedIntervalDays": 9,
+          "rawDueAt": "2026-01-12T18:00:00.000Z"
+        }
+      ],
+      "delta": null,
+      "issues": []
+    },
+    {
+      "id": "FSRS-G-FLOOR-BEFORE",
+      "branch": "decimal-inputs",
+      "status": "blocked",
+      "expected": null,
+      "actual": [
+        {
+          "stability": 5,
+          "difficulty": 4.9902283692968386,
+          "retrievabilityBefore": 1,
+          "elapsedDays": 0,
+          "roundedIntervalDays": 5,
+          "rawDueAt": "2026-01-06T23:59:59.913Z"
+        }
+      ],
+      "delta": null,
+      "issues": []
+    },
+    {
+      "id": "FSRS-G-FLOOR-AT",
+      "branch": "decimal-inputs",
+      "status": "blocked",
+      "expected": null,
+      "actual": [
+        {
+          "stability": 8.269203668758058,
+          "difficulty": 4.9902283692968386,
+          "retrievabilityBefore": 0.9727695594804078,
+          "elapsedDays": 1,
+          "roundedIntervalDays": 8,
+          "rawDueAt": "2026-01-10T00:00:00.000Z"
+        }
+      ],
+      "delta": null,
+      "issues": []
+    },
+    {
+      "id": "FSRS-G-REPEAT",
+      "branch": "repeatability",
+      "status": "blocked",
+      "expected": null,
+      "actual": [
+        {
+          "stability": 17.36151270957656,
+          "difficulty": 4.9902283692968386,
+          "retrievabilityBefore": 0.9,
+          "elapsedDays": 5,
+          "roundedIntervalDays": 17,
+          "rawDueAt": "2026-01-23T00:00:00.000Z"
+        }
+      ],
+      "delta": null,
+      "issues": []
+    },
+    {
+      "id": "FSRS-G-REPLAY",
+      "branch": "historical-replay",
+      "status": "blocked",
+      "expected": null,
+      "actual": [
+        {
+          "stability": 17.36151270957656,
+          "difficulty": 4.9902283692968386,
+          "retrievabilityBefore": 0.9,
+          "elapsedDays": 5,
+          "roundedIntervalDays": 17,
+          "rawDueAt": "2026-01-23T00:00:00.000Z"
+        },
+        {
+          "stability": 1.6775146433759942,
+          "difficulty": 8.338550500731797,
+          "retrievabilityBefore": 0.9499349396731368,
+          "elapsedDays": 7,
+          "roundedIntervalDays": 2,
+          "rawDueAt": "2026-01-15T00:00:00.000Z"
+        },
+        {
+          "stability": 10.58621125593817,
+          "difficulty": 8.325440319527903,
+          "retrievabilityBefore": 0.6375084334942913,
+          "elapsedDays": 30,
+          "roundedIntervalDays": 11,
+          "rawDueAt": "2026-02-23T00:00:00.000Z"
+        }
+      ],
+      "delta": null,
+      "issues": []
+    },
+    {
+      "id": "FSRS-G-RETENTION",
+      "branch": "retention-target",
+      "status": "blocked",
+      "expected": null,
+      "actual": [
+        {
+          "stability": 17.36151270957656,
+          "difficulty": 4.9902283692968386,
+          "retrievabilityBefore": 0.9,
+          "elapsedDays": 5,
+          "roundedIntervalDays": 7,
+          "rawDueAt": "2026-01-13T00:00:00.000Z"
+        }
+      ],
+      "delta": null,
+      "issues": []
+    }
+  ],
+  "blockers": [
+    "REFERENCE_ARTIFACT_UNAVAILABLE",
+    "REFERENCE_RECEIPT_UNAVAILABLE"
+  ],
+  "scope": "Memory-state core plus raw whole-day interval; excludes HME policies, BasicScheduler learning-step/monotonic policies, and scientific validity",
+  "checkedAt": "2026-11-05T13:39:02.515Z",
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "darwin",
+    "arch": "arm64"
+  },
+  "referenceProvenance": null
+}

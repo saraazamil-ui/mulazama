@@ -1,0 +1,41 @@
+{
+  "checkedAt": "2026-11-07T12:18:36.682Z",
+  "status": "verified-for-independent-core-comparison",
+  "sourceCommit": "bb71e35a2f5af5a5ac6cce9ef7c41ad24855721d",
+  "reference": {
+    "name": "ts-fsrs",
+    "version": "5.4.2",
+    "model": "FSRS-6",
+    "sourceCommit": "bb71e35a2f5af5a5ac6cce9ef7c41ad24855721d",
+    "artifactSha512": "sha512-z4qop4pzTcyTzuJ566d9EaX/4bZZzhYfeaPImfVr+xcYT65c5oBgFDijUhCE/D+C78eaolHIhKRZ04/RwF+v2g==",
+    "filesVerified": 13,
+    "executed": false
+  },
+  "artifactMatchesFreshOfficialDownload": true,
+  "registrySignatures": [
+    {
+      "keyId": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+      "expires": null,
+      "algorithm": "ECDSA-P256-SHA256",
+      "verified": true
+    }
+  ],
+  "sourceMapAlgorithmMatchesOfficialCommit": true,
+  "githubReportsCommitSignatureVerified": true,
+  "githubReportedVerificationReason": "valid",
+  "evidenceSources": [
+    "https://registry.npmjs.org/ts-fsrs/5.4.2",
+    "https://registry.npmjs.org/-/npm/v1/keys",
+    "https://github.com/open-spaced-repetition/ts-fsrs/releases/tag/v5.4.2",
+    "https://github.com/open-spaced-repetition/ts-fsrs/commit/bb71e35a2f5af5a5ac6cce9ef7c41ad24855721d",
+    "https://github.com/open-spaced-repetition/ts-fsrs/blob/bb71e35a2f5af5a5ac6cce9ef7c41ad24855721d/packages/fsrs/src/algorithm.ts"
+  ],
+  "trustLimits": [
+    "Registry public key trust relies on the separately fetched official HTTPS endpoint",
+    "GitHub commit signature status is GitHub API evidence, not a local Git GPG verification",
+    "npm registry signature verified locally; Sigstore certificate/transparency provenance NOT verified",
+    "No production release attestation, scientific approval or migration election created"
+  ],
+  "sigstoreCryptographicProvenanceVerified": false,
+  "productionApproval": false
+}

@@ -1,0 +1,150 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - link "تجاوز إلى المحتوى" [ref=e3] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic [ref=e5]:
+    - banner [ref=e6]:
+      - generic [ref=e7]:
+        - img [ref=e8]
+        - strong [ref=e10]: مُلازَمَة
+      - generic [ref=e11]:
+        - generic [ref=e12]: إصدار هندسي
+        - button "تفعيل الوضع الداكن" [ref=e14] [cursor=pointer]:
+          - img [ref=e15]
+    - generic [ref=e17]: إصدار هندسي 06-E1 · جلسات القرآن موقوفة حتى اعتماد المحتوى
+    - main [ref=e18]:
+      - generic [ref=e20]:
+        - generic [ref=e21]: مُلازَمَة / S14
+        - heading "تقدمي" [active] [level=1] [ref=e22]
+        - paragraph [ref=e23]: إنجازك المسجل، ونتائجك الذاتية، وما يحتاج إلى دليل إضافي.
+      - region "ملخص التقدم" [ref=e24]:
+        - generic [ref=e25]:
+          - status [ref=e26]: من سجل الأحداث المحفوظ · ٧ نوفمبر ٢٠٢٦ · توقيت الرياض
+          - generic [ref=e27]:
+            - generic [ref=e28]:
+              - region "إنجاز ورد اليوم" [ref=e29]:
+                - generic [ref=e30]:
+                  - heading "إنجاز ورد اليوم" [level=2] [ref=e31]
+                  - strong [ref=e32]: غير متاح بعد
+                - paragraph [ref=e34]: لا توجد خطة يومية معتمدة يمكن مطابقة إنجازاتها مع السجل. عدد جلسات التسميع المسجلة لا يحدد نسبة إنجاز الورد.
+              - paragraph [ref=e35]:
+                - text: "جلسات بتسميع مكتمل اليوم:"
+                - strong [ref=e36]: ٠
+                - text: . هذا عدد جلسات سجّلت تسميعًا مكتملًا؛ لا يحدد نسبة إنجاز الخطة أو جودة الأداء.
+            - region "تقدم الحفظ" [ref=e38]:
+              - generic [ref=e39]:
+                - heading "تقدم الحفظ" [level=2] [ref=e40]
+                - strong [ref=e41]: غير متاح بعد
+              - paragraph [ref=e43]: لم يُحدد مقدار هدف الحفظ بوحدة معتمدة، ولم يعتمد معيار الإنجاز بعد. النطاقات المعلنة لا تُعد حفظًا متحققًا.
+          - generic [ref=e44]:
+            - generic [ref=e45]:
+              - heading "المراجعة اليوم" [level=2] [ref=e46]
+              - generic [ref=e47]:
+                - generic [ref=e48]:
+                  - term [ref=e49]: المستحق
+                  - definition [ref=e50]: غير متاح
+                - generic [ref=e51]:
+                  - term [ref=e52]: المنجز
+                  - definition [ref=e53]: غير متاح
+                - generic [ref=e54]:
+                  - term [ref=e55]: المتبقي
+                  - definition [ref=e56]: غير متاح
+                - generic [ref=e57]:
+                  - term [ref=e58]: المتأخر
+                  - definition [ref=e59]: غير متاح
+              - paragraph [ref=e60]: جدول المراجعة ينتظر الاعتماد؛ لذلك لا نعرض استحقاقات أو تأخرًا غير موثوقين. لا يكفي سجل التسميع وحده لتحديد المراجعات المنجزة.
+            - generic [ref=e61]:
+              - heading "ثبات الحفظ" [level=2] [ref=e62]
+              - paragraph [ref=e63]: "ثبات الحفظ: يحتاج إلى تسميعات إضافية لتقديره، وإلى اعتماد معايير القياس. إنجاز النشاط وجودة التسميع لا يثبتان الثبات."
+              - paragraph [ref=e64]: إنجاز النشاط، وجودة التسميع، وثبات الحفظ مقاييس مختلفة.
+          - generic [ref=e65]:
+            - heading "نشاطك المسجل" [level=2] [ref=e66]
+            - paragraph [ref=e67]: يُحسب لكل جلسة تسميع مكتمل واحد عند إتمامه وتسجيل نتيجة تفيد اكتمال جميع كلمات النطاق المطلوب؛ ولا يشترط إغلاق الجلسة. التصحيح يعيد حساب اليوم الأصلي؛ فتح الجلسة أو تكرار التدريب لا يرفع العدد.
+            - generic [ref=e68]:
+              - generic [ref=e69]:
+                - term [ref=e70]: آخر ٧ أيام
+                - definition [ref=e71]: ١ جلسات
+              - generic [ref=e72]:
+                - term [ref=e73]: آخر ٣٠ يومًا
+                - definition [ref=e74]: ١ جلسات
+              - generic [ref=e75]:
+                - term [ref=e76]: إجمالي الجلسات بتسميع مكتمل
+                - definition [ref=e77]: ١
+            - generic [ref=e78]:
+              - generic [ref=e79]: فترة السجل
+              - combobox "فترة السجل" [ref=e80]:
+                - option "آخر ٧ أيام" [selected]
+                - option "آخر ٣٠ يومًا"
+                - option "كل السجل"
+            - generic [ref=e82]:
+              - time [ref=e83]: ٦ نوفمبر ٢٠٢٦
+              - generic [ref=e84]: ١ جلسات بتسميع مكتمل · ١ محاولات مقيّمة
+          - generic [ref=e85]:
+            - heading "نتائج التسميع عبر الوقت" [level=2] [ref=e86]
+            - paragraph [ref=e87]: بلاغات أداء ذاتية، وتظهر أحدث نتيجة بعد التصحيح. لا تمنح حكمًا بإتقان الحفظ.
+            - list [ref=e88]:
+              - listitem [ref=e89]:
+                - generic [ref=e90]:
+                  - time [ref=e91]: ٦ نوفمبر ٢٠٢٦
+                  - strong [ref=e92]: كامل بحسب البلاغ
+                - paragraph [ref=e93]: "نهاية المحاولة: إتمام التسميع · الكلمات المسمّعة: ١٠ من ١٠"
+                - paragraph [ref=e94]: "الأخطاء المبلّغ عنها: ٠ · التلميحات: ٠ · كشف النص: لا"
+                - generic [ref=e95]: النتيجة ذاتية · نسخة التقييم ٢
+          - generic [ref=e96]:
+            - heading "مواضع أبلغت عن حاجتها إلى عناية" [level=2] [ref=e97]
+            - paragraph [ref=e98]: بلاغاتك كما حُفظت وصُححت؛ ليست تشخيصًا للثبات أو إثباتًا لعلاج الموضع.
+            - paragraph [ref=e99]: لم تُسجل بلاغات مواضع بعد.
+          - group [ref=e100]:
+            - generic "مصدر المؤشرات وحدودها" [ref=e101] [cursor=pointer]
+      - region "ذاكرة الحافظ" [ref=e102]:
+        - generic [ref=e103]:
+          - heading "ذاكرة الحافظ" [level=2] [ref=e104]
+          - paragraph [ref=e105]: أحدث نتائجك المحفوظة بعد التصحيح، من سجل الأحداث.
+          - generic [ref=e106]:
+            - generic [ref=e107]:
+              - term [ref=e108]: محاولات لها نتيجة
+              - definition [ref=e109]: ١
+            - generic [ref=e110]:
+              - term [ref=e111]: تصحيحات محفوظة
+              - definition [ref=e112]: ١
+            - generic [ref=e113]:
+              - term [ref=e114]: مواضع مبلّغ عنها مرتبطة
+              - definition [ref=e115]: ٠
+          - paragraph [ref=e116]: "ثبات الحفظ: يحتاج إلى تسميعات إضافية لتقديره."
+          - paragraph [ref=e117]: النتيجة في جلسة، ومقدار الحفظ، وثبات الاسترجاع مقاييس منفصلة. لا تتوفر هنا استحقاقات أو توصيات مراجعة معتمدة.
+        - generic [ref=e118]:
+          - heading "سجل المقاطع وبلاغات المواضع" [level=2] [ref=e119]
+          - paragraph [ref=e120]: أسماء المواضع هي النصوص التي سُجلت في البلاغات؛ لم تُطابق بمراجع آيات معتمدة. لا ندمج بلاغات من مقاطع أو طبعات أو ملفات تسميع مختلفة.
+          - list [ref=e121]:
+            - listitem [ref=e122]:
+              - group [ref=e123]:
+                - generic "سجل مقطع ١ · ١ محاولات لها نتيجة" [ref=e124] [cursor=pointer]
+        - group [ref=e125]:
+          - generic "كيف نقرأ هذه الذاكرة؟" [ref=e126] [cursor=pointer]
+      - generic [ref=e127]:
+        - heading "المحفوظ المعلن" [level=2] [ref=e128]
+        - paragraph [ref=e129]: ٠ نطاقًا معلنًا محفوظًا محليًا. التصريح لا يثبت اجتياز الحفظ، ولا يدخل في نسبة الإنجاز.
+        - button "إدارة النطاقات" [ref=e130] [cursor=pointer]:
+          - text: إدارة النطاقات
+          - img [ref=e131]
+        - group [ref=e133]:
+          - generic "استكشاف الأجزاء المعلنة" [ref=e134] [cursor=pointer]
+        - generic [ref=e135]:
+          - button "سجل الأخطاء" [ref=e136] [cursor=pointer]
+          - button "عرض التوقعات" [ref=e137] [cursor=pointer]
+    - navigation "التنقل على الهاتف" [ref=e138]:
+      - button "اليوم" [ref=e139] [cursor=pointer]:
+        - img [ref=e140]
+        - generic [ref=e142]: اليوم
+      - button "المصحف" [ref=e143] [cursor=pointer]:
+        - img [ref=e144]
+        - generic [ref=e146]: المصحف
+      - button "تقدمي" [ref=e147] [cursor=pointer]:
+        - img [ref=e148]
+        - generic [ref=e150]: تقدمي
+      - button "الإعدادات" [ref=e151] [cursor=pointer]:
+        - img [ref=e152]
+        - generic [ref=e155]: الإعدادات
+```

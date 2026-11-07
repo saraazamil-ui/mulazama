@@ -1,0 +1,164 @@
+[
+  {
+    "name": "typecheck",
+    "command": [
+      "node",
+      "node_modules/typescript/bin/tsc",
+      "-b"
+    ],
+    "startedAt": "2026-11-07T11:33:28.527232+00:00",
+    "durationSeconds": 2.108,
+    "exitCode": 0,
+    "result": "Passed",
+    "log": "final-typecheck.log"
+  },
+  {
+    "name": "unit",
+    "command": [
+      "node",
+      "node_modules/vitest/vitest.mjs",
+      "run",
+      "--maxWorkers=4",
+      "--reporter=json",
+      "--outputFile=docs/06l1/evidence/final-tests.json"
+    ],
+    "startedAt": "2026-11-07T11:33:30.636067+00:00",
+    "durationSeconds": 8.717,
+    "exitCode": 0,
+    "result": "Passed",
+    "log": "final-unit.log"
+  },
+  {
+    "name": "source-context",
+    "command": [
+      "node",
+      "scripts/generate-release-context.mjs"
+    ],
+    "startedAt": "2026-11-07T11:33:39.353645+00:00",
+    "durationSeconds": 0.058,
+    "exitCode": 0,
+    "result": "Passed",
+    "log": "final-source-context.log"
+  },
+  {
+    "name": "build",
+    "command": [
+      "node",
+      "node_modules/vite/bin/vite.js",
+      "build"
+    ],
+    "startedAt": "2026-11-07T11:33:39.411962+00:00",
+    "durationSeconds": 1.183,
+    "exitCode": 0,
+    "result": "Passed",
+    "log": "final-build.log"
+  },
+  {
+    "name": "offline-assets",
+    "command": [
+      "node",
+      "scripts/build-offline.mjs"
+    ],
+    "startedAt": "2026-11-07T11:33:40.595726+00:00",
+    "durationSeconds": 0.034,
+    "exitCode": 0,
+    "result": "Passed",
+    "log": "final-offline-assets.log"
+  },
+  {
+    "name": "verify-build",
+    "command": [
+      "node",
+      "scripts/verify-build.mjs"
+    ],
+    "startedAt": "2026-11-07T11:33:40.630378+00:00",
+    "durationSeconds": 0.031,
+    "exitCode": 0,
+    "result": "Passed",
+    "log": "final-verify-build.log"
+  },
+  {
+    "name": "security-static",
+    "command": [
+      "node",
+      "scripts/security-check.mjs"
+    ],
+    "startedAt": "2026-11-07T11:33:40.662777+00:00",
+    "durationSeconds": 0.034,
+    "exitCode": 0,
+    "result": "Passed",
+    "log": "final-security-static.log"
+  },
+  {
+    "name": "reference-authentication",
+    "command": [
+      "node",
+      "scripts/verify-fsrs-reference-06e1.mjs"
+    ],
+    "startedAt": "2026-11-07T11:33:40.696814+00:00",
+    "durationSeconds": 0.04,
+    "exitCode": 0,
+    "result": "Passed",
+    "log": "final-reference-authentication.log"
+  },
+  {
+    "name": "fsrs-conformance",
+    "command": [
+      "node",
+      "scripts/fsrs-06e1-investigation.mjs",
+      "--probe-module",
+      "src/conformance/fsrs-reference-probe.ts",
+      "--output-dir",
+      "docs/06l1/evidence/fsrs"
+    ],
+    "startedAt": "2026-11-07T11:33:40.737546+00:00",
+    "durationSeconds": 2.079,
+    "exitCode": 0,
+    "result": "Passed",
+    "log": "final-fsrs-conformance.log"
+  },
+  {
+    "name": "release-gates",
+    "command": [
+      "node",
+      "scripts/verify-release.mjs",
+      "--phase",
+      "05-C",
+      "--output",
+      "docs/06l1/evidence/release-gates.json"
+    ],
+    "startedAt": "2026-11-07T11:33:42.816898+00:00",
+    "durationSeconds": 0.052,
+    "exitCode": 2,
+    "result": "Blocked",
+    "log": "final-release-gates.log"
+  },
+  {
+    "name": "browser",
+    "command": [
+      "node",
+      "node_modules/@playwright/test/cli.js",
+      "test"
+    ],
+    "startedAt": "2026-11-07T11:33:42.869420+00:00",
+    "durationSeconds": 64.034,
+    "exitCode": 0,
+    "result": "Passed",
+    "log": "final-browser.log"
+  },
+  {
+    "name": "offline-browser",
+    "command": [
+      "node",
+      "node_modules/@playwright/test/cli.js",
+      "test",
+      "--config",
+      "playwright.offline.config.ts"
+    ],
+    "startedAt": "2026-11-07T11:34:46.905849+00:00",
+    "durationSeconds": 5.104,
+    "exitCode": 0,
+    "result": "Passed",
+    "log": "final-offline-browser.log"
+  }
+]

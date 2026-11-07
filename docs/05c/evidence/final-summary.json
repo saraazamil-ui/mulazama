@@ -1,0 +1,238 @@
+{
+  "product": "MULAZAMA",
+  "phase": "05-C",
+  "checkedAt": "2026-11-05T14:00:38.773373+00:00",
+  "sourceDigest": "de649e57cb237ae1cda13a82244c0fef218202f3e89ba74a64effbf190f4b763",
+  "tests": {
+    "numTotalTests": 517,
+    "numPassedTests": 517,
+    "numFailedTests": 0,
+    "numPendingTests": 0,
+    "numTodoTests": 0
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": "node node_modules/typescript/bin/tsc -b",
+      "exitCode": 0,
+      "startedAt": 1793887151.528548,
+      "durationSeconds": 1.7445569038391113,
+      "log": "final-typecheck.log"
+    },
+    {
+      "name": "tests",
+      "command": "node node_modules/vitest/vitest.mjs run --reporter=json --outputFile=docs/05c/evidence/final-tests.json",
+      "exitCode": 0,
+      "startedAt": 1793887153.273619,
+      "durationSeconds": 4.3798582553863525,
+      "log": "final-tests.log"
+    },
+    {
+      "name": "source-context",
+      "command": "node scripts/generate-release-context.mjs",
+      "exitCode": 0,
+      "startedAt": 1793887157.653714,
+      "durationSeconds": 0.0463259220123291,
+      "log": "final-source-context.log"
+    },
+    {
+      "name": "build",
+      "command": "node node_modules/vite/bin/vite.js build",
+      "exitCode": 0,
+      "startedAt": 1793887157.7002082,
+      "durationSeconds": 1.1203677654266357,
+      "log": "final-build.log"
+    },
+    {
+      "name": "offline-assets",
+      "command": "node scripts/build-offline.mjs",
+      "exitCode": 0,
+      "startedAt": 1793887158.820747,
+      "durationSeconds": 0.03310799598693848,
+      "log": "final-offline-assets.log"
+    },
+    {
+      "name": "verify-build",
+      "command": "node scripts/verify-build.mjs",
+      "exitCode": 0,
+      "startedAt": 1793887158.8540878,
+      "durationSeconds": 0.03457307815551758,
+      "log": "final-verify-build.log"
+    },
+    {
+      "name": "security",
+      "command": "node scripts/security-check.mjs",
+      "exitCode": 0,
+      "startedAt": 1793887158.888847,
+      "durationSeconds": 0.033403873443603516,
+      "log": "final-security.log"
+    },
+    {
+      "name": "fsrs-current",
+      "command": "node scripts/fsrs-conformance.mjs --reference references/ts-fsrs-5.4.2-verified/package --receipt references/ts-fsrs-5.4.2-verified/receipt.json --output docs/05c/evidence/final-fsrs-current.json",
+      "exitCode": 1,
+      "startedAt": 1793887158.922432,
+      "durationSeconds": 0.06077122688293457,
+      "log": "final-fsrs-current.log"
+    },
+    {
+      "name": "fsrs-rounded",
+      "command": "node scripts/fsrs-conformance.mjs --reference references/ts-fsrs-5.4.2-verified/package --receipt references/ts-fsrs-5.4.2-verified/receipt.json --rounded-candidate --output docs/05c/evidence/final-fsrs-rounded.json",
+      "exitCode": 0,
+      "startedAt": 1793887158.9833758,
+      "durationSeconds": 0.05613112449645996,
+      "log": "final-fsrs-rounded.log"
+    },
+    {
+      "name": "release-gates",
+      "command": "node scripts/verify-release.mjs --phase 05-C --output docs/05c/evidence/release-gates-final.json",
+      "exitCode": 2,
+      "startedAt": 1793887159.039708,
+      "durationSeconds": 0.04715108871459961,
+      "log": "final-release-gates.log"
+    }
+  ],
+  "cleanBaselineInstall": {
+    "exitCode": 0,
+    "packagesDownloaded": 171,
+    "pnpm": "11.25.0",
+    "evidence": "clean-install.log"
+  },
+  "finalFrozenInstall": {
+    "exitCode": 0,
+    "evidence": "final-frozen-install.log"
+  },
+  "dependencies": {
+    "vite": "7.3.7",
+    "vitest": "4.1.12",
+    "finalAuditExitCode": 0,
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0
+    }
+  },
+  "fsrs": {
+    "runtimeSelected": {
+      "status": "Failed",
+      "passed": 2,
+      "failed": 21
+    },
+    "newVersionedCandidate": {
+      "status": "Passed",
+      "passed": 23,
+      "failed": 0,
+      "runtimeSelected": false
+    },
+    "productionGate": "Blocked",
+    "cryptographicProvenanceVerified": false
+  },
+  "browser": {
+    "status": "Blocked",
+    "e2eDiscovered": 15,
+    "e2eExecuted": 0,
+    "indexedDbWritten": 21,
+    "indexedDbExecuted": 0,
+    "axePlanned": 58,
+    "axeExecuted": 0,
+    "scenarioStatus": "Not Tested",
+    "reasons": [
+      "LOCALHOST_LISTEN_EPERM",
+      "CHROMIUM_DOWNLOAD_DNS_ENOTFOUND",
+      "INSTALLED_CHROME_SIGABRT_BEFORE_CONTEXT"
+    ]
+  },
+  "quran": {
+    "bytesObtained": 0,
+    "sourceSelected": "Tanzil Uthmani 1.1",
+    "humanApproval": "Blocked",
+    "textChecks": "Not Tested"
+  },
+  "hmeIntegration": {
+    "typedUiAdapter": true,
+    "aggregateBackupCoordinator": true,
+    "samePhysicalStore": true,
+    "productBudgetLinked": true,
+    "productionEnabled": false
+  },
+  "gates": [
+    {
+      "gate": "G01",
+      "status": "Blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G02",
+      "status": "Blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G03",
+      "status": "Blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G04",
+      "status": "Blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G05",
+      "status": "Blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G06",
+      "status": "Blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G07",
+      "status": "Blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G08",
+      "status": "Blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G09",
+      "status": "Blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G10",
+      "status": "Blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    }
+  ],
+  "platforms": {
+    "web": "Build Passed; actual browser Not Tested",
+    "ios": "Not Implemented / Not Tested",
+    "android": "Not Implemented / Not Tested"
+  },
+  "decision": "غير جاهز."
+}

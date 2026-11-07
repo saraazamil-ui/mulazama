@@ -1,0 +1,61 @@
+{
+  "checkedAt": "2026-11-07T11:48:47.655880+00:00",
+  "scope": "All production, development and optional dependencies reported by pnpm audit; no ignore flags or ignore-registry-errors",
+  "registry": "https://registry.npmjs.org",
+  "registryResponse": "dependencies-audit.json",
+  "lockfileSHA256": "ad7b79295a609767455b46eac8f1e6c81b2de0684060b428739a97ce3731e1f5",
+  "auditedPackageManifestSHA256": "bb3821c610dd68f90367f7e69b2626725af93eb4fa30d2884e2c5b4515640a50",
+  "dependencies": {
+    "lucide-react": "0.468.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.10.2",
+    "@playwright/test": "1.56.1",
+    "@testing-library/jest-dom": "6.9.1",
+    "@testing-library/react": "16.3.0",
+    "@testing-library/user-event": "14.6.1",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "@vitejs/plugin-react": "5.0.4",
+    "jsdom": "26.1.0",
+    "prettier": "3.6.2",
+    "typescript": "5.9.3",
+    "vite": "7.3.7",
+    "vitest": "4.1.12"
+  },
+  "knownAdvisories": 0,
+  "severityCounts": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0
+  },
+  "auditMetadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0
+    },
+    "dependencies": 4,
+    "devDependencies": 208,
+    "optionalDependencies": 54,
+    "totalDependencies": 212
+  },
+  "lockChanged": false,
+  "dependenciesChanged": false,
+  "reachabilityFinding": "No advisory was returned, so no vulnerable path or fix was asserted. Browser runtime is React/ReactDOM/Lucide; Vite/Vitest/Playwright are build/test dependencies.",
+  "limits": [
+    "Known-advisory registry snapshot, not proof of no vulnerability",
+    "Does not verify every installed file or provide penetration testing",
+    "No new package or arbitrary upgrade introduced"
+  ],
+  "officialSources": [
+    "https://pnpm.io/cli/audit",
+    "https://docs.npmjs.com/cli/v11/commands/npm-audit/"
+  ]
+}

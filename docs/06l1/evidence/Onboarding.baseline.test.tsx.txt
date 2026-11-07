@@ -1,0 +1,31 @@
+import { afterEach, expect, it, vi } from 'vitest';
+import { cleanup, render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import App from './App';
+import { ApplicationService } from './application/service';
+import { MemoryEventStore } from './persistence/event-store';
+afterEach(cleanup);
+it.each(['beginner','prior'] as const)('06E1 baseline actual journey %s', async persona => {
+  vi.spyOn(window,'scrollTo').mockImplementation(()=>{});
+  HTMLDialogElement.prototype.showModal = function(){ this.setAttribute('open',''); };
+  HTMLDialogElement.prototype.close = function(){ this.removeAttribute('open'); };
+  window.history.replaceState({},'', '/#S01');
+  const service=await ApplicationService.open(new MemoryEventStore());
+  const user=userEvent.setup();
+  let actions=0;
+  const click=async(name:string)=>{await user.click(screen.getByRole('button',{name})); actions++;};
+  render(<App service={service}/>);
+  await click('ابدأ إعداد تجربتك');
+  if(persona==='prior') {
+    await user.click(screen.getByRole('radio',{name:'لدي محفوظ متفرق'})); actions++;
+    await user.selectOptions(screen.getByRole('combobox',{name:'الهدف'}),'maintain'); actions++;
+  }
+  await click('راجع اختياراتك');
+  await click('اعتمد وتابع');
+  if(persona==='prior') {await click('أضف النطاق'); await click('أكمل لاحقًا');}
+  expect(document.querySelector('main[data-screen="S05"]')).toBeVisible();
+  expect(service.state.config.configured).toBe(true);
+  expect(service.state.ranges).toHaveLength(persona==='prior'?1:0);
+  expect(service.state.attempts).toHaveLength(0);
+  console.log(JSON.stringify({phase:'06E1',persona,semanticInteractions:actions,endpoint:'S05 blocked daily plan',sessionsStarted:0}));
+});

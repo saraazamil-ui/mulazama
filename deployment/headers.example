@@ -1,0 +1,10 @@
+# Provider-neutral review template. Configure equivalent response headers only
+# after staging verification; this file is not an installed hosting rule.
+Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+X-Content-Type-Options: nosniff
+Referrer-Policy: no-referrer
+Permissions-Policy: camera=(), microphone=(), geolocation=()
+# index.html, sw.js, manifest.webmanifest, offline-assets.json and policy pages:
+Cache-Control: no-cache
+# Hashed /assets/* only: Cache-Control: public,max-age=31536000,immutable
+# HSTS must be configured after HTTPS and domain/subdomain ownership are verified.

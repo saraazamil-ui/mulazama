@@ -1,0 +1,12 @@
+{
+  "testedAt": "2026-11-05T13:40:40.690Z",
+  "node": "v24.22.1",
+  "platform": "darwin",
+  "arch": "arm64",
+  "address": "127.0.0.1",
+  "requestedPort": 0,
+  "result": "Blocked",
+  "code": "EPERM",
+  "syscall": "listen",
+  "message": "listen EPERM: operation not permitted 127.0.0.1"
+}

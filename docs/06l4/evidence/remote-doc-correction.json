@@ -1,0 +1,21 @@
+{
+  "repository": "saraazamil-ui/mulazama",
+  "branch": "docs/06-l4-official-domain",
+  "pullRequest": "https://github.com/saraazamil-ui/mulazama/pull/1",
+  "draft": true,
+  "merged": false,
+  "baseCommit": "ff279eaad321ebd60cf004a44cbdc69d2a178430",
+  "commit": "b7da96d0dc4044a81b388b5f91f3c4692ed332b9",
+  "file": "README.md",
+  "beforeBlob": "4caa6afd9c1e95b62c83eaf1d0155d1dfed1556a",
+  "afterBlob": "7261ee122a069e05b0cd8fdef03fa5739cc3051b",
+  "readBackExact": true,
+  "scope": "official .sa domain, proposed mail and explicitly historical 05-A preview; no app/source-history import",
+  "cliTransport": {
+    "command": "GIT_TERMINAL_PROMPT=0 git -c credential.interactive=never ls-remote https://github.com/saraazamil-ui/mulazama.git HEAD refs/heads/main",
+    "exitCode": 128,
+    "error": "unable to get password from user",
+    "credentialsRequestedFromUser": false
+  },
+  "productionDeployment": false
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "case": "duplicate link identities rejected",
+    "pass": true
+  },
+  {
+    "case": "unidentified required edge coverage cannot certify connection",
+    "pass": true
+  },
+  {
+    "case": "explicit complete approved link set can support connection",
+    "pass": true
+  },
+  {
+    "case": "old success cannot overwrite newer continuity failure",
+    "pass": true
+  },
+  {
+    "case": "wrong target rejected",
+    "pass": true
+  },
+  {
+    "case": "same continuity evidence id is idempotent",
+    "pass": true
+  }
+]

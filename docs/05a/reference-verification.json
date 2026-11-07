@@ -1,0 +1,20 @@
+[
+  {
+    "current": "HME-current-source.md",
+    "url": "https://chatgpt.com/space/page_22154b50b3648191847a6f5f29887567",
+    "sha256": "910ca6a936f5935c5c381b089bfb42a2b1cac5ebd6bedc8bf337c87f4cd78dc5",
+    "characters": 90740,
+    "same_text_as_04b_snapshot_ignoring_outer_whitespace": true,
+    "read_at": "2026-11-05",
+    "access": "authenticated-current-page-full-read"
+  },
+  {
+    "current": "PRD-current-source.md",
+    "url": "https://chatgpt.com/space/page_e6e1ae5d698881919e8882630c571425",
+    "sha256": "656ad505523bc2a356d7bfb1ccaca178c012860fe1cbba15363e7db1cdbc5c09",
+    "characters": 182384,
+    "same_text_as_04b_snapshot_ignoring_outer_whitespace": true,
+    "read_at": "2026-11-05",
+    "access": "authenticated-current-page-full-read"
+  }
+]

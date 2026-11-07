@@ -1,0 +1,11 @@
+{
+  "library_file_id": "libfile_5fc55fd9648881919194812abdff03ee",
+  "library_version": "1",
+  "library_file_id_version": "file_00000000294082118e2d2ddb201de038",
+  "library_size_bytes": 764472,
+  "local_sha256": "9fac93cd0cf6e1ed260a04289361aad0c747288944d5189a762dc0c48cf0c41d",
+  "hash_source": "same archive confirmed uploaded in previous turn",
+  "archive_manifest_entries_verified": 133,
+  "library_redownload": "blocked: materialization helper download failed",
+  "working_tree_source": "verified local copy of exactly uploaded archive; no rebuild from scratch"
+}

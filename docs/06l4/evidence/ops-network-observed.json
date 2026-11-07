@@ -1,0 +1,128 @@
+{
+  "checkedAt": "2026-11-07T13:34:57.317819+00:00",
+  "mutations": false,
+  "checks": [
+    {
+      "command": [
+        "dig",
+        "+time=3",
+        "+tries=1",
+        "mulazama.sa",
+        "A"
+      ],
+      "exitCode": 0,
+      "stdout": "\n; <<>> DiG 9.10.6 <<>> +time=3 +tries=1 mulazama.sa A\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: 42366\n;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 4096\n;; QUESTION SECTION:\n;mulazama.sa.\t\t\tIN\tA\n\n;; AUTHORITY SECTION:\nsa.\t\t\t3600\tIN\tSOA\tc1.dns.sa. hostmaster.nic.net.sa. 2026110723 10800 3600 3600000 3600\n\n;; Query time: 11 msec\n;; SERVER: 87.101.135.9#53(87.101.135.9)\n;; WHEN: Sat Nov 07 16:34:56 +03 2026\n;; MSG SIZE  rcvd: 106\n\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "dig",
+        "+time=3",
+        "+tries=1",
+        "mulazama.sa",
+        "AAAA"
+      ],
+      "exitCode": 0,
+      "stdout": "\n; <<>> DiG 9.10.6 <<>> +time=3 +tries=1 mulazama.sa AAAA\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: 12651\n;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 4096\n;; QUESTION SECTION:\n;mulazama.sa.\t\t\tIN\tAAAA\n\n;; AUTHORITY SECTION:\nsa.\t\t\t3600\tIN\tSOA\tc1.dns.sa. hostmaster.nic.net.sa. 2026110723 10800 3600 3600000 3600\n\n;; Query time: 11 msec\n;; SERVER: 87.101.135.9#53(87.101.135.9)\n;; WHEN: Sat Nov 07 16:34:56 +03 2026\n;; MSG SIZE  rcvd: 106\n\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "dig",
+        "+time=3",
+        "+tries=1",
+        "mulazama.sa",
+        "NS"
+      ],
+      "exitCode": 0,
+      "stdout": "\n; <<>> DiG 9.10.6 <<>> +time=3 +tries=1 mulazama.sa NS\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: 7420\n;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 4096\n;; QUESTION SECTION:\n;mulazama.sa.\t\t\tIN\tNS\n\n;; AUTHORITY SECTION:\nsa.\t\t\t3356\tIN\tSOA\tc1.dns.sa. hostmaster.nic.net.sa. 2026110723 10800 3600 3600000 3600\n\n;; Query time: 14 msec\n;; SERVER: 87.101.135.9#53(87.101.135.9)\n;; WHEN: Sat Nov 07 16:34:56 +03 2026\n;; MSG SIZE  rcvd: 106\n\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "dig",
+        "+time=3",
+        "+tries=1",
+        "mulazama.sa",
+        "MX"
+      ],
+      "exitCode": 0,
+      "stdout": "\n; <<>> DiG 9.10.6 <<>> +time=3 +tries=1 mulazama.sa MX\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: 64595\n;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 4096\n;; QUESTION SECTION:\n;mulazama.sa.\t\t\tIN\tMX\n\n;; AUTHORITY SECTION:\nsa.\t\t\t3600\tIN\tSOA\tc1.dns.sa. hostmaster.nic.net.sa. 2026110723 10800 3600 3600000 3600\n\n;; Query time: 13 msec\n;; SERVER: 87.101.135.9#53(87.101.135.9)\n;; WHEN: Sat Nov 07 16:34:56 +03 2026\n;; MSG SIZE  rcvd: 106\n\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "dig",
+        "+time=3",
+        "+tries=1",
+        "mulazama.sa",
+        "TXT"
+      ],
+      "exitCode": 0,
+      "stdout": "\n; <<>> DiG 9.10.6 <<>> +time=3 +tries=1 mulazama.sa TXT\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: 65225\n;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 4096\n;; QUESTION SECTION:\n;mulazama.sa.\t\t\tIN\tTXT\n\n;; AUTHORITY SECTION:\nsa.\t\t\t3600\tIN\tSOA\tc1.dns.sa. hostmaster.nic.net.sa. 2026110723 10800 3600 3600000 3600\n\n;; Query time: 9 msec\n;; SERVER: 87.101.135.9#53(87.101.135.9)\n;; WHEN: Sat Nov 07 16:34:56 +03 2026\n;; MSG SIZE  rcvd: 106\n\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "dig",
+        "+time=3",
+        "+tries=1",
+        "mulazama.sa",
+        "SOA"
+      ],
+      "exitCode": 0,
+      "stdout": "\n; <<>> DiG 9.10.6 <<>> +time=3 +tries=1 mulazama.sa SOA\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: 4366\n;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 4096\n;; QUESTION SECTION:\n;mulazama.sa.\t\t\tIN\tSOA\n\n;; AUTHORITY SECTION:\nsa.\t\t\t3356\tIN\tSOA\tc1.dns.sa. hostmaster.nic.net.sa. 2026110723 10800 3600 3600000 3600\n\n;; Query time: 10 msec\n;; SERVER: 87.101.135.9#53(87.101.135.9)\n;; WHEN: Sat Nov 07 16:34:56 +03 2026\n;; MSG SIZE  rcvd: 106\n\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "dig",
+        "+time=3",
+        "+tries=1",
+        "_dmarc.mulazama.sa",
+        "TXT"
+      ],
+      "exitCode": 0,
+      "stdout": "\n; <<>> DiG 9.10.6 <<>> +time=3 +tries=1 _dmarc.mulazama.sa TXT\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: 41549\n;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 4096\n;; QUESTION SECTION:\n;_dmarc.mulazama.sa.\t\tIN\tTXT\n\n;; AUTHORITY SECTION:\nsa.\t\t\t3600\tIN\tSOA\tc1.dns.sa. hostmaster.nic.net.sa. 2026110723 10800 3600 3600000 3600\n\n;; Query time: 11 msec\n;; SERVER: 87.101.135.9#53(87.101.135.9)\n;; WHEN: Sat Nov 07 16:34:56 +03 2026\n;; MSG SIZE  rcvd: 115\n\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "dig",
+        "+time=3",
+        "+tries=1",
+        "www.mulazama.sa",
+        "CNAME"
+      ],
+      "exitCode": 0,
+      "stdout": "\n; <<>> DiG 9.10.6 <<>> +time=3 +tries=1 www.mulazama.sa CNAME\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: 57295\n;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 4096\n;; QUESTION SECTION:\n;www.mulazama.sa.\t\tIN\tCNAME\n\n;; AUTHORITY SECTION:\nsa.\t\t\t3600\tIN\tSOA\tc1.dns.sa. hostmaster.nic.net.sa. 2026110723 10800 3600 3600000 3600\n\n;; Query time: 18 msec\n;; SERVER: 87.101.135.9#53(87.101.135.9)\n;; WHEN: Sat Nov 07 16:34:56 +03 2026\n;; MSG SIZE  rcvd: 112\n\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "curl",
+        "--head",
+        "--location",
+        "--max-redirs",
+        "3",
+        "--connect-timeout",
+        "5",
+        "--max-time",
+        "15",
+        "https://mulazama.sa"
+      ],
+      "exitCode": 6,
+      "stdout": "",
+      "stderr": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0curl: (6) Could not resolve host: mulazama.sa\n"
+    },
+    {
+      "command": [
+        "whois",
+        "mulazama.sa"
+      ],
+      "exitCode": 0,
+      "stdout": "% IANA WHOIS server\n% for more information on IANA, visit http://www.iana.org\n% This query returned 1 object\n\nrefer:        whois.nic.net.sa\n\ndomain:       SA\n\norganisation: Communications, Space and Technology Commission\naddress:      P. O. Box 75606\naddress:      Riyadh 11588\naddress:      Saudi Arabia\n\ncontact:      administrative\nname:         Head of Saudi Network Information Center\norganisation: Communications, Space and Technology Commission\naddress:      P. O. Box 75606\naddress:      Riyadh 11588\naddress:      Saudi Arabia\nphone:        +966114618216\nfax-no:       +966114619497\ne-mail:       tld-admin-contact@nic.net.sa\n\ncontact:      technical\nname:         SA-TLD Technical Contact\norganisation: Communications, Space and Technology Commission\naddress:      P. O. Box 75606\naddress:      Riyadh 11588\naddress:      Saudi Arabia\nphone:        +966114618179\nfax-no:       +966114619497\ne-mail:       tld-tech-contact@nic.net.sa\n\nnserver:      C1.DNS.SA 2001:67c:18c8:10:0:0:0:c1 86.111.192.9\nnserver:      C2.DNS.SA 2001:67c:130:10:0:0:0:9 86.111.196.9\nnserver:      I1.DNS.SA 2001:1490:0:800:0:0:0:118 212.138.118.118\nnserver:      M1.DNS.SA 2a02:ce0:1:30:0:0:0:5 86.51.77.213\nnserver:      M2.DNS.SA 2a02:ce0:1:91:0:0:0:5 86.51.28.37\nnserver:      N1.DNS.SA 194.146.106.102 2001:67c:1010:26:0:0:0:53\nnserver:      P1.DNS.SA 2001:500:14:6041:ad:0:0:1 204.61.216.41\nnserver:      S1.DNS.SA 2001:16a0:1:3002:0:0:0:2 37.107.223.170\nnserver:      S2.DNS.SA 2001:16a0:2:3002:0:0:0:2 37.107.255.170\nnserver:      SH1.DNS.SA 213.236.36.92 2a02:d70:64:68:0:0:0:2\nds-rdata:     2990 8 2 9f357b0a83134174b0e581c252ad172e9e5f750ab95a4c900c9655a919b560c0\n\nwhois:        whois.nic.net.sa\n\nstatus:       ACTIVE\nremarks:      Registration information: http://www.nic.net.sa/\n\ncreated:      1994-05-17\nchanged:      2026-10-13\nsource:       IANA\n\n# whois.nic.net.sa\n\nNo Match for domain: mulazama.sa",
+      "stderr": ""
+    }
+  ]
+}

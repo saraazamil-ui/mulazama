@@ -1,0 +1,14 @@
+{
+  "output": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-05b/docs/05c/evidence/final-fsrs-current.json",
+  "status": "nonconformant",
+  "summary": {
+    "passed": 2,
+    "failed": 21,
+    "blocked": 0
+  },
+  "coverage": {
+    "requiredBranches": 12,
+    "executedBranches": 12
+  },
+  "blockers": []
+}

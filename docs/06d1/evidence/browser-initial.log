@@ -1,0 +1,15 @@
+[2m[WebServer] [22m(node:19504) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22merror when starting dev server:
+[2m[WebServer] [22mError: listen EPERM: operation not permitted 127.0.0.1:4173
+[2m[WebServer] [22m    at Server.setupListenHandle [as _listen2] (node:net:2368:21)
+[2m[WebServer] [22m    at listenInCluster (node:net:2499:12)
+[2m[WebServer] [22m    at node:net:2728:7
+[2m[WebServer] [22m    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+Error: Process from config.webServer was not able to start. Exit code: 1
+
+
+To open last HTML report run:
+[36m[39m
+[36m  npx playwright show-report[39m
+[36m[39m

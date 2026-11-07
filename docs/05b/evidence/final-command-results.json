@@ -1,0 +1,53 @@
+{
+  "checkedAt": "2026-11-05T13:26:25.157Z",
+  "buildOutput": {
+    "chunk_id": "26c9e4",
+    "wall_time_seconds": 0.000032022,
+    "exit_code": 0,
+    "original_token_count": 113,
+    "output": "vite v7.1.12 building for production...\ntransforming...\n✓ 1597 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                   0.73 kB │ gzip:   0.46 kB\ndist/assets/index-Cn7bzMGy.css   23.94 kB │ gzip:   6.07 kB\ndist/assets/index-CactVCA6.js   350.24 kB │ gzip: 106.32 kB\n✓ built in 994ms\n{\"offlineAppShell\":\"generated-not-browser-verified\",\"version\":\"mulazama-shell-263b56dc986f47cd8147\",\"assetCount\":4}\n"
+  },
+  "testsOutput": {
+    "chunk_id": "3f1ed8",
+    "wall_time_seconds": 0.000036919,
+    "exit_code": 0,
+    "original_token_count": 32,
+    "output": "JSON report written to /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-05b/docs/05b/evidence/final-tests.json\n"
+  },
+  "commands": [
+    {
+      "key": "build-artifacts",
+      "chunk_id": "2221bc",
+      "wall_time_seconds": 0.000038495,
+      "exit_code": 0,
+      "original_token_count": 39,
+      "output": "{\"buildArtifacts\":\"passed\",\"identity\":\"MULAZAMA\",\"rtl\":true,\"offlineAssets\":4,\"prototypeStorageKeyPresent\":false,\"offlineBrowserExecution\":\"not-verified\"}\n"
+    },
+    {
+      "key": "fsrs-final",
+      "script": "scripts/fsrs-conformance.mjs",
+      "chunk_id": "c6150d",
+      "wall_time_seconds": 0.000050996,
+      "exit_code": 2,
+      "original_token_count": 99,
+      "output": "{\n  \"output\": \"/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-05b/docs/05b/evidence/fsrs-conformance.json\",\n  \"status\": \"blocked\",\n  \"summary\": {\n    \"passed\": 0,\n    \"failed\": 0,\n    \"blocked\": 23\n  },\n  \"coverage\": {\n    \"requiredBranches\": 12,\n    \"executedBranches\": 0\n  },\n  \"blockers\": [\n    \"REFERENCE_ARTIFACT_UNAVAILABLE\",\n    \"REFERENCE_RECEIPT_UNAVAILABLE\"\n  ]\n}\n"
+    },
+    {
+      "key": "gates-final",
+      "chunk_id": "8ea638",
+      "wall_time_seconds": 0.000045782,
+      "exit_code": 2,
+      "original_token_count": 490,
+      "output": "{\n  \"schemaVersion\": 1,\n  \"product\": \"MULAZAMA\",\n  \"phase\": \"05-B\",\n  \"checkedAt\": \"2026-11-05T13:23:05.872Z\",\n  \"context\": {\n    \"product\": \"MULAZAMA\",\n    \"environment\": \"production\",\n    \"purpose\": \"production\",\n    \"platform\": \"web\",\n    \"sourceDigest\": \"8f38fbf826d9a23e6b6f5a4850bb98149de894d7e244538c8942f2cab325e19e\",\n    \"versionsDigest\": \"f7fd3ae98987bfd917ae25e7b8e6186264abb5034020abc65503f1316391cb02\",\n    \"contentManifestHash\": null,\n    \"unitCatalogHash\": \"4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945\"\n  },\n  \"gates\": [\n    {\n      \"gate\": \"G01\",\n      \"status\": \"blocked\",\n      \"reasons\": [\n        \"MISSING_OR_DUPLICATE_ATTESTATION\"\n      ]\n    },\n    {\n      \"gate\": \"G02\",\n      \"status\": \"blocked\",\n      \"reasons\": [\n        \"MISSING_OR_DUPLICATE_ATTESTATION\"\n      ]\n    },\n    {\n      \"gate\": \"G03\",\n      \"status\": \"blocked\",\n      \"reasons\": [\n        \"MISSING_OR_DUPLICATE_ATTESTATION\"\n      ]\n    },\n    {\n      \"gate\": \"G04\",\n      \"status\": \"blocked\",\n      \"reasons\": [\n        \"MISSING_OR_DUPLICATE_ATTESTATION\"\n      ]\n    },\n    {\n      \"gate\": \"G05\",\n      \"status\": \"blocked\",\n      \"reasons\": [\n        \"MISSING_OR_DUPLICATE_ATTESTATION\"\n      ]\n    },\n    {\n      \"gate\": \"G06\",\n      \"status\": \"blocked\",\n      \"reasons\": [\n        \"MISSING_OR_DUPLICATE_ATTESTATION\"\n      ]\n    },\n    {\n      \"gate\": \"G07\",\n      \"status\": \"blocked\",\n      \"reasons\": [\n        \"MISSING_OR_DUPLICATE_ATTESTATION\"\n      ]\n    },\n    {\n      \"gate\": \"G08\",\n      \"status\": \"blocked\",\n      \"reasons\": [\n        \"MISSING_OR_DUPLICATE_ATTESTATION\"\n      ]\n    },\n    {\n      \"gate\": \"G09\",\n      \"status\": \"blocked\",\n      \"reasons\": [\n        \"MISSING_OR_DUPLICATE_ATTESTATION\"\n      ]\n    },\n    {\n      \"gate\": \"G10\",\n      \"status\": \"blocked\",\n      \"reasons\": [\n        \"MISSING_OR_DUPLICATE_ATTESTATION\"\n      ]\n    }\n  ],\n  \"productionReady\": false,\n  \"decision\": \"غير جاهز.\",\n  \"trustAnchorCount\": 0\n}\n"
+    },
+    {
+      "key": "security-final",
+      "script": "scripts/security-check.mjs",
+      "chunk_id": "da05f1",
+      "wall_time_seconds": 0.000051755,
+      "exit_code": 0,
+      "original_token_count": 44,
+      "output": "{\n  \"kind\": \"bounded-static-security-check\",\n  \"scannedFiles\": 39,\n  \"findings\": [],\n  \"dependencyAudit\": \"blocked-registry-network\",\n  \"penetrationTest\": \"not-performed\"\n}\n"
+    }
+  ]
+}

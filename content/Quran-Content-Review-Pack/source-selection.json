@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "product": "MULAZAMA",
+  "displayName": "مُلازَمَة",
+  "targetDomain": "mulazama.com",
+  "selectedSourceId": "tanzil-uthmani-1.1",
+  "selectionStatus": "selected-for-acquisition-only",
+  "publisher": "Tanzil Project",
+  "version": "1.1",
+  "script": "Uthmani",
+  "riwaya": "Hafs",
+  "riwayaSource": "https://tanzil.net/docs/medina_mushaf",
+  "tariq": null,
+  "printedEdition": null,
+  "numberingSystem": null,
+  "basmalaPolicy": null,
+  "sourceUrl": "https://tanzil.net/download/",
+  "licenseUrl": "https://tanzil.net/docs/Text_License",
+  "downloadOptions": null,
+  "rawSourcePath": null,
+  "rawSourceSha256": null,
+  "publisherPublishedSha256": null,
+  "byteLength": null,
+  "localCounts": {
+    "surahs": null,
+    "ayahs": null,
+    "tokens": null
+  },
+  "font": null,
+  "layout": null,
+  "metadata": null,
+  "independentComparison": {
+    "status": "Blocked",
+    "reason": "No primary or compatible independent reference bytes"
+  },
+  "scientificReview": {
+    "status": "Blocked",
+    "reviewer": null,
+    "qualifications": null,
+    "reviewedAt": null,
+    "signature": null
+  },
+  "productionActivation": "unavailable",
+  "G01": "Blocked",
+  "G10": "Blocked",
+  "checkedAt": "2026-11-05"
+}

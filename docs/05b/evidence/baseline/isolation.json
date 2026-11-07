@@ -1,0 +1,8 @@
+{
+  "archive": "/tmp/mulazama-delivery/MULAZAMA-Phase-05A-Source.zip",
+  "sha256": "9fac93cd0cf6e1ed260a04289361aad0c747288944d5189a762dc0c48cf0c41d",
+  "archive_size": 764472,
+  "baseline_root": "/tmp/mulazama-05b-baseline/mulazama-05a",
+  "dependencies_resolved_from": "/Users/saalzamil/Documents/ChatGPT/\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u0639\u0645\u0631/itqan-04b/node_modules",
+  "isolation": "unmodified archive extraction; installed dependency tree shared read-only by task convention"
+}

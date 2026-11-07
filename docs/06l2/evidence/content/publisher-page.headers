@@ -1,0 +1,16 @@
+HTTP/2 200 
+content-type: text/html
+content-length: 184058
+accept-ranges: bytes
+date: Fri, 06 Nov 2026 23:32:21 GMT
+server: AmazonS3
+last-modified: Fri, 06 Nov 2026 15:28:57 GMT
+etag: "84569fdf0dfbfc5bee7e22a6f754ee2a"
+x-amz-server-side-encryption: AES256
+x-cache: Error from cloudfront
+via: 1.1 99a0678067c9afa5ffc6dde34b960d40.cloudfront.net (CloudFront)
+x-amz-cf-pop: FRA60-P7
+x-amz-cf-id: PzZr73vVpWFDyFw3jR07BbueSWZt32Q0Be9O1FccJeVoL_IiDNpdMw==
+age: 43903
+vary: Origin
+

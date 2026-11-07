@@ -1,0 +1,9 @@
+{
+  "source": "MULAZAMA-Phase-06L3-Engineering-Delivery.zip",
+  "archiveSHA256": "af991868d26e8028c63d6c9071779eac91a73df4ea7870fae084e5d7efd4aa8d",
+  "crc": "passed",
+  "baselineBuildFilesVerified": 15,
+  "receiptSHA256": "23ae304e2d5d5823123ce6291c7c3d20cfee0ceb3c2903d3e4a9c4e23383aba3",
+  "derivedFixture": "references/06l3-preview-baseline/build.zip",
+  "scope": "exact dist subset of original L3; no rebuild"
+}

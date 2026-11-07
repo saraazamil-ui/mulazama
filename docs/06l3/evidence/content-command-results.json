@@ -1,0 +1,72 @@
+[
+  {
+    "name": "content-primary-recheck",
+    "argv": [
+      "node",
+      "--input-type=module",
+      "-e",
+      "import {runSupplementalAudit} from './scripts/content-06l2-audit.mjs'; console.log(JSON.stringify(await runSupplementalAudit(process.cwd()),null,2));"
+    ],
+    "startedAt": "2026-11-07T12:18:43.204986+00:00",
+    "exitCode": 0,
+    "expectedExitCode": 0,
+    "scope": "Local mechanical diagnostic and fixture tests; no approval or activation"
+  },
+  {
+    "name": "content-comparison",
+    "argv": [
+      "node",
+      "scripts/content-compare06l3.mjs",
+      "--reference",
+      "/private/tmp/mulazama-06l3-qf-qpc-hafs.raw"
+    ],
+    "startedAt": "2026-11-07T12:18:43.506384+00:00",
+    "exitCode": 2,
+    "expectedExitCode": 2,
+    "scope": "Local mechanical diagnostic and fixture tests; no approval or activation"
+  },
+  {
+    "name": "content-tests",
+    "argv": [
+      "node",
+      "node_modules/vitest/vitest.mjs",
+      "run",
+      "src/content/comparison06l3.test.mjs",
+      "--reporter=json",
+      "--outputFile=docs/06l3/evidence/content-tests.json"
+    ],
+    "startedAt": "2026-11-07T12:18:43.799457+00:00",
+    "exitCode": 0,
+    "expectedExitCode": 0,
+    "scope": "Local mechanical diagnostic and fixture tests; no approval or activation"
+  },
+  {
+    "name": "content-tests-final-buffer-snapshot",
+    "argv": [
+      "node",
+      "node_modules/vitest/vitest.mjs",
+      "run",
+      "src/content/comparison06l3.test.mjs",
+      "--reporter=json",
+      "--outputFile=docs/06l3/evidence/content-tests.json"
+    ],
+    "startedAt": "2026-11-07T12:20:18.213000+00:00",
+    "exitCode": 0,
+    "passed": 15,
+    "failed": 0,
+    "skipped": 0
+  },
+  {
+    "name": "content-comparison-final",
+    "argv": [
+      "node",
+      "scripts/content-compare06l3.mjs",
+      "--reference",
+      "/private/tmp/mulazama-06l3-qf-qpc-hafs.raw"
+    ],
+    "startedAt": "2026-11-07T12:20:36.412194+00:00",
+    "exitCode": 2,
+    "expectedExitCode": 2,
+    "scope": "Mechanical comparison after buffer snapshot fix; approval remains blocked"
+  }
+]

@@ -1,0 +1,15 @@
+[2m[WebServer] [22m(node:34995) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 4 tests using 1 worker
+
+(node:34997) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:34997) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 e2e-journey/security06l3.spec.ts:53:1 › L3SECJ01 URL and stored database-name injection cannot select a real production store in the engineering entry (708ms)
+  ✓  2 e2e-journey/security06l3.spec.ts:95:1 › L3SECJ02 recall text is absent from DOM until an acknowledged reveal, and self-report cannot wash out recorded help (1.5s)
+  ✓  3 e2e-journey/security06l3.spec.ts:164:1 › L3SECJ03 pausing an unfinished recall exposes restart immediately and retains the interrupted attempt without a score (1.7s)
+  ✓  4 e2e-journey/security06l3.spec.ts:202:1 › L3SECJ04 a rejected result write shows an error without success, then retry commits one assessment (1.8s)
+
+  4 passed (7.4s)

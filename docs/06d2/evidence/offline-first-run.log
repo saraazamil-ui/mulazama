@@ -1,0 +1,48 @@
+[2m[WebServer] [22m(node:22488) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:22490) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:22490) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 e2e-offline/history06d2.spec.ts:60:1 › 06-D2 encrypted aggregate history and correction survive genuine offline reload without opening a blocked session (1.3s)
+(node:22516) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:22516) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  2 e2e-offline/shell.spec.ts:2:1 › versioned app shell and existing IndexedDB state reopen with all network disabled (1.0s)
+
+
+  1) e2e-offline/history06d2.spec.ts:60:1 › 06-D2 encrypted aggregate history and correction survive genuine offline reload without opening a blocked session 
+
+    Error: locator.check: Clicking the checkbox did not change its state
+    Call log:
+    [2m  - waiting for getByRole('checkbox', { name: 'تكبير النص' })[22m
+    [2m    - locator resolved to <input type="checkbox"/>[22m
+    [2m  - attempting click action[22m
+    [2m    - waiting for element to be visible, enabled and stable[22m
+    [2m    - element is visible, enabled and stable[22m
+    [2m    - scrolling into view if needed[22m
+    [2m    - done scrolling[22m
+    [2m    - performing click action[22m
+    [2m    - click action done[22m
+    [2m    - waiting for scheduled navigations to finish[22m
+    [2m    - navigations have finished[22m
+
+
+      68 |   await expect(offline.getByText('جزئي بحسب البلاغ', { exact: true })).toBeVisible();
+      69 |   await offline.goto('http://127.0.0.1:4174/#S17');
+    > 70 |   await offline.getByRole('checkbox', { name: 'تكبير النص' }).check();
+         |                                                               ^
+      71 |   await offline.reload();
+      72 |   await expect(offline.getByRole('checkbox', { name: 'تكبير النص' })).toBeChecked();
+      73 |   await offline.addScriptTag({ content: harness });
+        at /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06d2/e2e-offline/history06d2.spec.ts:70:63
+
+    Error Context: test-results-offline/history06d2-06-D2-encrypte-809bf-t-opening-a-blocked-session/error-context.md
+
+  1 failed
+    e2e-offline/history06d2.spec.ts:60:1 › 06-D2 encrypted aggregate history and correction survive genuine offline reload without opening a blocked session 
+  1 passed (4.9s)

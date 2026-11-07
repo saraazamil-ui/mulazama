@@ -1,0 +1,129 @@
+{
+  "config": {
+    "configFile": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l2/playwright.config.ts",
+    "rootDir": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l2/e2e",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/browser-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l2/test-results-l2-fsrs",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l2/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 1,
+    "webServer": {
+      "command": "node node_modules/vite/bin/vite.js --host 127.0.0.1 --port 4173 --strictPort",
+      "url": "http://127.0.0.1:4173",
+      "reuseExistingServer": true,
+      "timeout": 30000
+    }
+  },
+  "suites": [
+    {
+      "title": "fsrs06l2.spec.ts",
+      "file": "fsrs06l2.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "L2FSRSWEB01 isolated encrypted IndexedDB copy/restore/rollback preserves events and both versioned projections",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1126,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T11:48:39.396Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "fsrs-integration-indexeddb-rehearsal.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJmYWN0cyI6IHsKICAgICJraW5kIjogInN5bnRoZXRpYy1pbmRleGVkZGItY29weS1yZXN0b3JlLXJvbGxiYWNrLXJlaGVhcnNhbCIsCiAgICAicmVhbExlYXJuZXJEYXRhVXNlZCI6IGZhbHNlLAogICAgInNvdXJjZUV2ZW50c1VuY2hhbmdlZCI6IHRydWUsCiAgICAiY29waWVkRXZlbnRzRXF1YWwiOiB0cnVlLAogICAgInNvdXJjZURpZ2VzdFByZXNlcnZlZCI6IHRydWUsCiAgICAiY29ycmVjdGVkUHJvamVjdGlvblN0YWJsZUFmdGVyUmVvcGVuIjogdHJ1ZSwKICAgICJyb2xsYmFja0V2ZW50c0VxdWFsIjogdHJ1ZSwKICAgICJsZWdhY3lBbGdvcml0aG1QcmVzZXJ2ZWQiOiB0cnVlLAogICAgInByb2R1Y3Rpb25IaXN0b3J5UmVzdG9yZVN0aWxsQmxvY2tlZCI6IHRydWUsCiAgICAicmVsZWFzZUdhdGVzU3RpbGxCbG9ja2VkIjogdHJ1ZSwKICAgICJlbmdpbmVNaWdyYXRpb25QZXJmb3JtZWQiOiBmYWxzZSwKICAgICJzb3VyY2VFdmVudENvdW50IjogMTAsCiAgICAic291cmNlRXZlbnREaWdlc3QiOiAiNTE4NWVhNGIzYWQ2Zjg2MDMyZmRlOWQ4OWVlMjc1OTkzZTRkNThmOTEwOGVhYTZiZjliZTY2N2UwZTE4MDlhNyIsCiAgICAiY2xlYW51cERhdGFiYXNlTmFtZXMiOiBbCiAgICAgICJtdWxhemFtYS0wNmwyLWZzcnMtcmVoZWFyc2FsLXNvdXJjZS1lNjJiMDE3Ni0yYzAxLTQ4ZjgtOTA4Mi0zMmQwOWI1MDAzMWEiLAogICAgICAibXVsYXphbWEtMDZsMi1mc3JzLXJlaGVhcnNhbC10YXJnZXQtNzZkYmU3NjUtYTg4Ni00ZTIxLWI5YzQtYjZhM2U2OTMzNTJhIgogICAgXQogIH0sCiAgInJlbWFpbmluZ1FhRGF0YWJhc2VzIjogW10KfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3dfea26af7201e9437cd-a33b8bad3877355d442e",
+          "file": "fsrs06l2.spec.ts",
+          "line": 2,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-07T11:48:39.058Z",
+    "duration": 2020.569,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

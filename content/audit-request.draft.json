@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "product": "MULAZAMA",
+  "primary": {
+    "sourcePath": null,
+    "profilePath": null,
+    "expectedSha256": null,
+    "provenance": {
+      "publisher": "Tanzil Project",
+      "url": "https://tanzil.net/download/",
+      "version": "1.1",
+      "lineageId": "tanzil-uthmani-1.1-candidate-not-downloaded"
+    }
+  },
+  "reference": null
+}

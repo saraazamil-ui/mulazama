@@ -1,0 +1,442 @@
+{
+  "verifiedAt": "2026-11-07T15:11:15.282155+00:00",
+  "platform": "macOS Darwin arm64",
+  "sourceCommit": "df34d70084bdd328ad77d31cf91fea983d0e474f",
+  "node": "v24.22.1",
+  "playwright": "1.56.1",
+  "browser": "141.0.7390.37",
+  "localRunOnly": true,
+  "engineeringChecksPassed": true,
+  "groups": {
+    "unit": {
+      "executed": 897,
+      "passed": 897,
+      "failed": 0,
+      "skipped": 0
+    },
+    "journey-offline-browser": {
+      "executed": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0
+    },
+    "journey-browser": {
+      "executed": 12,
+      "passed": 12,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0
+    },
+    "browser": {
+      "executed": 35,
+      "passed": 35,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0
+    },
+    "offline-browser": {
+      "executed": 4,
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0
+    },
+    "deployment-browser": {
+      "executed": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0
+    },
+    "content-browser": {
+      "executed": 5,
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0
+    },
+    "fsrs-conformance": {
+      "passed": 40,
+      "failed": 0,
+      "blocked": 0
+    },
+    "legacy-reader": {
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0
+    },
+    "content-tools": {
+      "passed": 7,
+      "failed": 0
+    }
+  },
+  "expectedBlockedChecks": [
+    "content-byte-audit",
+    "content-supplemental-audit",
+    "release-gates"
+  ],
+  "productionReady": false,
+  "humanApprovalPerformed": false,
+  "networkInstallPerformed": false,
+  "dependencies": "Copied existing local node_modules into isolated review checkout; all 16 direct package versions matched package.json pins.",
+  "initialAttempt": "Non-browser checks passed; all six browser groups were blocked before assertions by sandbox listen EPERM. Initial logs retained.",
+  "retry": "Only six affected browser groups rerun with loopback permission, all passed without test modifications.",
+  "initialCommands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "node",
+        "node_modules/typescript/bin/tsc",
+        "-b"
+      ],
+      "startedAt": "2026-11-07T15:08:18.333376+00:00",
+      "durationSeconds": 2.951,
+      "exitCode": 0,
+      "result": "Passed",
+      "log": "final-typecheck.log"
+    },
+    {
+      "name": "unit",
+      "command": [
+        "node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "--maxWorkers=4",
+        "--reporter=json",
+        "--outputFile=docs/06l4/evidence/final-tests.json"
+      ],
+      "startedAt": "2026-11-07T15:08:21.284856+00:00",
+      "durationSeconds": 13.408,
+      "exitCode": 0,
+      "result": "Passed",
+      "log": "final-unit.log"
+    },
+    {
+      "name": "source-context",
+      "command": [
+        "node",
+        "scripts/generate-release-context.mjs"
+      ],
+      "startedAt": "2026-11-07T15:08:34.693298+00:00",
+      "durationSeconds": 0.074,
+      "exitCode": 0,
+      "result": "Passed",
+      "log": "final-source-context.log"
+    },
+    {
+      "name": "build",
+      "command": [
+        "node",
+        "node_modules/vite/bin/vite.js",
+        "build"
+      ],
+      "startedAt": "2026-11-07T15:08:34.767896+00:00",
+      "durationSeconds": 1.486,
+      "exitCode": 0,
+      "result": "Passed",
+      "log": "final-build.log"
+    },
+    {
+      "name": "offline-assets",
+      "command": [
+        "node",
+        "scripts/build-offline.mjs"
+      ],
+      "startedAt": "2026-11-07T15:08:36.254733+00:00",
+      "durationSeconds": 0.042,
+      "exitCode": 0,
+      "result": "Passed",
+      "log": "final-offline-assets.log"
+    },
+    {
+      "name": "verify-build",
+      "command": [
+        "node",
+        "scripts/verify-build.mjs"
+      ],
+      "startedAt": "2026-11-07T15:08:36.296900+00:00",
+      "durationSeconds": 0.037,
+      "exitCode": 0,
+      "result": "Passed",
+      "log": "final-verify-build.log"
+    },
+    {
+      "name": "security-static",
+      "command": [
+        "node",
+        "scripts/security-check.mjs"
+      ],
+      "startedAt": "2026-11-07T15:08:36.334183+00:00",
+      "durationSeconds": 0.037,
+      "exitCode": 0,
+      "result": "Passed",
+      "log": "final-security-static.log"
+    },
+    {
+      "name": "reference-authentication",
+      "command": [
+        "node",
+        "scripts/verify-fsrs-reference-06e1.mjs"
+      ],
+      "startedAt": "2026-11-07T15:08:36.371030+00:00",
+      "durationSeconds": 0.042,
+      "exitCode": 0,
+      "result": "Passed",
+      "log": "final-reference-authentication.log"
+    },
+    {
+      "name": "fsrs-conformance",
+      "command": [
+        "node",
+        "scripts/fsrs-06e1-investigation.mjs",
+        "--probe-module",
+        "src/conformance/fsrs-reference-probe.ts",
+        "--output-dir",
+        "docs/06l4/evidence/fsrs"
+      ],
+      "startedAt": "2026-11-07T15:08:36.413788+00:00",
+      "durationSeconds": 2.546,
+      "exitCode": 0,
+      "result": "Passed",
+      "log": "final-fsrs-conformance.log"
+    },
+    {
+      "name": "content-tools",
+      "command": [
+        "node",
+        "scripts/verify-content-tools.mjs",
+        "docs/06l4/evidence/content-tool-checks.json"
+      ],
+      "startedAt": "2026-11-07T15:08:38.961197+00:00",
+      "durationSeconds": 2.157,
+      "exitCode": 0,
+      "result": "Passed",
+      "log": "final-content-tools.log"
+    },
+    {
+      "name": "content-byte-audit",
+      "command": [
+        "node",
+        "scripts/audit-quran-content.mjs",
+        "--request",
+        "content/06l2/audit-request.json",
+        "--output",
+        "docs/06l4/evidence/content-byte-audit.json"
+      ],
+      "startedAt": "2026-11-07T15:08:41.118210+00:00",
+      "durationSeconds": 0.236,
+      "exitCode": 2,
+      "result": "Blocked",
+      "log": "final-content-byte-audit.log"
+    },
+    {
+      "name": "legacy-reader-compatibility",
+      "command": [
+        "node",
+        "scripts/fsrs-backward06l3.mjs",
+        "--output",
+        "docs/06l4/evidence/fsrs-backward-reader.json"
+      ],
+      "startedAt": "2026-11-07T15:08:41.354742+00:00",
+      "durationSeconds": 0.823,
+      "exitCode": 0,
+      "result": "Passed",
+      "log": "final-legacy-reader-compatibility.log"
+    },
+    {
+      "name": "content-supplemental-audit",
+      "command": [
+        "node",
+        "scripts/content-06l2-audit.mjs"
+      ],
+      "startedAt": "2026-11-07T15:08:42.178123+00:00",
+      "durationSeconds": 0.845,
+      "exitCode": 2,
+      "result": "Blocked",
+      "log": "final-content-supplemental-audit.log"
+    },
+    {
+      "name": "release-gates",
+      "command": [
+        "node",
+        "scripts/verify-release.mjs",
+        "--phase",
+        "05-C",
+        "--output",
+        "docs/06l4/evidence/release-gates.json"
+      ],
+      "startedAt": "2026-11-07T15:08:43.023824+00:00",
+      "durationSeconds": 0.072,
+      "exitCode": 2,
+      "result": "Blocked",
+      "log": "final-release-gates.log"
+    },
+    {
+      "name": "browser",
+      "command": [
+        "node",
+        "node_modules/@playwright/test/cli.js",
+        "test"
+      ],
+      "startedAt": "2026-11-07T15:08:43.096274+00:00",
+      "durationSeconds": 1.016,
+      "exitCode": 1,
+      "result": "Failed",
+      "log": "final-browser.log"
+    },
+    {
+      "name": "offline-browser",
+      "command": [
+        "node",
+        "node_modules/@playwright/test/cli.js",
+        "test",
+        "--config",
+        "playwright.offline.config.ts"
+      ],
+      "startedAt": "2026-11-07T15:08:44.113133+00:00",
+      "durationSeconds": 0.562,
+      "exitCode": 1,
+      "result": "Failed",
+      "log": "final-offline-browser.log"
+    },
+    {
+      "name": "deployment-browser",
+      "command": [
+        "node",
+        "node_modules/@playwright/test/cli.js",
+        "test",
+        "--config",
+        "playwright.deployment.config.ts"
+      ],
+      "startedAt": "2026-11-07T15:08:44.675782+00:00",
+      "durationSeconds": 1.123,
+      "exitCode": 1,
+      "result": "Failed",
+      "log": "final-deployment-browser.log"
+    },
+    {
+      "name": "content-browser",
+      "command": [
+        "node",
+        "scripts/content-06l2-browser.mjs"
+      ],
+      "startedAt": "2026-11-07T15:08:45.799408+00:00",
+      "durationSeconds": 0.22,
+      "exitCode": 1,
+      "result": "Failed",
+      "log": "final-content-browser.log"
+    },
+    {
+      "name": "journey-browser",
+      "command": [
+        "node",
+        "node_modules/@playwright/test/cli.js",
+        "test",
+        "--config",
+        "playwright.journey.config.ts"
+      ],
+      "startedAt": "2026-11-07T15:08:46.019762+00:00",
+      "durationSeconds": 0.571,
+      "exitCode": 1,
+      "result": "Failed",
+      "log": "final-journey-browser.log"
+    },
+    {
+      "name": "journey-offline-browser",
+      "command": [
+        "node",
+        "node_modules/@playwright/test/cli.js",
+        "test",
+        "--config",
+        "playwright.journey-offline.config.ts"
+      ],
+      "startedAt": "2026-11-07T15:08:46.591180+00:00",
+      "durationSeconds": 1.869,
+      "exitCode": 1,
+      "result": "Failed",
+      "log": "final-journey-offline-browser.log"
+    }
+  ],
+  "browserRetryCommands": [
+    {
+      "name": "browser",
+      "command": [
+        "/Users/saalzamil/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "node_modules/@playwright/test/cli.js",
+        "test"
+      ],
+      "startedAt": "2026-11-07T15:09:27.683121+00:00",
+      "durationSeconds": 43.07,
+      "exitCode": 0,
+      "reasonForRerun": "Initial sandbox denied loopback server binding before browser assertions."
+    },
+    {
+      "name": "offline-browser",
+      "command": [
+        "/Users/saalzamil/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "node_modules/@playwright/test/cli.js",
+        "test",
+        "--config",
+        "playwright.offline.config.ts"
+      ],
+      "startedAt": "2026-11-07T15:10:10.755036+00:00",
+      "durationSeconds": 4.236,
+      "exitCode": 0,
+      "reasonForRerun": "Initial sandbox denied loopback server binding before browser assertions."
+    },
+    {
+      "name": "deployment-browser",
+      "command": [
+        "/Users/saalzamil/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "node_modules/@playwright/test/cli.js",
+        "test",
+        "--config",
+        "playwright.deployment.config.ts"
+      ],
+      "startedAt": "2026-11-07T15:10:14.989901+00:00",
+      "durationSeconds": 5.421,
+      "exitCode": 0,
+      "reasonForRerun": "Initial sandbox denied loopback server binding before browser assertions."
+    },
+    {
+      "name": "content-browser",
+      "command": [
+        "/Users/saalzamil/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "scripts/content-06l2-browser.mjs"
+      ],
+      "startedAt": "2026-11-07T15:10:20.410745+00:00",
+      "durationSeconds": 4.936,
+      "exitCode": 0,
+      "reasonForRerun": "Initial sandbox denied loopback server binding before browser assertions."
+    },
+    {
+      "name": "journey-browser",
+      "command": [
+        "/Users/saalzamil/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "node_modules/@playwright/test/cli.js",
+        "test",
+        "--config",
+        "playwright.journey.config.ts"
+      ],
+      "startedAt": "2026-11-07T15:10:25.347319+00:00",
+      "durationSeconds": 22.241,
+      "exitCode": 0,
+      "reasonForRerun": "Initial sandbox denied loopback server binding before browser assertions."
+    },
+    {
+      "name": "journey-offline-browser",
+      "command": [
+        "/Users/saalzamil/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "node_modules/@playwright/test/cli.js",
+        "test",
+        "--config",
+        "playwright.journey-offline.config.ts"
+      ],
+      "startedAt": "2026-11-07T15:10:47.588285+00:00",
+      "durationSeconds": 6.889,
+      "exitCode": 0,
+      "reasonForRerun": "Initial sandbox denied loopback server binding before browser assertions."
+    }
+  ],
+  "sourceOriginalsModified": false
+}

@@ -1,0 +1,156 @@
+{
+  "config": {
+    "configFile": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l2/playwright.config.ts",
+    "rootDir": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l2/e2e",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l2/test-results-security06l2",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l2/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 1,
+    "webServer": {
+      "command": "node node_modules/vite/bin/vite.js --host 127.0.0.1 --port 4173 --strictPort",
+      "url": "http://127.0.0.1:4173",
+      "reuseExistingServer": true,
+      "timeout": 30000
+    }
+  },
+  "suites": [
+    {
+      "title": "security06l2.spec.ts",
+      "file": "security06l2.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "L2SECWEB01 a stale second tab cannot resurrect the former profile after confirmed deletion",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 928,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T11:49:37.125Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "stale-tab-reset-receipt.json",
+                      "contentType": "application/json",
+                      "body": "eyJzZXBhcmF0ZUJyb3dzZXJQYWdlcyI6MiwiZm9ybWVyUHJvZmlsZU5vdFJlc3VycmVjdGVkIjp0cnVlLCJzdGFsZVdyaXRlUmVqZWN0ZWQiOiJSRVZJU0lPTl9DT05GTElDVCIsImdhdGVzU3RpbGxCbG9ja2VkIjoiUkVMRUFTRV9HQVRFU19CTE9DS0VEIiwib3JpZ2luYWxFdmVudHMiOjMsInBvc3RSZXNldEV2ZW50cyI6MSwicG9zdFJlamVjdGlvbkV2ZW50cyI6MSwidGVtcG9yYXJ5QnJvd3NlckNvbnRleHQiOnRydWV9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "73f591a37655d022ba53-3987ed5fbc226d7a633c",
+          "file": "security06l2.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "L2SECWEB02 a report entered through the UI remains inert text after IndexedDB reopen",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1498,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T11:49:38.320Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "inert-report-receipt.json",
+                      "contentType": "application/json",
+                      "body": "eyJpbnB1dFBhdGgiOiJvcmRpbmFyeSBVSSIsImRhdGFiYXNlUmVwbGFjZW1lbnQiOmZhbHNlLCJ1bnRydXN0ZWRSZXBvcnRQcmVzZXJ2ZWRFeGFjdGx5Ijp0cnVlLCJyYXdIaXN0b3J5VW5jaGFuZ2VkT25SZWxvYWQiOnRydWUsImV4ZWN1dGFibGVOb2Rlc0luUmVwb3J0IjowLCJwcm9iZVJlcXVlc3RzIjowLCJzY3JpcHRFeGVjdXRlZCI6ZmFsc2UsInRlbXBvcmFyeUJyb3dzZXJDb250ZXh0Ijp0cnVlLCJ0ZXN0RGF0YVJlbW92ZWRUaHJvdWdoVUkiOnRydWV9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "73f591a37655d022ba53-5e66713aff430c87a48f",
+          "file": "security06l2.spec.ts",
+          "line": 148,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-07T11:49:36.294Z",
+    "duration": 3659.2110000000002,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

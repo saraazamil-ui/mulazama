@@ -1,0 +1,15 @@
+[2m[WebServer] [22m(node:36560) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 4 tests using 1 worker
+
+(node:36562) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:36562) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 e2e-offline/foundation06e1.spec.ts:42:1 › 06-E1 personal memory and corrected core reproduce offline in a reopened encrypted store while the built app keeps sessions blocked (847ms)
+  ✓  2 e2e-offline/history06d2.spec.ts:60:1 › 06-D2 encrypted aggregate history and correction survive genuine offline reload without opening a blocked session (951ms)
+  ✓  3 e2e-offline/launch06l1.spec.ts:2:1 › L1OFF01 first setup is committed offline and survives reload; policy assets remain available (848ms)
+  ✓  4 e2e-offline/shell.spec.ts:2:1 › versioned app shell and existing IndexedDB state reopen with all network disabled (664ms)
+
+  4 passed (4.9s)

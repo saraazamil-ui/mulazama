@@ -1,0 +1,14 @@
+{
+  "output": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06d1/docs/06d1/evidence/fsrs-candidate.json",
+  "status": "conformant",
+  "summary": {
+    "passed": 23,
+    "failed": 0,
+    "blocked": 0
+  },
+  "coverage": {
+    "requiredBranches": 12,
+    "executedBranches": 12
+  },
+  "blockers": []
+}

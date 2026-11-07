@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "phase": "06-L4",
+  "purpose": "Product content release approval only; no teacher approval required per learner session",
+  "status": "pending",
+  "decision": null,
+  "reviewer": null,
+  "qualifications": null,
+  "reviewedAt": null,
+  "authorityId": null,
+  "signature": null,
+  "primary": {
+    "publisher": "Tanzil Project",
+    "version": "Uthmani1.1",
+    "path": "content/06l2/tanzil-uthmani-1.1.txt",
+    "sha256": "6933e133dd56db778c801bf738848454e43648105a151e8d84d86a7cae39ec5f"
+  },
+  "reference": {
+    "receipt": "content/06l3/reference-receipt.json",
+    "responseSHA256": "d6464a967d5dc85c9b85444791911bcb2714d87a2137a0241299d0719ddbe36e",
+    "datasetEditionConfirmed": false,
+    "independentLineageConfirmed": false,
+    "rawRedistributionPermissionConfirmed": false
+  },
+  "comparison": {
+    "path": "docs/06l3/evidence/content-comparison.json",
+    "sha256": "311a45ef09ce8406816a39c528d23395b96569fb46a9d223e35ede97599eb4d6",
+    "keysCompared": 6236,
+    "exact": 0,
+    "different": 6236,
+    "missing": 0,
+    "notATextCorruptionVerdict": true
+  },
+  "requestedReview": [
+    "Select and document the intended Hafs edition, tariq, numbering and basmala policy",
+    "Confirm source lineage and rights for independent comparison and explain representation differences without modifying publisher bytes",
+    "Approve exact text, tashkeel and waqf plus a licensed matching font",
+    "Supply or review exact token/page/juz/hizb/rub and segment-boundary mappings",
+    "Sign the fully bound ContentManifest and approval through the existing release authority process"
+  ],
+  "productionActivation": false,
+  "closedTrialActivation": false,
+  "officialOrigin": "https://mulazama.sa",
+  "currentContentAudit": "docs/06l4/evidence/content-byte-audit.json",
+  "currentDisplayChecks": "docs/06l4/evidence/historical-path-outputs/06l2/evidence/content-display/results.json",
+  "methodReview": "docs/06l4/Self-Learning-Method.md",
+  "sourceRangeIntegrity": "src/content/journey-order06l4.ts",
+  "fsrsReport": "docs/06l4/FSRS-Integration-Report.md",
+  "noPerSessionTeacherRequired": true
+}

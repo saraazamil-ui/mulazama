@@ -1,0 +1,555 @@
+{
+  "phase": "06-L4",
+  "decision": "not-ready",
+  "engineeringJourneyActive": true,
+  "source": {
+    "path": "docs/06l2/Closure-Ledger.json",
+    "sha256": "2511e3e0d9e8ee4d80ccf744b3c42bf31c4e1b4dcddcd83074f2c3703f00a0da"
+  },
+  "same18IdsAndAcceptanceCriteria": true,
+  "noNewPhases": true,
+  "note": "إنجاز هندسي محلي لا يغلق بوابات اعتماد المنتج؛ L04 لا يفرض ترحيلًا مصطنعًا على مستخدم جديد.",
+  "items": [
+    {
+      "id": "L01",
+      "priority": "P0",
+      "title": "اعتماد النص والطبعة والحقوق والكتالوج وعرض القرآن",
+      "ownerRole": "متخصص مصحف + مسؤول حقوق + مسؤولة الإصدار",
+      "dependencies": [],
+      "gates": [
+        "G01",
+        "G10"
+      ],
+      "categories": [
+        "code",
+        "evidence",
+        "human",
+        "external",
+        "owner"
+      ],
+      "acceptanceEvidenceRequired": [
+        "مصدر رسمي ثابت وحق استخدام موثق وmanifest ببصمة غير null",
+        "مقارنة مستقلة للنص وخريطة وحدات/آيات ومراجعة العرض على أجهزة الهدف",
+        "اعتماد مختص وتوقيع صالح مرتبط بكتالوج وسياق إصدار التجربة"
+      ],
+      "status": "blocked-product-approval",
+      "closedForPublicLaunch": false,
+      "implementedAndRemaining": "فحص النص البنيوي والعرض ناجح؛ مقارنة L3 محفوظة ولم تُكرر شبكيًا؛ حزمة القرآن والخط والخريطة والاعتماد المتخصص معلقة.",
+      "evidence": "docs/06l4/Content-Approval-Report.md",
+      "l4ClosureEvidence": "docs/06l4/Gate-Closure-Report.md"
+    },
+    {
+      "id": "L02",
+      "priority": "P0",
+      "title": "حسم معيار الحفظ والتسميع ومعنى الأدلة للورد",
+      "ownerRole": "متخصص قرآن + قياس + مسؤول HME",
+      "dependencies": [
+        "L01"
+      ],
+      "gates": [
+        "G03",
+        "G10"
+      ],
+      "categories": [
+        "human",
+        "owner",
+        "evidence"
+      ],
+      "acceptanceEvidenceRequired": [
+        "معيار اكتساب واضح وأصغر وحدة معتمدة مع منع عد التداخل وتاريخ الهدف",
+        "مراجعة سلم التسميع والتلميحات والتوقف والملاحظات المجهولة والتكاليف",
+        "قواعد تفصل الإكمال عن جودة التسميع وعن الثبات، وتبقي التنبؤ غير الكافي محجوبًا"
+      ],
+      "status": "blocked-product-approval",
+      "closedForPublicLaunch": false,
+      "implementedAndRemaining": "40/40 مطابقة مصححة أعيدت دون تعديل النواة أو المعاملات؛ اعتماد سياق المنتج مستقل.",
+      "evidence": "docs/06l4/FSRS-Integration-Report.md",
+      "l4ClosureEvidence": "docs/06l4/Gate-Closure-Report.md"
+    },
+    {
+      "id": "L03",
+      "priority": "P0",
+      "title": "اعتماد عقد الحساب المصحح وانتخابه صراحة للكتابة الجديدة",
+      "ownerRole": "خبير FSRS + مراجع مستقل + مسؤولة الإصدار",
+      "dependencies": [],
+      "gates": [
+        "G02"
+      ],
+      "categories": [
+        "code",
+        "evidence",
+        "human",
+        "owner"
+      ],
+      "acceptanceEvidenceRequired": [
+        "مراجعة مرجع ts-fsrs5.4.2 والالتزام الثابت وتحديد متطلبات provenance المتبقية",
+        "40 حالة مرجعية ثابتة ناجحة واختبارات أثر HME/التقييمات المصححة",
+        "قرار موقع لنسخة الحساب والأوزان والإعدادات وآلية تفسير الإصدارات بلا تغيير هوية التاريخ"
+      ],
+      "status": "implemented-engineering-awaits-election",
+      "closedForPublicLaunch": false,
+      "implementedAndRemaining": "المصحح مرتبط بالكتابة وإعادة الحساب بإصدار صريح؛ لا انتخاب إنتاجي أو تغيير أوزان.",
+      "evidence": "docs/06l4/FSRS-Integration-Report.md",
+      "l4ClosureEvidence": "docs/06l4/Gate-Closure-Report.md"
+    },
+    {
+      "id": "L04",
+      "priority": "P0",
+      "title": "تنفيذ انتقال قابل للاستعادة بعد تحليل أثره واعتماده",
+      "ownerRole": "مهندس بيانات + خوارزميات + مسؤولة المشروع",
+      "dependencies": [
+        "L03"
+      ],
+      "gates": [
+        "G02",
+        "G04",
+        "G05"
+      ],
+      "categories": [
+        "code",
+        "evidence",
+        "human",
+        "owner"
+      ],
+      "acceptanceEvidenceRequired": [
+        "تقرير أثر لكل وحدة من إعادة البناء القائمة قبل أي تبديل وخطة للخطط القديمة",
+        "نسخة مشفرة كاملة وبصمة الوقائع وCAS ومفسر قديم محفوظ وإسقاط جديد منفصل",
+        "اختبارات فشل منتصف الانتقال واستئناف وتزامن واستعادة وتراجع دون فقد حدث",
+        "موافقة صريحة على الترحيل الحساس إن ثبت احتياجه؛ إن لم يلزم يوثق الفصل وتوافق النسخ"
+      ],
+      "status": "not-required-for-new-streams",
+      "closedForPublicLaunch": false,
+      "implementedAndRemaining": "لا هجرة لازمة لبدء سجل جديد مصرح؛ القديم باقٍ كما هو. الانتقال الفعلي لقديم مؤجل حتى طلب واعتماد، وقيد قارئL2 مثبت.",
+      "evidence": "docs/06l4/Deploy-and-Rollback.md",
+      "l4ClosureEvidence": "docs/06l4/Gate-Closure-Report.md"
+    },
+    {
+      "id": "L05",
+      "priority": "P0",
+      "title": "ربط نشاط اليوم والوحدة ونتيجة التسميع بعقد واحد",
+      "ownerRole": "مسؤول HME + مهندس أحداث + قياس",
+      "dependencies": [
+        "L01",
+        "L02",
+        "L03"
+      ],
+      "gates": [
+        "G03",
+        "G06"
+      ],
+      "categories": [
+        "code",
+        "evidence",
+        "human"
+      ],
+      "acceptanceEvidenceRequired": [
+        "taskId ثابت ونوع ووحدة وخطة مؤرخة ومنطقة زمنية صريحة",
+        "حدث إكمال صالح فقط؛ الإلغاء/التأجيل ليسا إنجازًا؛ التصحيح لا ينشئ محاولة",
+        "تغيير الهدف/الخطة لا يمحو التاريخ؛ أحداث مكررة متطابقة لا تضاعف الإنجاز",
+        "قواعد أولوية عودة محدودة السعة تحفظ كل المتأخرات وتوضح سبب الاختيار"
+      ],
+      "status": "complete-engineering",
+      "closedForPublicLaunch": false,
+      "implementedAndRemaining": "نشاط وخطة وجلسة ونتيجة محفوظة، منع تكرار وتصحيح وإعادة تحميل على الخدمات الفعلية؛ حزمة القرآن المعتمدة معلقة.",
+      "evidence": "docs/06l4/Test-Report.md",
+      "l4ClosureEvidence": "docs/06l4/Gate-Closure-Report.md"
+    },
+    {
+      "id": "L06",
+      "priority": "P0",
+      "title": "إكمال رحلة الورد ورفيق التعاهد الفعلية للمبتدئ والسابق",
+      "ownerRole": "React + HME + QA",
+      "dependencies": [
+        "L01",
+        "L02",
+        "L04",
+        "L05"
+      ],
+      "gates": [
+        "G03",
+        "G06",
+        "G07"
+      ],
+      "categories": [
+        "code",
+        "evidence",
+        "human",
+        "external"
+      ],
+      "acceptanceEvidenceRequired": [
+        "رحلة staging موجبة تبدأ من المدخل الحقيقي بصلاحيات معتمدة وتنتهي بحدث نتيجة محفوظ",
+        "حفظ جديد ومراجعة محفوظ سابق وعودة بعد انقطاع بلا إسقاط تاريخ",
+        "استئناف وتصحيح وتحديث تلقائي للمؤشرات مع كشف خطأ الحفظ",
+        "قياس التفاعلات الفعلي من فتح الموقع للبدء ومن نهاية التسميع للحفظ؛ لا proxy صناعي للرحلة الحقيقية"
+      ],
+      "status": "complete-engineering-awaits-quran-acceptance",
+      "closedForPublicLaunch": false,
+      "implementedAndRemaining": "رحلتا الهاتف وDesktop تعملان صناعيًا؛ لا قرآن معتمد أو نجاح رحلة بشرية مزعوم.",
+      "evidence": "docs/06l4/New-Hafiz-Journey.md",
+      "l4ClosureEvidence": "docs/06l4/Gate-Closure-Report.md"
+    },
+    {
+      "id": "L07",
+      "priority": "P1",
+      "title": "تقليل الإعداد الأولي إلى ثلاث خطوات رئيسية",
+      "ownerRole": "React + QA",
+      "dependencies": [],
+      "gates": [],
+      "categories": [
+        "code",
+        "evidence"
+      ],
+      "acceptanceEvidenceRequired": [
+        "حالة الحافظ ثم المحفوظات/الهدف ثم الوقت؛ انتهاء مباشر بالرئيسية",
+        "عدم إعادة إدخال القيم المحفوظة وعدم رفع التصريح إلى حفظ موثق",
+        "إخفاق الحفظ ظاهر مع إمكانية إعادة المحاولة؛ المسارات الثلاثة قابلة للاختبار",
+        "مقارنة فعلية للتفاعلات قبل/بعد مع RTL و320 بكسل ولوحة مفاتيح"
+      ],
+      "status": "complete-local",
+      "closedForPublicLaunch": false,
+      "implementedAndRemaining": "3خطوات دون نماذج إضافية؛ نقرة بدء ونقرة وصف نتيجة في المسار الهندسي المعتاد.",
+      "evidence": "docs/06l4/New-Hafiz-Journey.md",
+      "l4ClosureEvidence": "docs/06l4/Gate-Closure-Report.md"
+    },
+    {
+      "id": "L08",
+      "priority": "P1",
+      "title": "عرض رفيق وصفي من أساس الذاكرة القائم وأبرز إجراء مسموح",
+      "ownerRole": "React + مهندس إسقاط أحداث + QA",
+      "dependencies": [],
+      "gates": [],
+      "categories": [
+        "code",
+        "evidence"
+      ],
+      "acceptanceEvidenceRequired": [
+        "إعادة استعمال personal-memory دون مخزن أو نموذج تنبؤ جديد",
+        "مصادر الأحداث والتصحيحات محفوظة؛ تمييز غياب البيانات والبلاغ المفرد والمتكرر بلا إتقان مفترض",
+        "عدم تحويل فاصل زمني أو FSRS إلى ضعف قرآني مثبت أو توصية تنفيذية",
+        "الصفحة الرئيسية بسيطة؛ الإجراء الأبرز مسموح؛ تعذر القراءة ظاهر ولا يصنع صفرًا",
+        "تصحيح عبارة الإعدادات لتفصل المطابقة الحسابية المنجزة عن اعتماد الإصدار المتبقي"
+      ],
+      "status": "complete-local",
+      "closedForPublicLaunch": false,
+      "implementedAndRemaining": "استعمال ذاكرة الأحداث القائمة، سجل ذاتي وتغطية دون تكرار وتعثر وصفي؛ لا نسبة ثبات.",
+      "evidence": "docs/06l4/Prior-Hafiz-Journey.md",
+      "l4ClosureEvidence": "docs/06l4/Gate-Closure-Report.md"
+    },
+    {
+      "id": "L09",
+      "priority": "P0",
+      "title": "اعتماد سلامة البيانات والتحديث والاستعادة للنسخة المرشحة",
+      "ownerRole": "مهندس IndexedDB + أمن + QA",
+      "dependencies": [
+        "L04",
+        "L05"
+      ],
+      "gates": [
+        "G04",
+        "G05"
+      ],
+      "categories": [
+        "code",
+        "evidence",
+        "human"
+      ],
+      "acceptanceEvidenceRequired": [
+        "إعادة تشغيل اختبارات التكرار/الفساد/التصحيح/الاستعادة/الترحيل المستهدف على IndexedDB فعلي",
+        "قبل/بعد: الوقائع الخام ونتائج إعادة الحساب ثابتة مع تفسير أي تغير",
+        "اختبار multi-tab/quota/failure/rollback على بيئة الهدف مع حفظ الأدلة",
+        "لا تعديل غير قابل للاستعادة؛ لا حذف أحداث المستخدم"
+      ],
+      "status": "complete-engineering-awaits-release-attestation",
+      "closedForPublicLaunch": false,
+      "implementedAndRemaining": "استعادة مشفرة وتصحيح وتكرار وانقطاع وإعادة تحميل فعلية؛ لا هجرة أو بيانات حقيقية.",
+      "evidence": "docs/06l4/Data-Security-Report.md",
+      "l4ClosureEvidence": "docs/06l4/Gate-Closure-Report.md"
+    },
+    {
+      "id": "L10",
+      "priority": "P0",
+      "title": "إكمال مراجعة الهاتف والإتاحة البشرية والمنصة المستهدفة",
+      "ownerRole": "مختص إتاحة + QA",
+      "dependencies": [
+        "L06"
+      ],
+      "gates": [
+        "G06",
+        "G07",
+        "G08"
+      ],
+      "categories": [
+        "evidence",
+        "human",
+        "external"
+      ],
+      "acceptanceEvidenceRequired": [
+        "RTL و320 بكسل ولوحة مفاتيح وaxe على المرشح النهائي",
+        "قارئ شاشة بشري وتكبير/تباين/إخفاء نص التسميع مع نتائج فعلية",
+        "بدء بارد offline واستئناف وتحديث على متصفحات وأجهزة الجمهور المستهدف",
+        "حصر الإصدار الأول على web/PWA إن اعتمد؛ لا ادعاء اعتماد تطبيقات iOS/Android الأصلية"
+      ],
+      "status": "automated-complete-human-pending",
+      "closedForPublicLaunch": false,
+      "implementedAndRemaining": "RTL/320/1366 وaxe ولوحة مفاتيح أعيدت؛ فتح Safari بصريًا فقط؛ فحص قارئ الشاشة البشري معلق.",
+      "evidence": "docs/06l4/Test-Report.md",
+      "l4ClosureEvidence": "docs/06l4/Gate-Closure-Report.md"
+    },
+    {
+      "id": "L11",
+      "priority": "P0",
+      "title": "إغلاق مراجعة الأمن والخصوصية وحماية السجلات",
+      "ownerRole": "مراجع أمن + مسؤولة المشروع",
+      "dependencies": [
+        "L12",
+        "L13",
+        "L14"
+      ],
+      "gates": [
+        "G05",
+        "G09"
+      ],
+      "categories": [
+        "evidence",
+        "human",
+        "external",
+        "owner"
+      ],
+      "acceptanceEvidenceRequired": [
+        "فحص تبعيات ومفاتيح وصلاحيات وCSP/XSS والنسخ والاستعادة في بيئة الهدف",
+        "اعتماد السياسة على المعالجة الفعلية: الجهاز/الاستضافة/سجلات الأعطال/المشاركة الاختيارية",
+        "هوية مشغلة وبلد وتواصل وحقوق واحتفاظ/حذف ودعم موثقة",
+        "مراقبة أعطال تقلل البيانات ولا تجمع نص التسميع/السجل افتراضيًا؛ اختبار فشل آمن"
+      ],
+      "status": "technical-complete-operational-pending",
+      "closedForPublicLaunch": false,
+      "implementedAndRemaining": "تدقيق registry صفر تنبيهات وفحوص الأمن المحلية ناجحة؛ لا اعتماد خصوصية أو بيئة خارجية مزعوم.",
+      "evidence": "docs/06l4/Data-Security-Report.md",
+      "l4ClosureEvidence": "docs/06l4/Gate-Closure-Report.md"
+    },
+    {
+      "id": "L12",
+      "priority": "P0",
+      "title": "تثبيت مسؤولية التشغيل وحدود الإصدار المحلي والمستودع المرجعي",
+      "ownerRole": "مالكة المشروع",
+      "dependencies": [],
+      "gates": [],
+      "categories": [
+        "owner",
+        "external"
+      ],
+      "acceptanceEvidenceRequired": [
+        "تأكيد مالكة المشروع مشغلة من السعودية موثق",
+        "تحديد اسم/صفة الجهة المعروضة ووسيلة الدعم الخاصة التي ستعتمد للإتاحة",
+        "قرار صريح بأن أول إصدار محلي أولاً دون حساب/مزامنة أو اعتماد نطاق حسابات إضافي",
+        "مستودع واحد مملوك للمشروع وفرع تطوير ومراجعة وصلاحيات؛ لا إنشاء حساب بلا تفويض"
+      ],
+      "status": "blocked-external-owner",
+      "closedForPublicLaunch": false,
+      "implementedAndRemaining": "مستودع GitHub خاص موجود للهوية؛ PR1 لتصحيح النطاق؛ استيراد تاريخ التطبيق إلى المستودع لم يتم.",
+      "evidence": "docs/06l4/Hosting-Readiness.md",
+      "l4ClosureEvidence": "docs/06l4/Gate-Closure-Report.md"
+    },
+    {
+      "id": "L13",
+      "priority": "P0",
+      "title": "تجهيز معاينة مغلقة واستضافة ونطاق موثقين",
+      "ownerRole": "مالكة المشروع + مسؤول تشغيل",
+      "dependencies": [
+        "L12"
+      ],
+      "gates": [
+        "G07",
+        "G09"
+      ],
+      "categories": [
+        "code",
+        "evidence",
+        "external",
+        "owner"
+      ],
+      "acceptanceEvidenceRequired": [
+        "إثبات ملكية mulazama.sa أو نطاق معاينة مخول وتحديد مزود وحساب موجود أو تفويض مستقل",
+        "فصل التطوير/المعاينة/الإنتاج ومفاتيح خارج الشفرة وTLS ورؤوس خدمة وميزانية معلومة",
+        "معاينة مقيدة الوصول بلا فهرسة وبسجلات أعطال محدودة وتدقيق الوصول",
+        "لا نشر عام أو شراء أو إنشاء حساب ضمن التسليم الحالي"
+      ],
+      "status": "local-preview-complete-external-pending",
+      "closedForPublicLaunch": false,
+      "implementedAndRemaining": "المعتمد mulazama.sa ومُسجله المبلغ dnet؛ الفحص العام NXDOMAIN؛ معاينة05-A خاصة قديمة ومعاينةL4 محلية فقط.",
+      "evidence": "docs/06l4/Hosting-Readiness.md",
+      "l4ClosureEvidence": "docs/06l4/Gate-Closure-Report.md"
+    },
+    {
+      "id": "L14",
+      "priority": "P0",
+      "title": "توثيق واختبار إصدار وتراجع ونسخ احتياطي مستمر",
+      "ownerRole": "مسؤول إصدار + تخزين + QA",
+      "dependencies": [
+        "L12",
+        "L13"
+      ],
+      "gates": [
+        "G04",
+        "G05",
+        "G07",
+        "G09"
+      ],
+      "categories": [
+        "code",
+        "evidence",
+        "external",
+        "owner"
+      ],
+      "acceptanceEvidenceRequired": [
+        "CI واختبارات مطلوبة قبل الدمج وإصدار واضح وCHANGELOG ومعاينة قبل إنتاج",
+        "artifact immutable وبصمات وخطة تعود لملفات الإصدار السابق دون إفساد مخزن أحدث",
+        "تمرين استعادة وتراجع فعلي في staging مع إشارات نجاح/فشل ومشغل مسؤول",
+        "إثبات أن مراجع التقرير/البوابات مرتبطة بنفس النسخة التي ستنشر"
+      ],
+      "status": "complete-local-operational-pending",
+      "closedForPublicLaunch": false,
+      "implementedAndRemaining": "تمرينL3→L4→L3 على الأصل نفسه ناجح؛ بياناتL2/السجل المصحح لا يعاد تفسيرها؛ التراجع الخارجي لم ينفذ.",
+      "evidence": "docs/06l4/Deploy-and-Rollback.md",
+      "l4ClosureEvidence": "docs/06l4/Gate-Closure-Report.md"
+    },
+    {
+      "id": "L15",
+      "priority": "P0",
+      "title": "اعتماد بروتوكول التجربة وإغلاق بوابات المرشح",
+      "ownerRole": "مختص قرآن/قياس + مسؤولة التجربة + اعتماد الإصدار",
+      "dependencies": [
+        "L01",
+        "L02",
+        "L03",
+        "L04",
+        "L05",
+        "L06",
+        "L09",
+        "L10",
+        "L11",
+        "L13",
+        "L14"
+      ],
+      "gates": [
+        "G01",
+        "G02",
+        "G03",
+        "G04",
+        "G05",
+        "G06",
+        "G07",
+        "G08",
+        "G09",
+        "G10"
+      ],
+      "categories": [
+        "evidence",
+        "human",
+        "external",
+        "owner"
+      ],
+      "acceptanceEvidenceRequired": [
+        "أدلة وتواقيع صحيحة لسياق staging/controlled-pilot والكتالوج والنسخة الفعلية",
+        "10–20 مشاركًا بموافقة واضحة وحق الانسحاب وتوزيع مبتدئ/سابق ومزيج دون تجنيد فعلي الآن",
+        "مقاييس نجاح مستهدفة محددة قبل جمع النتائج وموافقة تقليل البيانات",
+        "قرار مكتوب جاهز للتجربة بعد تحقق الشروط؛ لا يتحول نجاح QA إلى إذن"
+      ],
+      "status": "blocked-approval",
+      "closedForPublicLaunch": false,
+      "implementedAndRemaining": "البروتوكول جاهز فقط، وجميع تواقيعG01–G10 لسياق تجربة حقيقية غائبة.",
+      "evidence": "docs/06l4/Closed-Trial-Plan.md",
+      "l4ClosureEvidence": "docs/06l4/Gate-Closure-Report.md"
+    },
+    {
+      "id": "L16",
+      "priority": "P1",
+      "title": "تنفيذ التجربة وحل مشاكل القيمة الأساسية",
+      "ownerRole": "مسؤولة التجربة + UX + QA",
+      "dependencies": [
+        "L15"
+      ],
+      "gates": [],
+      "categories": [
+        "evidence",
+        "human",
+        "external",
+        "owner"
+      ],
+      "acceptanceEvidenceRequired": [
+        "اختبار فعلي لإعداد الملف والخطة وأول ورد والتسميع والمراجعة",
+        "قياس التفاعلات والأخطاء وفائدة الاقتراح وأسباب التوقف والعودة في اليوم 7 و14",
+        "حفظ أدلة بموافقة المشاركين وعرض المقام والبيانات المفقودة دون تعميم إحصائي",
+        "حل جميع المشكلات الحرجة والتحقق من الإصلاح ثم مراجعة القبول"
+      ],
+      "status": "not-executed",
+      "closedForPublicLaunch": false,
+      "implementedAndRemaining": "لا مشاركين أو نتائج بشرية. تنفيذ10–20بعد السلامة ثم حل الحرج قبل العام.",
+      "evidence": "docs/06l4/Closed-Trial-Plan.md",
+      "l4ClosureEvidence": "docs/06l4/Gate-Closure-Report.md"
+    },
+    {
+      "id": "L17",
+      "priority": "P1",
+      "title": "قرار الإطلاق العام الصريح بعد استيفاء الاثني عشر معيارًا",
+      "ownerRole": "مالكة المشروع + أصحاب الاعتماد",
+      "dependencies": [
+        "L15",
+        "L16"
+      ],
+      "gates": [
+        "G01",
+        "G02",
+        "G03",
+        "G04",
+        "G05",
+        "G06",
+        "G07",
+        "G08",
+        "G09",
+        "G10"
+      ],
+      "categories": [
+        "evidence",
+        "human",
+        "external",
+        "owner"
+      ],
+      "acceptanceEvidenceRequired": [
+        "رحلتا المبتدئ والسابق والورد تعمل فعليًا مع محتوى وجدولة معتمدين",
+        "ذاكرة من أحداث موثقة ولا فقد سجلات عند تحديث/استعادة ولا أعطال حرجة",
+        "هاتف/حاسوب/إتاحة وخصوصية/دعم مكتملة وتجربة بشرية فعلية عولج حرجها",
+        "تمرين استعادة الخدمة والتراجع ناجح واعتماد منفصل لسياق production وموافقة نشر صريحة",
+        "استخدام الوعد التسويقي فقط بعد إثبات الوظائف المضمنة فيه"
+      ],
+      "status": "not-ready",
+      "closedForPublicLaunch": false,
+      "implementedAndRemaining": "غير جاهز: اعتماد المحتوى والمنهج وسياق الإصدار والتشغيل والتجربة البشرية وموافقة النشر غير مكتملة.",
+      "evidence": "docs/06l4/Final-Report.md",
+      "l4ClosureEvidence": "docs/06l4/Gate-Closure-Report.md"
+    },
+    {
+      "id": "L18",
+      "priority": "P2",
+      "title": "تأجيل التحسينات التي لا تغلق قيمة الإطلاق الأساسية",
+      "ownerRole": "إدارة المنتج",
+      "dependencies": [],
+      "gates": [],
+      "categories": [
+        "owner"
+      ],
+      "acceptanceEvidenceRequired": [
+        "توضع خارج النطاق: مزامنة سحابية متعددة الأجهزة وتطبيقات أصلية ورسوم كثيرة وتخصيص أوزان وتنبؤ إتقان",
+        "لا إعلان ثبات متقدم أو إتقان قرآني دون تعريف تشغيلي ودليل مستقل",
+        "لا يمنع التأجيل عرض وصف دقيق لبيانات غير كافية في النسخة الأولى"
+      ],
+      "status": "deferred-nonblocking",
+      "closedForPublicLaunch": false,
+      "implementedAndRemaining": "لم تضف محادثة أو تحليل صوتي أو نموذج تنبؤ أو مزامنة أو مزايا ثانوية.",
+      "evidence": "docs/06l4/Final-Report.md",
+      "l4ClosureEvidence": "docs/06l4/Gate-Closure-Report.md"
+    }
+  ],
+  "officialDomain": "https://mulazama.sa",
+  "updatedAt": "2026-11-07T13:57:10.083352+00:00"
+}

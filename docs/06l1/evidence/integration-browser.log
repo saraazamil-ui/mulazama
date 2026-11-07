@@ -1,0 +1,140 @@
+[2m[WebServer] [22m(node:27240) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 13 tests using 1 worker
+
+(node:27244) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:27244) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 e2e/phase06l1.spec.ts:3:1 › L1WEB01 newcomer completes three steps in four actions, reopens home, and cannot start blocked sessions (1.5s)
+  ✓   2 e2e/phase06l1.spec.ts:46:1 › L1WEB02 prior hafiz declares a range in six actions, with no verified memorization or HME writes (1.4s)
+  ✘   3 e2e/phase06l1.spec.ts:115:1 › L1WEB03 companion reads the real history owner and refreshes corrected observations without multiplying attempts (850ms)
+(node:27304) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:27304) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   4 e2e/phase06l1.spec.ts:214:1 › L1WEB04 each setup step and policy page is accessible at 320px and keyboard operable (1.7s)
+(node:27356) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:27356) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   5 e2e/verification05b.spec.ts:6:1 › BWEB07 new profile, plan and nonadjacent declarations survive reopening without filling gaps (1.7s)
+  ✓   6 e2e/verification05b.spec.ts:79:1 › BWEB08 usual and today-only budgets persist as separate values (1.2s)
+  ✓   7 e2e/verification05b.spec.ts:118:1 › BWEB09 direct learning routes keep training, recall and reader controls out of the DOM (977ms)
+  ✓   8 e2e/verification05b.spec.ts:136:1 › BWEB10 direct service commands cannot bypass the Quran gate or create learning events (614ms)
+  ✓   9 e2e/verification05b.spec.ts:221:1 › BWEB11 forecast abstains and thirty untested parts do not acquire mastery (1.4s)
+  ✓  10 e2e/verification05b.spec.ts:245:1 › BWEB12 keyboard skip link, modal focus containment and Escape restore focus (1.5s)
+  ✓  11 e2e/verification05b.spec.ts:277:1 › BWEB13 invalid backup preserves preferences; confirmed full restore can be repeated (2.2s)
+  ✓  12 e2e/verification05b.spec.ts:344:1 › BWEB14 a reported mistake remains a local unverified draft after reopening (1.1s)
+  ✓  13 e2e/verification05b.spec.ts:374:1 › BWEB15 enlarged text, reduced motion and dark preference persist at 320px (1.4s)
+
+
+  1) e2e/phase06l1.spec.ts:115:1 › L1WEB03 companion reads the real history owner and refreshes corrected observations without multiplying attempts 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mtrue[39m
+    Received: [31mfalse[39m
+
+      74 |     } finally { store.close(); window.dispatchEvent(new Event('focus')); }
+      75 |   });
+    > 76 |   expect(receipt.originalEventsPreserved).toBe(true); expect(receipt.duplicateNoOp).toBe(true);
+         |                                                                                     ^
+      77 |   await expect(panel.locator('dt', { hasText: 'تصحيحات محفوظة' }).locator('..').locator('dd')).toHaveText('١');
+      78 |   await expect(panel.locator('dt', { hasText: 'محاولات لها نتيجة' }).locator('..').locator('dd')).toHaveText('١');
+      79 |   await page.reload();
+        at /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l1/e2e/phase06l1.spec.ts:76:85
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/phase06l1-L1WEB03-companio-79533-ithout-multiplying-attempts/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/phase06l1-L1WEB03-companio-79533-ithout-multiplying-attempts/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/phase06l1-L1WEB03-companio-79533-ithout-multiplying-attempts/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/phase06l1-L1WEB03-companio-79533-ithout-multiplying-attempts/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) e2e/phase06l1.spec.ts:214:1 › L1WEB04 each setup step and policy page is accessible at 320px and keyboard operable 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  -  1[39m
+    [31m+ Received  + 37[39m
+
+    [32m- Array [][39m
+    [31m+ Array [[39m
+    [31m+   Object {[39m
+    [31m+     "description": "Ensure all page content is contained by landmarks",[39m
+    [31m+     "help": "All page content should be contained by landmarks",[39m
+    [31m+     "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/region?application=playwright",[39m
+    [31m+     "id": "region",[39m
+    [31m+     "impact": "moderate",[39m
+    [31m+     "nodes": Array [[39m
+    [31m+       Object {[39m
+    [31m+         "all": Array [],[39m
+    [31m+         "any": Array [[39m
+    [31m+           Object {[39m
+    [31m+             "data": Object {[39m
+    [31m+               "isIframe": false,[39m
+    [31m+             },[39m
+    [31m+             "id": "region",[39m
+    [31m+             "impact": "moderate",[39m
+    [31m+             "message": "Some page content is not contained by landmarks",[39m
+    [31m+             "relatedNodes": Array [],[39m
+    [31m+           },[39m
+    [31m+         ],[39m
+    [31m+         "failureSummary": "Fix any of the following:[39m
+    [31m+   Some page content is not contained by landmarks",[39m
+    [31m+         "html": "<div class=\"prototype-strip\">إصدار هندسي 06-E1 · جلسات القرآن موقوفة حتى اعتماد المحتوى</div>",[39m
+    [31m+         "impact": "moderate",[39m
+    [31m+         "none": Array [],[39m
+    [31m+         "target": Array [[39m
+    [31m+           ".prototype-strip",[39m
+    [31m+         ],[39m
+    [31m+       },[39m
+    [31m+     ],[39m
+    [31m+     "tags": Array [[39m
+    [31m+       "cat.keyboard",[39m
+    [31m+       "best-practice",[39m
+    [31m+     ],[39m
+    [31m+   },[39m
+    [31m+ ][39m
+
+      89 |   await page.goto('/#S02');
+      90 |   for (const name of ['التالي: المحفوظات والهدف', 'التالي: الوقت المناسب', 'احفظ واذهب إلى الرئيسية']) {
+    > 91 |     expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
+         |                                                                   ^
+      92 |     await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+      93 |     const button = page.getByRole('button', { name }); await button.focus(); await expect(button).toBeFocused(); await page.keyboard.press('Enter');
+      94 |   }
+        at /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l1/e2e/phase06l1.spec.ts:91:67
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/phase06l1-L1WEB04-each-set-fd2ee-320px-and-keyboard-operable/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/phase06l1-L1WEB04-each-set-fd2ee-320px-and-keyboard-operable/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/phase06l1-L1WEB04-each-set-fd2ee-320px-and-keyboard-operable/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/phase06l1-L1WEB04-each-set-fd2ee-320px-and-keyboard-operable/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    e2e/phase06l1.spec.ts:115:1 › L1WEB03 companion reads the real history owner and refreshes corrected observations without multiplying attempts 
+    e2e/phase06l1.spec.ts:214:1 › L1WEB04 each setup step and policy page is accessible at 320px and keyboard operable 
+  11 passed (29.0s)
+
+To open last HTML report run:
+[36m[39m
+[36m  npx playwright show-report[39m
+[36m[39m

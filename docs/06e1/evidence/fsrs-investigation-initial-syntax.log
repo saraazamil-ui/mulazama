@@ -1,0 +1,17 @@
+file:///Users/saalzamil/Documents/ChatGPT/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%20%D8%A7%D9%84%D8%B9%D9%85%D8%B1/mulazama-06e1/scripts/fsrs-06e1-investigation.mjs:109
+await writeFile(resolve(out,'../Reference-Case-Matrix.md'),`# مصفوفة حالات FSRS — 06-E1\n\nالـ32 الأصلية لم تتغير؛ تليها8 حالات حدية مضافة. الجدول يعرض أول خطوة مخالفة، أوالخطوة الأولى للحالة المطابقة. [الملف الكامل](evidence/reference-case-matrix.json) يتضمن كل المدخلات وجميع النتائج المتوقعة والفعلية والفروق لكل خطوة، بما فيها60 و256 مراجعة. المتوقع صادر من upstream الأصلي المتحقق، ولا يأتي من تنفيذ مُلازَمَة.\n\nنتيجة إعادة الاختبار تخص ${after ? `المسبار \\`${probeModule}\\`` : 'المرشح round8 الموروث غير المنتخب؛ لا تعني تبديل المحرك'}.\n\n| الحالة | المدخلات | خطوة الفرق | المرجع | legacy الفعلي | الفروق actual−expected | السبب المثبت | إعادة الاختبار |\n|---|---|---:|---|---|---|---|---|\n${rows.join('\n')}\n`);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ^
+
+SyntaxError: Unexpected identifier '$'
+    at compileSourceTextModule (node:internal/modules/esm/utils:319:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:89:18)
+    at #translate (node:internal/modules/esm/loader:438:20)
+    at afterLoad (node:internal/modules/esm/loader:506:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:511:12)
+    at #getOrCreateModuleJobAfterResolve (node:internal/modules/esm/loader:564:36)
+    at afterResolve (node:internal/modules/esm/loader:611:52)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:617:12)
+    at node:internal/modules/esm/loader:636:32
+    at TracingChannel.tracePromise (node:diagnostics_channel:370:14)
+
+Node.js v24.22.1

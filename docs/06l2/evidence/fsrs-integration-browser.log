@@ -1,0 +1,15 @@
+
+Running 1 test using 1 worker
+
+(node:30391) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:30391) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 e2e/fsrs06l2.spec.ts:2:1 › L2FSRSWEB01 isolated encrypted IndexedDB copy/restore/rollback preserves events and both versioned projections (1.1s)
+
+  1 passed (2.0s)
+
+To open last HTML report run:
+[36m[39m
+[36m  npx playwright show-report[39m
+[36m[39m

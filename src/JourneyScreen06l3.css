@@ -1,0 +1,7 @@
+.learning-journey { min-width: 0; }
+.learning-journey .card { margin-block: 1rem; }
+.learning-journey fieldset { border: 0; margin: 1rem 0; padding: 0; min-width: 0; }
+.learning-journey legend { margin-block-end: .75rem; font-weight: 600; }
+.self-assessment-choices { display: grid; gap: .75rem; }
+.self-assessment-choices button { white-space: normal; text-align: start; height: auto; min-height: 48px; }
+.quran-session-text { font-family: MulazamaApproved, serif; font-size: 1.8rem; line-height: 2.5; overflow-wrap: anywhere; }

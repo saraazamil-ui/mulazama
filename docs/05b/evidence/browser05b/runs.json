@@ -1,0 +1,41 @@
+[
+  {
+    "id": "discovery",
+    "argv": [
+      "/tmp/mulazama-baseline/bin/node",
+      "node_modules/@playwright/test/cli.js",
+      "test",
+      "--list"
+    ],
+    "startedAt": "2026-11-05T13:03:40.421049+00:00",
+    "exitCode": 0,
+    "durationSeconds": 0.502,
+    "log": "discovery.log"
+  },
+  {
+    "id": "e2e",
+    "argv": [
+      "/tmp/mulazama-baseline/bin/node",
+      "node_modules/@playwright/test/cli.js",
+      "test"
+    ],
+    "startedAt": "2026-11-05T13:03:40.923500+00:00",
+    "exitCode": 1,
+    "durationSeconds": 0.44,
+    "log": "e2e.log"
+  },
+  {
+    "id": "offline",
+    "argv": [
+      "/tmp/mulazama-baseline/bin/node",
+      "node_modules/@playwright/test/cli.js",
+      "test",
+      "--config",
+      "playwright.offline.config.ts"
+    ],
+    "startedAt": "2026-11-05T13:03:41.363841+00:00",
+    "exitCode": 1,
+    "durationSeconds": 0.468,
+    "log": "offline.log"
+  }
+]

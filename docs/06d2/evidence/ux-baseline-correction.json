@@ -1,0 +1,17 @@
+{
+  "phase": "06-D1",
+  "measured": true,
+  "blankOnReopen": true,
+  "actions": [
+    "re-enter saved attempted words",
+    "correct known errors",
+    "re-enter saved completion",
+    "re-enter saved effort",
+    "re-enter saved gap confirmation",
+    "enter correction reason",
+    "submit correction"
+  ],
+  "count": 7,
+  "corrections": 1,
+  "limitations": "Component + real service/store, synthetic units; filling a field is one semantic action."
+}

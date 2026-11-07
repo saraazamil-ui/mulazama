@@ -1,0 +1,27 @@
+{
+  "checkedAt": "2026-11-05T13:10:24.180422+00:00",
+  "command": [
+    "/tmp/mulazama-baseline/bin/node",
+    "node_modules/@playwright/test/cli.js",
+    "test",
+    "--list"
+  ],
+  "exitCode": 0,
+  "testCasesDiscovered": 15,
+  "browserRuntimeExecuted": false,
+  "runtimeStatus": "Previous E2E attempts blocked by listen EPERM before first case; only discovery rerun after expectation update.",
+  "sourceSha256": {
+    "e2e/database.spec.ts": "173f0dd59451c4b5b927abbf1a12066090a697ebc4bab8f9ca5e34567f94a9d3",
+    "e2e/production.spec.ts": "bf7afed55583122ed50fa524bd61d351387a759e18504ae16a10a31e3191672c",
+    "e2e/verification05b.spec.ts": "589c98a29ca1f4c0622bc5d613ad6d0d89470697da28cdedc0fd97bf2e36420a",
+    "e2e-offline/shell.spec.ts": "7d9332232e14241d3e1c608f2b18beafe21ad3f7fa1857f36b420a30f7010813",
+    "playwright.config.ts": "2d2b2d637d53665d1bc71b73f81b360a3b1ae7a14a398ef02a3e5a53760bb2cb",
+    "playwright.offline.config.ts": "899a57c6816cc158b7f22e313efcc9cfb4e6a119622583337db8d804a2a1c279",
+    "src/persistence/browser-tests.ts": "e650517ca0c8d2c88b4b1f5c4d325942f35cb5029a3c2e15bc1440b96c0aff0d",
+    "src/persistence/browser-tests05b.ts": "86d13c872852b1bd8a2d7daf2641e76e8af9ea598b181ea16e773658ed457fe3",
+    "src/application/service.ts": "7c2e83c1f6bcc8dae3003b24d90652c1552b81fb52ab46eecce5bf286a95e8da",
+    "src/persistence/event-store.ts": "aed36f864bce33ef68d19e479c68ec00fa30e68614aae5907e0264e24c37aea9",
+    "src/release/access.ts": "4c8b543f98f3c9f3086ed77b4ae6899e5b49de4b37f4f917827682ddde90aff1",
+    "src/release/runtime.ts": "3c449ce10099722923408824413ef88f9a334f850a64a5711f9d7b3efde2c377"
+  }
+}

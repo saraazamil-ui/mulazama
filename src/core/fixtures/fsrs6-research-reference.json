@@ -1,0 +1,309 @@
+{
+  "metadata": {
+    "purpose": "Research arithmetic audit only; not an application implementation",
+    "audit_date": "2026-11-05",
+    "model": "FSRS-6",
+    "short_term": true,
+    "parameters": [
+      0.212,
+      1.2931,
+      2.3065,
+      8.2956,
+      6.4133,
+      0.8334,
+      3.0194,
+      0.001,
+      1.8722,
+      0.1666,
+      0.796,
+      1.4835,
+      0.0614,
+      0.2629,
+      1.6483,
+      0.6014,
+      1.8729,
+      0.5425,
+      0.0912,
+      0.0658,
+      0.1542
+    ],
+    "initial_state": {
+      "S": 5.0,
+      "D": 5.0
+    },
+    "initial_state_source": "Synthetic stipulated example, not inferred from participant data",
+    "state_bounds": {
+      "S_min": 0.001,
+      "S_max": 36500.0,
+      "D_min": 1.0,
+      "D_max": 10.0
+    },
+    "bounds_status": "Explicit research guards; exact current ts-fsrs bound constants were not retrieved",
+    "precision": "Full binary64 between calculations; no internal roundTo(8)",
+    "bitwise_library_comparison_performed": false,
+    "library_tag_parity_claimed": false,
+    "scope_limitations": "No human trial; validates arithmetic invariants only; no learning-effect claim",
+    "schedule_limitations": "I90/I95 are raw model intervals; no HME early-review, teacher-verification, time-budget, or maintenance caps applied",
+    "source_urls": [
+      "https://open-spaced-repetition.github.io/ts-fsrs/guide/model/fsrs-6",
+      "https://raw.githubusercontent.com/open-spaced-repetition/ts-fsrs/main/packages/fsrs/src/models/fsrs-6/algorithm.ts",
+      "https://github.com/open-spaced-repetition/go-fsrs/blob/main/weights.go"
+    ]
+  },
+  "factor": 0.9803464944134799,
+  "I95_to_I90_ratio": 0.40255869198999183,
+  "independent_arithmetic_check": {
+    "method": "Separately evaluated expanded formulas in JavaScript",
+    "values": {
+      "Sday5": 17.36151270957657,
+      "Dday5": 4.9902283692968386,
+      "Sday12": 1.6775146433759944,
+      "Dday12": 8.338550500731797,
+      "Rday42": 0.6375084334942914
+    },
+    "absolute_tolerance": 1e-12,
+    "library_comparison": false
+  },
+  "rows": [
+    {
+      "day": 5,
+      "event_type": "qualified_recall_with_corrective_exposure",
+      "grade": 3,
+      "elapsed_days": 5,
+      "state_before": {
+        "S": 5.0,
+        "D": 5.0
+      },
+      "R_before": 0.9,
+      "state_after": {
+        "S": 17.36151270957656,
+        "D": 4.9902283692968386
+      },
+      "I90_exact_days": 17.36151270957656,
+      "I90_rounded_days": 17,
+      "I95_exact_days": 6.989027847334758,
+      "I95_rounded_days": 7,
+      "R_next_day": 0.9915655662176011,
+      "R_zero_after": 1.0,
+      "observed_accuracy_percent": 100.0,
+      "observed_word_errors": 0,
+      "reference_words": 100,
+      "hints": 0,
+      "strict_recall_success": true,
+      "warning": "R_zero_after is the model reset after exposure; it is NOT a measured perfect performance."
+    },
+    {
+      "day": 12,
+      "event_type": "qualified_recall_with_corrective_exposure",
+      "grade": 1,
+      "elapsed_days": 7,
+      "state_before": {
+        "S": 17.36151270957656,
+        "D": 4.9902283692968386
+      },
+      "R_before": 0.9499349396731368,
+      "state_after": {
+        "S": 1.6775146433759942,
+        "D": 8.338550500731797
+      },
+      "I90_exact_days": 1.6775146433759942,
+      "I90_rounded_days": 2,
+      "I95_exact_days": 0.6752981006314978,
+      "I95_rounded_days": 1,
+      "R_next_day": 0.9314952998211273,
+      "R_zero_after": 1.0,
+      "observed_accuracy_percent": 98.0,
+      "observed_word_errors": 2,
+      "reference_words": 100,
+      "hints": 1,
+      "strict_recall_success": false,
+      "warning": "R_zero_after is the model reset after exposure; it is NOT a measured perfect performance."
+    },
+    {
+      "day": 42,
+      "event_type": "prediction_only_no_review",
+      "grade": null,
+      "elapsed_days": 30,
+      "state_before": {
+        "S": 1.6775146433759942,
+        "D": 8.338550500731797
+      },
+      "state_after": {
+        "S": 1.6775146433759942,
+        "D": 8.338550500731797
+      },
+      "R_before": 0.6375084334942913,
+      "R_next_day": 0.6344636259502663,
+      "I90_exact_days_from_last_review": 1.6775146433759942,
+      "I95_exact_days_from_last_review": 0.6752981006314978,
+      "R_zero_after": null,
+      "observed_accuracy_percent": null,
+      "hints": null,
+      "strict_recall_success": null,
+      "last_observed_accuracy_percent": 98.0,
+      "warning": "No event and no fabricated grade at day42; interval originates at day12, not day42."
+    }
+  ],
+  "initialization_all_grades": {
+    "1": {
+      "S": 0.212,
+      "D": 6.4133
+    },
+    "2": {
+      "S": 1.2931,
+      "D": 5.112170705601055
+    },
+    "3": {
+      "S": 2.3065,
+      "D": 2.118103970459015
+    },
+    "4": {
+      "S": 8.2956,
+      "D": 1.0
+    }
+  },
+  "same_day_all_grades_from_S5_D5": {
+    "1": {
+      "S": 1.5968179979869213,
+      "D": 8.341762369296838
+    },
+    "2": {
+      "S": 5.0,
+      "D": 6.665995369296838
+    },
+    "3": {
+      "S": 5.0,
+      "D": 4.9902283692968386
+    },
+    "4": {
+      "S": 8.129609559916114,
+      "D": 3.3144613692968385
+    }
+  },
+  "tests": {
+    "passed": 30,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "21 finite published default parameters",
+        "passed": true
+      },
+      {
+        "name": "R(0)=1",
+        "passed": true
+      },
+      {
+        "name": "R(S)=0.9 at five scales",
+        "passed": true
+      },
+      {
+        "name": "R monotonically declines with time",
+        "passed": true
+      },
+      {
+        "name": "Inverse matches probability",
+        "passed": true
+      },
+      {
+        "name": "Higher target gives shorter interval",
+        "passed": true
+      },
+      {
+        "name": "I90=S",
+        "passed": true
+      },
+      {
+        "name": "Clamp lower and upper",
+        "passed": true
+      },
+      {
+        "name": "Rounded interval at least one day",
+        "passed": true
+      },
+      {
+        "name": "Initialization G1",
+        "passed": true
+      },
+      {
+        "name": "Same-day G1 is finite and bounded",
+        "passed": true
+      },
+      {
+        "name": "Initialization G2",
+        "passed": true
+      },
+      {
+        "name": "Same-day G2 is finite and bounded",
+        "passed": true
+      },
+      {
+        "name": "Same-day success G2 cannot lower S",
+        "passed": true
+      },
+      {
+        "name": "Initialization G3",
+        "passed": true
+      },
+      {
+        "name": "Same-day G3 is finite and bounded",
+        "passed": true
+      },
+      {
+        "name": "Same-day success G3 cannot lower S",
+        "passed": true
+      },
+      {
+        "name": "Initialization G4",
+        "passed": true
+      },
+      {
+        "name": "Same-day G4 is finite and bounded",
+        "passed": true
+      },
+      {
+        "name": "Same-day success G4 cannot lower S",
+        "passed": true
+      },
+      {
+        "name": "D0 raw is not clamped for reversion",
+        "passed": true
+      },
+      {
+        "name": "240 boundary branch cases: finite bounded state",
+        "passed": true
+      },
+      {
+        "name": "Reject negative elapsed time",
+        "passed": true
+      },
+      {
+        "name": "Reject NaN",
+        "passed": true
+      },
+      {
+        "name": "Reject S=0",
+        "passed": true
+      },
+      {
+        "name": "Reject grade zero",
+        "passed": true
+      },
+      {
+        "name": "Reject target 1",
+        "passed": true
+      },
+      {
+        "name": "Reject target 0",
+        "passed": true
+      },
+      {
+        "name": "Absence creates neither event nor S/D update",
+        "passed": true
+      },
+      {
+        "name": "Independent JavaScript expanded arithmetic agrees within 1e-12",
+        "passed": true
+      }
+    ]
+  }
+}

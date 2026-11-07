@@ -1,0 +1,18 @@
+[2m[WebServer] [22m(node:23670) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:23672) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:23672) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 e2e/phase06e1.spec.ts:52:1 › E1WEB01 personal memory and corrected scheduling rebuild are deterministic on real encrypted IndexedDB without rewriting legacy history (1.2s)
+  ✓  2 e2e/phase06e1.spec.ts:83:1 › E1WEB02 corrected assessment and duplicate transport rebuild memory once at original review time (817ms)
+
+  2 passed (4.1s)
+
+To open last HTML report run:
+[36m[39m
+[36m  npx playwright show-report[39m
+[36m[39m

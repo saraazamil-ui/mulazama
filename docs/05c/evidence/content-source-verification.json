@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-05",
+  "scope": "Publisher documentation accessed through web retrieval; this is not a byte receipt or content approval.",
+  "sources": [
+    {
+      "url": "https://tanzil.net/download/",
+      "access": "Passed",
+      "claims": {
+        "version": "1.1",
+        "released": "February 2021",
+        "optionsPresented": [
+          "pause marks",
+          "sajdah",
+          "rub-el-hizb",
+          "tatweel",
+          "sequential tanweens",
+          "text type",
+          "output format"
+        ]
+      }
+    },
+    {
+      "url": "https://tanzil.net/docs/Text_License",
+      "access": "Passed",
+      "summary": "Publisher permits unchanged copies, requires Tanzil attribution and link, and preservation of its copyright notice. It labels the license Creative Commons Attribution 3.0. No font/audio/layout rights inferred."
+    },
+    {
+      "url": "https://tanzil.net/docs/medina_mushaf",
+      "access": "Passed",
+      "summary": "Publisher says its text is based on Medina Mushaf, narration Hafs. This does not uniquely identify a printed edition or tariq."
+    },
+    {
+      "url": "https://tanzil.net/docs/quran_metadata",
+      "access": "Passed",
+      "summary": "Lists metadata version 1.0 and XML/JS downloads; includes surah, juz, hizb/quarters, page, manzil, ruku, sajdah information. No downloaded metadata bytes or separately resolved license."
+    },
+    {
+      "url": "https://tanzil.net/res/text/metadata/quran-data.xml",
+      "access": "Blocked",
+      "reason": "Web retrieval tool reports URL not accessible"
+    },
+    {
+      "url": "https://qurancomplex.gov.sa/quran-dev/",
+      "access": "Blocked",
+      "attempts": 2,
+      "reason": "Web retrieval timeout; do not assert current package hash or license from prior stage alone."
+    }
+  ],
+  "attempts": [
+    {
+      "transport": "curl",
+      "url": "https://tanzil.net/download/",
+      "command": "curl --connect-timeout 5 --max-time 10 --fail --location https://tanzil.net/download/ --output /tmp/mulazama-tanzil-download-form.html",
+      "result": "Blocked",
+      "exitCode": 6,
+      "reason": "Could not resolve host tanzil.net",
+      "log": "docs/05c/evidence/tanzil-download-attempt.log"
+    },
+    {
+      "transport": "node_repl fetch",
+      "url": "https://tanzil.net/download/",
+      "requestedAbortMs": 20000,
+      "toolTimeoutMs": 25000,
+      "result": "Blocked",
+      "reason": "Tool invocation remained pending and was aborted after 734.8 seconds; no HTTP status, response bytes, or written file returned. Timeout controls did not establish a completed request."
+    }
+  ],
+  "downloadedQuranBytes": false,
+  "scientificApproval": "not-granted"
+}

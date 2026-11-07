@@ -1,0 +1,83 @@
+{
+  "sourceDelivery": "MULAZAMA-Phase-06L3-Engineering-Delivery.zip",
+  "sourceDeliverySHA256": "af991868d26e8028c63d6c9071779eac91a73df4ea7870fae084e5d7efd4aa8d",
+  "sourceDigest": "99db11ff0766b099f6f10b8e66ac250717f492926ad2deab33f3699fdfd54e54",
+  "buildZipSHA256": "80ef360bfa17da8f5433ee9ca6479af44d9b7523bdd42482a453c4f1e49da5b1",
+  "files": [
+    {
+      "path": "dist/assets/adaptive-scheduling-DY940igr.js",
+      "bytes": 2846,
+      "sha256": "f94cd1a2a90f59e981b321e23c2501fa8d9d800cb9adc2e5be4b9c110ce6bac0"
+    },
+    {
+      "path": "dist/assets/index-CA2MWxI6.js",
+      "bytes": 448012,
+      "sha256": "8efb226b3785b3c4a5e6657f4b3eb00dc912243c6c99f1532b7e3515e95735cb"
+    },
+    {
+      "path": "dist/assets/index-CeozoC8Z.css",
+      "bytes": 28804,
+      "sha256": "98e9785cd83a26e2fb7c527152c633ee73aee3f76bf534bed15ea838ef8f9efb"
+    },
+    {
+      "path": "dist/assets/personal-memory-DlaBb9d3.js",
+      "bytes": 5957,
+      "sha256": "79402321523abfd9e85ec4f68b3d98eb6d65c499ce8202394dd405a16c4d7ea2"
+    },
+    {
+      "path": "dist/icon-192.png",
+      "bytes": 654,
+      "sha256": "bc569b22ff095dced3b412a6f236c2beaf6e6c28446f7d2117dbb70f48118557"
+    },
+    {
+      "path": "dist/icon-512.png",
+      "bytes": 2590,
+      "sha256": "98ac3f3c44aa69aa27b80d094533e2eb9c349de86f2f5776721810697871ff5b"
+    },
+    {
+      "path": "dist/icon.svg",
+      "bytes": 275,
+      "sha256": "f2378d6739d0872ad4676b3bc656a51eadd007a15d127139cde338a6dd93a4e9"
+    },
+    {
+      "path": "dist/index.html",
+      "bytes": 837,
+      "sha256": "4b3f7be56d45933c869f05982bb51a91eaf9d424b82a24c4869679a1678ee83c"
+    },
+    {
+      "path": "dist/manifest.webmanifest",
+      "bytes": 515,
+      "sha256": "7cfdbb1371fcf267d6b9a1c34b6aa168a449bb825b684c4427b167006594798d"
+    },
+    {
+      "path": "dist/offline-assets.json",
+      "bytes": 404,
+      "sha256": "7a0ae3be8822701a24b3357fb887f3c05414ce1c9c602259897a10e46c1124df"
+    },
+    {
+      "path": "dist/policies.css",
+      "bytes": 543,
+      "sha256": "34ca8fb6acd8d870c7fcd1f5dd3dae70094d9364ad3a763a5290394ce58e2eb7"
+    },
+    {
+      "path": "dist/privacy.html",
+      "bytes": 3709,
+      "sha256": "d963ac26ac61f0cfd209b9d6d8cd77c123f3f48aed31d56cc01f27b3354cc0e9"
+    },
+    {
+      "path": "dist/support.html",
+      "bytes": 2792,
+      "sha256": "c77b597f85ad965e066da754c51c87640d5f161a36d1e8a14b650b1dfc125565"
+    },
+    {
+      "path": "dist/sw.js",
+      "bytes": 1423,
+      "sha256": "b641ded010d0b8fd44c47458664418398904d946e555be376b5a2e9725304560"
+    },
+    {
+      "path": "dist/terms.html",
+      "bytes": 2218,
+      "sha256": "71f161c2e4f0d2c9ec8c770468567bbee9cb6569f17cabae03617ca720872388"
+    }
+  ]
+}

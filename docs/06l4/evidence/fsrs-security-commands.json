@@ -1,0 +1,72 @@
+[
+  {
+    "name": "fsrs-reference-authentication",
+    "command": [
+      "node",
+      "scripts/verify-fsrs-reference-06e1.mjs"
+    ],
+    "startedAt": "2026-11-07T13:35:22.665371+00:00",
+    "exitCode": 0,
+    "seconds": 0.208
+  },
+  {
+    "name": "fsrs-conformance",
+    "command": [
+      "node",
+      "scripts/fsrs-06e1-investigation.mjs",
+      "--probe-module",
+      "src/conformance/fsrs-reference-probe.ts",
+      "--output-dir",
+      "docs/06l4/evidence/fsrs"
+    ],
+    "startedAt": "2026-11-07T13:35:22.874235+00:00",
+    "exitCode": 0,
+    "seconds": 3.234
+  },
+  {
+    "name": "fsrs-backward",
+    "command": [
+      "node",
+      "scripts/fsrs-backward06l3.mjs",
+      "--output",
+      "docs/06l4/evidence/fsrs-backward-reader.json"
+    ],
+    "startedAt": "2026-11-07T13:35:26.109187+00:00",
+    "exitCode": 0,
+    "seconds": 0.571
+  },
+  {
+    "name": "fsrs-data-targeted",
+    "command": [
+      "node",
+      "node_modules/vitest/vitest.mjs",
+      "run",
+      "src/application/fsrs-version06l3.test.mjs",
+      "src/application/fsrs-integration06l2.test.mjs",
+      "src/application/journey-security06l3.test.mjs",
+      "src/application/composite-application.test.ts",
+      "src/application/history06d2.test.ts",
+      "src/application/history06e1.test.ts",
+      "src/persistence/backup.test.ts",
+      "src/persistence/backup05b.test.ts",
+      "src/persistence/event-store.test.ts",
+      "src/persistence/event-store05b.test.ts",
+      "--maxWorkers=2",
+      "--reporter=json",
+      "--outputFile=docs/06l4/evidence/fsrs-data-targeted.json"
+    ],
+    "startedAt": "2026-11-07T13:35:26.680799+00:00",
+    "exitCode": 0,
+    "seconds": 6.846
+  },
+  {
+    "name": "security-static",
+    "command": [
+      "node",
+      "scripts/security-check.mjs"
+    ],
+    "startedAt": "2026-11-07T13:35:33.527470+00:00",
+    "exitCode": 0,
+    "seconds": 0.052
+  }
+]

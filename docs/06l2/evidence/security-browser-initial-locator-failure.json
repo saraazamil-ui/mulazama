@@ -1,0 +1,182 @@
+{
+  "config": {
+    "configFile": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l2/playwright.config.ts",
+    "rootDir": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l2/e2e",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l2/test-results-security06l2",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l2/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 1,
+    "webServer": {
+      "command": "node node_modules/vite/bin/vite.js --host 127.0.0.1 --port 4173 --strictPort",
+      "url": "http://127.0.0.1:4173",
+      "reuseExistingServer": true,
+      "timeout": 30000
+    }
+  },
+  "suites": [
+    {
+      "title": "security06l2.spec.ts",
+      "file": "security06l2.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "L2SECWEB01 a stale second tab cannot resurrect the former profile after confirmed deletion",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 805,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T11:48:27.560Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "stale-tab-reset-receipt.json",
+                      "contentType": "application/json",
+                      "body": "eyJzZXBhcmF0ZUJyb3dzZXJQYWdlcyI6MiwiZm9ybWVyUHJvZmlsZU5vdFJlc3VycmVjdGVkIjp0cnVlLCJzdGFsZVdyaXRlUmVqZWN0ZWQiOiJSRVZJU0lPTl9DT05GTElDVCIsImdhdGVzU3RpbGxCbG9ja2VkIjoiUkVMRUFTRV9HQVRFU19CTE9DS0VEIiwib3JpZ2luYWxFdmVudHMiOjMsInBvc3RSZXNldEV2ZW50cyI6MSwicG9zdFJlamVjdGlvbkV2ZW50cyI6MSwidGVtcG9yYXJ5QnJvd3NlckNvbnRleHQiOnRydWV9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "73f591a37655d022ba53-3987ed5fbc226d7a633c",
+          "file": "security06l2.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "L2SECWEB02 a report entered through the UI remains inert text after IndexedDB reopen",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 30058,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l2/e2e/security06l2.spec.ts",
+                        "column": 67,
+                        "line": 75
+                      },
+                      "message": "Error: locator.fill: Test ended.\nCall log:\n\u001b[2m  - waiting for getByLabel('الموضع إن كنت تعرفه', { exact: true })\u001b[22m\n\n\n  73 |     await expect(page.locator('main[data-screen=\"S12\"]')).toBeVisible();\n  74 |     // Use only ordinary UI commands; this test never replaces a database.\n> 75 |     await page.getByLabel('الموضع إن كنت تعرفه', { exact: true }).fill(text);\n     |                                                                   ^\n  76 |     await page.getByLabel('ملاحظة اختيارية', { exact: true }).fill(text);\n  77 |     await page.getByRole('button', { name: 'احفظ البلاغ', exact: true }).click();\n  78 |     await expect(page.locator('.mistake-item')).toHaveCount(1);\n    at /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l2/e2e/security06l2.spec.ts:75:67"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T11:48:28.641Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l2/test-results-security06l2/security06l2-L2SECWEB02-a--e988f-text-after-IndexedDB-reopen/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l2/test-results-security06l2/security06l2-L2SECWEB02-a--e988f-text-after-IndexedDB-reopen/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l2/test-results-security06l2/security06l2-L2SECWEB02-a--e988f-text-after-IndexedDB-reopen/trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "73f591a37655d022ba53-5e66713aff430c87a48f",
+          "file": "security06l2.spec.ts",
+          "line": 148,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-07T11:48:26.738Z",
+    "duration": 46399.161,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

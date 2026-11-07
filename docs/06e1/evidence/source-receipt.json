@@ -1,0 +1,9 @@
+{
+  "source": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/MULAZAMA-Phase-06D2-Engineering-Delivery.zip",
+  "sha256": "a0ecc2f24cad9e5e73b53cd745ee9883f3d915c2f7e7424f93dff539fa7896c7",
+  "crcVerified": true,
+  "manifestEntriesVerified": 567,
+  "workingCopy": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06e1",
+  "checkedAt": "2026-11-07T09:55:49.908179+00:00",
+  "dependencies": "Copied existing installation after exact manifest and lock comparison; not a clean network installation"
+}

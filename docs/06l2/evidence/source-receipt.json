@@ -1,0 +1,15 @@
+{
+  "phase": "06-L2",
+  "createdAt": "2026-11-07T11:43:18.402262+00:00",
+  "baselineZip": "MULAZAMA-Phase-06L1-Engineering-Delivery.zip",
+  "baselineZipSHA256": "b0e6ab8ec3f99461809b9bd05ebf2ac8ddc6e5dad3c0c90affea4ae516b9b94b",
+  "baselineManifestVerified": 782,
+  "crcVerified": true,
+  "bundle": "MULAZAMA-Phase-06L1-Source-History.bundle",
+  "bundleSHA256": "5e5ca5d525271b2b0910743d72cbbea7cc6d9653e2c144903b4494db1fd8fcb8",
+  "bundleCommit": "0016eac2d817a0b10614e2044028d6a49fcd8b0d",
+  "allArchiveFilesMatchGitCheckout": true,
+  "workingCopy": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l2",
+  "branch": "release/06-l2",
+  "dependencySetup": "copied existing node_modules after exact package/lock equality; no new network install"
+}

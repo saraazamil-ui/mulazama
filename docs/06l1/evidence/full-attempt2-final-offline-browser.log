@@ -1,0 +1,47 @@
+[2m[WebServer] [22m(node:28341) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 4 tests using 1 worker
+
+(node:28343) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:28343) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 e2e-offline/foundation06e1.spec.ts:42:1 › 06-E1 personal memory and corrected core reproduce offline in a reopened encrypted store while the built app keeps sessions blocked (1.1s)
+  ✓  2 e2e-offline/history06d2.spec.ts:60:1 › 06-D2 encrypted aggregate history and correction survive genuine offline reload without opening a blocked session (999ms)
+  ✘  3 e2e-offline/launch06l1.spec.ts:2:1 › L1OFF01 first setup is committed offline and survives reload; policy assets remain available (5.7s)
+(node:28379) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:28379) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  4 e2e-offline/shell.spec.ts:2:1 › versioned app shell and existing IndexedDB state reopen with all network disabled (752ms)
+
+
+  1) e2e-offline/launch06l1.spec.ts:2:1 › L1OFF01 first setup is committed offline and survives reload; policy assets remain available 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: getByRole('heading', { name: 'المساعدة والدعم', exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 5000ms[22m
+    [2m  - waiting for getByRole('heading', { name: 'المساعدة والدعم', exact: true })[22m
+
+
+      19 |   await expect(page.getByRole('progressbar')).toHaveCount(0);
+      20 |   await page.goto('/support.html');
+    > 21 |   await expect(page.getByRole('heading', { name: 'المساعدة والدعم', exact: true })).toBeVisible();
+         |                                                                                     ^
+      22 |   await page.goto('/#S08');
+      23 |   await expect(page.getByRole('heading', { name: 'النص المعتمد ينتظر الإضافة' })).toBeVisible();
+      24 |   await info.attach('offline-setup.json', { body: JSON.stringify({ setupCommittedWhileOffline: true, declaredRangePreserved: true, policiesCached: true, sessionsBlocked: true }), contentType: 'application/json' });
+        at /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l1/e2e-offline/launch06l1.spec.ts:21:85
+
+    Error Context: test-results-offline/launch06l1-L1OFF01-first-s-4e533-icy-assets-remain-available/error-context.md
+
+  1 failed
+    e2e-offline/launch06l1.spec.ts:2:1 › L1OFF01 first setup is committed offline and survives reload; policy assets remain available 
+  3 passed (11.8s)

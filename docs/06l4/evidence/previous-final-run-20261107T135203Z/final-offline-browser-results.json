@@ -1,0 +1,260 @@
+{
+  "config": {
+    "configFile": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l4/playwright.offline.config.ts",
+    "rootDir": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l4/e2e-offline",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results-offline/offline-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l4/test-results-offline",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l4/e2e-offline",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 1,
+    "webServer": {
+      "command": "node node_modules/vite/bin/vite.js preview --host 127.0.0.1 --port 4174 --strictPort",
+      "url": "http://127.0.0.1:4174",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "foundation06e1.spec.ts",
+      "file": "foundation06e1.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "06-E1 personal memory and corrected core reproduce offline in a reopened encrypted store while the built app keeps sessions blocked",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 809,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T13:49:11.599Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "E1-offline-memory-receipt",
+                      "contentType": "application/json",
+                      "body": "eyJuZXR3b3JrRGlzYWJsZWQiOnRydWUsInJhd0V2ZW50cyI6NywicmF3VW5jaGFuZ2VkIjp0cnVlLCJkZXRlcm1pbmlzdGljTWVtb3J5QW5kQ29ycmVjdGVkQ29yZSI6dHJ1ZSwiZXhlY3V0YWJsZSI6ZmFsc2UsIm1pZ3JhdGVkIjpmYWxzZSwiaGFybmVzcyI6InNvdXJjZSBtb2R1bGUgY29tcGlsZWQgaW50byB0ZXN0IG9ubHk7IGFjdHVhbCBidWlsdCBhcHAgc2hlbGwgYW5kIEluZGV4ZWREQiByZW9wZW5lZCBvZmZsaW5lIn0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2b5f2eca33f919893eed-e2bae4a0aba73888193f",
+          "file": "foundation06e1.spec.ts",
+          "line": 42,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "history06d2.spec.ts",
+      "file": "history06d2.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "06-D2 encrypted aggregate history and correction survive genuine offline reload without opening a blocked session",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1115,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T13:49:13.058Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "offline-history-receipt.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJzeW50aGV0aWNEYXRhT25seSI6IHRydWUsCiAgIm5ldHdvcmtEaXNhYmxlZCI6IHRydWUsCiAgImluaXRpYWxFdmVudHMiOiA3LAogICJjb3JyZWN0ZWRFdmVudHMiOiA4LAogICJmaW5hbEV2ZW50cyI6IDksCiAgInByaW9yRXZlbnRzVW5jaGFuZ2VkIjogdHJ1ZSwKICAicmVwZWF0ZWRDb3JyZWN0aW9uQ291bnRlZE9uY2UiOiB0cnVlLAogICJibG9ja2VkU2Vzc2lvbiI6IHRydWUKfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4d695e6130e08b49ed22-e01daa1e7dc5aa805082",
+          "file": "history06d2.spec.ts",
+          "line": 60,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "launch06l1.spec.ts",
+      "file": "launch06l1.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "L1OFF01 first setup is committed offline and survives reload; policy assets remain available",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 791,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T13:49:14.202Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "offline-setup.json",
+                      "contentType": "application/json",
+                      "body": "eyJzZXR1cENvbW1pdHRlZFdoaWxlT2ZmbGluZSI6dHJ1ZSwiZGVjbGFyZWRSYW5nZVByZXNlcnZlZCI6dHJ1ZSwicG9saWNpZXNDYWNoZWQiOnRydWUsInNlc3Npb25zQmxvY2tlZCI6dHJ1ZX0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "691fa4c8674dd5dcb15b-3ec01a73827efd8ce4e6",
+          "file": "launch06l1.spec.ts",
+          "line": 2,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "shell.spec.ts",
+      "file": "shell.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "versioned app shell and existing IndexedDB state reopen with all network disabled",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 639,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T13:49:15.006Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3420664513cb0bae123e-975d154f77d5cd679c37",
+          "file": "shell.spec.ts",
+          "line": 2,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-07T13:49:10.888Z",
+    "duration": 4990.127,
+    "expected": 4,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

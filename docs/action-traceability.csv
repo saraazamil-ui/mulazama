@@ -1,0 +1,69 @@
+Screen ID,Component ID,Requirement ID,Contract ID,Action/Event,Acceptance Criteria,Test Case,Implementation Status
+S01,S01-welcome,R01 R02,C01 C11,بدء إعداد التجربة,AC01 AC02,NAV-START,تنقل إلى S02؛ النص الفعلي غير متاح
+S01,S01-welcome,R23,C12,فتح ملف حالة سابق,AC23,DATA-IMPORT,تنقل إلى S18؛ ملف تجريبي غير مشفر
+S01,S01-welcome,R24,C11 C12,المصدر والخصوصية,AC24,NAV-PRIVACY,معلومات وحدود محلية
+S02,S02-plan,R02 R03,C02,اختيار الفئة والهدف والبداية والوقت والأيام,AC02 AC03,FORM-PLAN,مدخلات ذات تحقق؛ لا محاولة تعلم
+S02,S02-plan,R03 R26,C02 C04,معاينة ثم اعتماد أو رجوع للتعديل,AC03 AC26,PLAN-CONFIRM,نسخة إعداد بعد تأكيد؛ لا إعادة تخطيط HME
+S02,S02-plan,R02 R21,C01,التصفح دون خطة نشطة,AC-S02,NAV-BROWSE,قارئ بحالة محتوى غير متاح
+S03,S03-ranges,R04,C01 C02 C03,اختيار سور كاملة وإضافة أكثر من نطاق غير متجاور,AC04,RANGE-SURAH,اتحاد تداخل المحور نفسه؛ لا ملء الفجوات
+S03,S03-ranges,R04,C01 C02 C03,اختيار أجزاء كاملة وإضافتها,AC04,RANGE-JUZ,تصريح غير مختبر
+S03,S03-ranges,R01 R04,C01 C03,إضافة صفحات وهوية الطبعة,AC04 AC-S03,RANGE-PAGE,إدخال معلق بخريطة تجريبية؛ لا تحويل لآيات
+S03,S03-ranges,R01 R04,C01 C03,إضافة آيات ضمن سورة,AC04 AC-S03,RANGE-AYAH,فحص عددي فقط؛ حدود المحتوى تنتظر C01
+S03,S03-ranges,R04,C02 C03,إزالة نطاق من التصريح,AC04,RANGE-REMOVE,يغير التصريح فقط
+S03,S03-ranges,R04 R05,C03,تصريح كامل/متابعة فحص/إكمال لاحقًا,AC04 AC05,RANGE-ALL-LATER,لا نجاح من اكتمال التصريح
+S04,S04-diagnostic,R05,C03 C05 C07,ابدأ المقطع التمثيلي,AC05,DIAGNOSTIC-START,العينة مثال واجهة؛ النتيجة لا تعمم
+S04,S04-diagnostic,R05 R16,C03,أكمل الفحص لاحقًا أو عدل المعلن,AC05 AC16,DIAGNOSTIC-LATER,تنقل مع بقاء التصريحات
+S05,S05-today,R06,C04 C05,ابدأ المهمة التالية,AC06,TODAY-PRIORITY,المهمة من ترتيب fixture؛ لا ترتيب مستنتج من البطاقة
+S05,S05-today,R22,C05,استأنف جلستك,AC22,TODAY-RESUME,يفتح آخر حالة مؤكدة S10
+S05,S05-today,R06 R13,C04,لماذا هذه المهمة؟ وتفاصيل المسار,AC06 AC13,TODAY-REASON,سبب صريح مع وسم المثال
+S05,S05-today,R16 R17 R19,C03 C09 C10,عودة/تقدم/توقع,AC16 AC17 AC19,TODAY-DESTINATIONS,تنقل بلا وقائع تعلم
+S06,S06-capacity,R07 R13,C04,اليوم/غدًا/عرض المؤجل,AC07 AC13,PLAN-DEFERRED,policy/original/planned منفصلة في العرض
+S06,S06-capacity,R03 R26,C02 C04,معاينة وقت واعتماد المعتاد أو إلغاء,AC03 AC26,PLAN-TIME,تعديل الإعداد المعتاد مستقل عن ميزانية اليوم؛ الإلغاء لا يكتب
+S06,S06-capacity,R07 R26,C02 C04,معاينة وقت هذا اليوم فقط ثم اعتماد أو إلغاء,AC07 AC26 AC-S06,PLAN-TODAY-TIME,todayBudget مؤرخة؛ الوقت والأيام المعتادة والسجل باقية؛ صفر يبقي الالتزامات مؤجلة؛ لا حساب مخطط أو احتياط
+S06,S06-capacity,R07 R15,C04,عرض العجز والخطة العادية,AC07 AC15,PLAN-CAPACITY,حالة اختبار لا حساب قدرة حقيقي
+S06,S06-capacity,R13,C04 C05 C07,جرّب مهمة محددة,AC13,PLAN-TASK,جلسة تمثيلية؛ لا تغيير استحقاق فعلي
+S07,S07-training,R08,C01 C05 C14,تهيئة/استماع/نظر/تدريب,AC08,TRAIN-MODES,تبديل وضع العرض دون تعرض قرآن
+S07,S07-training,R01 R08,C01 C14,استمع/اقرأ المعنى,AC08 AC21,TRAIN-UNAVAILABLE,رسالة عدم إتاحة؛ لا تشغيل أو تفسير مصطنع
+S07,S07-training,R09 R22,C06,أنهيت تكرارًا,AC09 AC22,TRAIN-REPEAT,إقرار محلي، أمر ثابت ومنع ضغط متسارع
+S07,S07-training,R10,C05 C07,انتقل إلى تجربة التسميع,AC10,TRAIN-RECALL,محاولة تمثيلية منفصلة عن العداد
+S07,S07-training,R08 R22,C05,إيقاف/استراحة,AC22,TRAIN-PAUSE,نقطة استمرار مؤكدة بلا نجاح
+S07,S07-training,R08 R26,C04 C11,صعب هذا المقدار,AC08 AC26,TRAIN-SPLIT-UNAVAILABLE,تعذر واضح؛ لا حدود جديدة مختلقة
+S08,S08-recall,R10,C05 C07,بدء التسميع اليدوي,AC10 AC24,RECALL-START,معرف محاولة وفرصة وعنقود؛ لا ميكروفون
+S08,S08-recall,R10 R22,C05 C07,طلب تلميح أو كشف النص,AC10 AC11,RECALL-HINT,حفظ المساعدة؛ النص غير متاح
+S08,S08-recall,R12,C08,علامة خطأ ومحرر تفاصيل,AC12 AC-S12,RECALL-MISTAKE,مسودة/بلاغ؛ لا موقع قرآني مختلق
+S08,S08-recall,R11,C07,أنهيت التسميع,AC11,RECALL-FINISH,انتقال للتقييم؛ لا نجاح تلقائي
+S08,S08-recall,R11 R22,C07,لم أستطع الإكمال,AC11 AC22,RECALL-FAILURE,memory_failure مصرح؛ لا حكم على الباقي
+S08,S08-recall,R22,C05,إيقاف مؤقت,AC22,RECALL-PAUSE,الانقطاع لا يمحو المساعدة
+S09,S09-assessment,R11 R12,C07 C08,تحديد اكتمال/أخطاء/جهد أو مجهول,AC11 AC12,ASSESS-INPUT,قيم صريحة؛ الافتراضي unknown
+S09,S09-assessment,R11 R22,C07,احفظ التقييم,AC11 AC22,ASSESS-SAVE,تقرير V1 وتعارض محفوظ؛ النتيجة الفعالة null
+S09,S09-assessment,R11 R22,C05 C07,إلغاء التقييم,AC11 AC22,ASSESS-CANCEL,لا تقييم جديد؛ استئناف ممكن
+S09,S09-assessment,R25,C07 C11,صحح تقييمي مع السبب,AC25,ASSESS-CORRECT,أصل وتصحيح؛ العدد لا يزيد
+S09,S09-assessment,R25,C07,قراءة سجل التصحيحات,AC25,ASSESS-HISTORY,قراءة لا تعلم جديد
+S10,S10-resume,R22,C05,استأنف التدريب أو التقييم,AC22,RESUME-SAVED,آخر عدد ومرحلة مؤكدة
+S10,S10-resume,R10 R22,C05 C07,ابدأ محاولة جديدة بعد التسميع المنقطع,AC10 AC22,RESUME-NEW,السابقة incomplete؛ لا وصل زمني مصطنع
+S10,S10-resume,R11 R22,C05 C07,كنت قد أنهيت التسميع,AC11 AC22,RESUME-DECLARED-END,تقييم صريح مع عدم تحقق التوقيت
+S10,S10-resume,R22,C05,أنهِ الجلسة الآن,AC22,RESUME-END,لا إغلاق واجب/نجاح من إنهاء الجلسة
+S11,S11-maintenance,R14 R15,C04 C07 C09,جرّب التعاهد أو المتصل,AC14 AC15,MAINTENANCE-START,نوع مهمة مستقل؛ نتائج الربط غير محسوبة
+S11,S11-maintenance,R07 R15,C04,إعادة توزيع الدورة/العجز,AC07 AC15,MAINTENANCE-CAPACITY,تنقل إلى S06؛ 900/30/20 حالة مرجعية
+S12,S12-mistakes,R12,C08,أضف مرصودًا/مشتبهًا ومجهول الموضع,AC12,MISTAKE-ADD,nullable؛ لا Again من الاشتباه
+S12,S12-mistakes,R12 R25,C08,تصفية وتصحيح ونفي بلاغ,AC12 AC25,MISTAKE-CORRECT,التصحيح محفوظ مع الأصل
+S12,S12-mistakes,R12 R14,C04 C07 C08,جرّب المعالجة وانتظر إعادة الاختبار,AC12 AC14,MISTAKE-REPAIR,awaiting_retest لا إثبات علاج
+S13,S13-recovery,R16,C03,تصريح المراجعة الخارجية,AC16,RECOVERY-DECLARE,تصريح عام لا مراجعات مؤرخة
+S13,S13-recovery,R03 R16,C02 C03 C07,تعديل الوقت وبدء خطوة/لاحقًا,AC03 AC16,RECOVERY-START,لا تصفير ولا تعميم عينة
+S14,S14-progress,R17,C09,قراءة المؤشرات/اختيار فترة/شرح الحالات,AC17,PROGRESS-UNKNOWN,لا رقم إتقان أو جمع متداخل
+S14,S14-progress,R18,C01 C09,فتح جزء من الثلاثين,AC18,PROGRESS-30-PARTS,زر مسمى إلى S15؛ لا لون وحده
+S15,S15-detail,R14 R18,C01 C04 C07 C09,مراجعة نطاق/فحص رابط/تفاصيل المحاولات,AC14 AC18,DETAIL-REVIEW,مراجع عرض؛ الخرائط والأدلة الإنتاجية غير متاحة
+S15,S15-detail,R01 R18,C01,افتح في المصحف,AC01 AC18,DETAIL-READER,يحافظ على غياب نص غير معتمد
+S16,S16-reader,R01 R29,C01 C11,اختيار مرجع وتكبير/تصغير,AC01 AC29,READER-CONTROLS,تجربة حدود العرض؛ لا مصحف فعلي
+S16,S16-reader,R01 R08,C01 C14,صوت/تفسير/تعذر المحتوى,AC01 AC08,READER-UNAVAILABLE,امتناع معلوم المصدر
+S17,S17-settings,R03 R04 R26,C02 C11,تعديل خطة/محفوظ,AC03 AC04 AC26,SETTINGS-PLAN,نفس الشاشات والإعدادات
+S17,S17-settings,R29,C11,حجم نص/داكن/تقليل حركة,AC29,SETTINGS-ACCESS,تفضيلات عرض دون دليل تعلم
+S17,S17-settings,R20 R24,C13 C14,تذكير وخصوصية وغياب التسجيل,AC20 AC24,SETTINGS-REMINDER,تفضيل فقط؛ لا إذن أو إشعار مزعوم
+S18,S18-data,R23 R24,C12,تصدير حالة تجريبية,AC23 AC24,DATA-EXPORT,JSON غير مشفر؛ ليس نسخة إنتاجية
+S18,S18-data,R23,C12,اختيار ملف وفحصه,AC23,DATA-INSPECT,بنية/نسخة/حجم/علاقات قبل أي كتابة
+S18,S18-data,R23,C12,معاينة ثم تأكيد استبدال أو إلغاء,AC23,DATA-REPLACE,لا دمج؛ الحفظ قبل تغيير الحالة
+S18,S18-data,R28,C12,طلب حذف وإلغاء أو تأكيد,AC28,DATA-RESET,حذف سجل النموذج وهوية جديدة؛ النسخ الخارجية باقية
+S19,S19-forecast,R19,C10,آفاق 1/3/6/12 شهرًا وسبب الامتناع,AC19 AC-F01,FORECAST-ABSTAIN,null؛ لا موعد شخصي أو إتقان
+S19,S19-forecast,R03 R19 R26,C10 C02,جرّب وقتًا؛ اعتماد منفصل أو رجوع,AC-F04 AC26,FORECAST-PREVIEW,المعاينة لا تكتب الإعداد
+S01–S19,S01-welcome … S19-forecast,R29,C01 C05 C09,تجاوز المحتوى/لوحة مفاتيح/تركيز/نافذة/Escape,AC29,ACCESS-KEYBOARD,مكونات مشتركة؛ التجربة البشرية منفصلة
+S01–S19,S01-welcome … S19-forecast,R22 R30,C05 C11,حقن تحميل/قراءة/فشل حفظ وإعادة المحاولة,AC22 AC30,ERROR-RECOVERY,لا إقرار بكتابة فاشلة

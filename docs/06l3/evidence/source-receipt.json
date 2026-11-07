@@ -1,0 +1,14 @@
+{
+  "createdAt": "2026-11-07T12:14:40.900799+00:00",
+  "source": "MULAZAMA-Phase-06L2-Engineering-Delivery.zip",
+  "sourceSHA256": "eae1213dae28f6eaa3ede0207602c6e046c6c19b8817364a16692b3e3208a1cf",
+  "bundle": "MULAZAMA-Phase-06L2-Source-History.bundle",
+  "bundleSHA256": "3db54d9b25fd294f9f3eb6a1282fda8ae4faddfd3079e052484aafba8cc53174",
+  "sourceCommit": "1e0d10c08b931e347ebdacc8ad662d50a63c0468",
+  "manifestFilesVerified": 960,
+  "allArchiveFilesMatchGit": true,
+  "recoveryCopies": "/Users/saalzamil/Documents/ChatGPT/\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u0639\u0645\u0631/mulazama-06l3-recovery",
+  "workingCopy": "/Users/saalzamil/Documents/ChatGPT/\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u0639\u0645\u0631/mulazama-06l3",
+  "branch": "release/06-l3",
+  "dependencySetup": "Copied existing node_modules after exact package and lock equality; no clean registry install claimed"
+}

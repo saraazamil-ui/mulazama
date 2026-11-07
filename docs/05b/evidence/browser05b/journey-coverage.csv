@@ -1,0 +1,21 @@
+requestedJourney,journey,screens,contracts,testIds,implementationCoverage,actualBrowserResult,limitation
+1,بدء مستخدم جديد,S01,C02,BWEB07,Written; not executed,NOT EXECUTED — server listen EPERM before test cases,إعداد مستخدم جديد فقط؛ لا جلسة قرآن
+2,إعداد خطة,S02,C02,BWEB07,Written; not executed,NOT EXECUTED — server listen EPERM before test cases,حفظ إعداد الوقت والمسار؛ لا مولد خطة قرآنية
+3,إدخال محفوظ سابق,S03,C02,BWEB07,Written; not executed,NOT EXECUTED — server listen EPERM before test cases,تصريح غير مختبر محفوظ محليًا
+4,اختيار نطاقات متفرقة,S03/S14,C02/C09,BWEB07,Written; not executed,NOT EXECUTED — server listen EPERM before test cases,جزآن1و3؛ تكرار1 لا يملأ فجوة2
+5,التشخيص,S04,C03,BWEB09/BWEB10,Blocked; denial test written,NOT EXECUTED — server listen EPERM before test cases,المسار الإيجابي يحتاج محتوى معتمدًا
+6,عرض ورد اليوم,S05/S06,C04,BWEB08/BWEB13,Partial; not executed,NOT EXECUTED — server listen EPERM before test cases,عرض خالٍ/امتناع وتعديل الميزانية؛ لا مهام قرآن فعلية
+7,بدء جلسة,S07,C05,BWEB09/BWEB10,Blocked; denial test written,NOT EXECUTED — server listen EPERM before test cases,لا بدء جلسة عبر الواجهة أو استدعاء الخدمة مباشرة
+8,تسجيل تكرار,S07,C06,BWEB09/BWEB10,Blocked; denial test written,NOT EXECUTED — server listen EPERM before test cases,اختبار رفض أمر؛ لا تكرار قرآني إنتاجي
+9,تسجيل تلميح,S08,C07,BWEB09/BWEB10,Blocked; denial test written,NOT EXECUTED — server listen EPERM before test cases,اختبار رفض أمر؛ حفظ تلميحات HME يراجع في الوحدات
+10,تسجيل خطأ,S12,C08,BWEB14,Partial; not executed,NOT EXECUTED — server listen EPERM before test cases,بلاغ عام صناعي مشتبه؛ ليس تصحيحًا مستقلًا أو خطأ آية مثبتًا
+11,إنهاء محاولة,S08,C07,BWEB09/BWEB10,Blocked; denial test written,NOT EXECUTED — server listen EPERM before test cases,لا قبول نجاح تسميع محجوب
+12,التقييم,S09,C07,BWEB09/BWEB10,Blocked; denial test written,NOT EXECUTED — server listen EPERM before test cases,لا تقييم ذاتي يفتح بوابة الإنتاج
+13,إغلاق الجلسة واستئنافها,S10,C05,BWEB09/BWEB10; IDB01,Blocked; positive Quran journey absent,NOT EXECUTED — server listen EPERM before test cases,إعادة فتح سجل صناعي IDB01 لا تعادل رحلة تسميع كاملة
+14,عرض المراجعات المتأخرة,S05/S11,C04,BWEB09,Blocked; positive browser coverage absent,NOT EXECUTED — server listen EPERM before test cases,لا محتوى أو استحقاقات قرآنية معتمدة؛ لا إيجاد متأخرات وهمية
+15,تعديل الوقت المتاح,S06,C02/C04,BWEB08,Written; not executed,NOT EXECUTED — server listen EPERM before test cases,فصل وقت اليوم30 عن المعتاد60 بعد reload
+16,استعراض الأجزاء الثلاثين,S14,C09,BWEB07/BWEB11,Written; not executed,NOT EXECUTED — server listen EPERM before test cases,كل جزء30button؛ الفجوات غير مختبرة
+17,عرض حالة الثبات,S14/S15,C09,BWEB07/BWEB09/BWEB11,Partial; not executed,NOT EXECUTED — server listen EPERM before test cases,غير مقاس وبيان محجوب؛ لا اعتماد ثبات فعلي
+18,التوقع غير المتاح,S19,C10,BWEB11,Written; not executed,NOT EXECUTED — server listen EPERM before test cases,نص الامتناع ولا تاريخ ختام
+19,إدارة البيانات,S18,C12,BWEB12/BWEB13; IDB17,Partial; not executed,NOT EXECUTED — server listen EPERM before test cases,فحص ملف/إلغاء نافذة/تأكيد استبدال؛ حذف فعلي في IDB17 الصناعي
+20,النسخ والاستعادة,S18,C12,BWEB03/BWEB13; IDB06,Written; not executed,NOT EXECUTED — server listen EPERM before test cases,كلمة خاطئة/ملف باطل/إلغاء/استبدال متكرر؛ raw dedup في IDB06

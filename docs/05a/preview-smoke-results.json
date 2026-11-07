@@ -1,0 +1,121 @@
+{
+  "artifact": "mulazama-preview-checked.html",
+  "artifactSha256": "04455f5ef989509d3ba306721f48c171f5c62949c73347226ac64ebcb10e4987",
+  "runAt": "2026-11-05T11:42:39.391103+00:00",
+  "execution": "Node + JSDOM; not a real browser or native device",
+  "scriptMode": "runScripts: dangerously; pretendToBeVisual: true",
+  "testShim": "Window-realm JSON clone for plain JSON preview events only; does not test CryptoKey or encrypted persistence",
+  "storage": "Explicit preview-only transient in-memory store",
+  "checks": {
+    "screensS01ThroughS19": true,
+    "officialWelcomeHeading": true,
+    "menuTodayNavigatesS05": true,
+    "startSetupNavigatesS02": true,
+    "largeTextPreferenceUpdates": true,
+    "noAlertsDuringPreferenceUpdate": true,
+    "gatedS07HasNoRepetitionCounter": true,
+    "noJavaScriptRuntimeErrors": true
+  },
+  "screenResults": [
+    {
+      "screen": "S01",
+      "heading": "أهلًا بك في مُلازَمَة",
+      "result": "passed"
+    },
+    {
+      "screen": "S02",
+      "heading": "لننظم وردك",
+      "result": "passed"
+    },
+    {
+      "screen": "S03",
+      "heading": "المحفوظ السابق",
+      "result": "passed"
+    },
+    {
+      "screen": "S04",
+      "heading": "فحص قصير، بداية أوضح",
+      "result": "passed"
+    },
+    {
+      "screen": "S05",
+      "heading": "وردك اليوم",
+      "result": "passed"
+    },
+    {
+      "screen": "S06",
+      "heading": "الخطة القادمة",
+      "result": "passed"
+    },
+    {
+      "screen": "S07",
+      "heading": "الحفظ الجديد",
+      "result": "passed"
+    },
+    {
+      "screen": "S08",
+      "heading": "التسميع الغيبي",
+      "result": "passed"
+    },
+    {
+      "screen": "S09",
+      "heading": "تقييم المحاولة",
+      "result": "passed"
+    },
+    {
+      "screen": "S10",
+      "heading": "نكمل من حيث توقفت",
+      "result": "passed"
+    },
+    {
+      "screen": "S11",
+      "heading": "تعاهد محفوظك",
+      "result": "passed"
+    },
+    {
+      "screen": "S12",
+      "heading": "سجل الأخطاء",
+      "result": "passed"
+    },
+    {
+      "screen": "S13",
+      "heading": "مرحبًا بعودتك",
+      "result": "passed"
+    },
+    {
+      "screen": "S14",
+      "heading": "رحلتك مع القرآن",
+      "result": "passed"
+    },
+    {
+      "screen": "S15",
+      "heading": "تفاصيل النطاق",
+      "result": "passed"
+    },
+    {
+      "screen": "S16",
+      "heading": "المصحف",
+      "result": "passed"
+    },
+    {
+      "screen": "S17",
+      "heading": "الإعدادات",
+      "result": "passed"
+    },
+    {
+      "screen": "S18",
+      "heading": "بياناتك بين يديك",
+      "result": "passed"
+    },
+    {
+      "screen": "S19",
+      "heading": "توقع تقدمك",
+      "result": "passed"
+    }
+  ],
+  "runtimeErrors": [],
+  "limitations": [
+    "No visual layout, accessibility, browser security, offline persistence or iOS/Android validation in this smoke test.",
+    "Quran content remains blocked; no Quran text or synthetic verses were supplied."
+  ]
+}

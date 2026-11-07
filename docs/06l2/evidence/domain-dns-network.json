@@ -1,0 +1,24 @@
+{
+  "queriedAt": "2026-11-07T11:50:28.939424+00:00",
+  "ownershipProven": false,
+  "queries": [
+    {
+      "type": "A",
+      "exitCode": 0,
+      "stdout": "\n; <<>> DiG 9.10.6 <<>> +time=3 +tries=1 mulazama.com A\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: 34671\n;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 4096\n;; QUESTION SECTION:\n;mulazama.com.\t\t\tIN\tA\n\n;; AUTHORITY SECTION:\ncom.\t\t\t900\tIN\tSOA\ta.gtld-servers.net. nstld.verisign-grs.com. 1794052191 1800 900 604800 900\n\n;; Query time: 39 msec\n;; SERVER: fe80::1%5#53(fe80::1%5)\n;; WHEN: Sat Nov 07 14:50:28 +03 2026\n;; MSG SIZE  rcvd: 117\n\n",
+      "stderr": ""
+    },
+    {
+      "type": "NS",
+      "exitCode": 0,
+      "stdout": "\n; <<>> DiG 9.10.6 <<>> +time=3 +tries=1 mulazama.com NS\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: 41894\n;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 4096\n;; QUESTION SECTION:\n;mulazama.com.\t\t\tIN\tNS\n\n;; AUTHORITY SECTION:\ncom.\t\t\t900\tIN\tSOA\ta.gtld-servers.net. nstld.verisign-grs.com. 1794052191 1800 900 604800 900\n\n;; Query time: 37 msec\n;; SERVER: fe80::1%5#53(fe80::1%5)\n;; WHEN: Sat Nov 07 14:50:28 +03 2026\n;; MSG SIZE  rcvd: 117\n\n",
+      "stderr": ""
+    },
+    {
+      "type": "MX",
+      "exitCode": 0,
+      "stdout": "\n; <<>> DiG 9.10.6 <<>> +time=3 +tries=1 mulazama.com MX\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: 25661\n;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 4096\n;; QUESTION SECTION:\n;mulazama.com.\t\t\tIN\tMX\n\n;; AUTHORITY SECTION:\ncom.\t\t\t900\tIN\tSOA\ta.gtld-servers.net. nstld.verisign-grs.com. 1794052191 1800 900 604800 900\n\n;; Query time: 24 msec\n;; SERVER: fe80::1%5#53(fe80::1%5)\n;; WHEN: Sat Nov 07 14:50:28 +03 2026\n;; MSG SIZE  rcvd: 117\n\n",
+      "stderr": ""
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+[
+  {
+    "case": "link draft preserves lexical accuracy and scheduler outcome",
+    "pass": true
+  },
+  {
+    "case": "word draft without canonical details produces no invented Again",
+    "pass": true
+  },
+  {
+    "case": "retrieval-start gap excludes time spent recalling",
+    "pass": true
+  },
+  {
+    "case": "paused recall cannot be stitched into a continuous attempt",
+    "pass": true
+  },
+  {
+    "case": "restart retains uncertainty despite a user supplied verified flag",
+    "pass": true,
+    "rawElapsedMinutes": 4321,
+    "note": "Raw elapsed time remains available; it is not qualified delayed evidence."
+  }
+]

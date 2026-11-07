@@ -1,0 +1,19 @@
+{
+  "checkedAt": "2026-11-07T12:18:15.379102+00:00",
+  "command": [
+    "node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "src/release/isolation06l3.test.mjs",
+    "--reporter=json",
+    "--outputFile=docs/06l3/evidence/security-isolation-tests.json"
+  ],
+  "exitCode": 0,
+  "executed": 18,
+  "passed": 18,
+  "failed": 0,
+  "skipped": 0,
+  "testFileSHA256": "c46db9b61c0ad38b988fa3fe1c8b7e70159fdafd0e94d01c5e7a92c8c909fc32",
+  "noRealUserData": true,
+  "noReleaseAttestationsCreated": true
+}

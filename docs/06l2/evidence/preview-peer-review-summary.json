@@ -1,0 +1,26 @@
+{
+  "scope": "Local preview artifact validation and rollback hash pinning only",
+  "command": "node node_modules/vitest/vitest.mjs run src/release/preview06l2.test.mjs --reporter=json --outputFile=docs/06l2/evidence/preview-peer-review-tests.json",
+  "exitCode": 0,
+  "recordedAt": "2026-11-07T11:55:28.986Z",
+  "total": 16,
+  "passed": 16,
+  "failed": 0,
+  "skipped": 0,
+  "newTests": 9,
+  "existingTests": 7,
+  "evidence": "preview-peer-review-tests.json",
+  "sources": [
+    {
+      "path": "scripts/preview06l2/artifacts.mjs",
+      "sha256": "0fd9a8f732710cecad97eef44e1e046df3b249c5e5da3284893286069c10b282"
+    },
+    {
+      "path": "src/release/preview06l2.test.mjs",
+      "sha256": "4f497ad948df176181dc794521d94bab90e7ee72f601e7b541115dabeed03ba6"
+    }
+  ],
+  "productionDeployment": false,
+  "realUserDataTouched": false,
+  "publicAPIsChanged": false
+}

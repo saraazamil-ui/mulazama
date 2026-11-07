@@ -1,0 +1,25 @@
+{
+  "failedCiRun": 42385844959,
+  "before": {
+    "unitPassed": 897,
+    "browserPassed": 59,
+    "browserFailed": 2,
+    "skipped": 0
+  },
+  "cause": "Result heading rendered before asynchronous prepare appended the derived PlanRecomputed event, so baseline preceded a legitimate plan update.",
+  "fix": "Read-only wait for persisted HME PlanRecomputed after assessment with spentMinutes2 before baseline; retain exact equality of all events after reload.",
+  "localNormal": {
+    "passed": 3,
+    "failed": 0,
+    "skipped": 0,
+    "flaky": 0
+  },
+  "localCpuThrottle6": {
+    "passed": 3,
+    "failed": 0,
+    "skipped": 0,
+    "flaky": 0
+  },
+  "productionCodeModified": false,
+  "sourceDigest": "8b8c9729058f56522f44dfe22b5b469c64dd6305f5202875d131a03ebdeb1625"
+}

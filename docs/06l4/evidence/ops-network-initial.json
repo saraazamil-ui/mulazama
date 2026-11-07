@@ -1,0 +1,128 @@
+{
+  "checkedAt": "2026-11-07T13:34:43.269013+00:00",
+  "mutations": false,
+  "checks": [
+    {
+      "command": [
+        "dig",
+        "+time=3",
+        "+tries=1",
+        "mulazama.sa",
+        "A"
+      ],
+      "exitCode": 10,
+      "stdout": "",
+      "stderr": "/AppleInternal/Library/BuildRoots/4~CV2DugBH9CYUdHSUah9pNqw427QX0cseF9X74W4/Library/Caches/com.apple.xbs/TemporaryDirectory.KGWzHV/Sources/bind9/bind9/lib/isc/unix/socket.c:5580: bind: Operation not permitted\ndig: isc_socket_bind: unexpected error\n"
+    },
+    {
+      "command": [
+        "dig",
+        "+time=3",
+        "+tries=1",
+        "mulazama.sa",
+        "AAAA"
+      ],
+      "exitCode": 10,
+      "stdout": "",
+      "stderr": "/AppleInternal/Library/BuildRoots/4~CV2DugBH9CYUdHSUah9pNqw427QX0cseF9X74W4/Library/Caches/com.apple.xbs/TemporaryDirectory.KGWzHV/Sources/bind9/bind9/lib/isc/unix/socket.c:5580: bind: Operation not permitted\ndig: isc_socket_bind: unexpected error\n"
+    },
+    {
+      "command": [
+        "dig",
+        "+time=3",
+        "+tries=1",
+        "mulazama.sa",
+        "NS"
+      ],
+      "exitCode": 10,
+      "stdout": "",
+      "stderr": "/AppleInternal/Library/BuildRoots/4~CV2DugBH9CYUdHSUah9pNqw427QX0cseF9X74W4/Library/Caches/com.apple.xbs/TemporaryDirectory.KGWzHV/Sources/bind9/bind9/lib/isc/unix/socket.c:5580: bind: Operation not permitted\ndig: isc_socket_bind: unexpected error\n"
+    },
+    {
+      "command": [
+        "dig",
+        "+time=3",
+        "+tries=1",
+        "mulazama.sa",
+        "MX"
+      ],
+      "exitCode": 10,
+      "stdout": "",
+      "stderr": "/AppleInternal/Library/BuildRoots/4~CV2DugBH9CYUdHSUah9pNqw427QX0cseF9X74W4/Library/Caches/com.apple.xbs/TemporaryDirectory.KGWzHV/Sources/bind9/bind9/lib/isc/unix/socket.c:5580: bind: Operation not permitted\ndig: isc_socket_bind: unexpected error\n"
+    },
+    {
+      "command": [
+        "dig",
+        "+time=3",
+        "+tries=1",
+        "mulazama.sa",
+        "TXT"
+      ],
+      "exitCode": 10,
+      "stdout": "",
+      "stderr": "/AppleInternal/Library/BuildRoots/4~CV2DugBH9CYUdHSUah9pNqw427QX0cseF9X74W4/Library/Caches/com.apple.xbs/TemporaryDirectory.KGWzHV/Sources/bind9/bind9/lib/isc/unix/socket.c:5580: bind: Operation not permitted\ndig: isc_socket_bind: unexpected error\n"
+    },
+    {
+      "command": [
+        "dig",
+        "+time=3",
+        "+tries=1",
+        "mulazama.sa",
+        "SOA"
+      ],
+      "exitCode": 10,
+      "stdout": "",
+      "stderr": "/AppleInternal/Library/BuildRoots/4~CV2DugBH9CYUdHSUah9pNqw427QX0cseF9X74W4/Library/Caches/com.apple.xbs/TemporaryDirectory.KGWzHV/Sources/bind9/bind9/lib/isc/unix/socket.c:5580: bind: Operation not permitted\ndig: isc_socket_bind: unexpected error\n"
+    },
+    {
+      "command": [
+        "dig",
+        "+time=3",
+        "+tries=1",
+        "_dmarc.mulazama.sa",
+        "TXT"
+      ],
+      "exitCode": 10,
+      "stdout": "",
+      "stderr": "/AppleInternal/Library/BuildRoots/4~CV2DugBH9CYUdHSUah9pNqw427QX0cseF9X74W4/Library/Caches/com.apple.xbs/TemporaryDirectory.KGWzHV/Sources/bind9/bind9/lib/isc/unix/socket.c:5580: bind: Operation not permitted\ndig: isc_socket_bind: unexpected error\n"
+    },
+    {
+      "command": [
+        "dig",
+        "+time=3",
+        "+tries=1",
+        "www.mulazama.sa",
+        "CNAME"
+      ],
+      "exitCode": 10,
+      "stdout": "",
+      "stderr": "/AppleInternal/Library/BuildRoots/4~CV2DugBH9CYUdHSUah9pNqw427QX0cseF9X74W4/Library/Caches/com.apple.xbs/TemporaryDirectory.KGWzHV/Sources/bind9/bind9/lib/isc/unix/socket.c:5580: bind: Operation not permitted\ndig: isc_socket_bind: unexpected error\n"
+    },
+    {
+      "command": [
+        "curl",
+        "--head",
+        "--location",
+        "--max-redirs",
+        "3",
+        "--connect-timeout",
+        "5",
+        "--max-time",
+        "15",
+        "https://mulazama.sa"
+      ],
+      "exitCode": 6,
+      "stdout": "",
+      "stderr": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0curl: (6) Could not resolve host: mulazama.sa\n"
+    },
+    {
+      "command": [
+        "whois",
+        "mulazama.sa"
+      ],
+      "exitCode": 68,
+      "stdout": "",
+      "stderr": "whois: whois.iana.org: nodename nor servname provided, or not known: Invalid argument\n"
+    }
+  ]
+}

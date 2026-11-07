@@ -1,0 +1,21 @@
+
+ RUN  v4.1.12 /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l3
+
+ ✓ src/LearningEngineScreen.test.tsx > 05C actual S07–S13 React route integration with gated HME > UIS01 S07 renders real repetition receipt and S08 persists a hint and completion 219ms
+ ✓ src/LearningEngineScreen.test.tsx > 05C actual S07–S13 React route integration with gated HME > UIS02 S09 starts with unknown errors, records V1 and never silently replaces unknown with zero 50ms
+ ✓ src/LearningEngineScreen.test.tsx > 05C actual S07–S13 React route integration with gated HME > UIS03 normal App without an injected gated application keeps Quran routes blocked 19ms
+ ✓ src/LearningEngineScreen.test.tsx > 05C actual S07–S13 React route integration with gated HME > UIS04 S18 blocks partial product data management when learning is attached without the unified controller 18ms
+stdout | src/LearningEngineScreen.test.tsx > 05C actual S07–S13 React route integration with gated HME > UIS05 S11 uses configured budget and explicitly entered costs/spent time in the real HME plan
+UIS05_DIAGNOSTIC {"spent":"5","cost":"100","active":"<input min=\"0.01\" step=\"0.01\" type=\"number\" value=\"\">","hash":"#S11"}
+
+stdout | src/LearningEngineScreen.test.tsx > 05C actual S07–S13 React route integration with gated HME > UIS05 S11 uses configured budget and explicitly entered costs/spent time in the real HME plan
+UIS05_AFTER_CLICK {"plan":{"policyVersion":"P0-0.1.0","minutes":60,"reserveMinutes":9,"spentMinutes":5,"remainingBudgetMinutes":46,"plannedMinutes":0,"tasks":[],"deferred":[{"id":"diagnostic:test-ui-unit","unitId":"test-ui-unit","kind":"diagnostic","costMinutes":100,"priority":70,"protected":false,"coverageKeys":["test:ui:1"],"reasonCode":"DIAGNOSTIC_COST_ESTIMATE:user-entered-estimate-05c-unvalidated","plannedAt":null,"executionStatus":"deferred","outcome":"not_measured","decisionReason":"TIME_BUDGET_DEFERRED"}],"capacityStatus":"infeasible","reasonCodes":["TIME_BUDGET_DEFERRED","CAPACITY_CONFLICT"]},"alerts":[],"body":"تجاوز إلى المحتوىمُلازَمَةرفيق رحلتك مع القرآنمساحتك اليوميةاليومالمصحفتقدميالإعداداتخطوة صغيرة،وصلة تتجدد كل يوم.عن مُلازَمَة وخصوصيتك MULAZAMA · 06-L3مُلازَمَةمساحتك / تعاهد محفوظك إصدار هندسيإصدار هندسي 06-L3 · جلسات القرآن موقوفة حتى اعتماد المحتوىمُلازَمَة — التحقق الوظيفي للتعلمواجهة تحقق هندسي بلا نص قرآني. المقادير هنا تخص الوحدات المسجلة؛ ليست شهادة إتقان أو اعتماد منهج.حُفظت الخطة محليًا بعد تأكيد الكتابة. إيصال الحفظ: 5 · مفاتيح تغطية ذات دليل مؤهل: 0 · غير مختبرة: 1بدء الوحدة test-ui-unitميزانية اليوم من إعداد المستخدم: 60 دقيقةالدقائق المنفقة فعلًا اليوم بإقراركتقدير دقائق الوحدة test-ui-unitتقديرات المستخدم غير معايرة. يجب إدخال الوقت المنفق وكلفة الوحدات صراحة؛ لا تُفترض ثلاثة دقائق أو صفر إنجاز.حساب التعاهد من حالة المحركمؤجل test-ui-unit: TIME_BUDGET_DEFERRED — لم يُراجعاليومالمصحفتقدميالإعدادات"}
+
+ ✓ src/LearningEngineScreen.test.tsx > 05C actual S07–S13 React route integration with gated HME > UIS05 S11 uses configured budget and explicitly entered costs/spent time in the real HME plan 76ms
+
+ Test Files  1 passed (1)
+      Tests  5 passed (5)
+   Start at  15:36:43
+   Duration  1.61s (transform 522ms, setup 70ms, import 794ms, tests 384ms, environment 284ms)
+
+JSON report written to /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l3/docs/06l3/evidence/ui-regression-diagnostic.json

@@ -1,0 +1,1308 @@
+{
+  "baselineZipSHA256": "3fa6cfe6a240b62b5e7c2d85e9999a95a8214fdbf02564992570adb3971d762c",
+  "checkedFiles": 325,
+  "allUnchanged": true,
+  "excludedGeneratedContext": "src/release/build-context.generated.ts",
+  "files": [
+    {
+      "path": "content/Content-Manifest.draft.json",
+      "unchanged": true
+    },
+    {
+      "path": "content/Quran-Content-Review-Pack/README.md",
+      "unchanged": true
+    },
+    {
+      "path": "content/Quran-Content-Review-Pack/Review-Checklist.csv",
+      "unchanged": true
+    },
+    {
+      "path": "content/Quran-Content-Review-Pack/Scientific-Approval.pending.json",
+      "unchanged": true
+    },
+    {
+      "path": "content/Quran-Content-Review-Pack/source-selection.json",
+      "unchanged": true
+    },
+    {
+      "path": "content/audit-request.draft.json",
+      "unchanged": true
+    },
+    {
+      "path": "content/review-pack/README.md",
+      "unchanged": true
+    },
+    {
+      "path": "content/review-pack/download-receipt.template.json",
+      "unchanged": true
+    },
+    {
+      "path": "content/review-pack/numbering-profile.template.json",
+      "unchanged": true
+    },
+    {
+      "path": "content/review-pack/scientific-review.template.json",
+      "unchanged": true
+    },
+    {
+      "path": "content/source-candidates.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/MULAZAMA-Phase-05A-Engineering-Readiness-Report.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/architecture.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/baseline-audit.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/browser-run.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/build-verification.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/build.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/content-backup-platform-tests.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/content-privacy-platform.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/contracts.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/decisions-risks-handoff.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/dependencies.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/documentation-reference-manifest.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/evidence/baseline/archive-browser-results.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/evidence/baseline/archive-browser.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/evidence/baseline/archive-build.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/evidence/baseline/archive-typecheck.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/evidence/baseline/archive-unit-results.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/evidence/baseline/archive-unit.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/evidence/baseline/audit-summary.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/evidence/baseline/install.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/evidence/targeted/application-integration.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/evidence/targeted/content-backup-platform.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/evidence/targeted/core.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/evidence/targeted/persistence-reference.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/hme-calculation-audit.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/offline-run.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/peer-review-application-reproductions.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/peer-review-continuity-reproductions.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/peer-review-core-reproductions.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/peer-review-evidence.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/peer-review.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/performance-results.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/persistence.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/preview-smoke-README.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/preview-smoke-results.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/production-gate.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/reference-verification.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/requirements.csv",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/requirements.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/security-check-results.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/typecheck.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05a/unit-results.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/Accessibility-Report.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/Baseline-Audit.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/Browser-E2E-Report.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/Contracts-Status.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/Defects-and-Fixes.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/Encrypted-Backup-Report.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/Engineering-Decisions-and-Risks.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/FSRS-Conformance-Report.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/HME-Integration-Report.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/MULAZAMA-Phase-05B-Verification-and-Readiness-Report.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/Output-Index.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/Performance-Report.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/Persistence-Recovery-Report.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/Platform-Verification-Report.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/Product-Replay-Integrity-Report.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/Quran-Content-Integrity-Report.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/Release-Gates.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/Remaining-Blockers.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/Requirements-Matrix.csv",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/Requirements-Matrix.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/Security-Report.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/backup-integration-intermediate.txt",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/backup-regression-after.txt",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/baseline/android-adb.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/baseline/android-sdkmanager.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/baseline/baseline-summary.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/baseline/browser-availability.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/baseline/browser-e2e.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/baseline/browser-offline.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/baseline/browser-runs.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/baseline/build-artifacts.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/baseline/build-offline.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/baseline/build-typecheck.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/baseline/build-vite.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/baseline/corepack-version.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/baseline/dependency-audit-run.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/baseline/dependency-audit.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/baseline/environment-runs.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/baseline/frozen-install.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/baseline/isolation.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/baseline/java.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/baseline/native-source-inventory.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/baseline/node-version.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/baseline/os.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/baseline/performance-results.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/baseline/playwright-discovery.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/baseline/python.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/baseline/readiness-production.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/baseline/registry-connectivity.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/baseline/security-static.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/baseline/source-integrity.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/baseline/test-summary.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/baseline/tool-versions.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/baseline/typecheck.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/baseline/unit-integration-contracts.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/baseline/unit-results.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/baseline/verification-runs.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/baseline/verify-build.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/baseline/xcode-select.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/baseline/xcodebuild.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/browser05b/browser-coverage.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/browser05b/discovery.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/browser05b/e2e.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/browser05b/journey-coverage.csv",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/browser05b/offline.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/browser05b/post-gate-change-discovery.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/browser05b/post-gate-change-public-api.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/browser05b/post-gate-change-source-check.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/browser05b/runs.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/browser05b/test-source-sha256.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/content-byte-audit.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/content-download-attempts.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/content-integrity-tests.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/content-tool-checks.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/current-reference-comparison.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/final-command-results.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/final-summary.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/final-tests-intermediate.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/final-tests.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/fsrs-conformance.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/fsrs-research-audit.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/fsrs-source-retrieval.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/fsrs-tests.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/hme-application-final.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/hme-cluster-regression-before.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/hme-integration-initial.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/hme-integration-intermediate.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/hme-regressions-before.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/hme-regressions-intermediate.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/performance-results.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/persistence-regression-after.txt",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/persistence-regression-before.txt",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/persistence-verification.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/product-replay-after.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/product-replay-before.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/release-final-hardening-tests.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/release-gates-tests.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/release-gates.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/evidence/security-static-final.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/input-provenance.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/licenses.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05b/licenses.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/Accessibility-Report.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/Backup-and-Recovery-Report.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/Baseline-Audit.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/Browser-Persistence-and-Backup-Verification.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/Browser-Playwright-Report.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/Defects-and-Fixes.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/Delivery-Index.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/FSRS-Reference-Conformance-Report.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/Final-Verification.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/HME-Integration-Report.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/IndexedDB-Verification.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/Licenses-Report.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/MULAZAMA-Phase-05C-Engineering-and-Content-Verification-Report.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/Platform-Status-Report.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/Quran-Content-Verification.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/Release-Gates.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/Remaining-Blockers.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/Requirements-Matrix.csv",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/Requirements-Matrix.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/Security-Report.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/HME-current.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/PRD-current.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/baseline-runs.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/baseline-tests.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/browser/browser-install-dry-run.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/browser/browser-launch.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/browser/chromium-install.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/browser/component-results.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/browser/component.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/browser/discovery.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/browser/e2e.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/browser/localhost-probe.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/browser/node-storage-results.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/browser/node-storage.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/browser/offline.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/browser/summary.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/check.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/clean-install.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/composite-integration-tests.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/composite-integration-tests.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/content-byte-audit.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/content-byte-audit.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/content-review-pack-files.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/content-source-verification.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/dependency-audit-final.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/dependency-audit-final.stderr.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/dependency-audit.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/dependency-audit.stderr.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/dependency-upgrade-retry.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/dependency-upgrade.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/dns.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/environment.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/final-build-verification.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/final-build.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/final-command-results.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/final-frozen-install.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/final-fsrs-current.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/final-fsrs-current.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/final-fsrs-rounded.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/final-fsrs-rounded.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/final-offline-assets.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/final-release-gates.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/final-security.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/final-source-context.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/final-summary.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/final-tests.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/final-tests.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/final-typecheck.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/final-verify-build.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/fsrs-acquisition-manifest.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/fsrs-conformance.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/fsrs-reference-results.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/fsrs-research-reference-before.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/fsrs-rounded-reference-results.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/fsrs-tests.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/fsrs-tests.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/fsrs-typecheck.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/fsrs.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/hme-integration-regression.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/hme-integration-regression.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/hme-ui-tests.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/hme-ui-tests.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/input-provenance.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/install.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/readiness.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/release-gates-final.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/release/gates-initial.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/release/gates.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/release/native-inventory.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/release/security-release-tests-upgraded.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/release/security-release-tests.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/release/static-security.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/release/tests-upgraded.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/release/tests.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/security.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/tanzil-download-attempt.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/tests.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/upgraded-tests.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/05c/evidence/upgraded-tests.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/Acceptance-Matrix.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/Blockers.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/Changed-Files.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/Changes-and-Design.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/Diagnosis.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/Final-Report.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/Metric-Definitions.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/Test-Report.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/baseline-tests.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/baseline-tests.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/browser-database.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/browser-first-full.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/browser-initial.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/browser-progress-first.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/browser-progress-second.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/browser-results.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/browser-second-full.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/dependency-reuse.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/environment.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/final-browser.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/final-build.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/final-fsrs-candidate.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/final-fsrs-selected.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/final-offline-assets.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/final-offline-browser.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/final-release-gates.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/final-security-static.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/final-source-context.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/final-summary.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/final-tests.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/final-typecheck.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/final-unit.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/final-verify-build.log",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/fsrs-candidate.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/fsrs-selected.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/indexeddb-check-results.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/legacy-generated/performance-results.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/offline-results.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/preservation-check.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/release-gates.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/service-gate-rejections.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/source-receipt.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/ui/S05-1440.png",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/ui/S05-320.png",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/ui/S05-390.png",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/ui/S14-1440.png",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/ui/S14-320.png",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/ui/S14-390.png",
+      "unchanged": true
+    },
+    {
+      "path": "docs/06d1/evidence/verification-commands.json",
+      "unchanged": true
+    },
+    {
+      "path": "package.json",
+      "unchanged": true
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "unchanged": true
+    },
+    {
+      "path": "src/content/content-gate.test.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/content/content-gate.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/content/integrity.test.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/content/integrity.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/core/fixtures/fsrs6-research-reference.json",
+      "unchanged": true
+    },
+    {
+      "path": "src/core/fsrs-rounded.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/core/fsrs.test.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/core/fsrs.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/core/hme-types.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/core/hme.test.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/core/hme.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/core/types.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/persistence/backup.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/persistence/event-store.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/release/access.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/release/gates.test.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/release/gates.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/release/release-input.json",
+      "unchanged": true
+    },
+    {
+      "path": "src/release/runtime.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/release/source-hash.test.mjs",
+      "unchanged": true
+    }
+  ]
+}
