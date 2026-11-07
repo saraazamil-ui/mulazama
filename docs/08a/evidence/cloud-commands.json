@@ -1,0 +1,147 @@
+[
+  {
+    "name": "archive",
+    "command": [
+      "git",
+      "archive",
+      "--format=tar",
+      "--output=/tmp/mulazama-08a-mxmtgs_j/source.tar",
+      "bc4e4ed7b1967da215c851a3a90cce410ed82b01"
+    ],
+    "cwd": "/workspace/mulazama",
+    "startedAt": "2026-11-07T16:46:19.040277+00:00",
+    "finishedAt": "2026-11-07T16:46:19.444627+00:00",
+    "durationSeconds": 0.404,
+    "exitCode": 0,
+    "log": "archive.log"
+  },
+  {
+    "name": "node-version",
+    "command": [
+      "node",
+      "--version"
+    ],
+    "cwd": "/tmp/mulazama-08a-mxmtgs_j",
+    "startedAt": "2026-11-07T16:46:19.991860+00:00",
+    "finishedAt": "2026-11-07T16:46:19.999039+00:00",
+    "durationSeconds": 0.007,
+    "exitCode": 0,
+    "log": "node-version.log"
+  },
+  {
+    "name": "pnpm-version",
+    "command": [
+      "pnpm",
+      "--version"
+    ],
+    "cwd": "/tmp/mulazama-08a-mxmtgs_j",
+    "startedAt": "2026-11-07T16:46:19.999388+00:00",
+    "finishedAt": "2026-11-07T16:46:21.013414+00:00",
+    "durationSeconds": 1.014,
+    "exitCode": 0,
+    "log": "pnpm-version.log"
+  },
+  {
+    "name": "python-version",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "--version"
+    ],
+    "cwd": "/tmp/mulazama-08a-mxmtgs_j",
+    "startedAt": "2026-11-07T16:46:21.013814+00:00",
+    "finishedAt": "2026-11-07T16:46:21.016262+00:00",
+    "durationSeconds": 0.002,
+    "exitCode": 0,
+    "log": "python-version.log"
+  },
+  {
+    "name": "source-digest",
+    "command": [
+      "node",
+      "--input-type=module",
+      "-e",
+      "import {computeReleaseSourceDigest} from './scripts/release-source-hash.mjs';console.log(JSON.stringify(await computeReleaseSourceDigest(process.cwd())));"
+    ],
+    "cwd": "/tmp/mulazama-08a-mxmtgs_j",
+    "startedAt": "2026-11-07T16:46:21.016743+00:00",
+    "finishedAt": "2026-11-07T16:46:21.113653+00:00",
+    "durationSeconds": 0.097,
+    "exitCode": 0,
+    "log": "source-digest.log"
+  },
+  {
+    "name": "install",
+    "command": [
+      "pnpm",
+      "install",
+      "--frozen-lockfile",
+      "--store-dir",
+      "/tmp/mulazama-08a-cache/pnpm-store",
+      "--cache-dir",
+      "/tmp/mulazama-08a-cache/pnpm-cache"
+    ],
+    "cwd": "/tmp/mulazama-08a-mxmtgs_j",
+    "startedAt": "2026-11-07T16:46:21.114032+00:00",
+    "finishedAt": "2026-11-07T16:46:29.079631+00:00",
+    "durationSeconds": 7.966,
+    "exitCode": 0,
+    "log": "install.log"
+  },
+  {
+    "name": "startup-tests",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "scripts/tests/cloud-start08a.test.py"
+    ],
+    "cwd": "/tmp/mulazama-08a-mxmtgs_j",
+    "startedAt": "2026-11-07T16:46:29.090644+00:00",
+    "finishedAt": "2026-11-07T16:46:29.873973+00:00",
+    "durationSeconds": 0.783,
+    "exitCode": 0,
+    "log": "startup-tests.log"
+  },
+  {
+    "name": "browser-helper-tests",
+    "command": [
+      "node",
+      "--test",
+      "--test-reporter=tap",
+      "scripts/tests/playwright-browser.test.mjs"
+    ],
+    "cwd": "/tmp/mulazama-08a-mxmtgs_j",
+    "startedAt": "2026-11-07T16:46:29.874570+00:00",
+    "finishedAt": "2026-11-07T16:46:29.998321+00:00",
+    "durationSeconds": 0.124,
+    "exitCode": 0,
+    "log": "browser-helper-tests.log"
+  },
+  {
+    "name": "browser-version",
+    "command": [
+      "node",
+      "--input-type=module",
+      "-e",
+      "import {chromium} from '@playwright/test';import {chromiumLaunchOptions} from './scripts/playwright-browser.mjs';const options=chromiumLaunchOptions();const browser=await chromium.launch(options);try{console.log(JSON.stringify({version:browser.version(),selection:options,defaultExecutablePath:options.channel||options.executablePath?null:chromium.executablePath()}));}finally{await browser.close();}"
+    ],
+    "cwd": "/tmp/mulazama-08a-mxmtgs_j",
+    "startedAt": "2026-11-07T16:46:29.999136+00:00",
+    "finishedAt": "2026-11-07T16:46:30.853948+00:00",
+    "durationSeconds": 0.855,
+    "exitCode": 0,
+    "log": "browser-version.log"
+  },
+  {
+    "name": "verify-06l4",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "scripts/verify-06l4.py",
+      "--browser"
+    ],
+    "cwd": "/tmp/mulazama-08a-mxmtgs_j",
+    "startedAt": "2026-11-07T16:46:30.859483+00:00",
+    "finishedAt": "2026-11-07T16:50:38.955598+00:00",
+    "durationSeconds": 248.096,
+    "exitCode": 0,
+    "log": "verify-06l4.log"
+  }
+]
