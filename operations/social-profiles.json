@@ -1,0 +1,145 @@
+{
+  "checked_at": "2026-11-07",
+  "timezone": "Asia/Riyadh",
+  "scope": "Public profile discovery only; no accounts created or content published.",
+  "recommendation": "Try mulazama consistently first. If unavailable on an essential platform, try mulazamaapp consistently. Neither candidate is confirmed available.",
+  "tagline": "رفيق رحلتك مع القرآن",
+  "short_description": "ملازمة مشروع رقمي قيد التطوير، يعين الحافظ على تنظيم حفظ القرآن ومراجعته ومتابعة تقدمه، بخطوات واضحة وإدخالات قليلة.",
+  "profiles": [
+    {
+      "platform": "X",
+      "display_name": "مُلازَمَة | MULAZAMA",
+      "bio": "رفيق رحلتك مع القرآن. مشروع قيد التطوير لتنظيم الحفظ والمراجعة ومتابعة التقدم بخطوات واضحة.",
+      "priority": "حجز الاسم والتعريف بالمشروع"
+    },
+    {
+      "platform": "Instagram",
+      "display_name": "مُلازَمَة | MULAZAMA",
+      "bio": "رفيق رحلتك مع القرآن.\nحفظ ومراجعة ومتابعة تقدم، بخطوات واضحة.\nمشروع قيد التطوير.",
+      "priority": "حجز الاسم وعرض الهوية"
+    },
+    {
+      "platform": "YouTube",
+      "display_name": "مُلازَمَة | MULAZAMA",
+      "bio": "مُلازَمَة مشروع رقمي قيد التطوير لمساعدة الحافظ على تنظيم حفظ القرآن ومراجعته وتعاهده، مع متابعة واضحة للتقدم وإدخالات قليلة.\n\nهذه القناة مخصصة للتعريف بالمشروع، وشرح استخدامه عند إطلاقه، ومشاركة مستجدات تطويره.\n\nرفيق رحلتك مع القرآن.",
+      "priority": "عند تجهيز أول شرح للمنتج؛ يمكن حجز الاسم مسبقًا"
+    },
+    {
+      "platform": "TikTok",
+      "display_name": "مُلازَمَة | MULAZAMA",
+      "bio": "رفيق رحلتك مع القرآن.\nملازمة: مشروع للحفظ والمراجعة، قيد التطوير.",
+      "priority": "اختياري حاليًا؛ لا حاجة لتشغيل قناة إضافية قبل جاهزية المحتوى"
+    },
+    {
+      "platform": "GitHub",
+      "display_name": "MULAZAMA",
+      "bio": "MULAZAMA — Arabic-first Quran memorization and review application. In development.",
+      "priority": "استخدام حساب المالك القائم ومستودع خاص، ثم تنظيم فريق عند الحاجة"
+    }
+  ],
+  "candidate_checks": [
+    {
+      "platform": "X",
+      "handle": "mulazama",
+      "profile_url": "https://x.com/mulazama",
+      "checked_at": "2026-11-07",
+      "method": "public_profile_open_and_web_search",
+      "availability": "unconfirmed",
+      "ownership": "not_verified",
+      "evidence": "web tool could not retrieve the public profile; no exact matching account established by search",
+      "next_step": "verify handle in the official signed-in account creation/settings flow",
+      "created": false
+    },
+    {
+      "platform": "X",
+      "handle": "mulazamaapp",
+      "profile_url": "https://x.com/mulazamaapp",
+      "checked_at": "2026-11-07",
+      "method": "public_profile_open_and_web_search",
+      "availability": "unconfirmed",
+      "ownership": "not_verified",
+      "evidence": "web tool could not retrieve the public profile; no exact matching account established by search",
+      "next_step": "verify handle in the official signed-in account creation/settings flow",
+      "created": false
+    },
+    {
+      "platform": "Instagram",
+      "handle": "mulazama",
+      "profile_url": "https://www.instagram.com/mulazama/",
+      "checked_at": "2026-11-07",
+      "method": "public_profile_open_and_web_search",
+      "availability": "unconfirmed",
+      "ownership": "not_verified",
+      "evidence": "web tool could not retrieve the public profile; no exact matching account established by search",
+      "next_step": "verify handle in the official signed-in account creation/settings flow",
+      "created": false
+    },
+    {
+      "platform": "Instagram",
+      "handle": "mulazamaapp",
+      "profile_url": "https://www.instagram.com/mulazamaapp/",
+      "checked_at": "2026-11-07",
+      "method": "public_profile_open_and_web_search",
+      "availability": "unconfirmed",
+      "ownership": "not_verified",
+      "evidence": "web tool could not retrieve the public profile; no exact matching account established by search",
+      "next_step": "verify handle in the official signed-in account creation/settings flow",
+      "created": false
+    },
+    {
+      "platform": "YouTube",
+      "handle": "mulazama",
+      "profile_url": "https://www.youtube.com/@mulazama",
+      "checked_at": "2026-11-07",
+      "method": "public_profile_open_and_web_search",
+      "availability": "unconfirmed",
+      "ownership": "not_verified",
+      "evidence": "web tool could not retrieve the public profile; no exact matching account established by search",
+      "next_step": "verify handle in the official signed-in account creation/settings flow",
+      "created": false
+    },
+    {
+      "platform": "YouTube",
+      "handle": "mulazamaapp",
+      "profile_url": "https://www.youtube.com/@mulazamaapp",
+      "checked_at": "2026-11-07",
+      "method": "public_profile_open_and_web_search",
+      "availability": "unconfirmed",
+      "ownership": "not_verified",
+      "evidence": "web tool could not retrieve the public profile; no exact matching account established by search",
+      "next_step": "verify handle in the official signed-in account creation/settings flow",
+      "created": false
+    },
+    {
+      "platform": "TikTok",
+      "handle": "mulazama",
+      "profile_url": "https://www.tiktok.com/@mulazama",
+      "checked_at": "2026-11-07",
+      "method": "public_profile_open_and_web_search",
+      "availability": "unconfirmed",
+      "ownership": "not_verified",
+      "evidence": "web tool could not retrieve the public profile; no exact matching account established by search",
+      "next_step": "verify handle in the official signed-in account creation/settings flow",
+      "created": false
+    },
+    {
+      "platform": "TikTok",
+      "handle": "mulazamaapp",
+      "profile_url": "https://www.tiktok.com/@mulazamaapp",
+      "checked_at": "2026-11-07",
+      "method": "public_profile_open_and_web_search",
+      "availability": "unconfirmed",
+      "ownership": "not_verified",
+      "evidence": "web tool could not retrieve the public profile; no exact matching account established by search",
+      "next_step": "verify handle in the official signed-in account creation/settings flow",
+      "created": false
+    }
+  ],
+  "signature": "فريق مُلازَمَة — MULAZAMA\nرفيق رحلتك مع القرآن.",
+  "tagline_status": "existing_project_tagline_preserved",
+  "tagline_source": "mulazama-06e1/src/App.tsx:396",
+  "supporting_copy_proposal": {
+    "text": "معك في تعاهد القرآن.",
+    "status": "proposed_supporting_copy_only_not_primary_tagline"
+  }
+}
