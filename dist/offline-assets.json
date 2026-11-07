@@ -1,11 +1,18 @@
 {
-  "version": "mulazama-shell-6d6b55eaa291d7e69ef1",
+  "version": "mulazama-shell-0b2915e5c7b7ecc45624",
   "files": [
-    "assets/adaptive-scheduling-BAdcPGRX.js",
-    "assets/index-BSeieCYc.js",
-    "assets/index-CmddJd3h.css",
-    "assets/personal-memory-FbHeuiO5.js",
+    "assets/adaptive-scheduling-B9kCdmll.js",
+    "assets/index-AtTyBVEF.css",
+    "assets/index-atPXJdd4.js",
+    "assets/personal-memory-AcslMUkY.js",
+    "icon-192.png",
+    "icon-512.png",
+    "icon.svg",
     "index.html",
-    "manifest.webmanifest"
+    "manifest.webmanifest",
+    "policies.css",
+    "privacy.html",
+    "support.html",
+    "terms.html"
   ]
 }

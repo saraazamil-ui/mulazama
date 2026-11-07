@@ -1,7 +1,7 @@
 import { projectProgress } from "../progress/projection";
 import type { Action } from '../domain/state';
 import { initialState, transition, effectiveBudget, currentRiyadhDate, validateConfig } from '../domain/state';
-import type { PrototypeState, ContractId, ContractRequestMap, ContractResponseMap, Result, QueryMeta } from '../domain/contracts';
+import type { PrototypeState, PlanConfig, RangeSelection, ContractId, ContractRequestMap, ContractResponseMap, Result, QueryMeta } from '../domain/contracts';
 import { VERSIONS, DomainError, canonical } from '../core/types';
 import type { EventStore, EventSnapshot, LearningEvent } from '../core/types';
 import { IndexedDbEventStore } from '../persistence/event-store';
@@ -24,6 +24,12 @@ const TYPE: Record<Action['type'], string> = {
 };
 const copy = <T>(value:T):T => structuredClone(value);
 const uuid = () => crypto.randomUUID();
+export interface OnboardingSubmission {
+  config: PlanConfig;
+  /** New declarations only. Existing declarations and original events are retained. */
+  ranges: RangeSelection[];
+  commandId: string;
+}
 function envelope(type:string, commandId:string, userId:string, data:Record<string,unknown>, at:string):LearningEvent {
   return {eventId:uuid(),commandId,operationId:commandId,userId,unitId:null,type,occurredAt:at,receivedAt:at,zoneId:'Asia/Riyadh',source:'product',coverage:[],versions:VERSIONS,data};
 }
@@ -111,6 +117,45 @@ export class ApplicationService {
     action=JSON.parse(JSON.stringify(action)) as Action;
     const execute=()=>this.perform(action);
     const pending=this.queue.then(execute,execute); this.queue=pending.catch(()=>undefined); return pending;
+  }
+  /** Initial setup is one durable transaction using the existing product event schemas. */
+  configureOnboarding(input:OnboardingSubmission):Promise<PrototypeState> {
+    if (!input || typeof input.commandId !== 'string' || !input.commandId || !Array.isArray(input.ranges) || input.ranges.length > 10_000)
+      throw new DomainError('INVALID_INPUT','نطاقات الإعداد غير صالحة.');
+    validateProductAction({type:'config',config:input.config,commandId:input.commandId});
+    if (!input.config.configured) throw new DomainError('INVALID_INPUT','الإعداد النهائي يحتاج اختيارًا مكتملًا.');
+    const prefix = `${input.commandId}:onboarding:`;
+    const actions:Action[] = [
+      ...input.ranges.map((range,index)=>({type:'range.add' as const,range,commandId:prefix+index})),
+      {type:'config',config:input.config,commandId:prefix+'config'},
+    ];
+    for (const action of actions) validateProductAction(action);
+    // Freeze caller-owned input before entering the shared write queue.
+    const copied=JSON.parse(JSON.stringify(actions)) as Action[];
+    const execute=async()=>{
+      // Also resolves an earlier durable commit whose acknowledgement was interrupted.
+      this.accept(await this.store.load());
+      const existing=this.snapshot.events.filter(event=>event.commandId.startsWith(prefix));
+      if(existing.length) {
+        if(existing.length!==copied.length || copied.some(action=>{
+          const {commandId,...payload}=action;
+          const event=existing.find(candidate=>candidate.commandId===commandId);
+          return !event || canonical(event.data.action)!==canonical(payload);
+        })) throw new DomainError('EVENT_CONFLICT','تعارض في إعادة إرسال الإعداد؛ لم تتغير البيانات.');
+        return this.state;
+      }
+      if(this.current.config.configured) throw new DomainError('INVALID_INPUT','الإعداد محفوظ بالفعل؛ استخدم تعديل الخطة.');
+      const at=new Date().toISOString();
+      const events=copied.map(action=>{
+        const {commandId,...payload}=action;
+        return envelope(TYPE[action.type],commandId!,this.current.profileId,{scope:'product',action:payload,generatedIds:[]},at);
+      });
+      replayProduct({revision:this.snapshot.revision+1,events:[...this.snapshot.events,...events]});
+      // No profile completion, range declaration, or displayed success before this ack.
+      this.accept(await this.store.append(events,this.snapshot.revision));
+      return this.state;
+    };
+    const pending=this.queue.then(execute,execute);this.queue=pending.catch(()=>undefined);return pending;
   }
   private async perform(action:Action):Promise<PrototypeState> {
     if(action.type.startsWith('session.')||action.type.startsWith('attempt.')){

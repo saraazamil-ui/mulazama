@@ -5,3 +5,6 @@ playwright-report/
 *.tsbuildinfo
 .DS_Store
 test-results-offline/
+
+# Focused local verification outputs
+test-results-*/

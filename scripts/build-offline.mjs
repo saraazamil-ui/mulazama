@@ -22,8 +22,9 @@ self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=
 self.addEventListener('fetch',event=>{
  if(event.request.method!=='GET'||new URL(event.request.url).origin!==self.location.origin)return;
  const base=new URL('./',self.location.href),url=new URL(event.request.url);
+ if(!url.pathname.startsWith(base.pathname))return;
  const relative=url.pathname.slice(base.pathname.length);
- if(event.request.mode==='navigate')event.respondWith(caches.open(CACHE).then(cache=>cache.match('index.html')).then(hit=>hit||fetch(event.request)));
+ if(event.request.mode==='navigate')event.respondWith(caches.open(CACHE).then(cache=>cache.match(new URL(ASSETS.includes(relative)?relative:'index.html',base))).then(hit=>hit||fetch(event.request)));
  else if(ASSETS.includes(relative))event.respondWith(caches.open(CACHE).then(cache=>cache.match(event.request)).then(hit=>hit||fetch(event.request)));
 });
 `;

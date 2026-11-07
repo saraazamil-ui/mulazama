@@ -1,0 +1,637 @@
+{
+  "config": {
+    "configFile": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l1/playwright.config.ts",
+    "rootDir": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l1/e2e",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/browser-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l1/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l1/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 1,
+    "webServer": {
+      "command": "node node_modules/vite/bin/vite.js --host 127.0.0.1 --port 4173 --strictPort",
+      "url": "http://127.0.0.1:4173",
+      "reuseExistingServer": true,
+      "timeout": 30000
+    }
+  },
+  "suites": [
+    {
+      "title": "phase06l1.spec.ts",
+      "file": "phase06l1.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "L1WEB01 newcomer completes three steps in four actions, reopens home, and cannot start blocked sessions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1516,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T11:26:35.207Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "newcomer-journey.json",
+                      "contentType": "application/json",
+                      "body": "eyJzZXR1cEFjdGlvbnMiOjQsIm1haW5TdGVwcyI6MywiZGVmYXVsdFZhbHVlc1VzZWQiOnRydWUsImhvbWVPblJlb3BlbiI6dHJ1ZSwiYWN0aW9uc1RvU3RhcnRBY3R1YWxXYXJkIjpudWxsLCJzdGFydFN0YXR1cyI6ImJsb2NrZWQiLCJodW1hblBhcnRpY2lwYW50IjpmYWxzZX0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "43ce39353d1e08af6797-4e06e96791b98c79b24f",
+          "file": "phase06l1.spec.ts",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "L1WEB02 prior hafiz declares a range in six actions, with no verified memorization or HME writes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1406,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T11:26:38.814Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "prior-hafiz-journey.json",
+                      "contentType": "application/json",
+                      "body": "eyJzZXR1cEFjdGlvbnMiOjYsIm1haW5TdGVwcyI6MywiaW5pdGlhbFJhbmdlIjoic3ludGhldGljIGRlY2xhcmVkIHN1cmFoIDEiLCJ2ZXJpZmllZE1lbW9yaXphdGlvbiI6ZmFsc2UsImhtZVdyaXRlcyI6MCwiaHVtYW5QYXJ0aWNpcGFudCI6ZmFsc2V9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "43ce39353d1e08af6797-4eef96c0858c6649aa86",
+          "file": "phase06l1.spec.ts",
+          "line": 46,
+          "column": 1
+        },
+        {
+          "title": "L1WEB03 companion reads the real history owner and refreshes corrected observations without multiplying attempts",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 850,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l1/e2e/phase06l1.spec.ts:76:85",
+                    "location": {
+                      "file": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l1/e2e/phase06l1.spec.ts",
+                      "column": 85,
+                      "line": 76
+                    },
+                    "snippet": "  74 |     } finally { store.close(); window.dispatchEvent(new Event('focus')); }\n  75 |   });\n> 76 |   expect(receipt.originalEventsPreserved).toBe(true); expect(receipt.duplicateNoOp).toBe(true);\n     |                                                                                     ^\n  77 |   await expect(panel.locator('dt', { hasText: 'تصحيحات محفوظة' }).locator('..').locator('dd')).toHaveText('١');\n  78 |   await expect(panel.locator('dt', { hasText: 'محاولات لها نتيجة' }).locator('..').locator('dd')).toHaveText('١');\n  79 |   await page.reload();"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l1/e2e/phase06l1.spec.ts",
+                        "column": 85,
+                        "line": 76
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  74 |     } finally { store.close(); window.dispatchEvent(new Event('focus')); }\n  75 |   });\n> 76 |   expect(receipt.originalEventsPreserved).toBe(true); expect(receipt.duplicateNoOp).toBe(true);\n     |                                                                                     ^\n  77 |   await expect(panel.locator('dt', { hasText: 'تصحيحات محفوظة' }).locator('..').locator('dd')).toHaveText('١');\n  78 |   await expect(panel.locator('dt', { hasText: 'محاولات لها نتيجة' }).locator('..').locator('dd')).toHaveText('١');\n  79 |   await page.reload();\n    at /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l1/e2e/phase06l1.spec.ts:76:85"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T11:26:40.238Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l1/test-results/phase06l1-L1WEB03-companio-79533-ithout-multiplying-attempts/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l1/test-results/phase06l1-L1WEB03-companio-79533-ithout-multiplying-attempts/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l1/test-results/phase06l1-L1WEB03-companio-79533-ithout-multiplying-attempts/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l1/e2e/phase06l1.spec.ts",
+                    "column": 85,
+                    "line": 76
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "43ce39353d1e08af6797-6757d473f06d58538ad5",
+          "file": "phase06l1.spec.ts",
+          "line": 115,
+          "column": 1
+        },
+        {
+          "title": "L1WEB04 each setup step and policy page is accessible at 320px and keyboard operable",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1651,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 37\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"description\": \"Ensure all page content is contained by landmarks\",\u001b[39m\n\u001b[31m+     \"help\": \"All page content should be contained by landmarks\",\u001b[39m\n\u001b[31m+     \"helpUrl\": \"https://dequeuniversity.com/rules/axe/4.10/region?application=playwright\",\u001b[39m\n\u001b[31m+     \"id\": \"region\",\u001b[39m\n\u001b[31m+     \"impact\": \"moderate\",\u001b[39m\n\u001b[31m+     \"nodes\": Array [\u001b[39m\n\u001b[31m+       Object {\u001b[39m\n\u001b[31m+         \"all\": Array [],\u001b[39m\n\u001b[31m+         \"any\": Array [\u001b[39m\n\u001b[31m+           Object {\u001b[39m\n\u001b[31m+             \"data\": Object {\u001b[39m\n\u001b[31m+               \"isIframe\": false,\u001b[39m\n\u001b[31m+             },\u001b[39m\n\u001b[31m+             \"id\": \"region\",\u001b[39m\n\u001b[31m+             \"impact\": \"moderate\",\u001b[39m\n\u001b[31m+             \"message\": \"Some page content is not contained by landmarks\",\u001b[39m\n\u001b[31m+             \"relatedNodes\": Array [],\u001b[39m\n\u001b[31m+           },\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+         \"failureSummary\": \"Fix any of the following:\u001b[39m\n\u001b[31m+   Some page content is not contained by landmarks\",\u001b[39m\n\u001b[31m+         \"html\": \"<div class=\\\"prototype-strip\\\">إصدار هندسي 06-E1 · جلسات القرآن موقوفة حتى اعتماد المحتوى</div>\",\u001b[39m\n\u001b[31m+         \"impact\": \"moderate\",\u001b[39m\n\u001b[31m+         \"none\": Array [],\u001b[39m\n\u001b[31m+         \"target\": Array [\u001b[39m\n\u001b[31m+           \".prototype-strip\",\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+       },\u001b[39m\n\u001b[31m+     ],\u001b[39m\n\u001b[31m+     \"tags\": Array [\u001b[39m\n\u001b[31m+       \"cat.keyboard\",\u001b[39m\n\u001b[31m+       \"best-practice\",\u001b[39m\n\u001b[31m+     ],\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 37\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"description\": \"Ensure all page content is contained by landmarks\",\u001b[39m\n\u001b[31m+     \"help\": \"All page content should be contained by landmarks\",\u001b[39m\n\u001b[31m+     \"helpUrl\": \"https://dequeuniversity.com/rules/axe/4.10/region?application=playwright\",\u001b[39m\n\u001b[31m+     \"id\": \"region\",\u001b[39m\n\u001b[31m+     \"impact\": \"moderate\",\u001b[39m\n\u001b[31m+     \"nodes\": Array [\u001b[39m\n\u001b[31m+       Object {\u001b[39m\n\u001b[31m+         \"all\": Array [],\u001b[39m\n\u001b[31m+         \"any\": Array [\u001b[39m\n\u001b[31m+           Object {\u001b[39m\n\u001b[31m+             \"data\": Object {\u001b[39m\n\u001b[31m+               \"isIframe\": false,\u001b[39m\n\u001b[31m+             },\u001b[39m\n\u001b[31m+             \"id\": \"region\",\u001b[39m\n\u001b[31m+             \"impact\": \"moderate\",\u001b[39m\n\u001b[31m+             \"message\": \"Some page content is not contained by landmarks\",\u001b[39m\n\u001b[31m+             \"relatedNodes\": Array [],\u001b[39m\n\u001b[31m+           },\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+         \"failureSummary\": \"Fix any of the following:\u001b[39m\n\u001b[31m+   Some page content is not contained by landmarks\",\u001b[39m\n\u001b[31m+         \"html\": \"<div class=\\\"prototype-strip\\\">إصدار هندسي 06-E1 · جلسات القرآن موقوفة حتى اعتماد المحتوى</div>\",\u001b[39m\n\u001b[31m+         \"impact\": \"moderate\",\u001b[39m\n\u001b[31m+         \"none\": Array [],\u001b[39m\n\u001b[31m+         \"target\": Array [\u001b[39m\n\u001b[31m+           \".prototype-strip\",\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+       },\u001b[39m\n\u001b[31m+     ],\u001b[39m\n\u001b[31m+     \"tags\": Array [\u001b[39m\n\u001b[31m+       \"cat.keyboard\",\u001b[39m\n\u001b[31m+       \"best-practice\",\u001b[39m\n\u001b[31m+     ],\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l1/e2e/phase06l1.spec.ts:91:67",
+                    "location": {
+                      "file": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l1/e2e/phase06l1.spec.ts",
+                      "column": 67,
+                      "line": 91
+                    },
+                    "snippet": "  89 |   await page.goto('/#S02');\n  90 |   for (const name of ['التالي: المحفوظات والهدف', 'التالي: الوقت المناسب', 'احفظ واذهب إلى الرئيسية']) {\n> 91 |     expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);\n     |                                                                   ^\n  92 |     await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);\n  93 |     const button = page.getByRole('button', { name }); await button.focus(); await expect(button).toBeFocused(); await page.keyboard.press('Enter');\n  94 |   }"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l1/e2e/phase06l1.spec.ts",
+                        "column": 67,
+                        "line": 91
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 37\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"description\": \"Ensure all page content is contained by landmarks\",\u001b[39m\n\u001b[31m+     \"help\": \"All page content should be contained by landmarks\",\u001b[39m\n\u001b[31m+     \"helpUrl\": \"https://dequeuniversity.com/rules/axe/4.10/region?application=playwright\",\u001b[39m\n\u001b[31m+     \"id\": \"region\",\u001b[39m\n\u001b[31m+     \"impact\": \"moderate\",\u001b[39m\n\u001b[31m+     \"nodes\": Array [\u001b[39m\n\u001b[31m+       Object {\u001b[39m\n\u001b[31m+         \"all\": Array [],\u001b[39m\n\u001b[31m+         \"any\": Array [\u001b[39m\n\u001b[31m+           Object {\u001b[39m\n\u001b[31m+             \"data\": Object {\u001b[39m\n\u001b[31m+               \"isIframe\": false,\u001b[39m\n\u001b[31m+             },\u001b[39m\n\u001b[31m+             \"id\": \"region\",\u001b[39m\n\u001b[31m+             \"impact\": \"moderate\",\u001b[39m\n\u001b[31m+             \"message\": \"Some page content is not contained by landmarks\",\u001b[39m\n\u001b[31m+             \"relatedNodes\": Array [],\u001b[39m\n\u001b[31m+           },\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+         \"failureSummary\": \"Fix any of the following:\u001b[39m\n\u001b[31m+   Some page content is not contained by landmarks\",\u001b[39m\n\u001b[31m+         \"html\": \"<div class=\\\"prototype-strip\\\">إصدار هندسي 06-E1 · جلسات القرآن موقوفة حتى اعتماد المحتوى</div>\",\u001b[39m\n\u001b[31m+         \"impact\": \"moderate\",\u001b[39m\n\u001b[31m+         \"none\": Array [],\u001b[39m\n\u001b[31m+         \"target\": Array [\u001b[39m\n\u001b[31m+           \".prototype-strip\",\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+       },\u001b[39m\n\u001b[31m+     ],\u001b[39m\n\u001b[31m+     \"tags\": Array [\u001b[39m\n\u001b[31m+       \"cat.keyboard\",\u001b[39m\n\u001b[31m+       \"best-practice\",\u001b[39m\n\u001b[31m+     ],\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  89 |   await page.goto('/#S02');\n  90 |   for (const name of ['التالي: المحفوظات والهدف', 'التالي: الوقت المناسب', 'احفظ واذهب إلى الرئيسية']) {\n> 91 |     expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);\n     |                                                                   ^\n  92 |     await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);\n  93 |     const button = page.getByRole('button', { name }); await button.focus(); await expect(button).toBeFocused(); await page.keyboard.press('Enter');\n  94 |   }\n    at /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l1/e2e/phase06l1.spec.ts:91:67"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T11:26:42.815Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l1/test-results/phase06l1-L1WEB04-each-set-fd2ee-320px-and-keyboard-operable/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l1/test-results/phase06l1-L1WEB04-each-set-fd2ee-320px-and-keyboard-operable/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l1/test-results/phase06l1-L1WEB04-each-set-fd2ee-320px-and-keyboard-operable/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l1/e2e/phase06l1.spec.ts",
+                    "column": 67,
+                    "line": 91
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "43ce39353d1e08af6797-f638519b4d519199894b",
+          "file": "phase06l1.spec.ts",
+          "line": 214,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "verification05b.spec.ts",
+      "file": "verification05b.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "BWEB07 new profile, plan and nonadjacent declarations survive reopening without filling gaps",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1735,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T11:26:48.489Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7f7493b6f9f49bbaffbd-fa849a7d273e9bda9644",
+          "file": "verification05b.spec.ts",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "BWEB08 usual and today-only budgets persist as separate values",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1173,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T11:26:50.694Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7f7493b6f9f49bbaffbd-dba7cf60f7abe9c91034",
+          "file": "verification05b.spec.ts",
+          "line": 79,
+          "column": 1
+        },
+        {
+          "title": "BWEB09 direct learning routes keep training, recall and reader controls out of the DOM",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 977,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T11:26:51.874Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7f7493b6f9f49bbaffbd-de5754576dcbb23dbc42",
+          "file": "verification05b.spec.ts",
+          "line": 118,
+          "column": 1
+        },
+        {
+          "title": "BWEB10 direct service commands cannot bypass the Quran gate or create learning events",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 614,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T11:26:52.867Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "service-gate-rejections",
+                      "contentType": "application/json",
+                      "body": "ewogICJyZWplY3Rpb25zIjogWwogICAgewogICAgICAidHlwZSI6ICJzZXNzaW9uLnN0YXJ0IiwKICAgICAgImNvZGUiOiAiUkVMRUFTRV9HQVRFU19CTE9DS0VEIgogICAgfSwKICAgIHsKICAgICAgInR5cGUiOiAic2Vzc2lvbi5yZXBlYXQiLAogICAgICAiY29kZSI6ICJSRUxFQVNFX0dBVEVTX0JMT0NLRUQiCiAgICB9LAogICAgewogICAgICAidHlwZSI6ICJzZXNzaW9uLnN0YXJ0UmVjYWxsIiwKICAgICAgImNvZGUiOiAiUkVMRUFTRV9HQVRFU19CTE9DS0VEIgogICAgfSwKICAgIHsKICAgICAgInR5cGUiOiAic2Vzc2lvbi5wYXVzZSIsCiAgICAgICJjb2RlIjogIlJFTEVBU0VfR0FURVNfQkxPQ0tFRCIKICAgIH0sCiAgICB7CiAgICAgICJ0eXBlIjogInNlc3Npb24ucmVzdW1lIiwKICAgICAgImNvZGUiOiAiUkVMRUFTRV9HQVRFU19CTE9DS0VEIgogICAgfSwKICAgIHsKICAgICAgInR5cGUiOiAic2Vzc2lvbi5lbmQiLAogICAgICAiY29kZSI6ICJSRUxFQVNFX0dBVEVTX0JMT0NLRUQiCiAgICB9LAogICAgewogICAgICAidHlwZSI6ICJzZXNzaW9uLnJlc3RhcnRSZWNhbGwiLAogICAgICAiY29kZSI6ICJSRUxFQVNFX0dBVEVTX0JMT0NLRUQiCiAgICB9LAogICAgewogICAgICAidHlwZSI6ICJzZXNzaW9uLmZpbmlzaGVkQmVmb3JlU3RvcCIsCiAgICAgICJjb2RlIjogIlJFTEVBU0VfR0FURVNfQkxPQ0tFRCIKICAgIH0sCiAgICB7CiAgICAgICJ0eXBlIjogImF0dGVtcHQuaGludCIsCiAgICAgICJjb2RlIjogIlJFTEVBU0VfR0FURVNfQkxPQ0tFRCIKICAgIH0sCiAgICB7CiAgICAgICJ0eXBlIjogImF0dGVtcHQucmV2ZWFsIiwKICAgICAgImNvZGUiOiAiUkVMRUFTRV9HQVRFU19CTE9DS0VEIgogICAgfSwKICAgIHsKICAgICAgInR5cGUiOiAiYXR0ZW1wdC5maW5pc2giLAogICAgICAiY29kZSI6ICJSRUxFQVNFX0dBVEVTX0JMT0NLRUQiCiAgICB9LAogICAgewogICAgICAidHlwZSI6ICJhdHRlbXB0LmFzc2VzcyIsCiAgICAgICJjb2RlIjogIlJFTEVBU0VfR0FURVNfQkxPQ0tFRCIKICAgIH0KICBdLAogICJiZWZvcmVSZXZpc2lvbiI6IDEsCiAgImFmdGVyUmV2aXNpb24iOiAxLAogICJiZWZvcmVFdmVudHMiOiAxLAogICJhZnRlckV2ZW50cyI6IDEsCiAgInJhd0V2ZW50c1VuY2hhbmdlZCI6IHRydWUsCiAgInNlc3Npb24iOiBudWxsLAogICJhdHRlbXB0cyI6IDAKfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7f7493b6f9f49bbaffbd-6de0ca3bbd003d3e754a",
+          "file": "verification05b.spec.ts",
+          "line": 136,
+          "column": 1
+        },
+        {
+          "title": "BWEB11 forecast abstains and thirty untested parts do not acquire mastery",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1449,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T11:26:53.497Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7f7493b6f9f49bbaffbd-49ee1bee94f6a8300254",
+          "file": "verification05b.spec.ts",
+          "line": 221,
+          "column": 1
+        },
+        {
+          "title": "BWEB12 keyboard skip link, modal focus containment and Escape restore focus",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1500,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T11:26:54.969Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7f7493b6f9f49bbaffbd-c27a0b1644be65932f4f",
+          "file": "verification05b.spec.ts",
+          "line": 245,
+          "column": 1
+        },
+        {
+          "title": "BWEB13 invalid backup preserves preferences; confirmed full restore can be repeated",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2225,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T11:26:56.489Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7f7493b6f9f49bbaffbd-a0e516b03d6df98aa588",
+          "file": "verification05b.spec.ts",
+          "line": 277,
+          "column": 1
+        },
+        {
+          "title": "BWEB14 a reported mistake remains a local unverified draft after reopening",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1064,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T11:26:58.735Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7f7493b6f9f49bbaffbd-40c27d44ba76f201978a",
+          "file": "verification05b.spec.ts",
+          "line": 344,
+          "column": 1
+        },
+        {
+          "title": "BWEB15 enlarged text, reduced motion and dark preference persist at 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1450,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T11:26:59.812Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7f7493b6f9f49bbaffbd-b9aecf3b81371849f6b0",
+          "file": "verification05b.spec.ts",
+          "line": 374,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-07T11:26:32.682Z",
+    "duration": 28979.818,
+    "expected": 11,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}

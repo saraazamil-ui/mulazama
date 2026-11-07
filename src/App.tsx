@@ -55,6 +55,9 @@ import { currentRiyadhDate, effectiveBudget } from "./domain/state";
 import type { Action } from "./domain/state";
 import { ApplicationService } from "./application/service";
 import { LearningEngineScreen } from "./LearningEngineScreen";
+import { Onboarding } from "./Onboarding";
+import { CompanionPanel, type CompanionLoadState } from "./CompanionPanel";
+import type { PersonalMemoryReadModel } from "./memory/personal-memory";
 import { ProgressContent } from "./ProgressDashboard";
 import type { ProgressLoadState } from "./ProgressDashboard";
 import type { ProgressReadModel } from "./progress/projection";
@@ -75,6 +78,8 @@ type Scenario =
 interface AppContext {
   state: PrototypeState;
   progress: ProgressLoadState;
+  companion: CompanionLoadState;
+  refreshCompanion: () => Promise<void>;
   refreshProgress: () => Promise<void>;
   screen: Screen;
   go: (s: Screen) => void;
@@ -131,11 +136,31 @@ export default function App({
 }: {
   service: ApplicationService;
   learning?: LearningUiAdapter;
-  data?: CompositeDataController & { readProgress?: (now?: Date) => ProgressReadModel | Promise<ProgressReadModel> };
+  data?: CompositeDataController & { readProgress?: (now?: Date) => ProgressReadModel | Promise<ProgressReadModel>; readPersonalMemory?: (now?: Date) => Promise<PersonalMemoryReadModel> };
 }) {
   const [state, setState] = useState<PrototypeState>(() => service.state);
-  const [screen, setScreen] = useState<Screen>(route);
+  const [screen, setScreen] = useState<Screen>(() => window.location.hash ? route() : service.state.config.configured ? "S05" : "S01");
   const [progress, setProgress] = useState<ProgressLoadState>({ status: "loading" });
+  const [companion, setCompanion] = useState<CompanionLoadState>({ status: "loading" });
+  const companionGeneration = useRef(0);
+  const refreshCompanion = useCallback(async () => {
+    const generation = ++companionGeneration.current;
+    if (!data?.readPersonalMemory) {
+      setCompanion({ status: "unavailable", message: "قراءة ذاكرة الحافظ غير متاحة في هذه الواجهة. لم يُستنتج تقدم من إعداداتك." });
+      return;
+    }
+    setCompanion({ status: "loading" });
+    try {
+      const value = await data.readPersonalMemory();
+      if (generation === companionGeneration.current) setCompanion({ status: "ready", value });
+    } catch (cause) {
+      if (generation === companionGeneration.current) setCompanion({ status: "error", message: cause instanceof Error ? cause.message : "تعذر التحقق من السجل المحلي." });
+    }
+  }, [data]);
+  useEffect(() => {
+    void refreshCompanion();
+    return () => { companionGeneration.current++; };
+  }, [refreshCompanion, state.revision, screen]);
   const progressGeneration = useRef(0);
   const refreshProgress = useCallback(async () => {
     const generation = ++progressGeneration.current;
@@ -158,7 +183,7 @@ export default function App({
       const nextMidnight = Date.parse(`${currentRiyadhDate()}T00:00:00+03:00`) + 86400000;
       timer = setTimeout(() => { void refreshProgress(); scheduleMidnight(); }, Math.max(1, nextMidnight - Date.now() + 50));
     };
-    const onFocus = () => { void refreshProgress(); };
+    const onFocus = () => { void refreshProgress(); void refreshCompanion(); };
     const onVisible = () => { if (document.visibilityState === "visible") onFocus(); };
     scheduleMidnight();
     window.addEventListener("focus", onFocus);
@@ -168,7 +193,7 @@ export default function App({
       window.removeEventListener("focus", onFocus);
       document.removeEventListener("visibilitychange", onVisible);
     };
-  }, [refreshProgress]);
+  }, [refreshProgress, refreshCompanion]);
   const [scenario, setScenario] = useState<Scenario>("normal");
   const [recoveryRequired, setRecoveryRequired] = useState(false);
   const [message, setMessage] = useState("");
@@ -277,7 +302,18 @@ export default function App({
           : "S05";
   const contents: Record<Screen, ReactNode> = {
     S01: <Welcome />,
-    S02: <Plan />,
+    S02: state.config.configured ? <Plan /> : <Page id="S02" description="ثلاث خطوات لتهيئة هدفك ومحفوظك ووقتك.">
+      <Onboarding config={state.config} ranges={state.ranges} onSave={async input => {
+        try {
+          const next = await service.configureOnboarding(input);
+          setState(next); stateRef.current = next; setError(""); setRecoveryRequired(false);
+          return true;
+        } catch (cause) {
+          setError(cause instanceof Error ? cause.message : "تعذر تأكيد حفظ الإعداد.");
+          return false;
+        }
+      }} onComplete={() => go("S05")} />
+    </Page>,
     S03: <Ranges />,
     S04: (
       <LearningContentBoundary id="S04">
@@ -340,7 +376,7 @@ export default function App({
       <LearningEngineScreen
         key={screen}
         adapter={learning}
-        onCommitted={() => { void refreshProgress(); }}
+        onCommitted={() => { void refreshProgress(); void refreshCompanion(); }}
         id={screen as LearningScreenId}
       />
     );
@@ -352,6 +388,8 @@ export default function App({
           state,
           progress,
           refreshProgress,
+          companion,
+          refreshCompanion,
           screen,
           go,
           commit,
@@ -422,7 +460,7 @@ export default function App({
               <button className="help-button" onClick={() => setHelp(true)}>
                 عن مُلازَمَة وخصوصيتك <ShieldCheck size={17} />
               </button>
-              <small>MULAZAMA · 06-E1</small>
+              <small>MULAZAMA · 06-L1</small>
             </div>
           </aside>
           <div className="workspace">
@@ -460,8 +498,8 @@ export default function App({
                 </button>
               </div>
             </header>
-            <div className="prototype-strip">
-              إصدار هندسي 06-E1 · جلسات القرآن موقوفة حتى اعتماد المحتوى
+            <div className="prototype-strip" role="region" aria-label="حالة النسخة">
+              إصدار هندسي 06-L1 · جلسات القرآن موقوفة حتى اعتماد المحتوى
             </div>
             <main
               id="main-content"
@@ -696,6 +734,7 @@ function Welcome() {
       <Notice>
         يمكنك تجربة الإعداد الآن. جلسات القرآن الفعلية تنتظر حزمة محتوى معتمدة.
       </Notice>
+      <p className="policy-links"><a href="./privacy.html">الخصوصية في هذه النسخة</a> · <a href="./support.html">المساعدة</a> · <a href="./terms.html">حدود الاستخدام</a></p>
       <Button variant="ghost" onClick={() => go("S17")}>
         المصدر والخصوصية <ChevronLeft size={16} />
       </Button>
@@ -1083,7 +1122,7 @@ function Diagnostic() {
   );
 }
 function Today() {
-  const { state, go, start, scenario, progress, refreshProgress, service } = useApp();
+  const { state, go, start, scenario, progress, refreshProgress, service, companion, refreshCompanion } = useApp();
   const learningBlocked = service.releaseGates.some(gate => gate.status !== "passed");
   const query = useQuery("C04", {
     operation: "read",
@@ -1101,30 +1140,21 @@ function Today() {
   return (
     <Page id="S05" description="مُلازَمَة · رفيقك في حفظ القرآن وإتقانه.">
       <div className="dashboard-grid">
-        <section className="hero-card">
-          <span className="pill">
-            <Leaf size={16} /> ورد هادئ، أثر مستمر
-          </span>
-          <h2>وردك وتقدمك في مكان واحد.</h2>
-          <div className="hero-footer">
-            <span>
-              <Clock size={18} />
-              {number(effectiveBudget(state))} دقيقة متاحة اليوم
-            </span>
-            <Button variant="secondary" onClick={() => go("S06")}>
-              راجع خطتك <ArrowLeft size={18} />
-            </Button>
-          </div>
-          <div className="hero-decoration" aria-hidden="true">
-            ۞
-          </div>
-        </section>
         <Card className="next-card">
           <div className="section-title">
             <h2>خطوتك التالية</h2>
             <span className="small-dot" />
           </div>
-          {state.session ? (
+          {learningBlocked ? (
+            <>
+              <h3>{state.config.configured ? "إعدادك محفوظ، وننتظر إتاحة الجلسات" : "لنهيئ وردك"}</h3>
+              <p>يمكنك ضبط هدفك ووقتك ومحفوظك المعلن. بدء الحفظ والمراجعة ينتظر اعتماد جلسات القرآن.</p>
+              <Button onClick={() => go("S02")}>
+                {state.config.configured ? "راجع هدفك ووقتك" : "أكمل إعدادك"} <ArrowLeft size={18} />
+              </Button>
+              {state.session && <p>سجل جلستك المتوقفة محفوظ؛ استئنافها ينتظر الاعتماد.</p>}
+            </>
+          ) : state.session ? (
             <>
               <Meta>جلسة محفوظة</Meta>
               <h3>نكمل من حيث توقفت</h3>
@@ -1166,6 +1196,24 @@ function Today() {
             </Empty>
           )}
         </Card>
+        <section className="hero-card">
+          <span className="pill">
+            <Leaf size={16} /> ورد هادئ، أثر مستمر
+          </span>
+          <h2>وردك وتقدمك في مكان واحد.</h2>
+          <div className="hero-footer">
+            <span>
+              <Clock size={18} />
+              {number(effectiveBudget(state))} دقيقة متاحة اليوم
+            </span>
+            <Button variant="secondary" onClick={() => go("S06")}>
+              راجع خطتك <ArrowLeft size={18} />
+            </Button>
+          </div>
+          <div className="hero-decoration" aria-hidden="true">
+            ۞
+          </div>
+        </section>
       </div>
       {scenario === "capacity" && (
         <Notice tone="warning">
@@ -1177,6 +1225,7 @@ function Today() {
         <ProgressContent state={progress} retry={refreshProgress} />
         <div className="actions"><Button onClick={() => go("S14")}>تفاصيل تقدمي <ChevronLeft size={16} /></Button></div>
       </section>
+      <CompanionPanel state={companion} retry={refreshCompanion} />
       <div className="section-title section-spaced">
         <h2>مسارات وردك</h2>
         <span className="muted">المواعيد التعليمية تنتظر اعتماد المحتوى</span>
@@ -2335,10 +2384,11 @@ function Recovery() {
   );
 }
 function Progress() {
-  const { state, go, setPart, progress, refreshProgress } = useApp();
+  const { state, go, setPart, progress, refreshProgress, companion, refreshCompanion } = useApp();
   return (
     <Page id="S14" description="إنجازك المسجل، ونتائجك الذاتية، وما يحتاج إلى دليل إضافي.">
       <section aria-label="ملخص التقدم"><ProgressContent state={progress} retry={refreshProgress} detailed /></section>
+      <CompanionPanel state={companion} retry={refreshCompanion} detailed />
       <Card>
         <h2>المحفوظ المعلن</h2>
         <p>{number(state.ranges.length)} نطاقًا معلنًا محفوظًا محليًا. التصريح لا يثبت اجتياز الحفظ، ولا يدخل في نسبة الإنجاز.</p>
@@ -2665,7 +2715,7 @@ function Preferences() {
             variant="ghost"
             onClick={() =>
               notify(
-                "HME-0.1 / 05A-1، سياسة P0-1، نموذج FSRS-6 حسابي تجريبي. مطابقة المكتبة المرجعية واعتماد المحتوى لم يكتملَا؛ لا ترقية صامتة.",
+                "HME-0.1 / 05A-1، سياسة P0-1. اجتازت النواة المصححة 40 حالة مقابل ts-fsrs 5.4.2. تشغيلها وترحيل السجلات واعتماد المحتوى ما زالت معلقة؛ لا ترقية صامتة.",
               )
             }
           >
@@ -2696,9 +2746,9 @@ function Preferences() {
         </div>
         <details>
           <summary>عن النموذج والمساعدة</summary>
+          <p className="policy-links"><a href="./privacy.html">الخصوصية</a> · <a href="./support.html">الدعم والمساعدة</a> · <a href="./terms.html">حدود الاستخدام</a></p>
           <p>
-            مُلازَمَة — MULAZAMA، إصدار هندسي 05-B للويب. لم يختبر على iOS أو
-            Android. المحتوى القرآني ومطابقة المكتبة المرجعية بوابتان معلقتان.
+            مُلازَمَة — MULAZAMA، إصدار هندسي 06-L1 للويب. اختبار هاتف حقيقي ومراجعة متخصصة لم ينجزا بعد. المطابقة الحسابية المصححة مثبتة، وتشغيل الجلسات واعتماد المحتوى ما زالا معلقين.
           </p>
         </details>
       </Card>

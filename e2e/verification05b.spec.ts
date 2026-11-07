@@ -7,12 +7,13 @@ test('BWEB07 new profile, plan and nonadjacent declarations survive reopening wi
   await page.goto('/#S01');
   await expect(page.getByRole('heading', { level: 1, name: 'أهلًا بك في مُلازَمَة' })).toBeVisible();
   await page.getByRole('button', { name: 'ابدأ إعداد تجربتك' }).click();
-  await page.getByRole('radio', { name: 'لدي محفوظ متفرق' }).click();
+  await page.getByRole('radio', { name: 'لدي محفوظات سابقة وأريد مراجعتها' }).click();
+  await page.getByRole('button', { name: 'التالي: المحفوظات والهدف' }).click();
+  await page.getByRole('button', { name: 'أحدد محفوظاتي لاحقًا — التالي' }).click();
   await page.getByLabel('الوقت اليومي بالدقائق', { exact: true }).fill('30');
-  await page.getByRole('button', { name: 'راجع اختياراتك' }).click();
-  await expect(page.getByRole('dialog', { name: 'اعتماد الإعداد' })).toBeVisible();
-  await page.getByRole('button', { name: 'اعتمد وتابع' }).click();
-  await expect(page.locator('main[data-screen="S03"]')).toBeVisible();
+  await page.getByRole('button', { name: 'احفظ واذهب إلى الرئيسية' }).click();
+  await expect(page.locator('main[data-screen="S05"]')).toBeVisible();
+  await page.goto('/#S03');
   await page.getByRole('combobox', { name: 'طريقة التحديد', exact: true }).selectOption('juz');
   for (const [index, value] of ['1', '3', '1'].entries()) {
     await page.getByLabel('البداية', { exact: true }).fill(value);

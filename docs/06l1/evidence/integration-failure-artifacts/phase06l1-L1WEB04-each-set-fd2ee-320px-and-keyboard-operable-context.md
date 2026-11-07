@@ -1,0 +1,55 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - link "تجاوز إلى المحتوى" [ref=e3] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic [ref=e5]:
+    - banner [ref=e6]:
+      - generic [ref=e7]:
+        - img [ref=e8]
+        - strong [ref=e10]: مُلازَمَة
+      - generic [ref=e11]:
+        - generic [ref=e12]: إصدار هندسي
+        - button "تفعيل الوضع الداكن" [ref=e14] [cursor=pointer]:
+          - img [ref=e15]
+    - generic [ref=e17]: إصدار هندسي 06-E1 · جلسات القرآن موقوفة حتى اعتماد المحتوى
+    - main [ref=e18]:
+      - generic [ref=e19]:
+        - generic [ref=e20]:
+          - generic [ref=e21]: مُلازَمَة / S02
+          - heading "لننظم وردك" [active] [level=1] [ref=e22]
+          - paragraph [ref=e23]: ثلاث خطوات لتهيئة هدفك ومحفوظك ووقتك.
+        - button "رجوع" [ref=e24] [cursor=pointer]:
+          - text: رجوع
+          - img [ref=e25]
+      - generic [ref=e27]:
+        - status [ref=e28]: الخطوة ١ من ٣
+        - heading "حالة الحفظ" [level=2] [ref=e29]
+        - group "حالة الحفظ" [ref=e30]:
+          - generic [ref=e31]: حالة الحفظ
+          - radiogroup "حالة الحفظ" [ref=e32]:
+            - generic [ref=e33] [cursor=pointer]:
+              - radio "أبدأ الحفظ من الصفر" [checked] [ref=e34]
+              - generic [ref=e35]: أبدأ الحفظ من الصفر
+            - generic [ref=e36] [cursor=pointer]:
+              - radio "لدي محفوظات سابقة وأريد مراجعتها" [ref=e37]
+              - generic [ref=e38]: لدي محفوظات سابقة وأريد مراجعتها
+            - generic [ref=e39] [cursor=pointer]:
+              - radio "أريد الجمع بين الحفظ الجديد والمراجعة" [ref=e40]
+              - generic [ref=e41]: أريد الجمع بين الحفظ الجديد والمراجعة
+          - 'button "التالي: المحفوظات والهدف" [ref=e43] [cursor=pointer]'
+    - navigation "التنقل على الهاتف" [ref=e44]:
+      - button "اليوم" [ref=e45] [cursor=pointer]:
+        - img [ref=e46]
+        - generic [ref=e48]: اليوم
+      - button "المصحف" [ref=e49] [cursor=pointer]:
+        - img [ref=e50]
+        - generic [ref=e52]: المصحف
+      - button "تقدمي" [ref=e53] [cursor=pointer]:
+        - img [ref=e54]
+        - generic [ref=e56]: تقدمي
+      - button "الإعدادات" [ref=e57] [cursor=pointer]:
+        - img [ref=e58]
+        - generic [ref=e61]: الإعدادات
+```

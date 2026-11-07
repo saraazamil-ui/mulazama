@@ -31,8 +31,8 @@ export const days = [
 ];
 export const personas = {
   beginner: "أبدأ من الصفر",
-  scattered: "لدي محفوظ متفرق",
-  returning: "أعود إلى محفوظ ضعف",
+  scattered: "لدي محفوظات سابقة",
+  returning: "أتعاهد محفوظاتي السابقة",
   regular: "أحفظ بانتظام",
   complete: "أتممت الحفظ وأريد التعاهد",
 } as const;

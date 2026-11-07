@@ -1,0 +1,14 @@
+{
+  "kind": "local-source-repository",
+  "path": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l1",
+  "baselineCommit": "b8bd45e5abcbfd6f55883cb73579ecbe7beb9b2d",
+  "baselineZipSHA256": "d34e42e108a32442eed8468ca48e83c2b0b1d07312fb21c75e7f19dfb5598cf7",
+  "main": "unchanged verified E1 baseline",
+  "baseline/06e1": "retained source reference; no remote protection configured",
+  "develop": "L1 local review commit; exact commit and portable Git bundle recorded in the external Source-Control receipt after packaging",
+  "remote": null,
+  "externalAccountCreated": false,
+  "remoteProtectionConfigured": false,
+  "productionDeployment": false,
+  "identity": "local engineering attribution, not the owner email"
+}

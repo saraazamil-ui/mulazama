@@ -1,6 +1,6 @@
 {
   "name": "mulazama",
-  "version": "0.5.1-alpha.1",
+  "version": "0.6.0-alpha.1",
   "private": true,
   "type": "module",
   "scripts": {
@@ -16,7 +16,8 @@
     "readiness:production": "node scripts/readiness.mjs",
     "content:audit": "node scripts/audit-quran-content.mjs",
     "content:tools": "node scripts/verify-content-tools.mjs",
-    "fsrs:conformance": "node scripts/fsrs-conformance.mjs"
+    "fsrs:conformance": "node scripts/fsrs-conformance.mjs",
+    "verify:l1": "python3 scripts/verify-06l1.py"
   },
   "dependencies": {
     "lucide-react": "0.468.0",
