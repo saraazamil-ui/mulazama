@@ -2,7 +2,7 @@
   "product": "MULAZAMA",
   "phase": "06-L3",
   "packageVersion": "0.6.0-alpha.3",
-  "createdAt": "2026-11-07T12:42:14.060987+00:00",
+  "createdAt": "2026-11-07T12:43:20.139793+00:00",
   "decision": "NOT READY for closed Quran learning trial or public launch; complete isolated non-Quran engineering journeys delivered",
   "sourcePackage": "MULAZAMA-Phase-06L2-Engineering-Delivery.zip",
   "sourcePackageSHA256": "eae1213dae28f6eaa3ede0207602c6e046c6c19b8817364a16692b3e3208a1cf",
@@ -3859,7 +3859,7 @@
     {
       "path": "docs/06l3/Changed-Files.json",
       "bytes": 54255,
-      "sha256": "21e41e81d561887178d291adad99f7938a70645a529ad2b9f8e39fcba2803db9"
+      "sha256": "ab782e2be8716374a1551a7836f9383b0fa41786ecd34a9c14e2907730c2bde0"
     },
     {
       "path": "docs/06l3/Closed-Trial-Plan.md",
@@ -3924,7 +3924,7 @@
     {
       "path": "docs/06l3/Test-Report.md",
       "bytes": 5824,
-      "sha256": "5c69aea8b6cbe078544ac7f41e562243bae450c7e1f4ab3df69620ae238e07e2"
+      "sha256": "de0dc28d4b81fafcd444b472cf25feceab37984ff2c2b448fc0a45d350e5ad6f"
     },
     {
       "path": "docs/06l3/evidence/Reference-Case-Matrix.md",
