@@ -1,0 +1,17 @@
+{
+  "change": "Pin CI runner to Ubuntu 24.04 and regenerate its source digest",
+  "sourceDigest": "9b280bfd669c21a84910d9a9203423469135e24cdb0a520c283634dbb8120f79",
+  "releaseTests": {
+    "passed": 57,
+    "failed": 0,
+    "skipped": 0
+  },
+  "typecheck": "passed",
+  "build": "passed",
+  "buildIsolation": "passed",
+  "releaseGateExitCode": 2,
+  "gates": "G01-G10 blocked",
+  "productionReady": false,
+  "localBuildAttempt": "pnpm build wrapper aborted during environment dependency preflight (network unavailable and no TTY); identical build commands executed directly with installed Node then passed. Original failure log retained locally.",
+  "historicalDist": "Tracked delivery dist restored after retaining newly built dist outside repository. CI rebuilds source for testing."
+}

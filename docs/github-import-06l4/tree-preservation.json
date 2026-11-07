@@ -1,11 +1,24 @@
 {
   "sourceCommit": "df34d70084bdd328ad77d31cf91fea983d0e474f",
   "officialMain": "ff279eaad321ebd60cf004a44cbdc69d2a178430",
-  "sourceFilesPreserved": 1300,
   "officialIdentityFilesPreserved": 7,
   "officialReadmePreservedAs": "README-official-pre-import.md",
   "conflictsResolved": [
     "README.md"
   ],
-  "unresolvedConflicts": 0
+  "unresolvedConflicts": 0,
+  "exactImportCommit": "76e4332d030a506d2e0ebedbf563f901410b2138",
+  "sourceFilesPreservedAtExactImport": 1300,
+  "sourceFilesPreservedAtReviewHead": 1298,
+  "postImportExceptions": [
+    {
+      "path": ".github/workflows/qa.yml",
+      "reason": "Pin Ubuntu 24.04 because ubuntu-latest is 26.04, unsupported by locked Playwright 1.56.1; no test conditions or application code changed."
+    },
+    {
+      "path": "src/release/build-context.generated.ts",
+      "reason": "Regenerate the source fingerprint because .github is included in the build policy digest; not a product approval."
+    }
+  ],
+  "reviewSourceDigest": "9b280bfd669c21a84910d9a9203423469135e24cdb0a520c283634dbb8120f79"
 }
