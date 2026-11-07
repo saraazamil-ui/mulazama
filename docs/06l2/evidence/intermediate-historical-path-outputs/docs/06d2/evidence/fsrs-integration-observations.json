@@ -1,0 +1,113 @@
+{
+  "syntheticOnly": true,
+  "checkedAt": "2026-11-07T11:44:31.650Z",
+  "assertions": "See fsrs-integration-tests.json or final suite results; these records are observations, not production approval",
+  "observations": [
+    {
+      "scenario": "correct-earliest",
+      "literalExpectedRatings": [
+        1,
+        3,
+        3
+      ],
+      "originalTimes": [
+        "2030-11-06T21:00:00.000Z",
+        "2030-11-09T21:00:00.000Z",
+        "2030-11-20T21:00:00.000Z"
+      ],
+      "correctionAt": "2030-11-21T10:00:00.000Z",
+      "expectedFromUpstream": [
+        {
+          "stability": 0.212,
+          "difficulty": 6.4133,
+          "retrievabilityBefore": null,
+          "elapsedDays": 0,
+          "roundedIntervalDays": 1,
+          "rawDueAt": "2030-11-07T21:00:00.000Z"
+        },
+        {
+          "stability": 2.76096548,
+          "difficulty": 6.40211507,
+          "retrievabilityBefore": 0.65950321,
+          "elapsedDays": 3,
+          "roundedIntervalDays": 3,
+          "rawDueAt": "2030-11-12T21:00:00.000Z"
+        },
+        {
+          "stability": 15.93449804,
+          "difficulty": 6.39094132,
+          "retrievabilityBefore": 0.78251448,
+          "elapsedDays": 11,
+          "roundedIntervalDays": 16,
+          "rawDueAt": "2030-12-06T21:00:00.000Z"
+        }
+      ],
+      "actualSelectedMemory": {
+        "stability": 15.934498038051698,
+        "difficulty": 6.3909413235243795,
+        "lastReviewAt": "2030-11-20T21:00:00.000Z",
+        "model": "FSRS-6",
+        "algorithmVersion": "hme-fsrs6-research-binary64-0.1.0"
+      },
+      "actualRawDueAt": "2030-12-06T21:00:00.000Z",
+      "interpretation": "selected arithmetic nonconformant; original-time correction verified separately"
+    },
+    {
+      "scenario": "retract-middle",
+      "literalExpectedRatings": [
+        3,
+        3
+      ],
+      "originalTimes": [
+        "2030-11-06T21:00:00.000Z",
+        "2030-11-20T21:00:00.000Z"
+      ],
+      "expectedFromUpstream": [
+        {
+          "stability": 2.3065,
+          "difficulty": 2.11810397,
+          "retrievabilityBefore": null,
+          "elapsedDays": 0,
+          "roundedIntervalDays": 2,
+          "rawDueAt": "2030-11-08T21:00:00.000Z"
+        },
+        {
+          "stability": 28.7756461,
+          "difficulty": 2.11121424,
+          "retrievabilityBefore": 0.74158516,
+          "elapsedDays": 14,
+          "roundedIntervalDays": 29,
+          "rawDueAt": "2030-12-19T21:00:00.000Z"
+        }
+      ],
+      "actualSelectedMemory": {
+        "stability": 28.775646047397004,
+        "difficulty": 2.1112142357853942,
+        "lastReviewAt": "2030-11-20T21:00:00.000Z",
+        "model": "FSRS-6",
+        "algorithmVersion": "hme-fsrs6-research-binary64-0.1.0"
+      }
+    },
+    {
+      "scenario": "restore-and-reopen",
+      "rawEventsBeforeSha256": "4437ce37ab87c36bbee65cc6d5efbf41cc04d30873cea9ec656138c7a7b328c4",
+      "rawEventsRestoredSha256": "b7b3c4f9501bb2b98cba67d95a7a52f1890a84179cbe42d3a9df9e02803648a1",
+      "algorithmVersion": "hme-fsrs6-research-binary64-0.1.0",
+      "expectedFromUpstream": {
+        "stability": 15.93449804,
+        "difficulty": 6.39094132,
+        "retrievabilityBefore": 0.78251448,
+        "elapsedDays": 11,
+        "roundedIntervalDays": 16,
+        "rawDueAt": "2030-12-06T21:00:00.000Z"
+      },
+      "actualSelectedMemory": {
+        "stability": 15.934498038051698,
+        "difficulty": 6.3909413235243795,
+        "lastReviewAt": "2030-11-20T21:00:00.000Z",
+        "model": "FSRS-6",
+        "algorithmVersion": "hme-fsrs6-research-binary64-0.1.0"
+      }
+    }
+  ]
+}

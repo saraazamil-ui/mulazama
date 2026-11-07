@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "status": "Blocked",
+  "reason": "Supplemental publisher bytes and mechanical checks obtained; official edition, independent comparison, licensed font and qualified human review remain pending.",
+  "sourceSelection": "download-receipt.json",
+  "editionId": "candidate-tanzil-uthmani-1.1-marks-sajdah-tatweel",
+  "sourceSha256": "6933e133dd56db778c801bf738848454e43648105a151e8d84d86a7cae39ec5f",
+  "metadataSha256": "8867c1d88191472adec9db694b3cd9f135b1a2ef580574d32cf888dcb22c5c7a",
+  "manifestSha256": null,
+  "approvedOfficialPackageSha256": null,
+  "approvedFontSha256": null,
+  "reviewer": null,
+  "qualifications": null,
+  "reviewScope": null,
+  "differencesReviewed": null,
+  "decision": null,
+  "date": null,
+  "signature": null,
+  "activationPermission": false,
+  "governmentSourceRequirementSatisfied": false
+}

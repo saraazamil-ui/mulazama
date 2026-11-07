@@ -20,14 +20,15 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm exec playwright install --with-deps chromium
-      - run: python3 scripts/verify-06l1.py --browser
+      - run: python3 scripts/verify-06l2.py --browser
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: MULAZAMA-web-evidence
           path: |
-            docs/06l1/evidence/
+            docs/06l2/evidence/
             test-results/
             test-results-offline/
+            test-results-deployment/
             playwright-report/
 # There is deliberately no deploy step. A passing engineering job is not release approval.

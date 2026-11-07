@@ -1,0 +1,33 @@
+
+ RUN  v4.1.12 /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l2
+
+ ✓ src/application/fsrs-integration06l2.test.mjs > 06-L2 literal HME mapping and independent corrected scheduler integration > L2FSRS00 project parameters equal the independently pinned library defaults 1ms
+ ✓ src/application/fsrs-integration06l2.test.mjs > 06-L2 literal HME mapping and independent corrected scheduler integration > L2FSRS rubric failure-errors: literal grade 1 21ms
+ ✓ src/application/fsrs-integration06l2.test.mjs > 06-L2 literal HME mapping and independent corrected scheduler integration > L2FSRS rubric clean-hard: literal grade 2 9ms
+ ✓ src/application/fsrs-integration06l2.test.mjs > 06-L2 literal HME mapping and independent corrected scheduler integration > L2FSRS rubric clean-normal: literal grade 3 6ms
+ ✓ src/application/fsrs-integration06l2.test.mjs > 06-L2 literal HME mapping and independent corrected scheduler integration > L2FSRS rubric clean-easy: literal grade 4 7ms
+ ✓ src/application/fsrs-integration06l2.test.mjs > 06-L2 literal HME mapping and independent corrected scheduler integration > L2FSRS rubric hint: literal grade 1 8ms
+ ✓ src/application/fsrs-integration06l2.test.mjs > 06-L2 literal HME mapping and independent corrected scheduler integration > L2FSRS rubric reveal: literal grade 1 8ms
+ ✓ src/application/fsrs-integration06l2.test.mjs > 06-L2 literal HME mapping and independent corrected scheduler integration > L2FSRS rubric memory-failure: literal grade 1 6ms
+ ✓ src/application/fsrs-integration06l2.test.mjs > 06-L2 literal HME mapping and independent corrected scheduler integration > L2FSRS rubric technical-stop: literal grade null 7ms
+ ✓ src/application/fsrs-integration06l2.test.mjs > 06-L2 literal HME mapping and independent corrected scheduler integration > L2FSRS rubric user-stop: literal grade null 6ms
+ ✓ src/application/fsrs-integration06l2.test.mjs > 06-L2 literal HME mapping and independent corrected scheduler integration > L2FSRS rubric unknown-errors: literal grade null 5ms
+ ✓ src/application/fsrs-integration06l2.test.mjs > 06-L2 literal HME mapping and independent corrected scheduler integration > L2FSRS rubric unknown-effort: literal grade null 6ms
+ ✓ src/application/fsrs-integration06l2.test.mjs > 06-L2 literal HME mapping and independent corrected scheduler integration > L2FSRS rubric partial-clean: literal grade null 5ms
+ ✓ src/application/fsrs-integration06l2.test.mjs > 06-L2 literal HME mapping and independent corrected scheduler integration > L2FSRS rubric suspected-word: literal grade null 7ms
+ ✓ src/application/fsrs-integration06l2.test.mjs > 06-L2 literal HME mapping and independent corrected scheduler integration > L2FSRS14 all four literal ratings cross 23/25-hour boundaries without calendar-day rounding 43ms
+ ✓ src/application/fsrs-integration06l2.test.mjs > 06-L2 literal HME mapping and independent corrected scheduler integration > L2FSRS15 correction from hard to easy recomputes at the original time, and identical transport is a no-op 33ms
+ ✓ src/application/fsrs-integration06l2.test.mjs > 06-L2 literal HME mapping and independent corrected scheduler integration > L2FSRS16 unknown correction retracts the original review without adding a review on correction day 5ms
+ ✓ src/application/fsrs-integration06l2.test.mjs > 06-L2 literal HME mapping and independent corrected scheduler integration > L2FSRS17 repeated opportunity and cluster keep only the first eligible review in the independent comparison 19ms
+ ✓ src/application/fsrs-integration06l2.test.mjs > 06-L2 pre-election transition review and isolated backup rehearsal > L2FSRS18 product-only source has no invented units, and all execution capabilities remain false 4ms
+ ✓ src/application/fsrs-integration06l2.test.mjs > 06-L2 pre-election transition review and isolated backup rehearsal > L2FSRS19 report quantifies real state differences and retains historical plans unchanged 11ms
+ ✓ src/application/fsrs-integration06l2.test.mjs > 06-L2 pre-election transition review and isolated backup rehearsal > L2FSRS20 copied encrypted history restores, reopens and rolls back in an isolated store without changing the source 760ms
+ ✓ src/application/fsrs-integration06l2.test.mjs > 06-L2 pre-election transition review and isolated backup rehearsal > L2FSRS21 failed target replacement and stale revision preserve both stores 259ms
+ ✓ src/application/fsrs-integration06l2.test.mjs > 06-L2 pre-election transition review and isolated backup rehearsal > L2FSRS22 malformed or silently relabelled source versions are rejected without mutation 8ms
+
+ Test Files  1 passed (1)
+      Tests  23 passed (23)
+   Start at  14:48:32
+   Duration  1.54s (transform 144ms, setup 47ms, import 148ms, tests 1.27s, environment 0ms)
+
+JSON report written to /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l2/docs/06l2/evidence/fsrs-integration-tests.json

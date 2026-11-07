@@ -1,0 +1,1192 @@
+{
+  "baseline": "MULAZAMA-Phase-06L1-Engineering-Delivery.zip",
+  "baselineSHA256": "b0e6ab8ec3f99461809b9bd05ebf2ac8ddc6e5dad3c0c90affea4ae516b9b94b",
+  "scope": "Packaged files; dependencies, Git metadata and transient runner folders excluded. Removed dist chunks are replaced generated build outputs.",
+  "files": [
+    {
+      "path": ".github/workflows/qa.yml",
+      "status": "modified",
+      "beforeSHA256": "dd540225fe2b2f14f247708e69b625b8ca1e1bc9334a60ce8f28d09775fcc36a",
+      "afterSHA256": "727f777fb02895a30a8967840a673769b5648549e8ba4cc336360f7a40a85e2a"
+    },
+    {
+      "path": ".gitignore",
+      "status": "modified",
+      "beforeSHA256": "087087d065156eb92eb082f3487e681a99babb2ba51c06bb847853f072ff55a8",
+      "afterSHA256": "74e75da80e472d8287927eba8e4feed3ac820fbd09c4537077d5a064a8c17e6f"
+    },
+    {
+      "path": "README.md",
+      "status": "modified",
+      "beforeSHA256": "a2679831ffe9f8bc6c21eb25f91502fbc40d8f13001ba447fb2090b17a270f76",
+      "afterSHA256": "72875a8572c78a54db09ad3d4314d537522a0f56c0a6c06ed3d34fa68824b233"
+    },
+    {
+      "path": "content/06l2/Human-Review-Log.pending.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "1b17459a913fd8c78f6b1493489988449b2bc522bfc8f37982b1b5c640632cce"
+    },
+    {
+      "path": "content/06l2/README.md",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "73fcbca17519b0487db3d71262e66b38fe47d32829fd62abf0d82b454e3e1423"
+    },
+    {
+      "path": "content/06l2/Scientific-Approval.pending.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "56af8e25042c003fb36b264527c1995ef3ccfe34d0c767e4c3e8bea39070dd49"
+    },
+    {
+      "path": "content/06l2/audit-request.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "bc003ec31ff7dbbae9899b3376813ee6c803d0e1bde98f9123922247098145b2"
+    },
+    {
+      "path": "content/06l2/download-receipt.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "61d1af6d19199da916543ba6154ffe32edc17edbba5e57c714d0c02259d3eb30"
+    },
+    {
+      "path": "content/06l2/numbering-profile.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "29f337770f6089feecc67148d47191d165683597ca228308199f18eb49e579ce"
+    },
+    {
+      "path": "content/06l2/quran-data.xml",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "8867c1d88191472adec9db694b3cd9f135b1a2ef580574d32cf888dcb22c5c7a"
+    },
+    {
+      "path": "content/06l2/review.css",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "174be1a23102130e200e1b4a3ab6c5b74d5a6073fc55207df6de046fa37aac30"
+    },
+    {
+      "path": "content/06l2/review.html",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "61438508114c9ac46438354ed75a3e59338c02d107172fe61743f038d1d143cf"
+    },
+    {
+      "path": "content/06l2/review.js",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "eda9bf7a94d993b33681dea1c5e45c4f944ed1ae2918b063628d85c6a379bb79"
+    },
+    {
+      "path": "content/06l2/source-slice-index.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "c1afc53d91fcc14b30d19b6a91280a9b51f6760de235b1949f7feedccdab6c6f"
+    },
+    {
+      "path": "content/06l2/tanzil-license.html",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "3edaac627f23693b080d2b5fa2959027b2296f51b4d0a69e468621910676ba27"
+    },
+    {
+      "path": "content/06l2/tanzil-uthmani-1.1.txt",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "6933e133dd56db778c801bf738848454e43648105a151e8d84d86a7cae39ec5f"
+    },
+    {
+      "path": "delivery-manifest-06l2.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": null,
+      "note": "Self-referential inventory; final archive SHA256 covers it. Changed-Files is also covered by delivery manifest."
+    },
+    {
+      "path": "delivery-manifest.json",
+      "status": "modified",
+      "beforeSHA256": "7c319475993bb26e4f1daf18651e428dac566bf1471bfefefbda78a12d4ffd16",
+      "afterSHA256": null,
+      "note": "Self-referential inventory; final archive SHA256 covers it. Changed-Files is also covered by delivery manifest."
+    },
+    {
+      "path": "dist/assets/adaptive-scheduling-B9kCdmll.js",
+      "status": "removed",
+      "beforeSHA256": "7f62237bc8e4043cc4f40f15b4c2733b7d7f78d6ae93608213c7c26673ac418d",
+      "afterSHA256": null
+    },
+    {
+      "path": "dist/assets/adaptive-scheduling-w6bOq4m1.js",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "2c16cbbfaf2260a413d937725ab5a4735667725d01092cf5dcd4f51011463bed"
+    },
+    {
+      "path": "dist/assets/index-BMHy5AIA.js",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "09279a1f53a26f83d533c279ff44048124e5aafd2cb7d1ba66e8a8722dfeb8e1"
+    },
+    {
+      "path": "dist/assets/index-atPXJdd4.js",
+      "status": "removed",
+      "beforeSHA256": "b64686f1d70df1deb6edf05119ec3b1cb650c915ea31dd5a38ea4d5afde4e764",
+      "afterSHA256": null
+    },
+    {
+      "path": "dist/assets/personal-memory-AcslMUkY.js",
+      "status": "removed",
+      "beforeSHA256": "fca0dcf2e23abb0ecf0d51ec4c1bda1e49abfb76186f846b8e3b0d0df31149ca",
+      "afterSHA256": null
+    },
+    {
+      "path": "dist/assets/personal-memory-DRSImXDx.js",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "5d2afe999d8d9ed127d86f658c8e5e327fa7b69310bdf237620795ac5fb1231f"
+    },
+    {
+      "path": "dist/index.html",
+      "status": "modified",
+      "beforeSHA256": "e2490934c02c5b95b91fc7f73b2e3bf8d717b56eacbbd0110faa042d81e98971",
+      "afterSHA256": "fe630adbb30beccd5a804a2d940f22e2b06fd8ef28690ff5c2c8250d84e1ff89"
+    },
+    {
+      "path": "dist/offline-assets.json",
+      "status": "modified",
+      "beforeSHA256": "09288113fb7fcc4e8f5153b1f7f775911392b2bad20fab0426749280757dd65f",
+      "afterSHA256": "e1360a490e3b3692f2727239893c97745a6e65d22173bb9fc5590324479bd6bb"
+    },
+    {
+      "path": "dist/sw.js",
+      "status": "modified",
+      "beforeSHA256": "e776d20359c13b83bd88f0e88660316b1b4ac3620ac3f4f8521bcbd78dd252f5",
+      "afterSHA256": "5ea64fe66db0cf2da4ec57d55e50782771264300cb2590067b58612930ee75f1"
+    },
+    {
+      "path": "docs/06l2/Audit-06L1.md",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "4c37000dd87c3259b180b025301fc3b052d162a3abbaf733122f64d3a92fd888"
+    },
+    {
+      "path": "docs/06l2/Changed-Files.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": null,
+      "note": "Self-referential inventory; final archive SHA256 covers it. Changed-Files is also covered by delivery manifest."
+    },
+    {
+      "path": "docs/06l2/Closure-Ledger.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "2511e3e0d9e8ee4d80ccf744b3c42bf31c4e1b4dcddcd83074f2c3703f00a0da"
+    },
+    {
+      "path": "docs/06l2/Content-Approval-Report.md",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "935ef5398967089356ce03bab4980c482c66baeb8dc45b62ab6c87437f4963f9"
+    },
+    {
+      "path": "docs/06l2/Data-Security-Privacy.md",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "df00856e3fe42bd890fee8ac3e51f846c36dbdffeb2e3e3e2e6757e4c5c091bf"
+    },
+    {
+      "path": "docs/06l2/Deploy-and-Rollback.md",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "c5afc0263ea0da6990a829645a72b0f38eb8c5241623d397326e21cffdc8d265"
+    },
+    {
+      "path": "docs/06l2/FSRS-Integration-Report.md",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "dd044ea9500831f10b09531b57688792ddc2cf20ebc1a83a20b13b7b1eec5b94"
+    },
+    {
+      "path": "docs/06l2/Final-Report.md",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "28b2f8dd11dd318908bb768550a6e4be17a6bca8297d52c663b8efab04bf6c73"
+    },
+    {
+      "path": "docs/06l2/Gate-Closure-Report.md",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "fc0a127f2e1ce6cb07e09b5fff418a0b98f346064c6e9539494b41d7ad41fe10"
+    },
+    {
+      "path": "docs/06l2/Hosting-Readiness.md",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "7425f57cd2eab45578b6d6d50c26c75df1107a048e0b03055dd0cd33f8a006b5"
+    },
+    {
+      "path": "docs/06l2/Human-Trial-Plan.md",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "9e2fb4fa2c8a32a2e1645576d3c3aa3fdbc71f733461b179d6878e47cec6c9e9"
+    },
+    {
+      "path": "docs/06l2/New-Hafiz-Journey.md",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "90e4483c0a7894c8922a9288687baaa46ef533a5d6609bb79c7098754e4df2ce"
+    },
+    {
+      "path": "docs/06l2/Owner-Actions.md",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "a4dfa2f25e16e7647d992737ca48c4eb7411da4eb7fbd662fe2f8c0151817807"
+    },
+    {
+      "path": "docs/06l2/Preview-Peer-Review.md",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "5dc526805a196c657e05a7f2f8249b05bfbf50fb84d4b8496ef72540a2c02357"
+    },
+    {
+      "path": "docs/06l2/Prior-Hafiz-Journey.md",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "53760422361faa559c872c3fb520c9089314c09650b012b3b4d86682116d948d"
+    },
+    {
+      "path": "docs/06l2/Test-Report.md",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "745e7f6931a5bdcbb1bf759222aef6f103bae8f20d13455986cc737a89fb403d"
+    },
+    {
+      "path": "docs/06l2/evidence/Reference-Case-Matrix.md",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "ded68e00d4894f01349e0296c97c63c1e711a10ad4c028d6d363d9532ec13150"
+    },
+    {
+      "path": "docs/06l2/evidence/baseline-tests.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "ba5b7deaff0cdcf36b67d7891bff0fc0b5eceb0cfd593283eee4b365019cec2f"
+    },
+    {
+      "path": "docs/06l2/evidence/baseline-tests.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "7a32b381a90fbe22d265d51df215b3205fefeffae1d0469bbae5b1dc66952d0a"
+    },
+    {
+      "path": "docs/06l2/evidence/baseline-types.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/06l2/evidence/content-browser-initial.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "9f1d23a9bacb5f91866dff636d1fe2e5d0d78af0b0fe6181435de2c835608a46"
+    },
+    {
+      "path": "docs/06l2/evidence/content-browser-keyboard.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "108b0fc1d428d1ab3f6ffb55e153d37ab95792ed3c8389f6ada5556a42541a3a"
+    },
+    {
+      "path": "docs/06l2/evidence/content-browser.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "a60e86d330d64fd4666ea4d683839320b8e3e4ff0e29275441f2c46ad736b827"
+    },
+    {
+      "path": "docs/06l2/evidence/content-byte-audit.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "d968f7e49f102ef6cb2780fecee762471dec678c7182c36d63e9de5eafb22e3c"
+    },
+    {
+      "path": "docs/06l2/evidence/content-byte-audit.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "4f66a9bae444be7e21739da82bc5edf314777746e1fde2c5b23631a8eb3aa4a3"
+    },
+    {
+      "path": "docs/06l2/evidence/content-command-results.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "170b14ed9631420e51dc8b05121255171263c693d12023b715860f210b11632c"
+    },
+    {
+      "path": "docs/06l2/evidence/content-delivery-inventory.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "709f64392a66f5f3a345934ba0d65d3ce602ea90bb8a8ff66b6b1dcb939a58f2"
+    },
+    {
+      "path": "docs/06l2/evidence/content-display/initial-harness-failure.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "cd1701cb73bacb3bbd0e755a3aba4a2fdd940375ab78ac9b1a8e85383ae2f838"
+    },
+    {
+      "path": "docs/06l2/evidence/content-display/keyboard-harness-failure.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "22941bc88f8ac65505510de2a5416b66918b9beff5d7b2440d03bcff1edffa48"
+    },
+    {
+      "path": "docs/06l2/evidence/content-display/results.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "9fad8138821bcebb48846fba50b917dbdd2ff723184b29fb516c5fd9fb2c3dd8"
+    },
+    {
+      "path": "docs/06l2/evidence/content-display/review-1440-surah-1.png",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "eb0309d2b6a242b5bd0b4aca7b1245717b9b0c55ac407bde247e0a9579c1d560"
+    },
+    {
+      "path": "docs/06l2/evidence/content-display/review-1440-surah-114.png",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "59c7795d5415de45ba32a5692788083bcb945b407835973fd1769e9b03d19af6"
+    },
+    {
+      "path": "docs/06l2/evidence/content-display/review-1440-surah-57.png",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "0ae6f6b43423d390242aa69c83e67ca5ddf7c0e0415bff370135fee534c21a46"
+    },
+    {
+      "path": "docs/06l2/evidence/content-display/review-320-surah-1.png",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "0df7e6641f93eb0711ed6a87138d7f9b865d779083a2499853614fa606051865"
+    },
+    {
+      "path": "docs/06l2/evidence/content-display/review-320-surah-114.png",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "645f554d0a22ee484bfcfdba89d4066ea22403130e35b59b5c07e0a0c7490463"
+    },
+    {
+      "path": "docs/06l2/evidence/content-display/review-320-surah-57.png",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "a37d96545839fb28b09fcb857b4b2a6271e3cd71698b2a36e52544e5a775d2ea"
+    },
+    {
+      "path": "docs/06l2/evidence/content-source-verification.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "04bd11e341ff98c0c819427c62b9a507065d4ec543aea5dd0699f7433cd0c4a3"
+    },
+    {
+      "path": "docs/06l2/evidence/content-supplemental-audit.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "a87d8de483d882e4e4f2573b36d8ba5f893f833b2ccfa991552dac5238150fc1"
+    },
+    {
+      "path": "docs/06l2/evidence/content-supplemental-audit.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "b809056ea0c5bf7d785cfc50a88503eb9ee0f144d4abda6707900e597778b727"
+    },
+    {
+      "path": "docs/06l2/evidence/content-tests.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "c90b334a5a76b24e0d375d805e0703bd3954315853e5c9d06a4cef9304ff87d6"
+    },
+    {
+      "path": "docs/06l2/evidence/content-tests.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "fd899682d56a057b34e22e4446659a69632c17c96bba97a710d0f218f8ec0501"
+    },
+    {
+      "path": "docs/06l2/evidence/content-tool-checks.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "fe521a28d56158c6548f636204a22b5afc0573e164245399b932ec9883b8781f"
+    },
+    {
+      "path": "docs/06l2/evidence/content-tools.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "f623fa24800ee85bb01dcc2cd0b9bff6026a2b8846dace66d74a767c258c2b37"
+    },
+    {
+      "path": "docs/06l2/evidence/content/fonts-page-fetch.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "d3cac69e8feacf8f1b2f1887d491810cd0de7f5766c7f345c9bcd1c81e1e0e22"
+    },
+    {
+      "path": "docs/06l2/evidence/content/fonts-page.headers",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/06l2/evidence/content/kfgqpc-archive-fetch.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "b19e7891ccc0757dc7442d7969f05ce13d1174ad72d18933de726ee0bbb055c5"
+    },
+    {
+      "path": "docs/06l2/evidence/content/kfgqpc-archive.headers",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/06l2/evidence/content/publisher-page-fetch.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "8e02eb6222236df377f072f88a35af3295e53252a3ca9bb25856513d8511e23f"
+    },
+    {
+      "path": "docs/06l2/evidence/content/publisher-page.headers",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "aa0bd53f16724eff6df167b2b5e009c3f7ff45c0b4ccc4a7eb1292cef9f49a48"
+    },
+    {
+      "path": "docs/06l2/evidence/content/publisher-page.html",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "ff795738c2a2fdd8d3329f55195119da436cdb5b0319a7a2f3e721160f6188bb"
+    },
+    {
+      "path": "docs/06l2/evidence/content/tanzil-license-fetch.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "ee02a03e86b1b7960f8dcf6fbc246f395cbb88bd47734c9db7e4ff984a7f447a"
+    },
+    {
+      "path": "docs/06l2/evidence/content/tanzil-license.headers",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "26e3abbfc4905b921e982e1d3df70301fb649c0c31453b367e271ab86cb061e9"
+    },
+    {
+      "path": "docs/06l2/evidence/content/tanzil-metadata-fetch.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "2b2a9ca4f73c2c8127d273b3be3bf9f681a726d3e8b003b98cab089b9caf736f"
+    },
+    {
+      "path": "docs/06l2/evidence/content/tanzil-metadata.headers",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "f9e27e124a1c83f8b3c6d65570379baa23c10df95d7d4574900557ca79b9e8f8"
+    },
+    {
+      "path": "docs/06l2/evidence/content/tanzil-page-fetch.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "e8c89d386606ad1ad810cd848d42661996c4c88169c3dba63a3688ed76f604e1"
+    },
+    {
+      "path": "docs/06l2/evidence/content/tanzil-page.headers",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "4063597ec383055e24634c21472bac5cb8f7af6106f18e054dd5b1f3696f3e59"
+    },
+    {
+      "path": "docs/06l2/evidence/content/tanzil-page.html",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "20c5ef2033d752d45602fd3d0932df394991e4ce9b8b3c9bd00e5c581b7b307a"
+    },
+    {
+      "path": "docs/06l2/evidence/content/tanzil-text-fetch.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "4714130ee339b43126a1161cf8b1d27d59a04de57d434d1fe1f057465bc7785e"
+    },
+    {
+      "path": "docs/06l2/evidence/content/tanzil-text.headers",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "19b4d8df8d15acb48a975b1d07b8992989a5bdb30e08df66ab96c28caee40806"
+    },
+    {
+      "path": "docs/06l2/evidence/dependencies-audit-command.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "2dc6902c4676b497251039b9368a21aa378b5f07f045f655a47ea068f5ad9166"
+    },
+    {
+      "path": "docs/06l2/evidence/dependencies-audit.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "252c4cd34828ddc9cbdc24eead4728e8d75e08ed17b66b5b086edcdfb4586717"
+    },
+    {
+      "path": "docs/06l2/evidence/dependencies-audit.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/06l2/evidence/dependencies-registry.txt",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "be14e0e356d799ad7fda0c391f9a6601ec5ca1dfaead2f7ceb678a7c81122878"
+    },
+    {
+      "path": "docs/06l2/evidence/dependencies-summary.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "668a90447aab43aa588d171187b693aba0c03b0421305041ee5376efbe977331"
+    },
+    {
+      "path": "docs/06l2/evidence/domain-dns-network.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "0129fad9d992a4f2e1ebc85f8197d8e41f76a71115281b69f86082cdf9ed877b"
+    },
+    {
+      "path": "docs/06l2/evidence/domain-dns-probe.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "24131ec17d34af9326980b64fdf220893d45a45b1bc20653fb105e693a0308b8"
+    },
+    {
+      "path": "docs/06l2/evidence/final-browser-results.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "7443a898954f4c7719d4d835139778304a527be47c04e57270bfce8d136f53ff"
+    },
+    {
+      "path": "docs/06l2/evidence/final-browser.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "bf99987e033334cbdc5bda786769e86c831dcac35094ff54ba42c781e0c5d98c"
+    },
+    {
+      "path": "docs/06l2/evidence/final-build.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "70fe9fd17cd8c787aa2d1d9ef6558d53adb1c9b49b9e526dc58df1c6613239b6"
+    },
+    {
+      "path": "docs/06l2/evidence/final-content-browser.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "80ddc3158aa2ca06370f16baf8c37a2123744568f5debbb6094cee7a79e7161f"
+    },
+    {
+      "path": "docs/06l2/evidence/final-content-byte-audit.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "4f66a9bae444be7e21739da82bc5edf314777746e1fde2c5b23631a8eb3aa4a3"
+    },
+    {
+      "path": "docs/06l2/evidence/final-content-supplemental-audit.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "b809056ea0c5bf7d785cfc50a88503eb9ee0f144d4abda6707900e597778b727"
+    },
+    {
+      "path": "docs/06l2/evidence/final-content-tools.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "f623fa24800ee85bb01dcc2cd0b9bff6026a2b8846dace66d74a767c258c2b37"
+    },
+    {
+      "path": "docs/06l2/evidence/final-dependency-binding.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "1e9db980b88b6697b97ff5d939b556a78c1067f2bf87e1276a8d53603bec846e"
+    },
+    {
+      "path": "docs/06l2/evidence/final-deployment-browser-results.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "a0494df5f4eb735303ceff3e440bf8a14be81f3c3acfd166b4a6261562dff266"
+    },
+    {
+      "path": "docs/06l2/evidence/final-deployment-browser.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "1f2cc68dc274522639fca44b67d93248b03bb43b6ede3049e76e524477cd75c5"
+    },
+    {
+      "path": "docs/06l2/evidence/final-fsrs-conformance.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "939904370b1017feb50cc104b2b93241843203fa670c927a034454f68552146a"
+    },
+    {
+      "path": "docs/06l2/evidence/final-offline-assets.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "8fa530a1172970ffaf01df98d9642855651706fb1e137a137bbddb0a47c902d4"
+    },
+    {
+      "path": "docs/06l2/evidence/final-offline-browser-results.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "a4624b0fa8a7ddc6b3bcd67d3c4f3f2cabb9b1c8e31e174fd9b11520b34387cf"
+    },
+    {
+      "path": "docs/06l2/evidence/final-offline-browser.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "e75e61c694cf8bb89dc248734a7f044eb55f146e184d1254645e1dd7fe8a2733"
+    },
+    {
+      "path": "docs/06l2/evidence/final-reference-authentication.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "81fdf1963706908d1a4b26de50f49c1af241d45e6dc5d80a19914eb793d9d00f"
+    },
+    {
+      "path": "docs/06l2/evidence/final-release-gates.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "bcd3a14bf1702ac9dcd65213fd55b3cfd74ae1027767997f0eccc064457d332d"
+    },
+    {
+      "path": "docs/06l2/evidence/final-security-static.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "8e6bd1bfb38361261098708d89b95cab3b2a954c7e96c74568682ce5d8dc536a"
+    },
+    {
+      "path": "docs/06l2/evidence/final-source-context.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "d6c8c4c8cb71b1ce3cc6ece43d70be3360726896e04a3a91a65e2c193f5bcc2c"
+    },
+    {
+      "path": "docs/06l2/evidence/final-tests.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "046d8e068ff9fa2ebb25e9f0b33f9175d1ad01c23e41c03fefe1a48545149166"
+    },
+    {
+      "path": "docs/06l2/evidence/final-typecheck.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/06l2/evidence/final-unit.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "d241f625b8a3d16bfc7a5aae97ccc73dd295643e6b74c68cbbe60d24ba04a811"
+    },
+    {
+      "path": "docs/06l2/evidence/final-verify-build.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "95d5789a42670fda8d44e9c6c63cb1f6b04dead3ef276936b860c438e9c7f7e8"
+    },
+    {
+      "path": "docs/06l2/evidence/fsrs-integration-browser-results.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "62a9d3c729943f1cdac7e7ab05a1a92b592db1454982f78330ca2296ae8499fc"
+    },
+    {
+      "path": "docs/06l2/evidence/fsrs-integration-browser.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "7c9a1d9009620bf400d9de9c381019595af78e5d5ac81061afc2cea02c209ecc"
+    },
+    {
+      "path": "docs/06l2/evidence/fsrs-integration-indexeddb-rehearsal.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "ed26434e3b42ed296efbd7b3abdc74821d60cac735103954ab2d40dc7fdd322e"
+    },
+    {
+      "path": "docs/06l2/evidence/fsrs-integration-initial-zone-fixture.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "457131448dc2249a65637cceb577fb1ed426921f0fc4aede6dee950cdd30b65a"
+    },
+    {
+      "path": "docs/06l2/evidence/fsrs-integration-initial-zone-fixture.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "0bc497ad6467b817b079baf9fa5056468bcaef81d3d1f8a712530179da6160e9"
+    },
+    {
+      "path": "docs/06l2/evidence/fsrs-integration-repeatability.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "cb35a9d1090e7a5314744fae941fc42938c51c58149864eef4d30dad8a48a3ad"
+    },
+    {
+      "path": "docs/06l2/evidence/fsrs-integration-tests.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "0fe0a375b3c6d39225dfcb87144b00c38343a89f8c5163b10ea397f1fc88b33b"
+    },
+    {
+      "path": "docs/06l2/evidence/fsrs-integration-tests.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "d681d78110bcef7b4e3e4df6b00ae3fb6a4ce46dd047703fa6dab1d776bb328f"
+    },
+    {
+      "path": "docs/06l2/evidence/fsrs-integration-transition-repeated.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "8ef18dd6293370daee38b905ec870a3ccaa15f54d2b8fa041af6558a2c8700c2"
+    },
+    {
+      "path": "docs/06l2/evidence/fsrs-integration-transition-repeated.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "f9bb480c17673073c97ca2563c50c12b89e4641921f7dd245dab209c907efb21"
+    },
+    {
+      "path": "docs/06l2/evidence/fsrs-integration-transition-source.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "217f851d17bb855e7b91ef0796d4ccf58102fab1d2f8860dfaf91d45020c90aa"
+    },
+    {
+      "path": "docs/06l2/evidence/fsrs-integration-transition.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "663c0341b1bad0ee4534b35be7be8fd290bc7701f1b88e2094bdaa375d5dd6f6"
+    },
+    {
+      "path": "docs/06l2/evidence/fsrs-integration-transition.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "808b2b50911717a9f52fee8154f1754d2cf3a5fcf15b667daea75eb4a3abf97f"
+    },
+    {
+      "path": "docs/06l2/evidence/fsrs-integration-types.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/06l2/evidence/fsrs/fsrs-investigation.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "59c590e370e0e42a6255d9ec3692d2a2bc1b0c358bd4a184b348e2ca86ce3dea"
+    },
+    {
+      "path": "docs/06l2/evidence/fsrs/reference-case-matrix.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "cfcc8105723a5c0da2af0c63fa4d27520661a53d441015249545a06954341749"
+    },
+    {
+      "path": "docs/06l2/evidence/full-attempt1-final-tests.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "f0517134f19f31b93537a05e7313662ff11054ef16f4bd9225613b5264a1f16c"
+    },
+    {
+      "path": "docs/06l2/evidence/full-attempt1-final-unit.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "d241f625b8a3d16bfc7a5aae97ccc73dd295643e6b74c68cbbe60d24ba04a811"
+    },
+    {
+      "path": "docs/06l2/evidence/full-attempt1-historical-evidence-preservation.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "36b0d12e776c5f400b4f68fac5b1d490b81574ae9c8f109cd9d869393df00ce4"
+    },
+    {
+      "path": "docs/06l2/evidence/full-attempt1-verification-commands.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "d3e618bcbce2a80e670905d0ddc45e8d8cc5b42e5a526121aa03ea52a76c2ea8"
+    },
+    {
+      "path": "docs/06l2/evidence/historical-evidence-preservation.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "ddf6423a0c5be5bfef93579236eab057ad02ea6ddc226819f88adf62ae6608cd"
+    },
+    {
+      "path": "docs/06l2/evidence/historical-path-outputs/05b/evidence/performance-results.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "f4ac4829e4731f68489b9b2006fef0fcd433d704cef8e18f79445897c81b09ac"
+    },
+    {
+      "path": "docs/06l2/evidence/historical-path-outputs/06d2/evidence/fsrs-integration-observations.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "08401e955fb577d92636567d7601cbc6d4f0550872dc4ef19cfad676c7cfa2b2"
+    },
+    {
+      "path": "docs/06l2/evidence/historical-path-outputs/06e1/evidence/reference-verification.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "63fcfb9e6d2309abd648344fa0d0c86d3f782f9f56394df17fb7b5b0c8610d7f"
+    },
+    {
+      "path": "docs/06l2/evidence/intermediate-build-context.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "9ec24fd1933f16cafca314ebc97c8d66b6e023170f1a5a583840b42db6a3865a"
+    },
+    {
+      "path": "docs/06l2/evidence/intermediate-build.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "13b3f06b56e123eb2599b61de9ed4f6d046f636a0e41b92205bf2b63cd08e339"
+    },
+    {
+      "path": "docs/06l2/evidence/intermediate-historical-path-outputs/docs/05b/evidence/performance-results.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "19694e9aedc0ad8db1aed66405c6f1bb03541fb194d16d77d3ae68463915ff53"
+    },
+    {
+      "path": "docs/06l2/evidence/intermediate-historical-path-outputs/docs/06d2/evidence/fsrs-integration-observations.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "a5ea91a14dbbe8a03401095784e51fdb6264900db2a1fec3ad7a028d49b35f4e"
+    },
+    {
+      "path": "docs/06l2/evidence/intermediate-historical-preservation.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "08d743b9fc5feed204773abf0368d532819174fb965a29471baa602fae7e71cb"
+    },
+    {
+      "path": "docs/06l2/evidence/intermediate-offline-build.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "098adb8e8317cd0ca1e49c3ac7229f27237225c5502a625dd7920215fcd77683"
+    },
+    {
+      "path": "docs/06l2/evidence/intermediate-types.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/06l2/evidence/owner-decisions.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "1183d4c506105d065ec3d2f4c41254637ba9d65e609089a02643dfd2539b2332"
+    },
+    {
+      "path": "docs/06l2/evidence/preview-artifact-tests.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "c772724ca0fa32c36819c983d067696c8a30fd175a86376578d7ac184c9615a5"
+    },
+    {
+      "path": "docs/06l2/evidence/preview-artifact-tests.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "28344a2cfe85e037135d7bf3bdfb0e199c7255a12774f6e3982d22cd054235b5"
+    },
+    {
+      "path": "docs/06l2/evidence/preview-peer-review-summary.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "25245d2fd56d32cdcef3aaf6183711c9aaa94cad5b9f70bcde20ceee5bd06527"
+    },
+    {
+      "path": "docs/06l2/evidence/preview-peer-review-tests.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "8418226cc0dee834a124d63d941de6cad5433e09a20e0bac8adf7b17026fcbc8"
+    },
+    {
+      "path": "docs/06l2/evidence/preview-peer-review-tests.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "9f9c031764895b211dcf8e92849de7e74ed355c61fb043225f50de51ccb554db"
+    },
+    {
+      "path": "docs/06l2/evidence/preview-rollout-fourth.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "4a80df2b8d8733017461c62de1fcd74a7a521e4bebd854c988b0afb16ece8e74"
+    },
+    {
+      "path": "docs/06l2/evidence/preview-rollout-fourth.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "b9151eedb6f75d4fd9af9cb8839d357c09736be2045c1a4c3e57e0bd623c9ec8"
+    },
+    {
+      "path": "docs/06l2/evidence/preview-rollout-initial.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "7979af3cd97fbfb58e5bffde23d312223baf01013588691911262907676ff5f2"
+    },
+    {
+      "path": "docs/06l2/evidence/preview-rollout-initial.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "28837622697d7f73e7c529d7f4d7cd20c913b3c055507c83537203c276f1def5"
+    },
+    {
+      "path": "docs/06l2/evidence/preview-rollout-second.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "b6326b5e26edf4f1cd178b7bc41fb75b28e022c18882f7652b5f7544f3d40ca8"
+    },
+    {
+      "path": "docs/06l2/evidence/preview-rollout-second.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "c02c044dc4b794857903ac2d7568545e4888a9f9f16cd368f35f64e41fa7d1de"
+    },
+    {
+      "path": "docs/06l2/evidence/preview-rollout-third.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "726e6c3d35df45481e3ead20c79417ef90c99595f4528542160744fe26b854be"
+    },
+    {
+      "path": "docs/06l2/evidence/preview-rollout-third.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "743ed8cd0a57b3c139b2e5686fcfbb95d7539a580ab6c2e3fb1d685d3aed2432"
+    },
+    {
+      "path": "docs/06l2/evidence/protected-files-check.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "fce9e20c84d9d5a09ffa91a2d7a5e8afb938a00c3fc23300b0975132aaaad959"
+    },
+    {
+      "path": "docs/06l2/evidence/release-gates.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "bcd3a14bf1702ac9dcd65213fd55b3cfd74ae1027767997f0eccc064457d332d"
+    },
+    {
+      "path": "docs/06l2/evidence/security-browser-initial-locator-failure.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "8403f81f781adea3f32217e9ae5ba1628c5b475ff55606d7bb9c440ef3b2a420"
+    },
+    {
+      "path": "docs/06l2/evidence/security-browser-results.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "add71f02a826a3eee3cf4817d16b4f11274395e056b4d594525efb822f77a9be"
+    },
+    {
+      "path": "docs/06l2/evidence/security-browser.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/06l2/evidence/security-execution-notes.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "f643e15202926ef3be574d5b3aa23d6db9185ddb89fc4fd628102badbd7b8750"
+    },
+    {
+      "path": "docs/06l2/evidence/security-summary.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "858e690b541db1993eacd331a789ac426e70d7cb3cbdb7a8796fde736144e92c"
+    },
+    {
+      "path": "docs/06l2/evidence/security-typecheck.log",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/06l2/evidence/source-receipt.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "6933bdfd7dd254ceb6650eabc4f2d14cc9dc56d2d5aecacc696a054f42b23a9c"
+    },
+    {
+      "path": "docs/06l2/evidence/test-summary.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "294c084f7733a31116ab2b43435f6531c6156975942f2b32a9bac70b6f3c241f"
+    },
+    {
+      "path": "docs/06l2/evidence/verification-before-ci-browser-fix.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "6ab31ccd1fb745369fbdf604ba6da9730c0cf858a2172ea0734c7de857287147"
+    },
+    {
+      "path": "docs/06l2/evidence/verification-commands.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "a84b53cec6cf84dda722a814a7e28a1758282749b076c6cbf7ce302adc742345"
+    },
+    {
+      "path": "e2e-deployment/rollout06l2.spec.ts",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "a46c60b7462e9aca92aa8eaaa7396088a01291c056f6e0f97d17af35c9d318cb"
+    },
+    {
+      "path": "e2e/fsrs06l2.spec.ts",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "d518598e7fa39a21abd4c9f6aa2c18d037a9948d106276ea8b6079db66a7e533"
+    },
+    {
+      "path": "e2e/security06l2.spec.ts",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "ba6a175709b7b6279e08432ea4a44d6d2cfb0c4982b0491cc8c0dbe95fd15864"
+    },
+    {
+      "path": "index.html",
+      "status": "modified",
+      "beforeSHA256": "651c16f446944f3e1a4a9ebc1e89f4a73d7b21b9f4e07df11b2c6819920d5b66",
+      "afterSHA256": "17c4ca51453ff4d2e580811dcb1da032c1d075da258878d65dafc4eaaa32ab0c"
+    },
+    {
+      "path": "package.json",
+      "status": "modified",
+      "beforeSHA256": "b81086193cfb6d7d5bc342cbfaa10fe91f52b417835b7d95dd0330abae5e9729",
+      "afterSHA256": "b03a087512aba983e2e932e7a6ab6e426ce47915cca162ed16f9fa36077540c8"
+    },
+    {
+      "path": "playwright.deployment.config.ts",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "f2c6212a2db0b5c668fa3656d46123685634330a8bb95a03ba891a07f84f0b31"
+    },
+    {
+      "path": "references/06l1-preview-baseline/build.zip",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "d24dc3269a1bfe007cedfe78b27a98e827831d62524d69840437a8efad71f792"
+    },
+    {
+      "path": "references/06l1-preview-baseline/receipt.json",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "a5bd67bce18d2c88b22de292f0a0e74f80a06e7b728e4b01ae57f8d0d4cc4ba1"
+    },
+    {
+      "path": "scripts/content-06l2-audit.mjs",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "eca6e583c56c394b8ac5865bc06c361e833ac2a79d0bcfa75c8d41f5f206f004"
+    },
+    {
+      "path": "scripts/content-06l2-browser.mjs",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "a19bd068ccec15b1e4834e3b3a0ef2cc607c171f1def262c4e0b7471d37fd83c"
+    },
+    {
+      "path": "scripts/fsrs-transition06l2.mjs",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "dbe54a8c46d1cbd10895287c3c64fb5ebab7c3830a9eda2434898411e7121180"
+    },
+    {
+      "path": "scripts/local-preview-06l2.mjs",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "1a9cb2669fa7410640d40b13e5d14eb242e40362073b21f684b4d63707985298"
+    },
+    {
+      "path": "scripts/preview06l2/artifacts.mjs",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "0fd9a8f732710cecad97eef44e1e046df3b249c5e5da3284893286069c10b282"
+    },
+    {
+      "path": "scripts/preview06l2/server.mjs",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "260b717ebc6327b5be5e436c0aa2c9b79af1c142adb65f16af0914df5ac20768"
+    },
+    {
+      "path": "scripts/release-source-hash.mjs",
+      "status": "modified",
+      "beforeSHA256": "7189cfbec22d0df25ebf1bc9f0c251c65957acd80115c81e29ec4925d0d090ae",
+      "afterSHA256": "06eef6f2aa960073f2378906277d1403c87fce1316d30ea7d7f4a25e1ddb37a3"
+    },
+    {
+      "path": "scripts/verify-06l2.py",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "d6cf0c0620554c79896603e80a01e4184604bb9312abf7fcc3393d29bcc1dd07"
+    },
+    {
+      "path": "src/App.tsx",
+      "status": "modified",
+      "beforeSHA256": "794b0538bffb16bb63bb5a732acf1057b19f2580bda782817531dba113216829",
+      "afterSHA256": "48911ac321d34890c5fbd8980c395615720a2c1d07c91f3696cc25d1ca2c496d"
+    },
+    {
+      "path": "src/application/fsrs-integration06l2.test.mjs",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "1b7deb4ce6e2150af0ab7e678eba01b67f4039bd8e0c9c318a8afcd28cbfd0ce"
+    },
+    {
+      "path": "src/application/fsrs-transition06l2.ts",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "d394daf0cddb25441017e926d0d7dae36e726353a5f0afac9afa79170adf669a"
+    },
+    {
+      "path": "src/content/acquisition06l2.test.mjs",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "af0a51c9cac06720e12146fd9af601c010e665577bcca946b09d805fb5c237a9"
+    },
+    {
+      "path": "src/release/build-context.generated.ts",
+      "status": "modified",
+      "beforeSHA256": "963a2361f6780a7075313d94fefabfd4fe05e565fd5eefb8ea48385349fb376d",
+      "afterSHA256": "a42fcd1454b5319769c31f0e0f36802cc5caccf1f46ab357511a102996bf6a47"
+    },
+    {
+      "path": "src/release/preview06l2.test.mjs",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "4f497ad948df176181dc794521d94bab90e7ee72f601e7b541115dabeed03ba6"
+    },
+    {
+      "path": "src/release/source-hash.test.mjs",
+      "status": "modified",
+      "beforeSHA256": "ae50821b070ac83b52b799b9d94fe298ed75fecc7d9449c926879672af28f238",
+      "afterSHA256": "e62b10d2de48e4190313d25ede3e3b22bada72406f584e0c4a868468fbc40d08"
+    },
+    {
+      "path": "src/testing/fsrs-integration06l2.ts",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "1236ba142668b3622efa5407798f373bcf4ab1d2876ff35bfff948a679a77933"
+    },
+    {
+      "path": "src/testing/fsrs-rehearsal06l2.ts",
+      "status": "added",
+      "beforeSHA256": null,
+      "afterSHA256": "aa823d01d79aad6263d5ebc9699ae11241facfa2972c0ac05caebaa3653099d8"
+    }
+  ]
+}

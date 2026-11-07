@@ -1,6 +1,6 @@
 // Generated from this build's exact assets. Personal events are NEVER cached here.
-const CACHE="mulazama-shell-0b2915e5c7b7ecc45624";
-const ASSETS=["assets/adaptive-scheduling-B9kCdmll.js","assets/index-AtTyBVEF.css","assets/index-atPXJdd4.js","assets/personal-memory-AcslMUkY.js","icon-192.png","icon-512.png","icon.svg","index.html","manifest.webmanifest","policies.css","privacy.html","support.html","terms.html"];
+const CACHE="mulazama-shell-402485269b50ffbcbe97";
+const ASSETS=["assets/adaptive-scheduling-w6bOq4m1.js","assets/index-AtTyBVEF.css","assets/index-BMHy5AIA.js","assets/personal-memory-DRSImXDx.js","icon-192.png","icon-512.png","icon.svg","index.html","manifest.webmanifest","policies.css","privacy.html","support.html","terms.html"];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS))));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('mulazama-shell-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',event=>{

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "publisher": "Tanzil Project",
+  "version": "1.1",
+  "sourceUrl": "https://tanzil.net/pub/download/index.php?quranType=uthmani&outType=txt-2&marks=true&sajdah=true&tatweel=true&agree=true",
+  "downloadedAt": "2026-11-07T11:46:31.108399+00:00",
+  "sha256": "6933e133dd56db778c801bf738848454e43648105a151e8d84d86a7cae39ec5f",
+  "byteLength": 1396087,
+  "httpStatus": 200,
+  "requestedOptions": {
+    "quranType": "uthmani",
+    "outType": "txt-2",
+    "marks": true,
+    "sajdah": true,
+    "tatweel": true,
+    "rub": false,
+    "stanween": false
+  },
+  "rightsSource": "https://tanzil.net/docs/Text_License",
+  "rightsFile": "tanzil-license.html",
+  "rightsSHA256": "3edaac627f23693b080d2b5fa2959027b2296f51b4d0a69e468621910676ba27",
+  "rightsSummary": "Publisher permits verbatim distribution with attribution/link and preserved notice; changing text prohibited. No font rights inferred.",
+  "importStatus": "quarantined-not-approved",
+  "productionActivation": "unavailable",
+  "governmentSourceRequirementSatisfied": false,
+  "responseContentType": "application/octet-stream; charset=utf-8"
+}

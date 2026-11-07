@@ -1,0 +1,69 @@
+{
+  "phase": "06-L2",
+  "checkedAt": "2026-11-07T12:04:06.566718+00:00",
+  "unit": {
+    "executed": 779,
+    "passed": 779,
+    "failed": 0,
+    "skipped": 0
+  },
+  "environment": {
+    "node": "24.22.1",
+    "platform": "macOS-27.0.1-arm64-arm-64bit",
+    "browser": "Google Chrome 157.0.8103.39",
+    "playwright": "1.56.1",
+    "timezone": "Asia/Riyadh"
+  },
+  "note": "Independent groups; targeted suites are included in unit/browser totals, not added twice. Human/real Quran journeys and remote staging were not executed.",
+  "browser": {
+    "executed": 34,
+    "passed": 34,
+    "failed": 0,
+    "skipped": 0,
+    "flaky": 0
+  },
+  "offline": {
+    "executed": 4,
+    "passed": 4,
+    "failed": 0,
+    "skipped": 0,
+    "flaky": 0
+  },
+  "localDeployment": {
+    "executed": 2,
+    "passed": 2,
+    "failed": 0,
+    "skipped": 0,
+    "flaky": 0
+  },
+  "contentReviewBrowser": {
+    "executed": 5,
+    "passed": 5,
+    "failed": 0,
+    "skipped": 0
+  },
+  "correctedFsrs": {
+    "executed": 40,
+    "passed": 40,
+    "failed": 0,
+    "blocked": 0
+  },
+  "legacyFsrs": {
+    "passed": 2,
+    "failed": 38,
+    "blocked": 0
+  },
+  "contentToolChecks": {
+    "executed": 7,
+    "passed": 7,
+    "failed": 0,
+    "skipped": 0
+  },
+  "gates": {
+    "blocked": 10,
+    "approved": 0
+  },
+  "dependencyAdvisories": 0,
+  "protectedUnchanged": 654,
+  "sourceDigest": "264c0fa5974510e4b07297370e9955ac620525b02f4f8cfdc63d0aa122ed7347"
+}

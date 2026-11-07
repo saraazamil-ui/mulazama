@@ -1,0 +1,912 @@
+{
+  "revision": 23,
+  "events": [
+    {
+      "eventId": "c6f3848d-eea4-4ec4-81d5-4ca77349f2d1",
+      "commandId": "97b19f99-6f72-4776-b19d-d9a633a94048",
+      "operationId": "97b19f99-6f72-4776-b19d-d9a633a94048",
+      "userId": "0ca7ce8f-21ec-4923-b740-976346158069",
+      "unitId": null,
+      "type": "ProfileInitialized",
+      "occurredAt": "2026-11-07T11:47:15.453Z",
+      "receivedAt": "2026-11-07T11:47:15.453Z",
+      "zoneId": "Asia/Riyadh",
+      "source": "product",
+      "coverage": [],
+      "versions": {
+        "schema": 1,
+        "algorithm": "hme-0.1-engineering-05a.1",
+        "policy": "P0-0.1.0",
+        "rubric": "manual-recall-0.1.0",
+        "model": "FSRS-6",
+        "content": "unavailable",
+        "fsrsImplementation": "hme-fsrs6-research-binary64-0.1.0",
+        "weightsVersion": "HME-0.1-section12-21weights",
+        "modelTimePolicy": "floor-elapsed-seconds-divided-by-86400-0.1.0",
+        "effectiveReviewTime": "recall-start-v1",
+        "pedagogicalTimePolicy": "recall-start-minus-last-relevant-exposure-v1",
+        "desiredRetention": 0.9,
+        "libraryConformance": "blocked"
+      },
+      "data": {
+        "scope": "product"
+      }
+    },
+    {
+      "eventId": "bcb0803f-231e-4dc5-bf04-841420a745cd",
+      "commandId": "bcb0803f-231e-4dc5-bf04-841420a745cd",
+      "operationId": "bcb0803f-231e-4dc5-bf04-841420a745cd",
+      "userId": "0ca7ce8f-21ec-4923-b740-976346158069",
+      "unitId": null,
+      "type": "LearnerInitialized",
+      "occurredAt": "2026-11-07T11:47:15.462Z",
+      "receivedAt": "2026-11-07T11:47:15.462Z",
+      "zoneId": "Asia/Riyadh",
+      "source": "product",
+      "coverage": [],
+      "versions": {
+        "schema": 1,
+        "algorithm": "hme-0.1-engineering-05a.1",
+        "policy": "P0-0.1.0",
+        "rubric": "manual-recall-0.1.0",
+        "model": "FSRS-6",
+        "content": "unavailable",
+        "fsrsImplementation": "hme-fsrs6-research-binary64-0.1.0",
+        "weightsVersion": "HME-0.1-section12-21weights",
+        "modelTimePolicy": "floor-elapsed-seconds-divided-by-86400-0.1.0",
+        "effectiveReviewTime": "recall-start-v1",
+        "pedagogicalTimePolicy": "recall-start-minus-last-relevant-exposure-v1",
+        "desiredRetention": 0.9,
+        "libraryConformance": "blocked",
+        "applicationEvidence": "hme-application-evidence-05b.1"
+      },
+      "data": {
+        "scope": "hme"
+      }
+    },
+    {
+      "eventId": "a6b69519-a0be-4cc0-9d41-1b4fb27b684a",
+      "commandId": "63ebe0d1-c460-4741-ad82-6e7b5222b5d0",
+      "operationId": "63ebe0d1-c460-4741-ad82-6e7b5222b5d0",
+      "userId": "0ca7ce8f-21ec-4923-b740-976346158069",
+      "unitId": null,
+      "type": "UnitRegistered",
+      "occurredAt": "2032-03-13T16:59:50.000Z",
+      "receivedAt": "2026-11-07T11:47:15.463Z",
+      "zoneId": "Asia/Riyadh",
+      "source": "product",
+      "coverage": [],
+      "versions": {
+        "schema": 1,
+        "algorithm": "hme-0.1-engineering-05a.1",
+        "policy": "P0-0.1.0",
+        "rubric": "manual-recall-0.1.0",
+        "model": "FSRS-6",
+        "content": "unavailable",
+        "fsrsImplementation": "hme-fsrs6-research-binary64-0.1.0",
+        "weightsVersion": "HME-0.1-section12-21weights",
+        "modelTimePolicy": "floor-elapsed-seconds-divided-by-86400-0.1.0",
+        "effectiveReviewTime": "recall-start-v1",
+        "pedagogicalTimePolicy": "recall-start-minus-last-relevant-exposure-v1",
+        "desiredRetention": 0.9,
+        "libraryConformance": "blocked",
+        "applicationEvidence": "hme-application-evidence-05b.1"
+      },
+      "data": {
+        "scope": "hme",
+        "command": {
+          "type": "UnitRegistered",
+          "unit": {
+            "id": "synthetic-06l2-fsrs-unit",
+            "editionId": "synthetic-06l2-edition",
+            "probeProfileVersionId": "chunk-P0-1",
+            "words": 10,
+            "coverage": [
+              "synthetic:06l2:token"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "eventId": "1c784c70-6073-4afe-b0d8-4f92842e2019",
+      "commandId": "221a9d5a-8668-4f9b-bb0e-59b981eb6309",
+      "operationId": "221a9d5a-8668-4f9b-bb0e-59b981eb6309",
+      "userId": "0ca7ce8f-21ec-4923-b740-976346158069",
+      "unitId": "synthetic-06l2-fsrs-unit",
+      "type": "SessionStarted",
+      "occurredAt": "2032-03-13T16:59:59.000Z",
+      "receivedAt": "2026-11-07T11:47:15.464Z",
+      "zoneId": "Asia/Riyadh",
+      "source": "product",
+      "coverage": [
+        "synthetic:06l2:token"
+      ],
+      "versions": {
+        "schema": 1,
+        "algorithm": "hme-0.1-engineering-05a.1",
+        "policy": "P0-0.1.0",
+        "rubric": "manual-recall-0.1.0",
+        "model": "FSRS-6",
+        "content": "unavailable",
+        "fsrsImplementation": "hme-fsrs6-research-binary64-0.1.0",
+        "weightsVersion": "HME-0.1-section12-21weights",
+        "modelTimePolicy": "floor-elapsed-seconds-divided-by-86400-0.1.0",
+        "effectiveReviewTime": "recall-start-v1",
+        "pedagogicalTimePolicy": "recall-start-minus-last-relevant-exposure-v1",
+        "desiredRetention": 0.9,
+        "libraryConformance": "blocked",
+        "applicationEvidence": "hme-application-evidence-05b.1"
+      },
+      "data": {
+        "scope": "hme",
+        "command": {
+          "type": "SessionStarted",
+          "unitId": "synthetic-06l2-fsrs-unit",
+          "sessionId": "synthetic-06l2-session-failure-errors"
+        }
+      }
+    },
+    {
+      "eventId": "58691394-be89-45bb-93d3-7a1973501d78",
+      "commandId": "efed5bd1-0a43-4e88-b325-0a0e20d247e4",
+      "operationId": "efed5bd1-0a43-4e88-b325-0a0e20d247e4",
+      "userId": "0ca7ce8f-21ec-4923-b740-976346158069",
+      "unitId": "synthetic-06l2-fsrs-unit",
+      "type": "RecallAttemptStarted",
+      "occurredAt": "2032-03-13T17:00:00.000Z",
+      "receivedAt": "2026-11-07T11:47:15.464Z",
+      "zoneId": "Asia/Riyadh",
+      "source": "product",
+      "coverage": [
+        "synthetic:06l2:token"
+      ],
+      "versions": {
+        "schema": 1,
+        "algorithm": "hme-0.1-engineering-05a.1",
+        "policy": "P0-0.1.0",
+        "rubric": "manual-recall-0.1.0",
+        "model": "FSRS-6",
+        "content": "unavailable",
+        "fsrsImplementation": "hme-fsrs6-research-binary64-0.1.0",
+        "weightsVersion": "HME-0.1-section12-21weights",
+        "modelTimePolicy": "floor-elapsed-seconds-divided-by-86400-0.1.0",
+        "effectiveReviewTime": "recall-start-v1",
+        "pedagogicalTimePolicy": "recall-start-minus-last-relevant-exposure-v1",
+        "desiredRetention": 0.9,
+        "libraryConformance": "blocked",
+        "applicationEvidence": "hme-application-evidence-05b.1"
+      },
+      "data": {
+        "scope": "hme",
+        "command": {
+          "type": "RecallAttemptStarted",
+          "sessionId": "synthetic-06l2-session-failure-errors",
+          "attemptId": "synthetic-06l2-attempt-failure-errors"
+        }
+      }
+    },
+    {
+      "eventId": "de09b939-34b9-48b3-9d72-d46ff2323803",
+      "commandId": "ce596a7e-5c40-4574-9447-4632e9bb51f6",
+      "operationId": "ce596a7e-5c40-4574-9447-4632e9bb51f6",
+      "userId": "0ca7ce8f-21ec-4923-b740-976346158069",
+      "unitId": "synthetic-06l2-fsrs-unit",
+      "type": "RecallAttemptCompleted",
+      "occurredAt": "2032-03-13T17:00:02.000Z",
+      "receivedAt": "2026-11-07T11:47:15.465Z",
+      "zoneId": "Asia/Riyadh",
+      "source": "product",
+      "coverage": [
+        "synthetic:06l2:token"
+      ],
+      "versions": {
+        "schema": 1,
+        "algorithm": "hme-0.1-engineering-05a.1",
+        "policy": "P0-0.1.0",
+        "rubric": "manual-recall-0.1.0",
+        "model": "FSRS-6",
+        "content": "unavailable",
+        "fsrsImplementation": "hme-fsrs6-research-binary64-0.1.0",
+        "weightsVersion": "HME-0.1-section12-21weights",
+        "modelTimePolicy": "floor-elapsed-seconds-divided-by-86400-0.1.0",
+        "effectiveReviewTime": "recall-start-v1",
+        "pedagogicalTimePolicy": "recall-start-minus-last-relevant-exposure-v1",
+        "desiredRetention": 0.9,
+        "libraryConformance": "blocked",
+        "applicationEvidence": "hme-application-evidence-05b.1"
+      },
+      "data": {
+        "scope": "hme",
+        "command": {
+          "type": "RecallAttemptCompleted",
+          "sessionId": "synthetic-06l2-session-failure-errors",
+          "termination": "completed"
+        }
+      }
+    },
+    {
+      "eventId": "77507a53-a672-4685-bf76-a1d9d18095b2",
+      "commandId": "0aae85ea-fdc6-4b1e-bc99-a8171a6cfbae",
+      "operationId": "0aae85ea-fdc6-4b1e-bc99-a8171a6cfbae",
+      "userId": "0ca7ce8f-21ec-4923-b740-976346158069",
+      "unitId": "synthetic-06l2-fsrs-unit",
+      "type": "AssessmentSubmitted",
+      "occurredAt": "2032-03-13T17:00:03.000Z",
+      "receivedAt": "2026-11-07T11:47:15.466Z",
+      "zoneId": "Asia/Riyadh",
+      "source": "V1",
+      "coverage": [
+        "synthetic:06l2:token"
+      ],
+      "versions": {
+        "schema": 1,
+        "algorithm": "hme-0.1-engineering-05a.1",
+        "policy": "P0-0.1.0",
+        "rubric": "manual-recall-0.1.0",
+        "model": "FSRS-6",
+        "content": "unavailable",
+        "fsrsImplementation": "hme-fsrs6-research-binary64-0.1.0",
+        "weightsVersion": "HME-0.1-section12-21weights",
+        "modelTimePolicy": "floor-elapsed-seconds-divided-by-86400-0.1.0",
+        "effectiveReviewTime": "recall-start-v1",
+        "pedagogicalTimePolicy": "recall-start-minus-last-relevant-exposure-v1",
+        "desiredRetention": 0.9,
+        "libraryConformance": "blocked",
+        "applicationEvidence": "hme-application-evidence-05b.1"
+      },
+      "data": {
+        "scope": "hme",
+        "command": {
+          "type": "AssessmentSubmitted",
+          "attemptId": "synthetic-06l2-attempt-failure-errors",
+          "observation": {
+            "attemptedWords": 10,
+            "errors": 1,
+            "completion": "complete",
+            "effort": "normal",
+            "gapVerified": true
+          }
+        }
+      }
+    },
+    {
+      "eventId": "f1120508-10df-452c-bfb9-3ddb1df8456d",
+      "commandId": "100e92fa-057e-4b52-a41d-0341c85a7bf5",
+      "operationId": "100e92fa-057e-4b52-a41d-0341c85a7bf5",
+      "userId": "0ca7ce8f-21ec-4923-b740-976346158069",
+      "unitId": "synthetic-06l2-fsrs-unit",
+      "type": "SessionEnded",
+      "occurredAt": "2032-03-13T17:00:04.000Z",
+      "receivedAt": "2026-11-07T11:47:15.467Z",
+      "zoneId": "Asia/Riyadh",
+      "source": "product",
+      "coverage": [
+        "synthetic:06l2:token"
+      ],
+      "versions": {
+        "schema": 1,
+        "algorithm": "hme-0.1-engineering-05a.1",
+        "policy": "P0-0.1.0",
+        "rubric": "manual-recall-0.1.0",
+        "model": "FSRS-6",
+        "content": "unavailable",
+        "fsrsImplementation": "hme-fsrs6-research-binary64-0.1.0",
+        "weightsVersion": "HME-0.1-section12-21weights",
+        "modelTimePolicy": "floor-elapsed-seconds-divided-by-86400-0.1.0",
+        "effectiveReviewTime": "recall-start-v1",
+        "pedagogicalTimePolicy": "recall-start-minus-last-relevant-exposure-v1",
+        "desiredRetention": 0.9,
+        "libraryConformance": "blocked",
+        "applicationEvidence": "hme-application-evidence-05b.1"
+      },
+      "data": {
+        "scope": "hme",
+        "command": {
+          "type": "SessionEnded",
+          "sessionId": "synthetic-06l2-session-failure-errors"
+        }
+      }
+    },
+    {
+      "eventId": "bba78d83-09ce-48a4-9552-54f0ba373763",
+      "commandId": "61cf0054-ebc8-472b-b389-19a8dbdd5239",
+      "operationId": "61cf0054-ebc8-472b-b389-19a8dbdd5239",
+      "userId": "0ca7ce8f-21ec-4923-b740-976346158069",
+      "unitId": "synthetic-06l2-fsrs-unit",
+      "type": "SessionStarted",
+      "occurredAt": "2032-03-16T16:59:59.000Z",
+      "receivedAt": "2026-11-07T11:47:15.468Z",
+      "zoneId": "Asia/Riyadh",
+      "source": "product",
+      "coverage": [
+        "synthetic:06l2:token"
+      ],
+      "versions": {
+        "schema": 1,
+        "algorithm": "hme-0.1-engineering-05a.1",
+        "policy": "P0-0.1.0",
+        "rubric": "manual-recall-0.1.0",
+        "model": "FSRS-6",
+        "content": "unavailable",
+        "fsrsImplementation": "hme-fsrs6-research-binary64-0.1.0",
+        "weightsVersion": "HME-0.1-section12-21weights",
+        "modelTimePolicy": "floor-elapsed-seconds-divided-by-86400-0.1.0",
+        "effectiveReviewTime": "recall-start-v1",
+        "pedagogicalTimePolicy": "recall-start-minus-last-relevant-exposure-v1",
+        "desiredRetention": 0.9,
+        "libraryConformance": "blocked",
+        "applicationEvidence": "hme-application-evidence-05b.1"
+      },
+      "data": {
+        "scope": "hme",
+        "command": {
+          "type": "SessionStarted",
+          "unitId": "synthetic-06l2-fsrs-unit",
+          "sessionId": "synthetic-06l2-session-clean-hard"
+        }
+      }
+    },
+    {
+      "eventId": "00f4fafa-6ce7-4ff0-82fe-71e1edb90532",
+      "commandId": "8266418f-f3ab-4bb8-b3cb-caa880e88391",
+      "operationId": "8266418f-f3ab-4bb8-b3cb-caa880e88391",
+      "userId": "0ca7ce8f-21ec-4923-b740-976346158069",
+      "unitId": "synthetic-06l2-fsrs-unit",
+      "type": "RecallAttemptStarted",
+      "occurredAt": "2032-03-16T17:00:00.000Z",
+      "receivedAt": "2026-11-07T11:47:15.469Z",
+      "zoneId": "Asia/Riyadh",
+      "source": "product",
+      "coverage": [
+        "synthetic:06l2:token"
+      ],
+      "versions": {
+        "schema": 1,
+        "algorithm": "hme-0.1-engineering-05a.1",
+        "policy": "P0-0.1.0",
+        "rubric": "manual-recall-0.1.0",
+        "model": "FSRS-6",
+        "content": "unavailable",
+        "fsrsImplementation": "hme-fsrs6-research-binary64-0.1.0",
+        "weightsVersion": "HME-0.1-section12-21weights",
+        "modelTimePolicy": "floor-elapsed-seconds-divided-by-86400-0.1.0",
+        "effectiveReviewTime": "recall-start-v1",
+        "pedagogicalTimePolicy": "recall-start-minus-last-relevant-exposure-v1",
+        "desiredRetention": 0.9,
+        "libraryConformance": "blocked",
+        "applicationEvidence": "hme-application-evidence-05b.1"
+      },
+      "data": {
+        "scope": "hme",
+        "command": {
+          "type": "RecallAttemptStarted",
+          "sessionId": "synthetic-06l2-session-clean-hard",
+          "attemptId": "synthetic-06l2-attempt-clean-hard"
+        }
+      }
+    },
+    {
+      "eventId": "c6d383f4-c6ce-43cf-b5fd-cf5d42d2f469",
+      "commandId": "05e3070f-d5e1-41c0-bd8e-a3861e886606",
+      "operationId": "05e3070f-d5e1-41c0-bd8e-a3861e886606",
+      "userId": "0ca7ce8f-21ec-4923-b740-976346158069",
+      "unitId": "synthetic-06l2-fsrs-unit",
+      "type": "RecallAttemptCompleted",
+      "occurredAt": "2032-03-16T17:00:02.000Z",
+      "receivedAt": "2026-11-07T11:47:15.470Z",
+      "zoneId": "Asia/Riyadh",
+      "source": "product",
+      "coverage": [
+        "synthetic:06l2:token"
+      ],
+      "versions": {
+        "schema": 1,
+        "algorithm": "hme-0.1-engineering-05a.1",
+        "policy": "P0-0.1.0",
+        "rubric": "manual-recall-0.1.0",
+        "model": "FSRS-6",
+        "content": "unavailable",
+        "fsrsImplementation": "hme-fsrs6-research-binary64-0.1.0",
+        "weightsVersion": "HME-0.1-section12-21weights",
+        "modelTimePolicy": "floor-elapsed-seconds-divided-by-86400-0.1.0",
+        "effectiveReviewTime": "recall-start-v1",
+        "pedagogicalTimePolicy": "recall-start-minus-last-relevant-exposure-v1",
+        "desiredRetention": 0.9,
+        "libraryConformance": "blocked",
+        "applicationEvidence": "hme-application-evidence-05b.1"
+      },
+      "data": {
+        "scope": "hme",
+        "command": {
+          "type": "RecallAttemptCompleted",
+          "sessionId": "synthetic-06l2-session-clean-hard",
+          "termination": "completed"
+        }
+      }
+    },
+    {
+      "eventId": "a0115481-1e28-4597-b395-f1500bfd1c98",
+      "commandId": "2cea101d-f8d5-423f-aef7-8f9f39f491f2",
+      "operationId": "2cea101d-f8d5-423f-aef7-8f9f39f491f2",
+      "userId": "0ca7ce8f-21ec-4923-b740-976346158069",
+      "unitId": "synthetic-06l2-fsrs-unit",
+      "type": "AssessmentSubmitted",
+      "occurredAt": "2032-03-16T17:00:03.000Z",
+      "receivedAt": "2026-11-07T11:47:15.471Z",
+      "zoneId": "Asia/Riyadh",
+      "source": "V1",
+      "coverage": [
+        "synthetic:06l2:token"
+      ],
+      "versions": {
+        "schema": 1,
+        "algorithm": "hme-0.1-engineering-05a.1",
+        "policy": "P0-0.1.0",
+        "rubric": "manual-recall-0.1.0",
+        "model": "FSRS-6",
+        "content": "unavailable",
+        "fsrsImplementation": "hme-fsrs6-research-binary64-0.1.0",
+        "weightsVersion": "HME-0.1-section12-21weights",
+        "modelTimePolicy": "floor-elapsed-seconds-divided-by-86400-0.1.0",
+        "effectiveReviewTime": "recall-start-v1",
+        "pedagogicalTimePolicy": "recall-start-minus-last-relevant-exposure-v1",
+        "desiredRetention": 0.9,
+        "libraryConformance": "blocked",
+        "applicationEvidence": "hme-application-evidence-05b.1"
+      },
+      "data": {
+        "scope": "hme",
+        "command": {
+          "type": "AssessmentSubmitted",
+          "attemptId": "synthetic-06l2-attempt-clean-hard",
+          "observation": {
+            "attemptedWords": 10,
+            "errors": 0,
+            "completion": "complete",
+            "effort": "hard",
+            "gapVerified": true
+          }
+        }
+      }
+    },
+    {
+      "eventId": "8f252a52-2929-408b-9cc2-ceccc44e3bab",
+      "commandId": "e3aa65c8-806e-4dda-a51e-34d6eb66d1ac",
+      "operationId": "e3aa65c8-806e-4dda-a51e-34d6eb66d1ac",
+      "userId": "0ca7ce8f-21ec-4923-b740-976346158069",
+      "unitId": "synthetic-06l2-fsrs-unit",
+      "type": "SessionEnded",
+      "occurredAt": "2032-03-16T17:00:04.000Z",
+      "receivedAt": "2026-11-07T11:47:15.472Z",
+      "zoneId": "Asia/Riyadh",
+      "source": "product",
+      "coverage": [
+        "synthetic:06l2:token"
+      ],
+      "versions": {
+        "schema": 1,
+        "algorithm": "hme-0.1-engineering-05a.1",
+        "policy": "P0-0.1.0",
+        "rubric": "manual-recall-0.1.0",
+        "model": "FSRS-6",
+        "content": "unavailable",
+        "fsrsImplementation": "hme-fsrs6-research-binary64-0.1.0",
+        "weightsVersion": "HME-0.1-section12-21weights",
+        "modelTimePolicy": "floor-elapsed-seconds-divided-by-86400-0.1.0",
+        "effectiveReviewTime": "recall-start-v1",
+        "pedagogicalTimePolicy": "recall-start-minus-last-relevant-exposure-v1",
+        "desiredRetention": 0.9,
+        "libraryConformance": "blocked",
+        "applicationEvidence": "hme-application-evidence-05b.1"
+      },
+      "data": {
+        "scope": "hme",
+        "command": {
+          "type": "SessionEnded",
+          "sessionId": "synthetic-06l2-session-clean-hard"
+        }
+      }
+    },
+    {
+      "eventId": "a1713534-aafc-4fcb-b782-0e8832c033d7",
+      "commandId": "ea15add9-faf9-487b-bb53-6796db7750a2",
+      "operationId": "ea15add9-faf9-487b-bb53-6796db7750a2",
+      "userId": "0ca7ce8f-21ec-4923-b740-976346158069",
+      "unitId": "synthetic-06l2-fsrs-unit",
+      "type": "SessionStarted",
+      "occurredAt": "2032-03-19T16:59:59.000Z",
+      "receivedAt": "2026-11-07T11:47:15.475Z",
+      "zoneId": "Asia/Riyadh",
+      "source": "product",
+      "coverage": [
+        "synthetic:06l2:token"
+      ],
+      "versions": {
+        "schema": 1,
+        "algorithm": "hme-0.1-engineering-05a.1",
+        "policy": "P0-0.1.0",
+        "rubric": "manual-recall-0.1.0",
+        "model": "FSRS-6",
+        "content": "unavailable",
+        "fsrsImplementation": "hme-fsrs6-research-binary64-0.1.0",
+        "weightsVersion": "HME-0.1-section12-21weights",
+        "modelTimePolicy": "floor-elapsed-seconds-divided-by-86400-0.1.0",
+        "effectiveReviewTime": "recall-start-v1",
+        "pedagogicalTimePolicy": "recall-start-minus-last-relevant-exposure-v1",
+        "desiredRetention": 0.9,
+        "libraryConformance": "blocked",
+        "applicationEvidence": "hme-application-evidence-05b.1"
+      },
+      "data": {
+        "scope": "hme",
+        "command": {
+          "type": "SessionStarted",
+          "unitId": "synthetic-06l2-fsrs-unit",
+          "sessionId": "synthetic-06l2-session-clean-normal"
+        }
+      }
+    },
+    {
+      "eventId": "64498136-da9b-4ad2-96de-212d09cb5fe4",
+      "commandId": "be815e3c-d6b5-46f2-a37d-d2c4747b61a4",
+      "operationId": "be815e3c-d6b5-46f2-a37d-d2c4747b61a4",
+      "userId": "0ca7ce8f-21ec-4923-b740-976346158069",
+      "unitId": "synthetic-06l2-fsrs-unit",
+      "type": "RecallAttemptStarted",
+      "occurredAt": "2032-03-19T17:00:00.000Z",
+      "receivedAt": "2026-11-07T11:47:15.477Z",
+      "zoneId": "Asia/Riyadh",
+      "source": "product",
+      "coverage": [
+        "synthetic:06l2:token"
+      ],
+      "versions": {
+        "schema": 1,
+        "algorithm": "hme-0.1-engineering-05a.1",
+        "policy": "P0-0.1.0",
+        "rubric": "manual-recall-0.1.0",
+        "model": "FSRS-6",
+        "content": "unavailable",
+        "fsrsImplementation": "hme-fsrs6-research-binary64-0.1.0",
+        "weightsVersion": "HME-0.1-section12-21weights",
+        "modelTimePolicy": "floor-elapsed-seconds-divided-by-86400-0.1.0",
+        "effectiveReviewTime": "recall-start-v1",
+        "pedagogicalTimePolicy": "recall-start-minus-last-relevant-exposure-v1",
+        "desiredRetention": 0.9,
+        "libraryConformance": "blocked",
+        "applicationEvidence": "hme-application-evidence-05b.1"
+      },
+      "data": {
+        "scope": "hme",
+        "command": {
+          "type": "RecallAttemptStarted",
+          "sessionId": "synthetic-06l2-session-clean-normal",
+          "attemptId": "synthetic-06l2-attempt-clean-normal"
+        }
+      }
+    },
+    {
+      "eventId": "2b758ed3-0be6-4530-8e1d-dd08180b900d",
+      "commandId": "343ae269-1863-4720-9861-7f7e6a1503b8",
+      "operationId": "343ae269-1863-4720-9861-7f7e6a1503b8",
+      "userId": "0ca7ce8f-21ec-4923-b740-976346158069",
+      "unitId": "synthetic-06l2-fsrs-unit",
+      "type": "RecallAttemptCompleted",
+      "occurredAt": "2032-03-19T17:00:02.000Z",
+      "receivedAt": "2026-11-07T11:47:15.479Z",
+      "zoneId": "Asia/Riyadh",
+      "source": "product",
+      "coverage": [
+        "synthetic:06l2:token"
+      ],
+      "versions": {
+        "schema": 1,
+        "algorithm": "hme-0.1-engineering-05a.1",
+        "policy": "P0-0.1.0",
+        "rubric": "manual-recall-0.1.0",
+        "model": "FSRS-6",
+        "content": "unavailable",
+        "fsrsImplementation": "hme-fsrs6-research-binary64-0.1.0",
+        "weightsVersion": "HME-0.1-section12-21weights",
+        "modelTimePolicy": "floor-elapsed-seconds-divided-by-86400-0.1.0",
+        "effectiveReviewTime": "recall-start-v1",
+        "pedagogicalTimePolicy": "recall-start-minus-last-relevant-exposure-v1",
+        "desiredRetention": 0.9,
+        "libraryConformance": "blocked",
+        "applicationEvidence": "hme-application-evidence-05b.1"
+      },
+      "data": {
+        "scope": "hme",
+        "command": {
+          "type": "RecallAttemptCompleted",
+          "sessionId": "synthetic-06l2-session-clean-normal",
+          "termination": "completed"
+        }
+      }
+    },
+    {
+      "eventId": "05c445ab-045e-4392-af28-56e32387be15",
+      "commandId": "3d86fc2e-8b47-4398-a703-fc68ef7f2be8",
+      "operationId": "3d86fc2e-8b47-4398-a703-fc68ef7f2be8",
+      "userId": "0ca7ce8f-21ec-4923-b740-976346158069",
+      "unitId": "synthetic-06l2-fsrs-unit",
+      "type": "AssessmentSubmitted",
+      "occurredAt": "2032-03-19T17:00:03.000Z",
+      "receivedAt": "2026-11-07T11:47:15.480Z",
+      "zoneId": "Asia/Riyadh",
+      "source": "V1",
+      "coverage": [
+        "synthetic:06l2:token"
+      ],
+      "versions": {
+        "schema": 1,
+        "algorithm": "hme-0.1-engineering-05a.1",
+        "policy": "P0-0.1.0",
+        "rubric": "manual-recall-0.1.0",
+        "model": "FSRS-6",
+        "content": "unavailable",
+        "fsrsImplementation": "hme-fsrs6-research-binary64-0.1.0",
+        "weightsVersion": "HME-0.1-section12-21weights",
+        "modelTimePolicy": "floor-elapsed-seconds-divided-by-86400-0.1.0",
+        "effectiveReviewTime": "recall-start-v1",
+        "pedagogicalTimePolicy": "recall-start-minus-last-relevant-exposure-v1",
+        "desiredRetention": 0.9,
+        "libraryConformance": "blocked",
+        "applicationEvidence": "hme-application-evidence-05b.1"
+      },
+      "data": {
+        "scope": "hme",
+        "command": {
+          "type": "AssessmentSubmitted",
+          "attemptId": "synthetic-06l2-attempt-clean-normal",
+          "observation": {
+            "attemptedWords": 10,
+            "errors": 0,
+            "completion": "complete",
+            "effort": "normal",
+            "gapVerified": true
+          }
+        }
+      }
+    },
+    {
+      "eventId": "7549995a-ef32-43a6-9e50-bfd447fcf622",
+      "commandId": "babf4f50-916b-407a-8ac9-f16832eb9684",
+      "operationId": "babf4f50-916b-407a-8ac9-f16832eb9684",
+      "userId": "0ca7ce8f-21ec-4923-b740-976346158069",
+      "unitId": "synthetic-06l2-fsrs-unit",
+      "type": "SessionEnded",
+      "occurredAt": "2032-03-19T17:00:04.000Z",
+      "receivedAt": "2026-11-07T11:47:15.482Z",
+      "zoneId": "Asia/Riyadh",
+      "source": "product",
+      "coverage": [
+        "synthetic:06l2:token"
+      ],
+      "versions": {
+        "schema": 1,
+        "algorithm": "hme-0.1-engineering-05a.1",
+        "policy": "P0-0.1.0",
+        "rubric": "manual-recall-0.1.0",
+        "model": "FSRS-6",
+        "content": "unavailable",
+        "fsrsImplementation": "hme-fsrs6-research-binary64-0.1.0",
+        "weightsVersion": "HME-0.1-section12-21weights",
+        "modelTimePolicy": "floor-elapsed-seconds-divided-by-86400-0.1.0",
+        "effectiveReviewTime": "recall-start-v1",
+        "pedagogicalTimePolicy": "recall-start-minus-last-relevant-exposure-v1",
+        "desiredRetention": 0.9,
+        "libraryConformance": "blocked",
+        "applicationEvidence": "hme-application-evidence-05b.1"
+      },
+      "data": {
+        "scope": "hme",
+        "command": {
+          "type": "SessionEnded",
+          "sessionId": "synthetic-06l2-session-clean-normal"
+        }
+      }
+    },
+    {
+      "eventId": "ec06ac25-268a-4d51-9c49-d592a1e446d7",
+      "commandId": "415f20d1-fd40-468a-b4ca-677edb831558",
+      "operationId": "415f20d1-fd40-468a-b4ca-677edb831558",
+      "userId": "0ca7ce8f-21ec-4923-b740-976346158069",
+      "unitId": "synthetic-06l2-fsrs-unit",
+      "type": "SessionStarted",
+      "occurredAt": "2032-03-22T16:59:59.000Z",
+      "receivedAt": "2026-11-07T11:47:15.484Z",
+      "zoneId": "Asia/Riyadh",
+      "source": "product",
+      "coverage": [
+        "synthetic:06l2:token"
+      ],
+      "versions": {
+        "schema": 1,
+        "algorithm": "hme-0.1-engineering-05a.1",
+        "policy": "P0-0.1.0",
+        "rubric": "manual-recall-0.1.0",
+        "model": "FSRS-6",
+        "content": "unavailable",
+        "fsrsImplementation": "hme-fsrs6-research-binary64-0.1.0",
+        "weightsVersion": "HME-0.1-section12-21weights",
+        "modelTimePolicy": "floor-elapsed-seconds-divided-by-86400-0.1.0",
+        "effectiveReviewTime": "recall-start-v1",
+        "pedagogicalTimePolicy": "recall-start-minus-last-relevant-exposure-v1",
+        "desiredRetention": 0.9,
+        "libraryConformance": "blocked",
+        "applicationEvidence": "hme-application-evidence-05b.1"
+      },
+      "data": {
+        "scope": "hme",
+        "command": {
+          "type": "SessionStarted",
+          "unitId": "synthetic-06l2-fsrs-unit",
+          "sessionId": "synthetic-06l2-session-clean-easy"
+        }
+      }
+    },
+    {
+      "eventId": "ce04f5fa-b40a-4719-a9e9-4ecf8f6b7660",
+      "commandId": "1cba1c56-d2a2-4a2a-8296-24860ab6aa6a",
+      "operationId": "1cba1c56-d2a2-4a2a-8296-24860ab6aa6a",
+      "userId": "0ca7ce8f-21ec-4923-b740-976346158069",
+      "unitId": "synthetic-06l2-fsrs-unit",
+      "type": "RecallAttemptStarted",
+      "occurredAt": "2032-03-22T17:00:00.000Z",
+      "receivedAt": "2026-11-07T11:47:15.486Z",
+      "zoneId": "Asia/Riyadh",
+      "source": "product",
+      "coverage": [
+        "synthetic:06l2:token"
+      ],
+      "versions": {
+        "schema": 1,
+        "algorithm": "hme-0.1-engineering-05a.1",
+        "policy": "P0-0.1.0",
+        "rubric": "manual-recall-0.1.0",
+        "model": "FSRS-6",
+        "content": "unavailable",
+        "fsrsImplementation": "hme-fsrs6-research-binary64-0.1.0",
+        "weightsVersion": "HME-0.1-section12-21weights",
+        "modelTimePolicy": "floor-elapsed-seconds-divided-by-86400-0.1.0",
+        "effectiveReviewTime": "recall-start-v1",
+        "pedagogicalTimePolicy": "recall-start-minus-last-relevant-exposure-v1",
+        "desiredRetention": 0.9,
+        "libraryConformance": "blocked",
+        "applicationEvidence": "hme-application-evidence-05b.1"
+      },
+      "data": {
+        "scope": "hme",
+        "command": {
+          "type": "RecallAttemptStarted",
+          "sessionId": "synthetic-06l2-session-clean-easy",
+          "attemptId": "synthetic-06l2-attempt-clean-easy"
+        }
+      }
+    },
+    {
+      "eventId": "ea669908-80bc-4eb3-894c-dbf61dab4e50",
+      "commandId": "f66558e1-ecc0-4a3c-8f42-d9a470401fbd",
+      "operationId": "f66558e1-ecc0-4a3c-8f42-d9a470401fbd",
+      "userId": "0ca7ce8f-21ec-4923-b740-976346158069",
+      "unitId": "synthetic-06l2-fsrs-unit",
+      "type": "RecallAttemptCompleted",
+      "occurredAt": "2032-03-22T17:00:02.000Z",
+      "receivedAt": "2026-11-07T11:47:15.488Z",
+      "zoneId": "Asia/Riyadh",
+      "source": "product",
+      "coverage": [
+        "synthetic:06l2:token"
+      ],
+      "versions": {
+        "schema": 1,
+        "algorithm": "hme-0.1-engineering-05a.1",
+        "policy": "P0-0.1.0",
+        "rubric": "manual-recall-0.1.0",
+        "model": "FSRS-6",
+        "content": "unavailable",
+        "fsrsImplementation": "hme-fsrs6-research-binary64-0.1.0",
+        "weightsVersion": "HME-0.1-section12-21weights",
+        "modelTimePolicy": "floor-elapsed-seconds-divided-by-86400-0.1.0",
+        "effectiveReviewTime": "recall-start-v1",
+        "pedagogicalTimePolicy": "recall-start-minus-last-relevant-exposure-v1",
+        "desiredRetention": 0.9,
+        "libraryConformance": "blocked",
+        "applicationEvidence": "hme-application-evidence-05b.1"
+      },
+      "data": {
+        "scope": "hme",
+        "command": {
+          "type": "RecallAttemptCompleted",
+          "sessionId": "synthetic-06l2-session-clean-easy",
+          "termination": "completed"
+        }
+      }
+    },
+    {
+      "eventId": "3663522a-8f9d-4afe-ba39-3fdef0e858c2",
+      "commandId": "c9d4ac74-4553-4c5f-b7b1-624c58abb13c",
+      "operationId": "c9d4ac74-4553-4c5f-b7b1-624c58abb13c",
+      "userId": "0ca7ce8f-21ec-4923-b740-976346158069",
+      "unitId": "synthetic-06l2-fsrs-unit",
+      "type": "AssessmentSubmitted",
+      "occurredAt": "2032-03-22T17:00:03.000Z",
+      "receivedAt": "2026-11-07T11:47:15.491Z",
+      "zoneId": "Asia/Riyadh",
+      "source": "V1",
+      "coverage": [
+        "synthetic:06l2:token"
+      ],
+      "versions": {
+        "schema": 1,
+        "algorithm": "hme-0.1-engineering-05a.1",
+        "policy": "P0-0.1.0",
+        "rubric": "manual-recall-0.1.0",
+        "model": "FSRS-6",
+        "content": "unavailable",
+        "fsrsImplementation": "hme-fsrs6-research-binary64-0.1.0",
+        "weightsVersion": "HME-0.1-section12-21weights",
+        "modelTimePolicy": "floor-elapsed-seconds-divided-by-86400-0.1.0",
+        "effectiveReviewTime": "recall-start-v1",
+        "pedagogicalTimePolicy": "recall-start-minus-last-relevant-exposure-v1",
+        "desiredRetention": 0.9,
+        "libraryConformance": "blocked",
+        "applicationEvidence": "hme-application-evidence-05b.1"
+      },
+      "data": {
+        "scope": "hme",
+        "command": {
+          "type": "AssessmentSubmitted",
+          "attemptId": "synthetic-06l2-attempt-clean-easy",
+          "observation": {
+            "attemptedWords": 10,
+            "errors": 0,
+            "completion": "complete",
+            "effort": "easy",
+            "gapVerified": true
+          }
+        }
+      }
+    },
+    {
+      "eventId": "a2adef6e-e73b-4cc0-b4f7-b148662cb3ef",
+      "commandId": "c5fc3a0f-c03b-4efa-8e5b-2059583d9d53",
+      "operationId": "c5fc3a0f-c03b-4efa-8e5b-2059583d9d53",
+      "userId": "0ca7ce8f-21ec-4923-b740-976346158069",
+      "unitId": "synthetic-06l2-fsrs-unit",
+      "type": "SessionEnded",
+      "occurredAt": "2032-03-22T17:00:04.000Z",
+      "receivedAt": "2026-11-07T11:47:15.494Z",
+      "zoneId": "Asia/Riyadh",
+      "source": "product",
+      "coverage": [
+        "synthetic:06l2:token"
+      ],
+      "versions": {
+        "schema": 1,
+        "algorithm": "hme-0.1-engineering-05a.1",
+        "policy": "P0-0.1.0",
+        "rubric": "manual-recall-0.1.0",
+        "model": "FSRS-6",
+        "content": "unavailable",
+        "fsrsImplementation": "hme-fsrs6-research-binary64-0.1.0",
+        "weightsVersion": "HME-0.1-section12-21weights",
+        "modelTimePolicy": "floor-elapsed-seconds-divided-by-86400-0.1.0",
+        "effectiveReviewTime": "recall-start-v1",
+        "pedagogicalTimePolicy": "recall-start-minus-last-relevant-exposure-v1",
+        "desiredRetention": 0.9,
+        "libraryConformance": "blocked",
+        "applicationEvidence": "hme-application-evidence-05b.1"
+      },
+      "data": {
+        "scope": "hme",
+        "command": {
+          "type": "SessionEnded",
+          "sessionId": "synthetic-06l2-session-clean-easy"
+        }
+      }
+    }
+  ]
+}

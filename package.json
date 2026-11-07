@@ -1,6 +1,6 @@
 {
   "name": "mulazama",
-  "version": "0.6.0-alpha.1",
+  "version": "0.6.0-alpha.2",
   "private": true,
   "type": "module",
   "scripts": {
@@ -17,7 +17,10 @@
     "content:audit": "node scripts/audit-quran-content.mjs",
     "content:tools": "node scripts/verify-content-tools.mjs",
     "fsrs:conformance": "node scripts/fsrs-conformance.mjs",
-    "verify:l1": "python3 scripts/verify-06l1.py"
+    "verify:l1": "python3 scripts/verify-06l1.py",
+    "preview:release": "node scripts/local-preview-06l2.mjs",
+    "test:deployment": "playwright test --config playwright.deployment.config.ts",
+    "verify:l2": "python3 scripts/verify-06l2.py"
   },
   "dependencies": {
     "lucide-react": "0.468.0",

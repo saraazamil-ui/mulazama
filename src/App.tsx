@@ -460,7 +460,7 @@ export default function App({
               <button className="help-button" onClick={() => setHelp(true)}>
                 عن مُلازَمَة وخصوصيتك <ShieldCheck size={17} />
               </button>
-              <small>MULAZAMA · 06-L1</small>
+              <small>MULAZAMA · 06-L2</small>
             </div>
           </aside>
           <div className="workspace">
@@ -499,7 +499,7 @@ export default function App({
               </div>
             </header>
             <div className="prototype-strip" role="region" aria-label="حالة النسخة">
-              إصدار هندسي 06-L1 · جلسات القرآن موقوفة حتى اعتماد المحتوى
+              إصدار هندسي 06-L2 · جلسات القرآن موقوفة حتى اعتماد المحتوى
             </div>
             <main
               id="main-content"
@@ -2748,7 +2748,7 @@ function Preferences() {
           <summary>عن النموذج والمساعدة</summary>
           <p className="policy-links"><a href="./privacy.html">الخصوصية</a> · <a href="./support.html">الدعم والمساعدة</a> · <a href="./terms.html">حدود الاستخدام</a></p>
           <p>
-            مُلازَمَة — MULAZAMA، إصدار هندسي 06-L1 للويب. اختبار هاتف حقيقي ومراجعة متخصصة لم ينجزا بعد. المطابقة الحسابية المصححة مثبتة، وتشغيل الجلسات واعتماد المحتوى ما زالا معلقين.
+            مُلازَمَة — MULAZAMA، إصدار هندسي 06-L2 للويب. اختبار هاتف حقيقي ومراجعة متخصصة لم ينجزا بعد. المطابقة الحسابية المصححة مثبتة، وتشغيل الجلسات واعتماد المحتوى ما زالا معلقين.
           </p>
         </details>
       </Card>

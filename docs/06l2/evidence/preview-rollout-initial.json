@@ -1,0 +1,176 @@
+{
+  "config": {
+    "configFile": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l2/playwright.deployment.config.ts",
+    "rootDir": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l2/e2e-deployment",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results-deployment/deployment-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l2/test-results-deployment",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l2/e2e-deployment",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "rollout06l2.spec.ts",
+      "file": "rollout06l2.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "L2DEP01 HTTPS preview enforces headers and allows only manifest assets without exposing source files",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 71,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T11:48:34.489Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "preview-headers.json",
+                      "contentType": "application/json",
+                      "body": "eyJoZWFkZXJzIjp7ImNvbnRlbnQtc2VjdXJpdHktcG9saWN5IjoiZGVmYXVsdC1zcmMgJ3NlbGYnOyBzY3JpcHQtc3JjICdzZWxmJzsgc3R5bGUtc3JjICdzZWxmJyAndW5zYWZlLWlubGluZSc7IGltZy1zcmMgJ3NlbGYnIGRhdGE6IGJsb2I6OyBmb250LXNyYyAnc2VsZic7IGNvbm5lY3Qtc3JjICdzZWxmJzsgd29ya2VyLXNyYyAnc2VsZic7IG9iamVjdC1zcmMgJ25vbmUnOyBiYXNlLXVyaSAnc2VsZic7IGZvcm0tYWN0aW9uICdzZWxmJzsgZnJhbWUtYW5jZXN0b3JzICdub25lJyIsIngtY29udGVudC10eXBlLW9wdGlvbnMiOiJub3NuaWZmIiwicmVmZXJyZXItcG9saWN5Ijoibm8tcmVmZXJyZXIiLCJwZXJtaXNzaW9ucy1wb2xpY3kiOiJjYW1lcmE9KCksIG1pY3JvcGhvbmU9KCksIGdlb2xvY2F0aW9uPSgpIiwieC1yb2JvdHMtdGFnIjoibm9pbmRleCwgbm9mb2xsb3ciLCJjYWNoZS1jb250cm9sIjoibm8tY2FjaGUiLCJ4LW11bGF6YW1hLXByZXZpZXctcmVsZWFzZSI6ImwxIiwiZXRhZyI6IlwiZTI0OTA5MzRjMDJjNWI5NWI5MWZjN2Y3M2IyZTNiZjhkNzE3YjU2ZWFjYmJkMDExMGZhYTA0MmQ4MWU5ODk3MVwiIiwiY29udGVudC10eXBlIjoidGV4dC9odG1sOyBjaGFyc2V0PXV0Zi04IiwiZGF0ZSI6IlNhdCwgMDcgTm92IDIwMjYgMTE6NDg6MzUgR01UIiwiY29ubmVjdGlvbiI6ImtlZXAtYWxpdmUiLCJrZWVwLWFsaXZlIjoidGltZW91dD01IiwidHJhbnNmZXItZW5jb2RpbmciOiJjaHVua2VkIn0sImhlYWx0aCI6eyJzY29wZSI6ImxvY2FsLWVuZ2luZWVyaW5nLXByZXZpZXciLCJyZWxlYXNlSWQiOiJsMSIsInNvdXJjZURpZ2VzdCI6IjViOWU0ZDExMzkyN2Q0YjJiZDg0MDhiNzc3MTI1NzE1ODk2MzNiNzAyZTAwZGQ0ODM2MWM4MGY2MDUzNTkwMjAiLCJwcm9kdWN0aW9uQXV0aG9yaXplZCI6ZmFsc2UsInJlcXVlc3RzIjo1LCJmYWlsdXJlcyI6MCwicGVyc29uYWxEYXRhQ29sbGVjdGVkIjpmYWxzZX0sInRscyI6InNlbGYtc2lnbmVkIGVwaGVtZXJhbCBsb29wYmFjazsgYnJvd3NlciB0ZXN0IGlnbm9yZXMgY2VydGlmaWNhdGUgdHJ1c3Qgb25seSJ9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3995d696198d252a757f-6d5f8e6d58911a33d323",
+          "file": "rollout06l2.spec.ts",
+          "line": 121,
+          "column": 1
+        },
+        {
+          "title": "L2DEP02 L1 to L2 update and rollback preserve exact encrypted IndexedDB rows, settings, offline access and blocked sessions",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1769,
+                  "error": {
+                    "message": "Error: locator.check: Clicking the checkbox did not change its state\nCall log:\n\u001b[2m  - waiting for getByRole('checkbox', { name: 'تكبير النص' })\u001b[22m\n\u001b[2m    - locator resolved to <input type=\"checkbox\"/>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - performing click action\u001b[22m\n\u001b[2m    - click action done\u001b[22m\n\u001b[2m    - waiting for scheduled navigations to finish\u001b[22m\n\u001b[2m    - navigations have finished\u001b[22m\n",
+                    "stack": "Error: locator.check: Clicking the checkbox did not change its state\nCall log:\n\u001b[2m  - waiting for getByRole('checkbox', { name: 'تكبير النص' })\u001b[22m\n\u001b[2m    - locator resolved to <input type=\"checkbox\"/>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - performing click action\u001b[22m\n\u001b[2m    - click action done\u001b[22m\n\u001b[2m    - waiting for scheduled navigations to finish\u001b[22m\n\u001b[2m    - navigations have finished\u001b[22m\n\n    at /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l2/e2e-deployment/rollout06l2.spec.ts:74:95",
+                    "location": {
+                      "file": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l2/e2e-deployment/rollout06l2.spec.ts",
+                      "column": 95,
+                      "line": 74
+                    },
+                    "snippet": "  72 |   await page.getByRole('button',{name:'احفظ واذهب إلى الرئيسية'}).click();\n  73 |   await expect(page.locator('main[data-screen=\"S05\"]')).toBeVisible();\n> 74 |   await page.goto(server.origin+'/#S17');await page.getByRole('checkbox',{name:'تكبير النص'}).check();\n     |                                                                                               ^\n  75 |   await expect(page.getByRole('checkbox',{name:'تكبير النص'})).toBeChecked();\n  76 |   await page.evaluate(async()=>{await navigator.serviceWorker.ready;});await page.reload();\n  77 |   await expect.poll(()=>page.evaluate(()=>!!navigator.serviceWorker.controller)).toBe(true);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l2/e2e-deployment/rollout06l2.spec.ts",
+                        "column": 95,
+                        "line": 74
+                      },
+                      "message": "Error: locator.check: Clicking the checkbox did not change its state\nCall log:\n\u001b[2m  - waiting for getByRole('checkbox', { name: 'تكبير النص' })\u001b[22m\n\u001b[2m    - locator resolved to <input type=\"checkbox\"/>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - performing click action\u001b[22m\n\u001b[2m    - click action done\u001b[22m\n\u001b[2m    - waiting for scheduled navigations to finish\u001b[22m\n\u001b[2m    - navigations have finished\u001b[22m\n\n\n  72 |   await page.getByRole('button',{name:'احفظ واذهب إلى الرئيسية'}).click();\n  73 |   await expect(page.locator('main[data-screen=\"S05\"]')).toBeVisible();\n> 74 |   await page.goto(server.origin+'/#S17');await page.getByRole('checkbox',{name:'تكبير النص'}).check();\n     |                                                                                               ^\n  75 |   await expect(page.getByRole('checkbox',{name:'تكبير النص'})).toBeChecked();\n  76 |   await page.evaluate(async()=>{await navigator.serviceWorker.ready;});await page.reload();\n  77 |   await expect.poll(()=>page.evaluate(()=>!!navigator.serviceWorker.controller)).toBe(true);\n    at /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l2/e2e-deployment/rollout06l2.spec.ts:74:95"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T11:48:35.404Z",
+                  "annotations": [],
+                  "attachments": [],
+                  "errorLocation": {
+                    "file": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l2/e2e-deployment/rollout06l2.spec.ts",
+                    "column": 95,
+                    "line": 74
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "3995d696198d252a757f-90c5d70a7558653b25c2",
+          "file": "rollout06l2.spec.ts",
+          "line": 153,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-07T11:48:33.973Z",
+    "duration": 3487.5299999999997,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

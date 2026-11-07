@@ -8,3 +8,6 @@ test-results-offline/
 
 # Focused local verification outputs
 test-results-*/
+.preview-artifacts/
+.preview-state.json*
+test-results-deployment/

@@ -1,0 +1,23 @@
+{
+  "command": [
+    "pnpm",
+    "audit",
+    "--json",
+    "--fetch-retries=0",
+    "--fetch-timeout=10000"
+  ],
+  "exitCode": 0,
+  "durationSeconds": 0.562,
+  "boundedSeconds": 25,
+  "priorAttempt": {
+    "command": [
+      "pnpm",
+      "audit",
+      "--json"
+    ],
+    "status": "cancelled-after-no-output",
+    "exitCode": 130,
+    "networkResultReceived": false
+  },
+  "completedAt": "2026-11-07T11:45:07.405244+00:00"
+}

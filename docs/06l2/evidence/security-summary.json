@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-11-07T11:50:41.517148+00:00",
+  "browser": {
+    "executed": 2,
+    "passed": 2,
+    "failed": 0,
+    "skipped": 0,
+    "flaky": 0
+  },
+  "knownDependencyAdvisories": 0,
+  "dependencyUpgradePerformed": false,
+  "productionDataTouched": false,
+  "applicationCodeChangedBySecurityWork": false,
+  "testSourceSHA256": "ba6a175709b7b6279e08432ea4a44d6d2cfb0c4982b0491cc8c0dbe95fd15864",
+  "acceptanceScope": "Local targeted security/data regression evidence; no G09 human approval or production readiness",
+  "evidence": [
+    "security-browser-results.json",
+    "dependencies-audit.json",
+    "dependencies-audit-command.json",
+    "dependencies-summary.json",
+    "security-execution-notes.json"
+  ]
+}

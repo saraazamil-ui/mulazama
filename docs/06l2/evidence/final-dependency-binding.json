@@ -1,0 +1,8 @@
+{
+  "currentPackageManifestSHA256": "b03a087512aba983e2e932e7a6ab6e426ce47915cca162ed16f9fa36077540c8",
+  "auditedPackageManifestSHA256": "bb3821c610dd68f90367f7e69b2626725af93eb4fa30d2884e2c5b4515640a50",
+  "sameDeclaredDependencies": true,
+  "sameLockfile": true,
+  "differenceScope": "Release version and command scripts only; dependency audit applies to the identical dependency graph",
+  "noNewInstall": true
+}

@@ -1,0 +1,176 @@
+{
+  "config": {
+    "configFile": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l2/playwright.deployment.config.ts",
+    "rootDir": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l2/e2e-deployment",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results-deployment/deployment-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l2/test-results-deployment",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l2/e2e-deployment",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "rollout06l2.spec.ts",
+      "file": "rollout06l2.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "L2DEP01 HTTPS preview enforces headers and allows only manifest assets without exposing source files",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 54,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T11:50:47.451Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "preview-headers.json",
+                      "contentType": "application/json",
+                      "body": "eyJoZWFkZXJzIjp7ImNvbnRlbnQtc2VjdXJpdHktcG9saWN5IjoiZGVmYXVsdC1zcmMgJ3NlbGYnOyBzY3JpcHQtc3JjICdzZWxmJzsgc3R5bGUtc3JjICdzZWxmJyAndW5zYWZlLWlubGluZSc7IGltZy1zcmMgJ3NlbGYnIGRhdGE6IGJsb2I6OyBmb250LXNyYyAnc2VsZic7IGNvbm5lY3Qtc3JjICdzZWxmJzsgd29ya2VyLXNyYyAnc2VsZic7IG9iamVjdC1zcmMgJ25vbmUnOyBiYXNlLXVyaSAnc2VsZic7IGZvcm0tYWN0aW9uICdzZWxmJzsgZnJhbWUtYW5jZXN0b3JzICdub25lJyIsIngtY29udGVudC10eXBlLW9wdGlvbnMiOiJub3NuaWZmIiwicmVmZXJyZXItcG9saWN5Ijoibm8tcmVmZXJyZXIiLCJwZXJtaXNzaW9ucy1wb2xpY3kiOiJjYW1lcmE9KCksIG1pY3JvcGhvbmU9KCksIGdlb2xvY2F0aW9uPSgpIiwieC1yb2JvdHMtdGFnIjoibm9pbmRleCwgbm9mb2xsb3ciLCJjYWNoZS1jb250cm9sIjoibm8tY2FjaGUiLCJ4LW11bGF6YW1hLXByZXZpZXctcmVsZWFzZSI6ImwxIiwiZXRhZyI6IlwiZTI0OTA5MzRjMDJjNWI5NWI5MWZjN2Y3M2IyZTNiZjhkNzE3YjU2ZWFjYmJkMDExMGZhYTA0MmQ4MWU5ODk3MVwiIiwiY29udGVudC10eXBlIjoidGV4dC9odG1sOyBjaGFyc2V0PXV0Zi04IiwiZGF0ZSI6IlNhdCwgMDcgTm92IDIwMjYgMTE6NTA6NDcgR01UIiwiY29ubmVjdGlvbiI6ImtlZXAtYWxpdmUiLCJrZWVwLWFsaXZlIjoidGltZW91dD01IiwidHJhbnNmZXItZW5jb2RpbmciOiJjaHVua2VkIn0sImhlYWx0aCI6eyJzY29wZSI6ImxvY2FsLWVuZ2luZWVyaW5nLXByZXZpZXciLCJyZWxlYXNlSWQiOiJsMSIsInNvdXJjZURpZ2VzdCI6IjViOWU0ZDExMzkyN2Q0YjJiZDg0MDhiNzc3MTI1NzE1ODk2MzNiNzAyZTAwZGQ0ODM2MWM4MGY2MDUzNTkwMjAiLCJwcm9kdWN0aW9uQXV0aG9yaXplZCI6ZmFsc2UsInJlcXVlc3RzIjo1LCJmYWlsdXJlcyI6MCwicGVyc29uYWxEYXRhQ29sbGVjdGVkIjpmYWxzZX0sInRscyI6InNlbGYtc2lnbmVkIGVwaGVtZXJhbCBsb29wYmFjazsgYnJvd3NlciB0ZXN0IHBlcm1pdHMgaXRzIG93biBzZWxmLXNpZ25lZCBsb29wYmFjayBjZXJ0aWZpY2F0ZSBvbmx5OyBubyBzeXN0ZW0gdHJ1c3Qgc3RvcmUgY2hhbmdlcyJ9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3995d696198d252a757f-6d5f8e6d58911a33d323",
+          "file": "rollout06l2.spec.ts",
+          "line": 121,
+          "column": 1
+        },
+        {
+          "title": "L2DEP02 L1 to L2 update and rollback preserve exact encrypted IndexedDB rows, settings, offline access and blocked sessions",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 641,
+                  "error": {
+                    "message": "Error: page.evaluate: SecurityError: Failed to register a ServiceWorker for scope ('https://127.0.0.1:64202/') with script ('https://127.0.0.1:64202/sw.js'): An SSL certificate error occurred when fetching the script.",
+                    "stack": "Error: page.evaluate: SecurityError: Failed to register a ServiceWorker for scope ('https://127.0.0.1:64202/') with script ('https://127.0.0.1:64202/sw.js'): An SSL certificate error occurred when fetching the script.\n    at /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l2/e2e-deployment/rollout06l2.spec.ts:76:14",
+                    "location": {
+                      "file": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l2/e2e-deployment/rollout06l2.spec.ts",
+                      "column": 14,
+                      "line": 76
+                    },
+                    "snippet": "  74 |   await page.goto(server.origin+'/#S17');await page.getByRole('checkbox',{name:'تكبير النص'}).click();\n  75 |   await expect(page.getByRole('checkbox',{name:'تكبير النص'})).toBeChecked();\n> 76 |   await page.evaluate(async()=>{\n     |              ^\n  77 |     await navigator.serviceWorker.register('/sw.js');\n  78 |     await Promise.race([navigator.serviceWorker.ready,new Promise((_,reject)=>setTimeout(()=>reject(Error('SW_READY_TIMEOUT')),10000))]);\n  79 |   });await page.reload();"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l2/e2e-deployment/rollout06l2.spec.ts",
+                        "column": 14,
+                        "line": 76
+                      },
+                      "message": "Error: page.evaluate: SecurityError: Failed to register a ServiceWorker for scope ('https://127.0.0.1:64202/') with script ('https://127.0.0.1:64202/sw.js'): An SSL certificate error occurred when fetching the script.\n\n  74 |   await page.goto(server.origin+'/#S17');await page.getByRole('checkbox',{name:'تكبير النص'}).click();\n  75 |   await expect(page.getByRole('checkbox',{name:'تكبير النص'})).toBeChecked();\n> 76 |   await page.evaluate(async()=>{\n     |              ^\n  77 |     await navigator.serviceWorker.register('/sw.js');\n  78 |     await Promise.race([navigator.serviceWorker.ready,new Promise((_,reject)=>setTimeout(()=>reject(Error('SW_READY_TIMEOUT')),10000))]);\n  79 |   });await page.reload();\n    at /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l2/e2e-deployment/rollout06l2.spec.ts:76:14"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T11:50:47.996Z",
+                  "annotations": [],
+                  "attachments": [],
+                  "errorLocation": {
+                    "file": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l2/e2e-deployment/rollout06l2.spec.ts",
+                    "column": 14,
+                    "line": 76
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "3995d696198d252a757f-90c5d70a7558653b25c2",
+          "file": "rollout06l2.spec.ts",
+          "line": 153,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-07T11:50:47.177Z",
+    "duration": 1600.513,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

@@ -1,0 +1,1298 @@
+{
+  "schemaVersion": 1,
+  "product": "MULAZAMA",
+  "phase": "06-L2",
+  "recordedAt": "2026-11-07T12:04:06.566718+00:00",
+  "authority": "تحديث سجل الإطلاق L1 بنفس18معرفًا وتبعياتها ومعاييرها؛ هذا هو سجل الحالة التشغيلي L2 ولا ينشئ مراحل أو بوابات جديدة. ليس bundleاعتماد ولا يمنح صلاحية تنفيذ.",
+  "derivedFrom": {
+    "path": "docs/06l1/Launch-Backlog.json",
+    "sha256": "d5e38fc671247a1d79c84062989f76239322b8ed4733138242e6f5ab4aef6d17",
+    "idsPreserved": true,
+    "newWorkIdsAdded": false
+  },
+  "readiness": {
+    "decision": "not-ready",
+    "arabicDecision": "غير جاهز",
+    "closedLearningTrial": false,
+    "publicLaunch": false,
+    "localEngineeringReviewOnly": true,
+    "reason": "المحتوى والكتالوج والمعيار والانتخاب والرحلة الفعلية والتواقيع والتشغيل والتجربة البشرية لم تستوف؛ لا تفتح جلسات لتوليد دليل قبول."
+  },
+  "categories": {
+    "code": "تنفيذ أو إصلاح داخل الشفرة عند توفر عقد معتمد",
+    "evidence": "اختبارات أو أدلة إضافية لا يكفي إعداد وثيقتها",
+    "human": "اعتماد بشري متخصص",
+    "external": "حساب أو مزود أو بيئة أو إجراء خارجي",
+    "owner": "قرار أو تفويض من مالكة المشروع"
+  },
+  "statusSemantics": {
+    "blocked": "شروط القبول غير مكتملة؛ قد تنفذ أجزاء تقنية آمنة دون إغلاق البند",
+    "complete-local": "نطاق محلي موروث مكتمل؛ لا بوابة إطلاق ولا اكتمال رحلة",
+    "deferred-nonblocking": "خارج نطاق الإطلاق الأول؛ لا شرط مستحدث"
+  },
+  "verificationSnapshot": {
+    "method": "قراءة JSONالأدلة الموجودة والتحقق من أعدادها وبصماتها وIDsوإعداد بوابات المصدر؛ لا ادعاء إعادة تشغيل الاختبارات أثناء كتابة السجل.",
+    "inheritedL1Ids": 18,
+    "criticalItemsNewlyClosed": 0,
+    "localCompleteIds": [
+      "L07",
+      "L08"
+    ],
+    "deferredIds": [
+      "L18"
+    ],
+    "baselineUnit": {
+      "passed": 727,
+      "failed": 0,
+      "skipped": 0,
+      "source": "docs/06l2/evidence/baseline-tests.json"
+    },
+    "targetedFsrsUnit": {
+      "passed": 23,
+      "failed": 0,
+      "skipped": 0,
+      "source": "docs/06l2/evidence/fsrs-integration-tests.json"
+    },
+    "targetedContentUnit": {
+      "passed": 13,
+      "failed": 0,
+      "skipped": 0,
+      "source": "docs/06l2/evidence/content-tests.json"
+    },
+    "targetedArtifactUnit": {
+      "passed": 16,
+      "failed": 0,
+      "skipped": 0,
+      "source": "docs/06l2/evidence/preview-peer-review-tests.json",
+      "includedInFinal779": true
+    },
+    "fsrsBrowser": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "source": "docs/06l2/evidence/fsrs-integration-browser-results.json"
+    },
+    "securityBrowser": {
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "source": "docs/06l2/evidence/security-browser-results.json"
+    },
+    "dependencyAdvisories": {
+      "known": 0,
+      "source": "docs/06l2/evidence/dependencies-summary.json"
+    },
+    "countingRule": "لا تجمع الفحوص المستهدفة فوق الانحدار النهائي؛ الأصناف منفصلة والتقارير الموروثة لا تنسب لتشغيل L2.",
+    "sourceGateConfiguration": {
+      "contentManifestHash": null,
+      "unitCatalogEntries": 0,
+      "attestations": 0,
+      "reports": 0,
+      "allGateIds": [
+        "G01",
+        "G02",
+        "G03",
+        "G04",
+        "G05",
+        "G06",
+        "G07",
+        "G08",
+        "G09",
+        "G10"
+      ],
+      "state": "blocked-by-existing-contract",
+      "basis": "قراءة إعدادات البوابات ثم تقييم نهائي فعلي محفوظ فيdocs/06l2/evidence/release-gates.json:عشرنتائجMISSING_OR_DUPLICATE_ATTESTATION."
+    },
+    "pendingFinalEvidence": [],
+    "evidenceHashesNote": "بصمات للملفات المقروءة في هذه اللقطة؛ عند تحديث الأدلة النهائية يجب إعادة ربطها ببصماتها، ولا تثبت لقطة قديمة ملفات معدلة لاحقًا.",
+    "finalVerification": {
+      "unit": {
+        "executed": 779,
+        "passed": 779,
+        "failed": 0,
+        "skipped": 0,
+        "source": "docs/06l2/evidence/final-tests.json"
+      },
+      "browser": {
+        "executed": 34,
+        "passed": 34,
+        "failed": 0,
+        "skipped": 0,
+        "flaky": 0,
+        "source": "docs/06l2/evidence/final-browser-results.json"
+      },
+      "offlineBrowser": {
+        "executed": 4,
+        "passed": 4,
+        "failed": 0,
+        "skipped": 0,
+        "flaky": 0,
+        "source": "docs/06l2/evidence/final-offline-browser-results.json"
+      },
+      "deploymentBrowser": {
+        "executed": 2,
+        "passed": 2,
+        "failed": 0,
+        "skipped": 0,
+        "flaky": 0,
+        "source": "docs/06l2/evidence/final-deployment-browser-results.json",
+        "scope": "معاينةlocalhostمعزولة؛HTTPSذاتيالتوقيعمنفصلعنSWعلىHTTP127.0.0.1securecontext؛لااستضافةخارجية"
+      },
+      "reference": {
+        "executed": 40,
+        "passed": 40,
+        "failed": 0,
+        "blocked": 0,
+        "source": "docs/06l2/evidence/fsrs/fsrs-investigation.json",
+        "scope": "النواةالمصححةوالفاصل الخام؛لاالانتخابأوالاعتمادالعلمي"
+      },
+      "gates": {
+        "passed": 0,
+        "blocked": 10,
+        "source": "docs/06l2/evidence/release-gates.json"
+      }
+    },
+    "earlierFailurePreservation": "حُفظ التشغيل الشامل الأول776/779 بثلاثة إخفاقات عينات؛ لا يعد تشغيلًا ناجحًا. نجح النهائي779/779 بعد تصحيح العينات؛ لم تحذف الحالات أو تتجاوز."
+  },
+  "items": [
+    {
+      "id": "L01",
+      "priority": "P0",
+      "title": "اعتماد النص والطبعة والحقوق والكتالوج وعرض القرآن",
+      "blockerScope": "all-quran-sessions",
+      "ownerRole": "متخصص مصحف + مسؤول حقوق + مسؤولة الإصدار",
+      "dependencies": [],
+      "gates": [
+        "G01",
+        "G10"
+      ],
+      "acceptanceEvidenceRequired": [
+        "مصدر رسمي ثابت وحق استخدام موثق وmanifest ببصمة غير null",
+        "مقارنة مستقلة للنص وخريطة وحدات/آيات ومراجعة العرض على أجهزة الهدف",
+        "اعتماد مختص وتوقيع صالح مرتبط بكتالوج وسياق إصدار التجربة"
+      ],
+      "baselineStatus": "blocked-external-review",
+      "categories": [
+        "code",
+        "evidence",
+        "human",
+        "external",
+        "owner"
+      ],
+      "finalStatus": "blocked",
+      "closedForLaunch": false,
+      "closureMethod": "استكمال مصدر المجمع الرسمي الثابت وحقوقه، ثم المقارنة المستقلة وتثبيت الخط والكتالوج واعتماد مختص وتوقيع إصدار مرتبط بالبصمات.",
+      "implementedL2": [
+        "جُلب Tanzil Uthmani 1.1 من الناشر الأصلي مع حقوقه في منطقة مراجعة معزولة؛ ليس بديلاً صامتًا عن مصدر المجمع المطلوب.",
+        "فُحص 114 سورة و6236 معرف آية وترتيبها وUTF-8 والبصمة، وطابق DOM النص الأصلي دون تطبيع؛ صفحة مراجعة منفصلة لا تفتح جلسة.",
+        "محاولات المصدر الرسمي موثقة: صفحة صيانة وخطأ TLS؛ لم تعطل حماية الشهادة ولم تستخدم مرآة كاعتماد رسمي."
+      ],
+      "remaining": [
+        "الحزمة الرسمية من المجمع وخط مرخص ثابت الإصدار.",
+        "مقارنة مستقلة مطابقة للطبعة؛ ملف metadata من ناشر النص نفسه ليس مستقلاً.",
+        "اعتماد الرسم والقراءة وعلامات الوقف والعرض بشريًا، وكتالوج وحدات معتمد ثم attestation صالح."
+      ],
+      "evidence": [
+        {
+          "path": "docs/06l2/evidence/content-source-verification.json",
+          "sha256": "04bd11e341ff98c0c819427c62b9a507065d4ec543aea5dd0699f7433cd0c4a3",
+          "kind": "executed-local",
+          "scope": "منشأ المصدر المساند والحقوق وحدود تعذر المصدر الرسمي"
+        },
+        {
+          "path": "docs/06l2/evidence/content-supplemental-audit.json",
+          "sha256": "a87d8de483d882e4e4f2573b36d8ba5f893f833b2ccfa991552dac5238150fc1",
+          "kind": "executed-local",
+          "scope": "فحص بنيوي 114/6236؛ independentComparison blocked"
+        },
+        {
+          "path": "docs/06l2/evidence/content-display/results.json",
+          "sha256": "9fad8138821bcebb48846fba50b917dbdd2ff723184b29fb516c5fd9fb2c3dd8",
+          "kind": "executed-local",
+          "scope": "خمسة فحوص آلية على صفحة المراجعة؛ لا اعتماد خط أو رسم بشري"
+        }
+      ],
+      "ownerDecision": "تعيين أصحاب صلاحية اعتماد المحتوى ومصدره؛ لا تنشأ جهة ثقة تجريبية لتجاوز الحجب؛ آخر توضيح: الحفظ والتسميع ذاتيان ولا مراجع خارجي لكل جلسة. المراجعة المتخصصة للمنتج غير مرتبة، ولا يستنتج من ذلك توقيع اعتماد النص أو إذن نشر."
+    },
+    {
+      "id": "L02",
+      "priority": "P0",
+      "title": "حسم معيار الحفظ والتسميع ومعنى الأدلة للورد",
+      "blockerScope": "scientific-measurement-and-recommendations",
+      "ownerRole": "متخصص قرآن + قياس + مسؤول HME",
+      "dependencies": [
+        "L01"
+      ],
+      "gates": [
+        "G03",
+        "G10"
+      ],
+      "acceptanceEvidenceRequired": [
+        "معيار اكتساب واضح وأصغر وحدة معتمدة مع منع عد التداخل وتاريخ الهدف",
+        "مراجعة سلم التسميع والتلميحات والتوقف والملاحظات المجهولة والتكاليف",
+        "قواعد تفصل الإكمال عن جودة التسميع وعن الثبات، وتبقي التنبؤ غير الكافي محجوبًا"
+      ],
+      "baselineStatus": "blocked-external-review",
+      "categories": [
+        "human",
+        "owner",
+        "evidence"
+      ],
+      "finalStatus": "blocked",
+      "closedForLaunch": false,
+      "closureMethod": "يسجل مختص القرآن والقياس ومسؤول HME قرارًا تشغيليًا للسلم ومعيار الاكتساب والوحدة؛ يختبر أثره قبل ربط النسب والخطة.",
+      "implementedL2": [
+        "اختُبرت 13 حالة متوقعة مسبقًا لتحويل ملاحظات HME إلى درجات 1–4 أو استبعادها؛ لم يتغير السلم.",
+        "حُفظ الفصل بين الإكمال والملاحظة وثبات الحفظ؛ لم يعتمد معيار علمي جديد."
+      ],
+      "remaining": [
+        "اعتماد أصغر وحدة ومعيار اكتساب الحفظ ومنع التداخل.",
+        "اعتماد صلاحية سلم التسميع والتلميحات والتوقف والمدخل المجهول والتكاليف.",
+        "توقيع G03/G10؛ الاختبارات تبين تطبيق القواعد الحالية ولا تثبت صلاحيتها العلمية."
+      ],
+      "evidence": [
+        {
+          "path": "docs/06l2/evidence/fsrs-integration-tests.json",
+          "sha256": "0fe0a375b3c6d39225dfcb87144b00c38343a89f8c5163b10ea397f1fc88b33b",
+          "kind": "executed-local",
+          "scope": "23 اختبارًا تشمل مصفوفة الدرجات والرفض، ليست اعتمادًا تربويًا"
+        },
+        {
+          "path": "docs/06l2/FSRS-Integration-Report.md",
+          "sha256": "dd044ea9500831f10b09531b57688792ddc2cf20ebc1a83a20b13b7b1eec5b94",
+          "kind": "executed-local",
+          "scope": "حدود السلم والاعتماد"
+        }
+      ],
+      "ownerDecision": "اعتماد معيار قائم أو تعديل صريح مراجع؛ لا يبتكر المطور معيارًا لتفعيل نسبة؛ آخر توضيح: الحفظ والتسميع ذاتيان ولا مراجع خارجي لكل جلسة. المراجعة المتخصصة للمنتج غير مرتبة، ولا يستنتج من ذلك توقيع اعتماد النص أو إذن نشر."
+    },
+    {
+      "id": "L03",
+      "priority": "P0",
+      "title": "اعتماد عقد الحساب المصحح وانتخابه صراحة للكتابة الجديدة",
+      "blockerScope": "executable-scheduling",
+      "ownerRole": "خبير FSRS + مراجع مستقل + مسؤولة الإصدار",
+      "dependencies": [],
+      "gates": [
+        "G02"
+      ],
+      "acceptanceEvidenceRequired": [
+        "مراجعة مرجع ts-fsrs5.4.2 والالتزام الثابت وتحديد متطلبات provenance المتبقية",
+        "40 حالة مرجعية ثابتة ناجحة واختبارات أثر HME/التقييمات المصححة",
+        "قرار موقع لنسخة الحساب والأوزان والإعدادات وآلية تفسير الإصدارات بلا تغيير هوية التاريخ"
+      ],
+      "baselineStatus": "blocked-release-decision",
+      "categories": [
+        "code",
+        "evidence",
+        "human",
+        "owner"
+      ],
+      "finalStatus": "blocked",
+      "closedForLaunch": false,
+      "closureMethod": "مراجعة المرجع ومعايير منشئه، ثم اعتماد عقد النسخة المصححة وانتخابها لكتابات جديدة بهوية صريحة واختبارات تكامل نهائية.",
+      "implementedL2": [
+        "23 اختبار تكامل مستقل يغطي كل الدرجات والتواريخ والتصحيح والتكرار وحتمية الإعادة؛ المرجع مثبت ts-fsrs5.4.2.",
+        "بقي المسار المصحح إسقاطًا ظلّيًا ولم يتغير المفسر القديم أو الأوزان أو انتخاب الإنتاج.",
+        "أعيدت المطابقة النهائية L2: المسار المصحح40/40؛ بقاء القديم2/40 نتيجة تاريخية مفسرة وليس فشلًا مخفيًا أو انتخابًا للقديم."
+      ],
+      "remaining": [
+        "قرار مراجع G02 بشأن provenance والتكامل ونسخة الحساب.",
+        "انتخاب كتابة صريح بعد L04؛ لا يجوز تبديل الثابت التاريخي."
+      ],
+      "evidence": [
+        {
+          "path": "docs/06l2/evidence/fsrs-integration-tests.json",
+          "sha256": "0fe0a375b3c6d39225dfcb87144b00c38343a89f8c5163b10ea397f1fc88b33b",
+          "kind": "executed-local",
+          "scope": "23/23 مستهدف فعلي"
+        },
+        {
+          "path": "docs/06l1/evidence/fsrs/fsrs-investigation.json",
+          "sha256": "5817ca519c7dc9de7733288ec51a2a33ca1ef90b53c63e5ef9cca9674a94790a",
+          "kind": "inherited-executed",
+          "scope": "40 حالة في L1، لا تنسب إلى تشغيل L2"
+        },
+        {
+          "path": "docs/06e1/Reference-Validation.md",
+          "sha256": "77a4fac2c6ade5ad0c041ce2f4a07dfe565f320119ddbdf15abbcde63a03a7c7",
+          "kind": "inherited-analysis",
+          "scope": "تفسير المنشأ وحدود Sigstore التاريخية"
+        },
+        {
+          "path": "docs/06l2/evidence/fsrs/fsrs-investigation.json",
+          "sha256": "59c590e370e0e42a6255d9ec3692d2a2bc1b0c358bd4a184b348e2ca86ce3dea",
+          "kind": "executed-local",
+          "scope": "40/40 للمصحح في تشغيل L2 النهائي؛ المفسر القديم محفوظ ومغاير"
+        }
+      ],
+      "ownerDecision": "هل تكفي أدلة المنشأ الحالية أم يلزم تحقق Sigstore إضافي؟ يقرره مراجع G02، لا عداد الاختبارات"
+    },
+    {
+      "id": "L04",
+      "priority": "P0",
+      "title": "تنفيذ انتقال قابل للاستعادة بعد تحليل أثره واعتماده",
+      "blockerScope": "schedule-and-data-transition",
+      "ownerRole": "مهندس بيانات + خوارزميات + مسؤولة المشروع",
+      "dependencies": [
+        "L03"
+      ],
+      "gates": [
+        "G02",
+        "G04",
+        "G05"
+      ],
+      "acceptanceEvidenceRequired": [
+        "تقرير أثر لكل وحدة من إعادة البناء القائمة قبل أي تبديل وخطة للخطط القديمة",
+        "نسخة مشفرة كاملة وبصمة الوقائع وCAS ومفسر قديم محفوظ وإسقاط جديد منفصل",
+        "اختبارات فشل منتصف الانتقال واستئناف وتزامن واستعادة وتراجع دون فقد حدث",
+        "موافقة صريحة على الترحيل الحساس إن ثبت احتياجه؛ إن لم يلزم يوثق الفصل وتوافق النسخ"
+      ],
+      "baselineStatus": "blocked-sensitive-change-approval",
+      "categories": [
+        "code",
+        "evidence",
+        "human",
+        "owner"
+      ],
+      "finalStatus": "blocked",
+      "closedForLaunch": false,
+      "closureMethod": "تطبيق تقرير الأثر على نسخة مخولة من السجل، وحسم معنى الخطط القديمة وعقد الكتابة؛ إذا لزم انتقال حساس يعتمد قبل تنفيذه مع نسخة مشفرة وCAS وتراجع.",
+      "implementedL2": [
+        "أداة قراءة فقط تنتج فرق الذاكرة والموعد الخام لكل وحدة وبصمات الوقائع ومراجع الخطط القديمة.",
+        "تمرين IndexedDB في سياق متصفح جديد وقاعدتي QA UUID: نسخ مشفر وإعادة فتح واستعادة وتراجع؛ المصدر الصناعي 10 أحداث بقي بلا تغيير.",
+        "إعادة تشغيل لقطة صناعية ثابتة أعطت التقرير نفسه؛ اختبارات فشل الكتابة وCAS في MemoryEventStore نجحت."
+      ],
+      "remaining": [
+        "اختيار عقد الانتقال بعد اعتماد L03؛ لا توجد هوية انتخاب جديدة أو ترحيل فعلي.",
+        "النسخ/التراجع الصناعي لا يختبر ترحيلًا فعليًا بين نسختين ولا انقطاع طاقة أو استئناف ترحيل إنتاجي.",
+        "موافقة صريحة قبل مس بيانات فعلية إذا ثبتت الحاجة."
+      ],
+      "evidence": [
+        {
+          "path": "docs/06l2/evidence/fsrs-integration-transition.json",
+          "sha256": "663c0341b1bad0ee4534b35be7be8fd290bc7701f1b88e2094bdaa375d5dd6f6",
+          "kind": "executed-local",
+          "scope": "أثر صناعي23حدثًا/وحدة؛ فرق أرقام الذاكرة معلوم ولا تغير للموعد الخام في العينة"
+        },
+        {
+          "path": "docs/06l2/evidence/fsrs-integration-repeatability.json",
+          "sha256": "cb35a9d1090e7a5314744fae941fc42938c51c58149864eef4d30dad8a48a3ad",
+          "kind": "executed-local",
+          "scope": "نفس اللقطة تعطي نفس التقرير"
+        },
+        {
+          "path": "docs/06l2/evidence/fsrs-integration-indexeddb-rehearsal.json",
+          "sha256": "ed26434e3b42ed296efbd7b3abdc74821d60cac735103954ab2d40dc7fdd322e",
+          "kind": "executed-local",
+          "scope": "1 Chrome فعلي؛ engineMigrationPerformed false؛ لا بيانات حافظ"
+        }
+      ],
+      "ownerDecision": "لا ترحيل بيانات فعلية في L1؛ لا استبدال صامت لـbinary64"
+    },
+    {
+      "id": "L05",
+      "priority": "P0",
+      "title": "ربط نشاط اليوم والوحدة ونتيجة التسميع بعقد واحد",
+      "blockerScope": "daily-plan-and-progress",
+      "ownerRole": "مسؤول HME + مهندس أحداث + قياس",
+      "dependencies": [
+        "L01",
+        "L02",
+        "L03"
+      ],
+      "gates": [
+        "G03",
+        "G06"
+      ],
+      "acceptanceEvidenceRequired": [
+        "taskId ثابت ونوع ووحدة وخطة مؤرخة ومنطقة زمنية صريحة",
+        "حدث إكمال صالح فقط؛ الإلغاء/التأجيل ليسا إنجازًا؛ التصحيح لا ينشئ محاولة",
+        "تغيير الهدف/الخطة لا يمحو التاريخ؛ أحداث مكررة متطابقة لا تضاعف الإنجاز",
+        "قواعد أولوية عودة محدودة السعة تحفظ كل المتأخرات وتوضح سبب الاختيار"
+      ],
+      "baselineStatus": "blocked-approved-contracts",
+      "categories": [
+        "code",
+        "evidence",
+        "human"
+      ],
+      "finalStatus": "blocked",
+      "closedForLaunch": false,
+      "closureMethod": "بعد اعتماد L01/L02/L03 يُنفذ عقد versioned يجمع taskId والوحدة والنشاط والوقت والخطة والإكمال، وتختبر قواعد العودة والسعة والتصحيح.",
+      "implementedL2": [
+        "لم يُبتكر عقد يوم أو اكتمال غير معتمد؛ اختبار HME أكد أن التصحيح لا يضيف محاولة وأن فرصة/عنقود المراجعة لا يحتسبان مرتين."
+      ],
+      "remaining": [
+        "عقد نشاط اليوم وربطه بخطة فعلية ووحدة معتمدة.",
+        "أحداث الإكمال/الإلغاء/التأجيل مع حفظ تاريخ الهدف والخطة.",
+        "قواعد اختيار النشاط والعودة بعد انقطاع وسعة الوقت الموثقة؛ لا توصية أو نسبة ورد تنفيذية بعد."
+      ],
+      "evidence": [
+        {
+          "path": "docs/06l2/evidence/fsrs-integration-tests.json",
+          "sha256": "0fe0a375b3c6d39225dfcb87144b00c38343a89f8c5163b10ea397f1fc88b33b",
+          "kind": "executed-local",
+          "scope": "التصحيح والتكرار في HME؛ لا إثبات عقد الورد الناقص"
+        },
+        {
+          "path": "src/progress/projection.ts",
+          "sha256": "47d7e8cca7d31f7348152e1d83fe9370d782306059572b50ba493f231316b6c1",
+          "kind": "source-inspected",
+          "scope": "مصدر المؤشرات وحدود unavailable"
+        }
+      ],
+      "ownerDecision": null
+    },
+    {
+      "id": "L06",
+      "priority": "P0",
+      "title": "إكمال رحلة الورد ورفيق التعاهد الفعلية للمبتدئ والسابق",
+      "blockerScope": "end-to-end-value",
+      "ownerRole": "React + HME + QA",
+      "dependencies": [
+        "L01",
+        "L02",
+        "L04",
+        "L05"
+      ],
+      "gates": [
+        "G03",
+        "G06",
+        "G07"
+      ],
+      "acceptanceEvidenceRequired": [
+        "رحلة staging موجبة تبدأ من المدخل الحقيقي بصلاحيات معتمدة وتنتهي بحدث نتيجة محفوظ",
+        "حفظ جديد ومراجعة محفوظ سابق وعودة بعد انقطاع بلا إسقاط تاريخ",
+        "استئناف وتصحيح وتحديث تلقائي للمؤشرات مع كشف خطأ الحفظ",
+        "قياس التفاعلات الفعلي من فتح الموقع للبدء ومن نهاية التسميع للحفظ؛ لا proxy صناعي للرحلة الحقيقية"
+      ],
+      "baselineStatus": "blocked-critical-dependencies",
+      "categories": [
+        "code",
+        "evidence",
+        "human",
+        "external"
+      ],
+      "finalStatus": "blocked",
+      "closedForLaunch": false,
+      "closureMethod": "تنفيذ الورد والتعاهد بعد العقود والبوابات ثم رحلة موجبة في staging مخول لكل فئة، من البداية إلى نتيجة محفوظة ثم يوم لاحق وتصحيح واستئناف.",
+      "implementedL2": [
+        "استمرت حماية المسارات والكتابة من بدء جلسة غير معتمدة؛ الفحوص الصناعية والتحضير لا تُسمى رحلة مستخدم فعلية."
+      ],
+      "remaining": [
+        "إغلاق تبعيات L01/L02/L04/L05 وتشغيل حفظ ومراجعة بمحتوى معتمد.",
+        "قياس تفاعلات البدء وحفظ التسميع من الواجهة الفعلية بعد إتاحة الرحلة.",
+        "عودة اليوم التالي وبعد الانقطاع، الاستئناف والتصحيح والتقدم من أحداث الرحلة الحقيقية."
+      ],
+      "evidence": [
+        {
+          "path": "docs/06l2/evidence/fsrs-integration-browser-results.json",
+          "sha256": "62a9d3c729943f1cdac7e7ab05a1a92b592db1454982f78330ca2296ae8499fc",
+          "kind": "executed-local",
+          "scope": "استمرار حجب شاشة الجلسة بعد تمرين QA"
+        },
+        {
+          "path": "docs/06l2/evidence/security-browser-results.json",
+          "sha256": "add71f02a826a3eee3cf4817d16b4f11274395e056b4d594525efb822f77a9be",
+          "kind": "executed-local",
+          "scope": "حماية الواجهة والكتابة؛ ليست رحلة تعلم موجبة"
+        },
+        {
+          "path": "docs/06l2/evidence/final-browser-results.json",
+          "sha256": "7443a898954f4c7719d4d835139778304a527be47c04e57270bfce8d136f53ff",
+          "kind": "executed-local",
+          "scope": "34/34متصفح للوظائف المسموحة والحجب؛ ليست رحلة حفظ أو مراجعة موجبة"
+        }
+      ],
+      "ownerDecision": null
+    },
+    {
+      "id": "L07",
+      "priority": "P1",
+      "title": "تقليل الإعداد الأولي إلى ثلاث خطوات رئيسية",
+      "blockerScope": "local-ux",
+      "ownerRole": "React + QA",
+      "dependencies": [],
+      "gates": [],
+      "acceptanceEvidenceRequired": [
+        "حالة الحافظ ثم المحفوظات/الهدف ثم الوقت؛ انتهاء مباشر بالرئيسية",
+        "عدم إعادة إدخال القيم المحفوظة وعدم رفع التصريح إلى حفظ موثق",
+        "إخفاق الحفظ ظاهر مع إمكانية إعادة المحاولة؛ المسارات الثلاثة قابلة للاختبار",
+        "مقارنة فعلية للتفاعلات قبل/بعد مع RTL و320 بكسل ولوحة مفاتيح"
+      ],
+      "baselineStatus": "complete-local",
+      "categories": [
+        "code",
+        "evidence"
+      ],
+      "finalStatus": "complete-local",
+      "closedForLaunch": false,
+      "closureMethod": "الحفاظ على الإعداد ذي الثلاث خطوات واختبارات حفظه وانحداره؛ لا يستنتج منه بدء ورد معتمد.",
+      "implementedL2": [
+        "أعيد تشغيل اختبارات الأصل727/727 على نسخة L2 قبل التعديل، بما فيها اختبارات الإعداد الموروثة.",
+        "لم تُضف خطوة إعداد أو حقول لازمة جديدة في هذا النطاق.",
+        "الانحدار النهائي L2نجح779/779، والمتصفح34/34وoffline4/4؛ نطاق الإعداد/الذاكرة ضمن هذه النتائج ولا يجمع مرة ثانية."
+      ],
+      "remaining": [
+        "بدء الجلسة والورد يخص L06 ويبقى محجوبًا ولا يرفع حالة L07 إلى جاهزية إطلاق."
+      ],
+      "evidence": [
+        {
+          "path": "docs/06l2/evidence/baseline-tests.json",
+          "sha256": "ba5b7deaff0cdcf36b67d7891bff0fc0b5eceb0cfd593283eee4b365019cec2f",
+          "kind": "executed-local",
+          "scope": "727/727 إعادة تشغيل الأصل في L2"
+        },
+        {
+          "path": "docs/06l1/Onboarding-and-UX.md",
+          "sha256": "5c6e3e85fa18fe2cd7d37b238ebf17b33ebe8b708eb5f61b3c6d3bc611ddfcfd",
+          "kind": "inherited-analysis",
+          "scope": "اكتمال ثلاث خطوات وحدود قياس التفاعلات"
+        },
+        {
+          "path": "docs/06l1/evidence/final-browser-results.json",
+          "sha256": "1848199bc15a9a97aac92d248ae37227ea89e3f2417ff90707d67301f7c7403d",
+          "kind": "inherited-executed",
+          "scope": "31/31 موروث من L1؛ لا يعاد نسبته إلى L2"
+        },
+        {
+          "path": "docs/06l2/evidence/final-tests.json",
+          "sha256": "046d8e068ff9fa2ebb25e9f0b33f9175d1ad01c23e41c03fefe1a48545149166",
+          "kind": "executed-local",
+          "scope": "779/779الانحدار النهائي"
+        },
+        {
+          "path": "docs/06l2/evidence/final-browser-results.json",
+          "sha256": "7443a898954f4c7719d4d835139778304a527be47c04e57270bfce8d136f53ff",
+          "kind": "executed-local",
+          "scope": "34/34متصفح للواجهة المسموحة؛ لا رحلة قرآنية موجبة"
+        },
+        {
+          "path": "docs/06l2/evidence/final-offline-browser-results.json",
+          "sha256": "a4624b0fa8a7ddc6b3bcd67d3c4f3f2cabb9b1c8e31e174fd9b11520b34387cf",
+          "kind": "executed-local",
+          "scope": "4/4دون اتصال في النطاق المنفذ"
+        }
+      ],
+      "ownerDecision": null
+    },
+    {
+      "id": "L08",
+      "priority": "P1",
+      "title": "عرض رفيق وصفي من أساس الذاكرة القائم وأبرز إجراء مسموح",
+      "blockerScope": "factual-ui-only",
+      "ownerRole": "React + مهندس إسقاط أحداث + QA",
+      "dependencies": [],
+      "gates": [],
+      "acceptanceEvidenceRequired": [
+        "إعادة استعمال personal-memory دون مخزن أو نموذج تنبؤ جديد",
+        "مصادر الأحداث والتصحيحات محفوظة؛ تمييز غياب البيانات والبلاغ المفرد والمتكرر بلا إتقان مفترض",
+        "عدم تحويل فاصل زمني أو FSRS إلى ضعف قرآني مثبت أو توصية تنفيذية",
+        "الصفحة الرئيسية بسيطة؛ الإجراء الأبرز مسموح؛ تعذر القراءة ظاهر ولا يصنع صفرًا",
+        "تصحيح عبارة الإعدادات لتفصل المطابقة الحسابية المنجزة عن اعتماد الإصدار المتبقي"
+      ],
+      "baselineStatus": "complete-local",
+      "categories": [
+        "code",
+        "evidence"
+      ],
+      "finalStatus": "complete-local",
+      "closedForLaunch": false,
+      "closureMethod": "عرض الحقائق المشتقة وحدودها فقط والمحافظة على المصدر والتصحيحات؛ لا تفعيل توقع إتقان أو استحقاق غير معتمد.",
+      "implementedL2": [
+        "أعيد تشغيل الأصل727/727 بما فيه الذاكرة الوصفية.",
+        "اختبار أمن فعلي أثبت عرض البلاغ كنص دون تنفيذ الوسوم وبعد إعادة التحميل، مع عدم تغير السجل عند إعادة القراءة.",
+        "الانحدار النهائي L2نجح779/779، والمتصفح34/34وoffline4/4؛ نطاق الإعداد/الذاكرة ضمن هذه النتائج ولا يجمع مرة ثانية."
+      ],
+      "remaining": [
+        "توصية النشاط والخطة التنفيذية خارج إغلاق العرض الوصفي وتظل مرتبطة بـL05/L06."
+      ],
+      "evidence": [
+        {
+          "path": "docs/06l2/evidence/baseline-tests.json",
+          "sha256": "ba5b7deaff0cdcf36b67d7891bff0fc0b5eceb0cfd593283eee4b365019cec2f",
+          "kind": "executed-local",
+          "scope": "إعادة تشغيل اختبارات المصدر الموروث"
+        },
+        {
+          "path": "docs/06l2/evidence/security-browser-results.json",
+          "sha256": "add71f02a826a3eee3cf4817d16b4f11274395e056b4d594525efb822f77a9be",
+          "kind": "executed-local",
+          "scope": "L2SECWEB02 عرض وإعادة قراءة آمنان"
+        },
+        {
+          "path": "docs/06l1/Companion-Rules-and-Evidence.md",
+          "sha256": "66eb93d095a6b1a772bdd6a0fb86a90afc5dcb86ae28b51d83a6bbdb096de08f",
+          "kind": "inherited-analysis",
+          "scope": "قواعد الوصف وحدود كفاية البيانات"
+        },
+        {
+          "path": "docs/06l2/evidence/final-tests.json",
+          "sha256": "046d8e068ff9fa2ebb25e9f0b33f9175d1ad01c23e41c03fefe1a48545149166",
+          "kind": "executed-local",
+          "scope": "779/779الانحدار النهائي"
+        },
+        {
+          "path": "docs/06l2/evidence/final-browser-results.json",
+          "sha256": "7443a898954f4c7719d4d835139778304a527be47c04e57270bfce8d136f53ff",
+          "kind": "executed-local",
+          "scope": "34/34متصفح للواجهة المسموحة؛ لا رحلة قرآنية موجبة"
+        },
+        {
+          "path": "docs/06l2/evidence/final-offline-browser-results.json",
+          "sha256": "a4624b0fa8a7ddc6b3bcd67d3c4f3f2cabb9b1c8e31e174fd9b11520b34387cf",
+          "kind": "executed-local",
+          "scope": "4/4دون اتصال في النطاق المنفذ"
+        }
+      ],
+      "ownerDecision": null
+    },
+    {
+      "id": "L09",
+      "priority": "P0",
+      "title": "اعتماد سلامة البيانات والتحديث والاستعادة للنسخة المرشحة",
+      "blockerScope": "data-safety",
+      "ownerRole": "مهندس IndexedDB + أمن + QA",
+      "dependencies": [
+        "L04",
+        "L05"
+      ],
+      "gates": [
+        "G04",
+        "G05"
+      ],
+      "acceptanceEvidenceRequired": [
+        "إعادة تشغيل اختبارات التكرار/الفساد/التصحيح/الاستعادة/الترحيل المستهدف على IndexedDB فعلي",
+        "قبل/بعد: الوقائع الخام ونتائج إعادة الحساب ثابتة مع تفسير أي تغير",
+        "اختبار multi-tab/quota/failure/rollback على بيئة الهدف مع حفظ الأدلة",
+        "لا تعديل غير قابل للاستعادة؛ لا حذف أحداث المستخدم"
+      ],
+      "baselineStatus": "blocked-final-release-evidence",
+      "categories": [
+        "code",
+        "evidence",
+        "human"
+      ],
+      "finalStatus": "blocked",
+      "closedForLaunch": false,
+      "closureMethod": "فحص المرشح المحدد على IndexedDB وأجهزة الهدف لكل فساد وتصحيح وتكرار واستعادة وتزامن وحصة وفشل، وربط النتائج واعتمادها ببصمة المرشح.",
+      "implementedL2": [
+        "تمرين المتصفح الصناعي أثبت النسخ المشفر وإعادة فتح IndexedDB والتراجع وبقاء المصدر10أحداث كما هو.",
+        "اختبار تبويب قديم بعد حذف مخول في سياق QA رفض إعادة الكتابة بـREVISION_CONFLICT ولم يبعث التصريحات القديمة.",
+        "الفشل وCAS والنسخ والتصحيحات مشمولة باختبارات التكامل المستهدفة.",
+        "نجح الانحدار النهائي779/779، والمتصفح34/34وoffline4/4، وتمرين تحديث/تراجع معاينة محلية2/2؛ لم يتغير سجل QAالمشفر قبل/بعد."
+      ],
+      "remaining": [
+        "بيئة وأجهزة الهدف، نفاد الحصة/الفشل المادي والاستئناف والانتقال الفعلي إن اعتمد.",
+        "إغلاق L04/L05 واعتماد G04/G05؛ لا تماثل بين MemoryEventStore وفشل جهاز فعلي."
+      ],
+      "evidence": [
+        {
+          "path": "docs/06l2/evidence/fsrs-integration-indexeddb-rehearsal.json",
+          "sha256": "ed26434e3b42ed296efbd7b3abdc74821d60cac735103954ab2d40dc7fdd322e",
+          "kind": "executed-local",
+          "scope": "استعادة وتراجع معزولان في مخزن فعلي"
+        },
+        {
+          "path": "docs/06l2/evidence/security-browser-results.json",
+          "sha256": "add71f02a826a3eee3cf4817d16b4f11274395e056b4d594525efb822f77a9be",
+          "kind": "executed-local",
+          "scope": "تزامن حذف/تبويب قديم ورفض فقد الاتساق"
+        },
+        {
+          "path": "docs/06l2/evidence/fsrs-integration-tests.json",
+          "sha256": "0fe0a375b3c6d39225dfcb87144b00c38343a89f8c5163b10ea397f1fc88b33b",
+          "kind": "executed-local",
+          "scope": "23/23 ضمن حدود كل اختبار"
+        },
+        {
+          "path": "docs/06l2/evidence/final-tests.json",
+          "sha256": "046d8e068ff9fa2ebb25e9f0b33f9175d1ad01c23e41c03fefe1a48545149166",
+          "kind": "executed-local",
+          "scope": "انحدار779/779"
+        },
+        {
+          "path": "docs/06l2/evidence/final-browser-results.json",
+          "sha256": "7443a898954f4c7719d4d835139778304a527be47c04e57270bfce8d136f53ff",
+          "kind": "executed-local",
+          "scope": "متصفح34/34"
+        },
+        {
+          "path": "docs/06l2/evidence/final-offline-browser-results.json",
+          "sha256": "a4624b0fa8a7ddc6b3bcd67d3c4f3f2cabb9b1c8e31e174fd9b11520b34387cf",
+          "kind": "executed-local",
+          "scope": "offline4/4"
+        },
+        {
+          "path": "docs/06l2/evidence/final-deployment-browser-results.json",
+          "sha256": "a0494df5f4eb735303ceff3e440bf8a14be81f3c3acfd166b4a6261562dff266",
+          "kind": "executed-local",
+          "scope": "تحديثL1إلىL2ثمL1بقشرةofflineوحفظ الصفوف المشفرة في سياقQA"
+        }
+      ],
+      "ownerDecision": null
+    },
+    {
+      "id": "L10",
+      "priority": "P0",
+      "title": "إكمال مراجعة الهاتف والإتاحة البشرية والمنصة المستهدفة",
+      "blockerScope": "trial-accessibility",
+      "ownerRole": "مختص إتاحة + QA",
+      "dependencies": [
+        "L06"
+      ],
+      "gates": [
+        "G06",
+        "G07",
+        "G08"
+      ],
+      "acceptanceEvidenceRequired": [
+        "RTL و320 بكسل ولوحة مفاتيح وaxe على المرشح النهائي",
+        "قارئ شاشة بشري وتكبير/تباين/إخفاء نص التسميع مع نتائج فعلية",
+        "بدء بارد offline واستئناف وتحديث على متصفحات وأجهزة الجمهور المستهدف",
+        "حصر الإصدار الأول على web/PWA إن اعتمد؛ لا ادعاء اعتماد تطبيقات iOS/Android الأصلية"
+      ],
+      "baselineStatus": "blocked-target-device-and-human-review",
+      "categories": [
+        "evidence",
+        "human",
+        "external"
+      ],
+      "finalStatus": "blocked",
+      "closedForLaunch": false,
+      "closureMethod": "تشغيل فحوص المرشح على أحجام وأجهزة الهدف وإجراء مراجعة بشرية لقارئ الشاشة والتكبير والتباين وإخفاء نص التسميع، بعد إتاحة رحلة معتمدة.",
+      "implementedL2": [
+        "صفحة مراجعة المحتوى اجتازت فحوص 320/1440 وRTL وaxe ولوحة المفاتيح؛ لا تمثل رحلة التسميع.",
+        "حافظت اختبارات المتصفح المستهدفة على حجب الجلسات.",
+        "نجحت مجموعة المتصفح النهائية34/34وoffline4/4؛ تشمل الفحوص الآلية للهاتف وRTLوالإتاحة ضمن حدودها ولا تستبدل الإنسان."
+      ],
+      "remaining": [
+        "قارئ شاشة بشري وتكبير/تباين وتجربة هواتف فعلية مع توقف وعودة وتحديث offline.",
+        "رحلة تعلم وإخفاء نص تسميع بعد L06؛ لم تعتمد تطبيقات أصلية."
+      ],
+      "evidence": [
+        {
+          "path": "docs/06l2/evidence/content-display/results.json",
+          "sha256": "9fad8138821bcebb48846fba50b917dbdd2ff723184b29fb516c5fd9fb2c3dd8",
+          "kind": "executed-local",
+          "scope": "فحوص آلية محدودة لصفحة مراجعة المحتوى"
+        },
+        {
+          "path": "docs/06l1/Onboarding-and-UX.md",
+          "sha256": "5c6e3e85fa18fe2cd7d37b238ebf17b33ebe8b708eb5f61b3c6d3bc611ddfcfd",
+          "kind": "inherited-analysis",
+          "scope": "خط أساس الإعداد والإتاحة"
+        },
+        {
+          "path": "docs/06l2/evidence/final-browser-results.json",
+          "sha256": "7443a898954f4c7719d4d835139778304a527be47c04e57270bfce8d136f53ff",
+          "kind": "executed-local",
+          "scope": "34/34متصفح نهائي"
+        },
+        {
+          "path": "docs/06l2/evidence/final-offline-browser-results.json",
+          "sha256": "a4624b0fa8a7ddc6b3bcd67d3c4f3f2cabb9b1c8e31e174fd9b11520b34387cf",
+          "kind": "executed-local",
+          "scope": "4/4offlineنهائي"
+        }
+      ],
+      "ownerDecision": null
+    },
+    {
+      "id": "L11",
+      "priority": "P0",
+      "title": "إغلاق مراجعة الأمن والخصوصية وحماية السجلات",
+      "blockerScope": "security-and-privacy",
+      "ownerRole": "مراجع أمن + مسؤولة المشروع",
+      "dependencies": [
+        "L12",
+        "L13",
+        "L14"
+      ],
+      "gates": [
+        "G05",
+        "G09"
+      ],
+      "acceptanceEvidenceRequired": [
+        "فحص تبعيات ومفاتيح وصلاحيات وCSP/XSS والنسخ والاستعادة في بيئة الهدف",
+        "اعتماد السياسة على المعالجة الفعلية: الجهاز/الاستضافة/سجلات الأعطال/المشاركة الاختيارية",
+        "هوية مشغلة وبلد وتواصل وحقوق واحتفاظ/حذف ودعم موثقة",
+        "مراقبة أعطال تقلل البيانات ولا تجمع نص التسميع/السجل افتراضيًا؛ اختبار فشل آمن"
+      ],
+      "baselineStatus": "blocked-independent-review",
+      "categories": [
+        "evidence",
+        "human",
+        "external",
+        "owner"
+      ],
+      "finalStatus": "blocked",
+      "closedForLaunch": false,
+      "closureMethod": "مراجعة أمن مستقلة مرتبطة بالبناء وبيئة الاستضافة، واعتماد خصوصية على المعالجة الفعلية وتحديد جهة وقناة حقوق واحتفاظ وحوادث.",
+      "implementedL2": [
+        "pnpm audit عبر registry أعاد صفر advisory معروف دون تجاهل أو ترقية.",
+        "اختباران Chrome نجحا: CAS تبويب قديم بعد حذف صريح، ونص بلاغ ضار محتمل بقي نصًا دون تنفيذ/طلب وبعد إعادة التحميل.",
+        "راجعت تدفقات التشفير/النسخ/الاستعادة والحذف وحدودها، ولم يضف جمع صوت أو إرسال سجل."
+      ],
+      "remaining": [
+        "مراجع أمن مستقل وتوقيع G09؛ صفر advisories ليس إثبات غياب ثغرات.",
+        "سياسة تشغيل وحقوق واحتفاظ وموردين وتواصل ومراجعة نظامية ملائمة لمعالجة مشغلة سعودية.",
+        "اختبارات الاستضافة الفعلية والصلاحيات والمراقبة وحدود السجلات بعد اختيار بيئة مخولة."
+      ],
+      "evidence": [
+        {
+          "path": "docs/06l2/evidence/dependencies-summary.json",
+          "sha256": "668a90447aab43aa588d171187b693aba0c03b0421305041ee5376efbe977331",
+          "kind": "executed-local",
+          "scope": "تدقيق معروفات على القفل الحالي؛0advisories"
+        },
+        {
+          "path": "docs/06l2/evidence/security-summary.json",
+          "sha256": "858e690b541db1993eacd331a789ac426e70d7cb3cbdb7a8796fde736144e92c",
+          "kind": "executed-local",
+          "scope": "2/2 متصفح مستهدف"
+        },
+        {
+          "path": "docs/06l2/Data-Security-Privacy.md",
+          "sha256": "df00856e3fe42bd890fee8ac3e51f846c36dbdffeb2e3e3e2e6757e4c5c091bf",
+          "kind": "executed-local",
+          "scope": "المعالجة الفعلية والقيود والمتبقي"
+        }
+      ],
+      "ownerDecision": "المشغلة مالكة المشروع في السعودية؛ يلزم تعيين وسيلة دعم عامة قابلة للاستخدام ومراجعة سياسة التشغيل"
+    },
+    {
+      "id": "L12",
+      "priority": "P0",
+      "title": "تثبيت مسؤولية التشغيل وحدود الإصدار المحلي والمستودع المرجعي",
+      "blockerScope": "operating-ownership",
+      "ownerRole": "مالكة المشروع",
+      "dependencies": [],
+      "gates": [],
+      "acceptanceEvidenceRequired": [
+        "تأكيد مالكة المشروع مشغلة من السعودية موثق",
+        "تحديد اسم/صفة الجهة المعروضة ووسيلة الدعم الخاصة التي ستعتمد للإتاحة",
+        "قرار صريح بأن أول إصدار محلي أولاً دون حساب/مزامنة أو اعتماد نطاق حسابات إضافي",
+        "مستودع واحد مملوك للمشروع وفرع تطوير ومراجعة وصلاحيات؛ لا إنشاء حساب بلا تفويض"
+      ],
+      "baselineStatus": "partially-confirmed-owner-input",
+      "categories": [
+        "owner",
+        "external"
+      ],
+      "finalStatus": "blocked",
+      "closedForLaunch": false,
+      "closureMethod": "تحدد المالكة الصفة المعروضة وقناة الدعم وحدود الإصدار المحلي، وتعتمد مستودعًا مرجعيًا وحسابًا وصلاحيات ومراجعة قبل الدمج.",
+      "implementedL2": [
+        "بدأت النسخة من L1ZIP وGitbundle وتحقق تطابق782ملفًا مع الالتزام؛ فرع release/06-l2 مستقل يحفظ الأصل.",
+        "حُفظت حقيقة أن المشغلة المالكة من السعودية ولها وسيلة خاصة غير مسماة، ولا حسابات حالية بحسب جوابها."
+      ],
+      "remaining": [
+        "اسم/صفة العرض وقناة الدعم العامة القابلة للاستخدام واختبارها.",
+        "اعتماد local-first دون حساب سحابي أو تحديد نطاق بديل.",
+        "مستودع بعيد مخول وصلاحيات وحماية مراجعة؛ فرع Git المحلي ليس حسابًا أو حماية بعيدة."
+      ],
+      "evidence": [
+        {
+          "path": "docs/06l2/evidence/source-receipt.json",
+          "sha256": "6933bdfd7dd254ceb6650eabc4f2d14cc9dc56d2d5aecacc696a054f42b23a9c",
+          "kind": "executed-local",
+          "scope": "ZIP+bundle محفوظان وفرع آمن"
+        },
+        {
+          "path": "docs/06l1/Launch-Backlog.json",
+          "sha256": "d5e38fc671247a1d79c84062989f76239322b8ed4733138242e6f5ab4aef6d17",
+          "kind": "owner-input",
+          "scope": "تصريح المالكة L1؛ ليس تحقق ملكية خارجي"
+        }
+      ],
+      "ownerDecision": "ورد من المالكة: هي المشغلة من السعودية، لها وسيلة دعم خاصة لم تسمها، ولم تنشئ أي حساب حاليًا. لا مستودع أو استضافة معتمدان مؤكدان ولا إثبات ملكية نطاق؛ آخر توضيح: الحفظ والتسميع ذاتيان ولا مراجع خارجي لكل جلسة. المراجعة المتخصصة للمنتج غير مرتبة، ولا يستنتج من ذلك توقيع اعتماد النص أو إذن نشر."
+    },
+    {
+      "id": "L13",
+      "priority": "P0",
+      "title": "تجهيز معاينة مغلقة واستضافة ونطاق موثقين",
+      "blockerScope": "external-trial-environment",
+      "ownerRole": "مالكة المشروع + مسؤول تشغيل",
+      "dependencies": [
+        "L12"
+      ],
+      "gates": [
+        "G07",
+        "G09"
+      ],
+      "acceptanceEvidenceRequired": [
+        "إثبات ملكية mulazama.com أو نطاق معاينة مخول وتحديد مزود وحساب موجود أو تفويض مستقل",
+        "فصل التطوير/المعاينة/الإنتاج ومفاتيح خارج الشفرة وTLS ورؤوس خدمة وميزانية معلومة",
+        "معاينة مقيدة الوصول بلا فهرسة وبسجلات أعطال محدودة وتدقيق الوصول",
+        "لا نشر عام أو شراء أو إنشاء حساب ضمن التسليم الحالي"
+      ],
+      "baselineStatus": "blocked-account-and-domain-verification",
+      "categories": [
+        "code",
+        "evidence",
+        "external",
+        "owner"
+      ],
+      "finalStatus": "blocked",
+      "closedForLaunch": false,
+      "closureMethod": "تثبت الملكية ويختار حساب/مزود مخول، ثم معاينة مقيدة الوصول وشهادة صالحة وDNS وبريد ودعم وصلاحيات؛ لا نشر إنتاجي بلا موافقة.",
+      "implementedL2": [
+        "أجري DNS فعلي A/NS/MX وأعاد NXDOMAIN وقت الفحص؛ لا يثبت عدم الملكية أو إمكانية الشراء.",
+        "أدوات أثر ومعاينة محلية نُفذت واجتازت16اختبارًا بعد إصلاح عيبَي سلامة مثبتين؛ ليست خدمة إنتاجية.",
+        "نجح اختبارا المتصفح النهائيان: رؤوس HTTPS محلي بشهادة ذاتية؛ وتحديث L1 ثم L2 ثم الرجوع إلى L1 مع حفظ الصفوف المشفرة والتفضيلات والعمل دون اتصال داخل سياق QA."
+      ],
+      "remaining": [
+        "إثبات ملكية mulazama.com والحساب والاستضافة ومعاينة خارجية مخولة.",
+        "DNS وHTTPS وبريد رسمي ودعم وصلاحيات ومراقبة على البيئة المختارة.",
+        "شهادة HTTPS المحلية ذاتية التوقيع لا تثبت شهادة mulazama.com. استخدم اختبار service worker أصل HTTP127.0.0.1 المعتبر secure context بعد رفض الشهادة غير الموثوقة كما ينبغي. يلزم تحقق بيئة الاستضافة المخولة."
+      ],
+      "evidence": [
+        {
+          "path": "docs/06l2/evidence/domain-dns-network.json",
+          "sha256": "0129fad9d992a4f2e1ebc85f8197d8e41f76a71115281b69f86082cdf9ed877b",
+          "kind": "executed-local",
+          "scope": "A/NS/MXNXDOMAIN؛ ownershipProven false"
+        },
+        {
+          "path": "docs/06l2/evidence/preview-peer-review-tests.json",
+          "sha256": "8418226cc0dee834a124d63d941de6cad5433e09a20e0bac8adf7b17026fcbc8",
+          "kind": "executed-local",
+          "scope": "16/16اختبارات أثر بعد إصلاح عيبَي التحقق من البيان وبصمة الرجوع؛ ضمن779"
+        },
+        {
+          "path": "docs/06l2/evidence/final-deployment-browser-results.json",
+          "sha256": "a0494df5f4eb735303ceff3e440bf8a14be81f3c3acfd166b4a6261562dff266",
+          "kind": "executed-local",
+          "scope": "2/2نهائي:HTTPSمحلي ذاتي التوقيع ورؤوسه؛ تحديث/تراجعL1/L2بقشرةofflineعلىHTTP127.0.0.1securecontext"
+        },
+        {
+          "path": "docs/06l2/Preview-Peer-Review.md",
+          "sha256": "5dc526805a196c657e05a7f2f8249b05bfbf50fb84d4b8496ef72540a2c02357",
+          "kind": "executed-local",
+          "scope": "عيبان مثبتان وإصلاحهما واختبارات الانحدار وحدود الأداة"
+        }
+      ],
+      "ownerDecision": "لا حسابات حالية بحسب المالكة؛ لا تفويض بإنشائها أو شراء خدمات"
+    },
+    {
+      "id": "L14",
+      "priority": "P0",
+      "title": "توثيق واختبار إصدار وتراجع ونسخ احتياطي مستمر",
+      "blockerScope": "release-operations",
+      "ownerRole": "مسؤول إصدار + تخزين + QA",
+      "dependencies": [
+        "L12",
+        "L13"
+      ],
+      "gates": [
+        "G04",
+        "G05",
+        "G07",
+        "G09"
+      ],
+      "acceptanceEvidenceRequired": [
+        "CI واختبارات مطلوبة قبل الدمج وإصدار واضح وCHANGELOG ومعاينة قبل إنتاج",
+        "artifact immutable وبصمات وخطة تعود لملفات الإصدار السابق دون إفساد مخزن أحدث",
+        "تمرين استعادة وتراجع فعلي في staging مع إشارات نجاح/فشل ومشغل مسؤول",
+        "إثبات أن مراجع التقرير/البوابات مرتبطة بنفس النسخة التي ستنشر"
+      ],
+      "baselineStatus": "prepared-awaiting-authorized-environment",
+      "categories": [
+        "code",
+        "evidence",
+        "external",
+        "owner"
+      ],
+      "finalStatus": "blocked",
+      "closedForLaunch": false,
+      "closureMethod": "ربط CI ومعاينة وبصمات أثر غير متغير ونسخ احتياطي باستضافة مخولة، ثم تمرين تراجع خدمة فعلي يحفظ السجل وقارئ النسخة السابقة.",
+      "implementedL2": [
+        "أصلح عيبان مثبتان في صلاحية بيان الأثر وتثبيت بصمته عند الرجوع؛ نجحت16حالة مستهدفة ضمن779اختبارًا نهائيًا.",
+        "نجح اختبارا المعاينة المحليان في المتصفح على أثر L1 الأصلي ثم L2 ثم الرجوع إلى L1، مع بقاء صفوف IndexedDB المشفرة والتفضيلات والعمل دون اتصال متطابقة في السياق الصناعي.",
+        "حُفظ الأصل وتاريخ Git؛ لا نشر أو ترحيل حقيقي أو تغيير لوقائع الحافظ."
+      ],
+      "remaining": [
+        "بيئة staging خارجية مخولة وتمرين خدمة مع سجل أدلة ومسؤول، وربط التقرير بالبناء المرشح.",
+        "تطبيق مراجعة وCI وحماية فرع على مستودع بعيد ومراقبة وخطة استعادة تشغيل معتمدة.",
+        "دليل المعاينة المحلية لا يغطي حسابًا بعيدًا أو TLS عامًا أو عطل طاقة أو خدمة الجمهور؛ لا يغلق تمرين الخدمة المستهدفة قبل توفرها."
+      ],
+      "evidence": [
+        {
+          "path": "docs/06l2/evidence/source-receipt.json",
+          "sha256": "6933bdfd7dd254ceb6650eabc4f2d14cc9dc56d2d5aecacc696a054f42b23a9c",
+          "kind": "executed-local",
+          "scope": "تاريخ مصدر قابل للاستعادة"
+        },
+        {
+          "path": "docs/06l2/evidence/fsrs-integration-indexeddb-rehearsal.json",
+          "sha256": "ed26434e3b42ed296efbd7b3abdc74821d60cac735103954ab2d40dc7fdd322e",
+          "kind": "executed-local",
+          "scope": "نسخ بيانات QA وتراجعها فقط؛ لا تراجع خدمة مستضافة"
+        },
+        {
+          "path": "docs/06l2/evidence/preview-peer-review-tests.json",
+          "sha256": "8418226cc0dee834a124d63d941de6cad5433e09a20e0bac8adf7b17026fcbc8",
+          "kind": "executed-local",
+          "scope": "16/16اختبارات أثر بعد إصلاح عيبَي التحقق من البيان وبصمة الرجوع؛ ضمن779"
+        },
+        {
+          "path": "docs/06l2/evidence/final-deployment-browser-results.json",
+          "sha256": "a0494df5f4eb735303ceff3e440bf8a14be81f3c3acfd166b4a6261562dff266",
+          "kind": "executed-local",
+          "scope": "2/2نهائي:HTTPSمحلي ذاتي التوقيع ورؤوسه؛ تحديث/تراجعL1/L2بقشرةofflineعلىHTTP127.0.0.1securecontext"
+        },
+        {
+          "path": "docs/06l2/Preview-Peer-Review.md",
+          "sha256": "5dc526805a196c657e05a7f2f8249b05bfbf50fb84d4b8496ef72540a2c02357",
+          "kind": "executed-local",
+          "scope": "عيبان مثبتان وإصلاحهما واختبارات الانحدار وحدود الأداة"
+        }
+      ],
+      "ownerDecision": null
+    },
+    {
+      "id": "L15",
+      "priority": "P0",
+      "title": "اعتماد بروتوكول التجربة وإغلاق بوابات المرشح",
+      "blockerScope": "closed-trial-permission",
+      "ownerRole": "مختص قرآن/قياس + مسؤولة التجربة + اعتماد الإصدار",
+      "dependencies": [
+        "L01",
+        "L02",
+        "L03",
+        "L04",
+        "L05",
+        "L06",
+        "L09",
+        "L10",
+        "L11",
+        "L13",
+        "L14"
+      ],
+      "gates": [
+        "G01",
+        "G02",
+        "G03",
+        "G04",
+        "G05",
+        "G06",
+        "G07",
+        "G08",
+        "G09",
+        "G10"
+      ],
+      "acceptanceEvidenceRequired": [
+        "أدلة وتواقيع صحيحة لسياق staging/controlled-pilot والكتالوج والنسخة الفعلية",
+        "10–20 مشاركًا بموافقة واضحة وحق الانسحاب وتوزيع مبتدئ/سابق ومزيج دون تجنيد فعلي الآن",
+        "مقاييس نجاح مستهدفة محددة قبل جمع النتائج وموافقة تقليل البيانات",
+        "قرار مكتوب جاهز للتجربة بعد تحقق الشروط؛ لا يتحول نجاح QA إلى إذن"
+      ],
+      "baselineStatus": "protocol-prepared-blocked-gates",
+      "categories": [
+        "evidence",
+        "human",
+        "external",
+        "owner"
+      ],
+      "finalStatus": "blocked",
+      "closedForLaunch": false,
+      "closureMethod": "بعد جميع تبعيات السلامة والرحلة والبيئة، تجمع أدلة وتواقيع صحيحة لنفس سياق controlled-pilot/staging ويعتمد بروتوكول المستخدمين وقرار البدء.",
+      "implementedL2": [
+        "صُنفت الأدلة المنفذة وحدودها دون إدخال توقيع أو جهة ثقة تجريبية.",
+        "لم يبدأ تجنيد أو جمع بيانات بشرية؛ بروتوكول L1 موجود مسبقًا."
+      ],
+      "remaining": [
+        "G01–G10 مرتبطة بسياق وكتالوج ونسخة ومراجعين مخولين؛ release-inputما زال فارغًا.",
+        "اعتماد بشري للبروتوكول وتقليل البيانات وبيئة التجربة، ثم قرار جاهز للتجربة.",
+        "لا تستخدم نجاح QA أو صفحة مراجعة النص كإذن لجلسة قرآنية."
+      ],
+      "evidence": [
+        {
+          "path": "src/release/release-input.json",
+          "sha256": "467db8dab2512b8bdce756e9cbde0f040afb713a14399653a9983b99791ec8a8",
+          "kind": "source-inspected",
+          "scope": "manifestnull؛catalogفارغ؛attestations/reportsفارغة"
+        },
+        {
+          "path": "src/release/gates.ts",
+          "sha256": "3f3e0a3f7e53ecf141d703d37696af8c1e0330a785faa36acf28614145ecf851",
+          "kind": "source-inspected",
+          "scope": "شروط الأدلة والتوقيع وعدم منح الصلاحية من JSONالسجل"
+        },
+        {
+          "path": "docs/06l1/Closed-Trial-Plan.md",
+          "sha256": "165791b1e05374069e60e4cce5aa1a9158db6de5a6ddd6b64525b58f1c19307d",
+          "kind": "inherited-plan",
+          "scope": "بروتوكول مسبق؛ لا مشاركين"
+        },
+        {
+          "path": "docs/06l2/evidence/release-gates.json",
+          "sha256": "bcd3a14bf1702ac9dcd65213fd55b3cfd74ae1027767997f0eccc064457d332d",
+          "kind": "executed-local",
+          "scope": "تقييم نهائي فعلي:G01–G10blocked؛productionReadyfalse؛trustAnchorCount0"
+        }
+      ],
+      "ownerDecision": null
+    },
+    {
+      "id": "L16",
+      "priority": "P1",
+      "title": "تنفيذ التجربة وحل مشاكل القيمة الأساسية",
+      "blockerScope": "public-launch-evidence",
+      "ownerRole": "مسؤولة التجربة + UX + QA",
+      "dependencies": [
+        "L15"
+      ],
+      "gates": [],
+      "acceptanceEvidenceRequired": [
+        "اختبار فعلي لإعداد الملف والخطة وأول ورد والتسميع والمراجعة",
+        "قياس التفاعلات والأخطاء وفائدة الاقتراح وأسباب التوقف والعودة في اليوم 7 و14",
+        "حفظ أدلة بموافقة المشاركين وعرض المقام والبيانات المفقودة دون تعميم إحصائي",
+        "حل جميع المشكلات الحرجة والتحقق من الإصلاح ثم مراجعة القبول"
+      ],
+      "baselineStatus": "not-started-human-trial",
+      "categories": [
+        "evidence",
+        "human",
+        "external",
+        "owner"
+      ],
+      "finalStatus": "blocked",
+      "closedForLaunch": false,
+      "closureMethod": "تجربة فعلية10–20بعد L15 بموافقة وقياسات مسبقة ومهام واستعادة وعودة7/14يومًا، ثم إصلاح حرِجها وإعادة التحقق.",
+      "implementedL2": [
+        "لا مشاركين ولا نتائج بشرية مختلقة؛ احتُفظ بشرط التجربة قبل العام."
+      ],
+      "remaining": [
+        "تجنيد مخول بعد البوابات وتسجيل الموافقات والقياسات الفعلية والمقام والبيانات المفقودة.",
+        "تقييم الرحلتين وفائدة الاقتراح والتفاعلات وأسباب الانقطاع وحل المشكلات الحرجة."
+      ],
+      "evidence": [
+        {
+          "path": "docs/06l1/Closed-Trial-Plan.md",
+          "sha256": "165791b1e05374069e60e4cce5aa1a9158db6de5a6ddd6b64525b58f1c19307d",
+          "kind": "inherited-plan",
+          "scope": "مقاييس مسبقة وخطة فقط"
+        }
+      ],
+      "ownerDecision": null
+    },
+    {
+      "id": "L17",
+      "priority": "P1",
+      "title": "قرار الإطلاق العام الصريح بعد استيفاء الاثني عشر معيارًا",
+      "blockerScope": "public-release",
+      "ownerRole": "مالكة المشروع + أصحاب الاعتماد",
+      "dependencies": [
+        "L15",
+        "L16"
+      ],
+      "gates": [
+        "G01",
+        "G02",
+        "G03",
+        "G04",
+        "G05",
+        "G06",
+        "G07",
+        "G08",
+        "G09",
+        "G10"
+      ],
+      "acceptanceEvidenceRequired": [
+        "رحلتا المبتدئ والسابق والورد تعمل فعليًا مع محتوى وجدولة معتمدين",
+        "ذاكرة من أحداث موثقة ولا فقد سجلات عند تحديث/استعادة ولا أعطال حرجة",
+        "هاتف/حاسوب/إتاحة وخصوصية/دعم مكتملة وتجربة بشرية فعلية عولج حرجها",
+        "تمرين استعادة الخدمة والتراجع ناجح واعتماد منفصل لسياق production وموافقة نشر صريحة",
+        "استخدام الوعد التسويقي فقط بعد إثبات الوظائف المضمنة فيه"
+      ],
+      "baselineStatus": "not-ready",
+      "categories": [
+        "evidence",
+        "human",
+        "external",
+        "owner"
+      ],
+      "finalStatus": "blocked",
+      "closedForLaunch": false,
+      "closureMethod": "بعد L15/L16 وجميع شروط الاستخدام الفعلي والتشغيل يصدر أصحاب الاعتماد قرارهم وتمنح المالكة موافقة نشر صريحة مستقلة.",
+      "implementedL2": [
+        "القرار الحالي غير جاهز؛ لم ينشر الإنتاج ولم يتغير الوعد التسويقي إلى وظيفة مثبتة.",
+        "نتائج محلية إيجابية لا تغلق الاعتماد أو التجربة البشرية أو الملكية الخارجية."
+      ],
+      "remaining": [
+        "رحلتا حفظ ومراجعة وورد حقيقيان مع محتوى وجدولة معتمدين.",
+        "اكتمال التشغيل والدعم والأمن والإتاحة والتجربة وحل حرجها واستعادة الخدمة.",
+        "موافقة إطلاق صريحة لم تصدر."
+      ],
+      "evidence": [
+        {
+          "path": "src/release/release-input.json",
+          "sha256": "467db8dab2512b8bdce756e9cbde0f040afb713a14399653a9983b99791ec8a8",
+          "kind": "source-inspected",
+          "scope": "لا تواقيع إطلاق أو كتالوج معتمد"
+        },
+        {
+          "path": "docs/06l2/evidence/release-gates.json",
+          "sha256": "bcd3a14bf1702ac9dcd65213fd55b3cfd74ae1027767997f0eccc064457d332d",
+          "kind": "executed-local",
+          "scope": "تقييم نهائي فعلي:G01–G10blocked؛productionReadyfalse؛trustAnchorCount0"
+        }
+      ],
+      "ownerDecision": "لم تطلب المالكة نشرًا عامًا؛ النشر يحتاج موافقة صريحة لاحقة"
+    },
+    {
+      "id": "L18",
+      "priority": "P2",
+      "title": "تأجيل التحسينات التي لا تغلق قيمة الإطلاق الأساسية",
+      "blockerScope": "nonblocking",
+      "ownerRole": "إدارة المنتج",
+      "dependencies": [],
+      "gates": [],
+      "acceptanceEvidenceRequired": [
+        "توضع خارج النطاق: مزامنة سحابية متعددة الأجهزة وتطبيقات أصلية ورسوم كثيرة وتخصيص أوزان وتنبؤ إتقان",
+        "لا إعلان ثبات متقدم أو إتقان قرآني دون تعريف تشغيلي ودليل مستقل",
+        "لا يمنع التأجيل عرض وصف دقيق لبيانات غير كافية في النسخة الأولى"
+      ],
+      "baselineStatus": "deferred-outside-first-launch",
+      "categories": [
+        "owner"
+      ],
+      "finalStatus": "deferred-nonblocking",
+      "closedForLaunch": false,
+      "closureMethod": "يبقى نطاق تحسينات غير أساسية خارج الإصدار الأول ولا يضاف إلى شروط الإطلاق الحالية.",
+      "implementedL2": [
+        "لم يضف محرك تنبؤ أو صوت أو مزامنة أو أوزان شخصية أو تطبيقات أصلية أو رسوم إضافية."
+      ],
+      "remaining": [
+        "أي توسيع مستقبلي قرار منتج مستقل؛ لا يؤخر إغلاق L01–L17 ولا يعطي إتقانًا مفترضًا."
+      ],
+      "evidence": [
+        {
+          "path": "docs/06l1/Launch-Backlog.json",
+          "sha256": "d5e38fc671247a1d79c84062989f76239322b8ed4733138242e6f5ab4aef6d17",
+          "kind": "inherited-plan",
+          "scope": "النطاق المؤجل الموروث دون مراحل جديدة"
+        }
+      ],
+      "ownerDecision": null
+    }
+  ],
+  "ownerClarification06L2": {
+    "recordedAt": "2026-11-07T12:01:33.512159+00:00",
+    "source": "Explicit owner replies in this conversation",
+    "operatorCountry": "Saudi Arabia",
+    "operator": "Project owner; public display identity not yet specified",
+    "support": "Private channel mentioned, public channel not specified",
+    "externalAccounts": "None per prior owner reply; no newer confirmation",
+    "specialistReleaseReviewArranged": false,
+    "learnerMode": "Self-directed memorization and self-reported recitation results. No external Quran reviewer is required for each learner or session.",
+    "latestOwnerStatements": [
+      "لا، أحتاج إلى ترتيب هذه المراجعة لاحقًا",
+      "الحفظ سيكون ذاتيا لايوجد مراجع قرآن خارجي"
+    ],
+    "releaseInterpretation": "Self-directed learner mode is confirmed. It does not establish official text acquisition, independent release evidence or scientific attestations. No publication permission or signature inferred."
+  }
+}

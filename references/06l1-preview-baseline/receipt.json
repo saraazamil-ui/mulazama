@@ -1,0 +1,83 @@
+{
+  "purpose": "Original L1 build bytes solely for isolated update/rollback regression; not the L2 development base or a production deployment",
+  "sourceDeliverySHA256": "b0e6ab8ec3f99461809b9bd05ebf2ac8ddc6e5dad3c0c90affea4ae516b9b94b",
+  "sourceDigest": "5b9e4d113927d4b2bd8408b77712571589633b702e00dd48361c80f605359020",
+  "buildZipSHA256": "d24dc3269a1bfe007cedfe78b27a98e827831d62524d69840437a8efad71f792",
+  "files": [
+    {
+      "path": "dist/assets/adaptive-scheduling-B9kCdmll.js",
+      "sha256": "7f62237bc8e4043cc4f40f15b4c2733b7d7f78d6ae93608213c7c26673ac418d",
+      "bytes": 7869
+    },
+    {
+      "path": "dist/assets/index-AtTyBVEF.css",
+      "sha256": "b5f0fb345dc2a34cf47d07090d7344d728471431f4172a64169806cc68e442d7",
+      "bytes": 28339
+    },
+    {
+      "path": "dist/assets/index-atPXJdd4.js",
+      "sha256": "b64686f1d70df1deb6edf05119ec3b1cb650c915ea31dd5a38ea4d5afde4e764",
+      "bytes": 431262
+    },
+    {
+      "path": "dist/assets/personal-memory-AcslMUkY.js",
+      "sha256": "fca0dcf2e23abb0ecf0d51ec4c1bda1e49abfb76186f846b8e3b0d0df31149ca",
+      "bytes": 5957
+    },
+    {
+      "path": "dist/icon-192.png",
+      "sha256": "bc569b22ff095dced3b412a6f236c2beaf6e6c28446f7d2117dbb70f48118557",
+      "bytes": 654
+    },
+    {
+      "path": "dist/icon-512.png",
+      "sha256": "98ac3f3c44aa69aa27b80d094533e2eb9c349de86f2f5776721810697871ff5b",
+      "bytes": 2590
+    },
+    {
+      "path": "dist/icon.svg",
+      "sha256": "f2378d6739d0872ad4676b3bc656a51eadd007a15d127139cde338a6dd93a4e9",
+      "bytes": 275
+    },
+    {
+      "path": "dist/index.html",
+      "sha256": "e2490934c02c5b95b91fc7f73b2e3bf8d717b56eacbbd0110faa042d81e98971",
+      "bytes": 837
+    },
+    {
+      "path": "dist/manifest.webmanifest",
+      "sha256": "7cfdbb1371fcf267d6b9a1c34b6aa168a449bb825b684c4427b167006594798d",
+      "bytes": 515
+    },
+    {
+      "path": "dist/offline-assets.json",
+      "sha256": "09288113fb7fcc4e8f5153b1f7f775911392b2bad20fab0426749280757dd65f",
+      "bytes": 404
+    },
+    {
+      "path": "dist/policies.css",
+      "sha256": "34ca8fb6acd8d870c7fcd1f5dd3dae70094d9364ad3a763a5290394ce58e2eb7",
+      "bytes": 543
+    },
+    {
+      "path": "dist/privacy.html",
+      "sha256": "d963ac26ac61f0cfd209b9d6d8cd77c123f3f48aed31d56cc01f27b3354cc0e9",
+      "bytes": 3709
+    },
+    {
+      "path": "dist/support.html",
+      "sha256": "c77b597f85ad965e066da754c51c87640d5f161a36d1e8a14b650b1dfc125565",
+      "bytes": 2792
+    },
+    {
+      "path": "dist/sw.js",
+      "sha256": "e776d20359c13b83bd88f0e88660316b1b4ac3620ac3f4f8521bcbd78dd252f5",
+      "bytes": 1423
+    },
+    {
+      "path": "dist/terms.html",
+      "sha256": "71f161c2e4f0d2c9ec8c770468567bbee9cb6569f17cabae03617ca720872388",
+      "bytes": 2218
+    }
+  ]
+}

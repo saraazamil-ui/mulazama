@@ -1,0 +1,50 @@
+[2m[WebServer] [22m(node:32411) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 34 tests using 1 worker
+
+(node:32413) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:32413) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 e2e/database.spec.ts:2:1 › BWEB01 IndexedDB: 21 encrypted transaction, migration, corruption, concurrency and restore checks (876ms)
+  ✓   2 e2e/fsrs06l2.spec.ts:2:1 › L2FSRSWEB01 isolated encrypted IndexedDB copy/restore/rollback preserves events and both versioned projections (946ms)
+  ✓   3 e2e/phase06d2.spec.ts:52:1 › D2WEB01 main reads persisted HME history and reopening preserves exact raw facts without enabling ratios (894ms)
+  ✓   4 e2e/phase06d2.spec.ts:79:1 › D2WEB02 a valid historical correction recomputes the original day and an identical append retry cannot double count (1.1s)
+  ✓   5 e2e/phase06d2.spec.ts:156:1 › D2WEB03 stored history never authorizes blocked routes or internal learning commands (818ms)
+  ✓   6 e2e/phase06d2.spec.ts:207:1 › D2WEB04 semantic corruption is rejected without deleting history or creating a fallback profile (820ms)
+  ✓   7 e2e/phase06d2.spec.ts:249:1 › D2WEB05 populated progress at 320px supports RTL, keyboard and automated accessibility (1.3s)
+  ✓   8 e2e/phase06e1.spec.ts:52:1 › E1WEB01 personal memory and corrected scheduling rebuild are deterministic on real encrypted IndexedDB without rewriting legacy history (824ms)
+  ✓   9 e2e/phase06e1.spec.ts:83:1 › E1WEB02 corrected assessment and duplicate transport rebuild memory once at original review time (716ms)
+  ✓  10 e2e/phase06l1.spec.ts:3:1 › L1WEB01 newcomer completes three steps in four actions, reopens home, and cannot start blocked sessions (767ms)
+  ✓  11 e2e/phase06l1.spec.ts:46:1 › L1WEB02 prior hafiz declares a range in six actions, with no verified memorization or HME writes (908ms)
+  ✓  12 e2e/phase06l1.spec.ts:115:1 › L1WEB03 companion reads the real history owner and refreshes corrected observations without multiplying attempts (2.0s)
+  ✓  13 e2e/phase06l1.spec.ts:236:1 › L1WEB04 each setup step and policy page is accessible at 320px and keyboard operable (2.2s)
+  ✓  14 e2e/production.spec.ts:5:1 › BWEB02 identity, real settings persistence and content gate (1.0s)
+  ✓  15 e2e/production.spec.ts:33:1 › BWEB03 encrypted backup inspection rejects wrong password and cancellation preserves data (1.0s)
+  ✓  16 e2e/production.spec.ts:68:3 › BWEB04 responsive RTL and automated accessibility 320px (5.6s)
+  ✓  17 e2e/production.spec.ts:68:3 › BWEB05 responsive RTL and automated accessibility 390px (6.3s)
+  ✓  18 e2e/production.spec.ts:68:3 › BWEB06 responsive RTL and automated accessibility 1440px (5.8s)
+  ✓  19 e2e/progress06d1.spec.ts:6:3 › D1WEB responsive RTL and accessible progress 320px (1.5s)
+  ✓  20 e2e/progress06d1.spec.ts:6:3 › D1WEB responsive RTL and accessible progress 390px (1.3s)
+  ✓  21 e2e/progress06d1.spec.ts:6:3 › D1WEB responsive RTL and accessible progress 1440px (1.4s)
+  ✓  22 e2e/progress06d1.spec.ts:40:1 › D1WEB real saved mistake and correction update progress without acquiring mastery (1.2s)
+  ✓  23 e2e/progress06d1.spec.ts:86:1 › D1WEB keyboard navigation reload and direct route never unlock learning (702ms)
+  ✓  24 e2e/security06l2.spec.ts:5:1 › L2SECWEB01 a stale second tab cannot resurrect the former profile after confirmed deletion (730ms)
+  ✓  25 e2e/security06l2.spec.ts:148:1 › L2SECWEB02 a report entered through the UI remains inert text after IndexedDB reopen (1.0s)
+  ✓  26 e2e/verification05b.spec.ts:6:1 › BWEB07 new profile, plan and nonadjacent declarations survive reopening without filling gaps (1.3s)
+  ✓  27 e2e/verification05b.spec.ts:79:1 › BWEB08 usual and today-only budgets persist as separate values (851ms)
+  ✓  28 e2e/verification05b.spec.ts:118:1 › BWEB09 direct learning routes keep training, recall and reader controls out of the DOM (657ms)
+  ✓  29 e2e/verification05b.spec.ts:136:1 › BWEB10 direct service commands cannot bypass the Quran gate or create learning events (375ms)
+  ✓  30 e2e/verification05b.spec.ts:221:1 › BWEB11 forecast abstains and thirty untested parts do not acquire mastery (482ms)
+  ✓  31 e2e/verification05b.spec.ts:245:1 › BWEB12 keyboard skip link, modal focus containment and Escape restore focus (511ms)
+  ✓  32 e2e/verification05b.spec.ts:277:1 › BWEB13 invalid backup preserves preferences; confirmed full restore can be repeated (2.1s)
+  ✓  33 e2e/verification05b.spec.ts:344:1 › BWEB14 a reported mistake remains a local unverified draft after reopening (858ms)
+  ✓  34 e2e/verification05b.spec.ts:374:1 › BWEB15 enlarged text, reduced motion and dark preference persist at 320px (1.4s)
+
+  34 passed (53.5s)
+
+To open last HTML report run:
+[36m[39m
+[36m  npx playwright show-report[39m
+[36m[39m
