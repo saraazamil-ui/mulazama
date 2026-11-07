@@ -1,0 +1,15 @@
+{
+  "head": "ff279eaad321ebd60cf004a44cbdc69d2a178430",
+  "branch": "work",
+  "status": "",
+  "branches": "refs/heads/codex/09b-cloud-bootstrap 4bd359de434c6395f416388679adebe13128c8a0\nrefs/heads/work ff279eaad321ebd60cf004a44cbdc69d2a178430",
+  "origin": "https://github.com/saraazamil-ui/mulazama",
+  "originMain": "4bd359de434c6395f416388679adebe13128c8a0",
+  "capturedAt": "2026-11-07T18:07:11.701239+00:00",
+  "files": {
+    "package.json": false,
+    "pnpm-lock.yaml": false,
+    "src": false,
+    "scripts/cloud-start08a.py": false
+  }
+}

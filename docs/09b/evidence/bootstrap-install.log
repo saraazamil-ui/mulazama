@@ -1,0 +1,37 @@
+? Verifying lockfile against supply-chain policies (212 entries)...
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +160
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 160, reused 0, downloaded 0, added 0
+Packages are hard linked from the content-addressable store to the virtual store.
+  Content-addressable store is at: /workspace/mulazama-tasks/20261107T180711Z-faf502bc9036/cache/pnpm-store/v11
+  Virtual store is at:             node_modules/.pnpm
+Progress: resolved 160, reused 0, downloaded 62, added 59
+Progress: resolved 160, reused 0, downloaded 127, added 127
+Progress: resolved 160, reused 0, downloaded 160, added 160, done
+✓ Lockfile passes supply-chain policies (212 entries in 4.2s)
+.../esbuild@0.28.2/node_modules/esbuild postinstall$ node install.js
+.../esbuild@0.28.2/node_modules/esbuild postinstall: Done
+
+dependencies:
++ lucide-react 0.468.0
++ react 19.2.0
++ react-dom 19.2.0
+
+devDependencies:
++ @axe-core/playwright 4.10.2
++ @playwright/test 1.56.1
++ @testing-library/jest-dom 6.9.1
++ @testing-library/react 16.3.0
++ @testing-library/user-event 14.6.1
++ @types/react 19.2.2
++ @types/react-dom 19.2.2
++ @vitejs/plugin-react 5.0.4
++ jsdom 26.1.0
++ prettier 3.6.2
++ typescript 5.9.3
++ vite 7.3.7
++ vitest 4.1.12
+
+Done in 5.1s using pnpm v11.25.0

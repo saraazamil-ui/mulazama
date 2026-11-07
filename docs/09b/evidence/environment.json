@@ -1,0 +1,23 @@
+{
+  "environment_id": "ccarenv_b64_Y2NhcmVudl83MjYwODc0MWIwNGM4MTkxOGU1NjhhZDAzOWZmM2NiNg",
+  "source_config_id": "3a3cd3fd-82f3-48c9-9a9f-1b63c2afacdf~cecfg_6aef3a5fad788199add23716d2c13256",
+  "source_config_version_id": "3a3cd3fd-82f3-48c9-9a9f-1b63c2afacdf~cecfgver_6aef60bbd100819999b95f706bce6bab",
+  "spec_revision": "1",
+  "observed_spec_revision": "1",
+  "observations_current": true,
+  "observed_phase": "running",
+  "runtime_variables": [
+    {
+      "environment_variable": "MULAZAMA_CHROMIUM_EXECUTABLE_PATH",
+      "optional": false,
+      "state": "ready"
+    }
+  ],
+  "reusableConfigurationChangedBy09B": false,
+  "reusableConfigurationPublishedBy09B": false,
+  "independentTaskCreatedBy09B": false,
+  "setupFieldContentsObserved": false,
+  "startupFieldContentsObserved": false,
+  "latestPublishedVersionCompared": false,
+  "bootstrapInvocation": "manual validation during 09-B, not a platform hook"
+}

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "runId": "20261107T180711Z-faf502bc9036",
+  "startedAt": "2026-11-07T18:07:11.688647+00:00",
+  "sourceDirectory": "/workspace/mulazama",
+  "workingDirectory": "/workspace/mulazama-tasks/20261107T180711Z-faf502bc9036/repo",
+  "evidenceDirectory": "/workspace/mulazama-tasks/20261107T180711Z-faf502bc9036/evidence",
+  "branch": "codex/cloud-09b-20261107T180711Z-faf502bc9036",
+  "invocationProvenance": "unattested; correlate with this task's platform hook log",
+  "reusableEnvironmentPublished": null,
+  "environmentPublication": "not-observed-by-bootstrap",
+  "installStarted": true,
+  "installSucceeded": true,
+  "status": "ready",
+  "initialHead": "ff279eaad321ebd60cf004a44cbdc69d2a178430",
+  "fetchedMain": "4bd359de434c6395f416388679adebe13128c8a0",
+  "versions": {
+    "node": "v24.22.1",
+    "pnpm": "11.25.0",
+    "python": "Python 3.12.14",
+    "chromium": "Chromium 156.0.8078.79 built on Debian GNU/Linux 13 (trixie)"
+  },
+  "originalCheckoutPreserved": true,
+  "head": "4bd359de434c6395f416388679adebe13128c8a0",
+  "finishedAt": "2026-11-07T18:07:20.419816+00:00"
+}
