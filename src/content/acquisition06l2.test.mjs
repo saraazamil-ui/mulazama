@@ -106,6 +106,7 @@ describe("06-L2 acquisition fails closed without changing source bytes", () => {
       category: "combining-mark",
     });
   });
+  // The full 6,236-ayah corpus audit needs an integration budget on shared CI.
   it("audits actual publisher bytes and rejects their use as an independent second source", async () => {
     const beforeReport = await readFile(
       "docs/06l2/evidence/content-supplemental-audit.json",
@@ -125,5 +126,5 @@ describe("06-L2 acquisition fails closed without changing source bytes", () => {
     expect(await readFile("content/06l2/source-slice-index.json")).toEqual(
       beforeIndex,
     );
-  });
+  }, 30_000);
 });

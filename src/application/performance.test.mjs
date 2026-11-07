@@ -6,6 +6,7 @@ import {VERSIONS} from '../core/types';
 import {planDay} from '../core/hme';
 import {ApplicationService} from './service';
 describe('bounded engineering measurements (Node, synthetic data, no device performance claims)',()=>{
+ // Allow the 10k-event/100-command integration workload on shared CI; this is not a performance threshold.
  it('PERF01 measures planner, event batch and replay in the available host',async()=>{
   const measure=async(action)=>{const start=performance.now();const value=await action();return {value,ms:performance.now()-start};};
   const candidates=Array.from({length:1000},(_,i)=>({id:'candidate-'+i,unitId:'u-'+i,kind:'review',costMinutes:2,priority:i,coverageKeys:['synthetic-'+i]}));
@@ -19,5 +20,5 @@ describe('bounded engineering measurements (Node, synthetic data, no device perf
   const replay=await measure(()=>app.refresh());expect(replay.value.revision).toBe(100);
   const report={environment:{node:process.version,platform:process.platform,arch:process.arch},synthetic:true,measurementsMs:{plan1000Candidates:planner.ms,memoryAtomicAppend10000:append.ms,memoryLoad10000:load.ms,productReplay100Events:replay.ms},heapUsedBytes:process.memoryUsage().heapUsed,limitations:['Memory reference adapter, not IndexedDB','Host Node, not cold app start or mobile device','No P95, power-loss, UI responsiveness or native memory certification']};
   writeFileSync('docs/05b/evidence/performance-results.json',JSON.stringify(report,null,2)+'\n');
- });
+ },30_000);
 });
