@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
-import { HistoryApplication } from "./application/history-application";
+import { openRuntimeApplication } from "./application/runtime-application06l3";
 import "./styles.css";
 const root = createRoot(document.getElementById("root")!);
 // Registration caches the versioned app shell only. Quran and personal events have independent stores.
@@ -18,11 +18,11 @@ root.render(
     <p>جارٍ فتح بياناتك المحلية…</p>
   </main>,
 );
-HistoryApplication.open()
-  .then((history) => {
+openRuntimeApplication()
+  .then(({history,journey}) => {
     root.render(
       <StrictMode>
-        <App service={history.product} data={history} />
+        <App service={history.product} data={history} journey={journey} />
       </StrictMode>,
     );
   })

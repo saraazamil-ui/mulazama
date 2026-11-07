@@ -1,0 +1,38 @@
+{
+  "checkedAt": "2026-11-07T12:33:33.492186+00:00",
+  "command": [
+    "node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "src/application/journey-security06l3.test.mjs",
+    "--reporter=json",
+    "--outputFile=docs/06l3/evidence/security-journey-tests.json"
+  ],
+  "exitCode": 0,
+  "executed": 23,
+  "passed": 23,
+  "failed": 0,
+  "skipped": 0,
+  "testFileSHA256": "6400f71a59b86a655d7151e61b1a9e0fa7e3dd0f09a3fbf63b49e508fc86bdf5",
+  "storage": "MemoryEventStore only; no user data",
+  "initialAdditionalRegressions": {
+    "executed": 17,
+    "passed": 15,
+    "failed": 2,
+    "evidence": "security-journey-pause-days-initial.json"
+  },
+  "versionValidationExpectedErrorUpdate": {
+    "executed": 19,
+    "passed": 18,
+    "failed": 1,
+    "evidence": "security-journey-version-initial.json",
+    "cause": "New preflight validates requested version before blocked gate check; legacy-bound blocked capability rejects reference request as RELEASE_CONTEXT_INVALID, and no events are appended."
+  },
+  "followupFixtureCorrection": {
+    "evidence": "security-journey-followup-fixture-initial.json",
+    "executed": 23,
+    "passed": 22,
+    "failed": 1,
+    "reason": "Initial test budget 4 did not fit two 2-minute activities under the unchanged P0 15% reserve. Fixture corrected to 5 minutes; no model or expected due changed."
+  }
+}

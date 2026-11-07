@@ -1,0 +1,46 @@
+{
+  "checkedAt": "2026-11-07T12:26:01.281214+00:00",
+  "command": [
+    "node",
+    "node_modules/@playwright/test/cli.js",
+    "test",
+    "--config",
+    "playwright.journey-offline.config.ts"
+  ],
+  "environment": {
+    "PW_CHANNEL": "chrome"
+  },
+  "exitCode": 0,
+  "tests": {
+    "executed": 2,
+    "passed": 2,
+    "failed": 0,
+    "skipped": 0,
+    "flaky": 0
+  },
+  "build": {
+    "kind": "isolated-engineering-build",
+    "version": "mulazama-engineering-06l3-shell-729661aee7574a557422b44d",
+    "manifestSHA256": "0781d8430a59601e3775bcede49b3d71def03101594163480ff57a8c2337fe6d",
+    "files": 13,
+    "serviceWorkerSHA256": "ab19b9d505636a595f2333a15ca33ca751ecbf531ccca4f35055812cc5ea57f2",
+    "cachePrefix": "mulazama-engineering-06l3-shell-"
+  },
+  "isolation": {
+    "origin": "http://127.0.0.1:4178",
+    "freshBrowserContexts": true,
+    "uuidDatabasesOnly": true,
+    "browserContextsClosed": true,
+    "productionDataTouched": false,
+    "sourceModuleInjection": false,
+    "mutationPath": "Application UI only; exact QA database inspected read-only",
+    "quranContentUsed": false,
+    "productionDeployed": false
+  },
+  "limits": [
+    "Separate engineering build uses synthetic non-Quran material",
+    "No actual learner or Quran session",
+    "Loopback secure context, not public HTTPS or hosted staging",
+    "No real power-loss or device-storage-eviction test"
+  ]
+}

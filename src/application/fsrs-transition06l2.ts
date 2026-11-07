@@ -1,5 +1,5 @@
-import { canonical, type EventSnapshot } from '../core/types';
-import { FSRS_PROVENANCE } from '../core/fsrs';
+import { canonical, learningVersionsFor, type EventSnapshot } from '../core/types';
+import { learningSchedulingMode } from './learning';
 import { REFERENCE_FSRS_PROVENANCE } from '../core/fsrs-reference';
 import { replayHistory } from './history-application';
 import { rebuildAdaptiveSchedule } from './adaptive-scheduling';
@@ -38,7 +38,7 @@ export async function reviewFsrsTransition06l2(source: EventSnapshot) {
     kind: 'fsrs-transition-impact-review' as const, reviewVersion: '06-L2-1',
     executionAllowed: false as const, migrationPerformed: false as const, productionElectionChanged: false as const,
     source: { eventDigest: await digest(input.events), watermark: input.revision, eventCount: input.events.length,
-      historicalAlgorithm: FSRS_PROVENANCE.algorithmVersion },
+      historicalAlgorithm: learningVersionsFor(learningSchedulingMode(input)).fsrsImplementation },
     target: REFERENCE_FSRS_PROVENANCE,
     history: { planEventIds: input.events.filter(event => event.type === 'PlanRecomputed').map(event => event.eventId),
       plansDigest: await digest(historical.learning?.plans ?? []), originalEventsRewritten: 0 },

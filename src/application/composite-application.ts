@@ -1,7 +1,7 @@
 import { projectProgress } from "../progress/projection";
 import type { ProgressReadModel } from "../progress/projection";
 import { ApplicationService, replayProduct } from "./service";
-import { LearningApplication, replayLearning } from "./learning";
+import { LearningApplication, replayLearning, learningSchedulingMode } from "./learning";
 import type { LearningCommand, LearningProjection } from "./learning";
 import { LearningUiAdapter } from "./learning-ui-adapter";
 import type { EventStore, EventSnapshot, LearningEvent } from "../core/types";
@@ -10,6 +10,8 @@ import {
   DomainError,
   VERSIONS,
   LEARNING_VERSIONS,
+  type LearningSchedulingMode,
+  learningVersionsFor,
 } from "../core/types";
 import {
   exportEncryptedBackup,
@@ -140,7 +142,7 @@ export class CompositeApplication implements CompositeDataController {
   ) {}
   static async open(
     store: EventStore,
-    options: { access?: LearningReleaseAccess } = {},
+    options: { access?: LearningReleaseAccess; scheduling?: LearningSchedulingMode } = {},
   ) {
     const access = options.access ?? (await createRuntimeLearningAccess()),
       app = new CompositeApplication(store, access),
@@ -169,7 +171,7 @@ export class CompositeApplication implements CompositeDataController {
     );
     app.learning = await LearningApplication.open(
       new ScopedEventStore(store, "hme"),
-      { access, userId: app.product.state.profileId },
+      { access, userId: app.product.state.profileId, scheduling: options.scheduling },
     );
     await app.product.refresh();
     app.adapter = new LearningUiAdapter(
@@ -199,7 +201,7 @@ export class CompositeApplication implements CompositeDataController {
     await this.product.refresh();
     await this.learning.refresh();
   }
-  private sendLearning(
+  sendLearning(
     command: LearningCommand,
     options: Parameters<LearningApplication["send"]>[1],
   ): Promise<LearningProjection> {
@@ -230,6 +232,12 @@ export class CompositeApplication implements CompositeDataController {
     return this.serialize(async () => {
       const snapshot = await this.store.load();
       return projectProgress(snapshot, now ?? new Date());
+    });
+  }
+  readPersonalMemory(now?: Date) {
+    return this.serialize(async () => {
+      const { projectPersonalMemory } = await import("../memory/personal-memory");
+      return projectPersonalMemory(await this.store.load(), now ?? new Date());
     });
   }
   exportBackup(password: string) {
@@ -268,10 +276,12 @@ export class CompositeApplication implements CompositeDataController {
         expectedRevision: before.revision,
         validateReplay: async (snapshot) => {
           const { learning } = replayComposite(snapshot);
+          const versions = learningVersionsFor(learningSchedulingMode(snapshot));
+          await this.access.authorize({ operation: "restore-scheduler", versions });
           for (const unit of Object.values(learning.units))
             await this.access.authorize({
               operation: "restore",
-              unit: unit.definition,
+              unit: unit.definition, versions,
             });
         },
       });
@@ -316,7 +326,7 @@ export class CompositeApplication implements CompositeDataController {
           config: current.config,
           preferences: current.preferences,
         }),
-        init("LearnerInitialized", "hme", LEARNING_VERSIONS, {}),
+        init("LearnerInitialized", "hme", this.learning.versions, {}),
       ];
       replayComposite({ revision: before.revision + 1, events });
       await this.store.replace(events, before.revision);

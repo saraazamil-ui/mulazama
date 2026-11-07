@@ -1,0 +1,36 @@
+{
+  "checkedAt": "2026-11-07T12:31:23.889299+00:00",
+  "portableBaseline": {
+    "receipt": "references/06l2-backup-reader/receipt.json",
+    "receiptSHA256": "73af3c02dd575b7a7bbcdb8d1fe3da0f35c5f61c0595dfb3622cf060752e197a",
+    "sourceZipSHA256": "b47501dfd461f9445c2e9d2ad84ae1fa09f1af6048d4bd3ee6b650f1165801ef",
+    "originalDeliverySHA256": "eae1213dae28f6eaa3ede0207602c6e046c6c19b8817364a16692b3e3208a1cf",
+    "files": 19
+  },
+  "runs": [
+    {
+      "command": "node scripts/fsrs-backward06l3.mjs",
+      "exitCode": 0,
+      "checksPassed": 6,
+      "checksFailed": 0,
+      "checksSkipped": 0,
+      "report": "fsrs-backward-reader.json"
+    },
+    {
+      "command": "node scripts/fsrs-backward06l3.mjs --baseline ../MULAZAMA-Phase-06L2-Engineering-Delivery.zip --output docs/06l3/evidence/fsrs-backward-reader-full-archive.json",
+      "exitCode": 0,
+      "checksPassed": 6,
+      "checksFailed": 0,
+      "checksSkipped": 0,
+      "report": "fsrs-backward-reader-full-archive.json"
+    },
+    {
+      "command": "node node_modules/typescript/bin/tsc --noEmit",
+      "exitCode": 0,
+      "log": "fsrs-backward-portable-types.log"
+    }
+  ],
+  "countingNote": "The full-archive run repeats the same six checks; it is not six additional unique tests.",
+  "learnerDataTouched": false,
+  "productionMigration": false
+}

@@ -1,18 +1,20 @@
-import { canonical, DomainError, LEARNING_VERSIONS } from '../core/types';
+import { canonical, DomainError, LEARNING_VERSIONS, learningModeForVersions, type LearningVersions } from '../core/types';
 import type { CanonicalUnit } from '../application/learning';
 import { BUILD_SOURCE_DIGEST } from './build-context.generated';
 import { evaluateRelease, GATES, sha256, TRUSTED_RELEASE_AUTHORITIES, validateContext } from './gates';
 import type { GateResult, ReleaseBundle, ReleaseContext } from './gates';
 export interface LearningReleaseAccess {
-  authorize(input:{operation:string;unit?:CanonicalUnit;at?:string}):Promise<void>;
+  authorize(input:{operation:string;unit?:CanonicalUnit;at?:string;versions?:LearningVersions}):Promise<void>;
   summary():GateResult[];
 }
 const capabilities=new WeakSet<object>();
 const clone=<T>(v:T):T=>structuredClone(v);
-function capability(results:GateResult[],units:CanonicalUnit[],testOnly=false):LearningReleaseAccess {
+function capability(results:GateResult[],units:CanonicalUnit[],testOnly=false,versions:LearningVersions=LEARNING_VERSIONS):LearningReleaseAccess {
   const allowed=new Set(units.map(x=>canonical(x)));const frozen=clone(results);
+  const boundVersions=canonical(versions);
   const access=Object.freeze({
-    async authorize(input:{operation:string;unit?:CanonicalUnit;at?:string}):Promise<void>{
+    async authorize(input:{operation:string;unit?:CanonicalUnit;at?:string;versions?:LearningVersions}):Promise<void>{
+      if(input.versions){learningModeForVersions(input.versions);if(!testOnly&&canonical(input.versions)!==boundVersions)throw new DomainError('RELEASE_CONTEXT_INVALID','اعتماد الإصدار لا يشمل نسخة الجدولة المطلوبة.');}
       const now=Date.now(); // Evidence expiry is wall-clock time, never a caller-supplied historical event time.
       if(frozen.some(g=>g.status!=='passed'||!g.expiresAt||Date.parse(g.expiresAt)<=now))throw new DomainError('RELEASE_GATES_BLOCKED','جلسات القرآن محجوبة: أدلة الاعتماد والتحقق غير مكتملة أو منتهية.');
       if(testOnly&&import.meta.env.MODE!=='test')throw new DomainError('RELEASE_GATES_BLOCKED','بيئة الاختبار الصناعي غير متاحة.');
@@ -26,13 +28,13 @@ export function requireLearningAccess(value:unknown):asserts value is LearningRe
 }
 export function createBlockedLearningAccess():LearningReleaseAccess {return capability(GATES.map(gate=>({gate,status:'blocked',reasons:['NO_APPROVED_RELEASE_EVIDENCE']})),[]);}
 /** The service checks a branded capability, not a Boolean or a caller-supplied predicate. */
-export async function createLearningReleaseAccess(context:ReleaseContext,bundle:ReleaseBundle,unitCatalog:CanonicalUnit[]):Promise<LearningReleaseAccess>{
-  const ctx=clone(context),catalog=clone(unitCatalog),input=clone(bundle);validateContext(ctx);
+export async function createLearningReleaseAccess(context:ReleaseContext,bundle:ReleaseBundle,unitCatalog:CanonicalUnit[],versions:LearningVersions=LEARNING_VERSIONS):Promise<LearningReleaseAccess>{
+  const ctx=clone(context),catalog=clone(unitCatalog),input=clone(bundle),version=clone(versions);validateContext(ctx);learningModeForVersions(version);
   if(ctx.environment!==import.meta.env.MODE)throw new DomainError('RELEASE_CONTEXT_INVALID','سياق الإصدار لا يطابق البناء.');
   if(ctx.sourceDigest!==BUILD_SOURCE_DIGEST)throw new DomainError('RELEASE_CONTEXT_INVALID','الشيفرة لا تطابق دليل الإصدار.');
-  if(ctx.versionsDigest!==await sha256(canonical(LEARNING_VERSIONS))||ctx.unitCatalogHash!==await sha256(canonical(catalog)))throw new DomainError('RELEASE_CONTEXT_INVALID','إصدارات المحرك أو فهرس الوحدات لا يطابق الاعتماد.');
+  if(ctx.versionsDigest!==await sha256(canonical(version))||ctx.unitCatalogHash!==await sha256(canonical(catalog)))throw new DomainError('RELEASE_CONTEXT_INVALID','إصدارات المحرك أو فهرس الوحدات لا يطابق الاعتماد.');
   // No local setting, imported backup or UI action can add an authority to this registry.
-  return capability(await evaluateRelease(ctx,input,TRUSTED_RELEASE_AUTHORITIES),catalog);
+  return capability(await evaluateRelease(ctx,input,TRUSTED_RELEASE_AUTHORITIES),catalog,false,version);
 }
 /** Internal test seam. This path cannot mint a capability outside the Vitest build. */
 export function mintSyntheticLearningAccess(units:CanonicalUnit[]):LearningReleaseAccess {

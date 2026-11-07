@@ -1,4 +1,4 @@
-import { canonical, DomainError, VERSIONS, LEARNING_VERSIONS, type EventSnapshot, type EventStore, type LearningEvent } from '../core/types';
+import { canonical, DomainError, VERSIONS, LEARNING_VERSIONS, REFERENCE_LEARNING_VERSIONS, type EventSnapshot, type EventStore, type LearningEvent } from '../core/types';
 import { validateEvent } from './event-store';
 
 /** Portable C12 backup. No device-local key or microphone data is exported. */
@@ -66,7 +66,7 @@ export function validateBackupSnapshot(value: unknown): asserts value is EventSn
       failure('INVALID_INPUT', 'تحتوي النسخة على واقعة غير مكتملة.');
     if (ids.has(event.eventId)) failure('EVENT_CONFLICT', 'تحتوي النسخة على معرف واقعة مكرر.');
     ids.add(event.eventId);
-    if (![VERSIONS, LEARNING_VERSIONS].some(known => canonical(event.versions) === canonical(known)))
+    if (![VERSIONS, LEARNING_VERSIONS, REFERENCE_LEARNING_VERSIONS].some(known => canonical(event.versions) === canonical(known)))
       failure('UNSUPPORTED_VERSION', 'تحتاج النسخة إلى إصدار محرك أو محتوى غير متاح حاليًا.');
     try { new Intl.DateTimeFormat('en', { timeZone: event.zoneId }); }
     catch { failure('INVALID_INPUT', 'المنطقة الزمنية في النسخة غير صالحة.'); }

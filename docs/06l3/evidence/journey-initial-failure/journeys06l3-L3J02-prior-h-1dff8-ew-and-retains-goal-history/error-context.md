@@ -1,0 +1,59 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - link "تجاوز إلى المحتوى" [ref=e3] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic [ref=e5]:
+    - banner [ref=e6]:
+      - generic [ref=e7]:
+        - img [ref=e8]
+        - strong [ref=e10]: مُلازَمَة
+      - generic [ref=e11]:
+        - generic [ref=e12]: إصدار هندسي
+        - button "تفعيل الوضع الداكن" [ref=e14] [cursor=pointer]:
+          - img [ref=e15]
+    - region "حالة النسخة" [ref=e17]: 06-L3 · اختبار هندسي معزول — ليس نصًا قرآنيًا
+    - main [ref=e18]:
+      - region "رحلة الحفظ والمراجعة الذاتية" [ref=e19]:
+        - generic [ref=e21]:
+          - generic [ref=e22]: مُلازَمَة
+          - heading "وردك اليوم" [active] [level=1] [ref=e23]
+          - paragraph [ref=e24]: تقييمك ذاتي؛ ليس شهادة إتقان أو فحصًا آليًا للتلاوة.
+        - generic [ref=e25]:
+          - img [ref=e26]
+          - generic [ref=e28]: اختبار هندسي معزول. المادة المعروضة ليست نصًا قرآنيًا، ولا تتيح هذه النسخة تجربة قرآنية للمستخدمين.
+        - status
+        - generic [ref=e29]:
+          - heading "خطوتك التالية" [level=2] [ref=e30]
+          - heading "وحدة تدريب صناعية 2" [level=3] [ref=e31]
+          - paragraph [ref=e32]: تسميع أول لمحفوظك المعلن
+          - button "ابدأ وردك" [ref=e33] [cursor=pointer]
+          - paragraph [ref=e34]: "أنشطة أُنجزت اليوم: 1 · المتبقي: 2 · المؤجل: 0"
+          - paragraph [ref=e35]: "الوقت المتاح: 30 دقيقة. تقدير زمن النشاط يخضع لسياسة الخطة؛ لا نطلب منك إدخاله."
+        - generic [ref=e36]:
+          - heading "من سجل تسميعك" [level=2] [ref=e37]
+          - paragraph [ref=e38]:
+            - text: "نتائج محفوظة:"
+            - status "عدد نتائج التسميع" [ref=e39]: "1"
+          - paragraph [ref=e40]: "مواضع سُمّعت كاملة بلا خطأ معلوم وفق تقريرك الحالي: 8 — دون تكرار الموضع."
+          - paragraph [ref=e41]: "ثبات الحفظ: يحتاج إلى تسميعات إضافية لتقديره."
+          - paragraph [ref=e42]: المحفوظ المعلن لا يتحول إلى إتقان مثبت.
+          - heading "التعاهد القادم" [level=3] [ref=e43]
+          - list [ref=e44]:
+            - listitem [ref=e45]: وحدة تدريب صناعية 1 — ٠٨‏/١١‏/٢٠٢٦
+          - button "عرض تقدمي" [ref=e46] [cursor=pointer]
+    - navigation "التنقل على الهاتف" [ref=e47]:
+      - button "اليوم" [ref=e48] [cursor=pointer]:
+        - img [ref=e49]
+        - generic [ref=e51]: اليوم
+      - button "المصحف" [ref=e52] [cursor=pointer]:
+        - img [ref=e53]
+        - generic [ref=e55]: المصحف
+      - button "تقدمي" [ref=e56] [cursor=pointer]:
+        - img [ref=e57]
+        - generic [ref=e59]: تقدمي
+      - button "الإعدادات" [ref=e60] [cursor=pointer]:
+        - img [ref=e61]
+        - generic [ref=e64]: الإعدادات
+```

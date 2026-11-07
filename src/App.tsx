@@ -54,6 +54,8 @@ import type {
 import { currentRiyadhDate, effectiveBudget } from "./domain/state";
 import type { Action } from "./domain/state";
 import { ApplicationService } from "./application/service";
+import { JourneyScreen } from "./JourneyScreen06l3";
+import type { LearningJourney } from "./application/journey06l3";
 import { LearningEngineScreen } from "./LearningEngineScreen";
 import { Onboarding } from "./Onboarding";
 import { CompanionPanel, type CompanionLoadState } from "./CompanionPanel";
@@ -132,10 +134,12 @@ function route(): Screen {
 export default function App({
   service,
   learning,
+  journey,
   data,
 }: {
   service: ApplicationService;
   learning?: LearningUiAdapter;
+  journey?: LearningJourney;
   data?: CompositeDataController & { readProgress?: (now?: Date) => ProgressReadModel | Promise<ProgressReadModel>; readPersonalMemory?: (now?: Date) => Promise<PersonalMemoryReadModel> };
 }) {
   const [state, setState] = useState<PrototypeState>(() => service.state);
@@ -276,10 +280,15 @@ export default function App({
   }, [state.preferences]);
   useEffect(() => {
     document.title = screens[screen] + " | مُلازَمَة";
-    requestAnimationFrame(() =>
-      document.querySelector<HTMLElement>("h1")?.focus(),
-    );
+    const focusedAtNavigation = document.activeElement;
+    const frame = requestAnimationFrame(() => {
+      // A late navigation frame must not steal focus from a user who has
+      // already started typing in the new screen.
+      if (document.activeElement === focusedAtNavigation || document.activeElement === document.body)
+        document.querySelector<HTMLElement>("h1")?.focus();
+    });
     window.scrollTo({ top: 0, behavior: "instant" });
+    return () => cancelAnimationFrame(frame);
   }, [screen]);
   useEffect(() => {
     if (!message) return;
@@ -381,6 +390,10 @@ export default function App({
       />
     );
   }
+  if(journey){
+    for(const target of ["S04","S05","S07","S08","S09","S10","S11","S13","S14","S15","S16"] as Screen[])
+      contents[target]=<JourneyScreen key={target} journey={journey} screen={target} go={go} onCommitted={()=>{void refreshProgress();void refreshCompanion();}} />;
+  }
   return (
     <FeedbackContext.Provider value={error}>
       <Context.Provider
@@ -460,7 +473,7 @@ export default function App({
               <button className="help-button" onClick={() => setHelp(true)}>
                 عن مُلازَمَة وخصوصيتك <ShieldCheck size={17} />
               </button>
-              <small>MULAZAMA · 06-L2</small>
+              <small>MULAZAMA · 06-L3</small>
             </div>
           </aside>
           <div className="workspace">
@@ -499,7 +512,7 @@ export default function App({
               </div>
             </header>
             <div className="prototype-strip" role="region" aria-label="حالة النسخة">
-              إصدار هندسي 06-L2 · جلسات القرآن موقوفة حتى اعتماد المحتوى
+              {journey?.kind === "engineering" ? "06-L3 · اختبار هندسي معزول — ليس نصًا قرآنيًا" : journey ? "06-L3 · الحفظ والتسميع ذاتيان" : "إصدار هندسي 06-L3 · جلسات القرآن موقوفة حتى اعتماد المحتوى"}
             </div>
             <main
               id="main-content"
@@ -2748,7 +2761,7 @@ function Preferences() {
           <summary>عن النموذج والمساعدة</summary>
           <p className="policy-links"><a href="./privacy.html">الخصوصية</a> · <a href="./support.html">الدعم والمساعدة</a> · <a href="./terms.html">حدود الاستخدام</a></p>
           <p>
-            مُلازَمَة — MULAZAMA، إصدار هندسي 06-L2 للويب. اختبار هاتف حقيقي ومراجعة متخصصة لم ينجزا بعد. المطابقة الحسابية المصححة مثبتة، وتشغيل الجلسات واعتماد المحتوى ما زالا معلقين.
+            مُلازَمَة — MULAZAMA، إصدار هندسي 06-L3 للويب. اختبار هاتف حقيقي ومراجعة متخصصة لم ينجزا بعد. المطابقة الحسابية المصححة مثبتة، وتشغيل الجلسات واعتماد المحتوى ما زالا معلقين.
           </p>
         </details>
       </Card>

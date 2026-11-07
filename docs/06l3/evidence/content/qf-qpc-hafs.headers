@@ -1,0 +1,27 @@
+HTTP/2 200 
+date: Sat, 07 Nov 2026 12:15:39 GMT
+content-type: application/json; charset=utf-8
+access-control-allow-origin: *
+alt-svc: h3=":443"; ma=86400
+cache-control: public, max-age=691200
+report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=6UXLyfnL9CfXKiHzLgNDHYJNHmzlCHTZXnrKcbu9GsCcV6K46TZSS%2FBt6Q73sq3F43nCZ%2FpXZyb4CJm0lMEoVaQ4%2B1gbeTICRp7KRBOe2qdeigzGGTnZOLWs4x%2BRq4YeZ1%2BjXH%2BoR6CBY5s%3D"}]}
+etag: W/"29608bdd4a7ba7c85e73e8f66284931e"
+referrer-policy: strict-origin-when-cross-origin
+strict-transport-security: max-age=15552000; preload
+vary: Accept-Encoding, Origin
+via: 1.1 Caddy
+via: 1.1 varnish-v4
+x-content-type-options: nosniff
+x-download-options: noopen
+x-frame-options: SAMEORIGIN
+x-permitted-cross-domain-policies: none
+x-qf-origin: qf-nonfaceing-data-legacy-api-quran
+x-request-id: 07ddbc48-4f9e-4174-b911-c82ecb56ebb7
+x-runtime: 0.150014
+x-varnish: 2627866
+x-xss-protection: 0
+nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+cf-cache-status: HIT
+server: cloudflare
+cf-ray: a56c43bebca8703f-RUH
+

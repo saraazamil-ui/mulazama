@@ -1,0 +1,33 @@
+{
+  "reviewedAt": "2026-11-07T12:19:44.605633+00:00",
+  "officialPrimaryPage": {
+    "url": "https://qurancomplex.gov.sa/quran-dev/",
+    "webObservation": "Live page says Website Under Maintenance",
+    "curlObservation": "TLS alert handshake failure, exit35; validation not disabled"
+  },
+  "documentation": [
+    {
+      "url": "https://api-docs.quran.com/docs/quickstart/migration/",
+      "finding": "Documents legacy unauthenticated api.quran.com/api/v4 base and new authenticated gateway; no credentials were created or bypassed"
+    },
+    {
+      "url": "https://api-docs.quran.com/docs/content_apis_versioned/4.0.0/quran-verses-by-script/",
+      "finding": "Documents qpc_hafs selection and unsupported script fallback; parser requires text_qpc_hafs and rejects fallback"
+    },
+    {
+      "url": "https://api-docs.quran.com/legal/developer-terms/",
+      "versionDate": "2026-10-11",
+      "finding": "Raw content packaging/redistribution and offline synchronization conditions not satisfied; reference raw body excluded from delivery"
+    },
+    {
+      "url": "https://corpus.quran.com/java/uthmaniscript.jsp",
+      "finding": "Explicitly derives Arabic text from Tanzil, so not an independent substitute"
+    },
+    {
+      "url": "https://quran.ksu.edu.sa/",
+      "finding": "Primary university site describes scanned Madinah Mushaf; no independently versioned text package/rights acquired in this task"
+    }
+  ],
+  "noScientificApproval": true,
+  "noRuntimeImports": true
+}

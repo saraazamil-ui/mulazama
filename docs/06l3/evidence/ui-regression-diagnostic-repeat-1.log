@@ -1,0 +1,393 @@
+
+ RUN  v4.1.12 /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l3
+
+ ✓ src/LearningEngineScreen.test.tsx > 05C actual S07–S13 React route integration with gated HME > UIS01 S07 renders real repetition receipt and S08 persists a hint and completion 264ms
+ ✓ src/LearningEngineScreen.test.tsx > 05C actual S07–S13 React route integration with gated HME > UIS02 S09 starts with unknown errors, records V1 and never silently replaces unknown with zero 73ms
+stdout | src/LearningEngineScreen.test.tsx > 05C actual S07–S13 React route integration with gated HME > UIS05 S11 uses configured budget and explicitly entered costs/spent time in the real HME plan
+UIS05_DIAGNOSTIC {"spent":"","cost":"100","active":"<input min=\"0.01\" step=\"0.01\" type=\"number\" value=\"\">","hash":"#S11"}
+
+ ✓ src/LearningEngineScreen.test.tsx > 05C actual S07–S13 React route integration with gated HME > UIS03 normal App without an injected gated application keeps Quran routes blocked 33ms
+ ✓ src/LearningEngineScreen.test.tsx > 05C actual S07–S13 React route integration with gated HME > UIS04 S18 blocks partial product data management when learning is attached without the unified controller 33ms
+stdout | src/LearningEngineScreen.test.tsx > 05C actual S07–S13 React route integration with gated HME > UIS05 S11 uses configured budget and explicitly entered costs/spent time in the real HME plan
+UIS05_AFTER_CLICK {"alerts":["قيمة عددية غير صالحة."],"body":"تجاوز إلى المحتوىمُلازَمَةرفيق رحلتك مع القرآنمساحتك اليوميةاليومالمصحفتقدميالإعداداتخطوة صغيرة،وصلة تتجدد كل يوم.عن مُلازَمَة وخصوصيتك MULAZAMA · 06-L3مُلازَمَةمساحتك / تعاهد محفوظك إصدار هندسيإصدار هندسي 06-L3 · جلسات القرآن موقوفة حتى اعتماد المحتوىمُلازَمَة — التحقق الوظيفي للتعلمواجهة تحقق هندسي بلا نص قرآني. المقادير هنا تخص الوحدات المسجلة؛ ليست شهادة إتقان أو اعتماد منهج.قيمة عددية غير صالحة.إيصال الحفظ: 4 · مفاتيح تغطية ذات دليل مؤهل: 0 · غير مختبرة: 1بدء الوحدة test-ui-unitميزانية اليوم من إعداد المستخدم: 60 دقيقةالدقائق المنفقة فعلًا اليوم بإقراركتقدير دقائق الوحدة test-ui-unitتقديرات المستخدم غير معايرة. يجب إدخال الوقت المنفق وكلفة الوحدات صراحة؛ لا تُفترض ثلاثة دقائق أو صفر إنجاز.حساب التعاهد من حالة المحركاليومالمصحفتقدميالإعدادات"}
+
+ × src/LearningEngineScreen.test.tsx > 05C actual S07–S13 React route integration with gated HME > UIS05 S11 uses configured budget and explicitly entered costs/spent time in the real HME plan 1104ms
+   → expected undefined to be 60 // Object.is equality
+
+Ignored nodes: comments, script, style
+[36m<html[39m
+  [33mdata-large[39m=[32m"false"[39m
+  [33mdata-motion[39m=[32m"normal"[39m
+  [33mdata-theme[39m=[32m"light"[39m
+[36m>[39m
+  [36m<head>[39m
+    [36m<title>[39m
+      [0mتعاهد محفوظك | مُلازَمَة[0m
+    [36m</title>[39m
+  [36m</head>[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"skip-link"[39m
+        [33mhref[39m=[32m"#main-content"[39m
+      [36m>[39m
+        [0mتجاوز إلى المحتوى[0m
+      [36m</a>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"app-shell"[39m
+      [36m>[39m
+        [36m<aside[39m
+          [33mclass[39m=[32m"sidebar"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33maria-label[39m=[32m"مُلازَمَة، ورد اليوم"[39m
+            [33mclass[39m=[32m"brand"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"brand-mark"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33mclass[39m=[32m"lucide lucide-book-open"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"28"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"28"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M12 7v14"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+            [36m</span>[39m
+            [36m<span>[39m
+              [36m<strong>[39m
+                [0mمُلازَمَة[0m
+              [36m</strong>[39m
+              [36m<small>[39m
+                [0mرفيق رحلتك مع القرآن[0m
+              [36m</small>[39m
+            [36m</span>[39m
+          [36m</button>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"side-caption"[39m
+          [36m>[39m
+            [0mمساحتك اليومية[0m
+          [36m</div>[39m
+          [36m<nav[39m
+            [33maria-label[39m=[32m"التنقل الرئيسي"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33maria-current[39m=[32m"page"[39m
+              [33mclass[39m=[32m"nav-item active"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33mclass[39m=[32m"lucide lucide-calendar-days"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"21"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"21"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M8 2v4"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M16 2v4"[39m
+                [36m/>[39m
+                [36m<rect[39m
+                  [33mheight[39m=[32m"18"[39m
+                  [33mrx[39m=[32m"2"[39m
+                  [33mwidth[39m=[32m"18"[39m
+                  [33mx[39m=[32m"3"[39m
+                  [33my[39m=[32m"4"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M3 10h18"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M8 14h.01"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M12 14h.01"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M16 14h.01"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M8 18h.01"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M12 18h.01"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M16 18h.01"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [36m<span>[39m
+                [0mاليوم[0m
+              [36m</span>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"nav-dot"[39m
+              [36m/>[39m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"nav-item "[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33mclass[39m=[32m"lucide lucide-book-open"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"21"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"21"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M12 7v14"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [36m<span>[39m
+                [0mالمصحف[0m
+              [36m</span>[39m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"nav-item "[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33mclass[39m=[32m"lucide lucide-chart-no-axes-combined"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"21"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"21"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M12 16v5"[39m
+                [36m/>[39m
+    ...
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/LearningEngineScreen.test.tsx > 05C actual S07–S13 React route integration with gated HME > UIS05 S11 uses configured budget and explicitly entered costs/spent time in the real HME plan
+AssertionError: expected undefined to be 60 // Object.is equality
+
+Ignored nodes: comments, script, style
+[36m<html[39m
+  [33mdata-large[39m=[32m"false"[39m
+  [33mdata-motion[39m=[32m"normal"[39m
+  [33mdata-theme[39m=[32m"light"[39m
+[36m>[39m
+  [36m<head>[39m
+    [36m<title>[39m
+      [0mتعاهد محفوظك | مُلازَمَة[0m
+    [36m</title>[39m
+  [36m</head>[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"skip-link"[39m
+        [33mhref[39m=[32m"#main-content"[39m
+      [36m>[39m
+        [0mتجاوز إلى المحتوى[0m
+      [36m</a>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"app-shell"[39m
+      [36m>[39m
+        [36m<aside[39m
+          [33mclass[39m=[32m"sidebar"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33maria-label[39m=[32m"مُلازَمَة، ورد اليوم"[39m
+            [33mclass[39m=[32m"brand"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"brand-mark"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33mclass[39m=[32m"lucide lucide-book-open"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"28"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"28"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M12 7v14"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+            [36m</span>[39m
+            [36m<span>[39m
+              [36m<strong>[39m
+                [0mمُلازَمَة[0m
+              [36m</strong>[39m
+              [36m<small>[39m
+                [0mرفيق رحلتك مع القرآن[0m
+              [36m</small>[39m
+            [36m</span>[39m
+          [36m</button>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"side-caption"[39m
+          [36m>[39m
+            [0mمساحتك اليومية[0m
+          [36m</div>[39m
+          [36m<nav[39m
+            [33maria-label[39m=[32m"التنقل الرئيسي"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33maria-current[39m=[32m"page"[39m
+              [33mclass[39m=[32m"nav-item active"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33mclass[39m=[32m"lucide lucide-calendar-days"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"21"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"21"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M8 2v4"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M16 2v4"[39m
+                [36m/>[39m
+                [36m<rect[39m
+                  [33mheight[39m=[32m"18"[39m
+                  [33mrx[39m=[32m"2"[39m
+                  [33mwidth[39m=[32m"18"[39m
+                  [33mx[39m=[32m"3"[39m
+                  [33my[39m=[32m"4"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M3 10h18"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M8 14h.01"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M12 14h.01"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M16 14h.01"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M8 18h.01"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M12 18h.01"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M16 18h.01"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [36m<span>[39m
+                [0mاليوم[0m
+              [36m</span>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"nav-dot"[39m
+              [36m/>[39m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"nav-item "[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33mclass[39m=[32m"lucide lucide-book-open"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"21"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"21"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M12 7v14"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [36m<span>[39m
+                [0mالمصحف[0m
+              [36m</span>[39m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"nav-item "[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33mclass[39m=[32m"lucide lucide-chart-no-axes-combined"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"21"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"21"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M12 16v5"[39m
+                [36m/>[39m
+    ...
+
+- Expected:
+60
+
++ Received:
+undefined
+
+ ❯ src/LearningEngineScreen.test.tsx:135:73
+    133|     console.log("UIS05_AFTER_CLICK",JSON.stringify({plan:app.adapter.s…
+    134|     // The click starts an asynchronous queued event-store commit; wai…
+    135|     await waitFor(() => expect(app.adapter.state.plans.at(-1)?.minutes…
+       |                                                                         ^
+    136|     const plan = app.adapter.state.plans.at(-1)!;
+    137|     expect(plan.minutes).toBe(60);
+ ❯ runWithExpensiveErrorDiagnosticsDisabled node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/config.js:47:12
+ ❯ checkCallback node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/wait-for.js:124:77
+ ❯ Timeout.checkRealTimersCallback node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/wait-for.js:118:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed (5)
+   Start at  15:36:51
+   Duration  2.28s (transform 291ms, setup 42ms, import 426ms, tests 1.51s, environment 232ms)
+
+JSON report written to /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l3/docs/06l3/evidence/ui-regression-diagnostic-repeat-1.json

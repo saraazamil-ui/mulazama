@@ -1,11 +1,11 @@
-import {readFile,stat} from 'node:fs/promises';
+import {readFile,stat,access} from 'node:fs/promises';
 const root=new URL('../dist/',import.meta.url);
 const manifest=JSON.parse(await readFile(new URL('offline-assets.json',root),'utf8'));
 for(const file of manifest.files)if(!(await stat(new URL(file,root))).isFile())throw Error('Missing offline asset '+file);
 const index=await readFile(new URL('index.html',root),'utf8');
 if(!index.includes('مُلازَمَة')||!index.includes('MULAZAMA')||!index.includes('dir="rtl"'))throw Error('Identity/RTL mismatch');
 const scripts=manifest.files.filter(f=>f.endsWith('.js'));
-for(const script of scripts){const text=await readFile(new URL(script,root),'utf8');if(['SYNTHETIC_TEST_ONLY','mintSyntheticLearningAccess','synthetic-reviewer','test-ephemeral-verifier'].some(marker=>text.includes(marker)))throw Error('Synthetic authorization leaked into production bundle');if(text.includes('itqan.prototype.v1')||text.includes('source:"mock"')||text.includes('نطاق عرض تجريبي من السورة'))throw Error('Prototype data leaked into production bundle');}
+for(const script of scripts){const text=await readFile(new URL(script,root),'utf8');if(['SYNTHETIC_TEST_ONLY','mintSyntheticLearningAccess','synthetic-reviewer','test-ephemeral-verifier','L3_ENGINEERING_ONLY','mulazama-engineering-06l3','test-isolated-capacity-fixture-06l3','مادة تدريب صناعية للاختبار فقط وليست نصًا قرآنيًا.'].some(marker=>text.includes(marker)))throw Error('Synthetic authorization leaked into production bundle');if(text.includes('itqan.prototype.v1')||text.includes('source:"mock"')||text.includes('نطاق عرض تجريبي من السورة'))throw Error('Prototype data leaked into production bundle');}
 console.log(JSON.stringify({buildArtifacts:'passed',identity:'MULAZAMA',rtl:true,offlineAssets:manifest.files.length,prototypeStorageKeyPresent:false,offlineBrowserExecution:'not-verified'}));
 
 const pwa=JSON.parse(await readFile(new URL('manifest.webmanifest',root),'utf8'));
@@ -21,3 +21,11 @@ for(const page of ['privacy.html','terms.html','support.html']) {
  if(!html.includes('dir="rtl"')||!html.includes('<main>'))throw Error('Policy/support structure invalid '+page);
 }
 console.log(JSON.stringify({pwaIcons:'192/512 PNG verified',localPolicyPages:3,deviceInstallTest:'not-executed'}));
+
+// The engineering entry and quarantined evidence must not enter the public artifact.
+for(const path of ['engineering.html','content/06l2','content/06l3']) {
+ try { await access(new URL(path,root)); } catch(error) { if(error.code==='ENOENT')continue;throw error; }
+ throw Error('Isolated/quarantined asset leaked into public artifact: '+path);
+}
+if(manifest.files.some(path=>/engineering|^content\//.test(path)))throw Error('Isolated asset cached by public worker');
+console.log(JSON.stringify({engineeringEntryInProduction:false,syntheticCapabilityInProduction:false,quarantinedContentInProduction:false}));

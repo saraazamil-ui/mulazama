@@ -1,5 +1,5 @@
 import { afterEach, describe, it, expect, vi } from "vitest";
-import { render, screen, cleanup, waitFor } from "@testing-library/react";
+import { render, screen, cleanup, waitFor, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import App from "./App";
 import { CompositeApplication } from "./application/composite-application";
@@ -136,5 +136,40 @@ describe("05C actual S07–S13 React route integration with gated HME", () => {
     expect(plan.spentMinutes).toBe(5);
     expect(plan.tasks).toHaveLength(0);
     expect(plan.deferred[0].outcome).toBe("not_measured");
+  });
+  it("UIS06 a delayed navigation frame preserves an engaged input and still focuses an untouched heading", async () => {
+    const frames = new Map<number, FrameRequestCallback>();
+    let nextFrameId = 1;
+    vi.spyOn(window, "requestAnimationFrame").mockImplementation((callback) => {
+      const id = nextFrameId++;
+      frames.set(id, callback);
+      return id;
+    });
+    const cancel = vi.spyOn(window, "cancelAnimationFrame").mockImplementation((id) => {
+      frames.delete(id);
+    });
+    for (const userAlreadyEngaged of [true, false]) {
+      const s = await setup(), user = userEvent.setup();
+      history.replaceState(null, "", "#S11");
+      const mounted = render(<App service={s.service} learning={s.adapter} />);
+      const field = screen.getByLabelText("الدقائق المنفقة فعلًا اليوم بإقرارك");
+      const heading = screen.getByRole("heading", { name: "مُلازَمَة — التحقق الوظيفي للتعلم" });
+      const frameId = nextFrameId - 1, frame = frames.get(frameId)!;
+      expect(frame).toBeTypeOf("function");
+      if (userAlreadyEngaged) await user.click(field);
+      // Run the actual pending App callback at the exact problematic moment,
+      // after input focus but before the first keystroke. No sleeps or timeout changes.
+      act(() => frame(0));
+      if (userAlreadyEngaged) {
+        expect(field).toHaveFocus();
+        await user.keyboard("5");
+        expect(field).toHaveValue(5);
+      } else {
+        expect(heading).toHaveFocus();
+      }
+      mounted.unmount();
+      expect(cancel).toHaveBeenCalledWith(frameId);
+      expect(frames.has(frameId)).toBe(false);
+    }
   });
 });

@@ -1,8 +1,8 @@
 import { ApplicationService, replayProduct } from "./service";
-import { replayLearning } from "./learning";
+import { replayLearning, learningSchedulingMode } from "./learning";
 import type { CompositeDataController } from "./composite-application";
 import type { EventSnapshot, EventStore, LearningEvent } from "../core/types";
-import { canonical, DomainError, LEARNING_VERSIONS, VERSIONS } from "../core/types";
+import { canonical, DomainError, LEARNING_VERSIONS, VERSIONS, learningVersionsFor } from "../core/types";
 import { exportEncryptedBackup, inspectEncryptedBackup, restoreEncryptedBackup, validateBackupSnapshot } from "../persistence/backup";
 import { IndexedDbEventStore } from "../persistence/event-store";
 import { createRuntimeLearningAccess, runtimeDatabaseName } from "../release/runtime";
@@ -126,8 +126,10 @@ export class HistoryApplication implements CompositeDataController {
     const incoming = replayHistory(snapshot), current = replayHistory(before);
     if (current.learning && !incoming.learning)
       throw new DomainError("AGGREGATE_BACKUP_REQUIRED", "النسخة الجزئية لا تشمل سجل التعلم الحالي؛ لم يُحذف التاريخ.");
+    const versions = learningVersionsFor(learningSchedulingMode(snapshot));
+    if (incoming.learning) await this.access.authorize({operation: "restore-scheduler", versions});
     for (const unit of Object.values(incoming.learning?.units ?? {}))
-      await this.access.authorize({ operation: "restore", unit: unit.definition });
+      await this.access.authorize({ operation: "restore", unit: unit.definition, versions });
   }
   async inspectBackup(serialized: string, password: string) {
     try {
@@ -158,7 +160,7 @@ export class HistoryApplication implements CompositeDataController {
         return { eventId: id, commandId: id, operationId: id, userId, unitId: null,
           type: scope === "product" ? "ProfileInitialized" : "LearnerInitialized",
           occurredAt: at, receivedAt: at, zoneId: "Asia/Riyadh", source: "product", coverage: [],
-          versions: scope === "product" ? VERSIONS : LEARNING_VERSIONS, data: { scope, ...data } };
+          versions: scope === "product" ? VERSIONS : learningVersionsFor(learningSchedulingMode(before)), data: { scope, ...data } };
       };
       const events = [initialize("product", { config: current.product.config, preferences: current.product.preferences })];
       if (current.learning) events.push(initialize("hme", {}));

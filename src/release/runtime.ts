@@ -1,4 +1,4 @@
-import { canonical, LEARNING_VERSIONS } from '../core/types';
+import { canonical, LEARNING_VERSIONS, learningVersionsFor, type LearningSchedulingMode } from '../core/types';
 import { BUILD_SOURCE_DIGEST } from './build-context.generated';
 import releaseInput from './release-input.json';
 import { createBlockedLearningAccess,createLearningReleaseAccess } from './access';
@@ -8,7 +8,9 @@ import { sha256 } from './gates';
 export async function createRuntimeLearningAccess():Promise<LearningReleaseAccess>{
   const mode=import.meta.env.MODE;
   if(!['test','staging','production'].includes(mode))return createBlockedLearningAccess();
-  return createLearningReleaseAccess({product:'MULAZAMA',environment:mode as 'test'|'staging'|'production',purpose:mode==='test'?'engineering-test':mode==='staging'?'controlled-pilot':'production',platform:'web',sourceDigest:BUILD_SOURCE_DIGEST,versionsDigest:await sha256(canonical(LEARNING_VERSIONS)),contentManifestHash:releaseInput.contentManifestHash,unitCatalogHash:await sha256(canonical(releaseInput.unitCatalog))},releaseInput.bundle,releaseInput.unitCatalog);
+  const scheduling=(releaseInput as typeof releaseInput & {learningScheduling?:LearningSchedulingMode}).learningScheduling??'legacy';
+  const versions=learningVersionsFor(scheduling);
+  return createLearningReleaseAccess({product:'MULAZAMA',environment:mode as 'test'|'staging'|'production',purpose:mode==='test'?'engineering-test':mode==='staging'?'controlled-pilot':'production',platform:'web',sourceDigest:BUILD_SOURCE_DIGEST,versionsDigest:await sha256(canonical(versions)),contentManifestHash:releaseInput.contentManifestHash,unitCatalogHash:await sha256(canonical(releaseInput.unitCatalog))},releaseInput.bundle,releaseInput.unitCatalog,versions);
 }
 export function runtimeDatabaseName():string {
   // Preserve the 05A production database identity. Staging/development/test never open it implicitly.

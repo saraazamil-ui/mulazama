@@ -1,0 +1,18 @@
+{
+  "command": [
+    "node",
+    "node_modules/@playwright/test/cli.js",
+    "test",
+    "--config",
+    "playwright.journey.config.ts",
+    "e2e-journey/security06l3.spec.ts"
+  ],
+  "startedAt": "2026-11-07T12:29:49.614190+00:00",
+  "durationSeconds": 7.994,
+  "exitCode": 0,
+  "environment": {
+    "PW_CHANNEL": "chrome",
+    "fixedBrowserTime": "2026-11-07T09:00:00.000Z"
+  },
+  "scope": "Fresh test contexts, loopback 4177, synthetic material only"
+}

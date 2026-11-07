@@ -1,0 +1,97 @@
+{
+  "unit": {
+    "executed": 887,
+    "passed": 887,
+    "failed": 0,
+    "skipped": 0
+  },
+  "browser": {
+    "executed": 35,
+    "passed": 35,
+    "failed": 0,
+    "skipped": 0,
+    "flaky": 0
+  },
+  "offline": {
+    "executed": 4,
+    "passed": 4,
+    "failed": 0,
+    "skipped": 0,
+    "flaky": 0
+  },
+  "deployment": {
+    "executed": 2,
+    "passed": 2,
+    "failed": 0,
+    "skipped": 0,
+    "flaky": 0
+  },
+  "journeyBrowser": {
+    "executed": 10,
+    "passed": 10,
+    "failed": 0,
+    "skipped": 0,
+    "flaky": 0
+  },
+  "journeyOffline": {
+    "executed": 2,
+    "passed": 2,
+    "failed": 0,
+    "skipped": 0,
+    "flaky": 0
+  },
+  "contentBrowser": {
+    "executed": 5,
+    "passed": 5,
+    "failed": 0,
+    "skipped": 0
+  },
+  "reference": {
+    "executed": 40,
+    "passed": 40,
+    "failed": 0,
+    "skipped": 0
+  },
+  "legacyReader": {
+    "executed": 6,
+    "passed": 6,
+    "failed": 0,
+    "skipped": 0
+  },
+  "commandResults": {
+    "passed": 17,
+    "blocked": 3,
+    "failed": 0,
+    "skipped": 0
+  },
+  "browserGroupChecksTotal": 58,
+  "environment": {
+    "node": "24.22.1",
+    "chrome": "157.0.8103.39",
+    "playwright": "1.56.1",
+    "os": "macOS 27.0.1 arm64",
+    "browserChannel": "chrome",
+    "realParticipants": 0,
+    "realQuranLearningJourneys": 0,
+    "externalDeployment": false
+  },
+  "countingRule": "Targeted tests are included in unit/browser groups, not added again. Content display is an isolated review page, not a learner Quran journey. Reference diagnostics preserve legacy failures separately.",
+  "unexecuted": [
+    {
+      "scope": "approved-Quran newcomer/prior learner journeys",
+      "reason": "Product content, catalog and release attestations absent; synthetic engineering journeys tested separately."
+    },
+    {
+      "scope": "human usability / assistive screen reader / physical phone installation",
+      "reason": "No approved trial or human/device execution."
+    },
+    {
+      "scope": "public hosting / domain / DNS / live HTTPS / operational restore",
+      "reason": "External accounts, ownership and publication approval unavailable."
+    },
+    {
+      "scope": "migration on real learner data",
+      "reason": "No migration authorized or required for a newly versioned isolated stream; original legacy data preserved."
+    }
+  ]
+}

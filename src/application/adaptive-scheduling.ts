@@ -1,10 +1,11 @@
-import { canonical, LEARNING_VERSIONS, type EventSnapshot } from "../core/types";
+import { canonical, LEARNING_VERSIONS, type LearningVersions, type EventSnapshot } from "../core/types";
 import { instant } from "../core/hme";
 import type { Rating } from "../core/hme-types";
 import type { FsrsReview, FsrsState } from "../core/fsrs";
 import { ReferenceFsrsAdapter, REFERENCE_FSRS_PROVENANCE } from "../core/fsrs-reference";
 import { replayHistory } from "./history-application";
-import type { LearningCommand } from "./learning";
+import { learningSchedulingMode, type LearningCommand } from "./learning";
+import { learningVersionsFor } from "../core/types";
 
 export interface AdaptiveShadowReview {
   attemptId: string;
@@ -41,7 +42,7 @@ export interface AdaptiveSchedulingShadow {
   sourceWatermark: number;
   sourceEventCount: number;
   sourceEventIds: string[];
-  sourceInterpretation: typeof LEARNING_VERSIONS;
+  sourceInterpretation: LearningVersions;
   target: typeof REFERENCE_FSRS_PROVENANCE;
   units: Record<string, AdaptiveUnitShadow>;
 }
@@ -57,7 +58,7 @@ export function rebuildAdaptiveSchedule(snapshot: EventSnapshot): AdaptiveSchedu
     executable: false, migrated: false,
     sourceWatermark: snapshot.revision, sourceEventCount: snapshot.events.length,
     sourceEventIds: snapshot.events.map(event => event.eventId),
-    sourceInterpretation: structuredClone(LEARNING_VERSIONS),
+    sourceInterpretation: structuredClone(learningVersionsFor(learningSchedulingMode(snapshot))),
     target: structuredClone(REFERENCE_FSRS_PROVENANCE), units: Object.create(null),
   };
   if (!learning) return result;

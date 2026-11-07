@@ -1,0 +1,236 @@
+{
+  "config": {
+    "configFile": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l3/playwright.journey.config.ts",
+    "rootDir": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l3/e2e-journey",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results-journey/journey-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l3/test-results-journey",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l3/e2e-journey",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 1,
+    "webServer": {
+      "command": "node node_modules/vite/bin/vite.js --config vite.engineering.config.ts --mode test --host 127.0.0.1 --port 4177 --strictPort",
+      "url": "http://127.0.0.1:4177/engineering.html",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "security06l3.spec.ts",
+      "file": "security06l3.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "L3SECJ01 URL and stored database-name injection cannot select a real production store in the engineering entry",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 708,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T12:29:51.005Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "engineering-isolation.json",
+                      "contentType": "application/json",
+                      "body": "eyJlbmdpbmVlcmluZyI6dHJ1ZSwicHJvZHVjdGlvbkRhdGFiYXNlT3BlbmVkIjpmYWxzZSwicXVlcnlTd2l0Y2hJZ25vcmVkIjp0cnVlLCJzZXNzaW9uU3RvcmFnZVRhcmdldFJlamVjdGVkIjp0cnVlLCJzdGFibGVSZWxvYWRJZGVudGl0eSI6dHJ1ZX0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ecc9e40043f1ac0c219b-c53a347fee2a30d72f97",
+          "file": "security06l3.spec.ts",
+          "line": 53,
+          "column": 1
+        },
+        {
+          "title": "L3SECJ02 recall text is absent from DOM until an acknowledged reveal, and self-report cannot wash out recorded help",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1471,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T12:29:52.155Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "recall-help-evidence.json",
+                      "contentType": "application/json",
+                      "body": "eyJlbmdpbmVlcmluZyI6dHJ1ZSwicmVhbFF1cmFuIjpmYWxzZSwidGV4dEFic2VudEZyb21SZWNhbGxET00iOnRydWUsImhlbHBQZXJzaXN0ZWQiOnRydWUsImFzc2Vzc21lbnQiOnsic3RyaWN0UGFzcyI6ZmFsc2UsImVmZmVjdGl2ZVJhdGluZyI6MSwiZWxpZ2libGUiOnRydWUsImRlbGF5ZWRFdmlkZW5jZUVsaWdpYmxlIjp0cnVlLCJhY2N1cmFjeSI6MTAwLCJhY2N1cmFjeURlbm9taW5hdG9yIjo4LCJ2ZXJpZmljYXRpb24iOiJWMSIsInJlYXNvbkNvZGVzIjpbIlNFTEZfUkVQT1JURURfRVZJREVOQ0UiLCJISU5UX0lOVkFMSURBVEVTX0lOREVQRU5ERU5UX1JFQ0FMTCJdLCJpbmRlcGVuZGVudFZlcmlmaWNhdGlvbiI6ZmFsc2V9LCJoZWxwIjoxLCJyZXZlYWxlZCI6dHJ1ZX0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ecc9e40043f1ac0c219b-418f75e3faea83333e08",
+          "file": "security06l3.spec.ts",
+          "line": 95,
+          "column": 1
+        },
+        {
+          "title": "L3SECJ03 pausing an unfinished recall exposes restart immediately and retains the interrupted attempt without a score",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1724,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T12:29:53.635Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ecc9e40043f1ac0c219b-9d4a192322e7749f1734",
+          "file": "security06l3.spec.ts",
+          "line": 164,
+          "column": 1
+        },
+        {
+          "title": "L3SECJ04 a rejected result write shows an error without success, then retry commits one assessment",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1764,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-07T12:29:55.370Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "result-retry.json",
+                      "contentType": "application/json",
+                      "body": "eyJlbmdpbmVlcmluZyI6dHJ1ZSwicmVqZWN0ZWRSZXN1bHREaWROb3RTaG93U3VjY2VzcyI6dHJ1ZSwiYXNzZXNzbWVudEV2ZW50cyI6MSwic3RhYmxlUmVsb2FkIjp0cnVlfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ecc9e40043f1ac0c219b-fc96a7f0a3ea5dea0b25",
+          "file": "security06l3.spec.ts",
+          "line": 202,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-07T12:29:50.186Z",
+    "duration": 7380.753,
+    "expected": 4,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

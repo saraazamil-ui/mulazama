@@ -1,8 +1,9 @@
-import { LEARNING_VERSIONS, canonical, DomainError } from '../core/types';
-import type { LearningEvent, EventStore, EventSnapshot } from '../core/types';
+import { canonical, DomainError, learningModeForVersions, learningVersionsFor } from '../core/types';
+import type { LearningEvent, EventStore, EventSnapshot, LearningSchedulingMode } from '../core/types';
 import { assessRecall, advanceUnit, initialUnitState, computeDueDates, planDay, recoveryPlan, instant, recordExposure } from '../core/hme';
 import type { RecallInput, RecallAssessment, UnitState, DueDates, PlanCandidate, ProbeType } from '../core/hme-types';
 import { fsrsAdapter } from '../core/fsrs';
+import { ReferenceFsrsAdapter } from '../core/fsrs-reference';
 import type { FsrsState } from '../core/fsrs';
 import { validateLearningCommand } from './learning-validation';
 import { validateLearningEventEnvelope } from './learning-event-validation';
@@ -52,9 +53,15 @@ function buildRaw(p:LearningProjection,a:ActiveAttempt,c:Extract<LearningCommand
     // but cannot fabricate lexical errors. A link draft belongs to separate continuity evidence.
     suspectedMistakes:related.some(m=>m.type!=='link'),gapVerified:observation.gapVerified&&!a.gapUncertain};
 }
+/** Read the explicitly persisted choice without ever changing the supplied events. */
+export function learningSchedulingMode(snapshot: EventSnapshot): LearningSchedulingMode {
+  const first = snapshot.events.find(event => event.data.scope === 'hme');
+  return first ? learningModeForVersions(first.versions) : 'legacy';
+}
 /** Canonical event replay. Corrections rebuild original-time reviews instead of adding a review today. */
 export function replayLearning(snapshot:EventSnapshot):LearningProjection {
   const p:LearningProjection={userId:null,units:Object.create(null),sessions:Object.create(null),attempts:Object.create(null),assessments:Object.create(null),mistakes:[],plans:[],recoveries:[]};
+  const scheduling = learningSchedulingMode(snapshot), versions = learningVersionsFor(scheduling);
   let previousAt=-Infinity;
   const eventIds=new Map<string,string>(),commandIds=new Map<string,string>();
   for(const e of snapshot.events) {
@@ -64,7 +71,7 @@ export function replayLearning(snapshot:EventSnapshot):LearningProjection {
     if(seen!==undefined){if(seen!==serialized)fail('EVENT_CONFLICT','معرف واقعة متعارض.');continue;}
     if(commandIds.has(e.commandId))fail('EVENT_CONFLICT','عملية تعلم مكررة في وقائع مختلفة.');
     eventIds.set(e.eventId,serialized);commandIds.set(e.commandId,serialized);
-    if(canonical(e.versions)!==canonical(LEARNING_VERSIONS))fail('UNSUPPORTED_VERSION','نسخة أدلة تعلم مختلفة؛ سجل 05-A يحتاج هجرة مراجعة صريحة دون تعديل الخام.');
+    if(canonical(e.versions)!==canonical(versions))fail('UNSUPPORTED_VERSION','لا يجوز مزج نسخ الجدولة داخل سجل تعلم واحد؛ يلزم انتقال معتمد دون تعديل الأصل.');
     try{new Intl.DateTimeFormat('en',{timeZone:e.zoneId});}catch{fail('INVALID_INPUT','منطقة التقاط غير صالحة.');}
     const at=instant(e.occurredAt); if(at<previousAt)fail('CLOCK_UNCERTAIN','تراجع الساعة؛ عُزل السجل دون كتابة.'); previousAt=at;
     if(e.type==='LearnerInitialized') {if(p.userId)fail('EVENT_CONFLICT','ملف تعلم مكرر.');if(e.source!=='product'||e.unitId!==null||e.coverage.length)fail('REFERENCE_MISMATCH','غلاف تهيئة غير متوافق.');validId(e.userId);p.userId=e.userId;continue;}
@@ -145,7 +152,7 @@ export function replayLearning(snapshot:EventSnapshot):LearningProjection {
         p.mistakes.push({attemptId:c.attemptId,type:c.mistakeType,location:c.location,certainty:c.certainty});break;
       }
       case 'PlanRecomputed': {
-        rebuildLearningState(p);
+        rebuildLearningState(p, scheduling);
         const candidates=c.candidates.map(candidate=>{
           const u=p.units[candidate.unitId]??fail('REFERENCE_MISMATCH','مرشح خطة لوحدة غير مسجلة.');
           if(candidate.coverageKeys&&canonical([...candidate.coverageKeys].sort())!==canonical([...u.definition.coverage].sort()))fail('REFERENCE_MISMATCH','تغطية مرشح لا تطابق الوحدة.');
@@ -157,17 +164,18 @@ export function replayLearning(snapshot:EventSnapshot):LearningProjection {
         p.plans.push(planDay({...c,candidates,at:e.occurredAt}));break;
       }
       case 'RecoveryStarted': {
-        rebuildLearningState(p);
+        rebuildLearningState(p, scheduling);
         const units=Object.values(p.units).map(u=>({id:u.definition.id,stratum: ['NeedsReinforcement','Relearning'].includes(u.state.phase)?'recent_weak' as const:u.dates?.policyDueAt&&instant(u.dates.policyDueAt)<=at?'old_due' as const:'unknown' as const,costMinutes:3}));
         p.recoveries.push({...recoveryPlan({...c,units}),costModelVersion:'recovery-fallback-3-minutes-05a',costModelValidated:false,costAssumption:'Three minutes per target is an unvalidated fallback, not measured user time.'});break;
       }
       default: fail('UNSUPPORTED_VERSION','نوع واقعة تعلم غير مدعوم.');
     }
   }
-  rebuildLearningState(p);
+  rebuildLearningState(p, scheduling);
   return p;
 }
-function rebuildLearningState(p:LearningProjection):void {
+function rebuildLearningState(p:LearningProjection, scheduling:LearningSchedulingMode):void {
+  const adapter = scheduling === 'reference-06e1' ? new ReferenceFsrsAdapter() : fsrsAdapter;
   for(const u of Object.values(p.units)){u.state=initialUnitState(u.definition.id,false,u.definition.probeType??'chunk');u.memory=null;u.dates=null;u.schedulerStatus=(u.definition.probeType??'chunk')==='chunk'?'not-reviewed':'profile-not-approved';}
   p.assessments=Object.create(null);
   // Only physically completed, explicitly assessed attempts update memory, at their original occurrence time.
@@ -182,7 +190,7 @@ function rebuildLearningState(p:LearningProjection):void {
     const schedulerKey=[p.userId,u.definition.id,u.definition.editionId,u.definition.probeProfileVersionId];
     const key=canonical([...schedulerKey,raw.testOpportunityId]),clusterKey=canonical([...schedulerKey,raw.evidenceClusterId]);
     if((u.definition.probeType??'chunk')==='chunk'&&assessment.eligible&&assessment.effectiveRating&&!reviewKeys.has(key)&&!clusterKeys.has(clusterKey)) {
-      reviewKeys.add(key);clusterKeys.add(clusterKey);const review=fsrsAdapter.review(u.memory,assessment.effectiveRating,raw.at);u.memory=review.state;u.schedulerStatus='active';
+      reviewKeys.add(key);clusterKeys.add(clusterKey);const review=adapter.review(u.memory,assessment.effectiveRating,raw.at);u.memory=review.state;u.schedulerStatus='active';
       u.dates=computeDueDates({at:raw.at,rawModelDueAt:review.rawDueAt,phase:u.state.phase,independentlyVerified:assessment.independentVerification,failure:assessment.strictPass===false,initialRecallOutstanding:u.state.phase==='EarlyReview'&&u.state.successfulEvidence.length<=2,delayedSuccessCount:u.state.successfulEvidence.filter(x=>x.gapVerified&&(x.gapMs??0)>=86400000).length});
     }
   }
@@ -193,29 +201,54 @@ function rebuildLearningState(p:LearningProjection):void {
 export class LearningApplication {
   private snapshot:EventSnapshot={revision:0,events:[]};
   private projection!:LearningProjection;
+  private scheduling:LearningSchedulingMode='legacy';
   private interruptedAttemptIds=new Set<string>();
   private queue:Promise<unknown>=Promise.resolve();
   private constructor(private store:EventStore,private access:LearningReleaseAccess){requireLearningAccess(access);}
-  static async open(store:EventStore,options:{access?:LearningReleaseAccess;userId?:string}={}):Promise<LearningApplication>{
+  static async open(store:EventStore,options:{access?:LearningReleaseAccess;userId?:string;scheduling?:LearningSchedulingMode}={}):Promise<LearningApplication>{
     const access=options.access??await createRuntimeLearningAccess();requireLearningAccess(access);if(options.userId!==undefined)validId(options.userId);
+    // An explicit choice is accepted only for a new stream, or the exact stored interpreter.
+    if(options.scheduling!==undefined)learningVersionsFor(options.scheduling);
     const app=new LearningApplication(store,access);app.snapshot=await store.load();
+    const existing=app.snapshot.events.some(e=>e.data.scope==='hme');
+    app.scheduling=existing?learningSchedulingMode(app.snapshot):(options.scheduling??'legacy');
+    if(existing&&options.scheduling!==undefined&&options.scheduling!==app.scheduling)
+      fail('SCHEDULER_TRANSITION_REQUIRED','السجل يستخدم نسخة جدولة أخرى؛ لم تنفذ هجرة أو كتابة.');
+    if(app.scheduling==='reference-06e1')await app.authorizeScheduler('open');
     if(app.snapshot.events.length&&!app.snapshot.events.some(e=>e.data.scope==='hme'))fail('UNSUPPORTED_VERSION','لا يجوز إضافة سجل تعلم إلى مخزن من نطاق مختلف.');
     if(!app.snapshot.events.some(e=>e.data.scope==='hme')) {
       const id=crypto.randomUUID(),at=new Date().toISOString();
-      const e:LearningEvent={eventId:id,commandId:id,operationId:id,userId:options.userId??crypto.randomUUID(),unitId:null,type:'LearnerInitialized',occurredAt:at,receivedAt:at,zoneId:'Asia/Riyadh',source:'product',coverage:[],versions:LEARNING_VERSIONS,data:{scope:'hme'}};
+      const e:LearningEvent={eventId:id,commandId:id,operationId:id,userId:options.userId??crypto.randomUUID(),unitId:null,type:'LearnerInitialized',occurredAt:at,receivedAt:at,zoneId:'Asia/Riyadh',source:'product',coverage:[],versions:app.versions,data:{scope:'hme'}};
       app.snapshot=await store.append([e],app.snapshot.revision);
     }
     app.projection=replayLearning(app.snapshot);
     if(options.userId!==undefined&&app.projection.userId!==options.userId)fail('REFERENCE_MISMATCH','هوية التعلم لا تطابق ملف المستخدم؛ يلزم نقل صريح.');
     for(const attempt of Object.values(app.projection.attempts))if(!attempt.endedAt)app.interruptedAttemptIds.add(attempt.id);
-    for(const unit of Object.values(app.projection.units))await app.access.authorize({operation:'open',unit:unit.definition});
+    for(const unit of Object.values(app.projection.units))await app.access.authorize({operation:'open',unit:unit.definition,versions:app.versions});
     return app;
   }
+  /** Last durable plan request, for restart-safe latest-request deduplication only. */
+  get lastPlanEvent():LearningEvent|null {
+    for(let index=this.snapshot.events.length-1;index>=0;index--) {
+      const event=this.snapshot.events[index];
+      if(event.data.scope==='hme'&&event.type==='PlanRecomputed')return clone(event);
+    }
+    return null;
+  }
+  get schedulingMode():LearningSchedulingMode{return this.scheduling;}
+  get versions(){return learningVersionsFor(this.scheduling);}
+  private authorizeScheduler(operation:string){
+    return this.access.authorize({operation:'scheduler:'+operation,versions:this.versions});
+  }
   get state():LearningProjection{return clone(this.projection);}
+  /** Read-only recovery state for the current attempt, including validated restores. */
+  isAttemptInterrupted(attemptId:string):boolean{return this.interruptedAttemptIds.has(attemptId);}
   get revision():number{return this.snapshot.revision;}
   async refresh():Promise<LearningProjection>{
     const s=await this.store.load(),p=replayLearning(s);
-    for(const unit of Object.values(p.units))await this.access.authorize({operation:'refresh',unit:unit.definition});
+    if(learningSchedulingMode(s)!==this.scheduling)fail('SCHEDULER_TRANSITION_REQUIRED','تغيرت نسخة السجل؛ أعد فتحه بعد استعادة معتمدة.');
+    if(this.scheduling==='reference-06e1')await this.authorizeScheduler('refresh');
+    for(const unit of Object.values(p.units))await this.access.authorize({operation:'refresh',unit:unit.definition,versions:this.versions});
     for(const attempt of Object.values(p.attempts))if(!attempt.endedAt&&!this.projection.attempts[attempt.id])this.interruptedAttemptIds.add(attempt.id);
     this.snapshot=s;this.projection=p;return this.state;
   }
@@ -227,12 +260,12 @@ export class LearningApplication {
     const snapshot=await this.store.load(),projection=replayLearning(snapshot);
     this.interruptedAttemptIds.clear();
     for(const attempt of Object.values(projection.attempts))if(!attempt.endedAt)this.interruptedAttemptIds.add(attempt.id);
-    this.snapshot=snapshot;this.projection=projection;return this.state;
+    this.scheduling=learningSchedulingMode(snapshot);this.snapshot=snapshot;this.projection=projection;return this.state;
   }
   send(command:LearningCommand,options:{commandId?:string;at?:string;expectedRevision?:number}={}):Promise<LearningProjection>{
     try{validateLearningCommand(command);command=clone(command);options=clone(options);}catch(error){return Promise.reject(error);}
     const run=async()=>{
-      await this.access.authorize({operation:command.type});
+      await this.access.authorize({operation:command.type,versions:this.versions});
       const commandId=options.commandId??crypto.randomUUID();
       const old=this.snapshot.events.find(e=>e.commandId===commandId);
       if(old){if(canonical(old.data.command)!==canonical(command))fail('EVENT_CONFLICT','عملية مكررة بمحتوى مختلف.');return this.state;}
@@ -245,7 +278,7 @@ export class LearningApplication {
       const at=options.at??new Date().toISOString();instant(at);
       const unitId='unitId' in command?command.unitId:'sessionId' in command?this.projection.sessions[command.sessionId]?.unitId??null:'attemptId' in command&&command.attemptId?this.projection.attempts[command.attemptId]?.unitId??null:null;
       if(unitId&&this.projection.units[unitId])await this.access.authorize({operation:command.type,unit:this.projection.units[unitId].definition});
-      const e:LearningEvent={eventId:crypto.randomUUID(),commandId,operationId:commandId,userId:this.projection.userId!,unitId,type:command.type,occurredAt:at,receivedAt:new Date().toISOString(),zoneId:'Asia/Riyadh',source:command.type.startsWith('Assessment')?'V1':'product',coverage:unitId?this.projection.units[unitId]?.definition.coverage??[]:[],versions:LEARNING_VERSIONS,data:{scope:'hme',command:clone(command)}};
+      const e:LearningEvent={eventId:crypto.randomUUID(),commandId,operationId:commandId,userId:this.projection.userId!,unitId,type:command.type,occurredAt:at,receivedAt:new Date().toISOString(),zoneId:'Asia/Riyadh',source:command.type.startsWith('Assessment')?'V1':'product',coverage:unitId?this.projection.units[unitId]?.definition.coverage??[]:[],versions:this.versions,data:{scope:'hme',command:clone(command)}};
       const candidate={revision:this.snapshot.revision+1,events:[...this.snapshot.events,e]};const projected=replayLearning(candidate);
       const committed=await this.store.append([e],this.snapshot.revision);this.snapshot=committed;this.projection=projected;return this.state;
     };

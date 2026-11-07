@@ -1,0 +1,54 @@
+[2m[WebServer] [22m(node:34345) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 4 tests using 1 worker
+
+(node:34348) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:34348) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 e2e-journey/journeys06l3.spec.ts:64:1 › L3J01 newcomer full isolated journey creates real durable HME events, schedules corrected review and survives reload (2.0s)
+  ✘  2 e2e-journey/journeys06l3.spec.ts:118:1 › L3J02 prior hafiz starts from declaration, records failure, corrects observation without duplicating review and retains goal history (45.1s)
+(node:34442) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:34442) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  3 e2e-journey/journeys06l3.spec.ts:173:1 › L3J03 reload during recall requires restart, disclosure persists, cancelled activity never counts as completed (2.2s)
+  ✓  4 e2e-journey/journeys06l3.spec.ts:216:1 › L3J04 phone keyboard and automated accessibility include daily activity, hidden recall answer and self-assessment (1.9s)
+
+
+  1) e2e-journey/journeys06l3.spec.ts:118:1 › L3J02 prior hafiz starts from declaration, records failure, corrects observation without duplicating review and retains goal history 
+
+    [31mTest timeout of 45000ms exceeded.[39m
+
+    Error: locator.click: Test timeout of 45000ms exceeded.
+    Call log:
+    [2m  - waiting for getByRole('button', { name: 'راجع اختياراتك', exact: true })[22m
+
+
+      44 |  await page.getByRole('button',{name:'تابع إلى النشاط التالي'}).click();
+      45 |  await page.goto('/engineering.html#S02');await page.getByLabel('الوقت اليومي', {exact:false}).first().fill('20');
+    > 46 |  await page.getByRole('button',{name:'راجع اختياراتك',exact:true}).click();
+         |                                                                    ^
+      47 |  await page.getByRole('button',{name:'اعتمد وتابع',exact:true}).click();
+      48 |  const after=await facts(page);for(const original of snapshot.events)expect(after.events.find(e=>e.eventId===original.eventId)).toEqual(original);
+      49 |  await info.attach('prior-evidence.json',{body:JSON.stringify({engineering:true,quranSession:false,declarationNotVerified:true,assessmentEvents:1,corrections:1,historyPreserved:true}),contentType:'application/json'});
+        at /Users/saalzamil/Documents/ChatGPT/مشروع العمر/mulazama-06l3/e2e-journey/journeys06l3.spec.ts:46:68
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results-journey/journeys06l3-L3J02-prior-h-1dff8-ew-and-retains-goal-history/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-journey/journeys06l3-L3J02-prior-h-1dff8-ew-and-retains-goal-history/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-journey/journeys06l3-L3J02-prior-h-1dff8-ew-and-retains-goal-history/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-journey/journeys06l3-L3J02-prior-h-1dff8-ew-and-retains-goal-history/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    e2e-journey/journeys06l3.spec.ts:118:1 › L3J02 prior hafiz starts from declaration, records failure, corrects observation without duplicating review and retains goal history 
+  3 passed (54.1s)
