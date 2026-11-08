@@ -71,6 +71,13 @@ test('L3SECJ04 a rejected result write shows an error without success, then retr
   await page.getByRole('button',{name:'سمّعت المقطع كاملًا بلا خطأ معلوم — جهد عادي',exact:true}).click();await expect(page.getByRole('alert')).toContainText('QA_WRITE_UNCONFIRMED');
   await expect(page.getByRole('heading',{name:'حُفظ تقييمك الذاتي'})).toHaveCount(0);expect((await snapshot(page)).events.filter(e=>e.type==='AssessmentSubmitted')).toHaveLength(0);
   await page.getByRole('button',{name:'سمّعت المقطع كاملًا بلا خطأ معلوم — جهد عادي',exact:true}).click();await expect(page.getByRole('heading',{name:'حُفظ تقييمك الذاتي'})).toBeVisible();
+  // The heading can precede the screen effect's async prepare(); wait for its durable plan before the reload baseline.
+  await expect.poll(async()=>{
+   const saved=await snapshot(page);
+   const assessment=saved.events.findLastIndex(e=>e.type==='AssessmentSubmitted');
+   const plan=saved.events.findLastIndex(e=>e.type==='PlanRecomputed'&&e.data.scope==='hme');
+   return {planFollowsAssessment:assessment>=0&&plan>assessment,command:saved.events[plan]?.data.command};
+  }).toMatchObject({planFollowsAssessment:true,command:{type:'PlanRecomputed',spentMinutes:2}});
   const raw=await snapshot(page);expect(raw.events.filter(e=>e.type==='AssessmentSubmitted')).toHaveLength(1);
   await page.reload();await expect(page.getByRole('heading',{name:'حُفظ تقييمك الذاتي'})).toBeVisible();expect((await snapshot(page)).events).toEqual(raw.events);
   await info.attach('result-retry.json',{body:JSON.stringify({engineering:true,rejectedResultDidNotShowSuccess:true,assessmentEvents:1,stableReload:true}),contentType:'application/json'});

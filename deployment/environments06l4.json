@@ -7,13 +7,13 @@
   "environments": {
     "development": {"origin": "http://127.0.0.1:5173", "loopbackOnly": true},
     "engineering": {"origin": "http://127.0.0.1:4177", "syntheticOnly": true, "deployAllowed": false},
-    "restrictedPreview": {"origin": null, "requiredAccess": "authenticated-owner-and-explicit-trial-allowlist", "protectEveryOriginAndAsset": true, "verified": false},
+    "restrictedPreview": {"origin": "https://mulazama-preview-05a.sara-a-zamil.chatgpt.site", "requiredAccess": "authenticated-owner-and-explicit-trial-allowlist", "protectEveryOriginAndAsset": true, "verified": false},
     "production": {"origin": "https://mulazama.com", "deployApproved": false, "httpsVerified": false}
   },
   "existingPrivateRepository": "https://github.com/saraazamil-ui/mulazama",
   "existingRepositoryContainsThisRelease": true,
-  "existingRestricted05APreviewIsCurrentRelease": false,
-  "hostingProviderSelected": null,
+  "existingRestricted05APreviewIsCurrentRelease": true,
+  "hostingProviderSelected": "Sites (existing owner-only preview)",
   "mail": {
     "displayName": "مُلازَمَة — MULAZAMA",
     "proposedAddresses": ["hello@mulazama.com", "support@mulazama.com", "privacy@mulazama.com"],
