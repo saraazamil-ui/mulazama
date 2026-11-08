@@ -1,8 +1,8 @@
 import {readdir,readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {resolve,relative,sep} from 'node:path';
-const directories=['src','scripts','public','deployment','e2e','e2e-offline','e2e-deployment','e2e-journey','e2e-journey-offline','.github'];
-const configs=['package.json','pnpm-lock.yaml','pnpm-workspace.yaml','vite.config.ts','tsconfig.json','index.html','playwright.config.ts','playwright.offline.config.ts','playwright.deployment.config.ts','playwright.journey.config.ts','playwright.journey-offline.config.ts','vite.engineering.config.ts','engineering.html'];
+const directories=['src','scripts','public','deployment','e2e','e2e-offline','e2e-deployment','e2e-journey','e2e-journey-offline','e2e-mushaf','.github'];
+const configs=['package.json','pnpm-lock.yaml','pnpm-workspace.yaml','vite.config.ts','tsconfig.json','index.html','playwright.config.ts','playwright.offline.config.ts','playwright.deployment.config.ts','playwright.journey.config.ts','playwright.journey-offline.config.ts','playwright.mushaf.config.ts','vite.engineering.config.ts','engineering.html'];
 const excluded=new Set(['src/release/build-context.generated.ts','src/release/release-input.json']);
 /** Signed envelopes are excluded to avoid a signature -> digest -> signature cycle.
  * Their content/catalog/report hashes are independently bound by the release policy. */

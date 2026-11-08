@@ -18,6 +18,8 @@ export class LearningJourney {
   private pending=new Map<string,string>();
   private pausedAttemptId:string|null=null;
   private entries:readonly JourneyUnit[];
+  private targetUnitIds:string[]|null=null;
+  private targetProfileId:string|null=null;
   private constructor(readonly app:CompositeApplication,private material:JourneyMaterial,private access:LearningReleaseAccess,private clock:()=>Date){this.entries=material.units;}
   static async open(store:EventStore,material:JourneyMaterial,access:LearningReleaseAccess,options:{scheduling?:LearningSchedulingMode;clock?:()=>Date}={}){
     requireJourneyMaterial(material);requireLearningAccess(access);
@@ -31,6 +33,18 @@ export class LearningJourney {
     return new LearningJourney(app,material,access,options.clock??(()=>new Date()));
   }
   get kind(){return this.material.kind;}
+  /** Detached catalogue metadata; reader preferences never install content or units. */
+  get catalogUnits():readonly JourneyUnit[]{return structuredClone(this.entries);}
+  get memorizationTarget():readonly string[]|null{return this.targetProfileId===this.app.product.state.profileId?this.targetUnitIds?.slice()??null:null;}
+  /** Selection expresses intent only. Registration, planning and assessment keep their existing authorized commands. */
+  setMemorizationTarget(unitIds:readonly string[]|null){
+    if(unitIds===null){this.targetUnitIds=null;this.targetProfileId=null;return;}
+    if(!Array.isArray(unitIds)||!unitIds.length||new Set(unitIds).size!==unitIds.length||unitIds.some(id=>typeof id!=='string'||!this.entries.some(entry=>entry.unit.id===id)))throw new DomainError('REFERENCE_MISMATCH','المقدار لا يطابق وحدات الحزمة المعتمدة.');
+    const selected=new Set(unitIds),entries=this.entries.filter(entry=>selected.has(entry.unit.id));
+    if(new Set(entries.map(entry=>entry.unit.editionId)).size!==1)throw new DomainError('REFERENCE_MISMATCH','لا يمكن جمع طبعات مختلفة في مقدار واحد.');
+    this.targetUnitIds=entries.map(entry=>entry.unit.id);
+    this.targetProfileId=this.app.product.state.profileId;
+  }
   get state(){return this.app.learning.state;}
   get needsRestart(){const id=this.active?.attemptId;return !!id&&(id===this.pausedAttemptId||this.app.learning.isAttemptInterrupted(id));}
   get active(){return Object.values(this.state.sessions).find(s=>s.phase!=='ended')??null;}
@@ -49,14 +63,21 @@ export class LearningJourney {
   async prepare(){return this.serialize(async()=>{
     await this.check();await this.app.refresh();const product=this.app.product.state;
     if(!product.config.configured)return this.view();
-    const prior=this.eligible();
+    const prior=this.eligible(),target=this.memorizationTarget,targetIds=target?new Set(target):null;
     // Resolve declarations without eagerly appending thousands of units or replays.
     // Only today's bounded candidates are registered; declaration and full history remain intact.
     let candidateBudget=this.budget(currentRiyadhDate(this.clock()));
     for(const entry of prior)if(this.state.units[entry.unit.id]&&!this.state.units[entry.unit.id].memory)candidateBudget-=entry.costMinutes;
     for(const entry of prior)if(!this.state.units[entry.unit.id]&&entry.costMinutes<=candidateBudget){await this.register(entry);candidateBudget-=entry.costMinutes;}
     // Preserve all registered history when the declared range or goal changes.
-    if(product.config.goal==='memorize'){
+    if(targetIds){
+      // Explicit reader intent does not rewrite a review-only goal or declare prior memorization.
+      // Register a bounded set; the existing planner still protects due/repair work and applies capacity.
+      let targetBudget=this.budget(currentRiyadhDate(this.clock()));
+      const targets=this.entries.filter(entry=>targetIds.has(entry.unit.id));
+      for(const entry of targets)if(this.state.units[entry.unit.id]&&!this.state.units[entry.unit.id].memory)targetBudget-=entry.costMinutes;
+      for(const entry of targets)if(!this.state.units[entry.unit.id]&&entry.costMinutes<=targetBudget){await this.register(entry);targetBudget-=entry.costMinutes;}
+    }else if(product.config.goal==='memorize'){
       const next=this.entries.find(entry=>entry.positions[0].surah>=product.config.startSurah&&!prior.some(p=>p.unit.id===entry.unit.id)&&!['EarlyReview','Consolidating','Maintenance'].includes(this.state.units[entry.unit.id]?.state.phase??'NotStarted'));
       if(next)await this.register(next);
     }
@@ -64,7 +85,7 @@ export class LearningJourney {
     const candidates:PlanCandidate[]=Object.values(p.units).flatMap(u=>{
       const entry=this.unit(u.definition.id),due=!!u.dates?.policyDueAt&&Date.parse(u.dates.policyDueAt)<=Date.parse(now),weak=['NeedsReinforcement','Relearning'].includes(u.state.phase);
       if(u.memory&&!due&&!weak)return [];
-      if(!u.memory&&!priorIds.has(u.definition.id)&&(product.config.goal!=='memorize'||entry.positions[0].surah<product.config.startSurah))return [];
+      if(!u.memory&&!priorIds.has(u.definition.id)&&(targetIds?!targetIds.has(u.definition.id):product.config.goal!=='memorize'||entry.positions[0].surah<product.config.startSurah))return [];
       const kind=weak?'repair':due?'review':priorIds.has(u.definition.id)?'diagnostic':'new';
       return [{id:`day:${day}:${u.definition.id}:${due?u.dates!.policyDueAt:'initial'}`,unitId:u.definition.id,kind,costMinutes:entry.costMinutes,priority:weak?100:due?90:kind==='diagnostic'?70:50,protected:due||weak,coverageKeys:u.definition.coverage,title:entry.title,reasonCode:'COST_ESTIMATE:'+this.material.policy.version,...(u.dates?{rawModelDueAt:u.dates.rawModelDueAt,policyDueAt:u.dates.policyDueAt,originalDueAt:u.dates.originalDueAt}:{})}];
     });

@@ -1,0 +1,269 @@
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { act, cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+// Vitest runs this test-only polyfill in Node; browser application types intentionally exclude Node globals.
+// @ts-ignore Node runtime module is available to Vitest without adding a browser dependency.
+import { webcrypto } from 'node:crypto';
+import { MushafReader10b, readerBookmarkKey } from './MushafReader10b';
+import { createEngineeringMushafFixture } from './testing/mushaf-fixture10b';
+import { createEngineeringMushaf, type MushafManifest, type VerifiedMushaf } from './mushaf/model';
+
+let createUrl: ReturnType<typeof vi.fn>, revokeUrl: ReturnType<typeof vi.fn>;
+beforeEach(() => {
+  localStorage.clear();
+  vi.stubGlobal('crypto', webcrypto);
+  let sequence = 0;
+  createUrl = vi.fn(() => `blob:verified-reader-${++sequence}`);
+  revokeUrl = vi.fn();
+  Object.defineProperty(URL, 'createObjectURL', { configurable: true, writable: true, value: createUrl });
+  Object.defineProperty(URL, 'revokeObjectURL', { configurable: true, writable: true, value: revokeUrl });
+});
+afterEach(() => { cleanup(); vi.unstubAllGlobals(); vi.restoreAllMocks(); });
+const defaults = () => ({ databaseName: 'test-reader-profile', onToday: vi.fn() });
+const visiblePage = (page: number) => screen.findByRole('img', { name: `صفحة اختبار صناعية ${page.toLocaleString('ar-SA')}` });
+
+describe('10-B verified-page reader UI (synthetic non-Quran images)', () => {
+  it('MUI01 missing content shows no fabricated image, navigation or session controls', async () => {
+    const props = defaults(); render(<MushafReader10b {...props} mushaf={null} />);
+    expect(screen.getByRole('heading', { name: 'النص المعتمد ينتظر الإضافة' })).toBeVisible();
+    expect(screen.queryByRole('img')).not.toBeInTheDocument();
+    expect(screen.queryByRole('combobox')).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'ابدأ نشاط خطة اليوم' })).not.toBeInTheDocument();
+    await userEvent.setup().click(screen.getByRole('button', { name: 'العودة إلى خطة اليوم' }));
+    expect(props.onToday).toHaveBeenCalledOnce();
+  });
+
+  it('MUI02 an unbranded object cannot expose supplied page or source values', () => {
+    render(<MushafReader10b {...defaults()} mushaf={{ editionId: 'forged', source: { attribution: 'unverified-source' } } as VerifiedMushaf} />);
+    expect(screen.getByRole('heading', { name: 'النص المعتمد ينتظر الإضافة' })).toBeVisible();
+    expect(screen.queryByText('unverified-source')).not.toBeInTheDocument();
+    expect(createUrl).not.toHaveBeenCalled();
+  });
+
+  it('MUI03 navigates verified pages, parts, numeric jump and boundaries without selecting a learning target', async () => {
+    const mushaf = await createEngineeringMushafFixture(), select = vi.fn(), user = userEvent.setup();
+    render(<MushafReader10b {...defaults()} mushaf={mushaf} onSelectRange={select} />);
+    expect(screen.getByRole('region', { name: 'قارئ المصحف' })).toHaveAttribute('dir', 'rtl');
+    await visiblePage(1);
+    expect(screen.getByRole('button', { name: 'الصفحة السابقة' })).toBeDisabled();
+    await user.click(screen.getByRole('button', { name: 'الصفحة التالية' })); await visiblePage(2);
+    await user.selectOptions(screen.getByRole('combobox', { name: 'الجزء' }), '2'); await visiblePage(3);
+    expect(screen.getByRole('button', { name: 'الصفحة التالية' })).toBeDisabled();
+    fireEvent.change(screen.getByLabelText('رقم الصفحة'), { target: { value: '1' } });
+    await user.click(screen.getByRole('button', { name: 'انتقل' })); await visiblePage(1);
+    expect(select).not.toHaveBeenCalled();
+    expect(revokeUrl).toHaveBeenCalled();
+  });
+
+  it('MUI04 supports keyboard and rightward forward swipes while preserving vertical scroll gestures', async () => {
+    render(<MushafReader10b {...defaults()} mushaf={await createEngineeringMushafFixture()} />);
+    await visiblePage(1);
+    const stage = screen.getByRole('group', { name: 'صفحات المصحف' });
+    fireEvent.keyDown(stage, { key: 'ArrowRight' }); await visiblePage(2);
+    fireEvent.keyDown(stage, { key: 'ArrowLeft' }); await visiblePage(1);
+    fireEvent.touchStart(stage, { touches: [{ clientX: 30, clientY: 80 }] });
+    fireEvent.touchEnd(stage, { changedTouches: [{ clientX: 150, clientY: 90 }] }); await visiblePage(2);
+    fireEvent.touchStart(stage, { touches: [{ clientX: 150, clientY: 80 }] });
+    fireEvent.touchEnd(stage, { changedTouches: [{ clientX: 30, clientY: 90 }] }); await visiblePage(1);
+    fireEvent.touchStart(stage, { touches: [{ clientX: 30, clientY: 80 }] });
+    fireEvent.touchEnd(stage, { changedTouches: [{ clientX: 150, clientY: 240 }] });
+    expect(screen.getByRole('img')).toHaveAttribute('alt', 'صفحة اختبار صناعية ١');
+  });
+
+  it('MUI05 restores a confirmed page only for the same profile and edition/layout', async () => {
+    const mushaf = await createEngineeringMushafFixture(), props = defaults();
+    const view = render(<MushafReader10b {...props} mushaf={mushaf} requestedPage={2} />);
+    fireEvent.load(await visiblePage(2));
+    const key = readerBookmarkKey(props.databaseName, mushaf);
+    expect(JSON.parse(localStorage.getItem(key)!)).toMatchObject({ page: 2, editionId: mushaf.editionId, layoutId: mushaf.layoutId });
+    view.unmount();
+    const restored = render(<MushafReader10b {...props} mushaf={mushaf} />); await visiblePage(2);
+    restored.unmount();
+    render(<MushafReader10b {...props} databaseName="different-profile" mushaf={mushaf} />); await visiblePage(1);
+  });
+
+  it('MUI06 ignores corrupt and out-of-bounds bookmarks, and reports denied storage without blocking reading', async () => {
+    const mushaf = await createEngineeringMushafFixture(), props = defaults(), key = readerBookmarkKey(props.databaseName, mushaf);
+    localStorage.setItem(key, '{not-json');
+    const view = render(<MushafReader10b {...props} mushaf={mushaf} />); await visiblePage(1); view.unmount();
+    localStorage.setItem(key, JSON.stringify({ version: 1, editionId: mushaf.editionId, layoutId: mushaf.layoutId, page: 999 }));
+    const second = render(<MushafReader10b {...props} mushaf={mushaf} />); await visiblePage(1);
+    vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => { throw new DOMException('denied', 'SecurityError'); });
+    fireEvent.load(screen.getByRole('img'));
+    expect(screen.getByRole('alert')).toHaveTextContent('تعذر حفظ آخر موضع');
+    expect(screen.getByRole('img')).toBeVisible(); second.unmount();
+  });
+
+  it('MUI07 selection and start require separate explicit actions and surface rejected writes truthfully', async () => {
+    const mushaf = await createEngineeringMushafFixture(), select = vi.fn(), start = vi.fn(), user = userEvent.setup();
+    render(<MushafReader10b {...defaults()} mushaf={mushaf} onSelectRange={select} onStart={start} />);
+    await visiblePage(1);
+    fireEvent.change(screen.getByLabelText('من آية'), { target: { value: '2' } });
+    fireEvent.change(screen.getByLabelText('إلى آية'), { target: { value: '3' } });
+    await user.click(screen.getByRole('button', { name: 'أضف إلى خطتي' }));
+    expect(select).toHaveBeenCalledExactlyOnceWith({ surah: 1, fromAyah: 2, toAyah: 3 });
+    expect(start).not.toHaveBeenCalled();
+    expect(screen.getByText(/الاختيار وحده لا يُسجّل إنجازًا/)).toBeVisible();
+    await user.click(screen.getByRole('button', { name: 'ابدأ نشاط خطة اليوم' })); expect(start).toHaveBeenCalledOnce();
+    select.mockRejectedValueOnce(new Error('تعذر تأكيد حفظ المقدار'));
+    await user.click(screen.getByRole('button', { name: 'أضف إلى خطتي' }));
+    expect(screen.getByRole('alert')).toHaveTextContent('تعذر تأكيد حفظ المقدار');
+    expect(screen.queryByText(/أُضيف المقدار إلى خطتك/)).not.toBeInTheDocument();
+  });
+
+  it('MUI08 invalid reversed ranges and page numbers do not invoke callbacks or change pages', async () => {
+    const select = vi.fn(); render(<MushafReader10b {...defaults()} mushaf={await createEngineeringMushafFixture()} onSelectRange={select} />);
+    await visiblePage(1);
+    const from = screen.getByLabelText('من آية'), to = screen.getByLabelText('إلى آية');
+    fireEvent.change(from, { target: { value: '3' } }); fireEvent.change(to, { target: { value: '1' } });
+    fireEvent.submit(from.closest('form')!);
+    expect(screen.getByRole('alert')).toHaveTextContent('اختر بداية ونهاية صحيحتين'); expect(select).not.toHaveBeenCalled();
+    const jump = screen.getByLabelText('رقم الصفحة'); fireEvent.change(jump, { target: { value: '99' } }); fireEvent.submit(jump.closest('form')!);
+    expect(screen.getByRole('alert')).toHaveTextContent('رقم الصفحة غير موجود');
+    expect(screen.getByRole('img')).toHaveAttribute('alt', 'صفحة اختبار صناعية ١');
+  });
+
+  it('MUI09 entering recall unmounts pages, revokes image URL and requires confirmed help before any page can reappear', async () => {
+    const mushaf = await createEngineeringMushafFixture(), props = defaults(), reveal = vi.fn().mockRejectedValue(new Error('لم تُحفظ المساعدة'));
+    const view = render(<MushafReader10b {...props} mushaf={mushaf} />); await visiblePage(1);
+    const url = screen.getByRole('img').getAttribute('src');
+    view.rerender(<MushafReader10b {...props} mushaf={mushaf} readingBlocked onReveal={reveal} />);
+    expect(screen.queryByRole('img')).not.toBeInTheDocument(); expect(screen.queryByRole('combobox')).not.toBeInTheDocument();
+    expect(revokeUrl).toHaveBeenCalledWith(url); expect(reveal).not.toHaveBeenCalled();
+    await userEvent.setup().click(screen.getByRole('button', { name: 'أظهر المصحف وسجّل المساعدة' }));
+    expect(reveal).toHaveBeenCalledOnce(); expect(screen.getByRole('alert')).toHaveTextContent('لم تُحفظ المساعدة');
+    expect(screen.queryByRole('img')).not.toBeInTheDocument();
+  });
+
+  it('MUI10 interrupted recall cannot invoke reveal, and requested-page changes never retain the old image', async () => {
+    const mushaf = await createEngineeringMushafFixture(), reveal = vi.fn(), resume = vi.fn(), props = defaults();
+    const view = render(<MushafReader10b {...props} mushaf={mushaf} readingBlocked revealUnavailable onReveal={reveal} onResume={resume} />);
+    expect(screen.queryByRole('button', { name: 'أظهر المصحف وسجّل المساعدة' })).not.toBeInTheDocument();
+    await userEvent.setup().click(screen.getByRole('button', { name: 'العودة إلى الجلسة' })); expect(resume).toHaveBeenCalledOnce(); expect(reveal).not.toHaveBeenCalled();
+    view.rerender(<MushafReader10b {...props} mushaf={mushaf} requestedPage={1} />); await visiblePage(1);
+    view.rerender(<MushafReader10b {...props} mushaf={mushaf} requestedPage={3} />); await visiblePage(3);
+    expect(screen.queryByRole('img', { name: 'صفحة اختبار صناعية ١' })).not.toBeInTheDocument();
+  });
+
+  it('MUI11 a failed page never renders, stops navigation, and supports an explicit retry', async () => {
+    const original = await createEngineeringMushafFixture();
+    const manifest: MushafManifest = { schemaVersion: 1, editionId: original.editionId, layoutId: original.layoutId, version: original.version,
+      contentManifestHash: original.contentManifestHash, source: original.source, sourceFiles: [], surahs: [...original.surahs], pages: [...original.pages], verses: [...original.verses] };
+    const missing = createEngineeringMushaf(manifest, new Map(), original.juzStarts);
+    render(<MushafReader10b {...defaults()} mushaf={missing} />);
+    await waitFor(() => expect(screen.getByRole('alert')).toHaveTextContent('تعذر التحقق من صفحة المصحف'));
+    expect(screen.queryByRole('img')).not.toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'الصفحة التالية' })).toBeDisabled();
+    await userEvent.setup().click(screen.getByRole('button', { name: 'أعد تحميل الصفحة' }));
+    await waitFor(() => expect(screen.getByRole('alert')).toHaveTextContent('تعذر التحقق من صفحة المصحف'));
+    expect(createUrl).not.toHaveBeenCalled();
+  });
+
+  it('MUI12 preserves an explicitly chosen juz that begins inside a verse and shared page', async () => {
+    const mushaf = await createEngineeringMushafFixture({ mixedJuzBoundary: true }), user = userEvent.setup();
+    expect(mushaf.pages[1].juz).toBe(1); expect(mushaf.verses[1].juz).toBe(1);
+    render(<MushafReader10b {...defaults()} mushaf={mushaf} onSelectRange={vi.fn()} />);
+    await visiblePage(1);
+    await user.selectOptions(screen.getByRole('combobox', { name: 'الجزء' }), '2');
+    await visiblePage(2);
+    expect(screen.getByRole('combobox', { name: 'الجزء' })).toHaveValue('2');
+    expect(screen.getByLabelText('من آية')).toHaveValue(2);
+    await user.click(screen.getByRole('button', { name: 'الصفحة التالية' })); await visiblePage(3);
+    await user.click(screen.getByRole('button', { name: 'الصفحة السابقة' })); await visiblePage(2);
+    expect(screen.getByRole('combobox', { name: 'الجزء' })).toHaveValue('1');
+    // Selecting the second part on that same page must also retain its exact boundary.
+    await user.selectOptions(screen.getByRole('combobox', { name: 'الجزء' }), '2');
+    expect(screen.getByRole('combobox', { name: 'الجزء' })).toHaveValue('2');
+    expect(screen.getByLabelText('من آية')).toHaveValue(2);
+  });
+
+  it('MUI13 keeps a selected surah when its first page also contains the preceding surah', async () => {
+    const original = await createEngineeringMushafFixture();
+    const images = new Map<number, Uint8Array<ArrayBuffer>>();
+    for (const page of original.pages) {
+      const blob = await original.pageImage(page.number);
+      const bytes = await new Promise<ArrayBuffer>((resolve, reject) => {
+        const reader = new FileReader(); reader.onload = () => resolve(reader.result as ArrayBuffer); reader.onerror = () => reject(reader.error); reader.readAsArrayBuffer(blob);
+      });
+      images.set(page.number, new Uint8Array(bytes));
+    }
+    const manifest: MushafManifest = { schemaVersion: 1, editionId: original.editionId, layoutId: original.layoutId, version: 'mixed-surah-test',
+      contentManifestHash: original.contentManifestHash, source: original.source, sourceFiles: [], pages: [...original.pages],
+      surahs: [{ number: 1, name: 'السورة الصناعية الأولى', ayahCount: 2, startPage: 1 }, { number: 2, name: 'السورة الصناعية الثانية', ayahCount: 2, startPage: 2 }],
+      verses: [original.verses[0], original.verses[1],
+        { ...original.verses[1], surah: 2, ayah: 1, juz: 2, tokenKeys: Array.from({ length: 8 }, (_, i) => `test-shared-page-${i}`) },
+        { ...original.verses[2], surah: 2, ayah: 2 }],
+    };
+    const mushaf = createEngineeringMushaf(manifest, images, [{ number: 1, page: 1, surah: 1, ayah: 1 }, { number: 2, page: 2, surah: 2, ayah: 1 }]);
+    const select = vi.fn(), user = userEvent.setup();
+    render(<MushafReader10b {...defaults()} mushaf={mushaf} onSelectRange={select} />);
+    await visiblePage(1);
+    await user.selectOptions(screen.getByRole('combobox', { name: 'السورة' }), '2'); await visiblePage(2);
+    expect(screen.getByRole('combobox', { name: 'السورة' })).toHaveValue('2');
+    expect(screen.getByLabelText('من آية')).toHaveValue(1); expect(screen.getByLabelText('إلى آية')).toHaveValue(1);
+    await user.click(screen.getByRole('button', { name: 'أضف إلى خطتي' }));
+    expect(select).toHaveBeenCalledExactlyOnceWith({ surah: 2, fromAyah: 1, toAyah: 1 });
+    // A page jump clears the surah anchor; selecting it again on the same page restores it.
+    fireEvent.change(screen.getByLabelText('رقم الصفحة'), { target: { value: '2' } });
+    await user.click(screen.getByRole('button', { name: 'انتقل' }));
+    expect(screen.getByRole('combobox', { name: 'السورة' })).toHaveValue('1');
+    await user.selectOptions(screen.getByRole('combobox', { name: 'السورة' }), '2');
+    expect(screen.getByRole('combobox', { name: 'السورة' })).toHaveValue('2');
+    expect(screen.getByLabelText('من آية')).toHaveValue(1);
+  });
+
+  it('MUI14 refuses image publication while the latest session check is pending or invalidated', async () => {
+    const mushaf = await createEngineeringMushafFixture(), props = defaults();
+    let finishCheck!: () => void;
+    const pending = new Promise<void>(resolve => { finishCheck = resolve; });
+    const beforeRead = vi.fn().mockResolvedValueOnce(undefined).mockImplementation(() => pending);
+    const view = render(<MushafReader10b {...props} mushaf={mushaf} beforeRead={beforeRead} />);
+    await waitFor(() => expect(beforeRead).toHaveBeenCalledTimes(2));
+    expect(screen.queryByRole('img')).not.toBeInTheDocument(); expect(createUrl).not.toHaveBeenCalled();
+    view.rerender(<MushafReader10b {...props} mushaf={mushaf} beforeRead={beforeRead} checkingSession />);
+    expect(screen.getByRole('status')).toHaveTextContent('جارٍ التحقق من الجلسة المحفوظة');
+    await act(async () => { finishCheck(); await pending; });
+    expect(screen.queryByRole('img')).not.toBeInTheDocument(); expect(createUrl).not.toHaveBeenCalled();
+    beforeRead.mockResolvedValue(undefined);
+    view.rerender(<MushafReader10b {...props} mushaf={mushaf} beforeRead={beforeRead} />); await visiblePage(1);
+    const url = screen.getByRole('img').getAttribute('src');
+    view.rerender(<MushafReader10b {...props} mushaf={mushaf} beforeRead={beforeRead} checkingSession />);
+    expect(screen.queryByRole('img')).not.toBeInTheDocument(); expect(revokeUrl).toHaveBeenCalledWith(url);
+  });
+
+  it('MUI15 session read failures keep pages hidden but can be retried, and restore errors remain visible', async () => {
+    const beforeRead = vi.fn().mockRejectedValue(new Error('storage not confirmed'));
+    render(<MushafReader10b {...defaults()} mushaf={await createEngineeringMushafFixture()} beforeRead={beforeRead} unavailableReason="تعذر استعادة مقدار الحفظ" />);
+    await waitFor(() => expect(screen.getAllByRole('alert').some(alert => alert.textContent?.includes('تعذر تأكيد حالة الجلسة'))).toBe(true));
+    expect(screen.getByText('تعذر استعادة مقدار الحفظ')).toBeVisible();
+    expect(screen.queryByRole('img')).not.toBeInTheDocument(); expect(createUrl).not.toHaveBeenCalled();
+    beforeRead.mockResolvedValue(undefined);
+    await userEvent.setup().click(screen.getByRole('button', { name: 'أعد تحميل الصفحة' })); await visiblePage(1);
+  });
+
+  it('MUI16 a failed session check shows its error and a safe exit instead of an endless spinner', async () => {
+    const props = defaults();
+    render(<MushafReader10b {...props} mushaf={await createEngineeringMushafFixture()} checkingSession unavailableReason="تعذر تأكيد حالة الجلسة" />);
+    expect(screen.getByRole('alert')).toHaveTextContent('تعذر تأكيد حالة الجلسة');
+    expect(screen.queryByRole('status')).not.toBeInTheDocument(); expect(screen.queryByRole('img')).not.toBeInTheDocument();
+    await userEvent.setup().click(screen.getByRole('button', { name: 'العودة إلى خطة اليوم' }));
+    expect(props.onToday).toHaveBeenCalledOnce();
+  });
+
+  it('MUI17 acknowledges a displayed request so later guard remounts restore the latest page', async () => {
+    const mushaf = await createEngineeringMushafFixture(), props = defaults(), shown = vi.fn(), user = userEvent.setup();
+    const view = render(<MushafReader10b {...props} mushaf={mushaf} requestedPage={2} onPageShown={shown} />);
+    const requested = await visiblePage(2);
+    expect(shown).not.toHaveBeenCalled();
+    fireEvent.load(requested); expect(shown).toHaveBeenCalledExactlyOnceWith(2);
+    // The app consumes the acknowledged request; ordinary reading now owns its location.
+    view.rerender(<MushafReader10b {...props} mushaf={mushaf} onPageShown={shown} />);
+    await user.click(screen.getByRole('button', { name: 'الصفحة التالية' })); fireEvent.load(await visiblePage(3));
+    expect(shown).toHaveBeenLastCalledWith(3);
+    view.rerender(<MushafReader10b {...props} mushaf={mushaf} onPageShown={shown} checkingSession />);
+    expect(screen.queryByRole('img')).not.toBeInTheDocument();
+    view.rerender(<MushafReader10b {...props} mushaf={mushaf} onPageShown={shown} />);
+    await visiblePage(3);
+    expect(screen.queryByRole('img', { name: 'صفحة اختبار صناعية ٢' })).not.toBeInTheDocument();
+  });
+});

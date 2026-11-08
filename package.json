@@ -25,7 +25,9 @@
     "engineering:local": "node scripts/build-engineering06l3.mjs --serve",
     "test:journey": "playwright test --config playwright.journey.config.ts",
     "test:journey-offline": "playwright test --config playwright.journey-offline.config.ts",
-    "verify:l4": "python3 scripts/verify-06l4.py"
+    "verify:l4": "python3 scripts/verify-06l4.py",
+    "test:mushaf": "playwright test --config playwright.mushaf.config.ts",
+    "content:inspect-archive": "python3 scripts/inspect-official-archive10b.py"
   },
   "dependencies": {
     "lucide-react": "0.468.0",

@@ -12,7 +12,7 @@ const choices:{id:QuickObservation;label:string}[]=[
  {id:'unknown',label:'لا أستطيع تحديد النتيجة'},
 ];
 const date=(s:string)=>new Intl.DateTimeFormat('ar-SA',{dateStyle:'medium',timeZone:'Asia/Riyadh',calendar:'gregory'}).format(new Date(s));
-export function JourneyScreen({journey,screen,go,onCommitted}:{journey:LearningJourney;screen:Screen;go:(screen:Screen)=>void;onCommitted:()=>void}){
+export function JourneyScreen({journey,screen,go,onCommitted,onOpenMushaf}:{journey:LearningJourney;screen:Screen;go:(screen:Screen)=>void;onCommitted:()=>void;onOpenMushaf?:(unitId:string)=>void}){
  const [view,setView]=useState(()=>journey.view()),[error,setError]=useState(''),[busy,setBusy]=useState(false),[status,setStatus]=useState(''),[passages,setPassages]=useState<string[]>([]),[correcting,setCorrecting]=useState(false);
  const lock=useRef(false);const mounted=useRef(true);const state=journey.state,session=journey.active,attempt=session?.attemptId?state.attempts[session.attemptId]:null;
  const load=useCallback(async()=>{const next=await journey.prepare();if(mounted.current)setView(next);},[journey]);
@@ -45,6 +45,7 @@ export function JourneyScreen({journey,screen,go,onCommitted}:{journey:LearningJ
   <p role="status" aria-live="polite">{status}</p>
   {home&&<Card className="next-card"><h2>خطوتك التالية</h2>
    {session?<><p>جلستك محفوظة. نكمل من آخر خطوة مؤكدة.</p><Button disabled={busy} onClick={()=>go('S10')}>استأنف جلستك</Button></>:view.next?<><h3>{journey.unit(view.next.unitId).title}</h3><p>{view.next.kind==='new'?'حفظ جديد':view.next.kind==='diagnostic'?'تسميع أول لمحفوظك المعلن':view.next.kind==='repair'?'تعاهد بعد تعثر سجلته':'مراجعة مستحقة'}</p><Button disabled={busy} onClick={()=>run(()=>journey.start(),'S07')}>ابدأ وردك</Button></>:<><p>{view.completed?'أنجزت نشاط اليوم. موعد التعاهد التالي محفوظ.':view.budget===0?'لا وقت مخصص لليوم؛ عدّل وقتك إن رغبت.':'لا نشاط متاح ضمن الخطة الحالية.'}</p><Button variant="secondary" onClick={()=>go('S02')}>عدّل هدفك ووقتك</Button></>}
+   {onOpenMushaf&&(session||view.next)&&<Button variant="secondary" disabled={busy} onClick={()=>onOpenMushaf((session??view.next)!.unitId)}>افتح مقدار اليوم في المصحف</Button>}
    <p>أنشطة أُنجزت اليوم: {view.completed} · المتبقي: {view.remaining} · المؤجل: {view.deferred}</p>
    <p>الوقت المتاح: {view.budget} دقيقة. تقدير زمن النشاط يخضع لسياسة الخطة؛ لا نطلب منك إدخاله.</p>
   </Card>}
@@ -52,6 +53,7 @@ export function JourneyScreen({journey,screen,go,onCommitted}:{journey:LearningJ
   {!home&&!progress&&<Card>
    {!session?<><p>لا توجد جلسة مفتوحة.</p><Button onClick={()=>go('S05')}>إلى ورد اليوم</Button></>:<>
     <h2>{journey.unit(session.unitId).title}</h2>
+    {onOpenMushaf&&<Button variant="secondary" disabled={busy} onClick={()=>onOpenMushaf(session.unitId)}>افتح موضع الجلسة في المصحف</Button>}
     {showText&&<div className="quran-session-text" aria-label={journey.kind==='engineering'?'مادة الاختبار الصناعي':'النص القرآني المعتمد'}>{passages.map((text,i)=><p key={i}>{text}</p>)}</div>}
     {session.phase==='training'&&<><p>التكرارات التي أكّدتها: {session.repetitions}</p><div className="actions"><Button disabled={busy} variant="secondary" onClick={()=>run(()=>journey.action({type:'repeat',sessionId:session.id,mode:'reading'}))}>أنهيت تكرارًا</Button><Button disabled={busy} onClick={()=>run(()=>journey.action({type:'recall',sessionId:session.id,attemptId:crypto.randomUUID()}),'S08')}>ابدأ التسميع الذاتي</Button></div></>}
     {(session.phase==='recall'||session.phase==='paused'&&session.previousPhase==='recall')&&journey.needsRestart&&<><Notice>انقطع التسميع. نحتفظ بما سبق، وتحتاج إلى محاولة جديدة كي لا نفترض أنك أكملته.</Notice><Button disabled={busy} onClick={()=>run(()=>journey.action({type:'restart',sessionId:session.id,attemptId:crypto.randomUUID()}),'S08')}>ابدأ محاولة جديدة بعد الانقطاع</Button></>}

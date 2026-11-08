@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback, createContext, useContext } from "react";
+import { useState, useEffect, useLayoutEffect, useRef, useCallback, createContext, useContext } from "react";
 import type { ReactNode } from "react";
 import {
   BookOpen,
@@ -55,6 +55,11 @@ import { currentRiyadhDate, effectiveBudget } from "./domain/state";
 import type { Action } from "./domain/state";
 import { ApplicationService } from "./application/service";
 import { JourneyScreen } from "./JourneyScreen06l3";
+import { MushafReader10b } from "./MushafReader10b";
+import type { VerifiedMushaf } from "./mushaf/model";
+import type { MushafStudyController } from "./application/mushaf-study10b";
+import { openMushafStudy } from "./application/mushaf-runtime10b";
+import { useMushafGuard } from "./application/use-mushaf-guard10b";
 import type { LearningJourney } from "./application/journey06l3";
 import { LearningEngineScreen } from "./LearningEngineScreen";
 import { Onboarding } from "./Onboarding";
@@ -136,10 +141,18 @@ export default function App({
   learning,
   journey,
   data,
+  mushaf = null,
+  study,
+  readerDatabaseName = "mulazama-reader-unavailable",
+  readerError,
 }: {
   service: ApplicationService;
   learning?: LearningUiAdapter;
   journey?: LearningJourney;
+  mushaf?: VerifiedMushaf | null;
+  study?: MushafStudyController;
+  readerDatabaseName?: string;
+  readerError?: string;
   data?: CompositeDataController & { readProgress?: (now?: Date) => ProgressReadModel | Promise<ProgressReadModel>; readPersonalMemory?: (now?: Date) => Promise<PersonalMemoryReadModel> };
 }) {
   const [state, setState] = useState<PrototypeState>(() => service.state);
@@ -206,9 +219,28 @@ export default function App({
   const [editAttempt, setEditAttempt] = useState<string | null>(null);
   const [leave, setLeave] = useState<Screen | null>(null);
   const [help, setHelp] = useState(false);
+  const [readerPage, setReaderPage] = useState<number>();
+  const readerPageShown = useCallback(() => setReaderPage(undefined), []);
+  const [, setJourneyRevision] = useState(0);
+  const [readerStudy, setReaderStudy] = useState(study);
+  const [studyError, setStudyError] = useState<string>();
+  const activeProfileId = journey?.app.product.state.profileId ?? state.profileId;
+  const studyIdentity = useRef({profileId:activeProfileId, journey, mushaf, study});
+  const readerGuard = useMushafGuard(journey, readerDatabaseName, activeProfileId);
+  const readerScope = `${readerDatabaseName}:${activeProfileId}`;
+  useLayoutEffect(() => {
+    const previous = studyIdentity.current;
+    if (previous.profileId === activeProfileId && previous.journey === journey && previous.mushaf === mushaf && previous.study === study) return;
+    studyIdentity.current = {profileId:activeProfileId, journey, mushaf, study};
+    setReaderPage(undefined); setStudyError(undefined);
+    if (!journey || !mushaf) { setReaderStudy(undefined); return; }
+    try { setReaderStudy(openMushafStudy(journey, mushaf, readerDatabaseName, localStorage)); }
+    catch { setReaderStudy(undefined); setStudyError('تعذر فتح مقدار الحفظ لهذا السجل. بقيت بيانات تعلمك محفوظة.'); }
+  }, [journey, mushaf, study, activeProfileId, readerDatabaseName]);
   const stateRef = useRef(state);
   stateRef.current = state;
   const go = (s: Screen) => {
+    if (s !== 'S16') setReaderPage(undefined);
     if (
       stateRef.current.session &&
       ["S07", "S08"].includes(screen) &&
@@ -368,11 +400,37 @@ export default function App({
         <Detail />
       </LearningContentBoundary>
     ),
-    S16: (
-      <LearningContentBoundary id="S16">
-        <Reader />
-      </LearningContentBoundary>
-    ),
+    S16: <MushafReader10b
+      mushaf={mushaf} databaseName={readerScope} requestedPage={readerPage}
+      selection={readerStudy?.current ?? null} unavailableReason={studyError ?? readerGuard.error ?? readerError}
+      checkingSession={readerGuard.checking} beforeRead={readerGuard.beforeRead}
+      onPageShown={readerPageShown}
+      onToday={() => go("S05")} onResume={() => go("S10")}
+      readingBlocked={!!journey?.active && (journey.active.phase === 'recall' || journey.active.phase === 'paused' && journey.active.previousPhase === 'recall') && (journey.needsRestart || !journey.state.attempts[journey.active.attemptId ?? '']?.revealed)}
+      revealUnavailable={!!journey?.needsRestart || journey?.active?.phase === 'paused'}
+      onReveal={journey ? async () => {
+        const session = journey.active;
+        if (!session || session.phase !== 'recall' || journey.needsRestart) throw Error('استأنف التسميع أولًا من الخطوة المحفوظة.');
+        await journey.action({type:'hint',sessionId:session.id,reveal:true});
+        setJourneyRevision(revision => revision + 1);
+        readerGuard.notifyCommitted();
+      } : undefined}
+      onSelectRange={readerStudy && journey ? async range => {
+        readerStudy.select(range);
+        setJourneyRevision(revision => revision + 1);
+        if (!service.state.config.configured) { go('S02'); return; }
+        await journey.prepare();
+        setJourneyRevision(revision => revision + 1);
+      } : undefined}
+      onStart={journey ? async () => {
+        // The existing planner chooses the next task; due reviews keep their priority.
+        if (!service.state.config.configured) { go('S02'); return; }
+        await journey.start();
+        setJourneyRevision(revision => revision + 1);
+        readerGuard.notifyCommitted();
+        go(journey.active?.phase === 'paused' ? 'S10' : 'S07');
+      } : undefined}
+    />,
     S17: <Preferences />,
     S18: <Data controller={data} learningAttached={!!learning} />,
     S19: <Forecast />,
@@ -391,8 +449,10 @@ export default function App({
     );
   }
   if(journey){
-    for(const target of ["S04","S05","S07","S08","S09","S10","S11","S13","S14","S15","S16"] as Screen[])
-      contents[target]=<JourneyScreen key={target} journey={journey} screen={target} go={go} onCommitted={()=>{void refreshProgress();void refreshCompanion();}} />;
+    for(const target of ["S04","S05","S07","S08","S09","S10","S11","S13","S14","S15"] as Screen[])
+      contents[target]=<JourneyScreen key={target} journey={journey} screen={target} go={go}
+        onOpenMushaf={mushaf ? unitId => {setReaderPage(journey.unit(unitId).positions[0].page);go('S16');} : undefined}
+        onCommitted={()=>{setJourneyRevision(revision => revision + 1);readerGuard.notifyCommitted();void refreshProgress();void refreshCompanion();}} />;
   }
   return (
     <FeedbackContext.Provider value={error}>
@@ -2507,124 +2567,6 @@ function Detail() {
             </div>
           ))
         )}
-      </Card>
-    </Page>
-  );
-}
-function Reader() {
-  const { notify, state, commit, start } = useApp();
-  const [surah, setSurah] = useState(1),
-    [ayah, setAyah] = useState(1),
-    [size, setSize] = useState(24),
-    [begin, setBegin] = useState<string | null>(null),
-    [end, setEnd] = useState<string | null>(null);
-  return (
-    <Page
-      id="S16"
-      description="النص ثابت من مصدر معتمد؛ لا نولّده ولا نعيد صياغته."
-    >
-      <Card>
-        <div className="reader-controls">
-          <Field label="رقم السورة">
-            <input
-              type="number"
-              min="1"
-              max="114"
-              value={surah}
-              onChange={(e) => setSurah(Number(e.target.value))}
-            />
-          </Field>
-          <Field label="رقم الآية">
-            <input
-              type="number"
-              min="1"
-              value={ayah}
-              onChange={(e) => setAyah(Number(e.target.value))}
-            />
-          </Field>
-          <Button
-            variant="secondary"
-            onClick={() =>
-              notify(
-                Number.isInteger(surah) &&
-                  surah >= 1 &&
-                  surah <= 114 &&
-                  Number.isInteger(ayah) &&
-                  ayah >= 1
-                  ? "الموضع محدد للمعاينة فقط؛ تعذر حلّه دون حزمة معتمدة."
-                  : "أدخل أرقامًا صحيحة للنطاق.",
-              )
-            }
-          >
-            اذهب إلى
-          </Button>
-          <Button
-            variant="ghost"
-            onClick={() => setSize(Math.min(size + 2, 40))}
-            disabled={size === 40}
-          >
-            كبّر النص
-          </Button>
-          <Button
-            variant="ghost"
-            onClick={() => setSize(Math.max(size - 2, 18))}
-            disabled={size === 18}
-          >
-            صغّر النص
-          </Button>
-        </div>
-        <div className="reader-stage" style={{ fontSize: size }}>
-          <ContentUnavailable />
-        </div>
-        <div className="actions centered">
-          <Button
-            variant="secondary"
-            onClick={() =>
-              notify("التلاوة المعتمدة غير مرفقة. لم يبدأ صوت أو يسجل استماع.")
-            }
-          >
-            <Headphones size={18} /> استمع
-          </Button>
-          <Button
-            variant="secondary"
-            onClick={() => notify("لا يتوفر تفسير معتمد بمصدره وترخيصه.")}
-          >
-            <FileText size={18} /> التفسير ومصدره
-          </Button>
-        </div>
-      </Card>
-      <Card>
-        <h2>تجربة تحديد المقدار</h2>
-        <p>
-          البداية: {begin ?? "غير محددة"} · النهاية: {end ?? "غير محددة"}
-        </p>
-        <div className="actions">
-          <Button
-            variant="secondary"
-            onClick={() => setBegin("سورة " + surah + "، آية " + ayah)}
-          >
-            حدد بداية المقدار
-          </Button>
-          <Button
-            variant="secondary"
-            onClick={() => setEnd("سورة " + surah + "، آية " + ayah)}
-          >
-            حدد نهايته
-          </Button>
-          <Button
-            onClick={async () => {
-              if (state.session?.phase === "recall")
-                await commit({ type: "attempt.reveal" });
-              start("new", "مقدار عرض غير معتمد");
-            }}
-          >
-            جرّب أدوات الحفظ
-          </Button>
-        </div>
-        <Notice>
-          إنشاء وحدة قرآن صالحة والتحقق من الحدود متوقفان إلى حين اعتماد
-          المحتوى.
-        </Notice>
       </Card>
     </Page>
   );
