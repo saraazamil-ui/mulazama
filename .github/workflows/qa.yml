@@ -23,6 +23,8 @@ jobs:
       - run: pnpm exec playwright install --with-deps chromium
       - run: python3 scripts/tests/cloud-start08a.test.py
       - run: python3 scripts/tests/inspect-official-archive10b.test.py
+      - run: python3 scripts/tests/receive-official-package10c.test.py
+      - run: node --test scripts/tests/build-offline10c.test.mjs
       - run: node --test scripts/tests/playwright-browser.test.mjs
       - run: python3 scripts/verify-06l4.py --browser
       - run: pnpm test:mushaf

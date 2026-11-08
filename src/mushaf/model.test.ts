@@ -32,6 +32,11 @@ async function fixture():Promise<ApprovedMushafInput>{
   return attest({pkg,manifest,contentApproval:{} as ContentApproval,pageApproval:{} as MushafPageApproval});
 }
 const options=(fetchAsset:typeof fetch=vi.fn(async()=>new Response(png,{headers:{'content-type':'image/png'}})))=>({origin:'https://preview.example',fetchAsset,testAuthorities:[authority]});
+// Fetch has already decoded the body while retaining the transfer headers.
+// The 74-byte synthetic PNG has gzip/br wire sizes of 95/78 bytes.
+const decodedTransfer=(encoding:'gzip'|'br',body:Uint8Array<ArrayBuffer>)=>new Response(body,{headers:{
+  'content-type':'image/png','content-encoding':encoding,'content-length':String(encoding==='gzip'?95:78),
+}});
 beforeAll(async()=>{key=await crypto.subtle.generateKey({name:'ECDSA',namedCurve:'P-256'},true,['sign','verify']);authority={id:'test-ephemeral-pages',publicKey:await crypto.subtle.exportKey('jwk',key.publicKey)};input=await fixture();});
 
 describe('10-B independent content and page integrity',()=>{
@@ -73,6 +78,30 @@ describe('10-B independent content and page integrity',()=>{
     const fetcher=vi.fn(async()=>new Response(png,{headers:{'content-type':'image/png'}}));const reader=await createApprovedMushaf(input,options(fetcher));requireVerifiedMushaf(reader);
     expect(reader.contentManifestHash).toBe(input.manifest.contentManifestHash);expect((await reader.pageImage(1)).type).toBe('image/png');await reader.pageImage(1);await reader.pageImage(2);
     expect(fetcher).toHaveBeenCalledTimes(2);expect(fetcher).toHaveBeenCalledWith('https://preview.example/mushaf/test-page-1.png',expect.objectContaining({redirect:'error',credentials:'same-origin'}));
+  });
+  it.each(['gzip','br'] as const)('verifies decoded image bytes from a %s Fetch response despite different transfer length',async encoding=>{
+    const response=decodedTransfer(encoding,png);
+    expect(Number(response.headers.get('content-length'))).not.toBe(png.length);
+    const reader=await createApprovedMushaf(input,options(async()=>response));
+    const blob=await reader.pageImage(1);
+    expect(blob.type).toBe('image/png');expect(new Uint8Array(await blob.arrayBuffer())).toEqual(png);
+  });
+  it.each([
+    ['gzip','truncated'],['gzip','oversized'],['gzip','same-size-tamper'],
+    ['br','truncated'],['br','oversized'],['br','same-size-tamper'],
+  ] as const)('rejects %s decoded image %s after HTTP decompression',async(encoding,change)=>{
+    let changed:Uint8Array<ArrayBuffer>;
+    if(change==='truncated')changed=png.slice(0,-1);
+    else if(change==='oversized'){changed=new Uint8Array(png.length+1);changed.set(png);}
+    else{changed=png.slice();changed[changed.length-1]^=1;}
+    const reader=await createApprovedMushaf(input,options(async()=>decodedTransfer(encoding,changed)));
+    await expect(reader.pageImage(1)).rejects.toMatchObject({code:'CONTENT_INTEGRITY_FAILURE'});
+  });
+  it.each([undefined,'identity'])('rejects mismatched declared length with %s content encoding',async encoding=>{
+    const headers:Record<string,string>={'content-type':'image/png','content-length':String(png.length+1)};
+    if(encoding)headers['content-encoding']=encoding;
+    const reader=await createApprovedMushaf(input,options(async()=>new Response(png,{headers})));
+    await expect(reader.pageImage(1)).rejects.toMatchObject({code:'CONTENT_INTEGRITY_FAILURE'});
   });
   it('derives all juz starts from signed token boundaries, including a boundary inside a verse and page',async()=>{
     const reader=await createApprovedMushaf(input,options());expect(reader.juzStarts.map(start=>start.number)).toEqual(Array.from({length:30},(_,i)=>i+1));

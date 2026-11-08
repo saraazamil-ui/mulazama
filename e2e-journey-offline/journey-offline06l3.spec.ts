@@ -46,6 +46,12 @@ async function submit(page:Page){
  await expect(page.getByLabel('مادة الاختبار الصناعي',{exact:true})).toHaveCount(0);
  await page.getByRole('button',{name:'سمّعت المقطع كاملًا بلا خطأ معلوم — جهد عادي',exact:true}).click();
  await expect(page.getByRole('heading',{name:'حُفظ تقييمك الذاتي'})).toBeVisible();
+ // The assessment heading can precede S09's asynchronous plan commit. Capture
+ // the reload baseline only once the existing planner has durably accounted for it.
+ await expect.poll(async()=>{
+  const saved=await facts(page),assessment=saved.events.findLastIndex(e=>e.type==='AssessmentSubmitted'),plan=saved.events.findLastIndex(e=>e.type==='PlanRecomputed'&&e.data.scope==='hme');
+  return {afterAssessment:assessment>=0&&plan>assessment,spentMinutes:saved.events[plan]?.data.command.spentMinutes};
+ }).toEqual({afterAssessment:true,spentMinutes:2});
 }
 async function home(page:Page){await page.getByRole('button',{name:'تابع إلى النشاط التالي'}).click();await expect(page.getByText(/أنشطة أُنجزت اليوم: 1/)).toBeVisible();}
 test('L3OFFJ01 built isolated newcomer journey completes offline, writes corrected HME once and survives offline reload',async({browser},info)=>{

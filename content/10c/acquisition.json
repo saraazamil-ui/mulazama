@@ -1,0 +1,112 @@
+{
+  "schema": "mulazama.official-source-web-evidence/10c",
+  "recordedAtUtc": "2026-11-08T18:02:02Z",
+  "acquisitionStatus": "blocked-no-original-archives",
+  "officialArchivesDownloaded": 0,
+  "evidenceBoundary": "Official publisher content was returned through a search index; direct page fetches failed. Search crawl recency is not proof of current live page contents, package retrieval, hash agreement, rights approval, or content approval.",
+  "scientificApproval": false,
+  "rightsApproval": false,
+  "liveFetchFailures": [
+    {
+      "url": "https://dm.qurancomplex.gov.sa/",
+      "reportedStatus": 404
+    },
+    {
+      "url": "https://dm.qurancomplex.gov.sa/rights/",
+      "reportedStatus": 404
+    },
+    {
+      "url": "https://qurancomplex.gov.sa/quran-dev/",
+      "reportedStatus": 503
+    },
+    {
+      "url": "https://qurancomplex.gov.sa/embed-isdarat/",
+      "reportedStatus": 503
+    }
+  ],
+  "liveFetchInterpretation": "These are web-tool fetch results. They do not establish that the publisher origin itself is unavailable. Executor network-policy probes are recorded separately by the parent agent.",
+  "packages": [
+    {
+      "purpose": "Official complete-page vector source; browser image generation and page mapping remain subject to independent verification.",
+      "publisherPage": "https://dm.qurancomplex.gov.sa/",
+      "indexedCrawlRecencyReported": "5 days ago",
+      "exactVisiblePackageLabel": "النسخة الرقمية (برواية حفص)",
+      "exactVisibleActionLabel": "تحميل",
+      "formatAdvertised": "AI / Illustrator vectors",
+      "versionAdvertised": null,
+      "lastModifiedAdvertised": null,
+      "sizeAdvertised": null,
+      "sha256Advertised": "280C5D71CA16AAEEB3A343BE1B92C76FA6DF71D0671E202C026FDE12402D9EEF",
+      "advertisedHashSource": "search-indexed official publisher page; not compared with archive bytes",
+      "finalDownloadUrl": null,
+      "archiveFilename": null,
+      "rightsPage": "https://dm.qurancomplex.gov.sa/rights/"
+    },
+    {
+      "purpose": "Independent official verse metadata for sura, aya, juz, page and line mapping.",
+      "publisherPage": "https://qurancomplex.gov.sa/quran-dev/",
+      "indexedCrawlRecencyReported": "4 days ago",
+      "exactVisiblePackageLabel": "الخط الحاسوبي يونيكود (رواية حفص)",
+      "exactVisibleActionLabel": "استكشاف",
+      "finalDownloadActionLabel": null,
+      "versionAdvertised": "15.0",
+      "lastModifiedAdvertised": "30-09-2026",
+      "sizeAdvertised": "9.68MB",
+      "sha256Advertised": "227E6B1564D980F2BD09C2C35EBFB0330AC268C79A7C247CD1AB665BC635F245",
+      "advertisedHashSource": "search-indexed official publisher page; not compared with archive bytes",
+      "includedFormatsAdvertised": [
+        "font",
+        "Word",
+        "PDF",
+        "Excel",
+        "CSV",
+        "HTML5",
+        "SQL",
+        "XML",
+        "JSON",
+        "TXT"
+      ],
+      "finalDownloadUrl": null,
+      "archiveFilename": null,
+      "packageSpecificRightsTextRetrieved": false,
+      "note": "Package version 15.0 must not be conflated with the standalone font version. The separate smart-device Hafs package 6.0 is advertised for verse-level display, not exact full-page reproduction."
+    }
+  ],
+  "rights": {
+    "publisherPage": "https://dm.qurancomplex.gov.sa/rights/",
+    "indexedCrawlRecencyReported": "4 days ago",
+    "shortQuote": "ومواقع الإنترنت والبرامج الحاسوبية وغيرها",
+    "paraphrase": "The indexed publisher notice permits free use of the digital Illustrator edition by individuals and public/private organizations, including websites and software inside and outside Saudi Arabia. It disclaims responsibility for implementation errors and separately notes restrictions on printed mushaf production/import for commercial sale in Saudi Arabia.",
+    "limits": "No actual archive, bundled license/readme, current direct page response, or font-specific terms were obtained. This notice is evidence of permission for the stated vector-edition uses; it does not certify a downloaded package or settle unobserved package terms. No extra attribution requirement was inferred from silence."
+  },
+  "officialEmbedAlternative": {
+    "publisherPage": "https://qurancomplex.gov.sa/embed-isdarat/",
+    "indexedCrawlRecencyReported": "5 days ago",
+    "exactVisibleEditionLabel": "المصحف الممتاز",
+    "iframeSrcShownByPublisher": "https://qurancomplex.gov.sa/isdarat-hafs/#flipbook-df_11311/1/",
+    "paraphrase": "The publisher supplies embedding markup for its editions to be read within another website.",
+    "liveRenderingVerified": false,
+    "stablePageNavigationContractVerified": false,
+    "suitableAsVerifiedLocalPackage": false
+  },
+  "minimalManualHandoffArabic": [
+    "قبل التنزيل في Safari: أوقف خيار فتح الملفات الآمنة بعد التنزيل من الإعدادات > عام، للاحتفاظ بالأرشيف الأصلي دون فك تلقائي.",
+    "افتح https://dm.qurancomplex.gov.sa/ ثم اضغط «تحميل» تحت «النسخة الرقمية (برواية حفص)». احتفظ باسم الملف الأصلي كما ينزله الناشر؛ لم نتحقق من اسم أرشيف محدد.",
+    "افتح https://qurancomplex.gov.sa/quran-dev/ ثم «استكشاف» عند «الخط الحاسوبي يونيكود (رواية حفص)»، واحصل على الحزمة الأصلية من رابط التنزيل الذي يظهر هناك. لم يظهر رابط التنزيل النهائي أو اسمه في دليل البحث.",
+    "وفّر الأرشيفين الأصليين، والرابط النهائي لكل تنزيل كما ظهر، وصورة أو حفظًا لبيانات الإصدار والبصمة وشروط الاستخدام من الصفحات الرسمية. لا تعِد ضغط الملفات أو تعديلها؛ لا توجد حاجة إلى بيانات الدخول."
+  ],
+  "executorAccess": {
+    "checkedAt": "2026-11-08T17:59:27.858634+00:00",
+    "policy": "restricted-and-enforced",
+    "customAllowedHosts": [],
+    "officialHostsAllowed": false,
+    "result": "CONNECT 403 before origin TLS on both official hosts",
+    "credentialsUsed": false,
+    "bypassAttempted": false
+  },
+  "receiptPolicy": {
+    "vaultOutsideRepository": true,
+    "extraction": false,
+    "automaticActivation": false
+  }
+}
