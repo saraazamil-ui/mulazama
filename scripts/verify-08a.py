@@ -160,6 +160,9 @@ def main():
         execute("startup-tests", [sys.executable, "scripts/tests/cloud-start08a.test.py"])
         execute("official-archive-tests", [sys.executable, "scripts/tests/inspect-official-archive10b.test.py"])
         execute("official-intake-tests", [sys.executable, "scripts/tests/receive-official-package10c.test.py"])
+        execute("quranpedia-metadata-tests", [sys.executable, "scripts/tests/audit-quranpedia-metadata10d.test.py"])
+        execute("svg-security-tests", [sys.executable, "scripts/tests/svg-security10d.test.py"])
+        execute("quranpedia-archive-tests", [sys.executable, "scripts/tests/audit-quranpedia-archive10d.test.py"])
         execute("mushaf-offline-policy-tests", ["node", "--test", "scripts/tests/build-offline10c.test.mjs"])
         helper = execute("browser-helper-tests", ["node", "--test", "--test-reporter=tap",
                                                    "scripts/tests/playwright-browser.test.mjs"])
