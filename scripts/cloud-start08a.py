@@ -35,26 +35,35 @@ def main():
         if exists.returncode != 1:
             raise SystemExit("Branch already exists or could not be checked; choose a new name.")
     tracking_ref = "refs/remotes/origin/main"
-    previous = git("rev-parse", "--verify", tracking_ref + "^{commit}")
+    tracking = subprocess.run(["git", "show-ref", "--verify", "--quiet", tracking_ref], cwd=ROOT)
+    if tracking.returncode not in (0, 1):
+        raise SystemExit("Could not inspect origin/main. Existing references were preserved.")
+    previous = git("rev-parse", "--verify", tracking_ref + "^{commit}") if tracking.returncode == 0 else None
+    # Prepared cloud checkouts can retain HEAD without any remote-tracking refs.
+    # In that case require the fetched main to include this checkout's history;
+    # do not silently move away from an unmerged or rewritten local snapshot.
+    observed = previous or git("rev-parse", "--verify", "HEAD^{commit}")
     # Git allows non-fast-forward updates to refs/remotes even without '+'.
     # An empty refmap fetches only into FETCH_HEAD, leaving tracking refs intact
-    # until both ancestry checks have passed.
+    # until both ancestry checks have passed, including first-time initialization.
     subprocess.run(["git", "fetch", "--no-tags", "--refmap=", "origin", "refs/heads/main"], cwd=ROOT, check=True)
     revision = git("rev-parse", "--verify", "FETCH_HEAD^{commit}")
     for ancestor, message in (
         (BASELINE, "Fetched main does not contain the approved 06-L4 ancestor."),
-        (previous, "Fetched main rewrites the previously observed origin/main history."),
+        (observed, "Fetched main rewrites the previously observed origin/main history." if previous else
+                   "Fetched main does not contain the current checkout history; origin/main was not initialized."),
     ):
         result = subprocess.run(["git", "merge-base", "--is-ancestor", ancestor, revision], cwd=ROOT)
         if result.returncode:
             raise SystemExit(message + " Existing branch and tracking references were preserved.")
-    # Compare-and-swap also rejects a concurrent change to the tracking ref.
-    subprocess.run(["git", "update-ref", tracking_ref, revision, previous], cwd=ROOT, check=True)
+    # Compare-and-swap rejects concurrent changes or creation of the tracking ref.
+    subprocess.run(["git", "update-ref", tracking_ref, revision, previous or "0" * len(revision)], cwd=ROOT, check=True)
     if args.branch:
         subprocess.run(["git", "switch", "--create", args.branch, "--no-track", revision], cwd=ROOT, check=True)
     print(json.dumps({"officialMain": revision, "requiredAncestor": BASELINE,
                       "branch": git("branch", "--show-current"), "head": git("rev-parse", "HEAD"),
-                      "checkOnly": args.check, "reusableEnvironmentPublished": False}, indent=2))
+                      "checkOnly": args.check, "initializedTrackingRef": previous is None,
+                      "reusableEnvironmentPublished": False}, indent=2))
 
 
 if __name__ == "__main__":

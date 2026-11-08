@@ -119,7 +119,7 @@ test('L4DEP03 honest support, accessible 404 online/offline and maintenance 503 
   const page=await context.newPage();
   for(const path of ['support.html','privacy.html','terms.html']){
    await page.goto(server.origin+'/'+path);
-   await expect(page.locator('body')).toContainText('mulazama.sa');
+   await expect(page.locator('body')).toContainText('mulazama.com');
    await expect(page.locator('a[href^="mailto:"]')).toHaveCount(0);
    expect((await new AxeBuilder({page}).analyze()).violations).toEqual([]);
    expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
@@ -139,6 +139,6 @@ test('L4DEP03 honest support, accessible 404 online/offline and maintenance 503 
   expect((await new AxeBuilder({page}).analyze()).violations).toEqual([]);
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   expect(await page.evaluate(async()=>await indexedDB.databases())).toEqual([]);
-  await info.attach('operations-pages.json',{body:JSON.stringify({officialOrigin:'https://mulazama.sa',mailboxesActive:false,online404:true,offline404:true,maintenance503:true,learnerStorageChanged:false,publicDeployment:false,limitation:'A server maintenance response does not revoke an already installed offline app shell.'}),contentType:'application/json'});
+  await info.attach('operations-pages.json',{body:JSON.stringify({officialOrigin:'https://mulazama.com',mailboxesActive:false,online404:true,offline404:true,maintenance503:true,learnerStorageChanged:false,publicDeployment:false,limitation:'A server maintenance response does not revoke an already installed offline app shell.'}),contentType:'application/json'});
  }finally{await context.close();if(maintenanceServer)await maintenanceServer.close();}
 });

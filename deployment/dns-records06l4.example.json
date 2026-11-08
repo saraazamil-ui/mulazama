@@ -1,10 +1,10 @@
 {
   "warning": "Preparation only. Values must be copied from the selected provider account after owner approval. This file is not an importable zone and does not change DNS.",
-  "domain": "mulazama.sa",
+  "domain": "mulazama.com",
   "records": [
     {"purpose":"web apex","type":"provider-dependent","name":"@","value":null,"source":"selected host custom-domain setup; never infer an IP"},
     {"purpose":"www redirect","type":"CNAME","name":"www","value":null,"source":"selected host; HTTPS and redirect must be tested separately"},
-    {"purpose":"mail routing","type":"MX","name":"@","priority":null,"value":null,"source":"dnet My Products > Details > DNS Records if dmail is selected"},
+    {"purpose":"mail routing","type":"MX","name":"@","priority":null,"value":null,"source":"selected email provider account; registrar and mail provider are unverified"},
     {"purpose":"sender policy","type":"TXT","name":"@","value":null,"source":"selected email provider; merge authorized senders into exactly one SPF record"},
     {"purpose":"mail signature","type":"TXT or CNAME","name":null,"value":null,"source":"provider-issued DKIM selector and public key; no private key in DNS or source"},
     {"purpose":"mail alignment monitoring","type":"TXT","name":"_dmarc","value":"v=DMARC1; p=none","source":"initial monitoring example only; add a verified reporting mailbox only with an agreed data policy; strengthen after alignment tests"}
