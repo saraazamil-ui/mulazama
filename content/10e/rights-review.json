@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-11-08T20:18:51.520084+00:00",
+  "archiveSha256": "8c1ff5ead881681331150a4a2f56dbf6c47ee4421d1e4d40552491cdc2997058",
+  "conclusion": "image-specific source and rehosting rights remain unverified; no content activation approval",
+  "findings": [
+    {
+      "source": "https://api.quranpedia.net/",
+      "evidenceSha256": "4998f4d6f997332218f014d9d5d7be20540e2bbd4b3679e948f6428560604d7a",
+      "finding": "Successful root-agent curl response advertises exact original SVG ZIP URL in mushaf images field; its explicit quran-ws link is quran-text, not quran-svg. The ayah namespace URL in all 604 SVG files is source attribution, not license terms."
+    },
+    {
+      "source": "https://quranpedia.net/dumps/LICENSE.md",
+      "finding": "Independent urllib fetch returned HTTP 403, so current license endpoint text was not retrieved by this review. Uploaded JSON license version 2026-11-08 permits dataset use inside apps and sites, with source/link/version for downloadable republication and current corrections. It does not explicitly grant rights to separate SVG artwork."
+    },
+    {
+      "source": "https://github.com/quran-ws/quran-svg/blob/b4155f07e4aea087d2c458069acff9f7c7e749f6/LICENSE",
+      "finding": "CC BY 4.0 covers original metadata/polygon layer; page artwork is expressly NOT owned by quran.ws and retains publisher terms. MIT is for tools. Attribution waiver is for product use, not separately republished resources."
+    },
+    {
+      "source": "https://github.com/quran-ws/quran-svg/blob/b4155f07e4aea087d2c458069acff9f7c7e749f6/NOTICE.md",
+      "finding": "Reproduces KFQC permissive digital/web/software usage rights and names hafs/kfqc as covered. This is a third-party reproduction, not demonstrated licensing provenance for this differing Quranpedia ZIP."
+    },
+    {
+      "source": "https://dm.qurancomplex.gov.sa/rights/",
+      "finding": "302 to https://qurancomplex.gov.sa/rights/, then 308 to /rights, then HTTP 404 page-not-found; primary rights terms not retrievable at old official URL."
+    },
+    {
+      "source": "https://github.com/quran-ws/quran-svg/blob/b4155f07e4aea087d2c458069acff9f7c7e749f6/docs/PROVENANCE.md",
+      "finding": "Claims Hafs derivative from 1441-AI-hafs.zip, 466430736 bytes, SHA256 280c5d71ca16aaeeb3a343be1b92c76fa6df71d0671e202c026fde12402d9eef. Admits only structural checking for Hafs, no geometry diff. Related artwork omits frames/header/page number, changes crop and redraws ayah markers."
+    },
+    {
+      "source": "upstream-byte-comparison.json",
+      "finding": "All 604 same-name SVG and 604 same-name page JSON were compared as Git blob SHA1 to fetched immutable upstream trees. Zero equal members in either set; archive mushaf-content.json has no same-name match. No byte identity with current quran-ws package was established. This does not disprove shared ancestry."
+    }
+  ],
+  "approvals": {
+    "sourceAuthenticityVerified": false,
+    "imageReuseVerified": false,
+    "scientificApproval": false,
+    "productionActivation": false
+  },
+  "requiredEvidence": [
+    "Image-specific terms and publisher/source lineage explicitly bound to this original ZIP or its member hashes.",
+    "Authenticated exact reference edition for independent page-artwork comparison.",
+    "Complete content/coordinate validation and separate scientific and engineering approvals."
+  ],
+  "actions": {
+    "externalMessagesSent": false,
+    "substituteArchiveDownloaded": false,
+    "originalBytesModified": false,
+    "appFilesChanged": false,
+    "renderedSvg": false
+  }
+}
