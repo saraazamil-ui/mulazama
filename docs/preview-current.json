@@ -1,0 +1,29 @@
+{
+  "checkedAt": "2026-11-08T17:04:20Z",
+  "projectId": "appgprj_6aec6725aa3c8191a6c052991fc99823",
+  "version": 2,
+  "versionId": "appgprj_6aec6725aa3c8191a6c052991fc99823~appgver_1db631914dbc8191830f9ad2629d1a71",
+  "deploymentId": "appgdep_6af0ab7483f48191bc583c6288d21605",
+  "deploymentStatus": "succeeded",
+  "url": "https://mulazama-preview-05a.sara-a-zamil.chatgpt.site",
+  "access": "owner-only",
+  "customDomains": [],
+  "githubApplicationCommit": "f16957c476d252ef3e402392eee731149f642e64",
+  "sitesSourceCommit": "f07ce83a419c7d9a6acc75d14280d900da11bd1b",
+  "sourceDigest": "56e6a9f8f9198f7d656ff8d229497e1830bc5913537e9492f5c7f3831a960922",
+  "artifactSHA256": "c0bdf99cc24570655b0c203800e559e422fa1950b5b16c85267f1382bb94d2df",
+  "localVerification": {
+    "unit": 897,
+    "browserIncludingContent": 61,
+    "fsrs": 40,
+    "startup": 8,
+    "browserHelper": 10,
+    "failed": 0,
+    "skipped": 0,
+    "productionReady": false,
+    "releaseGatesBlocked": 10
+  },
+  "verificationScope": "Native Sites succeeded and saved version/archive/source verified; regular artifact rendered locally with 200, RTL and zero page errors. Hosted interactive browser check not completed.",
+  "officialDomainStatus": "Unverified: environment proxy CONNECT 403",
+  "registrarStatus": "Unverified: browser AT-SPI control failure and environment proxy CONNECT 403; credentials not entered."
+}
