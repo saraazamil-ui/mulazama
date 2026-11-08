@@ -1,0 +1,529 @@
+{
+  "schemaVersion": 1,
+  "phase": "10-E",
+  "checkedAt": "2026-11-08T20:24:43.692655+00:00",
+  "status": "candidate-diagnostics-not-approved",
+  "originals": {
+    "archiveSha256": "8c1ff5ead881681331150a4a2f56dbf6c47ee4421d1e4d40552491cdc2997058",
+    "archiveBytes": 95415210,
+    "uploadedMetadataSha256": "74b965763ff6fa5232790f4eeafcf1707ab26051d17fe214745740cdbe0a7f98",
+    "archiveContentJsonSha256": "a1a87cfddfa0758085c9cffa8c4ee20015a7ef727da33d2fccabb445bf872bc6",
+    "hashesUnchangedAfterAudit": true
+  },
+  "method": {
+    "exactDecodedStringComparison": true,
+    "normalizationPerformed": false,
+    "bomRemoved": false,
+    "originalBytesModified": false,
+    "jsonUsesExistingBoundedPrimitives": true,
+    "svgRenderPerformed": false,
+    "svgParser": "bounded Expat; DTD/entities/processing instructions rejected; observations only, not security approval",
+    "textDigestEncoding": "surah/ayah sorted; 8-byte big-endian UTF-8 byte length then original UTF-8 for each decoded field"
+  },
+  "text": {
+    "archiveSurahs": 114,
+    "uploadedSurahs": 114,
+    "archiveAyahs": 6236,
+    "uploadedAyahs": 6236,
+    "commonAyahs": 6236,
+    "exactTextMatchingIdentifiers": [
+      [
+        20,
+        1
+      ]
+    ],
+    "missingFromArchive": [],
+    "extraInArchive": [],
+    "archiveDuplicateIdentifiers": [],
+    "uploadedDuplicateIdentifiers": [],
+    "archiveSurahIdMismatches": [],
+    "uploadedSurahIdMismatches": [],
+    "fieldDifferences": {
+      "options": 6195,
+      "text": 6235
+    },
+    "fieldEqualCounts": {
+      "hizb": 6236,
+      "id": 6236,
+      "juz": 6236,
+      "manzil": 6236,
+      "marker": 6236,
+      "number": 6236,
+      "number_in_hafs": 6236,
+      "options": 41,
+      "page_number": 6236,
+      "ruku": 6236,
+      "surah": 6236,
+      "text": 1
+    },
+    "fieldDifferenceExamples": {
+      "options": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "text": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          1
+        ]
+      ]
+    },
+    "surahFieldDifferenceCounts": {
+      "unique_name": 114
+    },
+    "archiveTextControlCharacters": {
+      "U+FEFF": 6125
+    },
+    "archiveAyahsContainingUFEFF": 6124,
+    "textDifferencesSample": [
+      {
+        "surah": 1,
+        "ayah": 1,
+        "firstDifferentCodepointOffset": 0,
+        "archive": [
+          "U+FEFF",
+          "U+FEFF",
+          "U+0628",
+          "U+0650"
+        ],
+        "uploaded": [
+          "U+0628",
+          "U+0650",
+          "U+0633",
+          "U+06E1"
+        ],
+        "archiveCodepoints": 40,
+        "uploadedCodepoints": 38,
+        "archiveUtf8Sha256": "084d4161c83bef8c95f265119f2c4b9d6dd27c0e468564f0faf83e656ed9b15c",
+        "uploadedUtf8Sha256": "803dee27b5a9ddf866112eac2f8a34e5bd83ca08015ec4acaaffeba25a378352"
+      },
+      {
+        "surah": 1,
+        "ayah": 2,
+        "firstDifferentCodepointOffset": 0,
+        "archive": [
+          "U+FEFF",
+          "U+0627",
+          "U+0644",
+          "U+0652"
+        ],
+        "uploaded": [
+          "U+0671",
+          "U+0644",
+          "U+06E1",
+          "U+062D"
+        ],
+        "archiveCodepoints": 38,
+        "uploadedCodepoints": 37,
+        "archiveUtf8Sha256": "13d8888ab5c6c918580ffb6e0d6288e15b0beab2042713225ede6540b11f2785",
+        "uploadedUtf8Sha256": "ef2e84a7a99f9340845888a735cf6950853f9e1a13cff30f4c1e7648e56ee51b"
+      },
+      {
+        "surah": 1,
+        "ayah": 3,
+        "firstDifferentCodepointOffset": 0,
+        "archive": [
+          "U+FEFF",
+          "U+0627",
+          "U+0644",
+          "U+0631"
+        ],
+        "uploaded": [
+          "U+0671",
+          "U+0644",
+          "U+0631",
+          "U+0651"
+        ],
+        "archiveCodepoints": 24,
+        "uploadedCodepoints": 23,
+        "archiveUtf8Sha256": "61499a920564d643ba80ea7c8070b581c4e5092ad91b94b52f97a698364d09f9",
+        "uploadedUtf8Sha256": "fa43107ca02d890e5115053aed9835bfbefb79ffa6846491cf7dfc67c8fd8be7"
+      },
+      {
+        "surah": 2,
+        "ayah": 1,
+        "firstDifferentCodepointOffset": 2,
+        "archive": [
+          "U+0645"
+        ],
+        "uploaded": [
+          "U+0653",
+          "U+0645",
+          "U+0653"
+        ],
+        "archiveCodepoints": 3,
+        "uploadedCodepoints": 5,
+        "archiveUtf8Sha256": "58bc1e3007bc0ed70b737b562ad04a88867c38e78e58e2f15c3f43c9be783acb",
+        "uploadedUtf8Sha256": "49c5355bd921dc0d810e3be457432004847a72d5dbe754562be895be707be6c3"
+      }
+    ],
+    "exactFieldDigests": {
+      "text": {
+        "archive": "876750375492c98bf79463feec226f589af0f52bcb1537f2a50fc5207f3ef4ce",
+        "uploaded": "ab03139d01226392b5234a623db6f7d488bb3e0ef1e1223376120efe99e31dd9"
+      },
+      "marker": {
+        "archive": "2c72e9d38680b9caf624ec49576d4655e4072ea4c3512751962df677e06752e3",
+        "uploaded": "2c72e9d38680b9caf624ec49576d4655e4072ea4c3512751962df677e06752e3"
+      }
+    }
+  },
+  "svgLabeledRegionComparison": {
+    "counts": {
+      "labeledElements": 6236,
+      "numberMatchesSurahAyahPadding": 6236,
+      "idMatchesBothContentGlobalIds": 6234,
+      "surahAyahMatchesPageJson": 6236,
+      "polygonPointsListMatchesOrderedPathVertices": 12,
+      "polygonExactStringMatch": 6224
+    },
+    "issueCounts": {
+      "region-global-id-mismatch": 2
+    },
+    "issuesSample": [
+      {
+        "page": 305,
+        "surah": 19,
+        "ayah": 3,
+        "code": "region-global-id-mismatch",
+        "observedSvgId": "M 5.0 86.5 L 28.75 86.5 L 28.75 118.25 L 5.0 118.25 Z M 197.0 122.25 L 340.0 122.25 L 340.0 154.0 L 197.0 154.0 Z",
+        "expectedSvgId": "verse-2253",
+        "lexicallyValidForExistingSvgPolicy": false
+      },
+      {
+        "page": 577,
+        "surah": 75,
+        "ayah": 5,
+        "code": "region-global-id-mismatch",
+        "observedSvgId": "M 185.25 330.25 L 340.0 330.25 L 340.0 363.75 L 185.25 363.75 Z",
+        "expectedSvgId": "verse-5556",
+        "lexicallyValidForExistingSvgPolicy": false
+      }
+    ],
+    "method": "Compare surah/ayah labels and page membership, decimal-padded number, verse-global-id, and original d/polygon strings. For first two page point lists only, compare ordered numeric vertices and explicit M/L/Z command shape in memory; originals unchanged. Labeled paths must have no own/ancestor transform; x/y glyph anchors remain a separate unlabeled multiset comparison.",
+    "scientificCorrectnessVerified": false
+  },
+  "coordinates": {
+    "pageJsonFiles": 604,
+    "svgFiles": 604,
+    "coordinateRecords": 6236,
+    "polygonFormats": {
+      "SVG-points-list": 12,
+      "SVG-path-MLZ": 6224
+    },
+    "svgCoordinatePairs": 6236,
+    "svgJsonCoordinateCountMismatchingPages": [],
+    "uniqueAyahs": 6236,
+    "expectedNamesMissing": [],
+    "unexpectedNames": [],
+    "missingAyahs": [],
+    "extraAyahs": [],
+    "repeatedAyahs": [],
+    "identifiersRecordedOnMultiplePages": 0,
+    "viewBoxes": {
+      "[0.0, 0.0, 235.0, 235.0]": 2,
+      "[0.0, 0.0, 345.0, 550.0]": 602
+    },
+    "svgJsonCoordinateMismatchingPages": 174,
+    "svgJsonCoordinateMatchingPages": 430,
+    "svgJsonCoordinateMismatchesSample": [
+      {
+        "page": 57,
+        "missingFromSvg": [
+          [
+            [
+              271.38,
+              65.4
+            ],
+            1
+          ],
+          [
+            [
+              14.05,
+              65.4
+            ],
+            1
+          ],
+          [
+            [
+              261.85,
+              423.9
+            ],
+            1
+          ],
+          [
+            [
+              14.3,
+              423.9
+            ],
+            1
+          ]
+        ],
+        "extraInSvg": [
+          [
+            [
+              14.3,
+              423.98
+            ],
+            1
+          ],
+          [
+            [
+              261.85,
+              423.82
+            ],
+            1
+          ],
+          [
+            [
+              14.05,
+              65.36
+            ],
+            1
+          ],
+          [
+            [
+              271.38,
+              65.43
+            ],
+            1
+          ]
+        ]
+      },
+      {
+        "page": 58,
+        "missingFromSvg": [
+          [
+            [
+              238.49,
+              65.4
+            ],
+            1
+          ],
+          [
+            [
+              17.21,
+              65.4
+            ],
+            1
+          ]
+        ],
+        "extraInSvg": [
+          [
+            [
+              17.21,
+              65.24
+            ],
+            1
+          ],
+          [
+            [
+              238.49,
+              65.56
+            ],
+            1
+          ]
+        ]
+      }
+    ],
+    "issueCounts": {
+      "polygon-outside-viewbox": 10
+    },
+    "issuesSample": [
+      {
+        "surah": 2,
+        "ayah": 48,
+        "filePage": 7,
+        "code": "polygon-outside-viewbox",
+        "polygonBounds": [
+          0.0,
+          477.92,
+          345.0,
+          550.2
+        ]
+      },
+      {
+        "surah": 3,
+        "ayah": 186,
+        "filePage": 74,
+        "code": "polygon-outside-viewbox",
+        "polygonBounds": [
+          0.0,
+          405.63,
+          345.0,
+          550.09
+        ]
+      },
+      {
+        "surah": 6,
+        "ayah": 8,
+        "filePage": 128,
+        "code": "polygon-outside-viewbox",
+        "polygonBounds": [
+          5.0,
+          478.25,
+          340.0,
+          550.31
+        ]
+      },
+      {
+        "surah": 9,
+        "ayah": 6,
+        "filePage": 187,
+        "code": "polygon-outside-viewbox",
+        "polygonBounds": [
+          5.0,
+          443.49,
+          340.0,
+          551.56
+        ]
+      },
+      {
+        "surah": 24,
+        "ayah": 20,
+        "filePage": 351,
+        "code": "polygon-outside-viewbox",
+        "polygonBounds": [
+          0.0,
+          478.55,
+          345.0,
+          550.3
+        ]
+      },
+      {
+        "surah": 25,
+        "ayah": 77,
+        "filePage": 366,
+        "code": "polygon-outside-viewbox",
+        "polygonBounds": [
+          0.0,
+          478.37,
+          345.0,
+          550.3
+        ]
+      },
+      {
+        "surah": 34,
+        "ayah": 14,
+        "filePage": 429,
+        "code": "polygon-outside-viewbox",
+        "polygonBounds": [
+          0.0,
+          443.25,
+          345.0,
+          550.82
+        ]
+      },
+      {
+        "surah": 43,
+        "ayah": 10,
+        "filePage": 489,
+        "code": "polygon-outside-viewbox",
+        "polygonBounds": [
+          5.0,
+          479.01,
+          340.0,
+          550.45
+        ]
+      },
+      {
+        "surah": 49,
+        "ayah": 4,
+        "filePage": 515,
+        "code": "polygon-outside-viewbox",
+        "polygonBounds": [
+          5.0,
+          479.41,
+          340.0,
+          551.27
+        ]
+      },
+      {
+        "surah": 54,
+        "ayah": 48,
+        "filePage": 530,
+        "code": "polygon-outside-viewbox",
+        "polygonBounds": [
+          0.0,
+          478.31,
+          345.0,
+          550.16
+        ]
+      }
+    ]
+  },
+  "limitations": [
+    "Each identifier is recorded on one page; this does not prove absence of page-spanning ayahs. Coordinates are ayah endpoint/region observations, not word-token maps. Exact pair equality does not authenticate marker identities or visual region correctness.",
+    "No independent reference edition or scientific review was supplied. No coordinate semantics, page spans, hizb interpretation or runtime mapping approved.",
+    "Existing repository SVG security policy rejects the originals; diagnostic parsing does not override it.",
+    "No font bytes are present, so text and marker glyph rendering has not been verified."
+  ],
+  "rightsApproval": false,
+  "scientificApproval": false,
+  "mappingApproval": false,
+  "productionActivation": false,
+  "integrationBlocked": true,
+  "details": {
+    "file": "coordinate-text-details.json",
+    "sha256": "89ccbb33957576b40c02a3b23a4fd694b6813a8400f810e5d1a5fa95bea393cb",
+    "rawQuranTextIncluded": false
+  }
+}

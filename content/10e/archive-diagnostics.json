@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-08T20:18:32.110669+00:00",
+  "kind": "all-member-diagnostics-not-approval",
+  "original": {
+    "bytes": 95415210,
+    "sha256": "8c1ff5ead881681331150a4a2f56dbf6c47ee4421d1e4d40552491cdc2997058",
+    "unchangedDuringInspection": true
+  },
+  "archiveStructure": "existing-preflight-passed",
+  "counts": {
+    "entries": 1209,
+    "json": 605,
+    "svg": 604
+  },
+  "actualExpandedBytes": 369335730,
+  "allMembersReadToEofWithCrc": true,
+  "allRawCompressedRangesAndActualSizesVerified": true,
+  "existingScanner": {
+    "overall": "rejected",
+    "failureCounts": {
+      "svg:SVG_UNSUPPORTED_NAMESPACE_OR_LIMIT": 604
+    },
+    "svgPassed": 0,
+    "jsonPassed": 605
+  },
+  "staticXmlInventory": {
+    "namespaces": {
+      "http://www.w3.org/2000/svg": 604,
+      "https://quranpedia.net": 604,
+      "http://www.w3.org/1999/xlink": 1
+    },
+    "elements": {
+      "http://www.w3.org/2000/svg}svg": 604,
+      "http://www.w3.org/2000/svg}g": 15212,
+      "http://www.w3.org/2000/svg}path": 19636
+    },
+    "attributes": {
+      "version": 604,
+      "viewBox": 604,
+      "http://www.w3.org/XML/1998/namespace}space": 604,
+      "transform": 14004,
+      "id": 7444,
+      "class": 6840,
+      "d": 19636,
+      "fill": 13400,
+      "https://quranpedia.net}x": 6236,
+      "https://quranpedia.net}y": 6236,
+      "fill-rule": 7148,
+      "fill-opacity": 6236,
+      "number": 6236,
+      "ayah": 6236,
+      "surah": 6236
+    },
+    "activeOrResourceSyntaxIndicators": {}
+  },
+  "svgRootAttributeVariants": [
+    {
+      "attributes": {
+        "http://www.w3.org/XML/1998/namespace}space": "preserve",
+        "version": "1.1",
+        "viewBox": "0 0 345 550"
+      },
+      "count": 602
+    },
+    {
+      "attributes": {
+        "http://www.w3.org/XML/1998/namespace}space": "preserve",
+        "version": "1.1",
+        "viewBox": "0 0 235 235"
+      },
+      "count": 2
+    }
+  ],
+  "rightsReadmeCandidates": [],
+  "rendered": false,
+  "extracted": false,
+  "originalRewritten": false,
+  "securityPolicyChanged": false,
+  "scientificApproval": false,
+  "rightsApproval": false,
+  "sourceAuthenticityVerified": false,
+  "integrationBlocked": true,
+  "limitations": [
+    "Static inventory is not security acceptance; all original SVGs remain rejected under unchanged 10-D policy.",
+    "No independent published checksum or uploaded-original hash supplied.",
+    "No visual/scientific validation or glyph/text equivalence performed.",
+    "Member hashes identify local download bytes; they do not authenticate publisher rights."
+  ]
+}

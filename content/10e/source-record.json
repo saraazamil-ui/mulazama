@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "phase": "10-E",
+  "recordedAt": "2026-11-08T20:20:14.155662+00:00",
+  "basePullRequest": 9,
+  "baseCommit": "0b8b4ae2c8975f8f1a30290abd0e12e897cbe1b2",
+  "preservedPullRequests": [
+    6,
+    7,
+    8
+  ],
+  "environment": {
+    "environmentId": "ccarenv_b64_Y2NhcmVudl9lZTI0NzJjZDc5MTg4MTkxYmEzZTdkNzQ1OGE5MTMwNA",
+    "sourceConfigVersionId": "bfd25c1b-60d0-47a6-ae8c-8ecc4b0bd0c3~cecfgver_6af0cfba5e9c81978e539546fd2c2b5f",
+    "specRevision": "1",
+    "observedSpecRevision": "1",
+    "observationsCurrent": true,
+    "networkPolicy": {
+      "mode": "unrestricted",
+      "state": "enforced"
+    },
+    "specificCustomAllowlistChangeVerified": false,
+    "apiProbe": {
+      "url": "https://api.quranpedia.net/",
+      "httpStatus": 200,
+      "responseDate": "2026-11-08T20:15:39Z",
+      "curlExitCode": 0
+    },
+    "connect403Encountered": false,
+    "networkPolicyChangedByAgent": false
+  },
+  "original": {
+    "url": "https://api.quranpedia.net/api-quran-svg/hafs.zip",
+    "finalUrl": "https://api.quranpedia.net/api-quran-svg/hafs.zip",
+    "httpStatus": 200,
+    "responseDate": "2026-11-08T20:16:39Z",
+    "lastModifiedHeader": "Mon, 13 Jul 2026 10:47:53 GMT",
+    "contentType": "application/zip",
+    "bytes": 95415210,
+    "sha256": "8c1ff5ead881681331150a4a2f56dbf6c47ee4421d1e4d40552491cdc2997058",
+    "localPath": "/workspace/hafs-audit/originals/hafs.zip",
+    "originalRewritten": false,
+    "storedOutsideRepository": true,
+    "downloadedFromAdvertisedSource": true,
+    "uploadedAttachmentByteEquivalenceVerified": false,
+    "independentPublisherChecksumSupplied": false,
+    "externalChecksumComparison": "not-available"
+  },
+  "metadata": {
+    "name": "mushafs-1.json",
+    "bytes": 2812212,
+    "sha256": "74b965763ff6fa5232790f4eeafcf1707ab26051d17fe214745740cdbe0a7f98",
+    "matchesPrior10dHash": true,
+    "originalRewritten": false
+  },
+  "audit": {
+    "existingArchiveCommandExitCode": 2,
+    "existingArchiveCommandResult": "rejected: SVG_UNSUPPORTED_NAMESPACE_OR_LIMIT",
+    "allMemberDiagnostic": "archive-diagnostics.json",
+    "allMemberManifestOutsideRepository": "/workspace/hafs-audit/reports/all-members-manifest.json",
+    "allMemberManifestSHA256": "28958b0aab7a41c7025126b9edad3df2a453ba48edea7b355718871a44946bb3",
+    "productionToolsChanged": false,
+    "imagesRendered": false,
+    "coordinateTextSummary": "coordinate-text-summary.json",
+    "coordinateTextSummarySHA256": "4f0f74502468de94a76164a5983774a97b4f81de2e330cfcd48822fe10e8e7ab",
+    "diagnosticMethods": [
+      {
+        "path": "/workspace/hafs-audit/diagnostics/archive_all_members.py",
+        "sha256": "f1f2c807d88e26ff15814d321e8512c71c897d86684e42bcd923466221e16004",
+        "outsideRepository": true,
+        "productionTool": false
+      },
+      {
+        "path": "/workspace/hafs-audit/diagnostics/coordinate-text-audit.py",
+        "sha256": "ca94f6ff587cdefdb9f268c4e575d8d96798a6480e931169360aafaecca4403c",
+        "outsideRepository": true,
+        "productionTool": false
+      }
+    ],
+    "upstreamComparisonSHA256": "5104e5199a3def54bf6878e14b7f5356a793fe631c248b928f80b90889e0c268",
+    "upstreamComparisonOutsideRepository": "/workspace/hafs-audit/rights/upstream-byte-comparison.json"
+  },
+  "preview": {
+    "checkedAt": "2026-11-08T20:20:14.158723+00:00",
+    "projectId": "appgprj_6aec6725aa3c8191a6c052991fc99823",
+    "url": "https://mulazama-preview-05a.sara-a-zamil.chatgpt.site",
+    "latestVersion": 5,
+    "status": "active",
+    "accessPolicyRevision": 1,
+    "newVersionDeployed": false,
+    "contentActivation": false
+  },
+  "activation": {
+    "integrationBlocked": true,
+    "sourceAuthenticityVerified": false,
+    "imageRightsVerified": false,
+    "scientificApproval": false,
+    "productionReady": false,
+    "releaseGates": "G01-G10 blocked",
+    "fsrsChanged": false,
+    "learnerDataChanged": false,
+    "officialDomainChanged": false,
+    "officialDomainDeployed": false
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "phase": "10-E",
+  "verifiedCommit": "16766b9bd7c2525269db5b0d643efa8899ad78d8",
+  "startedAt": "2026-11-08T20:25:24.934338+00:00",
+  "finishedAt": "2026-11-08T20:28:44.077623+00:00",
+  "command": "MULAZAMA_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium python3 scripts/verify-08a.py --output /workspace/hafs-audit/verification-final",
+  "sourceDigest": "dadb98aef32447dd96b2c2a3ad648053953f820c5f9e1d2f6402fcbb54467627",
+  "sourceFiles": 237,
+  "localSummary": "/workspace/hafs-audit/verification-final/20261108T202524Z-16766b9bd7c2-mieoo2wj/summary.json",
+  "localSummarySHA256": "863f347d0107d9306c624ad2489e8d7f9d87413463580aa8dc73f280d659e52c",
+  "exitCode": 0,
+  "engineeringChecksPassed": true,
+  "checkoutPreserved": true,
+  "unitPassed": 967,
+  "browserPassed": 71,
+  "fsrsPassed": 40,
+  "pythonToolTests": {
+    "quranpedia-metadata-tests": 15,
+    "svg-security-tests": 26,
+    "quranpedia-archive-tests": 12,
+    "official-archive-tests": 22,
+    "official-intake-tests": 15,
+    "startup-tests": 8
+  },
+  "failedTests": 0,
+  "skippedTests": 0,
+  "flakyBrowserTests": 0,
+  "contentApprovalCommands": [
+    {
+      "name": "content-byte-audit",
+      "exitCode": 2,
+      "result": "Blocked"
+    },
+    {
+      "name": "content-supplemental-audit",
+      "exitCode": 2,
+      "result": "Blocked"
+    },
+    {
+      "name": "release-gates",
+      "exitCode": 2,
+      "result": "Blocked"
+    }
+  ],
+  "gates": [
+    {
+      "gate": "G01",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G02",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G03",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G04",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G05",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G06",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G07",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G08",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G09",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    },
+    {
+      "gate": "G10",
+      "status": "blocked",
+      "reasons": [
+        "MISSING_OR_DUPLICATE_ATTESTATION"
+      ]
+    }
+  ],
+  "productionReady": false,
+  "scientificApproval": false,
+  "realArchiveSvgSecurity": "rejected under unchanged policy",
+  "unrun": [
+    "Rendering of the rejected original SVGs",
+    "Independent scientific and visual comparison of 604 pages",
+    "Real-coordinate mobile and desktop interaction checks",
+    "Real-content activation and deployment"
+  ],
+  "priorRun": {
+    "commit": "0b8b4ae2c8975f8f1a30290abd0e12e897cbe1b2",
+    "localSummary": "/workspace/hafs-audit/verification/20261108T201823Z-0b8b4ae2c897-kn23m1eu/summary.json",
+    "exitCode": 1,
+    "error": "Original checkout changed during verification; investigate before relying on results.",
+    "cause": "Evidence/documentation was written while the snapshot verification was running.",
+    "resolution": "Committed evidence first, reran verification with unchanged checkout, and obtained this independent successful result."
+  }
+}
