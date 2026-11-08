@@ -96,7 +96,10 @@ async function verifiedBlob(page:MushafPage,bytes:Uint8Array<ArrayBuffer>):Promi
   return new Blob([bytes],{type:page.asset.mimeType});
 }
 async function responseBytes(response:Response,expected:number):Promise<Uint8Array<ArrayBuffer>> {
-  const declared=response.headers.get('content-length');if(declared!==null&&Number(declared)!==expected)fail('حجم ملف الصفحة لا يطابق البيان.');
+  // Fetch exposes decoded body bytes; Content-Length describes the encoded
+  // transfer when a host uses gzip/br. Only identity lengths are comparable.
+  const encoding=response.headers.get('content-encoding')?.trim().toLowerCase();
+  const declared=response.headers.get('content-length');if((!encoding||encoding==='identity')&&declared!==null&&Number(declared)!==expected)fail('حجم ملف الصفحة لا يطابق البيان.');
   if(!response.body){const bytes=new Uint8Array(await response.arrayBuffer());if(bytes.length!==expected)fail('صورة الصفحة غير مكتملة.');return bytes;}
   const reader=response.body.getReader(),parts:Uint8Array[]=[];let count=0;
   try{while(true){const {done,value}=await reader.read();if(done)break;count+=value.byteLength;if(count>expected){await reader.cancel();fail('تجاوز ملف الصفحة الحجم المعتمد.');}parts.push(value);}}

@@ -1,12 +1,17 @@
 import { readdir,readFile,writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
-import { join } from 'node:path';
 const root=new URL('../dist/',import.meta.url);
 async function collect(base,path='') {
  const files=[];
  for(const item of await readdir(base,{withFileTypes:true})){
+  // Page images are fetched and verified on demand by the reader. Their size
+  // and rights do not belong to the app-shell install or version fingerprint.
+  // Skip before descending or reading: never precache a complete page corpus.
+  if(path===''&&item.name==='mushaf')continue;
+  if(item.isSymbolicLink())throw Error('Unsupported symbolic link in offline app shell: '+path+item.name);
   if(item.isDirectory())files.push(...await collect(new URL(item.name+'/',base),path+item.name+'/'));
-  else if(!['sw.js','offline-assets.json'].includes(item.name))files.push(path+item.name);
+  else if(item.isFile()) {if(!['sw.js','offline-assets.json'].includes(item.name))files.push(path+item.name);}
+  else throw Error('Unsupported entry in offline app shell: '+path+item.name);
  }
  return files.sort();
 }
