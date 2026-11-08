@@ -1,17 +1,17 @@
 {
-  "checkedAt": "2026-11-08T17:04:20Z",
+  "checkedAt": "2026-11-08T17:11:39.182388+00:00",
   "projectId": "appgprj_6aec6725aa3c8191a6c052991fc99823",
-  "version": 2,
-  "versionId": "appgprj_6aec6725aa3c8191a6c052991fc99823~appgver_1db631914dbc8191830f9ad2629d1a71",
-  "deploymentId": "appgdep_6af0ab7483f48191bc583c6288d21605",
+  "version": 3,
+  "versionId": "appgprj_6aec6725aa3c8191a6c052991fc99823~appgver_70903a2d34208191817c54801839087b",
+  "deploymentId": "appgdep_6af0ad3e816c8191bbbdcc54bb033178",
   "deploymentStatus": "succeeded",
   "url": "https://mulazama-preview-05a.sara-a-zamil.chatgpt.site",
   "access": "owner-only",
   "customDomains": [],
-  "githubApplicationCommit": "f16957c476d252ef3e402392eee731149f642e64",
-  "sitesSourceCommit": "f07ce83a419c7d9a6acc75d14280d900da11bd1b",
-  "sourceDigest": "56e6a9f8f9198f7d656ff8d229497e1830bc5913537e9492f5c7f3831a960922",
-  "artifactSHA256": "c0bdf99cc24570655b0c203800e559e422fa1950b5b16c85267f1382bb94d2df",
+  "githubApplicationCommit": "4507a1595e816ac53abdad2d89f946fbf2388cfd",
+  "sitesSourceCommit": "76cb3d247637a28a2451b5f589a7ea068a70e6cd",
+  "sourceDigest": "cf0a092f1f8be4d5a32bed063d54dfb2ef852828c4716269ee95fb3afe2cc30d",
+  "artifactSHA256": "216caf12f6e9d3e42620188abe81538ddeea2740e7e7f55e8a08d53435b1be92",
   "localVerification": {
     "unit": 897,
     "browserIncludingContent": 61,
@@ -25,5 +25,13 @@
   },
   "verificationScope": "Native Sites succeeded and saved version/archive/source verified; regular artifact rendered locally with 200, RTL and zero page errors. Hosted interactive browser check not completed.",
   "officialDomainStatus": "Unverified: environment proxy CONNECT 403",
-  "registrarStatus": "Unverified: browser AT-SPI control failure and environment proxy CONNECT 403; credentials not entered."
+  "registrarStatus": "Unverified: browser AT-SPI control failure and environment proxy CONNECT 403; credentials not entered.",
+  "priorCiFailure": {
+    "commit": "f16957c476d252ef3e402392eee731149f642e64",
+    "url": "https://github.com/saraazamil-ui/mulazama/actions/runs/42502577332",
+    "test": "L3SECJ04",
+    "result": "60/61 browser tests passed; baseline taken before persisted PlanRecomputed",
+    "fixCommit": "4507a1595e816ac53abdad2d89f946fbf2388cfd",
+    "fix": "Test-only wait for durable plan; full event equality retained; focused and full cloud verification passed."
+  }
 }
