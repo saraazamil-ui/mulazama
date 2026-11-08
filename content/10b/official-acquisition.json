@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "phase": "10-B",
+  "checkedAt": "2026-11-08T17:24:26.910549+00:00",
+  "status": "blocked-by-environment-network-policy",
+  "officialPackagesDownloaded": 0,
+  "contentVerification": "not-performed",
+  "scientificApproval": false,
+  "productionActivation": false,
+  "accessProbes": [
+    {"url": "https://dm.qurancomplex.gov.sa/", "curlExitCode": 56, "proxyResponse": "CONNECT 403"},
+    {"url": "https://dm.qurancomplex.gov.sa/rights/", "curlExitCode": 56, "proxyResponse": "CONNECT 403"},
+    {"url": "https://qurancomplex.gov.sa/quran-dev/", "curlExitCode": 56, "proxyResponse": "CONNECT 403"},
+    {"url": "https://qurancomplex.gov.sa/embed-isdarat/", "curlExitCode": 56, "proxyResponse": "CONNECT 403"}
+  ],
+  "manualPackages": [
+    {
+      "officialPage": "https://dm.qurancomplex.gov.sa/",
+      "label": "النسخة الرقمية (برواية حفص)",
+      "advertisedVersion": null,
+      "finalDownloadUrl": null,
+      "archiveFilename": null,
+      "localSha256": null,
+      "historicallyAdvertisedSha256": "280C5D71CA16AAEEB3A343BE1B92C76FA6DF71D0671E202C026FDE12402D9EEF"
+    },
+    {
+      "officialPage": "https://qurancomplex.gov.sa/quran-dev/",
+      "label": "الخط الحاسوبي يونيكود (رواية حفص)",
+      "advertisedVersion": "15.0",
+      "finalDownloadUrl": null,
+      "archiveFilename": null,
+      "localSha256": null,
+      "historicallyAdvertisedSha256": "227E6B1564D980F2BD09C2C35EBFB0330AC268C79A7C247CD1AB665BC635F245"
+    }
+  ],
+  "historicalHashStatus": "Unverified indexed publisher descriptions from 10-A; not current publisher-page validation or local checksum matches.",
+  "manualDelivery": "Provide unchanged original archives from the named official download buttons, final URL/date, publisher checksum evidence, and included rights/readme. No exact archive filenames or final download URLs have been established.",
+  "preflightCommand": "python3 scripts/inspect-official-archive10b.py ORIGINAL_ARCHIVE --source-url OFFICIAL_HTTPS_PAGE --output NEW_RECEIPT.json [--published-sha256 CURRENT_PUBLISHER_SHA256]",
+  "preflightScope": "Bounded inventory and supplied-hash comparison only; no extraction, payload/content approval, source authentication, or rights approval. A successful receipt never activates Quran display.",
+  "officialAlternative": {"page": "https://qurancomplex.gov.sa/embed-isdarat/", "access": "blocked", "stablePageApiVerified": false},
+  "unofficialMirrorUsed": false
+}

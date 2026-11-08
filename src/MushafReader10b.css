@@ -1,0 +1,28 @@
+.mushaf-reader { width: 100%; min-width: 0; }
+.mushaf-reader .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.mushaf-reader .mushaf-navigation { padding-block: 1rem; }
+.mushaf-navigation-fields, .mushaf-selection-fields { display: flex; flex-wrap: wrap; align-items: end; gap: .8rem; margin: 0; padding: 0; border: 0; min-width: 0; }
+.mushaf-navigation-fields > .field { flex: 1 1 9rem; min-width: 0; }
+.mushaf-page-jump { display: flex; align-items: end; flex: 1 1 12rem; gap: .5rem; }
+.mushaf-page-jump .field { flex: 1; min-width: 0; }
+.mushaf-reader input, .mushaf-reader select { min-width: 0; max-width: 100%; }
+.mushaf-page-turns { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .5rem; margin-block: 1rem; }
+.mushaf-page-turns output { text-align: center; flex: 1; white-space: nowrap; }
+.mushaf-page-stage { position: relative; display: grid; place-items: center; width: min(100%, 52rem); margin-inline: auto; min-height: 18rem; background: #fff; border: 1px solid var(--border, #dbe4d7); border-radius: 1rem; overflow: hidden; touch-action: pan-y pinch-zoom; }
+.mushaf-page-stage:focus-visible { outline: 3px solid var(--accent, #24624f); outline-offset: 3px; }
+.mushaf-page-stage img { display: block; width: 100%; max-width: 100%; height: auto; object-fit: contain; }
+.mushaf-page-message { padding: 2rem 1rem; text-align: center; color: #23453b; }
+.mushaf-source { margin-block: .7rem 1.5rem; text-align: center; font-size: .85rem; }
+.mushaf-source a { margin-inline-start: .5rem; }
+.mushaf-selection-fields > .field { flex: 1 1 7rem; }
+.mushaf-selection-fields > .button { flex: 1 1 10rem; }
+.mushaf-actions { margin-block: 1.25rem; }
+@media (max-width: 540px) {
+  .mushaf-page-turns .button { padding-inline: .65rem; gap: .25rem; font-size: .82rem; min-height: 44px; }
+  .mushaf-page-turns output { font-size: .85rem; }
+  .mushaf-page-turns { gap: .3rem; }
+  .mushaf-navigation-fields > .field { flex-basis: calc(50% - .5rem); }
+  .mushaf-page-jump { flex-basis: 100%; }
+  .mushaf-page-stage { border-radius: .5rem; }
+}
+@media (prefers-reduced-motion: reduce) { .mushaf-reader * { scroll-behavior: auto; } }

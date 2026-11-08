@@ -158,6 +158,7 @@ def main():
         execute("install", ["pnpm", "install", "--frozen-lockfile", "--store-dir", str(cache / "pnpm-store"),
                             "--cache-dir", str(cache / "pnpm-cache")])
         execute("startup-tests", [sys.executable, "scripts/tests/cloud-start08a.test.py"])
+        execute("official-archive-tests", [sys.executable, "scripts/tests/inspect-official-archive10b.test.py"])
         helper = execute("browser-helper-tests", ["node", "--test", "--test-reporter=tap",
                                                    "scripts/tests/playwright-browser.test.mjs"])
         helper_counts = {key: int(value) for key, value in re.findall(
@@ -177,6 +178,7 @@ def main():
         summary["browser"] = json.loads(probe)
         before = {path.relative_to(snapshot).as_posix(): signature(path) for path in evidence_files(snapshot)}
         execute("verify-06l4", [sys.executable, "scripts/verify-06l4.py", "--browser"])
+        execute("mushaf-browser", ["pnpm", "test:mushaf"])
     except (OSError, ValueError, RuntimeError, tarfile.TarError) as error:
         errors.append(str(error))
     finally:
@@ -198,10 +200,16 @@ def main():
         unit = fresh_json(L4 + "final-tests.json")
         summary["unit"] = {key: unit.get(key) for key in (
             "numTotalTests", "numPassedTests", "numFailedTests", "numPendingTests", "numTodoTests", "success")}
-        if unit.get("success") is not True or unit.get("numTotalTests") != 897 or unit.get("numPassedTests") != 897 or any(
+        if unit.get("success") is not True or unit.get("numTotalTests") != 957 or unit.get("numPassedTests") != 957 or any(
             unit.get(key) != 0 for key in ("numFailedTests", "numPendingTests", "numTodoTests")
         ):
-            errors.append("Unit results must be exactly 897 passed, zero failed/skipped/todo.")
+            errors.append("Unit results must be exactly 957 passed, zero failed/skipped/todo.")
+        mushaf = fresh_json("test-results-mushaf/mushaf-results.json")
+        summary["mushafBrowser"] = mushaf.get("stats", {})
+        if summary["mushafBrowser"].get("expected") != 10 or mushaf.get("errors") or any(
+            summary["mushafBrowser"].get(key) != 0 for key in ("skipped", "unexpected", "flaky")
+        ):
+            errors.append("Mushaf browser: expected 10 passed, zero failed/skipped/flaky/errors.")
         summary["browserSuites"] = {}
         for name, expected in BROWSER_COUNTS.items():
             data = fresh_json(L4 + "final-" + name + "-results.json")

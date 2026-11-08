@@ -19,10 +19,10 @@ root.render(
   </main>,
 );
 openRuntimeApplication()
-  .then(({history,journey}) => {
+  .then(({history,journey,mushaf,study,readerDatabaseName,readerError}) => {
     root.render(
       <StrictMode>
-        <App service={history.product} data={history} journey={journey} />
+        <App service={history.product} data={history} journey={journey} mushaf={mushaf} study={study} readerDatabaseName={readerDatabaseName} readerError={readerError} />
       </StrictMode>,
     );
   })

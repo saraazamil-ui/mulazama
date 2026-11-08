@@ -22,8 +22,10 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm exec playwright install --with-deps chromium
       - run: python3 scripts/tests/cloud-start08a.test.py
+      - run: python3 scripts/tests/inspect-official-archive10b.test.py
       - run: node --test scripts/tests/playwright-browser.test.mjs
       - run: python3 scripts/verify-06l4.py --browser
+      - run: pnpm test:mushaf
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -35,5 +37,6 @@ jobs:
             test-results-deployment/
             test-results-journey/
             test-results-journey-offline/
+            test-results-mushaf/
             playwright-report/
 # There is deliberately no deploy step. A passing engineering job is not release approval.
