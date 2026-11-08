@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "phase": "10-D",
+  "recordedAt": "2026-11-08T19:12:32Z",
+  "candidate": {
+    "provider": "Quranpedia",
+    "officialKingFahdPublisherAuthenticated": false,
+    "scientificApproval": false,
+    "productionReady": false
+  },
+  "originals": {
+    "metadata": {
+      "name": "mushafs-1.json",
+      "receivedInChat": true,
+      "materialized": true,
+      "bytes": 2812212,
+      "sha256": "74b965763ff6fa5232790f4eeafcf1707ab26051d17fe214745740cdbe0a7f98",
+      "declaredVersion": "2026-11-08",
+      "copyVerifiedByteIdentical": true,
+      "originalModified": false,
+      "storedOutsideRepository": true
+    },
+    "archive": {
+      "name": "hafs.zip",
+      "receivedInChat": true,
+      "materialized": false,
+      "sha256": null,
+      "bytes": null,
+      "transferError": "file exceeds the executor transfer limit of 32 MiB",
+      "transferLimitBytes": 33554432,
+      "actualSvgFilesInspected": 0,
+      "actualJsonFilesInspected": 0,
+      "actualArchiveCrcChecked": false
+    }
+  },
+  "sourceLinks": {
+    "userArchiveUrl": "https://api.quranpedia.net/api-quran-svg/hafs.zip?utm_source=chatgpt.com",
+    "apiAdvertisedArchiveUrl": "https://api.quranpedia.net/api-quran-svg/hafs.zip",
+    "uploadedMetadataArchiveUrl": "https://quranpedia.net/api-quran-svg/hafs.zip",
+    "urlByteEquivalenceVerified": false,
+    "docs": "https://api.quranpedia.net/",
+    "dataLicense": "https://quranpedia.net/dumps/LICENSE.md"
+  },
+  "access": {
+    "directExecutorProbe": "CONNECT 403 before origin connection",
+    "networkPolicy": "restricted-enforced",
+    "observedRevision": "1",
+    "customAllowedHosts": [],
+    "ownerPlansToEnableHost": true,
+    "changeObserved": false,
+    "noBypassAttempted": true
+  },
+  "rights": {
+    "datasetUseInWebsites": "permitted by attached and publisher license",
+    "datasetRepublication": "requires source/link/version and keeping corrections current",
+    "dataLicenseVersion": "2026-11-08",
+    "svgImagePublicRehostingVerified": false,
+    "reason": "Inspected dataset terms do not explicitly bind the separate image ZIP; actual archive notices and source identity remain unavailable."
+  },
+  "textReference": {
+    "selectedForComparisonOnly": "uploaded mushafs-1.json exact bytes",
+    "textVariantsPerAyahInUploadedFile": 1,
+    "archiveTextVariantsCompared": false,
+    "automaticNormalization": false,
+    "automaticMixing": false,
+    "officialRuntimeReferenceSelected": false,
+    "announcedPublisherChange": "Mushaf 1 moved from Imlai to KFGQPC Uthmani during November 2026; this is a text-source announcement, not proof of image-archive identity."
+  },
+  "mapping": {
+    "sourceHizbRange": [
+      1,
+      240
+    ],
+    "runtimeHizbRange": [
+      1,
+      60
+    ],
+    "runtimeRubRange": [
+      1,
+      240
+    ],
+    "sourceHizbSemanticsVerified": false,
+    "automaticConversion": false,
+    "firstRecordOutsideRuntimeHizbRange": {
+      "surah": 7,
+      "ayah": 1,
+      "page": 151,
+      "juz": 8,
+      "sourceHizb": 61
+    },
+    "recordsOutsideRuntimeHizbRange": 5282,
+    "wordPageSpansAvailable": false,
+    "coordinateMapInspected": false
+  },
+  "referenceResearch": {
+    "quranTextUpstreamExplicitlyLinked": "https://github.com/quran-ws/quran-text",
+    "svgUpstreamExplicitlyBoundToRequestedArchive": null,
+    "svgReferenceOnly": "https://github.com/quran-ws/quran-svg",
+    "svgProvenanceReference": "https://github.com/quran-ws/quran-svg/blob/main/docs/PROVENANCE.md",
+    "candidateSubstituted": false,
+    "notes": "Related reference reports a 1441H vector source and structural checks, not independent visual fidelity of the requested Quranpedia ZIP. No substitute artifact was downloaded or repackaged."
+  },
+  "reviewRequired": [
+    "Actual original ZIP byte identity, complete security scan and CRC.",
+    "Image-specific source and rehosting permission.",
+    "Cross-file exact text differences without normalization.",
+    "Actual page/ayah coordinates, page spans and sourceHizb semantics.",
+    "Independent comparison of all page artwork to the exact reference edition."
+  ],
+  "runtime": {
+    "approvedContentActivated": false,
+    "learnerEventsChanged": false,
+    "fsrsChanged": false,
+    "previewDeployed": false,
+    "officialDomainDeployed": false
+  }
+}

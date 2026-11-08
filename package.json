@@ -28,7 +28,9 @@
     "verify:l4": "python3 scripts/verify-06l4.py",
     "test:mushaf": "playwright test --config playwright.mushaf.config.ts",
     "content:inspect-archive": "python3 scripts/inspect-official-archive10b.py",
-    "content:receive-original": "python3 scripts/receive-official-package10c.py"
+    "content:receive-original": "python3 scripts/receive-official-package10c.py",
+    "content:audit-candidate-json": "python3 scripts/audit-quranpedia-metadata10d.py",
+    "content:audit-candidate-zip": "python3 scripts/audit-quranpedia-archive10d.py"
   },
   "dependencies": {
     "lucide-react": "0.468.0",
