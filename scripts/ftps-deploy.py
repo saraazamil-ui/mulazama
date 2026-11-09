@@ -13,6 +13,8 @@ import sys
 
 
 PORT = 21
+# Owner-provided public hostname, checked against the secret before any network call.
+EXPECTED_SERVER = "sh00003.whb.tempwebhost.net"
 REMOTE_DIRECTORY = "./"  # The FTP account already starts inside public_html.
 CONFIRMATION = "DEPLOY mulazama.com"
 FIXED_FILES = frozenset({
@@ -26,6 +28,10 @@ CERTIFICATE_REASONS = {
     19: "self-signed chain", 20: "issuer chain unavailable",
     21: "issuer chain unverifiable", 62: "hostname mismatch", 64: "IP address mismatch",
 }
+
+
+class UnexpectedServerError(ValueError):
+    """The configured secret must match the owner-approved host before connecting."""
 
 
 class StageFailure(Exception):
@@ -87,7 +93,7 @@ def validate_artifact(directory):
 def credentials():
     values = [os.environ.get(name, "") for name in ("FTP_SERVER", "FTP_USERNAME", "FTP_PASSWORD")]
     # Copy/paste whitespace around a host is harmless; preserve credential bytes exactly.
-    values[0] = values[0].strip()
+    values[0] = values[0].strip().lower()
     if not all(values):
         raise ValueError("FTP_SERVER, FTP_USERNAME and FTP_PASSWORD must all be configured.")
     host, username, password = values
@@ -99,6 +105,8 @@ def credentials():
         raise ValueError("FTP_SERVER must be a hostname only; Explicit FTPS uses port 21.")
     if any(character in username + password for character in "\r\n\x00"):
         raise ValueError("FTP credentials contain an unsupported control character.")
+    if host != EXPECTED_SERVER:
+        raise UnexpectedServerError()
     return host, username, password
 
 
@@ -133,7 +141,9 @@ def preflight(ftp):
     # NLST exercises the protected passive data channel; do not print server filenames.
     with stage("listing"):
         entries = ftp.nlst()
-    return {"explicitFTPS": True, "port": PORT, "remoteDirectory": REMOTE_DIRECTORY,
+    return {"expectedServerMatched": True, "certificateHostnameVerified": True,
+            "certificateChainVerified": True, "authenticated": True,
+            "explicitFTPS": True, "port": PORT, "remoteDirectory": REMOTE_DIRECTORY,
             "loginDirectoryUnchanged": True, "protectedDirectoryListing": True,
             "directoryEntries": len(entries), "remoteWrites": 0,
             "physicalPublicHtmlMapping": "owner-reported; not provable from FTP PWD alone"}
@@ -191,6 +201,11 @@ def main(argv=None):
         # Server replies and exception text can echo credentials or private directory names.
         # Keep failure logs useful without exposing either; GitHub masking is only a backstop.
         failure = error if isinstance(error, StageFailure) else StageFailure(fallback_stage, error)
+        if failure.error_type == "UnexpectedServerError":
+            print("FTP_SERVER does not match the owner-approved hosting hostname. "
+                  "Update the GitHub secret before retrying. No network connection was attempted.",
+                  file=sys.stderr)
+            return 1
         detail = failure.error_type + (", FTP " + failure.status if failure.status else "")
         if failure.certificate_verify_code is not None:
             detail += ", certificate_verify_code=" + str(failure.certificate_verify_code)

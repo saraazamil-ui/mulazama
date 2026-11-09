@@ -57,7 +57,7 @@ class FtpsTests(unittest.TestCase):
         self.addCleanup(temporary.cleanup)
         self.root = Path(temporary.name) / "dist"
         self.root.mkdir()
-        self.env = {"FTP_SERVER": "ftp.example.invalid", "FTP_USERNAME": "user", "FTP_PASSWORD": "secret-password"}
+        self.env = {"FTP_SERVER": deploy.EXPECTED_SERVER, "FTP_USERNAME": "user", "FTP_PASSWORD": "secret-password"}
         self.addCleanup(patch.stopall)
         patch.dict(os.environ, self.env, clear=True).start()
         self.instances = []
@@ -100,6 +100,8 @@ class FtpsTests(unittest.TestCase):
             ("login", "user", "secret-password"), ("prot_p",), ("set_pasv", True),
             ("pwd",), ("cwd", "./"), ("pwd",), ("nlst",), ("close",)])
         self.assertEqual(json.loads(out)["remoteWrites"], 0)
+        for field in ("expectedServerMatched", "certificateHostnameVerified", "certificateChainVerified", "authenticated"):
+            self.assertIs(json.loads(out)[field], True)
         self.assertNotIn("private-existing-file", out)
 
     def test_server_must_be_hostname_without_scheme_path_port_or_controls(self):
@@ -113,11 +115,26 @@ class FtpsTests(unittest.TestCase):
         self.factory.assert_not_called()
 
     def test_only_hostname_surrounding_whitespace_is_trimmed(self):
-        with patch.dict(os.environ, {"FTP_SERVER": " \tftp.example.invalid\r\n",
+        with patch.dict(os.environ, {"FTP_SERVER": " \t" + deploy.EXPECTED_SERVER.upper() + "\r\n",
                                      "FTP_USERNAME": " user ", "FTP_PASSWORD": " secret-password\t "}):
             self.assertEqual(self.run_cli("check")[0], 0)
-        self.assertEqual(self.instances[0].calls[0], ("connect", "ftp.example.invalid", 21))
+        self.assertEqual(self.instances[0].calls[0], ("connect", deploy.EXPECTED_SERVER, 21))
         self.assertIn(("login", " user ", " secret-password\t "), self.instances[0].calls)
+
+    def test_old_or_unexpected_host_stops_before_network_without_echoing_secret(self):
+        self.fixture()
+        for host in ("ftp.mulazama.com", "other-private-host.example.invalid"):
+            for operation in ("check", "deploy"):
+                with self.subTest(host=host, operation=operation), patch.dict(os.environ, {"FTP_SERVER": host}):
+                    code, out, err = self.run_cli(operation, "--local-dir", str(self.root),
+                                                  "--confirm", deploy.CONFIRMATION)
+                self.assertEqual(code, 1)
+                self.assertEqual(out, "")
+                self.assertIn("Update the GitHub secret before retrying", err)
+                self.assertIn("No network connection was attempted", err)
+                for value in (host, self.env["FTP_USERNAME"], self.env["FTP_PASSWORD"]):
+                    self.assertNotIn(value, err)
+        self.factory.assert_not_called()
 
     def test_missing_secrets_fail_before_connect(self):
         for key in self.env:
