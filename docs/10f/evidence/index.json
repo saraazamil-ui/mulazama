@@ -1,0 +1,55 @@
+{
+  "purpose": "Bounded reproducible evidence accompanying reader implementation, not content or deployment approval",
+  "rawOriginalsIncluded": false,
+  "reports": [
+    {
+      "report": "source-pin.json",
+      "sourcePath": "/workspace/quran-svg-10f/manifest.json",
+      "sourceSha256": "67ea17c188a0bf3763af515a6da07ce3b4d609b9f3d82751156d3b291b7d5ee1",
+      "sourceBytes": 499800,
+      "compactProjection": true
+    },
+    {
+      "report": "rights-review.json",
+      "sourcePath": "/workspace/quran-svg-10f/rights-review.json",
+      "sourceSha256": "833f771503f9e2607fb82f6587fc56eb5541ed44bc7c348e4d64361e30717524",
+      "sourceBytes": 4335,
+      "compactProjection": false
+    },
+    {
+      "report": "svg-security-summary.json",
+      "sourcePath": "/workspace/hafs-audit/10f/quran-ws-svg-scoped-security.json",
+      "sourceSha256": "d06ea60dc78ed0cd3a405a844b89821bfdc85a590be3c1b7a408b89c61450067",
+      "sourceBytes": 1046103,
+      "compactProjection": true
+    },
+    {
+      "report": "json-security-summary.json",
+      "sourcePath": "/workspace/hafs-audit/10f/quran-ws-json-security.json",
+      "sourceSha256": "b17538ec3ba3584472ebccca0f69c0c8fbb9626978c04554c3ca5865705cef18",
+      "sourceBytes": 458597,
+      "compactProjection": true
+    },
+    {
+      "report": "canonical-map-summary.json",
+      "sourcePath": "/workspace/hafs-audit/10f/new-candidate-json-identities.json",
+      "sourceSha256": "5e4f47b63d59c1a6a324f6da50d219e9870d67a0fce5d7c778401e1978bce0bf",
+      "sourceBytes": 2299,
+      "compactProjection": false
+    },
+    {
+      "report": "text-difference-summary.json",
+      "sourcePath": "/workspace/hafs-audit/10f/text-difference-analysis.json",
+      "sourceSha256": "5af53273ca341b1c06aa6621cc52325ba41a7e6c68af44a92190f1a69287a05e",
+      "sourceBytes": 22187,
+      "compactProjection": true
+    },
+    {
+      "report": "old-source-rejection.json",
+      "sourcePath": "/workspace/hafs-audit/10f/old-archive-scoped-rejection.json",
+      "sourceSha256": "26ad6a0ac9333b91b16b3d93383dff0133572f7fa6ae393aec60f615c2f702db",
+      "sourceBytes": 642,
+      "compactProjection": false
+    }
+  ]
+}

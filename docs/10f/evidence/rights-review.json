@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-11-09T02:42:33.117105+00:00",
+  "candidate": "quran-ws/quran-svg hafs-kfqc v1.1.1",
+  "commit": "3ff27b46cecb0c0519d77531d9c868a579d1f623",
+  "sourceTermsBoundByCommit": true,
+  "files": [
+    {
+      "url": "https://github.com/quran-ws/quran-svg/blob/3ff27b46cecb0c0519d77531d9c868a579d1f623/LICENSE",
+      "localPath": "notices/LICENSE"
+    },
+    {
+      "url": "https://github.com/quran-ws/quran-svg/blob/3ff27b46cecb0c0519d77531d9c868a579d1f623/NOTICE.md",
+      "localPath": "notices/NOTICE.md"
+    },
+    {
+      "url": "https://github.com/quran-ws/quran-svg/blob/3ff27b46cecb0c0519d77531d9c868a579d1f623/LICENSES/CC-BY-4.0.txt",
+      "localPath": "notices/CC-BY-4.0.txt"
+    }
+  ],
+  "rights": [
+    {
+      "material": "Publisher-authored per-page metadata, ayah polygon hit layer, indexes, repository structure",
+      "license": "CC BY 4.0",
+      "useInsideProduct": "Attribution requirement permanently waived by author for apps, websites, services, APIs, tools and products, free or commercial.",
+      "redistributionAsResource": "CC BY attribution applies when third party can obtain data as data; include source, license link, version and whether modified. Preserve relevant notices and corrections path."
+    },
+    {
+      "material": "Original mushaf page artwork",
+      "license": "Not owned/licensed as CC BY by quran.ws. Remains under original publisher terms. Pinned LICENSE reproduces KFQC Arabic/English digital-mushaf rights; pinned NOTICE names hafs/kfqc as covered.",
+      "publisherTermsAsReproduced": "Free use in personal, business, governmental, digital publishing, media, websites and software inside and outside Saudi Arabia. Physical Mushaf printing inside Saudi Arabia and imports for commercial sale are subject to cited royal decrees.",
+      "limitations": "Names, logos and trademarks are not licensed. Source material must not be altered, truncated or misrepresented. No warranty; text/artwork verification against authorized printed edition remains publisher obligation."
+    },
+    {
+      "material": "tools/ and code",
+      "license": "MIT",
+      "notes": "No upstream tool execution is required for acquisition. MIT copyright notice must accompany redistribution of covered software."
+    }
+  ],
+  "provenance": [
+    {
+      "claim": "Pinned NOTICE identifies hafs/kfqc as King Fahd Complex derivative. Exact downloaded release members have been compared against pinned commit, linking these legal notices to candidate bytes."
+    },
+    {
+      "claim": "Pinned release v1.1.1 says marker markup changed from v1.1.0; its publisher reports pixel-identical artwork in 310 sampled pages across all 5 readings and byte-equal non-marker regions. This is publisher evidence, not an independent review of all Hafs pages."
+    },
+    {
+      "claim": "Pinned commit has no docs/PROVENANCE.md. The later inspected b4155f07e4aea087d2c458069acff9f7c7e749f6 document claims 1441-AI-hafs.zip ancestry but admits only structural checking for Hafs. Do not attach later prose to this release as if shipped with it."
+    }
+  ],
+  "primaryPublisherVerification": {
+    "performedInThisSourceStudy": false,
+    "priorObservation": "Earlier task observed old official rights URL redirect to current /rights and HTTP 404; no current primary rights page was obtained. This does not revoke the upstream reproduced permission but limits independent provenance verification."
+  },
+  "recommendedAttribution": "مصحف حفص — رسوم من إصدار مجمع الملك فهد؛ ملفات SVG وبيانات الإحداثيات من Quran.ws، quran-svg v1.1.1 (commit 3ff27b46cecb0c0519d77531d9c868a579d1f623). حقوق الرسم للناشر الأصلي، وطبقة البيانات CC BY 4.0.",
+  "remaining": [
+    "Static SVG security and coordinate tests before displaying any real candidate.",
+    "Independent comparison to exact authorized reference edition, including opening spread, crossings, markers and all 604 pages.",
+    "Separate scientific and engineering approvals; acquisition/hash success alone does not activate approved content."
+  ],
+  "flags": {
+    "scientificApproval": false,
+    "productionReady": false,
+    "externalMessagesSent": false,
+    "otherRiwayatDownloaded": false,
+    "quranpediaRedownloaded": false
+  }
+}

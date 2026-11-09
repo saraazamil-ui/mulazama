@@ -2,7 +2,9 @@
 """Read-only, fail-closed preflight for a deliberately small static SVG subset.
 
 No renderer, sanitizer, source authentication, coordinate mapping, or Quran review.
-Unknown features are rejected; original bytes are never rewritten.
+Unknown features are rejected; original bytes are never rewritten. The optional
+quran-ws Hafs dialect admits only the measured passive metadata described below;
+the default 10-D policy does not infer that dialect from an input namespace.
 """
 import argparse
 import hashlib
@@ -21,6 +23,11 @@ MAX_PATH_LENGTH, MAX_PATH_TOKENS, MAX_EXPANDED_NODES = 1000000, 200000, 200000
 MAX_CSS_RULES, MAX_CSS_DECLARATIONS = 1000, 10000
 MAX_STYLESHEET_LENGTH, MAX_EXPANDED_GEOMETRY = 128 * 1024, 2000000
 SVG, XLINK = "http://www.w3.org/2000/svg", "http://www.w3.org/1999/xlink"
+XML = "http://www.w3.org/XML/1998/namespace"
+QURAN_WS_HAFS_DIALECT = "quran-ws-hafs-kfqc-v1.1.1"
+AYAH_NAMESPACE = "https://quranpedia.net"
+AYAH_COORDINATES = {AYAH_NAMESPACE + "}x", AYAH_NAMESPACE + "}y"}
+AYAH_IDENTIFIERS = {"number", "ayah", "surah"}
 NUMBER = r"[-+]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][-+]?\d+)?"
 IDENT = r"[A-Za-z_][A-Za-z0-9_.:-]*"
 GEOMETRY = {"path", "rect", "circle", "ellipse", "line", "polyline", "polygon"}
@@ -113,7 +120,9 @@ def path(value):
     return len(tokens)
 
 
-def inspect_svg(data):
+def inspect_svg(data, *, dialect=None):
+    if dialect not in (None, QURAN_WS_HAFS_DIALECT):
+        reject("SVG_UNSUPPORTED_DIALECT")
     if not isinstance(data, bytes) or not data or len(data) > MAX_BYTES:
         reject("SVG_BYTE_LIMIT_OR_INVALID_INPUT")
     if b"\x00" in data: reject("SVG_UTF8_REQUIRED")  # Prevent Expat's BOM-less UTF-16/32 autodetection.
@@ -123,6 +132,45 @@ def inspect_svg(data):
         reject("SVG_UTF8_REQUIRED")
     nodes, stack, ids, references, counts = [], [], {}, [], {}
     root, css_rules, css_declarations, namespaces = {}, 0, 0, 0
+    ayah_keys, metadata_counts = set(), {"coordinatePairs": 0, "ayahLabels": 0, "xmlSpace": 0}
+
+    def passive_metadata(tag, attrs):
+        """Explicit dialect data only; no attributes are removed or rewritten.
+
+        xml:space is accepted only on the root SVG. Custom coordinates require
+        a finite scalar pair on a g. Canonical labels require a complete triple
+        on a path, bounded integer IDs and the exact six-digit padded key.
+        These syntactic limits are not scientific validation of a verse map.
+        """
+        if dialect is None:
+            return set()
+        accepted = set()
+        space = XML + "}space"
+        if space in attrs:
+            if tag != "svg" or attrs[space] not in {"preserve", "default"}:
+                reject("SVG_DIALECT_XML_SPACE_INVALID")
+            accepted.add(space); metadata_counts["xmlSpace"] += 1
+        coordinates = AYAH_COORDINATES.intersection(attrs)
+        if coordinates:
+            if tag != "g" or coordinates != AYAH_COORDINATES:
+                reject("SVG_DIALECT_COORDINATE_PAIR_REQUIRED_ON_GROUP")
+            for key in coordinates:
+                if len(attrs[key]) > 128 or len(numbers(attrs[key])) != 1:
+                    reject("SVG_DIALECT_COORDINATE_SCALAR_REQUIRED")
+            accepted.update(coordinates); metadata_counts["coordinatePairs"] += 1
+        identifiers = AYAH_IDENTIFIERS.intersection(attrs)
+        if identifiers:
+            if tag != "path" or identifiers != AYAH_IDENTIFIERS:
+                reject("SVG_DIALECT_AYAH_TRIPLE_REQUIRED_ON_PATH")
+            if not all(re.fullmatch(r"[1-9][0-9]{0,2}", attrs[key], re.ASCII) for key in ("surah", "ayah")):
+                reject("SVG_DIALECT_AYAH_IDENTIFIER_INVALID")
+            surah, ayah = int(attrs["surah"]), int(attrs["ayah"])
+            if not (1 <= surah <= 114 and 1 <= ayah <= 286) or attrs["number"] != f"{surah:03}{ayah:03}":
+                reject("SVG_DIALECT_AYAH_IDENTIFIER_INVALID")
+            if (surah, ayah) in ayah_keys:
+                reject("SVG_DIALECT_DUPLICATE_AYAH_IDENTIFIER")
+            ayah_keys.add((surah, ayah)); accepted.update(identifiers); metadata_counts["ayahLabels"] += 1
+        return accepted
 
     def reference(value, owner, targets):
         if nodes[owner]["tag"] == "style":
@@ -163,10 +211,13 @@ def inspect_svg(data):
         tag = name[len(SVG)+1:]
         if len(nodes) >= MAX_NODES or len(stack) >= MAX_DEPTH or len(attrs) > MAX_ATTRIBUTES: reject("SVG_STRUCTURE_LIMIT")
         if (not stack and tag != "svg") or (stack and (tag == "svg" or nodes[stack[-1]]["tag"] in {"style", "title", "desc"})): reject("SVG_UNSUPPORTED_STRUCTURE")
+        passive = passive_metadata(tag, attrs)
         owner = len(nodes); nodes.append({"tag": tag, "children": [], "text": [], "textLength": 0, "geometryCost": 0}); counts[tag] = counts.get(tag, 0) + 1
         if stack: nodes[stack[-1]]["children"].append(owner)
         stack.append(owner); seen = set()
         for name, value in attrs.items():
+            if name in passive:
+                continue
             key = "href" if name == XLINK + "}href" else name
             if "}" in key or key in seen or key not in COMMON | EXTRA[tag]: reject("SVG_UNSUPPORTED_ATTRIBUTE_OR_NAMESPACE")
             seen.add(key)
@@ -231,7 +282,8 @@ def inspect_svg(data):
     def namespace(_prefix, uri):
         nonlocal namespaces
         namespaces += 1
-        if namespaces > MAX_ATTRIBUTES or uri not in {SVG, XLINK}: reject("SVG_UNSUPPORTED_NAMESPACE_OR_LIMIT")
+        allowed = {SVG, XLINK} | ({AYAH_NAMESPACE} if dialect == QURAN_WS_HAFS_DIALECT else set())
+        if namespaces > MAX_ATTRIBUTES or uri not in allowed: reject("SVG_UNSUPPORTED_NAMESPACE_OR_LIMIT")
     parser.StartNamespaceDeclHandler = namespace
     parser.XmlDeclHandler = lambda version, encoding, _standalone: None if version == "1.0" and (encoding is None or encoding.lower() in {"utf-8", "utf8"}) else reject("SVG_XML_DECLARATION_UNSUPPORTED")
     for handler in ("StartDoctypeDeclHandler", "EntityDeclHandler", "ExternalEntityRefHandler", "ProcessingInstructionHandler"):
@@ -258,24 +310,28 @@ def inspect_svg(data):
             else:
                 if index in visiting: reject("SVG_REFERENCE_CYCLE")
                 visiting.add(index); work.append((index, True)); work.extend((child, False) for child in reversed(edges[index]))
-    return {"policy": "static-vector-subset-10d-v1", "securityPreflight": "passed", "bytes": len(data), "sha256": hashlib.sha256(data).hexdigest(),
+    return {"policy": "static-vector-subset-10f-v1" if dialect else "static-vector-subset-10d-v1", "dialect": dialect,
+            "passiveMetadata": metadata_counts, "securityPreflight": "passed", "bytes": len(data), "sha256": hashlib.sha256(data).hexdigest(),
             "viewBox": root["viewBox"], "dimensions": {key: root.get(key) for key in ("width", "height")},
             "geometryValidation": "finite-input-values-and-path-arities-only",
             "counts": {"nodes": len(nodes), "elements": counts, "localReferences": len(references), "cssRules": css_rules, "cssDeclarations": css_declarations, "expandedNodes": costs[0], "expandedGeometryCost": geometry_costs[0]},
             "flags": {"originalRewritten": False, "rendered": False, "scientificApproval": False, "rightsApproval": False, "sourceAuthenticityVerified": False, "coordinateMappingVerified": False, "productionActivation": False}}
 
 
-def inspect_file(pathname):
+def inspect_file(pathname, *, dialect=None):
     descriptor = os.open(Path(pathname), os.O_RDONLY | os.O_NOFOLLOW | os.O_NONBLOCK)
     with os.fdopen(descriptor, "rb") as stream:
         metadata = os.fstat(stream.fileno())
         if not stat.S_ISREG(metadata.st_mode): reject("SVG_REGULAR_FILE_REQUIRED")
         if metadata.st_size > MAX_BYTES: reject("SVG_BYTE_LIMIT_OR_INVALID_INPUT")
-        return inspect_svg(stream.read(MAX_BYTES + 1))
+        return inspect_svg(stream.read(MAX_BYTES + 1), dialect=dialect)
 
 
 if __name__ == "__main__":
-    cli = argparse.ArgumentParser(description=__doc__); cli.add_argument("svg"); args = cli.parse_args()
-    try: print(json.dumps(inspect_file(args.svg), ensure_ascii=False, indent=2))
+    cli = argparse.ArgumentParser(description=__doc__)
+    cli.add_argument("svg")
+    cli.add_argument("--dialect", choices=[QURAN_WS_HAFS_DIALECT], help="Explicit passive metadata compatibility; never content approval")
+    args = cli.parse_args()
+    try: print(json.dumps(inspect_file(args.svg, dialect=args.dialect), ensure_ascii=False, indent=2))
     except (Rejected, OSError) as error:
         print(json.dumps({"securityPreflight": "rejected", "reason": str(error) if isinstance(error, Rejected) else "SVG_FILE_UNREADABLE", "scientificApproval": False, "productionActivation": False})); sys.exit(2)

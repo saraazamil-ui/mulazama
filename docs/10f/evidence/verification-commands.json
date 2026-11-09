@@ -1,0 +1,265 @@
+[
+  {
+    "name": "archive",
+    "command": [
+      "git",
+      "archive",
+      "--format=tar",
+      "--output=/tmp/mulazama-08a-5zwc8kc7/source.tar",
+      "83912822f077eafe65e00649de6bb2835b829413"
+    ],
+    "cwd": "/workspace/mulazama",
+    "startedAt": "2026-11-09T03:24:28.844647+00:00",
+    "finishedAt": "2026-11-09T03:24:28.960257+00:00",
+    "durationSeconds": 0.116,
+    "exitCode": 0,
+    "log": "archive.log"
+  },
+  {
+    "name": "node-version",
+    "command": [
+      "node",
+      "--version"
+    ],
+    "cwd": "/tmp/mulazama-08a-5zwc8kc7",
+    "startedAt": "2026-11-09T03:24:29.164764+00:00",
+    "finishedAt": "2026-11-09T03:24:29.169150+00:00",
+    "durationSeconds": 0.004,
+    "exitCode": 0,
+    "log": "node-version.log"
+  },
+  {
+    "name": "pnpm-version",
+    "command": [
+      "pnpm",
+      "--version"
+    ],
+    "cwd": "/tmp/mulazama-08a-5zwc8kc7",
+    "startedAt": "2026-11-09T03:24:29.169520+00:00",
+    "finishedAt": "2026-11-09T03:24:29.633813+00:00",
+    "durationSeconds": 0.464,
+    "exitCode": 0,
+    "log": "pnpm-version.log"
+  },
+  {
+    "name": "python-version",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "--version"
+    ],
+    "cwd": "/tmp/mulazama-08a-5zwc8kc7",
+    "startedAt": "2026-11-09T03:24:29.634157+00:00",
+    "finishedAt": "2026-11-09T03:24:29.635883+00:00",
+    "durationSeconds": 0.002,
+    "exitCode": 0,
+    "log": "python-version.log"
+  },
+  {
+    "name": "source-digest",
+    "command": [
+      "node",
+      "--input-type=module",
+      "-e",
+      "import {computeReleaseSourceDigest} from './scripts/release-source-hash.mjs';console.log(JSON.stringify(await computeReleaseSourceDigest(process.cwd())));"
+    ],
+    "cwd": "/tmp/mulazama-08a-5zwc8kc7",
+    "startedAt": "2026-11-09T03:24:29.636433+00:00",
+    "finishedAt": "2026-11-09T03:24:29.708350+00:00",
+    "durationSeconds": 0.072,
+    "exitCode": 0,
+    "log": "source-digest.log"
+  },
+  {
+    "name": "install",
+    "command": [
+      "pnpm",
+      "install",
+      "--frozen-lockfile",
+      "--store-dir",
+      "/tmp/mulazama-08a-cache/pnpm-store",
+      "--cache-dir",
+      "/tmp/mulazama-08a-cache/pnpm-cache"
+    ],
+    "cwd": "/tmp/mulazama-08a-5zwc8kc7",
+    "startedAt": "2026-11-09T03:24:29.708889+00:00",
+    "finishedAt": "2026-11-09T03:24:30.677437+00:00",
+    "durationSeconds": 0.969,
+    "exitCode": 0,
+    "log": "install.log"
+  },
+  {
+    "name": "startup-tests",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "scripts/tests/cloud-start08a.test.py"
+    ],
+    "cwd": "/tmp/mulazama-08a-5zwc8kc7",
+    "startedAt": "2026-11-09T03:24:30.677825+00:00",
+    "finishedAt": "2026-11-09T03:24:31.592154+00:00",
+    "durationSeconds": 0.914,
+    "exitCode": 0,
+    "log": "startup-tests.log"
+  },
+  {
+    "name": "official-archive-tests",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "scripts/tests/inspect-official-archive10b.test.py"
+    ],
+    "cwd": "/tmp/mulazama-08a-5zwc8kc7",
+    "startedAt": "2026-11-09T03:24:31.592506+00:00",
+    "finishedAt": "2026-11-09T03:24:31.720422+00:00",
+    "durationSeconds": 0.128,
+    "exitCode": 0,
+    "log": "official-archive-tests.log"
+  },
+  {
+    "name": "official-intake-tests",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "scripts/tests/receive-official-package10c.test.py"
+    ],
+    "cwd": "/tmp/mulazama-08a-5zwc8kc7",
+    "startedAt": "2026-11-09T03:24:31.720800+00:00",
+    "finishedAt": "2026-11-09T03:24:31.862773+00:00",
+    "durationSeconds": 0.142,
+    "exitCode": 0,
+    "log": "official-intake-tests.log"
+  },
+  {
+    "name": "quranpedia-metadata-tests",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "scripts/tests/audit-quranpedia-metadata10d.test.py"
+    ],
+    "cwd": "/tmp/mulazama-08a-5zwc8kc7",
+    "startedAt": "2026-11-09T03:24:31.863169+00:00",
+    "finishedAt": "2026-11-09T03:24:36.661339+00:00",
+    "durationSeconds": 4.798,
+    "exitCode": 0,
+    "log": "quranpedia-metadata-tests.log"
+  },
+  {
+    "name": "svg-security-tests",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "scripts/tests/svg-security10d.test.py"
+    ],
+    "cwd": "/tmp/mulazama-08a-5zwc8kc7",
+    "startedAt": "2026-11-09T03:24:36.661808+00:00",
+    "finishedAt": "2026-11-09T03:24:37.027048+00:00",
+    "durationSeconds": 0.365,
+    "exitCode": 0,
+    "log": "svg-security-tests.log"
+  },
+  {
+    "name": "quranpedia-archive-tests",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "scripts/tests/audit-quranpedia-archive10d.test.py"
+    ],
+    "cwd": "/tmp/mulazama-08a-5zwc8kc7",
+    "startedAt": "2026-11-09T03:24:37.027485+00:00",
+    "finishedAt": "2026-11-09T03:24:37.145037+00:00",
+    "durationSeconds": 0.118,
+    "exitCode": 0,
+    "log": "quranpedia-archive-tests.log"
+  },
+  {
+    "name": "mushaf-offline-policy-tests",
+    "command": [
+      "node",
+      "--test",
+      "scripts/tests/build-offline10c.test.mjs"
+    ],
+    "cwd": "/tmp/mulazama-08a-5zwc8kc7",
+    "startedAt": "2026-11-09T03:24:37.145563+00:00",
+    "finishedAt": "2026-11-09T03:24:37.520226+00:00",
+    "durationSeconds": 0.375,
+    "exitCode": 0,
+    "log": "mushaf-offline-policy-tests.log"
+  },
+  {
+    "name": "browser-helper-tests",
+    "command": [
+      "node",
+      "--test",
+      "--test-reporter=tap",
+      "scripts/tests/playwright-browser.test.mjs"
+    ],
+    "cwd": "/tmp/mulazama-08a-5zwc8kc7",
+    "startedAt": "2026-11-09T03:24:37.520675+00:00",
+    "finishedAt": "2026-11-09T03:24:37.612118+00:00",
+    "durationSeconds": 0.091,
+    "exitCode": 0,
+    "log": "browser-helper-tests.log"
+  },
+  {
+    "name": "browser-version",
+    "command": [
+      "node",
+      "--input-type=module",
+      "-e",
+      "import {chromium} from '@playwright/test';import {chromiumLaunchOptions} from './scripts/playwright-browser.mjs';const options=chromiumLaunchOptions();const browser=await chromium.launch(options);try{console.log(JSON.stringify({version:browser.version(),selection:options,defaultExecutablePath:options.channel||options.executablePath?null:chromium.executablePath()}));}finally{await browser.close();}"
+    ],
+    "cwd": "/tmp/mulazama-08a-5zwc8kc7",
+    "startedAt": "2026-11-09T03:24:37.612811+00:00",
+    "finishedAt": "2026-11-09T03:24:38.105459+00:00",
+    "durationSeconds": 0.493,
+    "exitCode": 0,
+    "log": "browser-version.log"
+  },
+  {
+    "name": "verify-06l4",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "scripts/verify-06l4.py",
+      "--browser"
+    ],
+    "cwd": "/tmp/mulazama-08a-5zwc8kc7",
+    "startedAt": "2026-11-09T03:24:38.109253+00:00",
+    "finishedAt": "2026-11-09T03:27:26.878180+00:00",
+    "durationSeconds": 168.769,
+    "exitCode": 0,
+    "log": "verify-06l4.log"
+  },
+  {
+    "name": "mushaf-browser",
+    "command": [
+      "pnpm",
+      "test:mushaf"
+    ],
+    "cwd": "/tmp/mulazama-08a-5zwc8kc7",
+    "startedAt": "2026-11-09T03:27:26.879260+00:00",
+    "finishedAt": "2026-11-09T03:27:49.186686+00:00",
+    "durationSeconds": 22.307,
+    "exitCode": 0,
+    "log": "mushaf-browser.log"
+  },
+  {
+    "name": "reader-preview-browser",
+    "command": [
+      "pnpm",
+      "test:reader-preview"
+    ],
+    "cwd": "/tmp/mulazama-08a-5zwc8kc7",
+    "startedAt": "2026-11-09T03:27:49.187294+00:00",
+    "finishedAt": "2026-11-09T03:28:08.498351+00:00",
+    "durationSeconds": 19.311,
+    "exitCode": 0,
+    "log": "reader-preview-browser.log"
+  },
+  {
+    "name": "reader-preview-build",
+    "command": [
+      "pnpm",
+      "build:reader-preview"
+    ],
+    "cwd": "/tmp/mulazama-08a-5zwc8kc7",
+    "startedAt": "2026-11-09T03:28:08.498828+00:00",
+    "finishedAt": "2026-11-09T03:28:11.112406+00:00",
+    "durationSeconds": 2.614,
+    "exitCode": 0,
+    "log": "reader-preview-build.log"
+  }
+]

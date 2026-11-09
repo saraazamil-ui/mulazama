@@ -5,6 +5,7 @@ for(const file of manifest.files)if(!(await stat(new URL(file,root))).isFile())t
 const index=await readFile(new URL('index.html',root),'utf8');
 if(!index.includes('مُلازَمَة')||!index.includes('MULAZAMA')||!index.includes('dir="rtl"'))throw Error('Identity/RTL mismatch');
 const scripts=manifest.files.filter(f=>f.endsWith('.js'));
+for(const script of scripts){const text=await readFile(new URL(script,root),'utf8');if(['test-reader-preview-10f','mulazama-reader-preview-db-10f','3ff27b46cecb0c0519d77531d9c868a579d1f623'].some(marker=>text.includes(marker)))throw Error('Private reader preview leaked into ordinary build');}
 for(const script of scripts){const text=await readFile(new URL(script,root),'utf8');if(['SYNTHETIC_TEST_ONLY','mintSyntheticLearningAccess','synthetic-reviewer','test-ephemeral-verifier','L3_ENGINEERING_ONLY','mulazama-engineering-06l3','test-isolated-capacity-fixture-06l3','test-mushaf-layout-10b','test-engineering-06l3','مادة تدريب صناعية للاختبار فقط وليست نصًا قرآنيًا.'].some(marker=>text.includes(marker)))throw Error('Synthetic authorization leaked into production bundle');if(text.includes('itqan.prototype.v1')||text.includes('source:"mock"')||text.includes('نطاق عرض تجريبي من السورة'))throw Error('Prototype data leaked into production bundle');}
 console.log(JSON.stringify({buildArtifacts:'passed',identity:'MULAZAMA',rtl:true,offlineAssets:manifest.files.length,prototypeStorageKeyPresent:false,offlineBrowserExecution:'not-verified'}));
 
@@ -23,7 +24,7 @@ for(const page of ['privacy.html','terms.html','support.html','404.html','mainte
 console.log(JSON.stringify({pwaIcons:'192/512 PNG verified',localPolicyPages:3,errorMaintenancePages:2,deviceInstallTest:'not-executed'}));
 
 // The engineering entry and quarantined evidence must not enter the public artifact.
-for(const path of ['engineering.html','content/06l2','content/06l3']) {
+for(const path of ['engineering.html','reader-preview.html','content/06l2','content/06l3']) {
  try { await access(new URL(path,root)); } catch(error) { if(error.code==='ENOENT')continue;throw error; }
  throw Error('Isolated/quarantined asset leaked into public artifact: '+path);
 }

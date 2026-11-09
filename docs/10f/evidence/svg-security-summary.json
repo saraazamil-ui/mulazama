@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "phase": "10-F",
+  "status": "archive-security-audit-passed-not-content-approved",
+  "checkedAt": "2026-11-09T02:57:14.315123+00:00",
+  "original": {
+    "bytes": 121647518,
+    "sha256": "5d5e29eae66d9353dd8e0e51af4274c7768f81f722414b538dfd7c8de014fc91",
+    "unchangedDuringInspection": true
+  },
+  "checksumComparison": "matches-supplied-value",
+  "counts": {
+    "entries": 723,
+    "regularFiles": 722,
+    "directories": 1,
+    "svg": 722,
+    "json": 0,
+    "license-text": 0
+  },
+  "actualExpandedBytes": 442867490,
+  "allRegularMembersReadToEofWithCrc": true,
+  "rawCompressedRangesAndActualSizesVerified": true,
+  "limits": {
+    "archiveBytes": 2147483648,
+    "expandedBytes": 2147483648,
+    "entries": 20000,
+    "svgBytes": 8388608,
+    "jsonBytes": 16777216,
+    "licenseTextBytes": 262144,
+    "jsonDepth": 32,
+    "jsonNodes": 250000
+  },
+  "sourceAuthenticity": "not-verified",
+  "officialPublisherVerified": false,
+  "rightsApproval": false,
+  "scientificApproval": false,
+  "mappingApproval": false,
+  "pageCountVerified": false,
+  "filenameToPageMappingInferred": false,
+  "quranActivation": false,
+  "productionActivation": false,
+  "integrationBlocked": true,
+  "networkUsed": false,
+  "extracted": false,
+  "rendered": false,
+  "originalRewritten": false,
+  "rawQuranIncluded": false,
+  "note": "File counts and structural security checks establish neither Mushaf page correspondence nor publisher authenticity, licensing, Quran correctness, or usable coordinate mapping.",
+  "selectedDialect": "quran-ws-hafs-kfqc-v1.1.1",
+  "selectedPolicy": "static-vector-subset-10f-v1",
+  "scannerSha256": "b88163cc04797b9b5ebd659f725c3df9097a4b8a10d1107f14d4f983382e157d",
+  "archiveHelperSha256": "eb2469be3dda21821faf515f7fb0f9d8ab5ddc004b0d960742d12f0768435099",
+  "archiveHelperModified": false,
+  "selectionMethod": "Explicit inspect_svg(data,dialect=QURAN_WS_HAFS_DIALECT) wrapper supplied to unchanged archive inspector; default generic policy remains strict 10-D.",
+  "canonicalCoverage": {
+    "expected": 604,
+    "passed": 604,
+    "missing": [],
+    "allCanonicalPagesPassed": true
+  }
+}

@@ -22,6 +22,10 @@ def svg(body='', attrs=''):
     return ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -3 100 200" ' + attrs + '>' + body + '</svg>').encode()
 
 
+def hafs_svg(body='', attrs='xml:space="preserve"'):
+    return svg(body, 'xmlns:ayah="https://quranpedia.net" ' + attrs)
+
+
 class SvgSecurityTests(unittest.TestCase):
     def reject(self, value, code=None):
         with self.assertRaisesRegex(inspector.Rejected, code or "SVG_"):
@@ -194,6 +198,104 @@ class SvgSecurityTests(unittest.TestCase):
             fifo = root/'pipe.svg'; os.mkfifo(fifo)
             with self.assertRaisesRegex(inspector.Rejected, 'SVG_REGULAR_FILE_REQUIRED'): inspector.inspect_file(fifo)
             with patch.object(inspector, 'MAX_BYTES', 8), self.assertRaisesRegex(inspector.Rejected, 'SVG_BYTE_LIMIT'): inspector.inspect_file(target)
+
+
+class HafsDialectActiveContentTests(SvgSecurityTests):
+    """Repeat the existing rejection corpus with the explicit dialect selected."""
+    def reject(self, value, code=None):
+        with self.assertRaisesRegex(inspector.Rejected, code or "SVG_"):
+            inspector.inspect_svg(value, dialect=inspector.QURAN_WS_HAFS_DIALECT)
+
+
+class HafsDialectCompatibilityTests(unittest.TestCase):
+    def inspect(self, value):
+        return inspector.inspect_svg(value, dialect=inspector.QURAN_WS_HAFS_DIALECT)
+
+    def reject(self, value, code=None):
+        with self.assertRaisesRegex(inspector.Rejected, code or "SVG_"):
+            self.inspect(value)
+
+    def test_passive_dialect_is_explicit_and_preserves_original_identity(self):
+        data = hafs_svg('<g ayah:x="-3.25" ayah:y="1e2"><path d="M0 0L1 1Z"/></g>'
+                        '<path id="verse-1" number="001001" surah="1" ayah="1" d="M0 0L2 0L2 2Z"/>')
+        with self.assertRaisesRegex(inspector.Rejected, 'SVG_UNSUPPORTED_NAMESPACE'):
+            inspector.inspect_svg(data)
+        receipt = self.inspect(data)
+        self.assertEqual(receipt['policy'], 'static-vector-subset-10f-v1')
+        self.assertEqual(receipt['dialect'], inspector.QURAN_WS_HAFS_DIALECT)
+        self.assertEqual(receipt['passiveMetadata'], {'coordinatePairs': 1, 'ayahLabels': 1, 'xmlSpace': 1})
+        self.assertEqual(receipt['sha256'], hashlib.sha256(data).hexdigest())
+        self.assertEqual(receipt['viewBox'], [-12, -3, 100, 200])
+        self.assertTrue(all(value is False for value in receipt['flags'].values()))
+        self.assertEqual(inspector.inspect_svg(svg())['policy'], 'static-vector-subset-10d-v1')
+        with self.assertRaisesRegex(inspector.Rejected, 'SVG_UNSUPPORTED_DIALECT'):
+            inspector.inspect_svg(data, dialect='auto')
+
+    def test_xml_space_accepts_only_exact_root_values(self):
+        for value in ('preserve', 'default'):
+            self.assertEqual(self.inspect(hafs_svg(attrs='xml:space="'+value+'"'))['passiveMetadata']['xmlSpace'], 1)
+        for value in ('', 'Preserve', 'preserve ', 'url(https://example.invalid)', 'javascript:alert(1)'):
+            with self.subTest(value=value): self.reject(hafs_svg(attrs='xml:space="'+value+'"'), 'SVG_DIALECT_XML_SPACE_INVALID')
+        self.reject(hafs_svg('<path xml:space="preserve" d="M0 0"/>'), 'SVG_DIALECT_XML_SPACE_INVALID')
+        self.reject(hafs_svg(attrs='xml:base="https://example.invalid"'), 'SVG_UNSUPPORTED_ATTRIBUTE')
+
+    def test_metadata_coordinate_pair_requires_group_and_bounded_scalars(self):
+        for body in ('<g ayah:x="1"/>', '<g ayah:y="1"/>', '<path ayah:x="1" ayah:y="2" d="M0 0"/>',
+                     '<circle ayah:x="1" ayah:y="2" r="1"/>'):
+            with self.subTest(body=body): self.reject(hafs_svg(body), 'SVG_DIALECT_COORDINATE_PAIR_REQUIRED_ON_GROUP')
+        for value in ('NaN', 'Infinity', '1e999', '1000000001', '-1000000001', '1 2', '1,2', '2px', '\u0661', '1'*129):
+            with self.subTest(value=value): self.reject(hafs_svg('<g ayah:x="'+value+'" ayah:y="1"/>'))
+
+    def test_metadata_identity_requires_complete_padded_canonical_triple(self):
+        self.inspect(hafs_svg('<path number="114006" surah="114" ayah="6" d="M0 0"/>'))
+        for attrs in ('surah="1" ayah="1"', 'number="001001" surah="1"',
+                      'number="001002" surah="1" ayah="1"', 'number="115001" surah="115" ayah="1"',
+                      'number="002287" surah="2" ayah="287"', 'number="000001" surah="0" ayah="1"',
+                      'number="001000" surah="1" ayah="0"', 'number="001001" surah="01" ayah="1"',
+                      'number="001001" surah="1" ayah="01"', 'number="001001" surah="1e0" ayah="1"',
+                      'number="001001" surah="\u0661" ayah="1"', 'number="1001" surah="1" ayah="1"',
+                      'number="001001 " surah="1" ayah="1"'):
+            with self.subTest(attrs=attrs): self.reject(hafs_svg('<path '+attrs+' d="M0 0"/>'), 'SVG_DIALECT_AYAH_')
+        self.reject(hafs_svg('<g number="001001" surah="1" ayah="1"/>'), 'SVG_DIALECT_AYAH_TRIPLE_REQUIRED_ON_PATH')
+
+    def test_duplicate_canonical_keys_and_malformed_source_ids_remain_rejected(self):
+        path = '<path number="019003" surah="19" ayah="3" d="M0 0"/>'
+        self.reject(hafs_svg(path+path), 'SVG_DIALECT_DUPLICATE_AYAH_IDENTIFIER')
+        self.reject(hafs_svg('<path id="M 5.0 86.5 L 28.75 86.5 Z" number="019003" surah="19" ayah="3" d="M0 0"/>'), 'SVG_INVALID_OR_DUPLICATE_ID')
+        self.reject(hafs_svg('<path id="same" d="M0 0"/><path id="same" d="M1 1"/>'), 'SVG_INVALID_OR_DUPLICATE_ID')
+
+    def test_unknown_namespaces_elements_and_metadata_attributes_are_rejected(self):
+        self.reject(hafs_svg(attrs='xmlns:extra="https://example.invalid"'), 'SVG_UNSUPPORTED_NAMESPACE')
+        self.reject(hafs_svg('<ayah:path/>'), 'SVG_UNSUPPORTED_ELEMENT_OR_NAMESPACE')
+        for attr in ('ayah:href="https://example.invalid"', 'ayah:onload="alert(1)"', 'ayah:surah="1"',
+                     'data-surah="1"', 'xml:lang="ar"', 'onload="alert(1)"'):
+            with self.subTest(attr=attr): self.reject(hafs_svg('<g '+attr+'/>'), 'SVG_UNSUPPORTED_ATTRIBUTE')
+
+    def test_active_content_cannot_hide_behind_passive_metadata(self):
+        for body in ('<g ayah:x="1" ayah:y="2" onload="alert(1)"/>',
+                     '<g ayah:x="1" ayah:y="2"><script/></g>',
+                     '<g ayah:x="1" ayah:y="2"><image href="https://example.invalid/a"/></g>',
+                     '<path number="001001" surah="1" ayah="1" d="M0 0" fill="url(https://example.invalid/a)"/>',
+                     '<style>.x{fill:url(https://example.invalid/a)}</style>',
+                     '<defs><path id="a" d="M0 0"/></defs><use href="https://example.invalid/a"/>'):
+            with self.subTest(body=body): self.reject(hafs_svg(body))
+        self.reject(b'<!DOCTYPE svg [<!ENTITY x SYSTEM "file:///etc/passwd">]>'+hafs_svg(), 'SVG_DTD_ENTITY_OR_PI_FORBIDDEN')
+
+    def test_dialect_preserves_structure_and_geometry_resource_bounds(self):
+        with patch.object(inspector, 'MAX_ATTRIBUTES', 2): self.reject(hafs_svg('<g ayah:x="1" ayah:y="2" id="g"/>'), 'SVG_STRUCTURE_LIMIT')
+        with patch.object(inspector, 'MAX_DEPTH', 2): self.reject(hafs_svg('<g ayah:x="1" ayah:y="2"><path d="M0 0"/></g>'), 'SVG_STRUCTURE_LIMIT')
+        with patch.object(inspector, 'MAX_PATH_TOKENS', 3): self.reject(hafs_svg('<path number="001001" surah="1" ayah="1" d="M0 0L1 1"/>'), 'SVG_PATH_TOKEN_LIMIT')
+        with patch.object(inspector, 'MAX_EXPANDED_GEOMETRY', 2): self.reject(hafs_svg('<path number="001001" surah="1" ayah="1" d="M0 0"/>'), 'SVG_EXPANDED_GEOMETRY_LIMIT')
+
+    def test_cli_requires_explicit_dialect_and_does_not_rewrite_input(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory)/'dialect.svg'; data = hafs_svg('<g ayah:x="1" ayah:y="2"/>'); path.write_bytes(data)
+            generic = subprocess.run([sys.executable, str(SCRIPT), str(path)], capture_output=True, text=True)
+            scoped = subprocess.run([sys.executable, str(SCRIPT), str(path), '--dialect', inspector.QURAN_WS_HAFS_DIALECT], capture_output=True, text=True)
+            self.assertEqual(generic.returncode, 2)
+            self.assertEqual(scoped.returncode, 0)
+            self.assertEqual(json.loads(scoped.stdout)['policy'], 'static-vector-subset-10f-v1')
+            self.assertEqual(path.read_bytes(), data)
 
 
 if __name__ == '__main__':

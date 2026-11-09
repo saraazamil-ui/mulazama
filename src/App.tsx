@@ -145,6 +145,8 @@ export default function App({
   study,
   readerDatabaseName = "mulazama-reader-unavailable",
   readerError,
+  candidateReview,
+  initialReaderMode = 'review',
 }: {
   service: ApplicationService;
   learning?: LearningUiAdapter;
@@ -153,6 +155,8 @@ export default function App({
   study?: MushafStudyController;
   readerDatabaseName?: string;
   readerError?: string;
+  candidateReview?: (onPractice:()=>void) => ReactNode;
+  initialReaderMode?: 'review'|'practice';
   data?: CompositeDataController & { readProgress?: (now?: Date) => ProgressReadModel | Promise<ProgressReadModel>; readPersonalMemory?: (now?: Date) => Promise<PersonalMemoryReadModel> };
 }) {
   const [state, setState] = useState<PrototypeState>(() => service.state);
@@ -220,6 +224,7 @@ export default function App({
   const [leave, setLeave] = useState<Screen | null>(null);
   const [help, setHelp] = useState(false);
   const [readerPage, setReaderPage] = useState<number>();
+  const [readerMode,setReaderMode] = useState(initialReaderMode);
   const readerPageShown = useCallback(() => setReaderPage(undefined), []);
   const [, setJourneyRevision] = useState(0);
   const [readerStudy, setReaderStudy] = useState(study);
@@ -448,10 +453,17 @@ export default function App({
       />
     );
   }
+  if(candidateReview){
+    const practice=contents.S16;
+    contents.S16=<><div className="reader-mode-tabs" role="group" aria-label="وضع قارئ المصحف">
+      <Button variant={readerMode==='review'?'primary':'secondary'} aria-pressed={readerMode==='review'} onClick={()=>setReaderMode('review')}>صفحات حفص — مراجعة المصدر</Button>
+      <Button variant={readerMode==='practice'?'primary':'secondary'} aria-pressed={readerMode==='practice'} onClick={()=>setReaderMode('practice')}>تجربة الحفظ ببيانات صناعية</Button>
+    </div>{readerMode==='review'?candidateReview(()=>setReaderMode('practice')):practice}</>;
+  }
   if(journey){
     for(const target of ["S04","S05","S07","S08","S09","S10","S11","S13","S14","S15"] as Screen[])
       contents[target]=<JourneyScreen key={target} journey={journey} screen={target} go={go}
-        onOpenMushaf={mushaf ? unitId => {setReaderPage(journey.unit(unitId).positions[0].page);go('S16');} : undefined}
+        onOpenMushaf={mushaf ? unitId => {setReaderMode('practice');setReaderPage(journey.unit(unitId).positions[0].page);go('S16');} : undefined}
         onCommitted={()=>{setJourneyRevision(revision => revision + 1);readerGuard.notifyCommitted();void refreshProgress();void refreshCompanion();}} />;
   }
   return (
@@ -572,7 +584,7 @@ export default function App({
               </div>
             </header>
             <div className="prototype-strip" role="region" aria-label="حالة النسخة">
-              {journey?.kind === "engineering" ? "06-L4 · اختبار هندسي معزول — ليس نصًا قرآنيًا" : journey ? "06-L4 · الحفظ والتسميع ذاتيان" : "إصدار هندسي 06-L4 · جلسات القرآن موقوفة حتى اعتماد المحتوى"}
+              {candidateReview ? "10-F · صفحات حفص مرشحة للمراجعة؛ جلسات الحفظ ببيانات صناعية" : journey?.kind === "engineering" ? "06-L4 · اختبار هندسي معزول — ليس نصًا قرآنيًا" : journey ? "06-L4 · الحفظ والتسميع ذاتيان" : "إصدار هندسي 06-L4 · جلسات القرآن موقوفة حتى اعتماد المحتوى"}
             </div>
             <main
               id="main-content"

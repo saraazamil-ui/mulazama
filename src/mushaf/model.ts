@@ -5,7 +5,7 @@ import type { ContentApproval, ContentAuthority, ContentPackage } from '../conte
 export interface MushafVerse { surah:number; ayah:number; juz:number; startPage:number; endPage:number; tokenKeys:string[] }
 export interface MushafSurah { number:number; name:string; ayahCount:number; startPage:number }
 export interface MushafJuzStart { number:number; page:number; surah:number; ayah:number }
-export interface MushafPage { number:number; juz:number; asset:{path:string; mimeType:'image/png'|'image/jpeg'|'image/webp'; sha256:string; bytes:number; width:number; height:number} }
+export interface MushafPage { number:number; juz:number; asset:{path:string; mimeType:'image/png'|'image/jpeg'|'image/webp'|'image/svg+xml'; sha256:string; bytes:number; width:number; height:number; viewBox?:readonly [number,number,number,number]} }
 export interface MushafSource { name:string; url:string; attribution:string; licenseNotice:string }
 export interface MushafSourceFile { url:string; version:string; archiveSha256:string; publisherSha256:string|null; downloadedAt:string; licenseUrl:string; licenseNotice:string; attribution:string }
 export interface MushafManifest {
@@ -15,7 +15,7 @@ export interface MushafManifest {
 export interface MushafPageApproval { authorityId:string; reviewer:string; reviewedAt:string; manifestHash:string; reviewed:('pages'|'verse-map'|'license'|'source')[]; signature:string }
 export interface ApprovedMushafInput { pkg:ContentPackage; contentApproval:ContentApproval; manifest:MushafManifest; pageApproval:MushafPageApproval }
 export interface VerifiedMushaf {
-  readonly kind:'approved'|'engineering'; readonly editionId:string; readonly layoutId:string; readonly version:string; readonly contentManifestHash:string;
+  readonly kind:'approved'|'engineering'|'candidate-review'; readonly editionId:string; readonly layoutId:string; readonly version:string; readonly contentManifestHash:string;
   readonly source:MushafSource; readonly surahs:readonly MushafSurah[]; readonly pages:readonly MushafPage[]; readonly verses:readonly MushafVerse[]; readonly juzStarts:readonly MushafJuzStart[];
   pageImage(page:number,signal?:AbortSignal):Promise<Blob>;
 }
@@ -89,8 +89,11 @@ function dimensions(bytes:Uint8Array,mime:MushafPage['asset']['mimeType']):[numb
     if(type==='VP8L'&&bytes[20]===47)return [1+bytes[21]+((bytes[22]&63)<<8),1+(bytes[22]>>6)+(bytes[23]<<2)+((bytes[24]&15)<<10)];
   }return null;
 }
-async function verifiedBlob(page:MushafPage,bytes:Uint8Array<ArrayBuffer>):Promise<Blob>{
+async function verifiedBlob(page:MushafPage,bytes:Uint8Array<ArrayBuffer>,kind:VerifiedMushaf['kind']):Promise<Blob>{
   if(bytes.length!==page.asset.bytes||await contentHash(bytes)!==page.asset.sha256)fail('صورة الصفحة لا تطابق البصمة المعتمدة.');
+  // Only the separately branded, pinned review path accepts previously audited SVG.
+  // It returns original bytes as an image Blob; it never inserts SVG into the DOM.
+  if(kind==='candidate-review'&&page.asset.mimeType==='image/svg+xml')return new Blob([bytes],{type:'image/svg+xml'});
   const size=dimensions(bytes,page.asset.mimeType);
   if(!size||size[0]!==page.asset.width||size[1]!==page.asset.height)fail('صيغة صورة الصفحة أو أبعادها لا تطابق البيان.');
   return new Blob([bytes],{type:page.asset.mimeType});
@@ -114,7 +117,7 @@ function reader(kind:VerifiedMushaf['kind'],manifest:MushafManifest,juzStarts:re
     async pageImage(number:number,signal?:AbortSignal){
       if(signal?.aborted)throw new DOMException('Aborted','AbortError');const page=captured.pages.find(p=>p.number===number);if(!page)throw new DomainError('INVALID_INPUT','رقم الصفحة غير موجود في المصحف.');
       if(cache.has(number)){const cached=cache.get(number)!;cache.delete(number);cache.set(number,cached);return cached;}
-      const blob=await verifiedBlob(page,await load(page,signal));if(signal?.aborted)throw new DOMException('Aborted','AbortError');
+      const blob=await verifiedBlob(page,await load(page,signal),kind);if(signal?.aborted)throw new DOMException('Aborted','AbortError');
       cache.set(number,blob);while(cache.size>cachePages)cache.delete(cache.keys().next().value!);return blob;
     }});
   approvedObjects.add(result);return result;
@@ -145,4 +148,30 @@ export function createEngineeringMushaf(manifest:MushafManifest,images:ReadonlyM
   const copies=new Map([...images].map(([n,bytes])=>[n,bytes.slice()]));
   if(!juzStarts.length||juzStarts.some((start,i)=>start.number!==i+1||!manifest.verses.some(v=>v.surah===start.surah&&v.ayah===start.ayah&&v.startPage<=start.page&&v.endPage>=start.page)))fail('حدود أجزاء الاختبار غير متوافقة مع صفحاته.');
   return reader('engineering',manifest,juzStarts,async page=>{const bytes=copies.get(page.number);if(!bytes)fail('صورة الاختبار غير متاحة.');return bytes!.slice();});
+}
+
+/** Isolated review capability, never content approval or learning access.
+ * The private preview wrapper supplies a fixed audited manifest digest and loader.
+ * Tests may supply small synthetic manifests. No UI or persisted configuration
+ * is allowed to supply these arguments, and ordinary builds cannot mint it.
+ */
+export async function createCandidateReviewMushaf(manifest:MushafManifest,expectedManifestHash:string,juzStarts:readonly MushafJuzStart[],loadPage:(page:MushafPage,signal?:AbortSignal)=>Promise<Uint8Array<ArrayBuffer>>):Promise<VerifiedMushaf>{
+  if(import.meta.env.MODE!=='test')throw new DomainError('CONTENT_UNAVAILABLE','مراجعة المصحف المرشح محصورة في المعاينة المعزولة.');
+  const m=structuredClone(manifest),starts=structuredClone(juzStarts);
+  if(!hashPattern.test(expectedManifestHash)||await contentHash(canonical(m))!==expectedManifestHash)fail('بيان المصحف المرشح لا يطابق النسخة المثبتة.');
+  if(m.schemaVersion!==1||!m.editionId.startsWith('candidate-')||!m.layoutId.startsWith('candidate-')||m.contentManifestHash!=='0'.repeat(64)||!nonempty(m.version)||!m.source||![m.source.name,m.source.url,m.source.attribution,m.source.licenseNotice].every(nonempty)||!Array.isArray(m.pages)||!integer(m.pages.length,1,604)||!Array.isArray(m.surahs)||!integer(m.surahs.length,1,114)||!Array.isArray(m.verses)||!integer(m.verses.length,1,6236))fail('بيانات نسخة المراجعة غير مكتملة.');
+  const paths=new Set<string>();
+  for(const [i,page] of m.pages.entries()){
+    const a=page?.asset,box=a?.viewBox;
+    if(page?.number!==i+1||!integer(page.juz,1,30)||!a||a.mimeType!=='image/svg+xml'||!/^https:\/\/raw\.githubusercontent\.com\/quran-ws\/quran-svg\/[a-f0-9]{40}\/mushafs\/hafs\/kfqc\/svg\/[0-9]{3}\.svg$/.test(a.path)||paths.has(a.path)||!hashPattern.test(a.sha256)||!integer(a.bytes,1,8*1024*1024)||!Array.isArray(box)||box.length!==4||box.some(n=>!Number.isFinite(n)||Math.abs(n)>10000)||box[2]<=0||box[3]<=0||a.width!==box[2]||a.height!==box[3])fail('صورة المراجعة أو إحداثياتها لا تطابق البيان.');
+    paths.add(a.path);
+  }
+  const counts=new Map<number,number>(),firstPages=new Map<number,number>();let previousSurah=0,previousPage=0;
+  for(const verse of m.verses){
+    if(!integer(verse?.surah,1,m.surahs.length)||verse.surah<previousSurah||verse.surah>previousSurah+1||verse.ayah!==(counts.get(verse.surah)??0)+1||!integer(verse.juz,1,30)||!integer(verse.startPage,1,m.pages.length)||!integer(verse.endPage,verse.startPage,m.pages.length)||verse.startPage<previousPage||!Array.isArray(verse.tokenKeys)||verse.tokenKeys.length!==0)fail('خريطة المراجعة غير صالحة أو تتضمن صلاحية تعلم.');
+    counts.set(verse.surah,verse.ayah);if(!firstPages.has(verse.surah))firstPages.set(verse.surah,verse.startPage);previousSurah=verse.surah;previousPage=verse.startPage;
+  }
+  for(const [i,surah] of m.surahs.entries())if(surah.number!==i+1||!nonempty(surah.name)||surah.ayahCount!==counts.get(surah.number)||surah.startPage!==firstPages.get(surah.number))fail('فهرس المراجعة لا يطابق خريطة الآيات.');
+  if(!starts.length||starts.some((start,i)=>start.number!==i+1||!m.verses.some(v=>v.surah===start.surah&&v.ayah===start.ayah&&v.juz===start.number&&v.startPage<=start.page&&v.endPage>=start.page)))fail('حدود أجزاء المراجعة لا تطابق الفهرس المرصود.');
+  return reader('candidate-review',m,starts,loadPage);
 }

@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "phase": "10-D",
+  "status": "archive-security-audit-passed-not-content-approved",
+  "checkedAt": "2026-11-09T02:40:47.476871+00:00",
+  "original": {
+    "bytes": 492327,
+    "sha256": "27dd192cec6b5f919ffd6e7df5216464aa57a671e326fc1a37a9d82dee3f6c13",
+    "unchangedDuringInspection": true
+  },
+  "checksumComparison": "matches-supplied-value",
+  "counts": {
+    "entries": 724,
+    "regularFiles": 724,
+    "directories": 0,
+    "svg": 0,
+    "json": 724,
+    "license-text": 0
+  },
+  "actualExpandedBytes": 2208231,
+  "allRegularMembersReadToEofWithCrc": true,
+  "rawCompressedRangesAndActualSizesVerified": true,
+  "limits": {
+    "archiveBytes": 2147483648,
+    "expandedBytes": 2147483648,
+    "entries": 20000,
+    "svgBytes": 8388608,
+    "jsonBytes": 16777216,
+    "licenseTextBytes": 262144,
+    "jsonDepth": 32,
+    "jsonNodes": 250000
+  },
+  "sourceAuthenticity": "not-verified",
+  "officialPublisherVerified": false,
+  "rightsApproval": false,
+  "scientificApproval": false,
+  "mappingApproval": false,
+  "pageCountVerified": false,
+  "filenameToPageMappingInferred": false,
+  "quranActivation": false,
+  "productionActivation": false,
+  "integrationBlocked": true,
+  "networkUsed": false,
+  "extracted": false,
+  "rendered": false,
+  "originalRewritten": false,
+  "rawQuranIncluded": false,
+  "note": "File counts and structural security checks establish neither Mushaf page correspondence nor publisher authenticity, licensing, Quran correctness, or usable coordinate mapping."
+}
