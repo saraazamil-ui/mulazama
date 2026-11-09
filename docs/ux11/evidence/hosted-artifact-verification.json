@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-11-09T04:53:14.530930+00:00",
+  "origin": "https://mulazama-preview-05a.sara-a-zamil.chatgpt.site",
+  "checks": [
+    {
+      "path": "index.html",
+      "status": "unverified",
+      "errorType": "HTTPError",
+      "httpCode": 307
+    }
+  ],
+  "allMatched": false,
+  "scope": "Authenticated HTTPS of deployed HTML/manifest/JS/CSS; not interactive hosted browser testing",
+  "tlsVerificationDisabled": false,
+  "learnerDataAccessed": false
+}

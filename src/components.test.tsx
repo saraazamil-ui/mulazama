@@ -165,8 +165,10 @@ describe("App event-store integration", () => {
       new Error("تعذر الحفظ للاختبار"),
     );
     render(<App service={service} />);
+    await user.click(screen.getByText('المزيد', { exact: true }));
+    await user.click(screen.getByRole('button', { name: 'الإعدادات' }));
     await user.click(
-      screen.getByRole("button", { name: "تفعيل الوضع الداكن" }),
+      screen.getByRole("checkbox", { name: "الوضع الداكن" }),
     );
     expect(screen.getAllByText("تعذر الحفظ للاختبار").length).toBeGreaterThan(
       0,
@@ -176,7 +178,7 @@ describe("App event-store integration", () => {
     expect(document.documentElement.dataset.theme).toBe("light");
     await user.click(screen.getByRole("button", { name: "إغلاق الرسالة" }));
     await user.click(
-      screen.getByRole("button", { name: "تفعيل الوضع الداكن" }),
+      screen.getByRole("checkbox", { name: "الوضع الداكن" }),
     );
     expect(service.state.preferences.dark).toBe(false);
     expect(await store.load()).toEqual(before);

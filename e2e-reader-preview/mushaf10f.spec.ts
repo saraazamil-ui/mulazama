@@ -1,6 +1,7 @@
+import {readerTools,sessionOptions,enterRecall,openProgress} from './ux-helpers';
 import {test,expect,type Page} from '@playwright/test';
 
-const preview='/reader-preview.html?demo=1';
+const preview='/reader-preview.html?demo=1#S16';
 const databaseKey='mulazama-reader-preview-db-10f';
 const number=(value:number)=>value.toLocaleString('ar-SA');
 const title=(surah:number,ayah:number)=>`قسم تجريبي ${number(surah)} — سطر ${number(ayah)}`;
@@ -36,7 +37,7 @@ async function openReader(page:Page){
 async function select(page:Page,surah:number,from:number,to=from){
   await reader(page).getByRole('combobox',{name:'السورة',exact:true}).selectOption(String(surah));
   await visiblePage(page,(surah-1)*2+1);
-  await reader(page).getByLabel('من آية',{exact:true}).fill(String(from));
+  await readerTools(page);await reader(page).getByLabel('من آية',{exact:true}).fill(String(from));
   await reader(page).getByLabel('إلى آية',{exact:true}).fill(String(to));
   await reader(page).getByRole('button',{name:'أضف إلى خطتي',exact:true}).click();
   await expect(reader(page).getByText('أُضيف المقدار إلى خطتك. الاختيار وحده لا يُسجّل إنجازًا.',{exact:true})).toBeVisible();
@@ -71,7 +72,7 @@ test('M10F01 phone reader has six synthetic pages, section navigation, gestures 
   await stage.dispatchEvent('touchstart',{touches:[{identifier:1,clientX:30,clientY:80}]});
   await stage.dispatchEvent('touchend',{changedTouches:[{identifier:1,clientX:140,clientY:86}]});
   await visiblePage(page,5);
-  await reader(page).getByLabel('رقم الصفحة',{exact:true}).fill('6');
+  await readerTools(page);await reader(page).getByLabel('رقم الصفحة',{exact:true}).fill('6');
   await reader(page).getByRole('button',{name:'انتقل',exact:true}).click();
   await visiblePage(page,6);
   await expect(reader(page).getByRole('button',{name:'الصفحة التالية',exact:true})).toBeDisabled();
@@ -85,7 +86,7 @@ test('M10F01 phone reader has six synthetic pages, section navigation, gestures 
 test('M10F02 desktop keyboard and row selection create an explicit inclusive draft without learning evidence',async({page},info)=>{
   await page.setViewportSize({width:1440,height:1000});await boot(page);
   const before=await facts(page);
-  const first=reader(page).getByRole('button',{name:'اختيار السطر التجريبي ١ من قسم تجريبي ١',exact:true});
+  await readerTools(page);const first=reader(page).getByRole('button',{name:'اختيار السطر التجريبي ١ من قسم تجريبي ١',exact:true});
   await first.focus();await page.keyboard.press('Enter');
   await expect(first).toHaveAttribute('aria-pressed','true');
   await reader(page).getByRole('button',{name:'الصفحة التالية',exact:true}).click();await visiblePage(page,2);
@@ -111,8 +112,7 @@ test('M10F03 saved selection starts the exact current journey unit and today ope
   await expect(reader(page).getByText(/المقدار المحدد:.*من آية ٣ إلى ٤/)).toBeVisible();
   await reader(page).getByRole('button',{name:'خطة اليوم',exact:true}).click();
   await expect(page.getByRole('heading',{name:title(2,3),exact:true})).toBeVisible();
-  await page.getByRole('button',{name:'افتح مقدار اليوم في المصحف',exact:true}).click();await visiblePage(page,4);
-  await reader(page).getByRole('button',{name:'ابدأ نشاط خطة اليوم',exact:true}).click();
+  await page.getByRole('button',{name:'ابدأ الحفظ',exact:true}).click();await visiblePage(page,4);
   await expect(page.getByRole('heading',{name:title(2,3),exact:true})).toBeVisible();
   const after=await facts(page);
   expect(after.events.filter(event=>event.type==='SessionStarted')).toHaveLength(1);
@@ -123,14 +123,14 @@ test('M10F03 saved selection starts the exact current journey unit and today ope
 
 test('M10F04 one assessed session remains durable and its due review opens the original page ahead of new selection',async({page})=>{
   await boot(page);await select(page,3,3);
-  await reader(page).getByRole('button',{name:'ابدأ نشاط خطة اليوم',exact:true}).click();
-  await page.getByRole('button',{name:'ابدأ التسميع الذاتي',exact:true}).click();
+  await readerTools(page);await reader(page).getByRole('button',{name:'ابدأ نشاط خطة اليوم',exact:true}).click();
+  await enterRecall(page);
   await page.getByRole('button',{name:'سمّعت المقطع كاملًا بلا خطأ معلوم — جهد عادي',exact:true}).click();
   const assessed=await settledAssessment(page);
   expect(assessed.events.filter(event=>event.type==='AssessmentSubmitted')).toHaveLength(1);
   await page.reload();await expect(page.getByRole('heading',{name:'حُفظ تقييمك الذاتي',exact:true})).toBeVisible();
   expect((await facts(page)).events).toEqual(assessed.events);
-  await page.getByRole('button',{name:'تابع إلى النشاط التالي',exact:true}).click();
+  await page.getByRole('button',{name:'العودة إلى اليوم',exact:true}).click();
   await expect(page.getByRole('heading',{name:'وردك اليوم',exact:true})).toBeVisible();
   await page.clock.setFixedTime(new Date('2026-12-09T09:00:00.000Z'));
   await page.reload();await expect(page.getByText('مراجعة مستحقة',{exact:true})).toBeVisible();
@@ -138,7 +138,9 @@ test('M10F04 one assessed session remains durable and its due review opens the o
   await reader(page).getByRole('button',{name:'خطة اليوم',exact:true}).click();
   await expect(page.getByRole('heading',{name:title(3,3),exact:true})).toBeVisible();
   await expect(page.getByText('مراجعة مستحقة',{exact:true})).toBeVisible();
-  await page.getByRole('button',{name:'افتح مقدار اليوم في المصحف',exact:true}).click();await visiblePage(page,6);
+  await page.getByRole('button',{name:'ابدأ المراجعة',exact:true}).click();
+  await page.getByRole('button',{name:'أظهر النص وسجّل المساعدة',exact:true}).click();
+  await sessionOptions(page);await page.getByRole('button',{name:'افتح موضع الجلسة في المصحف',exact:true}).click();await visiblePage(page,6);
   const final=await facts(page);
   expect(final.events.filter(event=>event.type==='AssessmentSubmitted')).toHaveLength(1);
   for(const original of assessed.events)expect(final.events.find(event=>event.eventId===original.eventId)).toEqual(original);
@@ -146,8 +148,8 @@ test('M10F04 one assessed session remains durable and its due review opens the o
 
 test('M10F05 reader cannot leak recall answers and one acknowledged reveal records one assistance event',async({page})=>{
   await boot(page);await select(page,2,2);
-  await reader(page).getByRole('button',{name:'ابدأ نشاط خطة اليوم',exact:true}).click();
-  await page.getByRole('button',{name:'ابدأ التسميع الذاتي',exact:true}).click();
+  await readerTools(page);await reader(page).getByRole('button',{name:'ابدأ نشاط خطة اليوم',exact:true}).click();
+  await enterRecall(page);
   await openReader(page);
   await expect(reader(page).getByRole('img')).toHaveCount(0);
   await expect(reader(page).getByRole('combobox')).toHaveCount(0);
@@ -253,23 +255,23 @@ test('M10F09 candidate source is explicitly unapproved, rejects substituted page
     // Deliberately substituted, non-Quran data. No authentic source artwork is committed to this test.
     await route.fulfill({status:200,contentType:'image/svg+xml',body:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><rect width="1" height="1"/></svg>'});
   });
-  await page.goto('/reader-preview.html');
-  await expect(page.getByRole('region',{name:'حالة النسخة'})).toContainText('صفحات حفص مرشحة للمراجعة؛ جلسات الحفظ ببيانات صناعية');
+  await page.goto('/reader-preview.html#S16');
+  await expect(page.getByRole('region',{name:'حالة النسخة'})).toContainText('تجربة الحفظ ببيانات صناعية غير قرآنية، وصفحات حفص مرشحة للمراجعة');
   await expect(reader(page).getByRole('heading',{name:'مراجعة صفحات حفص',exact:true})).toBeVisible();
   await expect(reader(page)).toContainText('معاينة مصدر مرشح — لم يُعتمد المصحف بعد.');
   await expect(reader(page).getByRole('alert')).toContainText('تعذر');
   expect(requested.length).toBeGreaterThan(0);
   expect(requested.every(url=>/^https:\/\/raw\.githubusercontent\.com\/quran-ws\/quran-svg\/[a-f0-9]{40}\/mushafs\/hafs\/kfqc\/svg\/\d{3}\.svg$/.test(url))).toBe(true);
   await expect(reader(page).getByRole('img')).toHaveCount(0);
-  await expect(reader(page).getByRole('button',{name:'احفظ مقدار المراجعة',exact:true})).toBeDisabled();
+  await readerTools(page);await expect(reader(page).getByRole('button',{name:'احفظ مقدار المراجعة',exact:true})).toBeDisabled();
   await expect(reader(page).getByRole('button',{name:'ابدأ نشاط خطة اليوم',exact:true})).toHaveCount(0);
   const before=await facts(page);
   expect(before.events.filter(event=>event.type==='AssessmentSubmitted'||event.type==='SessionStarted')).toHaveLength(0);
   expect(await page.evaluate(()=>Object.keys(localStorage).filter(key=>key.startsWith('mulazama-candidate-review-intent-10f:')))).toEqual([]);
-  await page.getByRole('button',{name:'اختبر الحفظ والمراجعة ببيانات صناعية',exact:true}).click();
+  await readerTools(page);await page.getByRole('button',{name:'اختبر الحفظ والمراجعة ببيانات صناعية',exact:true}).click();
   await visiblePage(page,1);
   await select(page,2,3);
-  await reader(page).getByRole('button',{name:'ابدأ نشاط خطة اليوم',exact:true}).click();
+  await readerTools(page);await reader(page).getByRole('button',{name:'ابدأ نشاط خطة اليوم',exact:true}).click();
   await expect(page.getByRole('heading',{name:title(2,3),exact:true})).toBeVisible();
   const after=await facts(page);
   expect(after.events.filter(event=>event.type==='SessionStarted')).toHaveLength(1);

@@ -1,0 +1,81 @@
+{
+  "commit": "09764544283ec562a80039a537391ea12161cf67",
+  "command": "node /workspace/ux11-evidence/final-visual/capture.mjs",
+  "serverCommand": "node node_modules/vite/bin/vite.js --config vite.reader-preview.config.ts --mode test --host 127.0.0.1 --port 4187 --strictPort",
+  "syntheticOnly": true,
+  "errors": [],
+  "captures": [
+    {
+      "name": "today-phone",
+      "path": "/workspace/ux11-evidence/final-visual/today-phone.png",
+      "route": "#S05",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "height": 844,
+        "bodyHeight": 895,
+        "clippedControls": []
+      }
+    },
+    {
+      "name": "today-desktop",
+      "path": "/workspace/ux11-evidence/final-visual/today-desktop.png",
+      "route": "#S05",
+      "metrics": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "height": 1000,
+        "bodyHeight": 1036,
+        "clippedControls": []
+      }
+    },
+    {
+      "name": "session-embedded-phone",
+      "path": "/workspace/ux11-evidence/final-visual/session-embedded-phone.png",
+      "route": "#S07",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "height": 844,
+        "bodyHeight": 1183,
+        "clippedControls": []
+      }
+    },
+    {
+      "name": "mushaf-phone",
+      "path": "/workspace/ux11-evidence/final-visual/mushaf-phone.png",
+      "route": "#S16",
+      "metrics": {
+        "width": 390,
+        "scrollWidth": 390,
+        "height": 844,
+        "bodyHeight": 1170,
+        "clippedControls": []
+      }
+    },
+    {
+      "name": "mushaf-phone-320",
+      "path": "/workspace/ux11-evidence/final-visual/mushaf-phone-320.png",
+      "route": "#S16",
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "height": 740,
+        "bodyHeight": 1081,
+        "clippedControls": []
+      }
+    },
+    {
+      "name": "mushaf-tools-phone-320",
+      "path": "/workspace/ux11-evidence/final-visual/mushaf-tools-phone-320.png",
+      "route": "#S16",
+      "metrics": {
+        "width": 320,
+        "scrollWidth": 320,
+        "height": 740,
+        "bodyHeight": 2075,
+        "clippedControls": []
+      }
+    }
+  ]
+}

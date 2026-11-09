@@ -3,16 +3,20 @@ import AxeBuilder from '@axe-core/playwright';
 
 test('L1WEB01 newcomer completes three steps in four actions, reopens home, and cannot start blocked sessions', async ({ page }, info) => {
   await page.goto('/');
-  await page.getByRole('button', { name: 'ابدأ إعداد تجربتك' }).click();
+  await page.getByRole('button', { name: 'أعد خطتي', exact: true }).click();
   await page.getByRole('button', { name: 'التالي: المحفوظات والهدف' }).click();
   await page.getByRole('button', { name: 'التالي: الوقت المناسب' }).click();
   await page.getByRole('button', { name: 'احفظ واذهب إلى الرئيسية' }).click();
   await expect(page.locator('main[data-screen="S05"]')).toBeVisible();
-  await expect(page.getByRole('button', { name: 'راجع هدفك ووقتك' })).toBeVisible();
+  await expect(page.getByText('وردك محفوظ. جلسات القرآن تنتظر اعتماد المحتوى؛ إعداداتك وسجلك باقيان.', { exact: true })).toBeVisible();
   await expect(page.getByRole('button', { name: /ابدأ وردك|استأنف جلستك/ })).toHaveCount(0);
+  await expect(page.getByRole('button', { name: 'ابدأ الحفظ', exact: true })).toBeDisabled();
+  await expect(page.getByRole('button', { name: 'ابدأ المراجعة', exact: true })).toBeDisabled();
   await expect(page.getByRole('progressbar')).toHaveCount(0);
   await page.goto('/');
   await expect(page.locator('main[data-screen="S05"]')).toBeVisible();
+  await expect(page.getByText('وردك محفوظ. جلسات القرآن تنتظر اعتماد المحتوى؛ إعداداتك وسجلك باقيان.', { exact: true })).toBeVisible();
+  await page.getByRole('navigation', { name: 'التنقل على الهاتف', exact: true }).getByRole('button', { name: 'تقدمي', exact: true }).click();
   await expect(page.getByRole('heading', { name: 'ذاكرة الحافظ', exact: true })).toBeVisible();
   await info.attach('newcomer-journey.json', { body: JSON.stringify({ setupActions: 4, mainSteps: 3, defaultValuesUsed: true,
     homeOnReopen: true, actionsToStartActualWard: null, startStatus: 'blocked', humanParticipant: false }), contentType: 'application/json' });
@@ -20,7 +24,7 @@ test('L1WEB01 newcomer completes three steps in four actions, reopens home, and 
 
 test('L1WEB02 prior hafiz declares a range in six actions, with no verified memorization or HME writes', async ({ page }, info) => {
   await page.goto('/');
-  await page.getByRole('button', { name: 'ابدأ إعداد تجربتك' }).click();
+  await page.getByRole('button', { name: 'أعد خطتي', exact: true }).click();
   await page.getByRole('radio', { name: 'لدي محفوظات سابقة وأريد مراجعتها' }).click();
   await page.getByRole('button', { name: 'التالي: المحفوظات والهدف' }).click();
   await page.getByRole('button', { name: 'أضف إلى اختياراتي' }).click();

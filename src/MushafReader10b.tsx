@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import type { FormEvent, TouchEvent } from 'react';
+import type { FormEvent, ReactNode, TouchEvent } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button, Card, Field, Heading, Notice } from './components';
 import { requireVerifiedMushaf, type VerifiedMushaf } from './mushaf/model';
@@ -10,6 +10,7 @@ export interface MushafReader10bProps {
   mushaf: VerifiedMushaf | null;
   databaseName: string;
   requestedPage?: number;
+  fallbackPage?: number;
   selection?: StudySelection | null;
   onSelectRange?: (range: StudyRange) => Promise<void> | void;
   onStart?: () => Promise<void> | void;
@@ -22,6 +23,8 @@ export interface MushafReader10bProps {
   checkingSession?: boolean;
   beforeRead?: () => Promise<void>;
   onPageShown?: (page: number) => void;
+  embedded?: boolean;
+  secondaryActions?: ReactNode;
 }
 
 const number = (value: number) => value.toLocaleString('ar-SA');
@@ -33,8 +36,8 @@ export function readerBookmarkKey(databaseName: string, mushaf: Pick<VerifiedMus
   return ['mulazama-reader-location-v1', databaseName, mushaf.editionId, mushaf.layoutId].map(encodeURIComponent).join(':');
 }
 
-function initialLocation(mushaf: VerifiedMushaf, databaseName: string, requestedPage?: number) {
-  const fallback = validPage(mushaf, requestedPage) ? requestedPage : mushaf.pages[0].number;
+function initialLocation(mushaf: VerifiedMushaf, databaseName: string, requestedPage?: number, fallbackPage?: number) {
+  const fallback = validPage(mushaf, requestedPage) ? requestedPage : validPage(mushaf, fallbackPage) ? fallbackPage : mushaf.pages[0].number;
   if (validPage(mushaf, requestedPage)) return { page: fallback, error: '' };
   try {
     const raw = localStorage.getItem(readerBookmarkKey(databaseName, mushaf));
@@ -58,24 +61,24 @@ export function MushafReader10b(props: MushafReader10bProps) {
   let verified = props.mushaf;
   try { if (verified) requireVerifiedMushaf(verified); } catch { verified = null; }
   if (!verified) return <section className="mushaf-reader" aria-label="قارئ المصحف" dir="rtl">
-    <Heading eyebrow="مُلازَمَة" title="المصحف" description="رفيق رحلتك مع القرآن" />
+    {!props.embedded && <Heading eyebrow="مُلازَمَة" title="المصحف" description="رفيق رحلتك مع القرآن" />}
     <Card>
       <h2>النص المعتمد ينتظر الإضافة</h2>
       <p>لم تُتح حزمة مصحف المدينة المتحقق منها بعد. سيظهر المصحف هنا بعد التحقق من صفحات المجمع وبيانات الآيات وحقوق استخدامها.</p>
       {props.unavailableReason && <p role="alert">{props.unavailableReason}</p>}
       <p>لم يُعرض نص قرآني بديل، واختياراتك وسجلك السابق محفوظان.</p>
-      <Button onClick={props.onToday}>العودة إلى خطة اليوم</Button>
+      {!props.embedded && <Button onClick={props.onToday}>العودة إلى خطة اليوم</Button>}
     </Card>
   </section>;
   if (props.checkingSession) return <section className="mushaf-reader" aria-label="قارئ المصحف" dir="rtl">
-    <Heading eyebrow="مُلازَمَة" title="المصحف" />
+    {!props.embedded && <Heading eyebrow="مُلازَمَة" title="المصحف" />}
     {props.unavailableReason ? <Card>
       <p role="alert">{props.unavailableReason}</p>
-      <Button onClick={props.onToday}>العودة إلى خطة اليوم</Button>
+      {!props.embedded && <Button onClick={props.onToday}>العودة إلى خطة اليوم</Button>}
     </Card> : <p role="status">جارٍ التحقق من الجلسة المحفوظة…</p>}
   </section>;
   if (props.readingBlocked) return <section className="mushaf-reader" aria-label="قارئ المصحف" dir="rtl">
-    <Heading eyebrow="مُلازَمَة" title="المصحف أثناء التسميع" />
+    {!props.embedded && <Heading eyebrow="مُلازَمَة" title="المصحف أثناء التسميع" />}
     <Card>
       <Notice tone="warning">أنت في محاولة تسميع. فتح المصحف يكشف النص ويُسجّل مساعدة في المحاولة الحالية.</Notice>
       {revealError && <p role="alert">{revealError}</p>}
@@ -96,14 +99,14 @@ export function MushafReader10b(props: MushafReader10bProps) {
 
 type NavigationAnchor = { page: number; surah: number; fromAyah: number; juz?: number };
 
-function ReadyReader({ mushaf, databaseName, requestedPage, selection, onSelectRange, onStart, onToday, beforeRead, unavailableReason, onPageShown }: MushafReader10bProps & { mushaf: VerifiedMushaf }) {
+function ReadyReader({ mushaf, databaseName, requestedPage, fallbackPage, selection, onSelectRange, onStart, onToday, beforeRead, unavailableReason, onPageShown, embedded = false, secondaryActions }: MushafReader10bProps & { mushaf: VerifiedMushaf }) {
   const candidateReview = mushaf.kind === 'candidate-review';
   const saveRangeLabel = candidateReview ? 'احفظ مقدار المراجعة' : 'أضف إلى خطتي';
   // A full verified verse map is large; capture its readonly snapshots once per capability.
   const { pages, verses, surahs, juzStarts, source } = useMemo(() => ({
     pages: mushaf.pages, verses: mushaf.verses, surahs: mushaf.surahs, juzStarts: mushaf.juzStarts, source: mushaf.source,
   }), [mushaf]);
-  const [initial] = useState(() => initialLocation(mushaf, databaseName, requestedPage));
+  const [initial] = useState(() => initialLocation(mushaf, databaseName, requestedPage, fallbackPage));
   const [page, setPage] = useState(initial.page);
   const [pageDraft, setPageDraft] = useState(String(initial.page));
   const [bookmarkError, setBookmarkError] = useState(initial.error);
@@ -242,41 +245,27 @@ function ReadyReader({ mushaf, databaseName, requestedPage, selection, onSelectR
     if (Math.abs(dx) >= 60 && Math.abs(dx) > Math.abs(dy) * 1.5 && Math.abs(dy) < 60) move(dx > 0 ? 1 : -1);
   }
 
-  return <section className={`mushaf-reader${candidateReview ? ' mushaf-candidate-review' : ''}`} aria-label="قارئ المصحف" dir="rtl">
-    <Heading eyebrow="مُلازَمَة" title={candidateReview ? 'مراجعة صفحات حفص' : mushaf.kind === 'engineering' ? 'تجربة قارئ المصحف' : 'مصحف المدينة النبوية'}
-      description={candidateReview ? 'تصفّح صفحات المصدر المرشح وحدّد مقدارًا لمراجعته.' : mushaf.kind === 'engineering' ? 'جرّب التصفح واختيار المقدار ومتابعته في خطة اليوم.' : 'اقرأ مقدارك، ثم تابع الحفظ والمراجعة من خطة اليوم.'} />
-    {mushaf.kind === 'engineering' && <Notice tone="warning"><strong>تجربة القارئ — بيانات صناعية غير قرآنية.</strong> الصفحات والسور والسطور المعروضة أمثلة للتجربة، وليست مصحفًا رسميًا أو نصًا قرآنيًا.</Notice>}
-    {candidateReview && <Notice tone="warning"><strong>معاينة مصدر مرشح — لم يُعتمد المصحف بعد.</strong> هذه مراجعة للصفحات والمواضع فقط. لا تُضاف اختياراتها إلى جلسات القرآن أو سجل تعلمك.</Notice>}
+  const canSelect = !!onSelectRange && !embedded;
+  return <section className={`mushaf-reader${candidateReview ? ' mushaf-candidate-review' : ''}${embedded ? ' mushaf-reader-embedded' : ''}`} aria-label="قارئ المصحف" dir="rtl">
+    {!embedded && <div className="mushaf-heading-row">
+      <Heading eyebrow="مُلازَمَة" title={candidateReview ? 'مراجعة صفحات حفص' : mushaf.kind === 'engineering' ? 'تجربة قارئ المصحف' : 'مصحف المدينة النبوية'} />
+      <Button variant="ghost" onClick={onToday}>خطة اليوم</Button>
+    </div>}
+    {mushaf.kind === 'engineering' && !embedded && <Notice tone="warning"><strong>تجربة القارئ — بيانات صناعية غير قرآنية.</strong></Notice>}
+    {candidateReview && <Notice tone="warning"><strong>معاينة مصدر مرشح — لم يُعتمد المصحف بعد.</strong> للتصفح والمراجعة فقط؛ جلسات القرآن تنتظر الاعتماد.</Notice>}
     {unavailableReason && <p role="alert">{unavailableReason}</p>}
-    <Card className="mushaf-navigation">
-      <fieldset disabled={pageFailed} className="mushaf-navigation-fields">
-        <legend className="sr-only">الانتقال في المصحف</legend>
-        <Field label="السورة"><select value={surah} onChange={event => {
-          const next = surahs.find(item => item.number === Number(event.target.value));
-          if (next) navigate(next.startPage, { page: next.startPage, surah: next.number, fromAyah: 1, juz: verses.find(verse => verse.surah === next.number && verse.ayah === 1)?.juz });
-        }}>{surahs.map(item => <option key={item.number} value={item.number}>{item.name}</option>)}</select></Field>
-        <Field label="الجزء"><select value={juz} onChange={event => {
-          const next = juzStarts.find(item => item.number === Number(event.target.value));
-          if (next) navigate(next.page, { page: next.page, surah: next.surah, fromAyah: next.ayah, juz: next.number });
-        }}>{juzStarts.map(item => <option key={item.number} value={item.number}>الجزء {number(item.number)}</option>)}</select></Field>
-        <form className="mushaf-page-jump" onSubmit={event => {
-          event.preventDefault(); const next = Number(pageDraft);
-          if (!validPage(mushaf, next)) { setActionError('رقم الصفحة غير موجود في هذه الطبعة.'); return; }
-          navigate(next);
-        }}><Field label="رقم الصفحة"><input type="number" inputMode="numeric" min={pages[0].number} max={pages.at(-1)!.number}
-          value={pageDraft} onChange={event => setPageDraft(event.target.value)} /></Field><Button type="submit" variant="secondary">انتقل</Button></form>
-      </fieldset>
-    </Card>
     {actionError && <p role="alert">{actionError}</p>}
     {bookmarkError && <p role="alert">{bookmarkError}</p>}
-    <div className="mushaf-page-turns">
-      <Button variant="secondary" disabled={currentIndex === 0 || pageFailed} onClick={() => move(-1)}><ChevronLeft size={18} aria-hidden="true" />الصفحة السابقة</Button>
-      <output aria-live="polite" aria-label="الصفحة الحالية">صفحة {number(page)} من {number(pages.length)}</output>
-      <Button variant="secondary" disabled={currentIndex === pages.length - 1 || pageFailed} onClick={() => move(1)}>الصفحة التالية<ChevronRight size={18} aria-hidden="true" /></Button>
-    </div>
-    <div className="mushaf-page-summary">
-      <span>{[...new Set(pageVerses.map(verse => verse.surah))].map(id => surahs.find(item => item.number === id)?.name).join(' · ')}</span>
-      <span>آخر موضع يُحفظ تلقائيًا على هذا الجهاز</span>
+    <div className="mushaf-reading-toolbar">
+      {!embedded && <Field label="السورة"><select disabled={pageFailed} value={surah} onChange={event => {
+        const next = surahs.find(item => item.number === Number(event.target.value));
+        if (next) navigate(next.startPage, { page: next.startPage, surah: next.number, fromAyah: 1, juz: verses.find(verse => verse.surah === next.number && verse.ayah === 1)?.juz });
+      }}>{surahs.map(item => <option key={item.number} value={item.number}>{item.name}</option>)}</select></Field>}
+      <div className="mushaf-page-turns">
+        <Button variant="secondary" disabled={currentIndex === 0 || pageFailed} onClick={() => move(-1)}><ChevronLeft size={18} aria-hidden="true" /><span>الصفحة السابقة</span></Button>
+        <output aria-live="polite" aria-label="الصفحة الحالية">صفحة {number(page)} من {number(pages.length)}</output>
+        <Button variant="secondary" disabled={currentIndex === pages.length - 1 || pageFailed} onClick={() => move(1)}><span>الصفحة التالية</span><ChevronRight size={18} aria-hidden="true" /></Button>
+      </div>
     </div>
     <div className="mushaf-page-stage" role="group" aria-label="صفحات المصحف" tabIndex={0} aria-keyshortcuts="ArrowRight ArrowLeft"
       onKeyDown={event => { if (event.target !== event.currentTarget) return; if (event.key === 'ArrowRight') { event.preventDefault(); move(1); } if (event.key === 'ArrowLeft') { event.preventDefault(); move(-1); } }}
@@ -288,42 +277,63 @@ function ReadyReader({ mushaf, databaseName, requestedPage, selection, onSelectR
           onError={() => setImage({ page, url: '', error: 'تعذر عرض ملف الصفحة. أعد تحميله؛ لا نعرض بديلًا غير متحقق.' })} />
           : <p role="status" className="mushaf-page-message">{candidateReview ? 'جارٍ تحميل صفحة المصدر المرشح…' : 'جارٍ تحميل الصفحة المتحقق منها…'}</p>}
     </div>
-    {onSelectRange && <div className="mushaf-page-picker" role="group" aria-label="اختيار مقدار من الصفحة">
-      <div className="mushaf-picker-heading"><h2>{mushaf.kind === 'engineering' ? 'اختر سطور التجربة' : 'اختر آيات الصفحة'}</h2>
-        <p>اختر البداية، ثم النهاية. يمكنك الانتقال إلى صفحة أخرى لإكمال المقدار في السورة نفسها.</p></div>
-      <div className="mushaf-verse-buttons">{pageVerses.map(verse => {
-        const label = mushaf.kind === 'engineering' ? 'السطر التجريبي' : 'الآية';
-        const name = surahs.find(item => item.number === verse.surah)!.name;
-        const selected = verse.surah === surah && verse.ayah >= Number(fromAyah) && verse.ayah <= Number(toAyah);
-        return <button type="button" key={`${verse.surah}:${verse.ayah}`} className="mushaf-verse-choice"
-          aria-label={`اختيار ${label} ${number(verse.ayah)} من ${name}`} aria-pressed={selected}
-          disabled={busy || pageFailed || !imageUrl} onClick={() => choosePageVerse(verse)}>
-          <span className="mushaf-verse-number" aria-hidden="true">{number(verse.ayah)}</span>
-          <span><strong>{label} {number(verse.ayah)}</strong><small>{name}</small></span>
-          {selected && <span className="mushaf-verse-selected" aria-hidden="true">محدد</span>}
-        </button>;
-      })}</div>
-      <p className="mushaf-range-hint" role="status">{rangeStart
-        ? `حُددت البداية عند ${mushaf.kind === 'engineering' ? 'السطر التجريبي' : 'الآية'} ${number(rangeStart.ayah)}. اختر النهاية، أو احفظ هذا الموضع وحده${candidateReview ? ' للمراجعة' : ' في خطتك'}.`
-        : `الاختيار هنا يجهّز المقدار فقط. اضغط «${saveRangeLabel}» لحفظه.`}</p>
-    </div>}
-    <p className="mushaf-source">{source.attribution} {(mushaf.kind === 'approved' || candidateReview) && <a href={source.url} target="_blank" rel="noreferrer">{candidateReview ? 'المصدر المثبّت' : 'المصدر'}</a>}</p>
-    {onSelectRange && <Card className="mushaf-selection">
-      <h2>{candidateReview ? 'مقدار مراجعة المصدر' : 'مقدار الحفظ'}</h2>
-      <p>{activeSurah.name} — {candidateReview ? 'اختيار للمراجعة فقط؛ لا يغيّر خطة الحفظ أو سجل التعلم.' : 'اختيار المقدار لا يعني حفظه أو إتقانه.'}</p>
-      <form onSubmit={chooseRange}>
-        <fieldset disabled={busy || pageFailed} className="mushaf-selection-fields"><legend className="sr-only">اختر الآيات</legend>
-          <Field label="من آية"><input type="number" inputMode="numeric" min="1" max={activeSurah.ayahCount} value={fromAyah} onChange={event => editRange(setFromAyah, event.target.value)} /></Field>
-          <Field label="إلى آية"><input type="number" inputMode="numeric" min="1" max={activeSurah.ayahCount} value={toAyah} onChange={event => editRange(setToAyah, event.target.value)} /></Field>
-          <Button type="submit">{saveRangeLabel}</Button>
-        </fieldset>
-      </form>
-      {selection?.editionId === mushaf.editionId && <p>{candidateReview ? 'مقدار المراجعة المحدد' : 'المقدار المحدد'}: {surahs.find(item => item.number === selection.range.surah)?.name}، من آية {number(selection.range.fromAyah)} إلى {number(selection.range.toAyah)}.</p>}
-      <p role="status" aria-live="polite">{status}</p>
-    </Card>}
-    <div className="actions mushaf-actions">
-      {onStart && !candidateReview && <Button disabled={busy || pageFailed} onClick={() => { void run(onStart, ''); }}>ابدأ نشاط خطة اليوم</Button>}
-      <Button variant="secondary" onClick={onToday}>{candidateReview ? 'العودة إلى تجربة الحفظ' : 'خطة اليوم'}</Button>
-    </div>
+    {!embedded && <>
+      <div className="mushaf-page-summary"><span>آخر موضع يُحفظ تلقائيًا على هذا الجهاز</span></div>
+      {selection?.editionId === mushaf.editionId && <p className="mushaf-saved-selection">{candidateReview ? 'مقدار المراجعة المحدد' : 'المقدار المحدد'}: {surahs.find(item => item.number === selection.range.surah)?.name}، من آية {number(selection.range.fromAyah)} إلى {number(selection.range.toAyah)}.</p>}
+      <p className="mushaf-save-status" role="status" aria-live="polite">{status}</p>
+      <details className="mushaf-tools">
+        <summary>اختيار المقدار وخيارات المصحف</summary>
+        <div className="mushaf-tools-content">
+          <fieldset disabled={pageFailed} className="mushaf-navigation-fields">
+            <legend>انتقل إلى موضع</legend>
+            <Field label="الجزء"><select value={juz} onChange={event => {
+              const next = juzStarts.find(item => item.number === Number(event.target.value));
+              if (next) navigate(next.page, { page: next.page, surah: next.surah, fromAyah: next.ayah, juz: next.number });
+            }}>{juzStarts.map(item => <option key={item.number} value={item.number}>الجزء {number(item.number)}</option>)}</select></Field>
+            <form className="mushaf-page-jump" onSubmit={event => {
+              event.preventDefault(); const next = Number(pageDraft);
+              if (!validPage(mushaf, next)) { setActionError('رقم الصفحة غير موجود في هذه الطبعة.'); return; }
+              navigate(next);
+            }}><Field label="رقم الصفحة"><input type="number" inputMode="numeric" min={pages[0].number} max={pages.at(-1)!.number}
+              value={pageDraft} onChange={event => setPageDraft(event.target.value)} /></Field><Button type="submit" variant="secondary">انتقل</Button></form>
+          </fieldset>
+          {canSelect && <>
+            <div className="mushaf-page-picker" role="group" aria-label="اختيار مقدار من الصفحة">
+              <div className="mushaf-picker-heading"><h2>{mushaf.kind === 'engineering' ? 'اختر سطور التجربة' : 'اختر آيات الصفحة'}</h2>
+                <p>اختر البداية، ثم النهاية. يمكنك إكمال المقدار في صفحة أخرى من السورة نفسها.</p></div>
+              <div className="mushaf-verse-buttons">{pageVerses.map(verse => {
+                const label = mushaf.kind === 'engineering' ? 'السطر التجريبي' : 'الآية';
+                const name = surahs.find(item => item.number === verse.surah)!.name;
+                const selected = verse.surah === surah && verse.ayah >= Number(fromAyah) && verse.ayah <= Number(toAyah);
+                return <button type="button" key={`${verse.surah}:${verse.ayah}`} className="mushaf-verse-choice"
+                  aria-label={`اختيار ${label} ${number(verse.ayah)} من ${name}`} aria-pressed={selected}
+                  disabled={busy || pageFailed || !imageUrl} onClick={() => choosePageVerse(verse)}>
+                  <span className="mushaf-verse-number" aria-hidden="true">{number(verse.ayah)}</span>
+                  <span><strong>{label} {number(verse.ayah)}</strong><small>{name}</small></span>
+                  {selected && <span className="mushaf-verse-selected" aria-hidden="true">محدد</span>}
+                </button>;
+              })}</div>
+              <p className="mushaf-range-hint" role="status">{rangeStart
+                ? `حُددت البداية عند ${mushaf.kind === 'engineering' ? 'السطر التجريبي' : 'الآية'} ${number(rangeStart.ayah)}. اختر النهاية، أو احفظ هذا الموضع وحده${candidateReview ? ' للمراجعة' : ' في خطتك'}.`
+                : `اضغط «${saveRangeLabel}» لتأكيد المقدار.`}</p>
+            </div>
+            <div className="mushaf-selection">
+              <h2>{candidateReview ? 'مقدار مراجعة المصدر' : 'مقدار الحفظ'}</h2>
+              <p>{activeSurah.name} — {candidateReview ? 'للمراجعة فقط؛ لا يغيّر خطة الحفظ أو سجل التعلم.' : 'اختيار المقدار لا يعني حفظه أو إتقانه.'}</p>
+              <form onSubmit={chooseRange}>
+                <fieldset disabled={busy || pageFailed} className="mushaf-selection-fields"><legend className="sr-only">اختر الآيات</legend>
+                  <Field label="من آية"><input type="number" inputMode="numeric" min="1" max={activeSurah.ayahCount} value={fromAyah} onChange={event => editRange(setFromAyah, event.target.value)} /></Field>
+                  <Field label="إلى آية"><input type="number" inputMode="numeric" min="1" max={activeSurah.ayahCount} value={toAyah} onChange={event => editRange(setToAyah, event.target.value)} /></Field>
+                  <Button type="submit">{saveRangeLabel}</Button>
+                </fieldset>
+              </form>
+            </div>
+          </>}
+          {onStart && !candidateReview && <Button disabled={busy || pageFailed} onClick={() => { void run(onStart, ''); }}>ابدأ نشاط خطة اليوم</Button>}
+          <p className="mushaf-source">{source.attribution} {(mushaf.kind === 'approved' || candidateReview) && <a href={source.url} target="_blank" rel="noreferrer">{candidateReview ? 'المصدر المثبّت' : 'المصدر'}</a>}</p>
+          {secondaryActions && <div className="mushaf-secondary-actions">{secondaryActions}</div>}
+        </div>
+      </details>
+    </>}
   </section>;
 }

@@ -1,3 +1,4 @@
+import {readerTools,sessionOptions,enterRecall,openProgress} from '../e2e-reader-preview/ux-helpers';
 import {test,expect,type Page} from '@playwright/test';
 
 const imageName=(number:number)=>`صفحة اختبار صناعية ${number.toLocaleString('ar-SA')}`;
@@ -14,12 +15,12 @@ async function facts(page:Page){return page.evaluate(async()=>{
 });}
 async function setup(page:Page){
   await page.goto('/engineering.html');
-  await page.getByRole('button',{name:'ابدأ إعداد تجربتك',exact:true}).click();
+  await page.getByRole('button',{name:'أعد خطتي',exact:true}).click();
   await page.getByRole('button',{name:'التالي: المحفوظات والهدف',exact:true}).click();
   await page.getByRole('button',{name:'التالي: الوقت المناسب',exact:true}).click();
   await page.getByRole('checkbox',{name:'السبت',exact:true}).check();
   await page.getByRole('button',{name:'احفظ واذهب إلى الرئيسية',exact:true}).click();
-  await expect(page.getByRole('button',{name:'ابدأ وردك',exact:true})).toBeVisible();
+  await expect(page.getByRole('button',{name:/^ابدأ (الحفظ|المراجعة)$/,exact:true})).toBeVisible();
   await expect.poll(async()=>(await facts(page)).events.some(event=>event.type==='PlanRecomputed')).toBe(true);
 }
 async function openReader(page:Page){
@@ -28,16 +29,16 @@ async function openReader(page:Page){
 }
 async function selectSecondAyah(page:Page){
   await openReader(page);await visiblePage(page,1);
-  await page.getByLabel('من آية',{exact:true}).fill('2');
+  await readerTools(page);await page.getByLabel('من آية',{exact:true}).fill('2');
   await page.getByLabel('إلى آية',{exact:true}).fill('2');
   await page.getByRole('button',{name:'أضف إلى خطتي',exact:true}).click();
   await expect(page.getByText('أُضيف المقدار إلى خطتك. الاختيار وحده لا يُسجّل إنجازًا.',{exact:true})).toBeVisible();
 }
 async function beginSecondRecall(page:Page){
   await setup(page);await selectSecondAyah(page);
-  await page.getByRole('button',{name:'ابدأ نشاط خطة اليوم',exact:true}).click();
+  await readerTools(page);await page.getByRole('button',{name:'ابدأ نشاط خطة اليوم',exact:true}).click();
   await expect(page.getByRole('heading',{name:'وحدة تدريب صناعية 2',exact:true})).toBeVisible();
-  await page.getByRole('button',{name:'ابدأ التسميع الذاتي',exact:true}).click();
+  await enterRecall(page);
   await expect(page.getByLabel('مادة الاختبار الصناعي',{exact:true})).toHaveCount(0);
 }
 
@@ -60,7 +61,7 @@ test('M10B02 phone RTL navigation, parts, numeric jump, swipe and bookmark use o
   await expect(page.getByRole('button',{name:'الصفحة السابقة',exact:true})).toBeDisabled();
   const turnStart=performance.now();await page.getByRole('button',{name:'الصفحة التالية',exact:true}).click();await visiblePage(page,2);
   const pageTurnMs=performance.now()-turnStart;
-  await page.getByRole('combobox',{name:'الجزء',exact:true}).selectOption('2');await visiblePage(page,3);
+  await readerTools(page);await page.getByRole('combobox',{name:'الجزء',exact:true}).selectOption('2');await visiblePage(page,3);
   await expect(page.getByRole('button',{name:'الصفحة التالية',exact:true})).toBeDisabled();
   await page.getByRole('combobox',{name:'السورة',exact:true}).selectOption('1');await visiblePage(page,1);
   const stage=page.getByRole('group',{name:'صفحات المصحف',exact:true});
@@ -68,7 +69,7 @@ test('M10B02 phone RTL navigation, parts, numeric jump, swipe and bookmark use o
   await stage.dispatchEvent('touchend',{changedTouches:[{identifier:1,clientX:150,clientY:90}]});await visiblePage(page,2);
   await stage.dispatchEvent('touchstart',{touches:[{identifier:2,clientX:150,clientY:80}]});
   await stage.dispatchEvent('touchend',{changedTouches:[{identifier:2,clientX:30,clientY:90}]});await visiblePage(page,1);
-  await page.getByLabel('رقم الصفحة',{exact:true}).fill('3');await page.getByRole('button',{name:'انتقل',exact:true}).click();await visiblePage(page,3);
+  await readerTools(page);await page.getByLabel('رقم الصفحة',{exact:true}).fill('3');await page.getByRole('button',{name:'انتقل',exact:true}).click();await visiblePage(page,3);
   await expect.poll(()=>page.evaluate(()=>Object.keys(localStorage).some(key=>key.startsWith('mulazama-reader-location-v1:')&&JSON.parse(localStorage.getItem(key)!).page===3))).toBe(true);
   const before=await facts(page);await page.reload();await visiblePage(page,3);expect((await facts(page)).events).toEqual(before.events);
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBe(true);
@@ -82,11 +83,11 @@ test('M10B03 selection is persistent intent, starts the exact catalogue unit and
   expect(selected.events.filter(e=>e.data.scope==='product')).toEqual(before.events.filter(e=>e.data.scope==='product'));
   expect(selected.events.filter(e=>e.type==='AssessmentSubmitted')).toHaveLength(0);
   await page.reload();await visiblePage(page,1);await expect(page.getByText(/المقدار المحدد:.*من آية ٢ إلى ٢/)).toBeVisible();
-  await page.getByRole('button',{name:'ابدأ نشاط خطة اليوم',exact:true}).click();
+  await readerTools(page);await page.getByRole('button',{name:'ابدأ نشاط خطة اليوم',exact:true}).click();
   await expect(page.getByRole('heading',{name:'وحدة تدريب صناعية 2',exact:true})).toBeVisible();
   const started=await facts(page);expect(started.events.filter(e=>e.type==='SessionStarted')).toHaveLength(1);
   expect(started.events.find(e=>e.type==='SessionStarted')?.data.command).toMatchObject({unitId:'test-journey-unit-2'});
-  await page.getByRole('button',{name:'ابدأ التسميع الذاتي',exact:true}).click();
+  await enterRecall(page);
   await page.getByRole('button',{name:'سمّعت المقطع كاملًا بلا خطأ معلوم — جهد عادي',exact:true}).click();
   await expect(page.getByRole('heading',{name:'حُفظ تقييمك الذاتي',exact:true})).toBeVisible();
   await expect.poll(async()=>{
@@ -98,11 +99,11 @@ test('M10B03 selection is persistent intent, starts the exact catalogue unit and
   await info.attach('reader-selected-journey.json',{contentType:'application/json',body:JSON.stringify({syntheticOnly:true,selectedUnit:'test-journey-unit-2',selectionWasNotAssessment:true,priorProductEventsPreserved:true,assessmentCount:1,reloadEventsEqual:true})});
 });
 
-test('M10B04 today opens the selected task mapped page and can return to the existing plan',async({page})=>{
+test('M10B04 today starts the selected task at its mapped page and can return to the existing plan',async({page})=>{
   await setup(page);await selectSecondAyah(page);await page.getByRole('button',{name:'خطة اليوم',exact:true}).click();
   await expect(page.getByRole('heading',{name:'وحدة تدريب صناعية 2',exact:true})).toBeVisible();
-  await page.getByRole('button',{name:'افتح مقدار اليوم في المصحف',exact:true}).click();await visiblePage(page,2);
-  await page.getByRole('button',{name:'خطة اليوم',exact:true}).click();await expect(page.getByRole('button',{name:'ابدأ وردك',exact:true})).toBeVisible();
+  await page.getByRole('button',{name:'ابدأ الحفظ',exact:true}).click();await visiblePage(page,2);
+  await page.getByRole('button',{name:'اليوم',exact:true}).click();await expect(page.getByRole('button',{name:'استأنف جلستك',exact:true})).toBeVisible();
 });
 
 test('M10B05 recall hides all reader images until acknowledged help is recorded exactly once',async({page})=>{
@@ -110,10 +111,10 @@ test('M10B05 recall hides all reader images until acknowledged help is recorded 
   const reader=page.getByRole('region',{name:'قارئ المصحف',exact:true});
   await expect(reader.getByRole('img')).toHaveCount(0);await expect(reader.getByRole('combobox')).toHaveCount(0);
   expect((await facts(page)).events.filter(e=>e.type==='HintUsed')).toHaveLength(0);
-  await page.getByRole('button',{name:'أظهر المصحف وسجّل المساعدة',exact:true}).click();await visiblePage(page,1);
+  await page.getByRole('button',{name:'أظهر المصحف وسجّل المساعدة',exact:true}).click();await visiblePage(page,2);
   const revealed=await facts(page);expect(revealed.events.filter(e=>e.type==='HintUsed')).toHaveLength(1);
   expect(revealed.events.find(e=>e.type==='HintUsed')?.data.command).toMatchObject({reveal:true});
-  await page.getByRole('button',{name:'خطة اليوم',exact:true}).click();await openReader(page);await visiblePage(page,1);
+  await page.getByRole('button',{name:'خطة اليوم',exact:true}).click();await openReader(page);await visiblePage(page,2);
   expect((await facts(page)).events.filter(e=>e.type==='HintUsed')).toHaveLength(1);
 });
 
@@ -126,7 +127,7 @@ test('M10B06 interrupted recall cannot reveal the reader until the existing rest
   await page.getByRole('button',{name:'العودة إلى الجلسة',exact:true}).click();
   await page.getByRole('button',{name:'ابدأ محاولة جديدة بعد الانقطاع',exact:true}).click();
   await openReader(page);await expect(page.getByRole('button',{name:'أظهر المصحف وسجّل المساعدة',exact:true})).toBeVisible();
-  await page.getByRole('button',{name:'أظهر المصحف وسجّل المساعدة',exact:true}).click();await visiblePage(page,1);
+  await page.getByRole('button',{name:'أظهر المصحف وسجّل المساعدة',exact:true}).click();await visiblePage(page,2);
   expect((await facts(page)).events.filter(e=>e.type==='HintUsed')).toHaveLength(1);
 });
 
@@ -142,7 +143,9 @@ test('M10B07 desktop RTL layout fits the viewport and keyboard page navigation w
 test('M10B08 opening today consumes its page request and later reader navigation restores the new bookmark',async({page})=>{
   await setup(page);await selectSecondAyah(page);
   await page.getByRole('button',{name:'خطة اليوم',exact:true}).click();
-  await page.getByRole('button',{name:'افتح مقدار اليوم في المصحف',exact:true}).click();await visiblePage(page,2);
+  await page.getByRole('button',{name:'ابدأ الحفظ',exact:true}).click();await enterRecall(page);
+  await page.getByRole('button',{name:'أظهر النص وسجّل المساعدة',exact:true}).click();await sessionOptions(page);
+  await page.getByRole('button',{name:'افتح موضع الجلسة في المصحف',exact:true}).click();await visiblePage(page,2);
   await page.getByRole('button',{name:'الصفحة التالية',exact:true}).click();await visiblePage(page,3);
   await expect.poll(()=>page.evaluate(()=>Object.keys(localStorage).some(key=>key.startsWith('mulazama-reader-location-v1:')&&JSON.parse(localStorage.getItem(key)!).page===3))).toBe(true);
   await page.evaluate(()=>window.dispatchEvent(new Event('blur')));
@@ -150,7 +153,8 @@ test('M10B08 opening today consumes its page request and later reader navigation
   await page.evaluate(()=>window.dispatchEvent(new Event('focus')));await visiblePage(page,3);
   await page.getByRole('button',{name:'خطة اليوم',exact:true}).click();await openReader(page);await visiblePage(page,3);
   await page.getByRole('button',{name:'خطة اليوم',exact:true}).click();
-  await page.getByRole('button',{name:'افتح مقدار اليوم في المصحف',exact:true}).click();await visiblePage(page,2);
+  await page.getByRole('button',{name:'استأنف جلستك',exact:true}).click();await sessionOptions(page);
+  await page.getByRole('button',{name:'افتح موضع الجلسة في المصحف',exact:true}).click();await visiblePage(page,2);
 });
 
 test('M10B09 explicit reset isolates the previous profile target and the new profile can select without reloading',async({page})=>{
@@ -164,7 +168,7 @@ test('M10B09 explicit reset isolates the previous profile target and the new pro
   await expect(page.locator('main[data-screen="S01"]')).toBeVisible();
   await openReader(page);await visiblePage(page,1);
   await expect(page.getByText(/المقدار المحدد:/)).toHaveCount(0);
-  await page.getByLabel('من آية',{exact:true}).fill('3');await page.getByLabel('إلى آية',{exact:true}).fill('3');
+  await readerTools(page);await page.getByLabel('من آية',{exact:true}).fill('3');await page.getByLabel('إلى آية',{exact:true}).fill('3');
   await page.getByRole('button',{name:'أضف إلى خطتي',exact:true}).click();
   await expect(page.getByText('أُضيف المقدار إلى خطتك. الاختيار وحده لا يُسجّل إنجازًا.',{exact:true})).toBeVisible();
   await expect(page.getByText(/المقدار المحدد:.*من آية ٣ إلى ٣/)).toBeVisible();
@@ -183,8 +187,8 @@ test('M10B10 a second tab starting recall invalidates an already open reader wit
   // Deliberately share only this test's isolated engineering store, as two tabs of one learner do.
   await other.addInitScript(name=>sessionStorage.setItem('mulazama-engineering-db-06l3',name),databaseName!);
   await other.goto('/engineering.html');await other.bringToFront();
-  await other.getByRole('button',{name:'ابدأ وردك',exact:true}).click();
-  await other.getByRole('button',{name:'ابدأ التسميع الذاتي',exact:true}).click();
+  await other.getByRole('button',{name:/^ابدأ (الحفظ|المراجعة)$/,exact:true}).click();
+  await enterRecall(other);
   await expect(other.getByLabel('مادة الاختبار الصناعي',{exact:true})).toHaveCount(0);
   await page.bringToFront();
   await expect(page.getByText('استأنف جلستك وابدأ محاولة جديدة قبل كشف المصحف.',{exact:true})).toBeVisible();

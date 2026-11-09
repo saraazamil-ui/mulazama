@@ -118,14 +118,16 @@ describe("06-D1 App read model refresh", () => {
     expect((await read.mock.results[1].value).meta.localDate).toBe("2026-11-08");
     expect((await store.load()).events).toHaveLength(1);
   });
-  it("shows the same trusted summary on the home route with no synthetic schedule", async () => {
+  it("keeps home concise and exposes the trusted summary through progress navigation with no synthetic schedule", async () => {
     window.history.replaceState({}, "", "/#S05");
     const service = await ApplicationService.open(new MemoryEventStore());
     render(<App service={service} />);
+    expect(screen.queryByRole("region", { name: "ملخص التقدم" })).not.toBeInTheDocument();
+    await userEvent.setup().click(within(screen.getByRole('navigation', { name: 'التنقل الرئيسي' })).getByRole('button', { name: 'تقدمي' }));
     const summary = screen.getByRole("region", { name: "ملخص التقدم" });
     await waitFor(() => expect(within(summary).getByRole("heading", { name: "تقدم الحفظ" })).toBeVisible());
     expect(within(summary).getByRole("heading", { name: "إنجاز ورد اليوم" })).toBeVisible();
     expect(within(summary).queryByRole("progressbar")).not.toBeInTheDocument();
-    expect(screen.getByRole("button", { name: "تفاصيل تقدمي" })).toBeVisible();
+    expect(screen.getByRole("heading", { level: 1, name: "تقدمي" })).toBeVisible();
   });
 });

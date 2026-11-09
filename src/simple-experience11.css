@@ -1,0 +1,19 @@
+.secondary-menu{position:relative}
+.secondary-menu>summary{display:flex;align-items:center;gap:8px;min-height:44px;padding:8px 14px;cursor:pointer;border:1px solid var(--line);border-radius:12px;list-style:none;color:var(--text);background:var(--surface)}
+.secondary-menu>summary::-webkit-details-marker{display:none}
+.secondary-menu>summary:focus-visible{outline:3px solid var(--green);outline-offset:3px}
+.secondary-menu nav{position:absolute;inset-inline-end:0;top:calc(100% + 8px);min-width:230px;padding:8px;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 30px #183d301a;z-index:20}
+.secondary-menu nav button{display:flex;align-items:center;gap:10px;width:100%;padding:14px 12px;text-align:start;border:0;border-radius:8px;background:transparent;color:var(--text);font:inherit;cursor:pointer}
+.secondary-menu nav button:hover{background:var(--surface-alt)}
+.simple-today{max-width:880px;margin-inline:auto}
+.simple-today .page-heading{margin-bottom:24px}
+.simple-today .card{margin-bottom:20px}
+.simple-today p{max-width:65ch;line-height:1.9}
+.today-amounts{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.today-amounts .card{display:flex;flex-direction:column;gap:12px}
+.today-amounts .button{align-self:flex-start;margin-top:auto}
+.settings-extra{margin-block:24px}
+.settings-extra summary{cursor:pointer;min-height:44px;padding-block:12px;font-weight:700}
+.settings-extra .actions{margin-block:16px;gap:12px}
+@media(max-width:850px){.secondary-menu nav{min-width:220px}.secondary-menu>summary{padding:8px 10px}}
+@media(max-width:600px){.today-amounts{grid-template-columns:1fr}.simple-today .button{min-height:48px}.today-amounts .button{align-self:stretch}.simple-today .card{padding:22px}}

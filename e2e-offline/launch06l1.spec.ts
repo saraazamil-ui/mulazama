@@ -13,8 +13,9 @@ test('L1OFF01 first setup is committed offline and survives reload; policy asset
   await page.getByRole('button', { name: 'احفظ واذهب إلى الرئيسية' }).click();
   await expect(page.locator('main[data-screen="S05"]')).toBeVisible();
   await page.reload();
+  await expect(page.getByText('وردك محفوظ. جلسات القرآن تنتظر اعتماد المحتوى؛ إعداداتك وسجلك باقيان.', { exact: true })).toBeVisible();
+  await page.getByRole('navigation', { name: 'التنقل الرئيسي', exact: true }).getByRole('button', { name: 'تقدمي', exact: true }).click();
   await expect(page.getByRole('heading', { name: 'ذاكرة الحافظ', exact: true })).toBeVisible();
-  await page.goto('/#S14');
   await expect(page.getByText('١ نطاقًا معلنًا محفوظًا محليًا.', { exact: false })).toBeVisible();
   await expect(page.getByRole('progressbar')).toHaveCount(0);
   for (const [file, title] of [['support', 'المساعدة والدعم'], ['privacy', 'الخصوصية في النسخة الحالية'], ['terms', 'حدود استخدام النسخة الحالية']]) {
