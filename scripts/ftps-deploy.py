@@ -21,6 +21,11 @@ FIXED_FILES = frozenset({
     "policies.css", "privacy.html", "support.html", "sw.js", "terms.html",
 })
 ASSET_NAME = re.compile(r"[A-Za-z0-9][A-Za-z0-9_-]*-[A-Za-z0-9_-]{8,}\.(?:js|css)\Z")
+CERTIFICATE_REASONS = {
+    9: "not yet valid", 10: "expired", 18: "self-signed certificate",
+    19: "self-signed chain", 20: "issuer chain unavailable",
+    21: "issuer chain unverifiable", 62: "hostname mismatch", 64: "IP address mismatch",
+}
 
 
 class StageFailure(Exception):
@@ -30,6 +35,8 @@ class StageFailure(Exception):
         self.error_type = type(error).__name__
         status = re.match(r"([1-5][0-9]{2})(?:[ -]|$)", str(error)) if isinstance(error, ftplib.Error) else None
         self.status = status.group(1) if status else None
+        code = getattr(error, "verify_code", None) if isinstance(error, ssl.SSLCertVerificationError) else None
+        self.certificate_verify_code = code if type(code) is int and 0 <= code <= 255 else None
         super().__init__(stage_name)
 
 
@@ -185,6 +192,11 @@ def main(argv=None):
         # Keep failure logs useful without exposing either; GitHub masking is only a backstop.
         failure = error if isinstance(error, StageFailure) else StageFailure(fallback_stage, error)
         detail = failure.error_type + (", FTP " + failure.status if failure.status else "")
+        if failure.certificate_verify_code is not None:
+            detail += ", certificate_verify_code=" + str(failure.certificate_verify_code)
+            reason = CERTIFICATE_REASONS.get(failure.certificate_verify_code)
+            if reason:
+                detail += ", reason=" + reason
         print("FTPS " + args.operation + " failed at " + failure.stage_name + " (" + detail + "). "
               "Check the configured secrets, verified TLS certificate, passive ports and build allowlist.",
               file=sys.stderr)

@@ -142,6 +142,38 @@ class FtpsTests(unittest.TestCase):
         self.assertNotIn("private details", err)
         self.assertIn("failed at listing (TimeoutError)", err)
 
+    def test_certificate_failure_reports_only_numeric_code_and_static_reason(self):
+        for verify_code, reason in ((62, "hostname mismatch"), (64, "IP address mismatch"),
+                                    (10, "expired"), (9, "not yet valid"),
+                                    (18, "self-signed certificate"), (19, "self-signed chain"),
+                                    (20, "issuer chain unavailable"), (21, "issuer chain unverifiable"),
+                                    (99, None)):
+            error = ssl.SSLCertVerificationError("secret-password private certificate")
+            error.verify_code = verify_code
+            error.verify_message = "private-host.example.invalid certificate contents"
+            with self.subTest(verify_code=verify_code), patch.object(FakeFTP, "auth", side_effect=error):
+                code, out, err = self.run_cli("check")
+            self.assertEqual(code, 1)
+            self.assertIn("failed at TLS (SSLCertVerificationError", err)
+            self.assertIn("certificate_verify_code=" + str(verify_code), err)
+            if reason:
+                self.assertIn("reason=" + reason, err)
+            else:
+                self.assertNotIn("reason=", err)
+            self.assertNotIn("private", out + err)
+            self.assertNotIn("secret-password", out + err)
+            self.assertEqual([call[0] for call in self.instances[-1].calls], ["connect", "close"])
+
+    def test_certificate_diagnostic_rejects_unbounded_or_non_integer_code(self):
+        for verify_code in (-1, 256, True, "private-details"):
+            error = ssl.SSLCertVerificationError("private certificate")
+            error.verify_code = verify_code
+            with self.subTest(verify_code=verify_code), patch.object(FakeFTP, "auth", side_effect=error):
+                code, out, err = self.run_cli("check")
+            self.assertEqual(code, 1)
+            self.assertNotIn("certificate_verify_code=", err)
+            self.assertNotIn("private", out + err)
+
     def test_safe_failure_stage_and_ftp_status_without_server_reply(self):
         for method, expected_stage, error in (
             ("connect", "connect", OSError("private details")),
