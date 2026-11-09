@@ -10,6 +10,7 @@ export interface MushafReader10bProps {
   mushaf: VerifiedMushaf | null;
   databaseName: string;
   requestedPage?: number;
+  fallbackPage?: number;
   selection?: StudySelection | null;
   onSelectRange?: (range: StudyRange) => Promise<void> | void;
   onStart?: () => Promise<void> | void;
@@ -35,8 +36,8 @@ export function readerBookmarkKey(databaseName: string, mushaf: Pick<VerifiedMus
   return ['mulazama-reader-location-v1', databaseName, mushaf.editionId, mushaf.layoutId].map(encodeURIComponent).join(':');
 }
 
-function initialLocation(mushaf: VerifiedMushaf, databaseName: string, requestedPage?: number) {
-  const fallback = validPage(mushaf, requestedPage) ? requestedPage : mushaf.pages[0].number;
+function initialLocation(mushaf: VerifiedMushaf, databaseName: string, requestedPage?: number, fallbackPage?: number) {
+  const fallback = validPage(mushaf, requestedPage) ? requestedPage : validPage(mushaf, fallbackPage) ? fallbackPage : mushaf.pages[0].number;
   if (validPage(mushaf, requestedPage)) return { page: fallback, error: '' };
   try {
     const raw = localStorage.getItem(readerBookmarkKey(databaseName, mushaf));
@@ -98,14 +99,14 @@ export function MushafReader10b(props: MushafReader10bProps) {
 
 type NavigationAnchor = { page: number; surah: number; fromAyah: number; juz?: number };
 
-function ReadyReader({ mushaf, databaseName, requestedPage, selection, onSelectRange, onStart, onToday, beforeRead, unavailableReason, onPageShown, embedded = false, secondaryActions }: MushafReader10bProps & { mushaf: VerifiedMushaf }) {
+function ReadyReader({ mushaf, databaseName, requestedPage, fallbackPage, selection, onSelectRange, onStart, onToday, beforeRead, unavailableReason, onPageShown, embedded = false, secondaryActions }: MushafReader10bProps & { mushaf: VerifiedMushaf }) {
   const candidateReview = mushaf.kind === 'candidate-review';
   const saveRangeLabel = candidateReview ? 'احفظ مقدار المراجعة' : 'أضف إلى خطتي';
   // A full verified verse map is large; capture its readonly snapshots once per capability.
   const { pages, verses, surahs, juzStarts, source } = useMemo(() => ({
     pages: mushaf.pages, verses: mushaf.verses, surahs: mushaf.surahs, juzStarts: mushaf.juzStarts, source: mushaf.source,
   }), [mushaf]);
-  const [initial] = useState(() => initialLocation(mushaf, databaseName, requestedPage));
+  const [initial] = useState(() => initialLocation(mushaf, databaseName, requestedPage, fallbackPage));
   const [page, setPage] = useState(initial.page);
   const [pageDraft, setPageDraft] = useState(String(initial.page));
   const [bookmarkError, setBookmarkError] = useState(initial.error);

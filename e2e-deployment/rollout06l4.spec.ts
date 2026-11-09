@@ -10,6 +10,9 @@ import { createPreviewArtifact, selectPreviewArtifact } from '../scripts/preview
 import { startPreviewServer, CSP } from '../scripts/preview06l2/server.mjs';
 let scratch:string, artifacts:string, state:string, server:any, secureServer:any;
 let baselineSourceDigest:string,currentSourceDigest:string;
+type CachedAsset={path:string;sha256:string};
+type BuildIdentity={cacheVersion:string;modules:string[];files:CachedAsset[]};
+const buildIdentities:Record<string,BuildIdentity>={},activationReceipts:unknown[]=[];
 const baselineReceiptSHA256='23ae304e2d5d5823123ce6291c7c3d20cfee0ceb3c2903d3e4a9c4e23383aba3';
 const baselineFixture=resolve('references/06l3-preview-baseline');
 test.beforeAll(async()=>{
@@ -31,8 +34,14 @@ with zipfile.ZipFile(p/'build.zip') as z:
 print(m['sourceDigest'])`;
  baselineSourceDigest=execFileSync('python3',['-c',python,baselineFixture,scratch,baselineReceiptSHA256],{encoding:'utf8'}).trim();
  currentSourceDigest=(await readFile('src/release/build-context.generated.ts','utf8')).match(/[a-f0-9]{64}/)![0];
- await createPreviewArtifact({dist:join(scratch,'dist'),artifacts,releaseId:'l3',sourceDigest:baselineSourceDigest});
- await createPreviewArtifact({dist:resolve('dist'),artifacts,releaseId:'l4',sourceDigest:currentSourceDigest});
+ for(const [releaseId,dist,sourceDigest] of [['l3',join(scratch,'dist'),baselineSourceDigest],['l4',resolve('dist'),currentSourceDigest]]){
+  const manifest=await createPreviewArtifact({dist,artifacts,releaseId,sourceDigest});
+  const offline=JSON.parse(await readFile(join(dist,'offline-assets.json'),'utf8')),html=await readFile(join(dist,'index.html'),'utf8');
+  buildIdentities[releaseId]={cacheVersion:offline.version,
+   modules:[...html.matchAll(/<script\b[^>]*\bsrc=["']([^"']+)["']/g)].map(match=>new URL(match[1],'https://build.invalid/').pathname.slice(1)),
+   files:offline.files.map((path:string)=>{const asset=manifest.files.find((entry:CachedAsset)=>entry.path===path);if(!asset)throw Error('OFFLINE_ASSET_NOT_IN_ARTIFACT');return {path,sha256:asset.sha256};})};
+  expect(buildIdentities[releaseId].modules.length).toBeGreaterThan(0);
+ }
  await selectPreviewArtifact({artifacts,state,releaseId:'l3',expectedReleaseId:null});
  // Ephemeral self-signed loopback TLS; no system trust installation or public certificate claim.
  const key=join(scratch,'local.key'),cert=join(scratch,'local.crt');
@@ -66,7 +75,26 @@ async function activate(context:BrowserContext,page:Page,releaseId:string,expect
  });
  // Close all tabs, allowing the real waiting worker to activate without skipWaiting.
  await page.close();const next=await context.newPage();await next.goto(server.origin+'/#S05');
- await expect(next.locator('.prototype-strip')).toContainText(releaseId==='l4'?'06-L4':'06-L3');return next;
+ await expect(next.locator('main[data-screen="S05"]')).toBeVisible();
+ const expected=buildIdentities[releaseId];
+ // Version identity belongs to the actual installed shell, not a visible product label.
+ // Activation removes the old shell cache; a waiting worker alone cannot satisfy this.
+ await expect.poll(()=>next.evaluate(async()=>({worker:navigator.serviceWorker.controller?.state,
+  caches:(await caches.keys()).filter(key=>key.startsWith('mulazama-shell-')).sort()})))
+  .toEqual({worker:'activated',caches:[expected.cacheVersion]});
+ const identity=await next.evaluate(async expected=>{
+  const cache=await caches.open(expected.cacheVersion);
+  const files=await Promise.all(expected.files.map(async asset=>{
+   const response=await cache.match(new URL(asset.path,location.href));
+   if(!response)return {path:asset.path,sha256:null};
+   const hash=await crypto.subtle.digest('SHA-256',await response.arrayBuffer());
+   return {path:asset.path,sha256:Array.from(new Uint8Array(hash),byte=>byte.toString(16).padStart(2,'0')).join('')};
+  }));
+  return {cacheVersion:expected.cacheVersion,modules:[...document.scripts].filter(script=>script.src).map(script=>new URL(script.src).pathname.slice(1)),files};
+ },expected);
+ expect(identity).toEqual(expected);
+ activationReceipts.push({releaseId,sourceDigest:releaseId==='l4'?currentSourceDigest:baselineSourceDigest,...identity});
+ return next;
 }
 test('L4DEP01 HTTPS preview enforces headers and allows only manifest assets without exposing source files',async({browser},info)=>{
  const context=await browser.newContext({ignoreHTTPSErrors:true});
@@ -106,7 +134,7 @@ test('L4DEP02 L3 to L4 update and rollback preserve exact encrypted IndexedDB ro
   await page.goto(server.origin+'/#S17');await expect(page.getByRole('checkbox',{name:'تكبير النص'})).toBeChecked();
   await page.goto(server.origin+'/#S08');await expect(page.getByRole('heading',{name:'النص المعتمد ينتظر الإضافة'})).toBeVisible();
   await context.setOffline(true);await page.reload();await expect(page.getByRole('heading',{name:'النص المعتمد ينتظر الإضافة'})).toBeVisible();expect(await encryptedSnapshot(page)).toEqual(before);
-  await info.attach('update-rollback.json',{body:JSON.stringify({before,after:await encryptedSnapshot(page),sequence:['l3','l4','l3'],sourceDigests:{l3:baselineSourceDigest,l4:currentSourceDigest},baselineReceiptSHA256,scope:'existing legacy public streams; corrected-scheduler streams are not downgraded by this test',transport:'HTTP loopback secure context; TLS headers tested separately with ephemeral certificate',sameOrigin:true,offline:true,eventsRewritten:false,productionDeployment:false,realUserData:false}),contentType:'application/json'});
+  await info.attach('update-rollback.json',{body:JSON.stringify({before,after:await encryptedSnapshot(page),sequence:['l3','l4','l3'],sourceDigests:{l3:baselineSourceDigest,l4:currentSourceDigest},activationReceipts,baselineReceiptSHA256,scope:'existing legacy public streams; corrected-scheduler streams are not downgraded by this test',transport:'HTTP loopback secure context; TLS headers tested separately with ephemeral certificate',sameOrigin:true,offline:true,eventsRewritten:false,productionDeployment:false,realUserData:false}),contentType:'application/json'});
  }finally{await context.close();}
 });
 

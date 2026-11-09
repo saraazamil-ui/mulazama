@@ -1,6 +1,6 @@
 import {test,expect,type Page} from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
-import {readerTools,openProgress} from './ux-helpers';
+import {readerTools,sessionOptions,openProgress} from './ux-helpers';
 
 const startUrl='/reader-preview.html?demo=1';
 const clean='سمّعت المقطع كاملًا بلا خطأ معلوم — جهد عادي';
@@ -120,4 +120,34 @@ test('UX11-05 three destinations expose saved progress and reader position, with
   await info.attach('simplified-reader-phone.png',{body:await page.screenshot({fullPage:true}),contentType:'image/png'});
   await page.getByText('المزيد',{exact:true}).click();await page.getByRole('button',{name:'الإعدادات',exact:true}).click();await page.getByRole('checkbox',{name:'تكبير النص',exact:true}).click();await expect(page.getByRole('checkbox',{name:'تكبير النص',exact:true})).toBeChecked();
   await page.getByRole('button',{name:'المصحف',exact:true}).click();await visiblePage(page,2);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+});
+
+test('UX11-06 an active session keeps its reader page after repetition, resume and reload while a new session opens its own target',async({page})=>{
+  await ready(page);await chooseExistingTarget(page);
+  await page.getByRole('button',{name:'ابدأ الحفظ',exact:true}).click();await visiblePage(page,4);
+  const started=await facts(page);
+  expect(started.events.filter(event=>event.type==='SessionStarted')).toHaveLength(1);
+  expect(started.events.find(event=>event.type==='SessionStarted')?.data.command).toMatchObject({unitId:'test-reader-10f-s2-a3'});
+
+  await reader(page).getByRole('button',{name:'الصفحة التالية',exact:true}).click();await visiblePage(page,5);
+  await sessionOptions(page);await page.getByRole('button',{name:'أنهيت تكرارًا',exact:true}).click();
+  await expect(page.getByText('التكرارات التي أكّدتها: 1',{exact:true})).toBeVisible();
+  await expect(page.getByRole('button',{name:'أنهيت تكرارًا',exact:true})).toBeEnabled();await visiblePage(page,5);
+
+  await page.getByRole('button',{name:'اليوم',exact:true}).click();await expect(day(page)).toBeVisible();
+  await page.getByRole('button',{name:'استأنف جلستك',exact:true}).click();await visiblePage(page,5);
+  await page.reload();await visiblePage(page,5);
+  expect((await facts(page)).events.filter(event=>event.type==='SessionStarted')).toHaveLength(1);
+  await sessionOptions(page);await page.getByRole('button',{name:'أنهِ الجلسة',exact:true}).click();await expect(day(page)).toBeVisible();
+  const ended=await facts(page);expect(ended.events.filter(event=>event.type==='AssessmentSubmitted')).toHaveLength(0);
+
+  await page.getByRole('button',{name:'المصحف',exact:true}).click();await visiblePage(page,5);
+  await readerTools(page);await reader(page).getByLabel('من آية',{exact:true}).fill('3');await reader(page).getByLabel('إلى آية',{exact:true}).fill('3');
+  await reader(page).getByRole('button',{name:'أضف إلى خطتي',exact:true}).click();await expect(reader(page)).toContainText('أُضيف المقدار إلى خطتك.');
+  await reader(page).getByRole('button',{name:'خطة اليوم',exact:true}).click();await expect(page.getByRole('heading',{name:'قسم تجريبي ٣ — سطر ٣',exact:true})).toBeVisible();
+  await page.getByRole('button',{name:'ابدأ الحفظ',exact:true}).click();await visiblePage(page,6);
+  const final=await facts(page),sessions=final.events.filter(event=>event.type==='SessionStarted');
+  expect(sessions).toHaveLength(2);expect(sessions[1].data.command).toMatchObject({unitId:'test-reader-10f-s3-a3'});
+  expect(final.events.filter(event=>event.type==='AssessmentSubmitted')).toHaveLength(0);
+  for(const original of ended.events)expect(final.events.find(event=>event.eventId===original.eventId)).toEqual(original);
 });

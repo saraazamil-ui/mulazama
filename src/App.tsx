@@ -234,11 +234,15 @@ export default function App({
   const studyIdentity = useRef({profileId:activeProfileId, journey, mushaf, study});
   const readerGuard = useMushafGuard(journey, readerDatabaseName, activeProfileId);
   const readerScope = `${readerDatabaseName}:${activeProfileId}`;
+  const readerSessionIdentity = journey?.active ? `${readerScope}:${journey.active.id}` : null;
+  // Restored sessions resume their existing bookmark. A newly started session
+  // opens its target once; successful image display consumes that request.
+  const [openedReaderSession, setOpenedReaderSession] = useState<string | null>(() => readerSessionIdentity);
   useLayoutEffect(() => {
     const previous = studyIdentity.current;
     if (previous.profileId === activeProfileId && previous.journey === journey && previous.mushaf === mushaf && previous.study === study) return;
     studyIdentity.current = {profileId:activeProfileId, journey, mushaf, study};
-    setReaderPage(undefined); setStudyError(undefined);
+    setReaderPage(undefined); setStudyError(undefined); setOpenedReaderSession(readerSessionIdentity);
     if (!journey || !mushaf) { setReaderStudy(undefined); return; }
     try { setReaderStudy(openMushafStudy(journey, mushaf, readerDatabaseName, localStorage)); }
     catch { setReaderStudy(undefined); setStudyError('تعذر فتح مقدار الحفظ لهذا السجل. بقيت بيانات تعلمك محفوظة.'); }
@@ -462,7 +466,9 @@ export default function App({
     for(const target of ["S04","S05","S07","S08","S09","S10","S11","S13","S14","S15"] as Screen[])
       contents[target]=<JourneyScreen key={target} journey={journey} screen={target} go={go} showPreviewNotice={!candidateReview}
         renderReading={mushaf ? unitId => <MushafReader10b embedded mushaf={mushaf} databaseName={readerScope}
-          requestedPage={journey.unit(unitId).positions[0].page} selection={readerStudy?.current ?? null}
+          requestedPage={openedReaderSession === readerSessionIdentity ? undefined : journey.unit(unitId).positions[0].page}
+          fallbackPage={journey.unit(unitId).positions[0].page} onPageShown={()=>setOpenedReaderSession(readerSessionIdentity)}
+          selection={readerStudy?.current ?? null}
           unavailableReason={studyError ?? readerGuard.error ?? readerError} checkingSession={readerGuard.checking}
           beforeRead={readerGuard.beforeRead} onToday={()=>go('S05')} /> : undefined}
         onOpenMushaf={mushaf ? unitId => {setReaderMode('practice');setReaderPage(journey.unit(unitId).positions[0].page);go('S16');} : undefined}

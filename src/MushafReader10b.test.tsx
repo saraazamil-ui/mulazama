@@ -468,4 +468,20 @@ describe('10-B verified-page reader UI (synthetic non-Quran images)', () => {
     expect(screen.getByText('اختيار المقدار وخيارات المصحف').closest('details')).not.toHaveAttribute('open');
   });
 
+  it('MUI30 a session fallback only fills missing location and preserves the displayed bookmark through guards and reopening', async () => {
+    const mushaf = await createEngineeringMushafFixture(), props = defaults(), user = userEvent.setup();
+    const view = render(<MushafReader10b {...props} mushaf={mushaf} embedded fallbackPage={3} />);
+    fireEvent.load(await visiblePage(3));
+    await user.click(screen.getByRole('button', {name: 'الصفحة السابقة'})); fireEvent.load(await visiblePage(2));
+    view.rerender(<MushafReader10b {...props} mushaf={mushaf} embedded fallbackPage={3} checkingSession />);
+    expect(screen.queryByRole('img')).not.toBeInTheDocument();
+    view.rerender(<MushafReader10b {...props} mushaf={mushaf} embedded fallbackPage={3} />); await visiblePage(2);
+    view.unmount();
+    const restored = render(<MushafReader10b {...props} mushaf={mushaf} embedded fallbackPage={3} />); await visiblePage(2);
+    const key = readerBookmarkKey(props.databaseName, mushaf);
+    expect(JSON.parse(localStorage.getItem(key)!)).toEqual({version: 1, editionId: mushaf.editionId, layoutId: mushaf.layoutId, page: 2});
+    restored.unmount(); localStorage.setItem(key, '{broken');
+    render(<MushafReader10b {...props} mushaf={mushaf} embedded fallbackPage={3} />); await visiblePage(3);
+  });
+
 });
