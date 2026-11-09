@@ -1,0 +1,139 @@
+{
+  "previousReport": "candidate-browser-smoke.json",
+  "rerunReason": "Correct smoke selector to candidate-specific saved-intent text; original network failure not retried",
+  "checkedAt": "2026-11-09T03:22:33.046Z",
+  "build": "dist-reader-preview",
+  "sourceCommit": "3ff27b46cecb0c0519d77531d9c868a579d1f623",
+  "originalsModified": false,
+  "scientificApproval": false,
+  "networkAttempt": {
+    "status": "failed",
+    "error": "TimeoutError: locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('img', { name: 'صفحة حفص من مصدر مرشح ١', exact: true }) to be visible\u001b[22m\n",
+    "requestFailures": [
+      {
+        "url": "https://raw.githubusercontent.com/quran-ws/quran-svg/3ff27b46cecb0c0519d77531d9c868a579d1f623/mushafs/hafs/kfqc/svg/001.svg",
+        "error": "net::ERR_CERT_AUTHORITY_INVALID"
+      }
+    ],
+    "alerts": [
+      "تعذر التحقق من صفحة المصحف أو تحميلها. لم نعرض صفحة بديلة."
+    ]
+  },
+  "fallback": {
+    "status": "passed",
+    "checks": {
+      "delivery": "original-byte-route",
+      "pages": [
+        {
+          "page": 1,
+          "width": 94,
+          "height": 150
+        },
+        {
+          "page": 2,
+          "width": 94,
+          "height": 150
+        },
+        {
+          "page": 50,
+          "width": 94,
+          "height": 150
+        },
+        {
+          "page": 604,
+          "width": 94,
+          "height": 150
+        }
+      ],
+      "surahNavigation114": true,
+      "bookmarkRestoredPage": 604,
+      "intentRestored": {
+        "surah": 114,
+        "fromAyah": 1,
+        "toAyah": 2
+      },
+      "candidateLearningRecordsUnchanged": true,
+      "candidateHasNoStart": true,
+      "unapprovedWarningVisible": true,
+      "syntheticSwitchWorks": true,
+      "screenshotPaths": [
+        "/workspace/hafs-audit/10f/browser/candidate-page-001-original-byte-route.png",
+        "/workspace/hafs-audit/10f/browser/candidate-page-604-original-byte-route.png"
+      ]
+    },
+    "served": [
+      {
+        "path": "/workspace/quran-svg-10f/hafs-kfqc/svg/001.svg",
+        "bytes": 185309,
+        "sha256": "6c6c3190d6edd66cfaf17dd40c80052d86d53074915d0119535c698c48845b4f"
+      },
+      {
+        "path": "/workspace/quran-svg-10f/hafs-kfqc/svg/002.svg",
+        "bytes": 223381,
+        "sha256": "d5d166d3ee2293cc7d290c5c827b6a488a531b997f365bf7b250522350cd4ca3"
+      },
+      {
+        "path": "/workspace/quran-svg-10f/hafs-kfqc/svg/003.svg",
+        "bytes": 585319,
+        "sha256": "71ae7e93783704a6c99ca9c08b1c305fb197cb4ec878a458fc34c9fc99dcb6e7"
+      },
+      {
+        "path": "/workspace/quran-svg-10f/hafs-kfqc/svg/050.svg",
+        "bytes": 621122,
+        "sha256": "619ab78995ca9ab7db87b0345510c0f0a8e7cae45d58657c1db85bffd0a4f370"
+      },
+      {
+        "path": "/workspace/quran-svg-10f/hafs-kfqc/svg/051.svg",
+        "bytes": 578399,
+        "sha256": "b5e42bac2e54a22ed71eb7f7a49f4f3525fde801b13bc4581a937518f5cce4ef"
+      },
+      {
+        "path": "/workspace/quran-svg-10f/hafs-kfqc/svg/049.svg",
+        "bytes": 582756,
+        "sha256": "6afff2645e569c9badd5f55d37dc215235c3c1c3904243d293a7c3f45183ce95"
+      },
+      {
+        "path": "/workspace/quran-svg-10f/hafs-kfqc/svg/604.svg",
+        "bytes": 367714,
+        "sha256": "b2e1a6f9bc561d826ab8519a3b2684f31a6c99fb5a0328192222be8764ee4eba"
+      },
+      {
+        "path": "/workspace/quran-svg-10f/hafs-kfqc/svg/603.svg",
+        "bytes": 409406,
+        "sha256": "d9c40e1be7a194ea549db5eef398adeb13dd0920df085da978f0af2cc29d8908"
+      },
+      {
+        "path": "/workspace/quran-svg-10f/hafs-kfqc/svg/604.svg",
+        "bytes": 367714,
+        "sha256": "b2e1a6f9bc561d826ab8519a3b2684f31a6c99fb5a0328192222be8764ee4eba"
+      },
+      {
+        "path": "/workspace/quran-svg-10f/hafs-kfqc/svg/603.svg",
+        "bytes": 409406,
+        "sha256": "d9c40e1be7a194ea549db5eef398adeb13dd0920df085da978f0af2cc29d8908"
+      }
+    ]
+  },
+  "verifiedHeadRequest": {
+    "url": "https://raw.githubusercontent.com/quran-ws/quran-svg/3ff27b46cecb0c0519d77531d9c868a579d1f623/mushafs/hafs/kfqc/svg/001.svg",
+    "httpStatus": 200,
+    "contentLength": 185309,
+    "accessControlAllowOrigin": "*",
+    "crossOriginResourcePolicy": "cross-origin",
+    "tlsVerificationDisabled": false,
+    "headersFile": "candidate-source-head.headers"
+  },
+  "isolatedTrustInvestigation": {
+    "managedCaFile": "/usr/local/share/ca-certificates/environment-proxy-ca.crt",
+    "managedCaSha256": "C7:1B:4D:1E:9D:77:75:C5:38:C6:88:AB:10:CE:A9:CE:41:7D:73:12:E8:98:38:F9:D1:5F:F7:32:56:CD:7F:C3",
+    "certutilAvailable": true,
+    "temporaryNssCreatedOutsideRepository": true,
+    "isolatedMountProbe": "unavailable: uid map read-only; browser not started in namespace",
+    "remoteBrowserRetried": false,
+    "tlsVerificationDisabled": false,
+    "userOrSystemTrustChanged": false,
+    "homeChanged": false,
+    "policyChanged": false,
+    "stoppedWithoutFurtherInfrastructureChanges": true
+  }
+}
