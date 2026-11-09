@@ -1,0 +1,263 @@
+{
+  "schemaVersion": 1,
+  "phase": "10-F",
+  "checkedAt": "2026-11-09T02:41:05.852926+00:00",
+  "status": "diagnostic-only-no-content-equivalence-or-corpus-selection",
+  "scope": "Classify the previously established exact text mismatches using only the existing original ZIP and uploaded JSON; no new download or source research.",
+  "inputs": {
+    "archiveContentMember": "mushaf-content.json",
+    "archiveContentMemberSha256": "a1a87cfddfa0758085c9cffa8c4ee20015a7ef727da33d2fccabb445bf872bc6",
+    "uploadedMetadataSha256": "74b965763ff6fa5232790f4eeafcf1707ab26051d17fe214745740cdbe0a7f98",
+    "priorExactMismatchCount": 6235
+  },
+  "method": {
+    "sourceFilesModified": false,
+    "runtimeCorpusSelected": false,
+    "sourceNormalizationPerformed": false,
+    "inMemoryViewsOnly": true,
+    "rawQuranStringsInReport": false,
+    "NFCCheckIsIndependent": true,
+    "mainProjectionUsesOriginalCodepointsAfterFEFFRemoval": "NFC is not fed into mark projection: composition of ordinary alif plus Quranic maddah into U+0622 can confuse subsequent letter analysis.",
+    "explicitProjectedCodepoints": [
+      "U+064B",
+      "U+064C",
+      "U+064D",
+      "U+064E",
+      "U+064F",
+      "U+0650",
+      "U+0651",
+      "U+0652",
+      "U+065C",
+      "U+06D6",
+      "U+06D7",
+      "U+06D8",
+      "U+06D9",
+      "U+06DA",
+      "U+06DB",
+      "U+06DC",
+      "U+06DE",
+      "U+06E0",
+      "U+06E1",
+      "U+06E2",
+      "U+06E3",
+      "U+06E4",
+      "U+06E9",
+      "U+06EC",
+      "U+06ED",
+      "U+08F0",
+      "U+08F1",
+      "U+08F2"
+    ],
+    "explicitProtectedCodepoints": [
+      "U+0640",
+      "U+0653",
+      "U+0654",
+      "U+0655",
+      "U+0670",
+      "U+06E5",
+      "U+06E6",
+      "U+06E7",
+      "U+06E8"
+    ],
+    "waslaFold": "U+0671 to U+0627 only, after explicit mark/spacing projection; diagnostic, not production-safe.",
+    "whitespaceProjection": "Collapse whitespace only after removing the explicit projected signs; words are not concatenated in the main partition.",
+    "residualAlignment": "SequenceMatcher(auto junk disabled) on conservative diagnostic views. Flags overlap and are heuristic; no correction or equality inference.",
+    "noGenericMnRemoval": true,
+    "noDaggerAlifOrHamzaExpansion": true,
+    "exampleOffsetBasis": "Unicode codepoint offsets in original decoded strings after removal of U+FEFF only; not byte offsets."
+  },
+  "partition": {
+    "exact-original-strings": 1,
+    "FEFF-only": 12,
+    "additional-canonical-NFC-only": 0,
+    "additional-explicit-vowel-recitation-pause-spacing-view-equal": 476,
+    "additional-alef-wasla-fold-view-equal": 710,
+    "residual-letters-protected-marks-or-word-boundaries": 5037
+  },
+  "FEFF": {
+    "archiveOccurrences": 6125,
+    "archiveAyahsAffected": 6124,
+    "uploadedOccurrences": 0,
+    "FEFFOnlyIdentifiers": [
+      "37:155",
+      "53:8",
+      "69:30",
+      "74:21",
+      "74:22",
+      "75:11",
+      "75:31",
+      "79:21",
+      "79:23",
+      "90:13",
+      "93:3",
+      "95:2"
+    ],
+    "interpretation": "Embedded format controls in valid UTF-8; not evidence of corrupt transport encoding."
+  },
+  "independentSequenceComparisons": {
+    "pauseSignSequenceChangedAyahs": 324,
+    "pauseSequenceChangeExamples": [
+      "2:25",
+      "2:57",
+      "2:61",
+      "2:81",
+      "2:95",
+      "2:103",
+      "2:105",
+      "2:112",
+      "2:120",
+      "2:126"
+    ],
+    "divisionAndSajdaSequenceChangedAyahs": 0,
+    "vowelRecitationSequenceChangedAyahs": 6160,
+    "protectedLetterMaddahSequenceChangedAyahs": 4925,
+    "sameSequenceDoesNotProveSamePositions": true
+  },
+  "residualObservations": {
+    "count": 5037,
+    "wordBoundaryOnlyAfterConservativeView": 0,
+    "wordBoundaryExamples": [],
+    "overlappingChangedSpanFlags": {
+      "dagger-alif-or-small-letter-in-changed-span": 4094,
+      "hamza-carrier-or-combining-hamza-in-changed-span": 1675,
+      "maddah-in-changed-span": 3186,
+      "tatweel-in-changed-span": 495,
+      "alif-waw-yeh-maqsura-in-changed-span": 3840,
+      "whitespace-in-changed-span": 367
+    },
+    "unflaggedResiduals": 19,
+    "unflaggedResidualInterpretation": "All 19 were inspected: the conservative view retains full-lam count differences in night-word forms. This is a spelling/shadda review candidate, not evidence of 19 content errors.",
+    "unflaggedResidualIdentifiers": [
+      "6:96",
+      "21:20",
+      "21:33",
+      "21:42",
+      "22:61",
+      "25:47",
+      "25:62",
+      "37:138",
+      "40:61",
+      "51:17",
+      "57:6",
+      "73:2",
+      "74:33",
+      "78:10",
+      "81:17",
+      "84:17",
+      "89:4",
+      "92:1",
+      "93:2"
+    ],
+    "notEquivalentToNumberOfErrors": true
+  },
+  "reviewDisposition": {
+    "automaticallyApprovedAyahs": 0,
+    "automaticallyChosenText": null,
+    "needsQualifiedReview": "All non-exact strings remain unapproved. Even pairs equal after lossy diagnostic views may differ in shadda, vowels, pause signs, letter annotations or token boundaries. Residual count is a workload category, not a count of Quran errors.",
+    "wordTokenMapping": "Do not derive app word/token IDs by pairing whitespace-split positions across these two corpora.",
+    "highPriorityExamples": [
+      "2:1",
+      "12:11",
+      "18:1",
+      "21:88",
+      "41:44",
+      "92:1"
+    ],
+    "scientificApproval": false
+  },
+  "whitespaceTokenObservations": {
+    "ayahsWithDifferentWhitespaceTokenCounts": 367,
+    "archiveTotalWhitespaceTokensAfterExplicitSignRemoval": 77797,
+    "uploadedTotalWhitespaceTokensAfterExplicitSignRemoval": 77432,
+    "example12_11": {
+      "archive": 12,
+      "uploaded": 11
+    },
+    "method": "Count whitespace-separated nonempty tokens after removing FEFF and the explicit diagnostic projected signs only; this is not an approved Quran word segmentation or alignment.",
+    "examples": [
+      {
+        "id": "2:21",
+        "archiveTokens": 12,
+        "uploadedTokens": 11
+      },
+      {
+        "id": "2:33",
+        "archiveTokens": 23,
+        "uploadedTokens": 22
+      },
+      {
+        "id": "2:35",
+        "archiveTokens": 19,
+        "uploadedTokens": 18
+      },
+      {
+        "id": "2:40",
+        "archiveTokens": 14,
+        "uploadedTokens": 13
+      },
+      {
+        "id": "2:47",
+        "archiveTokens": 12,
+        "uploadedTokens": 11
+      },
+      {
+        "id": "2:54",
+        "archiveTokens": 27,
+        "uploadedTokens": 26
+      },
+      {
+        "id": "2:55",
+        "archiveTokens": 15,
+        "uploadedTokens": 14
+      },
+      {
+        "id": "2:61",
+        "archiveTokens": 60,
+        "uploadedTokens": 59
+      }
+    ]
+  },
+  "reviewExampleReasons": [
+    {
+      "id": "1:4",
+      "reason": "Full alif versus dagger alif participates; a global dagger-alif expansion is unsafe."
+    },
+    {
+      "id": "2:1",
+      "reason": "Original archive has no FEFF; uploaded adds maddah U+0653. A pure encoding/BOM explanation is insufficient."
+    },
+    {
+      "id": "2:43",
+      "reason": "Waw/dagger-alif rasm and hamza spelling require contextual review, not a global letter replacement."
+    },
+    {
+      "id": "12:11",
+      "reason": "Written word boundary after vocative differs; U+06EC is newly present. Relevant to word-token mapping."
+    },
+    {
+      "id": "18:1",
+      "reason": "Ending includes tanwin/fatha difference; annotation removal hides a potentially recitation-significant difference requiring qualified interpretation."
+    },
+    {
+      "id": "21:88",
+      "reason": "Full nun versus tatweel-supported small high nun U+06E8; letter annotations must not be discarded as cosmetics."
+    },
+    {
+      "id": "41:44",
+      "reason": "Pause-sign sequence differs, including U+06D6 versus U+06DA; other rasm differences remain."
+    },
+    {
+      "id": "75:27",
+      "reason": "Sakta sign sequence is retained, with spacing/mark differences; sequence equality does not prove placement."
+    },
+    {
+      "id": "83:14",
+      "reason": "Sakta sign sequence is retained, with spacing/mark differences; sequence equality does not prove placement."
+    },
+    {
+      "id": "92:1",
+      "reason": "Full-lam spelling differs in a night-word form alongside shadda. A letter-only projection can overstate content differences; contextual rasm review is still required."
+    }
+  ],
+  "rawQuranStringsIncluded": false
+}

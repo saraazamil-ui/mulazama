@@ -31,6 +31,8 @@ jobs:
       - run: node --test scripts/tests/playwright-browser.test.mjs
       - run: python3 scripts/verify-06l4.py --browser
       - run: pnpm test:mushaf
+      - run: pnpm test:reader-preview
+      - run: pnpm build:reader-preview
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -43,5 +45,6 @@ jobs:
             test-results-journey/
             test-results-journey-offline/
             test-results-mushaf/
+            test-results-reader-preview/
             playwright-report/
 # There is deliberately no deploy step. A passing engineering job is not release approval.

@@ -1,0 +1,96 @@
+{
+  "candidate": "quran-ws/quran-svg hafs-kfqc v1.1.1",
+  "commit": "3ff27b46cecb0c0519d77531d9c868a579d1f623",
+  "jsonArchiveSha256": "27dd192cec6b5f919ffd6e7df5216464aa57a671e326fc1a37a9d82dee3f6c13",
+  "canonicalPages": 604,
+  "coordinateRecords": 6236,
+  "uniqueSurahAyahKeys": 6236,
+  "duplicates": [],
+  "missingFromUploaded": [],
+  "extraToUploaded": [],
+  "pageMismatch": [],
+  "missingPageFiles": [],
+  "schemas": {
+    "ayahNumber,polygon,surahNumber,x,y": 6236
+  },
+  "polygonFormats": {
+    "points-list": 12,
+    "path-MLZ": 6224
+  },
+  "markerRows": 6236,
+  "surahRows": 114,
+  "markersAyahMinMax": [
+    1,
+    6236
+  ],
+  "markersExactLocalAyahXYMatch": false,
+  "markersExactGlobalOrderedAyahXYMatch": false,
+  "notes": [
+    "Canonical identity uses page JSON surahNumber/ayahNumber. markers.json ayah and page pairs match global canonical indices 1..6236, not surah-local ayah numbers; their x/y values differ for some records. Do not use the global field directly as a surah-local key.",
+    "Per-surah variants are excluded from canonical unique-ayah counts; repeated variant records are intentional.",
+    "Identity consistency does not approve visual geometry, Quran text, rights or scientific content."
+  ],
+  "originalsModified": false,
+  "scientificApproval": false,
+  "mappingApproval": false,
+  "markersGlobalIdAndPagePairsMatchCanonicalOrder": true,
+  "markersVsPageJsonXyDifferences": 6115,
+  "markersVsPageJsonXyDifferencesExamples": [
+    {
+      "globalId": 13,
+      "page": 3,
+      "surah": 2,
+      "ayah": 6,
+      "markersXY": [
+        265.17,
+        64.11
+      ],
+      "pageJSONxy": [
+        265.17,
+        64.13
+      ]
+    },
+    {
+      "globalId": 14,
+      "page": 3,
+      "surah": 2,
+      "ayah": 7,
+      "markersXY": [
+        94.45,
+        100.63
+      ],
+      "pageJSONxy": [
+        94.45,
+        100.58
+      ]
+    },
+    {
+      "globalId": 15,
+      "page": 3,
+      "surah": 2,
+      "ayah": 8,
+      "markersXY": [
+        14.5,
+        136.49
+      ],
+      "pageJSONxy": [
+        14.5,
+        136.51
+      ]
+    },
+    {
+      "globalId": 16,
+      "page": 3,
+      "surah": 2,
+      "ayah": 9,
+      "markersXY": [
+        247.39,
+        207.78
+      ],
+      "pageJSONxy": [
+        247.38,
+        207.8
+      ]
+    }
+  ]
+}

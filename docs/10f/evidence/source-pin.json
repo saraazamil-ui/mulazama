@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "manifestKind": "locally-derived-acquisition-manifest",
+  "generatedAt": "2026-11-09T02:41:56.289109+00:00",
+  "sourceRepository": "https://github.com/quran-ws/quran-svg",
+  "edition": "hafs-kfqc",
+  "releaseId": 388756679,
+  "releaseTag": "v1.1.1",
+  "releaseUrl": "https://github.com/quran-ws/quran-svg/releases/tag/v1.1.1",
+  "releaseImmutable": false,
+  "commit": "3ff27b46cecb0c0519d77531d9c868a579d1f623",
+  "pinStrategy": "exact commit plus GitHub asset IDs, SHA-256 digests, member SHA-256 and commit Git blob matches; tag alone not considered immutable",
+  "upstreamManifest": {
+    "available": false,
+    "documentedUrl": "https://cdn.quran.ws/svg/pages/v1.1.1/manifest.json",
+    "httpStatus": 404,
+    "latestJsonHttpStatus": 404,
+    "manifestInPinnedTree": false
+  },
+  "assets": [
+    {
+      "name": "hafs-kfqc-json.zip",
+      "id": 565017699,
+      "url": "https://github.com/quran-ws/quran-svg/releases/download/v1.1.1/hafs-kfqc-json.zip",
+      "bytes": 492327,
+      "sha256": "27dd192cec6b5f919ffd6e7df5216464aa57a671e326fc1a37a9d82dee3f6c13",
+      "upstreamDigestMatches": true,
+      "memberCount": 724,
+      "expandedBytes": 2208231,
+      "allMemberCrcPassed": true,
+      "allCommitBlobsMatch": true
+    },
+    {
+      "name": "hafs-kfqc-svg.zip",
+      "id": 564379747,
+      "url": "https://github.com/quran-ws/quran-svg/releases/download/v1.1.1/hafs-kfqc-svg.zip",
+      "bytes": 121647518,
+      "sha256": "5d5e29eae66d9353dd8e0e51af4274c7768f81f722414b538dfd7c8de014fc91",
+      "upstreamDigestMatches": true,
+      "memberCount": 722,
+      "expandedBytes": 442867490,
+      "allMemberCrcPassed": true,
+      "allCommitBlobsMatch": true
+    }
+  ],
+  "notices": [
+    {
+      "path": "LICENSES/CC-BY-4.0.txt",
+      "localPath": "notices/CC-BY-4.0.txt",
+      "bytes": 17023,
+      "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744",
+      "gitBlobSha1": "13ca539f377dc705af32b8d2ce89262298ea2f06",
+      "commitBlobMatch": true
+    },
+    {
+      "path": "LICENSE",
+      "localPath": "notices/LICENSE",
+      "bytes": 10415,
+      "sha256": "0c3f54cf8be9bbc33946d5b2c61a6befb1f9222dcd17972139a0e72529db354f",
+      "gitBlobSha1": "4738c59e67e687fdeea948723f5b1a7b5ec7e349",
+      "commitBlobMatch": true
+    },
+    {
+      "path": "NOTICE.md",
+      "localPath": "notices/NOTICE.md",
+      "bytes": 4293,
+      "sha256": "128f69f9475dda93f6d899757c0cd3343d1c14ac836e7a2a5d5368b7facd5792",
+      "gitBlobSha1": "082fa718f77671cd7a253aaf01647315f42c3fb6",
+      "commitBlobMatch": true
+    },
+    {
+      "path": "README.md",
+      "localPath": "notices/README.md",
+      "bytes": 2870,
+      "sha256": "fa5f3aa1ecc9df31280aa42dd0a8bde182f6e65c56f257ce6d390bf1bcef0937",
+      "gitBlobSha1": "c0446583dc2ffd74089a4e9dbbaa94b6d12b939a",
+      "commitBlobMatch": true
+    },
+    {
+      "path": "docs/FORMAT.md",
+      "localPath": "notices/docs--FORMAT.md",
+      "bytes": 5125,
+      "sha256": "7a9cf500c2d3cdade3751259c8a821c1476456661710694f0382ef6de7ce9122",
+      "gitBlobSha1": "b5600fc73e072af67a8a5492bf09fcaebac2f6e6",
+      "commitBlobMatch": true
+    },
+    {
+      "path": "docs/GETTING-THE-FILES.md",
+      "localPath": "notices/docs--GETTING-THE-FILES.md",
+      "bytes": 2615,
+      "sha256": "004a325f43763791736247dc79dcaf8085d5f2ba08c1ca0dfe6e773742b27234",
+      "gitBlobSha1": "ef6cc24f54fd668c062b8abc684cd33766ebd925",
+      "commitBlobMatch": true
+    }
+  ],
+  "flags": {
+    "originalBytesModified": false,
+    "scientificApproval": false,
+    "renderingSafetyApproved": false,
+    "productionActivation": false
+  },
+  "manifestSha256": "67ea17c188a0bf3763af515a6da07ce3b4d609b9f3d82751156d3b291b7d5ee1",
+  "manifestBytes": 499800,
+  "verifiedFileCount": 1446,
+  "allFilesMatchPinnedCommit": true,
+  "canonicalPageFiles": 604,
+  "perSurahVariantFilesPerFormat": 118,
+  "rawAssetsIncludedInThisReport": false
+}

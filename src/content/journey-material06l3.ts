@@ -31,8 +31,12 @@ export async function createApprovedJourneyMaterial(input:ApprovedJourneyInput,e
   });return material('approved',units,policy);
 }
 /** Tree-shaken from the production entry. Never accepts real Quran identifiers or arbitrary Quran text. */
-export function createEngineeringJourneyMaterial(units:CanonicalUnit[],layout?:{pages:readonly number[]}):JourneyMaterial {
+export function createEngineeringJourneyMaterial(units:CanonicalUnit[],layout?:{pages:readonly number[];positions?:readonly {surah:number;ayah:number;juz:number}[]}):JourneyMaterial {
   if(import.meta.env.MODE!=='test'||units.some(u=>!u.editionId.startsWith('test-')||u.coverage.some(k=>!k.startsWith('test-'))))throw new DomainError('RELEASE_GATES_BLOCKED','المواد الصناعية محصورة في الاختبار المعزول.');
   if(layout&&(layout.pages.length!==units.length||layout.pages.some(page=>!Number.isSafeInteger(page)||page<1)))throw new DomainError('CONTENT_INTEGRITY_FAILURE','خريطة الاختبار الصناعي غير صالحة.');
-  return material('engineering',units.map((unit,order)=>({unit,title:`وحدة تدريب صناعية ${order+1}`,passages:['مادة تدريب صناعية للاختبار فقط وليست نصًا قرآنيًا.'],positions:[{surah:1,ayah:order+1,page:layout?.pages[order]??1,juz:1}],order,costMinutes:2})),{version:'test-isolated-capacity-fixture-06l3',futureLoadFeasible:true});
+  if(layout?.positions&&(layout.positions.length!==units.length||layout.positions.some(p=>!Number.isSafeInteger(p.surah)||p.surah<1||p.surah>114||!Number.isSafeInteger(p.ayah)||p.ayah<1||!Number.isSafeInteger(p.juz)||p.juz<1||p.juz>30)))throw new DomainError('CONTENT_INTEGRITY_FAILURE','مواضع الاختبار الصناعي غير صالحة.');
+  return material('engineering',units.map((unit,order)=>{
+    const position=layout?.positions?.[order]??{surah:1,ayah:order+1,juz:1};
+    return {unit,title:layout?.positions?`قسم تجريبي ${position.surah.toLocaleString('ar-SA')} — سطر ${position.ayah.toLocaleString('ar-SA')}`:`وحدة تدريب صناعية ${order+1}`,passages:['مادة تدريب صناعية للاختبار فقط وليست نصًا قرآنيًا.'],positions:[{...position,page:layout?.pages[order]??1}],order,costMinutes:2};
+  }),{version:'test-isolated-capacity-fixture-06l3',futureLoadFeasible:true});
 }

@@ -30,7 +30,9 @@
     "content:inspect-archive": "python3 scripts/inspect-official-archive10b.py",
     "content:receive-original": "python3 scripts/receive-official-package10c.py",
     "content:audit-candidate-json": "python3 scripts/audit-quranpedia-metadata10d.py",
-    "content:audit-candidate-zip": "python3 scripts/audit-quranpedia-archive10d.py"
+    "content:audit-candidate-zip": "python3 scripts/audit-quranpedia-archive10d.py",
+    "test:reader-preview": "playwright test --config playwright.reader-preview.config.ts",
+    "build:reader-preview": "node scripts/build-reader-preview10f.mjs"
   },
   "dependencies": {
     "lucide-react": "0.468.0",

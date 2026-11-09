@@ -1,0 +1,21 @@
+{
+  "archiveSha256": "8c1ff5ead881681331150a4a2f56dbf6c47ee4421d1e4d40552491cdc2997058",
+  "dialect": "quran-ws-hafs-kfqc-v1.1.1",
+  "status": "rejected",
+  "reason": "SVG_INVALID_OR_DUPLICATE_ID",
+  "malformedPages": [
+    {
+      "member": "305.svg",
+      "reason": "SVG_INVALID_OR_DUPLICATE_ID",
+      "sha256": "2f010ee9210c6cf3df51353d9bdceff0f4883b46f36fc0d7196c6241d5620587",
+      "rejected": true
+    },
+    {
+      "member": "577.svg",
+      "reason": "SVG_INVALID_OR_DUPLICATE_ID",
+      "sha256": "3a459c339c77cecfbef2a49a24ad2169ec18c7f0e73290d9185ce9d33c7a11d4",
+      "rejected": true
+    }
+  ],
+  "originalUnchanged": true
+}
