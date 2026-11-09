@@ -28,7 +28,7 @@ async function boot(){
     }
     const study=openMushafStudy(journey,mushaf,name,localStorage);
     await journey.prepare();
-    if(!location.hash)history.replaceState(null,'','#S16');
+    if(!location.hash)history.replaceState(null,'','#S05');
     root.render(<App service={journey.app.product} data={journey.app} journey={journey} mushaf={mushaf} study={study} readerDatabaseName={name}
       initialReaderMode={new URLSearchParams(location.search).get('demo')==='1'?'practice':'review'}
       candidateReview={onPractice=><CandidateReview10f journey={journey} databaseName={name} onPractice={onPractice}/>} />);

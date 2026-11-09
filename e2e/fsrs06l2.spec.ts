@@ -6,7 +6,7 @@ test('L2FSRSWEB01 isolated encrypted IndexedDB copy/restore/rollback preserves e
   try {
     const page = await context.newPage();
     await page.goto('http://127.0.0.1:4173/#S05');
-    await expect(page.getByRole('heading', { name: 'خطوتك التالية', exact: true })).toBeVisible();
+    await expect(page.getByRole('heading', { level: 1, name: 'وردك اليوم', exact: true })).toBeVisible();
     const result = await page.evaluate(async () => {
       const { runFsrsRehearsal06l2 } = await import(/* @vite-ignore */ '/src/testing/fsrs-rehearsal06l2.ts');
       const facts = await runFsrsRehearsal06l2();

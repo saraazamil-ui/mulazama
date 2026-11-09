@@ -7,6 +7,11 @@ for (const width of [320, 390, 1440]) {
     await page.setViewportSize({ width, height: 900 });
     for (const route of ['S05', 'S14']) {
       await page.goto('/#' + route);
+      if (route === 'S05') {
+        await expect(page.getByRole('heading', { level: 1, name: 'وردك اليوم', exact: true })).toBeVisible();
+        await expect(page.getByRole('region', { name: 'ملخص التقدم' })).toHaveCount(0);
+        await page.getByRole('navigation', { name: width < 850 ? 'التنقل على الهاتف' : 'التنقل الرئيسي', exact: true }).getByRole('button', { name: 'تقدمي', exact: true }).click();
+      }
       const summary = page.getByRole('region', { name: 'ملخص التقدم' });
       await expect(summary).toBeVisible();
       for (const name of ['إنجاز ورد اليوم', 'تقدم الحفظ', 'المراجعة اليوم', 'ثبات الحفظ']) {
@@ -47,7 +52,7 @@ test('D1WEB real saved mistake and correction update progress without acquiring 
 
 test('D1WEB keyboard navigation reload and direct route never unlock learning', async ({ page }) => {
   await page.goto('/#S05');
-  const link = page.getByRole('button', { name: /تفاصيل تقدمي/ });
+  const link = page.getByRole('navigation', { name: 'التنقل على الهاتف', exact: true }).getByRole('button', { name: 'تقدمي', exact: true });
   await link.focus();
   await expect(link).toBeFocused();
   await page.keyboard.press('Enter');

@@ -5,3 +5,36 @@
 .self-assessment-choices { display: grid; gap: .75rem; }
 .self-assessment-choices button { white-space: normal; text-align: start; height: auto; min-height: 48px; }
 .quran-session-text { font-family: MulazamaApproved, serif; font-size: 1.8rem; line-height: 2.5; overflow-wrap: anywhere; }
+
+.journey-preview-note { color: var(--muted); font-size: .85rem; margin-block: 0 .5rem; }
+.journey-save-status:empty { margin: 0; }
+.daily-portions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.learning-journey .daily-portion { margin: 0; padding: 1.5rem; display: flex; flex-direction: column; align-items: flex-start; gap: .8rem; }
+.daily-portion h2 { font-size: 1.3rem; line-height: 1.8; margin: 0; }
+.daily-portion p { margin: 0; color: var(--muted); }
+.daily-portion .button { margin-block-start: auto; min-height: 48px; }
+.daily-portion small { color: var(--muted); line-height: 1.8; }
+.daily-completion { margin-block: 1.25rem; display: flex; flex-wrap: wrap; align-items: center; gap: .65rem 1rem; padding-inline: .25rem; }
+.daily-completion progress { width: min(100%, 12rem); height: .6rem; accent-color: var(--green, #285a4a); }
+.daily-completion small { color: var(--muted); }
+.journey-resume { display: flex; gap: 1rem; align-items: center; justify-content: space-between; }
+.journey-resume h2 { margin-block-start: 0; }
+.session-primary-action { margin-block: 1rem; text-align: center; }
+.session-primary-action .button { min-height: 50px; }
+.session-primary-action p { color: var(--muted); }
+.session-result { border-inline-start: 3px solid var(--green, #285a4a); padding: .5rem 1rem 1rem; margin-block: 1rem; }
+.session-options { border-block-start: 1px solid var(--line, #dde5de); margin-block-start: 1.5rem; padding-block-start: .5rem; }
+.session-options summary { cursor: pointer; padding-block: .7rem; color: var(--muted); }
+.session-options summary:focus-visible { outline: 2px solid var(--green, #285a4a); outline-offset: 4px; }
+.session-options .actions { padding-block: .75rem; align-items: center; }
+.session-options .actions p { width: 100%; margin: 0; }
+.session-reading { margin-inline: -1rem; }
+@media(max-width: 600px) {
+  .daily-portions { grid-template-columns: 1fr; }
+  .learning-journey .daily-portion { padding: 1.2rem; }
+  .daily-portion .button { width: 100%; }
+  .journey-resume { flex-direction: column; align-items: stretch; }
+  .daily-completion small { flex-basis: 100%; }
+  .session-primary-action .button { width: 100%; }
+  .session-reading { margin-inline: -.5rem; }
+}

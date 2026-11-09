@@ -207,10 +207,10 @@ def main():
         unit = fresh_json(L4 + "final-tests.json")
         summary["unit"] = {key: unit.get(key) for key in (
             "numTotalTests", "numPassedTests", "numFailedTests", "numPendingTests", "numTodoTests", "success")}
-        if unit.get("success") is not True or unit.get("numTotalTests") != 987 or unit.get("numPassedTests") != 987 or any(
+        if unit.get("success") is not True or unit.get("numTotalTests") != 997 or unit.get("numPassedTests") != 997 or any(
             unit.get(key) != 0 for key in ("numFailedTests", "numPendingTests", "numTodoTests")
         ):
-            errors.append("Unit results must be exactly 987 passed, zero failed/skipped/todo.")
+            errors.append("Unit results must be exactly 997 passed, zero failed/skipped/todo.")
         mushaf = fresh_json("test-results-mushaf/mushaf-results.json")
         summary["mushafBrowser"] = mushaf.get("stats", {})
         if summary["mushafBrowser"].get("expected") != 10 or mushaf.get("errors") or any(
@@ -219,10 +219,10 @@ def main():
             errors.append("Mushaf browser: expected 10 passed, zero failed/skipped/flaky/errors.")
         preview = fresh_json("test-results-reader-preview/reader-preview-results.json")
         summary["readerPreviewBrowser"] = preview.get("stats", {})
-        if summary["readerPreviewBrowser"].get("expected") != 9 or preview.get("errors") or any(
+        if summary["readerPreviewBrowser"].get("expected") != 14 or preview.get("errors") or any(
             summary["readerPreviewBrowser"].get(key) != 0 for key in ("skipped", "unexpected", "flaky")
         ):
-            errors.append("Reader preview browser: expected 9 passed, zero failed/skipped/flaky/errors.")
+            errors.append("Reader preview browser: expected 14 passed, zero failed/skipped/flaky/errors.")
         summary["browserSuites"] = {}
         for name, expected in BROWSER_COUNTS.items():
             data = fresh_json(L4 + "final-" + name + "-results.json")

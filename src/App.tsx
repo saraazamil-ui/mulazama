@@ -5,13 +5,12 @@ import {
   CalendarDays,
   ChartNoAxesCombined,
   Settings,
+  MoreHorizontal,
   ArrowLeft,
   ChevronLeft,
   Clock,
   Leaf,
   ShieldCheck,
-  Sun,
-  Moon,
   Play,
   Pause,
   Plus,
@@ -73,6 +72,7 @@ import type {
   LearningUiAdapter,
   LearningScreenId,
 } from "./application/learning-ui-adapter";
+import './simple-experience11.css';
 
 type Scenario =
   | "normal"
@@ -133,7 +133,7 @@ function useQuery<K extends ContractId>(id: K, input: ContractRequestMap[K]) {
 }
 function route(): Screen {
   const hash = window.location.hash.slice(1);
-  return hash in screens ? (hash as Screen) : "S01";
+  return hash in screens ? (hash as Screen) : "S05";
 }
 
 export default function App({
@@ -160,7 +160,7 @@ export default function App({
   data?: CompositeDataController & { readProgress?: (now?: Date) => ProgressReadModel | Promise<ProgressReadModel>; readPersonalMemory?: (now?: Date) => Promise<PersonalMemoryReadModel> };
 }) {
   const [state, setState] = useState<PrototypeState>(() => service.state);
-  const [screen, setScreen] = useState<Screen>(() => window.location.hash ? route() : service.state.config.configured ? "S05" : "S01");
+  const [screen, setScreen] = useState<Screen>(() => window.location.hash ? route() : "S05");
   const [progress, setProgress] = useState<ProgressLoadState>({ status: "loading" });
   const [companion, setCompanion] = useState<CompanionLoadState>({ status: "loading" });
   const companionGeneration = useRef(0);
@@ -223,6 +223,7 @@ export default function App({
   const [editAttempt, setEditAttempt] = useState<string | null>(null);
   const [leave, setLeave] = useState<Screen | null>(null);
   const [help, setHelp] = useState(false);
+  const secondaryMenu = useRef<HTMLDetailsElement>(null);
   const [readerPage, setReaderPage] = useState<number>();
   const [readerMode,setReaderMode] = useState(initialReaderMode);
   const readerPageShown = useCallback(() => setReaderPage(undefined), []);
@@ -336,7 +337,6 @@ export default function App({
     { id: "S05", label: "اليوم", icon: CalendarDays },
     { id: "S16", label: "المصحف", icon: BookOpen },
     { id: "S14", label: "تقدمي", icon: ChartNoAxesCombined },
-    { id: "S17", label: "الإعدادات", icon: Settings },
   ] as const;
   const section =
     screen === "S16"
@@ -411,6 +411,7 @@ export default function App({
       checkingSession={readerGuard.checking} beforeRead={readerGuard.beforeRead}
       onPageShown={readerPageShown}
       onToday={() => go("S05")} onResume={() => go("S10")}
+      secondaryActions={candidateReview ? <Button variant="secondary" onClick={()=>setReaderMode('review')}>عرض صفحات حفص المرشحة</Button> : undefined}
       readingBlocked={!!journey?.active && (journey.active.phase === 'recall' || journey.active.phase === 'paused' && journey.active.previousPhase === 'recall') && (journey.needsRestart || !journey.state.attempts[journey.active.attemptId ?? '']?.revealed)}
       revealUnavailable={!!journey?.needsRestart || journey?.active?.phase === 'paused'}
       onReveal={journey ? async () => {
@@ -455,16 +456,21 @@ export default function App({
   }
   if(candidateReview){
     const practice=contents.S16;
-    contents.S16=<><div className="reader-mode-tabs" role="group" aria-label="وضع قارئ المصحف">
-      <Button variant={readerMode==='review'?'primary':'secondary'} aria-pressed={readerMode==='review'} onClick={()=>setReaderMode('review')}>صفحات حفص — مراجعة المصدر</Button>
-      <Button variant={readerMode==='practice'?'primary':'secondary'} aria-pressed={readerMode==='practice'} onClick={()=>setReaderMode('practice')}>تجربة الحفظ ببيانات صناعية</Button>
-    </div>{readerMode==='review'?candidateReview(()=>setReaderMode('practice')):practice}</>;
+    contents.S16=readerMode==='review'?candidateReview(()=>setReaderMode('practice')):practice;
   }
   if(journey){
     for(const target of ["S04","S05","S07","S08","S09","S10","S11","S13","S14","S15"] as Screen[])
-      contents[target]=<JourneyScreen key={target} journey={journey} screen={target} go={go}
+      contents[target]=<JourneyScreen key={target} journey={journey} screen={target} go={go} showPreviewNotice={!candidateReview}
+        renderReading={mushaf ? unitId => <MushafReader10b embedded mushaf={mushaf} databaseName={readerScope}
+          requestedPage={journey.unit(unitId).positions[0].page} selection={readerStudy?.current ?? null}
+          unavailableReason={studyError ?? readerGuard.error ?? readerError} checkingSession={readerGuard.checking}
+          beforeRead={readerGuard.beforeRead} onToday={()=>go('S05')} /> : undefined}
         onOpenMushaf={mushaf ? unitId => {setReaderMode('practice');setReaderPage(journey.unit(unitId).positions[0].page);go('S16');} : undefined}
         onCommitted={()=>{setJourneyRevision(revision => revision + 1);readerGuard.notifyCommitted();void refreshProgress();void refreshCompanion();}} />;
+    contents.S14=<>{contents.S14}<details className="settings-extra">
+      <summary>سجل الحفظ والمراجعة</summary>
+      <ProgressContent state={progress} retry={refreshProgress} detailed />
+    </details></>;
   }
   return (
     <FeedbackContext.Provider value={error}>
@@ -542,10 +548,7 @@ export default function App({
                 وصلة تتجدد كل يوم.
               </p>
               <span className="side-line" />
-              <button className="help-button" onClick={() => setHelp(true)}>
-                عن مُلازَمَة وخصوصيتك <ShieldCheck size={17} />
-              </button>
-              <small>MULAZAMA · 06-L4</small>
+              <small>MULAZAMA</small>
             </div>
           </aside>
           <div className="workspace">
@@ -558,34 +561,16 @@ export default function App({
                 مساحتك / <strong>{screens[screen]}</strong>
               </span>
               <div className="top-actions">
-                <span className="demo-badge">
-                  <span /> إصدار هندسي
-                </span>
-                <button
-                  className="icon-button"
-                  aria-label={
-                    state.preferences.dark
-                      ? "تفعيل الوضع الفاتح"
-                      : "تفعيل الوضع الداكن"
-                  }
-                  onClick={async () =>
-                    await commit({
-                      type: "preferences",
-                      patch: { dark: !state.preferences.dark },
-                    })
-                  }
-                >
-                  {state.preferences.dark ? (
-                    <Sun size={20} />
-                  ) : (
-                    <Moon size={20} />
-                  )}
-                </button>
+                <details className="secondary-menu" ref={secondaryMenu}>
+                  <summary><MoreHorizontal size={22} aria-hidden="true" /> المزيد</summary>
+                  <nav aria-label="القائمة الثانوية">
+                    <button onClick={()=>{if(secondaryMenu.current)secondaryMenu.current.open=false;go('S17');}}><Settings size={18} aria-hidden="true" /> الإعدادات</button>
+                    <button onClick={()=>{if(secondaryMenu.current)secondaryMenu.current.open=false;setHelp(true);}}>عن مُلازَمَة وخصوصيتك</button>
+                  </nav>
+                </details>
               </div>
             </header>
-            <div className="prototype-strip" role="region" aria-label="حالة النسخة">
-              {candidateReview ? "10-F · صفحات حفص مرشحة للمراجعة؛ جلسات الحفظ ببيانات صناعية" : journey?.kind === "engineering" ? "06-L4 · اختبار هندسي معزول — ليس نصًا قرآنيًا" : journey ? "06-L4 · الحفظ والتسميع ذاتيان" : "إصدار هندسي 06-L4 · جلسات القرآن موقوفة حتى اعتماد المحتوى"}
-            </div>
+            {!candidateReview&&!journey&&<div className="prototype-strip" role="region" aria-label="حالة النسخة">جلسات القرآن بانتظار اعتماد المحتوى.</div>}
             <main
               id="main-content"
               tabIndex={-1}
@@ -705,7 +690,7 @@ function Page({
   return (
     <>
       <Heading
-        eyebrow={"مُلازَمَة / " + id}
+        eyebrow={import.meta.env.DEV ? "مُلازَمَة / " + id : "مُلازَمَة"}
         title={screens[id]}
         description={description}
         back={
@@ -1207,163 +1192,28 @@ function Diagnostic() {
   );
 }
 function Today() {
-  const { state, go, start, scenario, progress, refreshProgress, service, companion, refreshCompanion } = useApp();
+  const { state, go, start, progress, service } = useApp();
   const learningBlocked = service.releaseGates.some(gate => gate.status !== "passed");
-  const query = useQuery("C04", {
-    operation: "read",
-    scenario:
-      scenario === "capacity"
-        ? "capacity"
-        : scenario === "empty"
-          ? "empty"
-          : "normal",
-  });
+  const query = useQuery("C04", { operation: "read", scenario: "normal" });
   if (!query.ok) return <Notice tone="error">{query.error.message}</Notice>;
-  const plan = query.value;
-  const tasks = plan.tasks;
-  const next = tasks.find((t) => t.executionStatus === "pending");
-  return (
-    <Page id="S05" description="مُلازَمَة · رفيقك في حفظ القرآن وإتقانه.">
-      <div className="dashboard-grid">
-        <Card className="next-card">
-          <div className="section-title">
-            <h2>خطوتك التالية</h2>
-            <span className="small-dot" />
-          </div>
-          {learningBlocked ? (
-            <>
-              <h3>{state.config.configured ? "إعدادك محفوظ، وننتظر إتاحة الجلسات" : "لنهيئ وردك"}</h3>
-              <p>يمكنك ضبط هدفك ووقتك ومحفوظك المعلن. بدء الحفظ والمراجعة ينتظر اعتماد جلسات القرآن.</p>
-              <Button onClick={() => go("S02")}>
-                {state.config.configured ? "راجع هدفك ووقتك" : "أكمل إعدادك"} <ArrowLeft size={18} />
-              </Button>
-              {state.session && <p>سجل جلستك المتوقفة محفوظ؛ استئنافها ينتظر الاعتماد.</p>}
-            </>
-          ) : state.session ? (
-            <>
-              <Meta>جلسة محفوظة</Meta>
-              <h3>نكمل من حيث توقفت</h3>
-              <p>{state.session.rangeLabel}</p>
-              <Button onClick={() => go("S10")}>
-                استأنف جلستك <Play size={17} />
-              </Button>
-            </>
-          ) : next ? (
-            <>
-              <Meta>مهمة عرض · {kinds[next.kind as AttemptKind]}</Meta>
-              <h3>{next.title}</h3>
-              <p>{next.rangeLabel}</p>
-              <Button
-                onClick={() => start(next.kind, next.rangeLabel, next.id)}
-              >
-                ابدأ وردك <ArrowLeft size={18} />
-              </Button>
-              <details>
-                <summary>لماذا هذه المهمة؟</summary>
-                <p>{next.reason} هذا ترتيب ثابت لا قرار حي من HME.</p>
-              </details>
-            </>
-          ) : (
-            <Empty
-              title={
-                tasks.length &&
-                tasks.every((t) => t.executionStatus === "performed")
-                  ? "اكتملت مهام العرض المخططة"
-                  : "لا مهام مخططة الآن"
-              }
-              action={
-                <Button variant="secondary" onClick={() => go("S02")}>
-                  عدّل إعدادك
-                </Button>
-              }
-            >
-              لا يعني ذلك انتهاء المراجعات أو اكتمال الحفظ.
-            </Empty>
-          )}
-        </Card>
-        <section className="hero-card">
-          <span className="pill">
-            <Leaf size={16} /> ورد هادئ، أثر مستمر
-          </span>
-          <h2>وردك وتقدمك في مكان واحد.</h2>
-          <div className="hero-footer">
-            <span>
-              <Clock size={18} />
-              {number(effectiveBudget(state))} دقيقة متاحة اليوم
-            </span>
-            <Button variant="secondary" onClick={() => go("S06")}>
-              راجع خطتك <ArrowLeft size={18} />
-            </Button>
-          </div>
-          <div className="hero-decoration" aria-hidden="true">
-            ۞
-          </div>
-        </section>
+  const next = query.value.tasks.find(task => task.executionStatus === "pending");
+  if (!state.config.configured) return <div className="simple-today"><Page id="S05" description="خطوة هادئة لحفظك ومراجعتك.">
+    <Card><h2>لنرتب وردك</h2><p>حدد هدفك ووقتك مرة واحدة، لنعود إلى خطتك كل يوم.</p>
+      <Button onClick={()=>go('S02')}>أعد خطتي</Button>
+    </Card>
+  </Page></div>;
+  return <div className="simple-today"><Page id="S05" description="مقدارك اليومي، وخطوتك التالية.">
+    {learningBlocked ? <>
+      <p>وردك محفوظ. جلسات القرآن تنتظر اعتماد المحتوى؛ إعداداتك وسجلك باقيان.</p>
+      <div className="today-amounts">
+        <Card><h2>حفظ اليوم</h2><p>{state.config.goal==='maintain'?'خطتك مخصصة للمراجعة.':'يظهر المقدار بعد اعتماد المحتوى.'}</p><Button disabled>ابدأ الحفظ</Button></Card>
+        <Card><h2>مراجعة اليوم</h2><p>يظهر المقدار بعد اعتماد المحتوى.</p><Button disabled>ابدأ المراجعة</Button></Card>
       </div>
-      {scenario === "capacity" && (
-        <Notice tone="warning">
-          تحتاج الخطة إلى إعادة توزيع. تبقى المراجعات غير المخططة ظاهرة، ولا
-          يزيد الجديد لتغطية العجز.
-        </Notice>
-      )}
-      <section aria-label="ملخص التقدم">
-        <ProgressContent state={progress} retry={refreshProgress} />
-        <div className="actions"><Button onClick={() => go("S14")}>تفاصيل تقدمي <ChevronLeft size={16} /></Button></div>
-      </section>
-      <CompanionPanel state={companion} retry={refreshCompanion} />
-      <div className="section-title section-spaced">
-        <h2>مسارات وردك</h2>
-        <span className="muted">المواعيد التعليمية تنتظر اعتماد المحتوى</span>
-      </div>
-      <div className="three-grid">
-        {[
-          {
-            title: "الحفظ الجديد",
-            icon: BookOpen,
-            desc:
-              state.config.goal === "maintain"
-                ? "لا حفظ جديد لمسار التعاهد"
-                : "تدريب يتبعه اختبار مستقل",
-            id: "S07",
-          },
-          {
-            title: "المراجعة",
-            icon: RotateCcw,
-            desc: "تسميع يبدأ والنص مخفي",
-            id: "S06",
-          },
-          {
-            title: "التثبيت والتعاهد",
-            icon: HeartHandshake,
-            desc: "تعاهد القديم وفحص الاتصال",
-            id: "S11",
-          },
-        ].map((v, i) => (
-          <button
-            className={"path-card path-" + i}
-            key={v.id}
-            disabled={learningBlocked && v.id !== "S06"}
-            onClick={() => go(v.id as Screen)}
-          >
-            <span className="path-icon">
-              <v.icon size={25} />
-            </span>
-            <h3>{v.title}</h3>
-            <p>{v.desc}</p>
-            <span className="path-link">
-              {learningBlocked && v.id !== "S06" ? "غير متاح حتى اعتماد جلسات القرآن" : "مراجعة الخطة"} <ArrowLeft size={17} />
-            </span>
-          </button>
-        ))}
-      </div>
-      <Card className="soft-card">
-        <h2>مساحة للعودة</h2>
-        <p>يمكنك مراجعة خطة العودة والتوقعات دون تغيير سجل ما أنجزته.</p>
-        <Button variant="ghost" disabled={learningBlocked} onClick={() => go("S13")}>رتّب عودتك <ArrowLeft size={18} /></Button>
-        <Button variant="ghost" onClick={() => go("S19")}>توقع تقدمك</Button>
-      </Card>
-    </Page>
-  );
+      <p>إنجاز اليوم: {progress.status==='ready'&&progress.value.daily.completedSessions!==null?`${number(progress.value.daily.completedSessions)} جلسات بتسميع مكتمل بحسب سجلك.`:'لم تتوفر بيانات كافية بعد.'} تسجيل النشاط لا يثبت الإتقان.</p>
+    </> : state.session ? <Card><h2>نكمل من حيث توقفت</h2><p>{state.session.rangeLabel}</p><Button onClick={()=>go('S10')}>استأنف جلستك</Button></Card> : next ? <Card>
+      <h2>{next.kind==='new'?'حفظ اليوم':'مراجعة اليوم'}</h2><p>{next.rangeLabel}</p><Button onClick={()=>start(next.kind,next.rangeLabel,next.id)}>{next.kind==='new'?'ابدأ الحفظ':'ابدأ المراجعة'}</Button>
+    </Card> : <Card><h2>لا نشاط مخطط الآن</h2><p>يمكنك مراجعة هدفك ووقتك من الإعدادات.</p></Card>}
+  </Page></div>;
 }
 function Capacity() {
   const { state, commit } = useApp();
@@ -2647,6 +2497,8 @@ function Preferences() {
             إذن النظام لم يُطلب. لا توجد إشعارات مجدولة؛ حفظ التفضيل لا يعني
             تفعيلها.
           </Notice>
+          <h2>حالة المصحف</h2><p>صفحات حفص المتاحة للمراجعة مصدر مرشح. جلسات القرآن الحقيقي تنتظر اعتماد المحتوى.</p>
+          {import.meta.env.DEV&&<details className="settings-extra"><summary>أدوات التطوير</summary>
           <h2>بوابات التحقق</h2>
           <p>جلسات القرآن تنتظر اكتمال أدلة الاعتماد. نجاح البناء لا يفتحها.</p>
           <ul>
@@ -2698,8 +2550,14 @@ function Preferences() {
           >
             إدارة المحتوى
           </Button>
+          </details>}
         </Card>
       </div>
+      <details className="settings-extra"><summary>خيارات الخطة والمتابعة</summary><div className="actions">
+        <Button variant="secondary" onClick={()=>go('S06')}>وقت اليوم والخطة القادمة</Button>
+        <Button variant="secondary" onClick={()=>go('S19')}>توقع تقدمي</Button>
+        <Button variant="secondary" disabled={service.releaseGates.some(g=>g.status!=="passed")} onClick={()=>go('S13')}>خطة العودة</Button>
+      </div></details>
       <Card>
         <div className="setting-row">
           <div>
@@ -2715,7 +2573,7 @@ function Preferences() {
           <summary>عن النموذج والمساعدة</summary>
           <p className="policy-links"><a href="./privacy.html">الخصوصية</a> · <a href="./support.html">الدعم والمساعدة</a> · <a href="./terms.html">حدود الاستخدام</a></p>
           <p>
-            مُلازَمَة — MULAZAMA، إصدار هندسي 06-L4 للويب. اختبار هاتف حقيقي ومراجعة متخصصة لم ينجزا بعد. المطابقة الحسابية المصححة مثبتة، وتشغيل الجلسات واعتماد المحتوى ما زالا معلقين.
+            مُلازَمَة ترافق حفظك ومراجعتك. نتائجك تقارير ذاتية، والمحتوى القرآني ينتظر اعتمادًا متخصصًا.
           </p>
         </details>
       </Card>

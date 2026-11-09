@@ -23,6 +23,10 @@ beforeEach(() => {
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); vi.restoreAllMocks(); });
 const defaults = () => ({ databaseName: 'test-reader-profile', onToday: vi.fn() });
 const visiblePage = (page: number) => screen.findByRole('img', { name: `صفحة اختبار صناعية ${page.toLocaleString('ar-SA')}` });
+async function openTools() {
+  const summary = screen.getByText('اختيار المقدار وخيارات المصحف', { exact: true });
+  if (!summary.closest('details')!.open) await userEvent.setup().click(summary);
+}
 
 async function selectionFixture() {
   const original = await createEngineeringMushafFixture();
@@ -81,7 +85,7 @@ describe('10-B verified-page reader UI (synthetic non-Quran images)', () => {
     const mushaf = await createEngineeringMushafFixture(), select = vi.fn(), user = userEvent.setup();
     render(<MushafReader10b {...defaults()} mushaf={mushaf} onSelectRange={select} />);
     expect(screen.getByRole('region', { name: 'قارئ المصحف' })).toHaveAttribute('dir', 'rtl');
-    await visiblePage(1);
+    await visiblePage(1); await openTools();
     expect(screen.getByRole('button', { name: 'الصفحة السابقة' })).toBeDisabled();
     await user.click(screen.getByRole('button', { name: 'الصفحة التالية' })); await visiblePage(2);
     await user.selectOptions(screen.getByRole('combobox', { name: 'الجزء' }), '2'); await visiblePage(3);
@@ -134,7 +138,7 @@ describe('10-B verified-page reader UI (synthetic non-Quran images)', () => {
   it('MUI07 selection and start require separate explicit actions and surface rejected writes truthfully', async () => {
     const mushaf = await createEngineeringMushafFixture(), select = vi.fn(), start = vi.fn(), user = userEvent.setup();
     render(<MushafReader10b {...defaults()} mushaf={mushaf} onSelectRange={select} onStart={start} />);
-    await visiblePage(1);
+    await visiblePage(1); await openTools();
     fireEvent.change(screen.getByLabelText('من آية'), { target: { value: '2' } });
     fireEvent.change(screen.getByLabelText('إلى آية'), { target: { value: '3' } });
     await user.click(screen.getByRole('button', { name: 'أضف إلى خطتي' }));
@@ -150,7 +154,7 @@ describe('10-B verified-page reader UI (synthetic non-Quran images)', () => {
 
   it('MUI08 invalid reversed ranges and page numbers do not invoke callbacks or change pages', async () => {
     const select = vi.fn(); render(<MushafReader10b {...defaults()} mushaf={await createEngineeringMushafFixture()} onSelectRange={select} />);
-    await visiblePage(1);
+    await visiblePage(1); await openTools();
     const from = screen.getByLabelText('من آية'), to = screen.getByLabelText('إلى آية');
     fireEvent.change(from, { target: { value: '3' } }); fireEvent.change(to, { target: { value: '1' } });
     fireEvent.submit(from.closest('form')!);
@@ -200,7 +204,7 @@ describe('10-B verified-page reader UI (synthetic non-Quran images)', () => {
     const mushaf = await createEngineeringMushafFixture({ mixedJuzBoundary: true }), user = userEvent.setup();
     expect(mushaf.pages[1].juz).toBe(1); expect(mushaf.verses[1].juz).toBe(1);
     render(<MushafReader10b {...defaults()} mushaf={mushaf} onSelectRange={vi.fn()} />);
-    await visiblePage(1);
+    await visiblePage(1); await openTools();
     await user.selectOptions(screen.getByRole('combobox', { name: 'الجزء' }), '2');
     await visiblePage(2);
     expect(screen.getByRole('combobox', { name: 'الجزء' })).toHaveValue('2');
@@ -234,7 +238,7 @@ describe('10-B verified-page reader UI (synthetic non-Quran images)', () => {
     const mushaf = createEngineeringMushaf(manifest, images, [{ number: 1, page: 1, surah: 1, ayah: 1 }, { number: 2, page: 2, surah: 2, ayah: 1 }]);
     const select = vi.fn(), user = userEvent.setup();
     render(<MushafReader10b {...defaults()} mushaf={mushaf} onSelectRange={select} />);
-    await visiblePage(1);
+    await visiblePage(1); await openTools();
     await user.selectOptions(screen.getByRole('combobox', { name: 'السورة' }), '2'); await visiblePage(2);
     expect(screen.getByRole('combobox', { name: 'السورة' })).toHaveValue('2');
     expect(screen.getByLabelText('من آية')).toHaveValue(1); expect(screen.getByLabelText('إلى آية')).toHaveValue(1);
@@ -316,7 +320,7 @@ describe('10-B verified-page reader UI (synthetic non-Quran images)', () => {
   it('MUI19 row clicks only draft a range and explicit save sends canonical surah and ayah identifiers', async () => {
     const select = vi.fn(), user = userEvent.setup();
     render(<MushafReader10b {...defaults()} mushaf={await selectionFixture()} onSelectRange={select} />);
-    await visiblePage(1);
+    await visiblePage(1); await openTools();
     await user.click(rowChoice(1));
     expect(rowChoice(1)).toHaveAttribute('aria-pressed', 'true');
     expect(rowChoice(2)).toHaveAttribute('aria-pressed', 'false');
@@ -331,7 +335,7 @@ describe('10-B verified-page reader UI (synthetic non-Quran images)', () => {
   it('MUI20 a draft survives page turns and resolves reversed endpoints into one inclusive range', async () => {
     const select = vi.fn(), user = userEvent.setup();
     render(<MushafReader10b {...defaults()} mushaf={await selectionFixture()} onSelectRange={select} requestedPage={2} />);
-    await visiblePage(2);
+    await visiblePage(2); await openTools();
     await user.click(rowChoice(3));
     await user.click(screen.getByRole('button', { name: 'الصفحة السابقة' })); await visiblePage(1);
     expect(screen.getByLabelText('من آية')).toHaveValue(3);
@@ -345,7 +349,7 @@ describe('10-B verified-page reader UI (synthetic non-Quran images)', () => {
   it('MUI21 clicking another surah on a shared page starts a new range instead of combining identifiers', async () => {
     const select = vi.fn(), user = userEvent.setup();
     render(<MushafReader10b {...defaults()} mushaf={await selectionFixture()} onSelectRange={select} requestedPage={2} />);
-    await visiblePage(2); await user.click(rowChoice(4)); await user.click(rowChoice(1, 'الثانية'));
+    await visiblePage(2); await openTools(); await user.click(rowChoice(4)); await user.click(rowChoice(1, 'الثانية'));
     expect(screen.getByRole('combobox', { name: 'السورة' })).toHaveValue('2');
     expect(screen.getByLabelText('من آية')).toHaveValue(1); expect(screen.getByLabelText('إلى آية')).toHaveValue(1);
     expect(rowChoice(4)).toHaveAttribute('aria-pressed', 'false');
@@ -358,7 +362,8 @@ describe('10-B verified-page reader UI (synthetic non-Quran images)', () => {
   it('MUI22 row selection is unavailable after an image decode failure', async () => {
     const select = vi.fn(), user = userEvent.setup();
     render(<MushafReader10b {...defaults()} mushaf={await selectionFixture()} onSelectRange={select} />);
-    fireEvent.error(await visiblePage(1));
+    await visiblePage(1); await openTools();
+    fireEvent.error(screen.getByRole('img'));
     expect(rowChoice(1)).toBeDisabled(); expect(rowChoice(2)).toBeDisabled();
     await user.click(rowChoice(2));
     expect(select).not.toHaveBeenCalled();
@@ -370,7 +375,7 @@ describe('10-B verified-page reader UI (synthetic non-Quran images)', () => {
     const pending = new Promise<void>(resolve => { finish = resolve; });
     const select = vi.fn(() => pending), user = userEvent.setup();
     render(<MushafReader10b {...defaults()} mushaf={await selectionFixture()} onSelectRange={select} />);
-    await visiblePage(1); await user.click(rowChoice(1));
+    await visiblePage(1); await openTools(); await user.click(rowChoice(1));
     const submit = screen.getByRole('button', { name: 'أضف إلى خطتي' });
     await user.click(submit);
     expect(rowChoice(2)).toBeDisabled(); expect(submit).toBeDisabled();
@@ -385,7 +390,7 @@ describe('10-B verified-page reader UI (synthetic non-Quran images)', () => {
   it('MUI24 candidate review labels its status and displays exact SVG bytes only through an image Blob', async () => {
     const { mushaf, svg } = await candidateUiFixture();
     render(<MushafReader10b {...defaults()} mushaf={mushaf} onSelectRange={vi.fn()} />);
-    const image = await screen.findByRole('img', { name: 'صفحة حفص من مصدر مرشح ١' });
+    const image = await screen.findByRole('img', { name: 'صفحة حفص من مصدر مرشح ١' }); await openTools();
     expect(image).toHaveAttribute('src', expect.stringMatching(/^blob:/));
     expect(screen.getByRole('heading', { name: 'مراجعة صفحات حفص' })).toBeVisible();
     expect(screen.getByText('معاينة مصدر مرشح — لم يُعتمد المصحف بعد.')).toBeVisible();
@@ -403,7 +408,7 @@ describe('10-B verified-page reader UI (synthetic non-Quran images)', () => {
   it('MUI25 candidate selection saves review intent without a learning start or plan-added claim', async () => {
     const { mushaf } = await candidateUiFixture(), select = vi.fn(), start = vi.fn(), props = defaults(), user = userEvent.setup();
     render(<MushafReader10b {...props} mushaf={mushaf} onSelectRange={select} onStart={start} />);
-    await screen.findByRole('img', { name: 'صفحة حفص من مصدر مرشح ١' });
+    await screen.findByRole('img', { name: 'صفحة حفص من مصدر مرشح ١' }); await openTools();
     expect(screen.queryByRole('button', { name: 'ابدأ نشاط خطة اليوم' })).not.toBeInTheDocument();
     expect(screen.queryByRole('button', { name: 'أضف إلى خطتي' })).not.toBeInTheDocument();
     await user.click(screen.getByRole('button', { name: 'اختيار الآية ١ من سورة مرشح الاختبار' }));
@@ -412,7 +417,7 @@ describe('10-B verified-page reader UI (synthetic non-Quran images)', () => {
     expect(select).toHaveBeenCalledExactlyOnceWith({ surah: 1, fromAyah: 1, toAyah: 1 });
     expect(screen.getByText('حُفظ مقدار المراجعة. ربطه بجلسات القرآن ينتظر اعتماد النص والخرائط.')).toBeVisible();
     expect(screen.queryByText(/أُضيف المقدار إلى خطتك/)).not.toBeInTheDocument(); expect(start).not.toHaveBeenCalled();
-    await user.click(screen.getByRole('button', { name: 'العودة إلى تجربة الحفظ' })); expect(props.onToday).toHaveBeenCalledOnce();
+    await user.click(screen.getByRole('button', { name: 'خطة اليوم' })); expect(props.onToday).toHaveBeenCalledOnce();
   });
 
   it('MUI26 a forged candidate-review label cannot authorize page rendering', () => {
@@ -421,4 +426,46 @@ describe('10-B verified-page reader UI (synthetic non-Quran images)', () => {
     expect(screen.getByRole('heading', { name: 'النص المعتمد ينتظر الإضافة' })).toBeVisible();
     expect(screen.queryByRole('img')).not.toBeInTheDocument(); expect(pageImage).not.toHaveBeenCalled(); expect(createUrl).not.toHaveBeenCalled();
   });
+  it('MUI27 keeps the page primary and preserves a draft through one native disclosure', async () => {
+    render(<MushafReader10b {...defaults()} mushaf={await selectionFixture()} onSelectRange={vi.fn()} />);
+    await visiblePage(1);
+    const summary = screen.getByText('اختيار المقدار وخيارات المصحف', { exact: true });
+    expect(summary.closest('details')).not.toHaveAttribute('open');
+    expect(screen.getByRole('combobox', { name: 'السورة' })).toBeVisible();
+    expect(screen.getByRole('button', { name: 'خطة اليوم' })).toBeVisible();
+    expect(screen.getByRole('combobox', { name: 'الجزء' })).not.toBeVisible();
+    expect(screen.getByRole('button', { name: 'أضف إلى خطتي' })).not.toBeVisible();
+    const user = userEvent.setup(); await user.click(summary);
+    expect(summary.closest('details')).toHaveAttribute('open');
+    expect(screen.getByRole('combobox', { name: 'الجزء' })).toBeVisible();
+    await user.click(rowChoice(1)); await user.click(rowChoice(2));
+    await user.click(summary); expect(summary.closest('details')).not.toHaveAttribute('open');
+    await user.click(summary);
+    expect(screen.getByLabelText('من آية')).toHaveValue(1); expect(screen.getByLabelText('إلى آية')).toHaveValue(2);
+    expect(screen.getByRole('img')).toBeVisible();
+  });
+
+  it('MUI28 embedded reading keeps guards and navigation without another heading, return or target editor', async () => {
+    const props = defaults(), select = vi.fn(), start = vi.fn(), mushaf = await selectionFixture();
+    const view = render(<MushafReader10b {...props} mushaf={mushaf} embedded onSelectRange={select} onStart={start} secondaryActions={<button>خيار ثانوي</button>} />);
+    await visiblePage(1);
+    expect(screen.queryByRole('heading')).not.toBeInTheDocument();
+    expect(screen.queryByText('اختيار المقدار وخيارات المصحف')).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'خطة اليوم' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'خيار ثانوي' })).not.toBeInTheDocument();
+    await userEvent.setup().click(screen.getByRole('button', { name: 'الصفحة التالية' })); await visiblePage(2);
+    expect(select).not.toHaveBeenCalled(); expect(start).not.toHaveBeenCalled();
+    view.rerender(<MushafReader10b {...props} mushaf={mushaf} embedded readingBlocked onReveal={vi.fn()} />);
+    expect(screen.queryByRole('img')).not.toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'أظهر المصحف وسجّل المساعدة' })).toBeVisible();
+  });
+
+  it('MUI29 saved selection remains readable with the options closed', async () => {
+    const mushaf = await selectionFixture();
+    render(<MushafReader10b {...defaults()} mushaf={mushaf} onSelectRange={vi.fn()} selection={{ editionId: mushaf.editionId, range: {surah: 1, fromAyah: 1, toAyah: 2}, unitIds: [] }} />);
+    await visiblePage(1);
+    expect(screen.getByText(/المقدار المحدد:.*من آية ١ إلى ٢/)).toBeVisible();
+    expect(screen.getByText('اختيار المقدار وخيارات المصحف').closest('details')).not.toHaveAttribute('open');
+  });
+
 });

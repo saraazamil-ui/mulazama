@@ -1,0 +1,85 @@
+{
+  "commit": "4849df3741da2b9ddf2cdfe3ad75526e244fe337",
+  "kind": "observed-browser-baseline",
+  "syntheticOnly": true,
+  "landing": "#S16",
+  "openToToday": {
+    "actions": 1,
+    "routeTransitions": 1,
+    "steps": [
+      {
+        "action": "اليوم",
+        "from": "#S16",
+        "to": "#S05"
+      }
+    ]
+  },
+  "memorizationIncludingReader": {
+    "actions": 7,
+    "routeTransitions": 7,
+    "steps": [
+      {
+        "action": "ابدأ وردك",
+        "from": "#S05",
+        "to": "#S07"
+      },
+      {
+        "action": "افتح موضع الجلسة في المصحف",
+        "from": "#S07",
+        "to": "#S16"
+      },
+      {
+        "action": "خطة اليوم",
+        "from": "#S16",
+        "to": "#S05"
+      },
+      {
+        "action": "استأنف جلستك",
+        "from": "#S05",
+        "to": "#S10"
+      },
+      {
+        "action": "ابدأ التسميع الذاتي",
+        "from": "#S10",
+        "to": "#S08"
+      },
+      {
+        "action": "سمّعت المقطع كاملًا بلا خطأ معلوم — جهد عادي",
+        "from": "#S08",
+        "to": "#S09"
+      },
+      {
+        "action": "تابع إلى النشاط التالي",
+        "from": "#S09",
+        "to": "#S05"
+      }
+    ]
+  },
+  "review": {
+    "actions": 4,
+    "routeTransitions": 4,
+    "steps": [
+      {
+        "action": "ابدأ وردك",
+        "from": "#S05",
+        "to": "#S07"
+      },
+      {
+        "action": "ابدأ التسميع الذاتي",
+        "from": "#S07",
+        "to": "#S08"
+      },
+      {
+        "action": "سمّعت المقطع كاملًا بلا خطأ معلوم — جهد عادي",
+        "from": "#S08",
+        "to": "#S09"
+      },
+      {
+        "action": "تابع إلى النشاط التالي",
+        "from": "#S09",
+        "to": "#S05"
+      }
+    ]
+  },
+  "definition": "Count intentional button activations from ready Today through one assessment and explicit return to Today. Memorization includes viewing the page in the reader. Setup, reading time, optional repetitions and typing not counted."
+}
