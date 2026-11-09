@@ -30,6 +30,8 @@ jobs:
   build:
     runs-on: ubuntu-24.04
     timeout-minutes: 15
+    outputs:
+      release_expires_at: ${{ steps.release.outputs.expires_at }}
     steps:
       - name: Validate manual publication intent
         env:
@@ -59,9 +61,21 @@ jobs:
       - run: pnpm verify:build
       - run: python3 scripts/ftps-deploy.py validate
       - name: Require existing scientific and engineering release gates
+        id: release
         if: inputs.operation == 'deploy'
         # Exit 2 means Blocked, not approval. Never continue-on-error here.
-        run: node scripts/verify-release.mjs --phase 05-C --output /tmp/ftps-release-gates.json
+        run: |
+          node scripts/verify-release.mjs --phase 05-C --output /tmp/ftps-release-gates.json
+          python3 - <<'PY'
+          import datetime, json, os
+          from pathlib import Path
+          report = json.loads(Path('/tmp/ftps-release-gates.json').read_text())
+          assert report['productionReady'] is True
+          expires = min(datetime.datetime.fromisoformat(gate['expiresAt']).timestamp()
+                        for gate in report['gates'])
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+              output.write(f'expires_at={int(expires)}\n')
+          PY
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: release-dist-${{ github.sha }}
@@ -109,6 +123,16 @@ jobs:
         with:
           name: release-dist-${{ github.sha }}
           path: dist/
+      - name: Recheck attestation expiry after environment approval
+        env:
+          RELEASE_EXPIRES_AT: ${{ needs.build.outputs.release_expires_at }}
+        # Reserve the entire 15-minute publish timeout, including the upload.
+        run: |
+          python3 - <<'PY'
+          import os, time
+          if int(os.environ['RELEASE_EXPIRES_AT']) <= time.time() + 15 * 60:
+              raise SystemExit('Release attestations expired or too near expiry; obtain renewed approval.')
+          PY
       - name: Upload only validated build files; never delete remote files
         env:
           FTP_SERVER: ${{ secrets.FTP_SERVER }}

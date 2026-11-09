@@ -104,10 +104,20 @@ class FtpsTests(unittest.TestCase):
 
     def test_server_must_be_hostname_without_scheme_path_port_or_controls(self):
         for host in ("ftp://example.invalid", "example.invalid:21", "example.invalid/public_html",
-                     "user@example.invalid", "bad\nPASS x", "-host.invalid", "a..invalid"):
+                     "user@example.invalid", "bad\nPASS x", "-host.invalid", "a..invalid",
+                     "ftp. example.invalid", "ftp.\texample.invalid"):
             with self.subTest(host=host), patch.dict(os.environ, {"FTP_SERVER": host}):
-                self.assertEqual(self.run_cli()[0], 1)
+                code, out, err = self.run_cli()
+                self.assertEqual(code, 1)
+                self.assertIn("failed at configuration", err)
         self.factory.assert_not_called()
+
+    def test_only_hostname_surrounding_whitespace_is_trimmed(self):
+        with patch.dict(os.environ, {"FTP_SERVER": " \tftp.example.invalid\r\n",
+                                     "FTP_USERNAME": " user ", "FTP_PASSWORD": " secret-password\t "}):
+            self.assertEqual(self.run_cli("check")[0], 0)
+        self.assertEqual(self.instances[0].calls[0], ("connect", "ftp.example.invalid", 21))
+        self.assertIn(("login", " user ", " secret-password\t "), self.instances[0].calls)
 
     def test_missing_secrets_fail_before_connect(self):
         for key in self.env:
@@ -121,6 +131,7 @@ class FtpsTests(unittest.TestCase):
         self.assertEqual(code, 1)
         self.assertNotIn("secret-password", err + out)
         self.assertNotIn("private-dir", err + out)
+        self.assertIn("failed at TLS (SSLError)", err)
         self.assertEqual([call[0] for call in self.instances[0].calls], ["connect", "close"])
 
     def test_failed_data_connection_is_not_reported_as_success(self):
@@ -129,6 +140,37 @@ class FtpsTests(unittest.TestCase):
         self.assertEqual(code, 1)
         self.assertEqual(out, "")
         self.assertNotIn("private details", err)
+        self.assertIn("failed at listing (TimeoutError)", err)
+
+    def test_safe_failure_stage_and_ftp_status_without_server_reply(self):
+        for method, expected_stage, error in (
+            ("connect", "connect", OSError("private details")),
+            ("login", "login", ftplib.error_perm("530 secret-password private details")),
+            ("prot_p", "protected-data", ftplib.error_perm("534 private details")),
+            ("pwd", "directory", ftplib.error_perm("550 private details")),
+        ):
+            with self.subTest(method=method), patch.object(FakeFTP, method, side_effect=error):
+                code, out, err = self.run_cli("check")
+            self.assertEqual(code, 1)
+            self.assertIn("failed at " + expected_stage, err)
+            self.assertNotIn("private details", out + err)
+            self.assertNotIn("secret-password", out + err)
+            if isinstance(error, ftplib.Error):
+                self.assertIn("FTP " + str(error)[:3], err)
+            else:
+                self.assertNotIn(", FTP ", err)
+
+    def test_non_status_reply_text_is_not_used_as_diagnostic(self):
+        with patch.object(FakeFTP, "login", side_effect=ftplib.error_perm("530-secret-password")):
+            code, out, err = self.run_cli("check")
+        self.assertEqual(code, 1)
+        self.assertIn("FTP 530", err)
+        self.assertNotIn("secret-password", out + err)
+        with patch.object(FakeFTP, "login", side_effect=ftplib.error_perm("530private details")):
+            code, out, err = self.run_cli("check")
+        self.assertEqual(code, 1)
+        self.assertNotIn("FTP 530", err)
+        self.assertNotIn("private details", out + err)
 
     def test_changed_relative_directory_fails_before_data_listing(self):
         with patch.object(FakeFTP, "pwd", side_effect=["/", "/public_html"]):

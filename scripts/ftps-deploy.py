@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Read-only FTPS preflight and guarded upload of the ordinary dist/ build only."""
 import argparse
+from contextlib import contextmanager
 import ftplib
 import hashlib
 import json
@@ -20,6 +21,26 @@ FIXED_FILES = frozenset({
     "policies.css", "privacy.html", "support.html", "sw.js", "terms.html",
 })
 ASSET_NAME = re.compile(r"[A-Za-z0-9][A-Za-z0-9_-]*-[A-Za-z0-9_-]{8,}\.(?:js|css)\Z")
+
+
+class StageFailure(Exception):
+    """Carry only bounded diagnostics, never the server's raw reply."""
+    def __init__(self, stage_name, error):
+        self.stage_name = stage_name
+        self.error_type = type(error).__name__
+        status = re.match(r"([1-5][0-9]{2})(?:[ -]|$)", str(error)) if isinstance(error, ftplib.Error) else None
+        self.status = status.group(1) if status else None
+        super().__init__(stage_name)
+
+
+@contextmanager
+def stage(name):
+    try:
+        yield
+    except StageFailure:
+        raise
+    except Exception as error:
+        raise StageFailure(name, error) from None
 
 
 def validate_artifact(directory):
@@ -58,6 +79,8 @@ def validate_artifact(directory):
 
 def credentials():
     values = [os.environ.get(name, "") for name in ("FTP_SERVER", "FTP_USERNAME", "FTP_PASSWORD")]
+    # Copy/paste whitespace around a host is harmless; preserve credential bytes exactly.
+    values[0] = values[0].strip()
     if not all(values):
         raise ValueError("FTP_SERVER, FTP_USERNAME and FTP_PASSWORD must all be configured.")
     host, username, password = values
@@ -73,16 +96,21 @@ def credentials():
 
 
 def connect():
-    host, username, password = credentials()
-    context = ssl.create_default_context()
-    context.minimum_version = ssl.TLSVersion.TLSv1_2
-    ftp = ftplib.FTP_TLS(context=context, timeout=30)
+    with stage("configuration"):
+        host, username, password = credentials()
+        context = ssl.create_default_context()
+        context.minimum_version = ssl.TLSVersion.TLSv1_2
+        ftp = ftplib.FTP_TLS(context=context, timeout=30)
     try:
-        ftp.connect(host, PORT)
-        ftp.auth()  # AUTH TLS before USER/PASS: explicit FTPS, never plaintext fallback.
-        ftp.login(username, password)
-        ftp.prot_p()  # Encrypt passive data connections as well as the control channel.
-        ftp.set_pasv(True)
+        with stage("connect"):
+            ftp.connect(host, PORT)
+        with stage("TLS"):
+            ftp.auth()  # AUTH TLS before USER/PASS: explicit FTPS, never plaintext fallback.
+        with stage("login"):
+            ftp.login(username, password)
+        with stage("protected-data"):
+            ftp.prot_p()  # Encrypt passive data connections as well as the control channel.
+            ftp.set_pasv(True)
         return ftp
     except Exception:
         ftp.close()
@@ -90,12 +118,14 @@ def connect():
 
 
 def preflight(ftp):
-    before = ftp.pwd()
-    ftp.cwd(REMOTE_DIRECTORY)
-    if ftp.pwd() != before:
-        raise ValueError("Relative deployment directory did not preserve the login directory.")
+    with stage("directory"):
+        before = ftp.pwd()
+        ftp.cwd(REMOTE_DIRECTORY)
+        if ftp.pwd() != before:
+            raise ValueError("Relative deployment directory did not preserve the login directory.")
     # NLST exercises the protected passive data channel; do not print server filenames.
-    entries = ftp.nlst()
+    with stage("listing"):
+        entries = ftp.nlst()
     return {"explicitFTPS": True, "port": PORT, "remoteDirectory": REMOTE_DIRECTORY,
             "loginDirectoryUnchanged": True, "protectedDirectoryListing": True,
             "directoryEntries": len(entries), "remoteWrites": 0,
@@ -132,11 +162,13 @@ def main(argv=None):
     parser.add_argument("--confirm", default="")
     args = parser.parse_args(argv)
     ftp = None
+    fallback_stage = "confirmation"
     try:
         files = None
         if args.operation == "deploy" and args.confirm != CONFIRMATION:
             raise ValueError("Deployment requires the exact manual confirmation phrase.")
         if args.operation in ("validate", "deploy"):
+            fallback_stage = "artifact"
             files = validate_artifact(args.local_dir)
         if args.operation == "validate":
             print(json.dumps({"artifactValidation": "passed", "files": len(files), "remoteWrites": 0}))
@@ -144,13 +176,16 @@ def main(argv=None):
         ftp = connect()
         result = preflight(ftp)
         if args.operation == "deploy":
+            fallback_stage = "upload"
             result = upload(ftp, files)
         print(json.dumps(result))
         return 0
     except Exception as error:
         # Server replies and exception text can echo credentials or private directory names.
         # Keep failure logs useful without exposing either; GitHub masking is only a backstop.
-        print("FTPS " + args.operation + " failed (" + type(error).__name__ + "). "
+        failure = error if isinstance(error, StageFailure) else StageFailure(fallback_stage, error)
+        detail = failure.error_type + (", FTP " + failure.status if failure.status else "")
+        print("FTPS " + args.operation + " failed at " + failure.stage_name + " (" + detail + "). "
               "Check the configured secrets, verified TLS certificate, passive ports and build allowlist.",
               file=sys.stderr)
         return 1
