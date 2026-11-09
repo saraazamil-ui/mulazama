@@ -584,7 +584,7 @@ export default function App({
               </div>
             </header>
             <div className="prototype-strip" role="region" aria-label="حالة النسخة">
-              {journey?.kind === "engineering" ? "06-L4 · اختبار هندسي معزول — ليس نصًا قرآنيًا" : journey ? "06-L4 · الحفظ والتسميع ذاتيان" : "إصدار هندسي 06-L4 · جلسات القرآن موقوفة حتى اعتماد المحتوى"}
+              {candidateReview ? "10-F · صفحات حفص مرشحة للمراجعة؛ جلسات الحفظ ببيانات صناعية" : journey?.kind === "engineering" ? "06-L4 · اختبار هندسي معزول — ليس نصًا قرآنيًا" : journey ? "06-L4 · الحفظ والتسميع ذاتيان" : "إصدار هندسي 06-L4 · جلسات القرآن موقوفة حتى اعتماد المحتوى"}
             </div>
             <main
               id="main-content"

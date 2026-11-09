@@ -254,6 +254,7 @@ test('M10F09 candidate source is explicitly unapproved, rejects substituted page
     await route.fulfill({status:200,contentType:'image/svg+xml',body:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><rect width="1" height="1"/></svg>'});
   });
   await page.goto('/reader-preview.html');
+  await expect(page.getByRole('region',{name:'حالة النسخة'})).toContainText('صفحات حفص مرشحة للمراجعة؛ جلسات الحفظ ببيانات صناعية');
   await expect(reader(page).getByRole('heading',{name:'مراجعة صفحات حفص',exact:true})).toBeVisible();
   await expect(reader(page)).toContainText('معاينة مصدر مرشح — لم يُعتمد المصحف بعد.');
   await expect(reader(page).getByRole('alert')).toContainText('تعذر');
