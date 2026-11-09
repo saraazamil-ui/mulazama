@@ -1,0 +1,9 @@
+
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home1/smula029/public_html/
+    - /bin/test -s launch/limited/index.html
+    - /bin/test -d "$DEPLOYPATH"
+    - /bin/sh -c 'if [ -f /home1/smula029/public_html/index.html ]; then /bin/cp -p /home1/smula029/public_html/index.html /home1/smula029/public_html/index.html.backup; fi'
+    - /bin/cp launch/limited/index.html "$DEPLOYPATH/index.html"
