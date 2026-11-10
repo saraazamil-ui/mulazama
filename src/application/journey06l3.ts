@@ -86,7 +86,10 @@ export class LearningJourney {
     const assessed=Object.values(p.attempts).filter(a=>a.assessment);
     const latest=new Map<string,boolean|null>();for(const a of [...assessed].sort((a,b)=>Date.parse(a.startedAt)-Date.parse(b.startedAt)))latest.set(a.unitId,p.assessments[a.id]?.strictPass??null);
     const successful=new Set(assessed.filter(a=>p.assessments[a.id]?.strictPass===true).flatMap(a=>p.units[a.unitId].definition.coverage));
-    return {day,active:this.active,next:remaining[0]??null,completed:completed.length,remaining:remaining.length,deferred:plan?.deferred.length??0,due,observations:assessed.length,successfulCoverage:successful.size,weak:Object.values(p.units).filter(u=>latest.get(u.definition.id)===false||['NeedsReinforcement','Relearning'].includes(u.state.phase)).map(u=>this.unit(u.definition.id).title),budget:this.budget(day),requiresPlan:this.app.product.state.config.configured&&!plan};
+    const plannedNew=remaining.filter(task=>task.kind==='new').length;
+    const dueReviews=due.filter(review=>Date.parse(review.at)<=this.clock().getTime()).length;
+    const lastResult=assessed.filter(a=>currentRiyadhDate(new Date(a.startedAt))===day).at(-1)??null;
+    return {day,active:this.active,next:remaining[0]??null,plannedNew,dueReviews,lastResult,completed:completed.length,remaining:remaining.length,deferred:plan?.deferred.length??0,due,observations:assessed.length,successfulCoverage:successful.size,weak:Object.values(p.units).filter(u=>latest.get(u.definition.id)===false||['NeedsReinforcement','Relearning'].includes(u.state.phase)).map(u=>this.unit(u.definition.id).title),budget:this.budget(day),requiresPlan:this.app.product.state.config.configured&&!plan};
   }
   async start(){await this.prepare();return this.serialize(async()=>{
     await this.check();await this.app.refresh();if(this.active)return this.active;
