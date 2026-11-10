@@ -122,3 +122,19 @@ for(const prior of [false,true])test(`L4J${prior?'02':'01'} desktop ${prior?'pri
  expect((await new AxeBuilder({page}).analyze()).violations).toEqual([]);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
  await info.attach('desktop-journey.json',{body:JSON.stringify({viewport:1366,prior,engineering:true,quranSession:false,resultActions:1,reloadPreserved:true}),contentType:'application/json'});
 });
+
+test('synthetic journey persists after closing and reopening the page',async({page,context})=>{
+ await setup(page);
+ await page.getByRole('button',{name:'ابدأ وردك',exact:true}).click();
+ await page.getByRole('button',{name:'أنهيت تكرارًا',exact:true}).click();
+ const database=await page.evaluate(()=>localStorage.getItem('mulazama-engineering-db-06l3'));
+ await page.close();
+ const reopened=await context.newPage();
+ await reopened.clock.setFixedTime(new Date('2026-11-07T09:00:00Z'));
+ await reopened.goto('/engineering.html');
+ await expect(reopened.locator('.prototype-strip')).toContainText('ليس نصًا قرآنيًا');
+ expect(await reopened.evaluate(()=>localStorage.getItem('mulazama-engineering-db-06l3'))).toBe(database);
+ await expect(reopened.getByRole('button',{name:'استأنف جلستك'})).toBeVisible();
+ await reopened.getByRole('button',{name:'استأنف جلستك'}).click();
+ await expect(reopened.getByLabel('عدد التكرارات المحفوظة')).toHaveText('١');
+});
