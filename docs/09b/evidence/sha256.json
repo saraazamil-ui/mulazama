@@ -1,0 +1,12 @@
+{
+  "bootstrap-install.log": "16523e66eeebe28ebf6ece3c5e0b91eacef8837a357c23f396bdca602003bc51",
+  "verification-commands.json": "2cc3f8d82b42ef645619ae0eb569a2ba3f0e7bee5f4fedd26c43bcd7a7a2903c",
+  "verification.log": "b743c988953ac06e593cf85f68239b68ec7abd8b0dc328a11e14f2b8ff75c1ca",
+  "bootstrap-initial-state.json": "cdd932670515252193e5b6008b700485cd235d3549a3f5e4e1beeb6c04f13dcf",
+  "environment.json": "526b0e433f31737cfe4017b8dba48239a55a212487144876d0758b772cb91139",
+  "task-initial-state.json": "95a8ed920ce28ea31df60caeb833044efc0a98ebb8eeca011e578fa779755483",
+  "verification-summary.json": "c1d1516b2503080ebff647ac642636ec4f9f584533e4c22b2b02d9f6a0ca8997",
+  "verification-install.log": "b035245b6310d526c3d0797d059beacb3ee5024cc1845d633102b870831f0116",
+  "bootstrap-events.jsonl": "768e11ed1af8d33b3d2283cc591e5a580a960ec54b6a23ff6b3d9b2733eea7c1",
+  "bootstrap-result.json": "6a7afb9ef2debabf86f28cfa9c5cbdd1fd5ac02c0a1621ca5f88eb8cb8609b2f"
+}

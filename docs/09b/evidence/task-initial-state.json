@@ -1,0 +1,26 @@
+{
+  "captured_utc": "2026-11-07T18:03:02.918637+00:00",
+  "repo": "/workspace/mulazama",
+  "head": "ff279eaad321ebd60cf004a44cbdc69d2a178430",
+  "branch": "work",
+  "status": "",
+  "refs": "ff279eaad321ebd60cf004a44cbdc69d2a178430 refs/heads/work\nff279eaad321ebd60cf004a44cbdc69d2a178430 refs/remotes/origin/main",
+  "origin": "https://github.com/saraazamil-ui/mulazama.git",
+  "reflog": "ff279ea HEAD@{2026-11-07 15:40:12 +0000}: checkout: moving from work to work\nff279ea HEAD@{2026-11-07 15:40:12 +0000}: branch: Reset to FETCH_HEAD\nff279ea HEAD@{2026-11-07 15:40:11 +0000}: reset: moving to HEAD\nff279ea HEAD@{2026-11-07 14:49:53 +0000}: checkout: moving from master to work",
+  "files": {
+    "package.json": false,
+    "pnpm-lock.yaml": false,
+    "scripts/cloud-start08a.py": false,
+    "node_modules": false,
+    "src": false
+  },
+  "runtime": {
+    "node": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+    "pnpm": "/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/fallback/pnpm",
+    "python3": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "chromium": "/usr/bin/chromium",
+    "chromium-browser": null,
+    "gh": "/usr/bin/gh"
+  },
+  "chromium_override": "/usr/bin/chromium"
+}
