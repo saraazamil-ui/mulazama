@@ -2,12 +2,25 @@
 .learning-journey .card { margin-block: 1rem; }
 .learning-journey fieldset { border: 0; margin: 1rem 0; padding: 0; min-width: 0; }
 .learning-journey legend { margin-block-end: .75rem; font-weight: 600; }
+.journey-status { color: var(--green); }
+.journey-status:empty { margin: 0; }
+.daily-counts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 0; }
+.daily-counts dt, .daily-next > p { color: var(--muted); font-size: .875rem; }
+.daily-counts dd { margin: .25rem 0 0; color: var(--green); font-size: 1.5rem; font-variant-numeric: tabular-nums; }
+.daily-next, .session-controls { border-block-start: 1px solid var(--line); padding-block-start: 1rem; margin-block-start: 1rem; }
+.daily-next > p, .journey-session > h2 { margin-block: 0 .5rem; }
+.daily-next > h2 { margin-block: .25rem .75rem; }
 .self-assessment-choices { display: grid; gap: .75rem; }
-.self-assessment-choices button { white-space: normal; text-align: start; height: auto; min-height: 48px; }
+.self-assessment-choices button { text-align: start; justify-content: start; min-height: 48px; }
 .quran-session-text { font-family: MulazamaApproved, serif; font-size: 1.8rem; line-height: 2.5; overflow-wrap: anywhere; }
-
-.repetition-counter { display: grid; justify-items: center; gap: .75rem; padding: 1.25rem; border: 1px solid currentColor; border-radius: 1rem; text-align: center; }
+.repetition-counter { display: grid; justify-items: center; gap: .75rem; padding: 1.25rem; background: var(--tint); border: 1px solid var(--line); border-radius: 1rem; text-align: center; }
 .repetition-counter-label { margin: 0; font-weight: 600; }
-.repetition-counter-value { font-size: clamp(2.5rem, 9vw, 4rem); font-weight: 700; line-height: 1.1; font-variant-numeric: tabular-nums; }
-.repetition-counter-note { margin: 0; font-size: .875rem; opacity: .8; }
-.repetition-counter .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; }
+.repetition-counter-value { color: var(--green); font-size: clamp(2.5rem, 9vw, 4rem); font-weight: 700; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.repetition-counter .actions { justify-content: center; margin: 0; }
+.journey-footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem; border-block-start: 1px solid var(--line); padding-block: 1rem; }
+.journey-result { margin-block: 1rem; }
+.journey-footer h2, .journey-result h2 { margin-block: 0 .25rem; font-size: 1rem; }
+.journey-footer p, .journey-result p { margin: 0; color: var(--muted); }
+@media (min-width: 40rem) {
+  .daily-counts { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}

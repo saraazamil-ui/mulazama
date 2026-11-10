@@ -11,10 +11,10 @@ async function setup(page:Page,prior=false){
  await page.getByRole('button',{name:'التالي: الوقت المناسب'}).click();
  await page.getByRole('checkbox',{name:'السبت',exact:true}).check();
  await page.getByRole('button',{name:'احفظ واذهب إلى الرئيسية'}).click();
- await expect(page.getByRole('button',{name:'ابدأ وردك',exact:true})).toBeVisible();
+ await expect(page.getByRole('button',{name:'ابدأ وردي',exact:true})).toBeVisible();
  await page.evaluate(async()=>{await Promise.race([navigator.serviceWorker.ready,new Promise((_,reject)=>setTimeout(()=>reject(Error('SW_READY_TIMEOUT')),10000))]);});
  await page.reload();await expect.poll(()=>page.evaluate(()=>!!navigator.serviceWorker.controller)).toBe(true);
- await expect(page.getByRole('button',{name:'ابدأ وردك',exact:true})).toBeVisible();
+ await expect(page.getByRole('button',{name:'ابدأ وردي',exact:true})).toBeVisible();
 }
 /** Read-only inspection of this fresh context's UUID-named QA database only.
  * No production name, no source imports, no clear/replace/delete/put operations. */
@@ -40,14 +40,14 @@ async function facts(page:Page){return page.evaluate(async()=>{
  }finally{db.close();}
 });}
 async function submit(page:Page){
- await page.getByRole('button',{name:'ابدأ وردك',exact:true}).click();
+ await page.getByRole('button',{name:'ابدأ وردي',exact:true}).click();
  await expect(page.getByLabel('مادة الاختبار الصناعي',{exact:true})).toBeVisible();
- await page.getByRole('button',{name:'ابدأ التسميع الذاتي',exact:true}).click();
+ await page.getByRole('button',{name:'جاهز للتسميع',exact:true}).click();
  await expect(page.getByLabel('مادة الاختبار الصناعي',{exact:true})).toHaveCount(0);
- await page.getByRole('button',{name:'سمّعت المقطع كاملًا بلا خطأ معلوم — جهد عادي',exact:true}).click();
+ await page.getByRole('button',{name:'كامل بلا خطأ معلوم — بجهد عادي',exact:true}).click();
  await expect(page.getByRole('heading',{name:'حُفظ تقييمك الذاتي'})).toBeVisible();
 }
-async function home(page:Page){await page.getByRole('button',{name:'تابع إلى النشاط التالي'}).click();await expect(page.getByText(/أنشطة أُنجزت اليوم: 1/)).toBeVisible();}
+async function expectDailySummary(page:Page){await expect(page.getByLabel('أنشطة أُنجزت اليوم',{exact:true})).toHaveText('1');}
 test('L3OFFJ01 built isolated newcomer journey completes offline, writes corrected HME once and survives offline reload',async({browser},info)=>{
  const context=await isolated(browser);try{
   const page=await context.newPage();await setup(page);await context.setOffline(true);
@@ -55,17 +55,17 @@ test('L3OFFJ01 built isolated newcomer journey completes offline, writes correct
   expect(before.events.filter(e=>e.type==='AssessmentSubmitted')).toHaveLength(1);
   expect(before.events.filter(e=>e.data.scope==='hme').every(e=>e.versions.applicationEvidence==='hme-application-evidence-06l3.reference-1')).toBe(true);
   await page.reload();await expect(page.getByRole('heading',{name:'حُفظ تقييمك الذاتي'})).toBeVisible();
-  expect((await facts(page)).events).toEqual(before.events);await home(page);
-  await expect(page.getByRole('heading',{name:'التعاهد القادم'})).toBeVisible();
-  const after=await facts(page);await page.reload();await expect(page.getByText(/أنشطة أُنجزت اليوم: 1/)).toBeVisible();expect((await facts(page)).events).toEqual(after.events);
+  expect((await facts(page)).events).toEqual(before.events);await expectDailySummary(page);
+  await expect(page.getByRole('heading',{name:'المراجعة القادمة'})).toBeVisible();
+  const after=await facts(page);await page.reload();await expect(page.getByLabel('أنشطة أُنجزت اليوم',{exact:true})).toHaveText('1');expect((await facts(page)).events).toEqual(after.events);
   await info.attach('newcomer-offline.json',{body:JSON.stringify({engineering:true,quranSession:false,offlineDuringSession:true,offlineReload:true,assessmentEvents:1,resultActions:1,encryptedRows:after.encryptedRows,eventsPreserved:true,isolatedDatabase:after.name}),contentType:'application/json'});
  }finally{await context.close();}
 });
 test('L3OFFJ02 prior self-review correction and encrypted UI backup restore work offline with exact event preservation',async({browser},info)=>{
  const context=await isolated(browser);try{
   const page=await context.newPage();await setup(page,true);await context.setOffline(true);await submit(page);
-  await page.getByRole('button',{name:'صحّح النتيجة',exact:true}).click();await page.getByRole('button',{name:'سمّعت المقطع كاملًا بلا خطأ معلوم — بسهولة',exact:true}).click();
-  await expect(page.getByRole('heading',{name:'حُفظ تقييمك الذاتي'})).toBeVisible();await home(page);
+  await page.getByRole('button',{name:'صحّح النتيجة',exact:true}).click();await page.getByRole('button',{name:'كامل بلا خطأ معلوم — بسهولة',exact:true}).click();
+  await expect(page.getByText('حُفظ تصحيحك.',{exact:true})).toBeVisible();await expectDailySummary(page);
   const baseline=await facts(page);expect(baseline.events.filter(e=>e.type==='AssessmentSubmitted')).toHaveLength(1);expect(baseline.events.filter(e=>e.type==='AssessmentCorrected')).toHaveLength(1);
   await page.goto('http://127.0.0.1:4178/engineering.html#S18');await page.getByLabel('كلمة مرور النسخة',{exact:false}).fill('synthetic-ui-offline-06l3');
   const pendingDownload=page.waitForEvent('download');await page.getByRole('button',{name:'صدّر النسخة المشفرة'}).click();const download=await pendingDownload,stream=await download.createReadStream();if(!stream)throw Error('BACKUP_DOWNLOAD_MISSING');
@@ -79,8 +79,8 @@ test('L3OFFJ02 prior self-review correction and encrypted UI backup restore work
   await expect(page.getByText(/تعذر فتح النسخة: كلمة الاستعادة غير صحيحة/)).toBeVisible();expect((await facts(page)).events).toEqual(changed.events);
   await page.getByLabel('كلمة مرور النسخة',{exact:false}).fill('synthetic-ui-offline-06l3');await page.getByLabel('اختر النسخة المشفرة',{exact:true}).setInputFiles({name:'qa-encrypted-backup.json',mimeType:'application/json',buffer:bytes});
   await expect(page.getByRole('heading',{name:'مراجعة الملف قبل الاستبدال'})).toBeVisible();await page.getByRole('button',{name:'تأكيد الاستبدال الكامل'}).click();
-  await expect(page.getByText(/أنشطة أُنجزت اليوم: 1/)).toBeVisible();expect((await facts(page)).events).toEqual(baseline.events);
-  await page.reload();await expect(page.getByText(/أنشطة أُنجزت اليوم: 1/)).toBeVisible();expect((await facts(page)).events).toEqual(baseline.events);
+  await expect(page.getByLabel('أنشطة أُنجزت اليوم',{exact:true})).toHaveText('1');expect((await facts(page)).events).toEqual(baseline.events);
+  await page.reload();await expect(page.getByLabel('أنشطة أُنجزت اليوم',{exact:true})).toHaveText('1');expect((await facts(page)).events).toEqual(baseline.events);
   await page.goto('http://127.0.0.1:4178/engineering.html#S17');await expect(page.getByRole('checkbox',{name:'تكبير النص'})).not.toBeChecked();
   await info.attach('prior-offline-backup.json',{body:JSON.stringify({engineering:true,quranSession:false,offlineDuringSession:true,corrections:1,encryptedDownload:true,wrongPasswordPreserved:true,restoreAfterRealMutation:true,eventsPreserved:true,offlineReload:true,sourceEventIds:baseline.events.map(e=>e.eventId),isolatedDatabase:baseline.name}),contentType:'application/json'});
  }finally{await context.close();}

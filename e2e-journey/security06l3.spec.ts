@@ -8,8 +8,8 @@ async function setup(page:Page){
  await page.goto('/engineering.html');await page.getByRole('button',{name:'ابدأ إعداد تجربتك'}).click();
  await page.getByRole('button',{name:'التالي: المحفوظات والهدف'}).click();await page.getByRole('button',{name:'التالي: الوقت المناسب'}).click();
  await page.getByRole('checkbox',{name:'السبت',exact:true}).check();await page.getByRole('button',{name:'احفظ واذهب إلى الرئيسية'}).click();
- await expect(page.getByRole('button',{name:'ابدأ وردك',exact:true})).toBeVisible();
- await page.getByRole('button',{name:'ابدأ وردك',exact:true}).click();await expect(page.getByLabel('مادة الاختبار الصناعي',{exact:true})).toContainText(text);
+ await expect(page.getByRole('button',{name:'ابدأ وردي',exact:true})).toBeVisible();
+ await page.getByRole('button',{name:'ابدأ وردي',exact:true}).click();await expect(page.getByLabel('مادة الاختبار الصناعي',{exact:true})).toContainText(text);
 }
 async function snapshot(page:Page){return page.evaluate(async()=>{
  const name=sessionStorage.getItem('mulazama-engineering-db-06l3')!;
@@ -35,12 +35,12 @@ test('L3SECJ01 URL and stored database-name injection cannot select a real produ
 });
 
 test('L3SECJ02 recall text is absent from DOM until an acknowledged reveal, and self-report cannot wash out recorded help',async({page},info)=>{
- await setup(page);await page.getByRole('button',{name:'ابدأ التسميع الذاتي',exact:true}).click();
+ await setup(page);await page.getByRole('button',{name:'جاهز للتسميع',exact:true}).click();
  await expect(page.getByLabel('مادة الاختبار الصناعي',{exact:true})).toHaveCount(0);expect(await page.locator('main').textContent()).not.toContain(text);
  const hidden=await snapshot(page);expect(hidden.events.filter(e=>e.type==='HintUsed')).toHaveLength(0);
  await page.getByRole('button',{name:'أظهر النص وسجّل المساعدة',exact:true}).click();await expect(page.getByLabel('مادة الاختبار الصناعي',{exact:true})).toContainText(text);
  const revealed=await snapshot(page);expect(revealed.events.filter(e=>e.type==='HintUsed')).toHaveLength(1);
- await page.getByRole('button',{name:'سمّعت المقطع كاملًا بلا خطأ معلوم — بسهولة',exact:true}).click();await expect(page.getByRole('heading',{name:'حُفظ تقييمك الذاتي'})).toBeVisible();
+ await page.getByRole('button',{name:'كامل بلا خطأ معلوم — بسهولة',exact:true}).click();await expect(page.getByRole('heading',{name:'حُفظ تقييمك الذاتي'})).toBeVisible();
  const result=await page.evaluate(async()=>{
   const {IndexedDbEventStore}=await import('/src/persistence/event-store.ts');const {replayHistory}=await import('/src/application/history-application.ts');
   const name=sessionStorage.getItem('mulazama-engineering-db-06l3')!;if(!name.startsWith('mulazama-engineering-06l3-'))throw Error('NOT_QA_DB');
@@ -51,16 +51,16 @@ test('L3SECJ02 recall text is absent from DOM until an acknowledged reveal, and 
 });
 
 test('L3SECJ03 pausing an unfinished recall exposes restart immediately and retains the interrupted attempt without a score',async({page})=>{
- await setup(page);await page.getByRole('button',{name:'ابدأ التسميع الذاتي',exact:true}).click();
+ await setup(page);await page.getByRole('button',{name:'جاهز للتسميع',exact:true}).click();
  await page.getByRole('button',{name:'أوقف مؤقتًا',exact:true}).click();await expect(page.getByRole('button',{name:'ابدأ محاولة جديدة بعد الانقطاع',exact:true})).toBeVisible();
- await expect(page.getByRole('button',{name:'سمّعت المقطع كاملًا بلا خطأ معلوم — جهد عادي',exact:true})).toHaveCount(0);
- await page.getByRole('button',{name:'ابدأ محاولة جديدة بعد الانقطاع',exact:true}).click();await expect(page.getByRole('button',{name:'سمّعت المقطع كاملًا بلا خطأ معلوم — جهد عادي',exact:true})).toBeVisible();
+ await expect(page.getByRole('button',{name:'كامل بلا خطأ معلوم — بجهد عادي',exact:true})).toHaveCount(0);
+ await page.getByRole('button',{name:'ابدأ محاولة جديدة بعد الانقطاع',exact:true}).click();await expect(page.getByRole('button',{name:'كامل بلا خطأ معلوم — بجهد عادي',exact:true})).toBeVisible();
  const raw=await snapshot(page);expect(raw.events.filter(e=>e.type==='RecallAttemptStarted')).toHaveLength(1);expect(raw.events.filter(e=>e.type==='RecallAttemptRestarted')).toHaveLength(1);expect(raw.events.filter(e=>e.type==='AssessmentSubmitted')).toHaveLength(0);
- await page.getByRole('button',{name:'أنهِ الجلسة',exact:true}).click();await expect(page.getByText(/أنشطة أُنجزت اليوم: 0/)).toBeVisible();
+ await page.getByRole('button',{name:'أنهِ الجلسة',exact:true}).click();await expect(page.getByLabel('أنشطة أُنجزت اليوم',{exact:true})).toHaveText('0');
 });
 
 test('L3SECJ04 a rejected result write shows an error without success, then retry commits one assessment',async({page},info)=>{
- await setup(page);await page.getByRole('button',{name:'ابدأ التسميع الذاتي',exact:true}).click();
+ await setup(page);await page.getByRole('button',{name:'جاهز للتسميع',exact:true}).click();
  // Fault injection is confined to this newly created test profile and restored in finally.
  await page.evaluate(async()=>{
   const {IndexedDbEventStore}=await import('/src/persistence/event-store.ts');const original=IndexedDbEventStore.prototype.append;let rejected=false;
@@ -68,9 +68,9 @@ test('L3SECJ04 a rejected result write shows an error without success, then retr
   (window as unknown as {qaRestoreAppend:()=>void}).qaRestoreAppend=()=>{IndexedDbEventStore.prototype.append=original;};
  });
  try{
-  await page.getByRole('button',{name:'سمّعت المقطع كاملًا بلا خطأ معلوم — جهد عادي',exact:true}).click();await expect(page.getByRole('alert')).toContainText('QA_WRITE_UNCONFIRMED');
+  await page.getByRole('button',{name:'كامل بلا خطأ معلوم — بجهد عادي',exact:true}).click();await expect(page.getByRole('alert')).toContainText('QA_WRITE_UNCONFIRMED');
   await expect(page.getByRole('heading',{name:'حُفظ تقييمك الذاتي'})).toHaveCount(0);expect((await snapshot(page)).events.filter(e=>e.type==='AssessmentSubmitted')).toHaveLength(0);
-  await page.getByRole('button',{name:'سمّعت المقطع كاملًا بلا خطأ معلوم — جهد عادي',exact:true}).click();await expect(page.getByRole('heading',{name:'حُفظ تقييمك الذاتي'})).toBeVisible();
+  await page.getByRole('button',{name:'كامل بلا خطأ معلوم — بجهد عادي',exact:true}).click();await expect(page.getByRole('heading',{name:'حُفظ تقييمك الذاتي'})).toBeVisible();
   const raw=await snapshot(page);expect(raw.events.filter(e=>e.type==='AssessmentSubmitted')).toHaveLength(1);
   await page.reload();await expect(page.getByRole('heading',{name:'حُفظ تقييمك الذاتي'})).toBeVisible();expect((await snapshot(page)).events).toEqual(raw.events);
   await info.attach('result-retry.json',{body:JSON.stringify({engineering:true,rejectedResultDidNotShowSuccess:true,assessmentEvents:1,stableReload:true}),contentType:'application/json'});
