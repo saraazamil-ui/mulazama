@@ -1,0 +1,29 @@
+name: Diagnose FTPS certificate without login
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/diagnose-ftps.yml'
+      - 'scripts/diagnose-ftps-certificate.py'
+      - 'scripts/tests/diagnose-ftps-certificate.test.py'
+
+permissions:
+  contents: read
+
+jobs:
+  certificate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Test strict verification and absence of FTP authentication
+        run: python3 scripts/tests/diagnose-ftps-certificate.test.py
+      - name: Report public peer certificate under strict hostname verification
+        # No username/password is passed to this workflow. A failed certificate
+        # check stays failed; metadata never authorizes an alternate hostname.
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+        run: python3 scripts/diagnose-ftps-certificate.py
