@@ -1,0 +1,13 @@
+{
+  "baseCommit": "4bd359de434c6395f416388679adebe13128c8a0",
+  "trackedFilesChecked": 1329,
+  "changedBaselineFiles": [],
+  "packageSha256": "316c3bb42ff6ef54d8d6a2acbd949eeacfe1c7fed57b3f04ddd6bf37f0094d03",
+  "lockfileSha256": "ad7b79295a609767455b46eac8f1e6c81b2de0684060b428739a97ce3731e1f5",
+  "agentsSha256": "ee5b5edf29486d6e729d7c40db0176c414cc88df14f296953988693e65f7aa84",
+  "implementationSourceDigest": "a1e3f91c5e7e2b42f3149ba8fdaa2c4293438ed94e391237decf3426b84617e0",
+  "newFilesScope": "docs/10a only; documents and evidence",
+  "previousEvidenceUnchanged": true,
+  "quranHmeFsrsP0Unchanged": true,
+  "schemaAndEventsUnchanged": true
+}

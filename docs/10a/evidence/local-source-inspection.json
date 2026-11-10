@@ -1,0 +1,12 @@
+{
+  "phase": "10-A",
+  "startedAt": "2026-11-07T19:38:22.824348+00:00",
+  "finishedAt": "2026-11-07T19:38:22.977757+00:00",
+  "sourceCommit": "4bd359de434c6395f416388679adebe13128c8a0",
+  "commandSource": "docs/10a/Mushaf-Source-Comparison.md section 7 (shell fenced block)",
+  "commandSha256": "b2ae43525315733554ab6570a5a1ba516c2784b6a7884f4893d59cc164b23f4f",
+  "exitCode": 0,
+  "log": "local-source-inspection.log",
+  "originalBytesModified": false,
+  "officialPackageComparisonExecuted": false
+}

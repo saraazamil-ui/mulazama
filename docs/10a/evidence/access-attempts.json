@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "phase": "10-A",
+  "environmentId": "ccarenv_b64_Y2NhcmVudl8wMmMwZjAyMTA3Njg4MTkxODZkMDhhYzliMDU4MmFhZg",
+  "networkPolicy": {
+    "mode": "restricted",
+    "observedState": "enforced",
+    "officialHostsInStartupAllowlist": []
+  },
+  "method": "curl --location --max-time 25 --max-filesize 5000000 --dump-header <temp.headers> --output <temp.body> --write-out <status,url,size> <requestedUrl>",
+  "requests": [
+    {
+      "id": "quran-dev",
+      "requestedUrl": "https://qurancomplex.gov.sa/quran-dev/",
+      "retrievedAt": "2026-11-07T19:32:07.390257+00:00",
+      "exitCode": 56,
+      "httpResult": "000\nhttps://qurancomplex.gov.sa/quran-dev/\n0\n",
+      "stderr": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (56) CONNECT tunnel failed, response 403\n",
+      "proxyResponseStatus": 403,
+      "originResponseReceived": false,
+      "originHttpStatus": null,
+      "downloadedPackage": false
+    },
+    {
+      "id": "dm",
+      "requestedUrl": "https://dm.qurancomplex.gov.sa/",
+      "retrievedAt": "2026-11-07T19:32:07.409518+00:00",
+      "exitCode": 56,
+      "httpResult": "000\nhttps://dm.qurancomplex.gov.sa/\n0\n",
+      "stderr": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (56) CONNECT tunnel failed, response 403\n",
+      "proxyResponseStatus": 403,
+      "originResponseReceived": false,
+      "originHttpStatus": null,
+      "downloadedPackage": false
+    },
+    {
+      "id": "rights",
+      "requestedUrl": "https://dm.qurancomplex.gov.sa/rights/",
+      "retrievedAt": "2026-11-07T19:32:07.448835+00:00",
+      "exitCode": 56,
+      "httpResult": "000\nhttps://dm.qurancomplex.gov.sa/rights/\n0\n",
+      "stderr": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (56) CONNECT tunnel failed, response 403\n",
+      "proxyResponseStatus": 403,
+      "originResponseReceived": false,
+      "originHttpStatus": null,
+      "downloadedPackage": false
+    }
+  ],
+  "webDirectOpenResults": [
+    {
+      "url": "https://qurancomplex.gov.sa/quran-dev/",
+      "error": "503 Service Unavailable"
+    },
+    {
+      "url": "https://dm.qurancomplex.gov.sa/",
+      "error": "TimeoutError / timeout fetching"
+    },
+    {
+      "url": "https://dm.qurancomplex.gov.sa/rights/",
+      "error": "502 Bad Gateway"
+    }
+  ],
+  "webSearchResult": "indexed official-page descriptions only",
+  "policyChanged": false,
+  "tlsVerificationDisabled": false,
+  "unofficialAlternativeUsed": false
+}
