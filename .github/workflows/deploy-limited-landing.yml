@@ -1,0 +1,69 @@
+name: MULAZAMA limited landing deployment
+
+# Deploy only the separately approved static landing page, never the Quran app.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - launch/limited/index.html
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mulazama-landing-production
+  cancel-in-progress: false
+
+jobs:
+  publish-landing:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    environment: production-landing
+    steps:
+      - name: Checkout approved main
+        uses: actions/checkout@v4
+
+      - name: Validate landing-only scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s launch/limited/index.html
+          grep -q '<html lang="ar" dir="rtl">' launch/limited/index.html
+          if grep -Eiq '<script|<form|<iframe|<link[^>]+(https?://|//)' launch/limited/index.html; then
+            echo "Landing-only guard rejected unexpected executable or remote content."
+            exit 1
+          fi
+
+      - name: Configure verified SSH access
+        shell: bash
+        env:
+          DEPLOY_KEY: ${{ secrets.MULAZAMA_DEPLOY_PRIVATE_KEY }}
+          KNOWN_HOSTS: ${{ secrets.MULAZAMA_SSH_KNOWN_HOSTS }}
+          DEPLOY_HOST: ${{ vars.MULAZAMA_SSH_HOST }}
+        run: |
+          set -euo pipefail
+          test -n "$DEPLOY_KEY" && test -n "$KNOWN_HOSTS" && test -n "$DEPLOY_HOST"
+          umask 077
+          mkdir -p ~/.ssh
+          printf '%s\n' "$DEPLOY_KEY" > ~/.ssh/mulazama_deploy
+          printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+          ssh-keygen -y -f ~/.ssh/mulazama_deploy >/dev/null
+
+      - name: Upload static page and preserve previous page
+        shell: bash
+        env:
+          DEPLOY_HOST: ${{ vars.MULAZAMA_SSH_HOST }}
+        run: |
+          set -euo pipefail
+          SSH_OPTS=(-o BatchMode=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile="$HOME/.ssh/known_hosts" -o IdentitiesOnly=yes -i "$HOME/.ssh/mulazama_deploy")
+          TARGET="smula029@$DEPLOY_HOST"
+          # Do not publish any other repository file or application bundle.
+          scp "${SSH_OPTS[@]}" launch/limited/index.html "$TARGET:/home1/smula029/public_html/index.html.next"
+          ssh "${SSH_OPTS[@]}" "$TARGET" 'set -eu; cd /home1/smula029/public_html; test -s index.html.next; if test -f index.html; then cp -p index.html index.html.previous; fi; mv -f index.html.next index.html'
+          echo "Landing page transferred. Verify the public HTTPS site independently."
+
+      - name: Remove ephemeral local SSH material
+        if: always()
+        shell: bash
+        run: rm -f "$HOME/.ssh/mulazama_deploy" "$HOME/.ssh/known_hosts"
