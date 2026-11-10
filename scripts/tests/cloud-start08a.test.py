@@ -96,6 +96,57 @@ class CloudStartTests(unittest.TestCase):
         self.assertEqual((self.checkout / "tracked.txt").read_text(), "uncommitted work\n")
         self.assertFalse((self.checkout / ".git" / "FETCH_HEAD").exists())
 
+    def test_missing_tracking_ref_is_initialized_without_changing_existing_branches(self):
+        git(self.checkout, "update-ref", "-d", "refs/remotes/origin/main", self.baseline)
+        original_branches = self.refs("refs/heads/")
+        revision = self.advance("new main for prepared checkout")
+        result = self.run_start("--branch", "codex/prepared-task")
+        self.assertTrue(result["initializedTrackingRef"])
+        self.assertEqual(result["officialMain"], revision)
+        self.assertEqual(result["head"], revision)
+        self.assertEqual(result["branch"], "codex/prepared-task")
+        self.assertEqual(git(self.checkout, "rev-parse", "origin/main"), revision)
+        branches = self.refs("refs/heads/")
+        self.assertEqual(branches.pop("refs/heads/codex/prepared-task"), revision)
+        self.assertEqual(branches, original_branches)
+        self.assertEqual(git(self.checkout, "status", "--porcelain=v1"), "")
+
+    def test_missing_tracking_ref_does_not_discard_divergent_checkout_history(self):
+        previous = self.advance("prepared checkout history")
+        git(self.checkout, "fetch", "origin")
+        git(self.checkout, "merge", "--ff-only", "origin/main")
+        git(self.checkout, "update-ref", "-d", "refs/remotes/origin/main", previous)
+        original_refs = self.refs()
+        git(self.seed, "switch", "--detach", self.baseline)
+        rewritten = self.commit("replacement main")
+        git(self.remote, "fetch", str(self.seed), "HEAD")
+        git(self.remote, "update-ref", "refs/heads/main", rewritten, previous)
+        with self.assertRaisesRegex(SystemExit, "does not contain the current checkout history"):
+            self.run_start("--branch", "codex/divergent-task")
+        self.assertEqual(self.refs(), original_refs)
+        self.assertEqual(git(self.checkout, "branch", "--show-current"), "work")
+        self.assertEqual(git(self.checkout, "rev-parse", "HEAD"), previous)
+
+    def test_missing_tracking_ref_initialization_rejects_concurrent_creation(self):
+        git(self.checkout, "update-ref", "-d", "refs/remotes/origin/main", self.baseline)
+        revision = self.advance("concurrent remote advance")
+        original_branches = self.refs("refs/heads/")
+        real_run = subprocess.run
+
+        def create_tracking_ref_before_compare_and_swap(command, *args, **kwargs):
+            if command[:3] == ["git", "update-ref", "refs/remotes/origin/main"]:
+                real_run(["git", "update-ref", "refs/remotes/origin/main", self.baseline],
+                         cwd=self.checkout, check=True)
+            return real_run(command, *args, **kwargs)
+
+        with patch.object(self.module.subprocess, "run", side_effect=create_tracking_ref_before_compare_and_swap):
+            with self.assertRaises(subprocess.CalledProcessError):
+                self.run_start("--branch", "codex/concurrent-task")
+        self.assertEqual(git(self.checkout, "rev-parse", "FETCH_HEAD"), revision)
+        self.assertEqual(git(self.checkout, "rev-parse", "origin/main"), self.baseline)
+        self.assertEqual(self.refs("refs/heads/"), original_branches)
+        self.assertEqual(git(self.checkout, "branch", "--show-current"), "work")
+
     def test_rewritten_main_with_approved_baseline_keeps_all_existing_refs(self):
         previous = self.advance("first descendant")
         checked = self.run_start("--check")
