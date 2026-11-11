@@ -31,7 +31,7 @@ async function settledAssessmentFacts(page:Page){
 async function recall(page:Page){await page.getByRole('button',{name:'ابدأ وردك',exact:true}).click();await expect(page.getByLabel('مادة الاختبار الصناعي',{exact:true})).toBeVisible();await page.getByRole('button',{name:'ابدأ التسميع الذاتي',exact:true}).click();await expect(page.getByLabel('مادة الاختبار الصناعي',{exact:true})).toHaveCount(0);}
 test('L3J01 newcomer full isolated journey creates real durable HME events, schedules corrected review and survives reload',async({page},info)=>{
  await setup(page);await page.getByRole('button',{name:'ابدأ وردك',exact:true}).click();
- await page.getByRole('button',{name:'أنهيت تكرارًا',exact:true}).click();await expect(page.getByText('التكرارات التي أكّدتها: 1')).toBeVisible();
+ await page.getByRole('button',{name:'أنهيت تكرارًا',exact:true}).click();await expect(page.getByLabel('عدد التكرارات المحفوظة')).toHaveText('١');
  await page.getByRole('button',{name:'ابدأ التسميع الذاتي',exact:true}).click();
  await expect(page.getByLabel('مادة الاختبار الصناعي',{exact:true})).toHaveCount(0);
  await page.getByRole('button',{name:'سمّعت المقطع كاملًا بلا خطأ معلوم — جهد عادي',exact:true}).click();

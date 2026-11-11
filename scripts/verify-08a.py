@@ -65,7 +65,13 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", default="docs/08a/evidence")
     parser.add_argument("--cache-root", default="/tmp/mulazama-08a-cache")
+    parser.add_argument("--expected-unit-tests", type=int, default=897,
+                        help="Exact unit-test inventory for this source revision (historical default: 897).")
+    parser.add_argument("--expected-journey-tests", type=int, default=12,
+                        help="Exact legacy journey-test inventory for this source revision (historical default: 12).")
     args = parser.parse_args()
+    if args.expected_unit_tests < 897 or args.expected_journey_tests < 12:
+        parser.error("Expected inventories cannot be smaller than the verified historical baseline.")
     if git("status", "--porcelain=v1", "--untracked-files=no"):
         parser.error("Commit tracked changes first; verification archives committed HEAD only.")
     if Path(git("rev-parse", "--show-toplevel")) != ROOT:
@@ -94,6 +100,7 @@ def main():
         "cacheRoot": str(cache), "browserSelection": browser_selection,
         "productionApproval": False, "scientificApproval": False,
         "note": "Only freshly written outputs are retained as this run's evidence; snapshot is preserved.",
+        "expectedInventories": {"unit": args.expected_unit_tests, "journey": args.expected_journey_tests},
     }
 
     def execute(name, command, cwd=snapshot):
@@ -198,12 +205,14 @@ def main():
         unit = fresh_json(L4 + "final-tests.json")
         summary["unit"] = {key: unit.get(key) for key in (
             "numTotalTests", "numPassedTests", "numFailedTests", "numPendingTests", "numTodoTests", "success")}
-        if unit.get("success") is not True or unit.get("numTotalTests") != 897 or unit.get("numPassedTests") != 897 or any(
+        if unit.get("success") is not True or unit.get("numTotalTests") != args.expected_unit_tests or unit.get("numPassedTests") != args.expected_unit_tests or any(
             unit.get(key) != 0 for key in ("numFailedTests", "numPendingTests", "numTodoTests")
         ):
-            errors.append("Unit results must be exactly 897 passed, zero failed/skipped/todo.")
+            errors.append(f"Unit results must be exactly {args.expected_unit_tests} passed, zero failed/skipped/todo.")
         summary["browserSuites"] = {}
         for name, expected in BROWSER_COUNTS.items():
+            if name == "journey-browser":
+                expected = args.expected_journey_tests
             data = fresh_json(L4 + "final-" + name + "-results.json")
             stats = data.get("stats", {})
             summary["browserSuites"][name] = stats

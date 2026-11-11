@@ -1,0 +1,9 @@
+.v211-preview-tools {background:#f3edf8;color:#56346e;border-bottom:1px solid #c8b9d8;padding:8px 20px;font:14px/1.8 Tahoma,Arial,sans-serif;}
+.v211-preview-tools summary {cursor:pointer;min-height:28px;}
+.v211-preview-tools details {max-width:1380px;margin:auto;}
+.v211-preview-tools p {margin:8px 0;max-width:900px;}
+.v211-preview-tools details>div {display:flex;flex-wrap:wrap;gap:12px;}
+.v211-preview-tools button {font:inherit;min-height:44px;max-width:100%;padding:8px 14px;border:1px solid #71518f;border-radius:10px;background:#fff;color:#56346e;cursor:pointer;}
+.v211-preview-tools button:disabled {opacity:.6;cursor:wait;}
+.v211-preview-tools :is(button,summary):focus-visible {outline:3px solid #56346e;outline-offset:3px;}
+.v211-boot-error {font:18px/1.8 Tahoma,Arial,sans-serif;max-width:720px;margin:60px auto;padding:24px;color:#30243d;background:#faf7fc;}
