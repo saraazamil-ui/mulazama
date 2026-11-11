@@ -4,14 +4,13 @@ import { ProductV211, type ProductEvent, type ProductState } from '../applicatio
 import { IndexedDbProductStore } from '../persistence/product-v211-store';
 import { v211DatabaseIdentity } from './v211-identity';
 import { createPreviewClock } from './v211-preview-clock';
+import { assertV211PreviewOrigin } from './v211-preview-origin';
 import '../v211.css';
 import './v211-preview.css';
 
 const root = createRoot(document.getElementById('root')!);
 async function boot() {
-  if (import.meta.env.MODE !== 'test' || !['127.0.0.1', 'localhost', '[::1]'].includes(location.hostname)) {
-    throw Error('PRIVATE_PREVIEW_ONLY');
-  }
+  assertV211PreviewOrigin({ mode: import.meta.env.MODE, currentOrigin: location.origin, hostedOrigin: __V211_HOSTED_ORIGIN__ });
   const name = v211DatabaseIdentity(localStorage);
   const store = await IndexedDbProductStore.open<ProductState, ProductEvent>(name);
   try {

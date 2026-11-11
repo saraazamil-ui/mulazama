@@ -1,4 +1,4 @@
-/** Private, loopback-only preview of the V2.1.1 synthetic journey. No publishing. */
+/** Build the synthetic journey; local serving stays loopback-only. Hosted packaging is explicit. */
 import { spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { createServer } from 'node:http';
@@ -8,7 +8,12 @@ import { fileURLToPath } from 'node:url';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 const dist = resolve(root, 'dist-v211');
-const build = spawnSync(process.execPath, ['node_modules/vite/bin/vite.js', 'build', '--config', 'vite.v211.config.ts', '--mode', 'test'], { cwd: root, stdio: 'inherit' });
+const hosted = process.argv.includes('--hosted');
+const profile = hosted ? JSON.parse(await readFile(resolve(root, 'deployment/v211-private.json'), 'utf8')) : null;
+if (profile && (new URL(profile.origin).origin !== profile.origin || !profile.origin.startsWith('https://') || !new URL(profile.origin).hostname.endsWith('.chatgpt.site') || profile.audience !== 'owner-only' || profile.syntheticOnly !== true || profile.productionReady !== false || profile.quranDisplay !== false)) throw Error('INVALID_PRIVATE_HOSTING_PROFILE');
+const build = spawnSync(process.execPath, ['node_modules/vite/bin/vite.js', 'build', '--config', 'vite.v211.config.ts', '--mode', 'test'], {
+  cwd: root, stdio: 'inherit', env: { ...process.env, V211_PRIVATE_SITE_ORIGIN: profile?.origin ?? '' },
+});
 if (build.status !== 0) process.exit(build.status ?? 1);
 await writeFile(resolve(dist, 'index.html'), await readFile(resolve(dist, 'v211.html')));
 
@@ -33,7 +38,7 @@ for (const path of files) {
   if (verses.some(verse => text.includes(verse))) throw Error('UNAPPROVED_CONTENT_IN_PREVIEW');
   entries.push({ path, bytes: bytes.length, sha256: createHash('sha256').update(bytes).digest('hex') });
 }
-const manifest = { kind: 'v211-private-synthetic-preview', productionReady: false, quranDisplay: false, storage: 'isolated-local-indexeddb', files: entries };
+const manifest = { kind: 'v211-private-synthetic-preview', productionReady: false, quranDisplay: false, storage: 'isolated-local-indexeddb', hostedOrigin: profile?.origin ?? null, files: entries };
 await writeFile(resolve(dist, 'preview-manifest.json'), JSON.stringify(manifest, null, 2) + '\n');
 console.log(JSON.stringify({ kind: manifest.kind, assets: entries.length, quranDisplay: false, productionReady: false }));
 

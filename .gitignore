@@ -15,3 +15,4 @@ test-results-deployment/
 # Synthetic engineering artifact, never production
 dist-engineering/
 dist-v211/
+dist-v211-hosted/

@@ -5,6 +5,7 @@ import react from '@vitejs/plugin-react';
 export default defineConfig(({ mode }) => {
   if (mode !== 'test') throw Error('V211_PREVIEW_REQUIRES_TEST_MODE');
   return {
+    define: { __V211_HOSTED_ORIGIN__: JSON.stringify(process.env.V211_PRIVATE_SITE_ORIGIN ?? '') },
     plugins: [react(), {
       name: 'private-preview-paths',
       configureServer(server) {
