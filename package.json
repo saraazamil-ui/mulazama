@@ -25,6 +25,10 @@
     "engineering:local": "node scripts/build-engineering06l3.mjs --serve",
     "test:journey": "playwright test --config playwright.journey.config.ts",
     "test:journey-offline": "playwright test --config playwright.journey-offline.config.ts",
+    "dev:v211": "vite --config vite.v211.config.ts --mode test",
+    "preview:v211": "node scripts/preview-v211.mjs --serve",
+    "build:v211": "node scripts/preview-v211.mjs",
+    "test:v211": "playwright test --config playwright.v211.config.ts",
     "verify:l4": "python3 scripts/verify-06l4.py"
   },
   "dependencies": {

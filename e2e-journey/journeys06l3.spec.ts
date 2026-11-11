@@ -31,7 +31,7 @@ async function settledAssessmentFacts(page:Page){
 async function recall(page:Page){await page.getByRole('button',{name:'ابدأ وردك',exact:true}).click();await expect(page.getByLabel('مادة الاختبار الصناعي',{exact:true})).toBeVisible();await page.getByRole('button',{name:'ابدأ التسميع الذاتي',exact:true}).click();await expect(page.getByLabel('مادة الاختبار الصناعي',{exact:true})).toHaveCount(0);}
 test('L3J01 newcomer full isolated journey creates real durable HME events, schedules corrected review and survives reload',async({page},info)=>{
  await setup(page);await page.getByRole('button',{name:'ابدأ وردك',exact:true}).click();
- await page.getByRole('button',{name:'أنهيت تكرارًا',exact:true}).click();await expect(page.getByText('التكرارات التي أكّدتها: 1')).toBeVisible();
+ await page.getByRole('button',{name:'أنهيت تكرارًا',exact:true}).click();await expect(page.getByLabel('عدد التكرارات المحفوظة')).toHaveText('١');
  await page.getByRole('button',{name:'ابدأ التسميع الذاتي',exact:true}).click();
  await expect(page.getByLabel('مادة الاختبار الصناعي',{exact:true})).toHaveCount(0);
  await page.getByRole('button',{name:'سمّعت المقطع كاملًا بلا خطأ معلوم — جهد عادي',exact:true}).click();
@@ -121,4 +121,20 @@ for(const prior of [false,true])test(`L4J${prior?'02':'01'} desktop ${prior?'pri
  await page.getByRole('button',{name:'تابع إلى النشاط التالي'}).click();await expect(page.getByText(/أنشطة أُنجزت اليوم: 1/)).toBeVisible();
  expect((await new AxeBuilder({page}).analyze()).violations).toEqual([]);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
  await info.attach('desktop-journey.json',{body:JSON.stringify({viewport:1366,prior,engineering:true,quranSession:false,resultActions:1,reloadPreserved:true}),contentType:'application/json'});
+});
+
+test('synthetic journey persists after closing and reopening the page',async({page,context})=>{
+ await setup(page);
+ await page.getByRole('button',{name:'ابدأ وردك',exact:true}).click();
+ await page.getByRole('button',{name:'أنهيت تكرارًا',exact:true}).click();
+ const database=await page.evaluate(()=>localStorage.getItem('mulazama-engineering-db-06l3'));
+ await page.close();
+ const reopened=await context.newPage();
+ await reopened.clock.setFixedTime(new Date('2026-11-07T09:00:00Z'));
+ await reopened.goto('/engineering.html');
+ await expect(reopened.locator('.prototype-strip')).toContainText('ليس نصًا قرآنيًا');
+ expect(await reopened.evaluate(()=>localStorage.getItem('mulazama-engineering-db-06l3'))).toBe(database);
+ await expect(reopened.getByRole('button',{name:'استأنف جلستك'})).toBeVisible();
+ await reopened.getByRole('button',{name:'استأنف جلستك'}).click();
+ await expect(reopened.getByLabel('عدد التكرارات المحفوظة')).toHaveText('١');
 });

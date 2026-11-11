@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "kind": "rights-and-font-evidence-not-approval",
+  "observedAt": "2026-11-10T23:56:41Z",
+  "observedAtApproximate": true,
+  "textLicense": {
+    "officialUrl": "https://tanzil.net/docs/Text_License",
+    "storedSnapshot": "content/06l2/tanzil-license.html",
+    "storedSnapshotSHA256": "3edaac627f23693b080d2b5fa2959027b2296f51b4d0a69e468621910676ba27",
+    "liveHttpStatus": 200,
+    "livePageByteLength": 7903,
+    "livePageSHA256": "07f33a48cd8503f6e9b9b742634527ab347823fb6597bc8bdceb497bbbd0597f",
+    "comparison": "Exact stored and live UTF-8 bytes of the copyright pre.code block; no normalization",
+    "copyrightBlockExact": true,
+    "copyrightBlockSHA256": "4135c9617f8395bebd2926db84ee5e13b45737dfc926943cd84e0362e890ec4e",
+    "publisherTerms": "Creative Commons Attribution 3.0; verbatim copying only, no changes, source link and full copyright notice preserved.",
+    "noticeDifference": "The raw source retains Copyright 2007–2026; stored and live HTML copyright blocks say 2007–2021. Both originals remain unchanged.",
+    "rightsApproval": "pending"
+  },
+  "metadata": {
+    "path": "content/06l2/quran-data.xml",
+    "sha256": "8867c1d88191472adec9db694b3cd9f135b1a2ef580574d32cf888dcb22c5c7a",
+    "publisherHeader": "cc-by",
+    "exactLicenseVersion": null,
+    "rightsApproval": "pending"
+  },
+  "font": {
+    "selectedArtifact": null,
+    "fontHash": null,
+    "observation": "No .woff/.woff2/.ttf/.otf font artifact outside dependencies/git. App uses system fonts; no exact Quran font is selected.",
+    "unboundLicenseFile": "brand/licenses/NotoSansArabic-OFL.txt",
+    "unboundLicenseSHA256": "07fc70bfeb985cc1a87a8587d0a0c80bab11c86c9dc3fd95b6f0cb332f983e96",
+    "licenseFileAloneApprovesFont": false,
+    "renderingApproval": "pending"
+  },
+  "scientificApproval": false,
+  "ownerApproval": false,
+  "displayAllowed": false
+}

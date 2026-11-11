@@ -25,6 +25,10 @@ jobs:
       - run: python3 scripts/tests/cloud-start08a.test.py
       - run: node --test scripts/tests/playwright-browser.test.mjs
       - run: python3 scripts/verify-06l4.py --browser
+      - run: node scripts/content-v211-audit.mjs --check
+      - run: node --test scripts/tests/content-v211-audit.test.mjs
+      - run: pnpm test:v211
+      - run: pnpm exec playwright test --config playwright.v211-built.config.ts
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -36,5 +40,7 @@ jobs:
             test-results-deployment/
             test-results-journey/
             test-results-journey-offline/
+            test-results-v211/
+            test-results-v211-built/
             playwright-report/
 # There is deliberately no deploy step. A passing engineering job is not release approval.

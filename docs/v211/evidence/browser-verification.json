@@ -1,0 +1,225 @@
+{
+  "generatedAt": "2026-11-11T00:15:54.199422+00:00",
+  "scope": "Private synthetic V2.1.1 preview; no Quran or production approval",
+  "environment": {
+    "node": "v24.22.1",
+    "browser": "Chromium 156.0.8078.79 built on Debian GNU/Linux 13 (trixie)",
+    "browserExecutable": "/usr/bin/chromium",
+    "loopbackBind": "127.0.0.1:4177/4181/4182 succeeded; EPERM did not recur; no sandbox escalation needed"
+  },
+  "sourceFilesSha256": {
+    "src/V211App.tsx": "5d716e0ad54531067b0191f0470a80d8d5a0ed55cb662b93314265c449e6ff95",
+    "src/v211.css": "4686061755fe35ca8a7a283b1f7c3fd7f3ce5b38678d0b85b4160ea69f0a57ab",
+    "src/application/product-v211.ts": "4490e7a0b3b4015a6bcff5957327f4cb37a820a179a45b86e44c9e0787d9bb3d",
+    "src/persistence/product-v211-store.ts": "eab37f0261a3013819726bc547e7f437ad18d2f2a129f70ca8d83bb153e74e4a",
+    "src/testing/v211.tsx": "d29fe7334618766e59b72fc586c8a8edd7928f84301b847d5d44c0dc3edaa226",
+    "src/testing/V211Preview.tsx": "a034b5b3f01fa066da2645490b6c515b09750a3a780f8302c5d084a9302a8e67",
+    "src/testing/v211-preview-clock.ts": "a809767b3f18f363e0ee3a268bc2493ef68c18de77a480385e080fd85799b009",
+    "vite.v211.config.ts": "4dbfc66a8ae0016a67583e085dc50757b7529b7eb4c4c8dcf6fafbef438b5c50",
+    "scripts/preview-v211.mjs": "493f0ad21ca9cc37d7cd68054d6b70cb2ab36e7f2b711c1986f2ae052f435818",
+    "pnpm-lock.yaml": "ad7b79295a609767455b46eac8f1e6c81b2de0684060b428739a97ce3731e1f5"
+  },
+  "dev": {
+    "stats": {
+      "startTime": "2026-11-11T00:14:29.423Z",
+      "duration": 23402.272999999997,
+      "expected": 10,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "errors": [],
+    "tests": [
+      {
+        "title": "V211 preview keeps unapproved corpus and review tools outside the served application",
+        "file": "isolation.spec.ts",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 822
+          }
+        ]
+      },
+      {
+        "title": "V211 hifz add/undo/toggle/pause survives closing; plan edits preserve the active target",
+        "file": "journeys.spec.ts",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 3062
+          }
+        ]
+      },
+      {
+        "title": "V211 adjacent linking has its own target/count and restores separately from hifz",
+        "file": "journeys.spec.ts",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 2083
+          }
+        ]
+      },
+      {
+        "title": "V211 Friday keeps one frozen range and Saturday transfers eligibility despite unfinished review",
+        "file": "journeys.spec.ts",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 2296
+          }
+        ]
+      },
+      {
+        "title": "V211 partial overdue taahud preserves remainder and requires explicit next-date confirmation",
+        "file": "journeys.spec.ts",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 1398
+          }
+        ]
+      },
+      {
+        "title": "V211 320px keyboard, layout and automated accessibility",
+        "file": "journeys.spec.ts",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 3963
+          }
+        ]
+      },
+      {
+        "title": "V211 1440px keyboard, layout and automated accessibility",
+        "file": "journeys.spec.ts",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 4005
+          }
+        ]
+      },
+      {
+        "title": "V211 disjoint partial taahud records only selected units and preserves the gaps",
+        "file": "journeys.spec.ts",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 1365
+          }
+        ]
+      },
+      {
+        "title": "V211 private date controls let the user try Friday then Saturday and retain that timeline on reopen",
+        "file": "journeys.spec.ts",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 1738
+          }
+        ]
+      },
+      {
+        "title": "V211 storage commits events, checkpoint, receipt and outbox atomically; retries and conflicts preserve history",
+        "file": "storage.spec.ts",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 551
+          }
+        ]
+      }
+    ],
+    "rawReportSha256": "6c163581897c26bb659f9c0de6eb26cc9ae50d8c6d2f976e433d1ca5834e9d6b"
+  },
+  "built": {
+    "stats": {
+      "startTime": "2026-11-11T00:15:05.257Z",
+      "duration": 6192.759,
+      "expected": 1,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "errors": [],
+    "tests": [
+      {
+        "title": "built private artifact runs a durable journey and exports the actual local journal under restrictive headers",
+        "file": "preview.spec.ts",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 2431
+          }
+        ]
+      }
+    ],
+    "rawReportSha256": "4f53dc2f0d486d718128d30b1514d4bbf7a24148adbd34d6bc2b32b0d4705571"
+  },
+  "builtManifest": {
+    "kind": "v211-private-synthetic-preview",
+    "productionReady": false,
+    "quranDisplay": false,
+    "storage": "isolated-local-indexeddb",
+    "files": [
+      {
+        "path": "assets/v211-D5_PXHU2.js",
+        "bytes": 288180,
+        "sha256": "e4566178c4fa571fbeecb4058ccd31e80dd431da5906ef37ac9ecae196f8bcda"
+      },
+      {
+        "path": "assets/v211-Da7Th4eJ.css",
+        "bytes": 20357,
+        "sha256": "8093c453155267e6cb49cf833a9b0b817d5e38ae2cc240ab43f8607df3d3c040"
+      },
+      {
+        "path": "index.html",
+        "bytes": 556,
+        "sha256": "e33e10c84843d99b5b8c9af770cd10cf3cff7fb07c3af619de876df2279c84db"
+      },
+      {
+        "path": "v211.html",
+        "bytes": 556,
+        "sha256": "e33e10c84843d99b5b8c9af770cd10cf3cff7fb07c3af619de876df2279c84db"
+      }
+    ]
+  },
+  "legacyJourney": {
+    "firstRun": {
+      "passed": 11,
+      "failed": 2,
+      "skipped": 0
+    },
+    "failedCases": [
+      "L3J01",
+      "synthetic journey persists after closing and reopening the page"
+    ],
+    "cause": "Decorative + included in button accessible name and obsolete count-text locator",
+    "fix": "Decorative + aria-hidden; count checked by accessible output label",
+    "targetedRerun": {
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "all13CasesPassedAcrossRuns": true
+  },
+  "unrun": [
+    "Firefox",
+    "WebKit/Safari",
+    "V2.1.1 offline reload (preview intentionally has no service worker)"
+  ],
+  "productionReady": false,
+  "quranDisplay": false
+}

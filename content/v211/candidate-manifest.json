@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 2,
+  "kind": "mulazama-content-candidate",
+  "bundleId": "tanzil-uthmani-1.1-candidate-bad79fb9d220f8c1a084d016",
+  "state": "structurally-verified",
+  "publisher": "Tanzil Project",
+  "sourceVersion": "1.1",
+  "sourceUrl": "https://tanzil.net/pub/download/index.php?quranType=uthmani&outType=txt-2&marks=true&sajdah=true&tatweel=true&agree=true",
+  "script": "Uthmani (publisher label)",
+  "riwaya": null,
+  "riwayaEvidence": null,
+  "numberingProfile": {
+    "path": "content/06l2/numbering-profile.json",
+    "sha256": "29f337770f6089feecc67148d47191d165683597ca228308199f18eb49e579ce"
+  },
+  "basmalaPolicy": {
+    "mode": "preserve-source-records-verbatim",
+    "scientificConventionApproved": false
+  },
+  "rawHash": "6933e133dd56db778c801bf738848454e43648105a151e8d84d86a7cae39ec5f",
+  "sliceIndexHash": "c1afc53d91fcc14b30d19b6a91280a9b51f6760de235b1949f7feedccdab6c6f",
+  "metadataHash": "8867c1d88191472adec9db694b3cd9f135b1a2ef580574d32cf888dcb22c5c7a",
+  "numberingProfileHash": "29f337770f6089feecc67148d47191d165683597ca228308199f18eb49e579ce",
+  "textLicenseHash": "3edaac627f23693b080d2b5fa2959027b2296f51b4d0a69e468621910676ba27",
+  "referencePageMapHash": "bd1f954487b0ad8894a0e54dd0569698f2a19929e48360e0f97d0c1ffa1f7f5d",
+  "halfPageMapHash": "2e1c96f09b9c80714cf1298a87cc076b27b3a400fa437a7aebd473276dbe5a71",
+  "fontHash": null,
+  "font": {
+    "status": "pending-selection-and-review",
+    "systemFontsDoNotIdentifyAnApprovedQuranFont": true
+  },
+  "raw": {
+    "path": "content/06l2/tanzil-uthmani-1.1.txt",
+    "byteLength": 1396087
+  },
+  "sourceSlices": {
+    "path": "content/06l2/source-slice-index.json",
+    "coordinateSystem": "UTF-16",
+    "endExclusive": true
+  },
+  "metadata": {
+    "path": "content/06l2/quran-data.xml",
+    "sourceVersion": "1.0",
+    "sourceUrl": "https://tanzil.net/res/text/metadata/quran-data.xml"
+  },
+  "licenseSnapshots": [
+    {
+      "scope": "quran-text-only",
+      "path": "content/06l2/tanzil-license.html",
+      "sha256": "3edaac627f23693b080d2b5fa2959027b2296f51b4d0a69e468621910676ba27",
+      "sourceUrl": "https://tanzil.net/docs/Text_License",
+      "status": "acquired-not-rights-approved"
+    }
+  ],
+  "metadataRights": {
+    "publisherHeader": "cc-by",
+    "exactLicenseVersion": null,
+    "status": "pending"
+  },
+  "attribution": {
+    "label": "مصدر النص القرآني: مشروع Tanzil",
+    "url": "https://tanzil.net/",
+    "preserveFullPublisherNotice": true
+  },
+  "referencePageMap": {
+    "path": "content/v211/reference-maps.json",
+    "sha256": "bd1f954487b0ad8894a0e54dd0569698f2a19929e48360e0f97d0c1ffa1f7f5d",
+    "version": "tanzil-metadata-1.0-reference-ordinal/1",
+    "interpretation": "Reference intervals from each XML page start to the next; not visual Medina page equivalence."
+  },
+  "halfPageMap": {
+    "path": "content/v211/half-page-map.json",
+    "sha256": "2e1c96f09b9c80714cf1298a87cc076b27b3a400fa437a7aebd473276dbe5a71",
+    "policyVersion": "mulazama-half-page-by-ayah/1"
+  },
+  "reviewId": null,
+  "ownerApprovalId": null,
+  "displayAllowed": false,
+  "productionReady": false,
+  "approvals": {
+    "rights": "pending",
+    "independentComparison": "blocked",
+    "specialist": "pending",
+    "owner": "pending"
+  },
+  "blockers": [
+    "RIWAYA_AND_BASMALA_REVIEW",
+    "EXACT_METADATA_LICENSE_VERSION",
+    "INDEPENDENT_COMPATIBLE_COMPARISON",
+    "QURAN_FONT_SELECTION_AND_DEVICE_REVIEW",
+    "SPECIALIST_SIGNOFF_FOR_THIS_BUNDLE",
+    "OWNER_SIGNOFF_FOR_THIS_BUNDLE"
+  ]
+}
