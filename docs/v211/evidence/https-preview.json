@@ -1,0 +1,99 @@
+{
+  "url": "https://mulazama-preview-05a.sara-a-zamil.chatgpt.site",
+  "testedAt": "2026-11-11T00:53:49.579Z",
+  "syntheticOnly": true,
+  "quranDisplay": false,
+  "productionReady": false,
+  "authentication": "owner-only Sites gate; authorized QA uses an in-memory, exact-origin service header",
+  "anonymous": [
+    {
+      "path": "/",
+      "status": 401
+    },
+    {
+      "path": "/assets/v211-neFoUjIO.js",
+      "status": 401
+    }
+  ],
+  "hashes": [
+    {
+      "path": "assets/v211-Da7Th4eJ.css",
+      "sha256": "8093c453155267e6cb49cf833a9b0b817d5e38ae2cc240ab43f8607df3d3c040",
+      "match": true
+    },
+    {
+      "path": "assets/v211-neFoUjIO.js",
+      "sha256": "ffee1e807a5c99dc96e2c51992004be7bbd6039e5a0d18f5676f579f6f512dd1",
+      "match": true
+    },
+    {
+      "path": "index.html",
+      "sha256": "e6ce0831d43fa5cd56117cea3d994efcd405ba66dfc36e628df08700cd0c3f0e",
+      "match": true
+    },
+    {
+      "path": "v211.html",
+      "sha256": "e6ce0831d43fa5cd56117cea3d994efcd405ba66dfc36e628df08700cd0c3f0e",
+      "match": true
+    }
+  ],
+  "paths": [
+    {
+      "path": "/content/06l2/tanzil-uthmani-1.1.txt",
+      "status": 404
+    },
+    {
+      "path": "/src/testing/v211.tsx",
+      "status": 404
+    },
+    {
+      "path": "/.git/config",
+      "status": 404
+    },
+    {
+      "path": "/content/06l2/review.html",
+      "status": 404
+    },
+    {
+      "path": "/api/sync",
+      "status": 404
+    }
+  ],
+  "mobile": {
+    "onboarding": "passed",
+    "pauseAndReopen": "passed",
+    "completionAndReload": "passed",
+    "viewport": {
+      "width": 390,
+      "height": 844,
+      "overflow": false
+    },
+    "durableJournalExport": "passed",
+    "pageErrors": [],
+    "externalRequests": []
+  },
+  "writesBlocked": true,
+  "result": "passed",
+  "anonymousSignInPage": {
+    "status": 401,
+    "accept": "text/html",
+    "title": "Sign in required",
+    "humanOwnerOAuthCompleted": false
+  },
+  "site": {
+    "projectId": "appgprj_6aec6725aa3c8191a6c052991fc99823",
+    "version": 8,
+    "deploymentId": "appgdep_6af3bb3c70d48191b3588b9b420d812d",
+    "status": "succeeded",
+    "audience": "owner-only",
+    "externalVisitors": 0,
+    "groups": 0,
+    "editors": 0,
+    "sourceCommit": "9cae8ea361a8181fd92a8e93b318e8ced329ca71",
+    "prSourceCommit": "39967db1c3c7b8676a56ad3a75fa0d399cefd3d2"
+  },
+  "nativeDesktopBrowser": {
+    "result": "ERR_CONNECTION_REFUSED",
+    "note": "Separate native browser route could not reach the remote origin. HTTPS API via the configured environment proxy and mobile Chromium rendered using exact-origin deployed responses passed; no TLS bypass."
+  }
+}
