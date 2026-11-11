@@ -1,0 +1,38 @@
+{
+  "mode": "checked",
+  "schemaVersion": 1,
+  "auditVersion": "mulazama-content-v2.1.1/1",
+  "bundleId": "tanzil-uthmani-1.1-candidate-bad79fb9d220f8c1a084d016",
+  "structuralStatus": "passed",
+  "sourceRewritten": false,
+  "normalized": false,
+  "rawBytes": 1396087,
+  "rawHash": "6933e133dd56db778c801bf738848454e43648105a151e8d84d86a7cae39ec5f",
+  "sliceIndexHash": "c1afc53d91fcc14b30d19b6a91280a9b51f6760de235b1949f7feedccdab6c6f",
+  "metadataHash": "8867c1d88191472adec9db694b3cd9f135b1a2ef580574d32cf888dcb22c5c7a",
+  "numberingProfileHash": "29f337770f6089feecc67148d47191d165683597ca228308199f18eb49e579ce",
+  "textLicenseHash": "3edaac627f23693b080d2b5fa2959027b2296f51b4d0a69e468621910676ba27",
+  "referencePageMapHash": "bd1f954487b0ad8894a0e54dd0569698f2a19929e48360e0f97d0c1ffa1f7f5d",
+  "halfPageMapHash": "2e1c96f09b9c80714cf1298a87cc076b27b3a400fa437a7aebd473276dbe5a71",
+  "surahs": 114,
+  "ayahs": 6236,
+  "issues": [],
+  "sourceSlices": {
+    "count": 6236,
+    "exact": true,
+    "coordinateSystem": "UTF-16",
+    "endExclusive": true
+  },
+  "referencePages": 604,
+  "juz": 30,
+  "quarterHizb": 240,
+  "halfPagesAvailable": 603,
+  "completeContiguousCoverage": true,
+  "independentComparison": {
+    "status": "blocked",
+    "reason": "No certified compatible independent edition is available. Tanzil metadata is not an independent textual witness."
+  },
+  "visualAndSpecialistReview": "pending",
+  "displayAllowed": false,
+  "productionReady": false
+}
